@@ -4455,6 +4455,31 @@ Name: AppData
 Author: Fouad Raheb
 SileoDepiction: https://jailrepo.initnil.com/Depictions/com.netskao.appdata.json
 
+Package: com.crazymind90.appeditor
+Architecture: iphoneos-arm64e
+Version: 3.8.10.7
+Section: Tweaks
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 58953
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate (>= 0.9.5000), ldid
+Filename: ./debs/arm64e/AppEditor.3.8.10.7.arm64e.deb
+Size: 40011680
+MD5sum: badc309d0e936da1d2d275e0b8d2692c
+SHA1: 07cd449f1eacf261454ae3219893ad1dfa6e3eea
+SHA256: 584b7f9c6c3a5ff6df1ffe2cfdba443afd5f37eba38d4c5979e2a5708d6666ba
+SHA512: 1b8905c3b385efe0c5dbb8278c273c36878d5660d45b755b9928d7dbd318543b75728a39c57d9cf319ec5319c67c51fa27cc61aca62194911b1d53a890611b48
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appeditorDp
+Description: Gain Full Access and Control Over Your Applications
+Tag: purpose::extension
+Author: @CrazyMind90 <CvCrazyMind@gmail.com>
+Name: AppEditor
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appeditorDp
+Sileodepiction: https://crazy90.com/repo/1.json
+Sponsor: thebigboss.org <http://thebigboss.org>
+dev: crazymind90
+Icon: https://i.imgur.com/LliWQgV.jpeg
+
 Package: com.swing.appstorenoads
 Architecture: iphoneos-arm64e
 Version: 0.0.1
