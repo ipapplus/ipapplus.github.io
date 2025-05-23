@@ -8826,6 +8826,29 @@ Description: Adds a button to switch account in App Store account page on iOS 11
 Name: StoreSwitcher 2 (rootless)
 Author: 0xkuj <0xkujz@gmail.com>
 
+Package: org.hacx.superrecorderxplus
+Architecture: iphoneos-arm64e
+Version: 3.32-3
+Section: Tweaks
+Maintainer: hAcx <superrecorder@hacx.org>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate, org.hacx.hacxdaemon (>= 3.8)
+Conflicts: org.hacx.callrecorder, org.hacx.callrecorder.ios9, org.hacx.superrecorder, org.hacx.callrecorderxplus, org.hacx.superrecorder.ios9
+Replaces: org.hacx.superrecorderxplus.beta
+Filename: ./debs/arm64e/Super.Recorder.X+.(roothide).3.32-3.arm64e.deb
+Size: 24048660
+MD5sum: 4a656e57e5c2e062add6bbcad43741a1
+SHA1: dabcbb1fd55d5ddab65b15f2b21697bf4b678e7c
+SHA256: 3946fbd98fbe9c4a13462e06c2b9c12a25e36ee414fe86df49b44d775348df63
+SHA512: c422aca395a984a3ab25081c9fc2d76a8aaa1e44b3352158fd5b551c4384babd71ed385120a32626b71d58e556feeaf7cfab417f0d877542c9d9d974587e2e45
+Description: Native Call Recorder & Voice Amplifier for iOS 12,13,14
+Tag: purpose::extension, compatible_min::ios12
+Name: Super Recorder X+ (roothide)
+Icon: file:///var/jb/Applications/SuperRecorder.app/Icon.png
+Author: hAcx <superrecorder@hacx.org>
+Depiction: https://hacx.org/cydia/superrecorderxplus_depiction.php
+SileoDepiction: https://hacx.org/cydia/com.hacx.superrecorderxplus_sileo_depiction.json
+
 Package: com.jaxroth.supporttheunsupportedrevived
 Architecture: iphoneos-arm64e
 Version: 1.0.0
