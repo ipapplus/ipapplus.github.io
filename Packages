@@ -2371,6 +2371,22 @@ Description: Save and restore the layout of your icons.
 Name: Icon Restore
 Author: Lessica <82flex@gmail.com>
 
+Package: com.twickd.ray-delvalle.inevitable
+Architecture: iphoneos-arm64
+Version: 0.7.4
+Section: Themes
+Maintainer: Ray Delvalle <raydelvalle@me.com>
+Depends: com.anemonetheming.anemone, com.spark.snowboard
+Filename: ./debs/arm64/Inevitable.0.7.4.arm64.deb
+Size: 12841492
+MD5sum: add661464c9693a031075d24540c4312
+SHA1: 858e404cbe433ceef1b21c8fff3f51af1dd0a82e
+SHA256: 14aabcf338d36d28f4d5eb4ead6307ee9c8a2a08f009d6ac76d042c5afbad8c2
+SHA512: acc92c7ffb3351e26981109a2b0a1c722873b8fd049dace884d849dc89494bb93034dcf279031cf4d77323aae456407d61a3e2d4c5efd99d327bded944b18dc3
+Description: This theme was Inevitable. You installing it is bound to happen. ;€
+Name: Inevitable
+Author: Ray Delvalle <raydelvalle@me.com>
+
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64
 Version: 2.0.1
@@ -2961,6 +2977,25 @@ Name: OnlineNotify
 Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.f0u4d.onlinenotify
 Icon: file:///Library/Application Support/OnlineNotify/Resources.bundle/OnlineNotify.png
+
+Package: com.dvntm.ovk
+Architecture: iphoneos-arm64
+Version: 1.1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 28048
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64/OrwellVK.1.1.arm64.deb
+Size: 10129588
+MD5sum: a5538260374ea21743a4a56ca36469c3
+SHA1: fc22058efa4cc01498d02786717ea268845d1092
+SHA256: 5d347cb9ba0381531a0e6562ca24ad9486866d17e93e478694dc91ce69e0ba02
+SHA512: c356ad7196a5f7c3d61104dc5168e077b76412937f65dd8f82191a0ae34d2eca08105083a2d7fe51db7f3c6c679ef26d17546d98916e385d90e50ac9dd9ff2f0
+Description: A subtle shift from the familiar
+Name: OrwellVK
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/OrwellVK/refs/heads/main/Sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/OrwellVK/main/Sileo/depiction.json
 
 Package: com.nan.pointless
 Architecture: iphoneos-arm64
