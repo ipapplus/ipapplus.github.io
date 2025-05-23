@@ -4516,6 +4516,31 @@ Name: AppleColorEmoji Unicode 16.0 HD (EFM)
 Author: PoomSmart
 Depiction: https://poomsmart.github.io/repo/depictions/emojifontefm.html
 
+Package: com.tigisoftware.appdatamanager
+Architecture: iphoneos-arm64e
+Version: 1.8.2-5
+Priority: optional
+Section: Utilities
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 9121
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 7.0), ldid
+Filename: ./debs/arm64e/Apps.Manager.1.8.2-5.arm64e.deb
+Size: 2475500
+MD5sum: 3bdbd0ca9dc093b47fb5af0d21e2cc4f
+SHA1: a32bbb899f448a133452a35e24c15b25602a65ea
+SHA256: 8a4e186daec09f5ac61b8f650485659342b98528149fba7862ebc1cc5191b951
+SHA512: 4f3c086ef992dac8188c1ffcd18177b3360a314045b7368afba9c5884afae167f4e14174fb16a93e7780f86d1e1344b54628c20e7dcf576a8bb9b6e753cb46e7
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appsmanagerDp
+Description: Tool to WIPE, BACKUP, RESTORE AppData for installed Apps
+Tag: purpose::uikit
+Name: Apps Manager
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appsmanagerDp
+Sponsor: thebigboss.org <http://thebigboss.org>
+Author: TIGI Software <satashi2009@gmail.com>
+dev: satashi2009
+Icon: file:///Applications/ADManager.app/AppIcon60x60@2x.png
+
 Package: apple.ios14.font
 Architecture: iphoneos-arm64e
 Version: 1.0
@@ -5097,6 +5122,28 @@ Author: gilesgc
 Depiction: https://gilesgc.github.io/repo/depictions/?p=com.gilesgc.cccalc
 Icon: https://gilesgc.github.io/repo/depictions/com.gilesgc.cccalc/cccalc-icon.png
 
+Package: com.jailbreak365.safeccmodules
+Architecture: iphoneos-arm64e
+Version: 1.5-1
+Section: Addons (ControlCenter)
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 5131
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0), com.opa334.ccsupport
+Filename: ./debs/arm64e/CCModules.1.5-1.arm64e.deb
+Size: 1127652
+MD5sum: 726d436eb35501eec1bfe523f23e926c
+SHA1: 8f021b54d02df3fc4934561961fa8d14a8c625d8
+SHA256: 28b8504845598172e29203044701d28ea643da78086a7edebb953a3ead142630
+SHA512: a5840f7006fde33911424dfc3cb01004d1ef62f4a8036ddf668a67dd848e4220ada8dcd5f5b5f1a0b86cfb796640be6fceb622aa4aa10a55421c93a31c5364bd
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Description: More control center modules for iOS 11/12/13
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Author: jailbreak365 <jailbreak365@mail.com>
+Name: CCModules
+dev: jailbreak365
+
 Package: com.mtac.ccpowermenu
 Architecture: iphoneos-arm64e
 Version: 1.0.2
@@ -5158,6 +5205,24 @@ Name: CallMeMaybe
 Author: dvntm
 Icon: https://raw.githubusercontent.com/dayanch96/CallMeMaybe/refs/heads/main/sources/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/CallMeMaybe/main/sources/depiction.json
+
+Package: com.dell.chesspatch
+Architecture: iphoneos-arm64e
+Version: 0.0.1
+Section: Tweaks
+Maintainer: Dell <tranthikimchi2601@gmail.com>
+Installed-Size: 244048
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Filename: ./debs/arm64e/Chess.Patch.0.0.1.arm64e.deb
+Size: 2777884
+MD5sum: dda176734ffe48a543167a05aef65e0b
+SHA1: f932564dd2604d9540cb104c774dcabce0b382a5
+SHA256: 1f0301fae34733834e2ad02e9095b7da609fec423620200401da7b651494697e
+SHA512: 3043265999b9c20e5056bd8f568020f857c4f2ff59024cb0460057b7b37ac59be1f968cb4dfb1e9961c99a62b24363cea8c8d31f697ca8f6523549cc559651e6
+Description: Unlock Diamond Membership
+Name: Chess Patch
+Author: Dell <tranthikimchi2601@gmail.com>
 
 Package: com.nahtedetihw.closeall
 Architecture: iphoneos-arm64e
@@ -5275,6 +5340,24 @@ Description: تحميل ونسخ روابط ديب من سورسات Download de
 Name: CopyLinkDeb
 Author: Tools4cydia
 
+Package: me.tomt000.copylog
+Architecture: iphoneos-arm64e
+Version: 1.5.6
+Section: Tweaks
+Maintainer: TomT000
+Installed-Size: 4252
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.0xkuj.copylogfix16
+Filename: ./debs/arm64e/CopyLog.1.5.6.arm64e.deb
+Size: 1507876
+MD5sum: 3b16d805b5c93ab2232fef484705fc36
+SHA1: 79e4d321b2df4e6d35be6de8e3ba29a75b0a85c6
+SHA256: 684eded416c2570ded87597b8aabc3b485687e871643e8af0d490c2b2fa590c1
+SHA512: 181f64641a9a2ddb63069ae611abdfc11f62def53d7fb89552e01b450cb435acb2f873c4d824568aecdf903ca295aa456a7d418e96e5cbd26903fa418c004a51
+Description: Clipboard history manager for iOS!
+Name: CopyLog
+Author: TomT000
+
 Package: com.0xkuj.copylogfix16
 Architecture: iphoneos-arm64e
 Version: 1.0.1
@@ -5292,6 +5375,24 @@ SHA512: 4f33d1b7c567cffc709608038a303d19b979f75108be18953686f82b8b1af92de7a780cd
 Description: Fix copylog not working on iOS16
 Name: CopyLogFix16
 Author: 0xkuj
+
+Package: com.squidforce.copyvault
+Architecture: iphoneos-arm64e
+Version: 1.9.0
+Section: Tweaks
+Maintainer: SquidForce
+Installed-Size: 6304
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.opa334.altlist
+Filename: ./debs/arm64e/CopyVault.1.9.0.arm64e.deb
+Size: 1700372
+MD5sum: f47098fd716ac5cc777f94c43915b13b
+SHA1: a674675befd656564adb78d31ad8495d9c34bb28
+SHA256: 05365303b3e636c981d9678976a62a7f76638eb34e51f7a7178e9c8a03ece762
+SHA512: dd995d6837ce39d766867583c50d0365cd715a0849df76471b7179ef2a0bdae8af78aa62c4fb673fe16009c3468fb79af9934c8c530d60884df23eea048d738f
+Description: Your Copy Vault, Your Pasteboard
+Name: CopyVault
+Author: SquidForce
 
 Package: com.muirey03.cr4shed
 Architecture: iphoneos-arm64e
@@ -5712,6 +5813,22 @@ Description: Live wallpapers for iOS
 Name: Eneko
 Author: Traurige <hello@traurige.dev>
 
+Package: com.cyrex.epiphany
+Architecture: iphoneos-arm64e
+Version: 1.0.1
+Section: Themes
+Maintainer: Cyrex
+Depends: com.anemonetheming.anemone | com.spark.snowboard
+Filename: ./debs/arm64e/Epiphany.1.0.1.arm64e.deb
+Size: 1100140
+MD5sum: 67e5be2732ad087271b6f66031838b2c
+SHA1: 44c2cbc9347d8108ee3b0b79bf72e9236b9040fd
+SHA256: acb7cbfbddfa21c9fd859c07c4e2c4e671f94ebc5a135db1f547898d240cd7be
+SHA512: d2c1bd3c278941ca28c3b40b6198aa89353f122296b65f2165e0c92cb4f098dffc70227fc267f6c255821233b39ca289bd085493a7db9f4eba55a0b961b5e067
+Description: A theme with beautiful icons!
+Name: Epiphany
+Author: Cyrex
+
 Package: xyz.skitty.ersatz
 Architecture: iphoneos-arm64e
 Version: 1.0.1
@@ -5732,6 +5849,25 @@ Icon: https://skitty.xyz/repo/icons/xyz.skitty.ersatz.png
 Depiction: https://skitty.xyz/repo/depictions/xyz.skitty.ersatz/
 SileoDepiction: https://skitty.xyz/repo/depictions/xyz.skitty.ersatz/sileo.json
 Author: Skitty
+
+Package: com.netskao.flexlist
+Architecture: iphoneos-arm64e
+Version: 1.4-2
+Section: Netskao-Tweaks
+Maintainer: Nets
+Installed-Size: 5020
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/arm64e/FLEXList.1.4-2.arm64e.deb
+Size: 1326216
+MD5sum: 000dd001e7ea209d0349a35fae50a32b
+SHA1: ac7b9c1f6d9e39b413f9352d2dd0a21bbc019182
+SHA256: 24d2a71e0bbbe130c45e5295a4bf25cc3c78984bd5a68270cd3c9bd92e7e82b9
+SHA512: a261313f7766b9ceb83f377a4e78719a1bac71e695d98fb2263e2aea588dff0205d21393b3b595365a4bd6cdceb71329ff95aa5a71ed106a174cfb07e9a95fad
+Description: FLEXList is a wrapper tool for FLEX Tool
+Name: FLEXList
+Author: Netskao
+SileoDepiction: https://jailrepo.initnil.com/Depictions/com.netskao.flexlist.json
 
 Package: com.dvntm.fbo
 Architecture: iphoneos-arm64e
@@ -5899,6 +6035,27 @@ Description: FreePIP is a tweak to un-snap and scale the view of Picture-in-Pict
 Name: FreePIP
 Author: Soh Satoh
 SileoDepiction: https://repo.keycap.one/depictions/one.keycap.freepip.json
+
+Package: com.sparklechan.swifty
+Architecture: iphoneos-arm64e
+Version: 2.0~alpha5
+Section: Utilities
+Maintainer: FCCT
+Depends: swift, clang-14, ldid, git
+Conflicts: com.sparklechan.sparkkit
+Filename: ./debs/arm64e/FridaCodeManager.2.0~alpha5.arm64e.deb
+Size: 3083888
+MD5sum: 51f04e216cb11997b6ecb72b46480deb
+SHA1: 0f6d3a995939ef41ca9e89b7359d9be365567203
+SHA256: 8a1dfcdb2094547a58b0c0f829f1992221ea1b1cc7ecf59e4e7228d3bf9c5110
+SHA512: af6c9c24beac28d46e958e04f07545e26159c39a2c7d694dfa2d5d86a789cb73c48239a039a01910fe606ae79a6abd53df09753300e5ab6c95ac5f8a76030c47
+Description: Full fledged Xcode-like IDE for iOS
+Name: FridaCodeManager
+Icon: https://img.chariz.cloud/icon/fridacodemanager/icon@3x.png
+Depiction: https://chariz.com/get/fridacodemanager
+SileoDepiction: https://chariz.com/api/sileo/package/com.sparklechan.swifty/depiction.json
+Header: https://cdn.chariz.cloud/sileo-banner/fridacodemanager.jpg
+Author: FCCT
 
 Package: jp.uzra.frontestpip
 Architecture: iphoneos-arm64e
@@ -7708,6 +7865,48 @@ Author: PoomSmart
 Depiction: https://poomsmart.github.io/repo/depictions/recordpause.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/recordpause.json
 
+Package: com.fouadraheb.regram
+Architecture: iphoneos-arm64e
+Version: 1.0.30
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 11228
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64e/Regram.for.Instagram.1.0.30.arm64e.deb
+Size: 3072360
+MD5sum: d6ba1534ff79128f676cb40a96cccebd
+SHA1: 13448f4b58caf2af5ec634c0defbc9628387bf73
+SHA256: 7d027bbabfeb84cb281d0c904774e3e3a4862814fdf5a69df150a1f16763a733
+SHA512: d0731ec1db777d8e4c87a058a1bb36bf52851ba2f402cd891c69cf2df0bc37608ff3f0423d9668f09283bed3c349cb75a6f5505f3c2a642ad6377212a73f43e7
+Description: The all-in-one tweak for Instagram
+Name: Regram for Instagram
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
+
+Package: com.fouadraheb.regram
+Architecture: iphoneos-arm64e
+Version: 1.0~b23
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 10956
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64e/Regram.for.Instagram.1.0~b23.arm64e.deb
+Size: 3017360
+MD5sum: 9cf2c32797e7269e5f37f6287652d13b
+SHA1: bf55b6f9726ff6ace403dfaba8e21b86c99fc015
+SHA256: 764071bac376f40ee19aa11642791166fca149bd69478eabf4dd04fa5a576065
+SHA512: 09bc946932ad7fc44089417cc78db564a8fa8992789f9ef87e7fb7fb241be2f40b70cb2fca88faaa62e2c5602d3b4500b5647b8bd0cbc4a05899305578422bd6
+Description: The all-in-one tweak for Instagram
+Name: Regram for Instagram
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
+
 Package: com.ps.replaykitmax
 Architecture: iphoneos-arm64e
 Version: 1.0.1
@@ -8146,6 +8345,25 @@ Description: Remove share and lookup from menu
 Name: SkinnyMenu
 Author: FoxfortMobile
 
+Package: com.jontelang.snapper3
+Architecture: iphoneos-arm64e
+Version: 1.2.1
+Section: Tweaks
+Maintainer: Jonathan Winger-lang
+Installed-Size: 4148
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware(>=14.0), preferenceloader
+Conflicts: com.jontelang.snapper, com.jontelang.snapper2.packix, xyz.cypwn.snapperfr33
+Filename: ./debs/arm64e/Snapper.3.1.2.1.arm64e.deb
+Size: 1022812
+MD5sum: 3dc3ece9dd5e5afc8181cd8ddb68b0b4
+SHA1: e8a44f734cd50fca55a37906309c3262c2d45619
+SHA256: bebc95f23b9c8d9f5799775c18c4deb72514cfb9892a190cbcd0ec13ec9d02a4
+SHA512: 857e9a2c00af669774d0f0f96dfdb98410f25b32d4b4db5d106ed1d34e0b1e60ea53a84bbe837e48ae0a1503251b821477c6b95ee51e157702f21f9f7f94a6a5
+Description: Pin screenshots on the screen.
+Name: Snapper 3
+Author: Jonathan Winger-lang
+
 Package: com.bypassjb.sniper
 Architecture: iphoneos-arm64e
 Version: 6.2
@@ -8163,6 +8381,27 @@ SHA512: a2f78a42ed5dfdd1e98a8e7eba3825980553205e8a9beaf6e76c79c606cb4aa72056338d
 Description: Sniper bypassjb Work in some apps not all applications
 Name: Sniperbypassjb
 Author: Sniper @DNS_Sys
+
+Package: com.spark.snowboard
+Architecture: iphoneos-arm64e
+Version: 1.5.37-Beta4-rootless
+Section: Tweaks
+Maintainer: Spark
+Installed-Size: 3268
+Provides: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader
+Conflicts: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Replaces: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Filename: ./debs/arm64e/SnowBoard.1.5.37-Beta4-rootless.arm64e.deb
+Size: 1130048
+MD5sum: 75560c6be809a79abf84b43c77f87d9e
+SHA1: 4b55e6a834d28efc9aeb85defb2486285fb221b6
+SHA256: 6d6fdd167915df096e6126bee34e6ab6f940876faf2ead112375028df0d93604
+SHA512: 1d9389a4e2d53eec561629924da60f65832d0a54d61ff5d5be905fd70c324ad73bb14ea57c72c00e8c15204cd41c1d349f8494948d6158a9389f420c0063ea99
+Description: Snowboard theming engine
+Name: SnowBoard
+Author: Spark & Dennis D. Bednarz
 
 Package: com.spark.snowboard.dock
 Architecture: iphoneos-arm64e
@@ -8338,6 +8577,26 @@ SHA512: 9b0aaf6811ebfe5014952f5b6efc61437980bbe005c11bb99e69539f680fe81b12a78e0f
 Description: Make pip view square
 Name: SquarePiP
 Author: uz.ra
+
+Package: com.f0u4d.stalky
+Architecture: iphoneos-arm64e
+Version: 4.1.41
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 6744
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.5.20)
+Enhances: WhatsApp
+Filename: ./debs/arm64e/Stalky.4.1.41.arm64e.deb
+Size: 1580440
+MD5sum: 3266d9fa53b785710882c32a5a03f008
+SHA1: 227cceba19900e1c909c73c90fa17a517c6f86a9
+SHA256: 360156672d2b10c693a7c2f7cbbbd90a06c9018bb20cae5eca76283fd4fba01a
+SHA512: 4e96f9f9b3130ee790a1e5d4336d57cf84a2bb3caae103412803d465c3ad05cb48d3ab461286a9d1d44e1627c3bee83d9ad76e931cd5c35b6a1fb189431efd3f
+Description: Track & download your contacts latest profile & statuses updates on WhatsApp
+Name: Stalky
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.stalky
 
 Package: com.yourepo.0xkuj.storeswitcher2rootless
 Architecture: iphoneos-arm64e
@@ -8530,6 +8789,24 @@ Description: Automatically switch away from "everyone" AirDrop visibility after 
 Name: TempDrop
 Author: iCraze
 
+Package: com.sudo.termcolors
+Architecture: iphoneos-arm64e
+Version: 2.2.2
+Section: Utilities
+Maintainer: Sudo
+Depends: mobilesubstrate
+Filename: ./debs/arm64e/Term.Colors.2.2.2.arm64e.deb
+Size: 2079704
+MD5sum: b8ca2cdde28e16a862b8e26981c590fe
+SHA1: 225958cd947a6929e85294f0bb1fb2af13d6f178
+SHA256: aa7c755ffdb817f40aa1f365370da5eef11c261c39081a8955785f0c8dc430bf
+SHA512: b9cc537b0a3b24410a048105754c60cd5d317051b191067f869100f1a1ee4dd7cf5724c70d948b0662ed47d0d61e9e9bd8f9da43b94dc69383844565eca26c05
+Description: Bash and Zsh setup with colorized prompt, text, dircolors, cat (bat) syntax highlighting and nano colors. Random color prompt generator by typing 'random' in your terminal.
+Depiction: https://sudo9000.github.io/depictions/termcolors/index.html
+Name: Term Colors
+Author: Sudo
+Icon: https://sudo9000.github.io/depictions/termcolors/assets/icon.png
+
 Package: dev.objcmsgsend.theta
 Architecture: iphoneos-arm64e
 Version: 1.1
@@ -8580,6 +8857,25 @@ SHA512: ef65eb5b041d7b3934a26a08f27dfe073551d7d7dbce83010d89a2d526e89f7e4d7f16be
 Description: Tweak to enable the Photos in comments function on TikTok if you don't yet have it! (Also enables the stickers in comments but doesn't work if you're not in the region you're supposed to be in to have it)
 Name: TikTokPhotoComments
 Author: Nathan Senter
+
+Package: com.foxfort.translomatic
+Architecture: iphoneos-arm64e
+Version: 2.18.31
+Section: Tweaks
+Maintainer: FoxfortMobile
+Installed-Size: 5080
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.foxfort.foxforttools (>= 1.4.7), com.opa334.altlist
+Filename: ./debs/arm64e/Translomatic.2.18.31.arm64e.deb
+Size: 1170068
+MD5sum: 947f7d5290d09b022a779c1326a00978
+SHA1: 9d82b646787f5ce32b702cc6f8316e29579bb25e
+SHA256: ce4759e0ad44581b3fc4fde378dcdc4a8c7915ebef021dcdc19b241fa70d0a6b
+SHA512: f348174b0d228b39d02e80ce4f377e53d80c24ffaf547ba553503f3623d1bf9652bb03c2fa5e7ca58c5b0fc172a76a3abe2e22e9f8675f524d3c6d3d401a57fe
+Description: Quickly translate any text
+Name: Translomatic
+Author: FoxfortMobile
+Icon: file:///Library/PreferenceBundles/translomaticsettings.bundle/icon@3x.png
 
 Package: xyz.cypwn.transparentpipgrabber
 Architecture: iphoneos-arm64e
@@ -9037,6 +9333,26 @@ Author: P2KDev <p2kdev@gmail.com>
 Depiction: https://p2kdev.github.io/repo/depictions/index.html?packageId=com.p2kdev.waqt
 Icon: https://p2kdev.github.io/repo/api/packageinfo/com.p2kdev.waqt/icon.png
 SileoDepiction: https://p2kdev.github.io/repo/depictions/native/com.p2kdev.waqt.json
+
+Package: com.fouadraheb.watusi3
+Architecture: iphoneos-arm64e
+Version: 1.2.72
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 6456
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.5.20)
+Filename: ./debs/arm64e/Watusi.3.for.WhatsApp.1.2.72.arm64e.deb
+Size: 1925868
+MD5sum: 8946e9b4e90a12450cbc78c42b22f8db
+SHA1: d4ab623c08a56275b6e89eeaabe0552f35d3d7c7
+SHA256: d5e8ca6fb784f16947a22d65055c57e811f850a8f237a1ab1c39ad3f55d090e9
+SHA512: fe18f122f63e1fdcfa656a5c7de5e746a91e076c51ad52f285874a89fc9edddf76c17a301d4ed237ee0d353767b3b9043729a3d9257b63c738942f360f628b57
+Description: The all-in-one tweak for WhatsApp Messenger
+Name: Watusi 3 for WhatsApp
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.watusi3
+Author: Fouad Raheb <support@fouadraheb.com>
+Icon: file:///Library/Application Support/Watusi/Resources.bundle/Settings.bundle/WatusiSettingsLogo@3x.png
 
 Package: com.ps.whatsappefm
 Architecture: iphoneos-arm64e
