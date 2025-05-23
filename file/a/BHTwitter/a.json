@@ -1,0 +1,144 @@
+{
+  "class": "DepictionTabView",
+  "headerImage": "https://a7m.dev/file/a/BHTwitter/0.png",
+  "tintColor": "#4A99E9",
+  "minVersion": "0.3",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "الوصف",
+      "views": [
+        {
+          "text": "تلقرام",
+          "action": "https://t.me/ipapplus",
+          "openExternal": 1,
+          "class": "DepictionButtonView"
+        },
+        {
+          "text": "تويتر",
+          "action": "https://x.com/ipapplus",
+          "openExternal": 1,
+          "class": "DepictionButtonView"
+        },
+        {
+          "markdown": "## أقوى أداة لتحسين تجربتك في تويتر\n- تخصيص واجهة تويتر بالكامل (الشريط السفلي، المظهر، الثيم، الأيقونة)\n- تحميل الفيديوهات والصور بأعلى جودة ممكنة مع خيارات متقدمة\n- إخفاء الإعلانات، التغريدات المقترحة، وعدد المشاهدات\n- تفعيل نمط القراءة للثريدات وتحسين تجربة التصفح\n- قفل التطبيق بكلمة مرور لزيادة الخصوصية\n- التحكم في الروابط وإزالتها من التتبع الإعلاني\n- خيارات لتأكيد التفاعل (إعجاب، متابعة، تغريد)\n- دعم الملاحظات الصوتية والتغريد بصوت مخصص\n- ترجمة ونسخ معلومات الملف الشخصي بسهولة\n- فتح الروابط تلقائياً في المتصفح الافتراضي\n\n**... وأكثر**\nأداة قوية تمنحك تحكم كامل بتجربتك على تويتر، مع ميزات تخصيص، أمان، وتحسين الأداء.",
+          "useSpacing": true,
+          "class": "DepictionMarkdownView"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 8
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "صور توضيحية",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 8
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 0,
+          "itemSize": "{2500, 2500}",
+          "screenshots": [
+            {
+              "accessibilityText": "Screenshot",
+              "url": "https://a7m.dev/file/a/BHTwitter/1.png"
+            }
+          ]
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 16
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "التفاصيل",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 8
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "text": "Bandar Alruwaili",
+          "title": "المطور"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "text": "4.3.2",
+          "title": "الإصدار"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "text": "10.93 وأقل",
+          "title": "إصدار التطبيق"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "text": "iOS 15 - 18",
+          "title": "النظام"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "text": "2025/4/23",
+          "title": "اخر تحديث"
+        },
+        {
+          "title": "المصدر @actuallyaridan",
+          "action": "https://github.com/actuallyaridan/NeoFreeBird-BHTwitter",
+          "openExternal": 1,
+          "class": "DepictionTableButtonView"
+        },
+        {
+          "title": "نسخة ipa إصدار 10.77.1",
+          "action": "https://2u.pw/RequY",
+          "openExternal": 0,
+          "class": "DepictionTableButtonView"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "التغييرات",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### 4.3-6\n- تم إضافة خيار لإخفاء تبويب الفيديوهات في الأسفل (في حال لم يعمل، اضغط على أيقونة سلة المهملات في أعلى اليمين لإعادة التعيين)"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### 4.3-4\n- تم إضافة خيار لإخفاء الفيديوهات الرائجة في البحث\n- خيار 'إخفاء ترويج بريميوم' يخفي الآن أيضًا إعلانات التايم لاين"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### 4.3-3\n- تم إصلاح مشكلة إخفاء زر 'الترقية' في أعلى اليمين في إصدار X 10.60"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### 4.3-2\n- إخفاء أزرار 'موثق' و'الترقية' في الملف الشخصي وشريط التنقل\n- إخفاء تبويب Gork من الشريط السفلي"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "class": "DepictionTabView",
+  "minVersion": "0.4",
+  "headerImage": "https://i.imgur.com/EIGnAjW.jpeg",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 6,
+          "itemSize": "{160, 346}",
+          "screenshots": [
+            {
+              "accessibilityText": "Screenshot",
+              "url": "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/1.png"
+            },
+            {
+              "accessibilityText": "Screenshot",
+              "url": "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/2.png"
+            },
+            {
+              "accessibilityText": "Screenshot",
+              "url": "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/3.png"
+            }
+          ]
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Description"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Feature-rich Twitter Enhancer**\n\n- Download videos (even from private accounts)\n- Custom tab bar for personalized navigation\n- No history mode for added privacy\n- Option to hide tweet topics\n- Disable video layer captions\n- Padlock for extra security\n- Font customization feature\n- New DM search UI toggle\n- Automatically load photos in highest quality\n- Undo tweet functionality\n- Themes support (like Twitter Blue)\n- App icon customization\n- Twitter Circle feature support\n- Copy profile information with ease\n- Save tweets as images\n- Hide the Spaces bar\n- Disable RTL layout\n- Always open links in Safari\n- Translate user bios\n- Disable edge-to-edge new tweet style\n- Enable voice tweets and voice messages in DMs\n- Hide promoted tweets from the timeline\n- Confirmation alert before tweeting\n- Confirmation alert before liking\n- Confirmation alert before following\n- Built-in FLEX debugging tool\n\n* *\n\nThis project is open-source and available on [GitHub](https://github.com/BandarHL/BHTwitter).",
+          "useSpacing": true
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "4.4"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Size",
+          "text": "6.6 MB"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "iOS Versions",
+          "text": "15.0 - 18.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Last update",
+          "text": "May 14, 2025"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Developer"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 15
+        },
+        {
+          "class": "DepictionLayerView",
+          "views": [
+            {
+              "class": "DepictionLabelView",
+              "text": "BandarHL",
+              "fontSize": 14,
+              "fontWeight": "semibold",
+              "margins": "{2, 32, 2, 15}"
+            },
+            {
+              "class": "DepictionImageView",
+              "URL": "https://avatars.githubusercontent.com/u/31299470?v=4",
+              "width": 24,
+              "height": 24,
+              "cornerRadius": 4
+            }
+          ]
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 15
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionLayerView",
+          "views": [
+            {
+              "class": "DepictionLabelView",
+              "text": "4.4",
+              "fontWeight": "bold",
+              "fontSize": 16
+            },
+            {
+              "class": "DepictionLabelView",
+              "text": "May 14, 2025",
+              "fontWeight": "semibold",
+              "fontSize": 16,
+              "textColor": "#696969",
+              "alignment": 2
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fix all crashes in newer versions\n- Add tabs to the hide page\n- New feature: DM replay later page and tags\n- New feature: Upload 4K media\n- New feature: Voice feature in posts and replies\n- Updated localizations\n- Removed unnecessary options\n\n**Thanks to:**\n@actuallyaridan, @Tulugaak"
+        },
+        {
+          "class": "DepictionLayerView",
+          "views": [
+            {
+              "class": "DepictionLabelView",
+              "text": "4.3",
+              "fontWeight": "bold",
+              "fontSize": 16
+            },
+            {
+              "class": "DepictionLabelView",
+              "text": "Feb 10, 2024",
+              "fontWeight": "semibold",
+              "fontSize": 16,
+              "textColor": "#696969",
+              "alignment": 2
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Upload custom voice for voice tweets\n- Select preferred URL host (fxtwitter, vxtwitter, etc.) when copying tweets\n- Removed unnecessary options from settings."
+        }
+      ]
+    }
+  ]
+}

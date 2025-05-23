@@ -1,0 +1,54 @@
+{
+  "class": "DepictionTabView",
+  "headerImage": "https://a7m.dev/file/0.png",
+  "tintColor": "#1E4C63",
+  "minVersion": "0.3",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "الوصف",
+      "views": [
+        {
+          "text": "تلقرام",
+          "action": "https://t.me/ipapplus",
+          "openExternal": 1,
+          "class": "DepictionButtonView"
+        },
+        {
+          "text": "تويتر",
+          "action": "https://x.com/ipapplus",
+          "openExternal": 1,
+          "class": "DepictionButtonView"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 8
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "الخط السعودي الجديد",
+          "useBoldText": true,
+          "useBottomMargin": false
+        },
+        {
+          "class": "DepictionSpacerView",
+          "spacing": 8
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 0,
+          "itemSize": "{500, 500}",
+          "screenshots": [
+            {
+              "accessibilityText": "Screenshot",
+              "url": "https://a7m.dev/file/1.png"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
