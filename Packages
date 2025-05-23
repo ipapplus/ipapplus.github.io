@@ -1625,6 +1625,40 @@ Author: MTAC
 Icon: https://mtac.app/repo/assets/com.mtac.ccpowermenu/icon-rounded.png
 SileoDepiction: https://mtac.app/repo/depiction/native/com.mtac.ccpowermenu.json
 
+Package: com.dell.chesspatch
+Architecture: iphoneos-arm64
+Version: 0.0.1
+Section: Tweaks
+Maintainer: Dell <tranthikimchi2601@gmail.com>
+Installed-Size: 244048
+Depends: mobilesubstrate
+Filename: ./debs/arm64/Chess.Patch.0.0.1.arm64.deb
+Size: 2777892
+MD5sum: 01508262c86fb2fd167d4a62cf959044
+SHA1: b9ed94ab205c2c2ce1aecf2f9c6e272f773abbb5
+SHA256: f5fc1892a3f3d30cf32c746c3e1a913446e7412fdcdd7291bbe0d7a0970efcce
+SHA512: c7c091676f5c68237cb9e8a45809a2c5524574e694157e0a1c2323e535a5631cb6ea09da4d70529dc9d116a63c6442669e87132f8d5d83909e4aa67fc8b259ac
+Description: Unlock Diamond Membership
+Name: Chess Patch
+Author: Dell <tranthikimchi2601@gmail.com>
+
+Package: org.coolstar.classicfolders2
+Architecture: iphoneos-arm64
+Version: 3.0.6
+Section: Tweaks
+Maintainer: CoolStar
+Installed-Size: 4468
+Depends: mobilesubstrate, preferenceloader, firmware(>=15.0), com.ichitaso.iconorder
+Filename: ./debs/arm64/ClassicFolders.2.3.0.6.arm64.deb
+Size: 3290328
+MD5sum: b9977f23cda85dc985dba260444947fa
+SHA1: 9891ff7e8a8121e62bac8165a4b73e86efc04d91
+SHA256: 5f12088719641066a12b4f2e46da21fc78178f600b60a8b10112935cb6605ef7
+SHA512: 947fe3859f64c73792fdfa112adbdbf7976bc7d3a7e44bde36ee91963808020d45a8ea0dda96826a1827c89f415d20be42da4b729578fc5f2ad147616b18b6bb
+Description: An awesome MobileSubstrate tweak!
+Name: ClassicFolders 2
+Author: CoolStar
+
 Package: zp.cocoatop64.unject
 Architecture: iphoneos-arm64
 Version: 3.1.1
@@ -2664,6 +2698,30 @@ SileoDepiction: http://cydia.nixuge.me/depiction/native/me.nixuge.networkmanager
 ModernDepiction: http://cydia.nixuge.me/depiction/native/me.nixuge.networkmanager.json
 Icon: http://cydia.nixuge.me/assets/me.nixuge.networkmanager/icon.png
 
+Package: ws.hbang.newterm3
+Architecture: iphoneos-arm64
+Version: 3.0~beta1-3
+Section: Terminal Support
+Maintainer: HASHBANG Productions <support@hbang.ws>
+Installed-Size: 24244
+Depends: firmware (>= 14.0), zsh | bash | fish, coreutils, ncurses, system-cmds
+Recommends: gettext-localizations, iterm2-shell-integration, zsh-autosuggestions, zsh-syntax-highlighting
+Conflicts: ws.hbang.newterm, ws.hbang.newterm2
+Replaces: ws.hbang.newterm, ws.hbang.newterm2
+Filename: ./debs/arm64/NewTerm.3.Beta.3.0~beta1-3.arm64.deb
+Size: 3946476
+MD5sum: 85c4ca320833bee5fbf6fbaba94eab3d
+SHA1: d33858943939b8bd165a8dc1855dbe06804ea3ac
+SHA256: 2198d4872bb238decbf0f2b4aa0016b9939d3a5f3ab6ecf83f33fcc879d1b3ea
+SHA512: 20bf65586de87d3336410f01cf3bb97a9d0be7fcee076935789de8adfa286fb5cb18e4161060ce84b51065ee6107cf4527d6202b6981f5722d944d5e783bfb98
+Description: Powerful terminal app for iOS
+Tag: compatible_min::ios14.0
+Name: NewTerm 3 Beta
+Author: HASHBANG Productions <support@hbang.ws>
+Icon: https://img.chariz.cloud/icon/newterm-beta/icon@3x.png
+Depiction: https://chariz.com/get/newterm-beta
+Support: https://hashbang.productions/support/
+
 Package: net.cadoth.nosbreload
 Architecture: iphoneos-arm64
 Version: 0.1.1-1
@@ -3012,6 +3070,26 @@ Author: zhaonan
 SileoDepiction: https://invalidunit.github.io/sileodepiction/com.nan.rebirth/js.json
 Icon: https://invalidunit.github.io/sileodepiction/Default/image_fix.png
 
+Package: com.fouadraheb.regram
+Architecture: iphoneos-arm64
+Version: 1.0~b23
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 10956
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64/Regram.for.Instagram.1.0~b23.arm64.deb
+Size: 3024984
+MD5sum: 5b826a89d17094c0734a2beca38136b8
+SHA1: 0752944924071847774d7fb5465b95e884e5da69
+SHA256: 586a0f6d23083684b9ec6d4e7e82d8414d898fc653d6496b479e66095aa4fd1b
+SHA512: 38a745f421c372583895af5800fe20a071fc7dd7bd7f30fce2b4e8cbf7c168533dda619ba428056746e32054f39ed7fe415e6b0f6b724fe52c45e3690308e577
+Description: The all-in-one tweak for Instagram
+Name: Regram for Instagram
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
+
 Package: com.ps.replaykitmax
 Architecture: iphoneos-arm64
 Version: 1.0.1
@@ -3313,6 +3391,25 @@ Depiction: https://skitty.xyz/repo/depictions/xyz.skitty.spectrum/
 SileoDepiction: https://skitty.xyz/repo/depictions/xyz.skitty.spectrum/sileo.json
 Icon: https://skitty.xyz/repo/icons/xyz.skitty.spectrum.png
 Author: Skitty & EvenDev
+
+Package: com.f0u4d.stalky
+Architecture: iphoneos-arm64
+Version: 4.1.40
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 6760
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.5.5)
+Enhances: WhatsApp
+Filename: ./debs/arm64/Stalky.4.1.40.arm64.deb
+Size: 1606972
+MD5sum: 9254209e3aee5301ee29eca834846297
+SHA1: 1234314e2e7fc2f45a7030e5a563649f77057ca6
+SHA256: 047c0e5374952f76cd0db3832eb2290b2fe0c902be2805397cc9b256f3e80ece
+SHA512: 666bb68d7a6ee6330f5d15fc20465f4f6553787d810d99ca8cef986fbac14e898d80a70caa17e48b025e89a1c2054674a19af88cbae28c6b31fc7b967e45386f
+Description: Track & download your contacts latest profile & statuses updates on WhatsApp
+Name: Stalky
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.stalky
 
 Package: zp.stopautolaunchapps
 Architecture: iphoneos-arm64
@@ -3629,6 +3726,42 @@ SHA512: 9484db69b32ed89742e1fac40f9cb0af0364e9252b609f37e8f54c7d170ebd4b34054b9a
 Description: Fix WhatsApp for iOS 14.x to 15.0.2
 Name: WASendFix
 Author: Mhster_Nice
+
+Package: com.fouadraheb.watusi3
+Architecture: iphoneos-arm64
+Version: 1.2.60
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 6424
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.5.8)
+Filename: ./debs/arm64/Watusi.3.for.WhatsApp.1.2.60.arm64.deb
+Size: 1930920
+MD5sum: ac5069c6cdf32e25c9b442631bae23b5
+SHA1: 466a8b18694a61ccd6643ef56e7a75115ff332bf
+SHA256: a8c44673a6de055dbd5a0223398d6349b2255e49c8cee5078da9fd14bdc49b18
+SHA512: 97748c8ac39f311ede9dc22e1befa126f3bad1a4acdc8e60402141c6da5cbd4310d43f661f210ce7fd1f8416912bfa55c6a81b89d63df986db6ecc6619d7e033
+Description: The all-in-one tweak for WhatsApp Messenger
+Name: Watusi 3 for WhatsApp
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.watusi3
+Author: Fouad Raheb <support@fouadraheb.com>
+Icon: file:///Library/Application Support/Watusi/Resources.bundle/Settings.bundle/WatusiSettingsLogo@3x.png
+
+Package: com.f0u4d.watusitools
+Architecture: iphoneos-arm64
+Version: 2.5.10
+Section: Development
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Depends: firmware (>= 12.0)
+Filename: ./debs/arm64/WatusiTools.2.5.10.arm64.deb
+Size: 4634624
+MD5sum: 7d3ceae2a341c20dd7ecd5b6a0972f8a
+SHA1: 173fe87a88eb5a60d7f010ec3d5927e0064b413d
+SHA256: 81deb450721f663324375934c3cca4b7008ab7230d113421c4b201c8900137c2
+SHA512: 9a36fde8800bd9ae7cd13ed39bedad9bc9296d16474e50b78adba92f5be5444ca907b9985905bacea6fe4b5fd6f84d03e33f596939056acb6e26cb8de17dca2d
+Description: Library for Watusi, Regram and other tweaks
+Name: WatusiTools
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.watusitools
 
 Package: com.lheap.whatspad
 Architecture: iphoneos-arm64
