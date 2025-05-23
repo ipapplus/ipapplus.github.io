@@ -5287,6 +5287,25 @@ Author: dvntm
 Icon: https://raw.githubusercontent.com/dayanch96/CallMeMaybe/refs/heads/main/sources/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/CallMeMaybe/main/sources/depiction.json
 
+Package: app.catscript.lite
+Architecture: iphoneos-arm64e
+Version: 1.5.3
+Section: Tweaks
+Maintainer: 0x530c<0x530c@gmail.com>
+Installed-Size: 5892
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Conflicts: app.catscript.pro
+Filename: ./debs/arm64e/CatScript.1.5.3.arm64e.deb
+Size: 29331680
+MD5sum: ccc65505ea6465734b025982862e190f
+SHA1: 8e07f81e3825165cbf7d7e546153fba5c8943fbe
+SHA256: f974a4d8a34e1e7aa0a61e785969e029c24a1880c9023b8e5f257f0553e2563b
+SHA512: fcb4fa3ebdd0457268e511ffe543c492e0a98a67d93a0025e57b4cc5918fddddde43826d17b1b85c231d6dc2d6d1cf62720962b42b925dce3d8380efd6f1b9fc
+Description: An automation framework designed for the iOS platform
+Name: CatScript
+Author: 0x530c<0x530c@gmail.com>
+
 Package: com.dell.chesspatch
 Architecture: iphoneos-arm64e
 Version: 0.0.1
