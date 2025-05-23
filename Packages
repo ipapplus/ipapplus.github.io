@@ -1186,6 +1186,23 @@ Homepage: https://dhinakg.github.io/repo
 Description: Add an "Install Profile" button to the "Profile Downloaded" popup.
 Name: AddProfileInstallButton
 
+Package: netskao.appdata-rootless
+Architecture: iphoneos-arm64
+Version: 1.4.1
+Section: Tweaks
+Maintainer: Nets
+Installed-Size: 23032
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/arm64/AppData-Rootless.1.4.1.arm64.deb
+Size: 5072024
+MD5sum: 90bd235c67f9150e4e753fed8d762483
+SHA1: 1e9d2be96c29099d37ae622cd65481b106a26d18
+SHA256: bde9b6fbfc2ab40e77150ab61d04f9b4ab527e9697be879f4b68fccabd90cd6e
+SHA512: 3e79ba381e7146986bc6249ce989ec5cf3c8fe22ce03af27b2da9d95a0053179d9a98601a45d1a846e690ac4bb82872857c8ec1de0484670080e01a552f52af7
+Description: View & Manage Applications Data from your Home Screen & downgrade
+Author: Fouad Raheb
+Name: AppData-Rootless
+
 Package: com.swing.appstorenoads
 Architecture: iphoneos-arm64
 Version: 0.0.1
@@ -1421,6 +1438,44 @@ SHA512: ba75bf5ef431fd778b66865a28ed3af9ffcf0a0528f9ea119ac1366d38c3a799fc19edf5
 Description: Awesome tweak for Twitter
 Name: BHTwitter
 Author: BandarHelal
+
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64
+Version: 4.4
+Section: Tweaks
+Maintainer: Bandar Alruwaili
+Installed-Size: 18344
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs/arm64/BHTwitter.4.4.arm64.deb
+Size: 6715360
+MD5sum: 4d739af4629e2103fb8ad9f9e17f9e31
+SHA1: 0b36c43cc2b755a317274cc99df2b10bfb2f6d5c
+SHA256: ec3865a75ab8bf96a4046e20ee3a97cec210166937c8aa2f284d873b5766ce91
+SHA512: 05fae3e78ada9082c5ba6377c221cb745852bd72133a87ec86322bb5e365a634d8553785ce90ae2e030cbcedf5f9341840f326d60ae2f4c2ba135c4c580e2651
+Description: Awesome tweak for Twitter
+Name: BHTwitter
+Author: Bandar Alruwaili
+SileoDepiction: https://a7m.dev/file/BHTwitter.json
+Icon: https://i.imgur.com/KHtcJGx.jpeg
+
+Package: com.bandarhl.bhtwiter
+Architecture: iphoneos-arm64
+Version: 5.0
+Section: Tweaks
+Maintainer: Bandar Alruwaili & actuallyaridan
+Installed-Size: 23968
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.bandarhl.bhtwitter
+Filename: ./debs/arm64/BHTwitter.NeoFreeBird.5.0.arm64.deb
+Size: 7523116
+MD5sum: 10a894d6d6d7cd9b14368649819832b5
+SHA1: 9664391b0433fd0705b30eaf8b495a95adc6f1db
+SHA256: be4bc25817037f3555a8c04ecbd5418e194e64ad5504935ea98e0058c8b3a124
+SHA512: 099e10fe091a080b9bda2b780b91df556a5248daba0afcf123e407f60f6bf0f7c510e02c14697a2d62af76abae4aa43b27e67b755112b273e77ccc1504c15750
+Description: Awesome tweak for Twitter
+Name: BHTwitter NeoFreeBird
+Author: Bandar Alruwaili & actuallyaridan
+Icon: https://i.imgur.com/d6ywvWb.jpeg
 
 Package: jp.akusio.backgrounderaction15
 Architecture: iphoneos-arm64
@@ -1955,6 +2010,24 @@ SHA512: 73c2683568009a065406a620d35b921ad31ca8999e61a27db09400f75e11ed0950a2a17d
 Description: Displays only the Browse tab and hides the tab bar
 Name: FilesBrowsingOnly
 Author: dvntm
+
+Package: com.tigisoftware.filza64bit
+Architecture: iphoneos-arm64
+Version: 4.0.1-4
+Section: Utilities
+Maintainer: TIGI Software
+Installed-Size: 23200
+Recommends: zip, unzip, gzip, p7zip, unrar, xz-utils
+Conflicts: com.tigisoftware.filza, com.tigisoftware.filza39
+Filename: ./debs/arm64/Filza.File.Manager.64-bit.4.0.1-4.arm64.deb
+Size: 6973616
+MD5sum: d221799aeb1d7f63d8d03e3e19df0fc9
+SHA1: a4a82b651339d4f9a2e248b36712c5427266897b
+SHA256: 9d12b2e3698d2873d2db1cf4ca98d7b3d5f5cd377de9da42108b101b03a3cf46
+SHA512: cafefe03db72be8a7820c0ff25ff182eab2909e1124b70db7bde2db24fc2cc837232f35e0545c437c8412e06bfb319972e9e22696d2d8946e2cf5147375876ef
+Description: File Manager for iPhone, iPad, iPod Touch. Supports iOS 11+. This version only supports 64-bit devices
+Name: Filza File Manager 64-bit
+Author: TIGI Software
 
 Package: com.dvntm.firstlook
 Architecture: iphoneos-arm64
@@ -3463,6 +3536,22 @@ Name: System Info
 Depiction: https://arx8x.github.io/depictions/systeminfo.html
 Author: ARX8x
 
+Package: com.choco.tg
+Architecture: iphoneos-arm64
+Version: 1.2-1
+Section: Tweaks
+Maintainer: waruhachi
+Installed-Size: 28284
+Filename: ./debs/arm64/TGExtra.1.2-1.arm64.deb
+Size: 4650912
+MD5sum: ad7f86fa9afab1f75de4caf132953e0e
+SHA1: 9535070fa0fb7aa3dde9e3b41ed890fc8a2f5dd3
+SHA256: 721c52c25b8590011b50df4773b3978c511b2cb48e8e4d3efc070637b990db18
+SHA512: a6c6766cc66227df291c1e8f83bbebddf9548175d92ddae90411e4aad4ee5fbbd006b5ff229c0920661e586af073c361cd498c9980987aee3353903105e98651
+Description: A simple Tweak For Telegram iOS
+Name: TGExtra
+Author: choco
+
 Package: com.den.twigalaxy
 Architecture: iphoneos-arm64
 Version: 1.4-5+debug
@@ -3802,6 +3891,44 @@ Description: iOS tweak to completely remove the "For You" tab in X/Twitter fixd 
 Name: XNotForMe
 Author: n3d1117
 
+Package: com.dvntm.ytlite
+Architecture: iphoneos-arm64
+Version: 5.2b1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 16252
+Depends: mobilesubstrate
+Filename: ./debs/arm64/YTLite.5.2b1.arm64.deb
+Size: 6049000
+MD5sum: c50f1a90ddf90aca9fd66d6108fe6c82
+SHA1: 97d0676b16e9bec5f384e2f9b54e720a3f7a3405
+SHA256: 2ed9f445e8011d5f07fc88cb9b716f7a9f71b9bdfa14b7fd685df6cee53041d0
+SHA512: ab2d633ceb68480919137eabf88a0bf48cff16b54e2cb05b521058a76c8a151e2a3e83213175a029e3352715bb3c17363f78eb1f89cc089ad54af6398bbab820
+Description: Lightweight YouTube Enhancer
+Name: YTLite
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
+
+Package: com.ginsu.ytmusicultimate
+Architecture: iphoneos-arm64
+Version: 2.3.1
+Section: Tweaks
+Maintainer: dayanch96 & ginsu
+Installed-Size: 19208
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64/YTMusicUltimate.2.3.1.arm64.deb
+Size: 6781388
+MD5sum: d2689e69bc6c050e899d3c973ef754fa
+SHA1: 7160fe7ef9716c6f9d3f6510afdff90d733ee6c0
+SHA256: 3410da6ceafb8cb2a19a02bf9a72ce5098b2b6806e236f068fbc244dc11d4873
+SHA512: f1a0a7af4eb85827c793fb36476df0577af44ef2e481061bd47c5fee7b04a29b59963cf0cde57645bcfc65be543cf7f7a08a68022271b419f6d0aa6e10f8e61c
+Description: YouTube Music Premium
+Name: YTMusicUltimate
+Author: dayanch96 & ginsu
+Icon: https://raw.githubusercontent.com/dayanch96/YTMusicUltimate/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTMusicUltimate/main/Resources/depiction.json
+
 Package: com.exile90.icleanerpro
 Architecture: iphoneos-arm64
 Version: 7.10.0
@@ -4106,4 +4233,23 @@ Author: XsF1re, ichitaso, level3tjg
 Name: vnodebypass
 Depiction: https://cydia.ichitaso.com/depiction/vnodebypass.html
 Icon: https://raw.githubusercontent.com/ichitaso/vnodebypass_theme/main/layout/Library/Themes/vnodebypass.theme/Icon.png
+
+Package: dev.zero.wicked
+Architecture: iphoneos-arm64
+Version: 3.0b10
+Section: Development
+Maintainer: zero
+Installed-Size: 19416
+Conflicts: dev.zero.wisp
+Replaces: dev.zero.wisp
+Filename: ./debs/arm64/wicked.3.0b10.arm64.deb
+Size: 7980096
+MD5sum: 3d27b126f0685afd0419fa6d7cb42d00
+SHA1: 3cce9188a1126f3ac273809be9b9f49908b125ba
+SHA256: 7aa8790d274ef4fd1b77db3fb5849b9a6d1b4e86f643a2504b45180599aa0b5f
+SHA512: 0553e3cf03698433fd581b5b72d634b472aeff2c1db9fc6c9b50e5a85832452a4915cc84b7a7c4caef49d75b7a95f1aba623ec4ca82fcf9c40234fc075485be5
+Description: wicked
+Name: wicked
+Author: zero
+Icon: https://raw.githubusercontent.com/HearseDev/hearsedev.github.io/main/tweak-assets/Wicked_2048x2048.png
 
