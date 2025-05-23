@@ -5937,6 +5937,25 @@ Author: PoomSmart
 Depiction: https://poomsmart.github.io/repo/depictions/emojiport_12.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/emojiport_12.json
 
+Package: com.ps.emojiport10resources
+Architecture: iphoneos-arm64e
+Version: 1.7.0
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 277084
+Depends: firmware (>= 10.0)
+Filename: ./debs/arm64e/EmojiPort.Resources.(iOS.10+).1.7.0.arm64e.deb
+Size: 74629308
+MD5sum: c5b4321d55d8f07820654e6407ecfac6
+SHA1: 25eee341be005d96e63d2f3d7fd21ad8c4b1c27e
+SHA256: 4817dec6d8f4ae72a81c198016a27595079040a94baaa90e59668ba06ec0f55b
+SHA512: b373d19cca59043a958dfddb3e6498eb8fa7a7fc9d37d65ac3837f3603ad6d20a54fe545ee5a0ec3ae693e45f0d8d39f03e69e23b7cfbb324ef915218dbe81f7
+Description: Latest emoji localization and metadata for iOS 10+
+Name: EmojiPort Resources (iOS 10+)
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/emojiport10resources.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/emojiport10resources.json
+
 Package: jp.uzra.enabledsreturn
 Architecture: iphoneos-arm64e
 Version: 1.2
