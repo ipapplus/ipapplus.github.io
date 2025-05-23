@@ -9828,6 +9828,27 @@ Name: YouGroupSettings
 Icon: https://img.chariz.cloud/icon/yougroupsettings/icon@3x.png
 Depiction: https://chariz.com/get/yougroupsettings
 
+Package: jp.dcsyhi.zetsu
+Architecture: iphoneos-arm64e
+Version: 1.6.2
+Section: Tweaks
+Maintainer: Dcsyhi <dcsyhi1998@gmail.com>
+Installed-Size: 12005
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate,firmware (>=15.0),preferenceloader,com.opa334.ccsupport
+Filename: ./debs/arm64e/Zetsu.1.6.2.arm64e.deb
+Size: 20322984
+MD5sum: 8f5b8ef4b3fdc1427f87c9be2bebaf44
+SHA1: 0dc9d2b7f0e8c69866042ceade23622cc5c36258
+SHA256: 78fb965d22e110bd528cfd9959dc0c505408e304bc5b54fc1a0395c01853a9ca
+SHA512: 62a234a9cd699652ca3ae7613012148ddc2524ed14acf8eb168921aa5c9f244d0c84edb568698db9a9aa1333e7fa0dae153e089bf624d6d2a434829ff0fe693f
+Description: Multitasking on iOS15 - iOS16.
+Tag: compatible_min::ios15.0
+Author: Dcsyhi <dcsyhi1998@gmail.com>
+Name: Zetsu
+Icon: https://img.chariz.cloud/icon/zetsu/icon@3x.png
+Depiction: https://chariz.com/get/zetsu
+
 Package: dev.mineek.appstoretroller
 Architecture: iphoneos-arm64e
 Version: 0.1.1
