@@ -6054,6 +6054,25 @@ Description: Fixes the issue of some plugins not saving configurations when swit
 Author: @bswbw
 Name: FixSet
 
+Package: Flex3beta
+Architecture: iphoneos-arm64e
+Version: 1:3~Beta92
+Section: Tweaks
+Maintainer: DXcool223
+Pre-Depends: rootless-compat(>= 0.1)
+Depends: mobilesubstrate, firmware (>=12.2) | org.swift.libswift (>=5.0), firmware (>= 9.0)
+Conflicts: Flexpackage, Flexpackagebeta, com.fuyuchi.flex, Flex2packagebeta, Flex2package,  com.fuyuchi.flex2, Flex2Blackpackagebeta, com.johncoates.Flex3, Flex3FeatureCatalog, Flex3ToolsOnly
+Replaces: Flexpackage, Flexpackagebeta, com.fuyuchi.flex, Flex2packagebeta, Flex2package,  com.fuyuchi.flex2, Flex2Blackpackagebeta, com.johncoates.Flex3, Flex3FeatureCatalog, Flex3ToolsOnly
+Filename: ./debs/arm64e/Flex.3.Beta.RootHide.Bootstrap.1:3~Beta92.arm64e.deb
+Size: 9614200
+MD5sum: b20d31ad36cc48e86ee2bd417cb35254
+SHA1: d3ef4d1b32b0553e7b71e3c4c17baf545860fe40
+SHA256: 120b7abb71cd460b7d5fb51d7c6cfde33f403b2953ca1e7ec9d5067d06a9a22b
+SHA512: 5d9adfced33fa4c171f9480d0f5a48c2ec5a650cddff9e977d15163d7cf0ba2547c151ce037b116aa14d98ad34d59e048fed60bbbe39dcdd3deff9e8ef3b22bb
+Description: Flex 3 beta92 for RootHides Bootstrap & Dopamine by DXcool223
+Name: Flex 3 Beta RootHide Bootstrap
+Author: John Coates
+
 Package: ru.rj.ftt
 Architecture: iphoneos-arm64e
 Version: 1.4
@@ -6595,6 +6614,22 @@ Description: Foreground your apps even if they are in the background!
 Name: Immortalizer
 Author: sergy
 Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
+
+Package: com.twickd.ray-delvalle.inevitable
+Architecture: iphoneos-arm64e
+Version: 0.7.4
+Section: Themes
+Maintainer: Ray Delvalle <raydelvalle@me.com>
+Depends: com.anemonetheming.anemone, com.spark.snowboard
+Filename: ./debs/arm64e/Inevitable.0.7.4.arm64e.deb
+Size: 12842596
+MD5sum: 40d25bae26bcac78a6575573a0cc0fc3
+SHA1: a8e017e8e829d0a0c66931e3885d9dc783f0d483
+SHA256: c212f85caa70a62dbbdf48c465a61c97421e1fe8e2f1ec681d1b0ec5b1c6b04d
+SHA512: ff47914fe2d490e9eb26cc42aa9a92c36c56576e6f6803b146e00a5ff516649d7a474ba9ca3e61aa80473ac97426187c6d90fc8843efb4eb8633ccfcc83c904b
+Description: This theme was Inevitable. You installing it is bound to happen. ;€
+Name: Inevitable
+Author: Ray Delvalle <raydelvalle@me.com>
 
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64e
@@ -7667,6 +7702,25 @@ Name: OnlineNotify
 Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.f0u4d.onlinenotify
 Icon: file:///Library/Application Support/OnlineNotify/Resources.bundle/OnlineNotify.png
+
+Package: com.dvntm.ovk
+Architecture: iphoneos-arm64e
+Version: 1.1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 28048
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64e/OrwellVK.1.1.arm64e.deb
+Size: 10124188
+MD5sum: 2259ae53a4ca0bc5f84a8769f74d9dab
+SHA1: 53d29758beebb1450e6052236b47326a8cfacf54
+SHA256: 2da739f6fb09103778f1fa4edd1f88ad741f54ed281b8c11807e11a6ce2c3b05
+SHA512: 739b8df98edf9c28b93dc67d10a526998d4719088e94df787e7b6c0c87f62dbe63315eb1cd3d2d656634f0e59d042b6ea7958e7c3486a71dbf05aa6bf254476d
+Description: A subtle shift from the familiar
+Name: OrwellVK
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/OrwellVK/refs/heads/main/Sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/OrwellVK/main/Sileo/depiction.json
 
 Package: pro.ikghd.pmp
 Architecture: iphoneos-arm64e
@@ -10167,6 +10221,24 @@ Description: Simple to implement, simple to use colour picker library. Built by 
 Tag: role::developer
 Name: libsparkcolourpicker
 Author: Spark
+
+Package: com.nathan.ngrokios
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Priority: optional
+Section: Networking
+Maintainer: Nathan
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>> 14)
+Filename: ./debs/arm64e/ngrok.1.0.0.arm64e.deb
+Size: 10508504
+MD5sum: 28e3e3352848e4fc81f2f30c468ec563
+SHA1: b153fcbf09d9d52122b26e960cdfb8e85ba4f362
+SHA256: b9e7a53e81118b581abe455f6a94bd2b0c9d9ca04f56ad20fa95b2f9765dcf90
+SHA512: bd66b36f5e5d56e7ac5708508204a096fac392c1ae59ad4922d758735f06670d62a8d20923e6915857b9ff38bfc2bebc88b0d7771fb79ceff7568dc4bcdc6ad0
+Description: ngrok for iOS
+Name: ngrok
+Author: Nathan
 
 Package: com.tools4cydia.packages4
 Architecture: iphoneos-arm64e
