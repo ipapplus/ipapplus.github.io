@@ -4828,6 +4828,46 @@ Description: Awesome tweak for Twitter
 Name: BHTwitter
 Author: BandarHelal
 
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64e
+Version: 4.4
+Section: Tweaks
+Maintainer: Bandar Alruwaili
+Installed-Size: 18344
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs/arm64e/BHTwitter.4.4.arm64e.deb
+Size: 6624192
+MD5sum: 46dee754a12a17a3765ab29f0492c956
+SHA1: 0954fd3ef7f2db6868b0a3d9caa6e0645a47d4c6
+SHA256: 0eb28830f4c2f90e816ca6380a19b7a04f89efb3f1a8e78ab5ca6432c4fe5f71
+SHA512: 3e015300204b3114ca8bc88f45d2c7b64fcaca39522fd63da04d7708dfedfe425a017ce2dedcb33d52863c50d3541b53a223983f38c842e0ba5caab3403e3c81
+Description: Awesome tweak for Twitter
+Name: BHTwitter
+Author: Bandar Alruwaili
+SileoDepiction: https://a7m.dev/file/BHTwitter.json
+Icon: https://i.imgur.com/KHtcJGx.jpeg
+
+Package: com.bandarhl.bhtwiter
+Architecture: iphoneos-arm64e
+Version: 5.0
+Section: Tweaks
+Maintainer: Bandar Alruwaili & actuallyaridan
+Installed-Size: 23968
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.bandarhl.bhtwitter
+Filename: ./debs/arm64e/BHTwitter.NeoFreeBird.5.0.arm64e.deb
+Size: 7519732
+MD5sum: 3734643eaea6c281e6ddf86aa6af457d
+SHA1: d73371b7ae11deb9e55befc7e17836109edfb582
+SHA256: 556fc4b36f13a774b933ce0a8c5535a0d89c4ecbed11e169be4c282e8f2da620
+SHA512: 91bb13a7e9a7814e70d063d62b320cff631243e85014cc601e5148de6721637b4dbd158416ca94e7a40b19a532298f09e65ad4bc0fb13feb75d9f58acbec834d
+Description: Awesome tweak for Twitter
+Name: BHTwitter NeoFreeBird
+Author: Bandar Alruwaili & actuallyaridan
+Icon: https://i.imgur.com/d6ywvWb.jpeg
+
 Package: com.0xkuj.backgrounderaction15autostate
 Architecture: iphoneos-arm64e
 Version: 1.0.3
@@ -6454,6 +6494,24 @@ Author: MrDeNsor
 Icon: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo.png
 Header: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo2.jpg
 SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json
+
+Package: com.0xkuj.iparanger
+Architecture: iphoneos-arm64e
+Version: 2.2
+Section: Applications
+Maintainer: 0xkuj
+Installed-Size: 11496
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: gawk, unzip, plutil
+Filename: ./debs/arm64e/IPA.Ranger.2.2.arm64e.deb
+Size: 6866092
+MD5sum: 8628131ff935700e5a43353e885d8e9c
+SHA1: 9831de9ed2b951a34dc1b28473291e28d9e36ddd
+SHA256: e7d4b5f8f1a8f170ba435a841fc63b17be152269828a13bdb23d7c63668f5f37
+SHA512: c91b95cbb97e091caba5e6ee67fe056c219eb5aa578655a992788295c556138ec261001027d9086f821a0354075c9954620233d0a78476cc4b551be042ec647d
+Description: GUI Based Application for ipatool
+Name: IPA Ranger
+Author: 0xkuj
 
 Package: me.luki.iwanttranslucent
 Architecture: iphoneos-arm64e
@@ -9636,6 +9694,25 @@ Author: dvntm
 Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
 
+Package: com.ginsu.ytmusicultimate
+Architecture: iphoneos-arm64e
+Version: 2.3.1
+Section: Tweaks
+Maintainer: dayanch96 & ginsu
+Installed-Size: 19204
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/arm64e/YTMusicUltimate.2.3.1.arm64e.deb
+Size: 6790280
+MD5sum: 1dd572667ab29996ed41424a5ec963bf
+SHA1: 7aeb2ddd8ff3ab930f88197e57642ded1b9f28aa
+SHA256: b3b2ce363ac13bd1464b27dfeefff898f301a755259f972a034352f395f36b6e
+SHA512: d193d8d41118953b565a76752fb97aca88f02adf47537e5481e5bf190cddad17a0c26d74190ca3e19fc62647092297af8ec0f81074d6407d36217b14090044dc
+Description: YouTube Music Premium
+Name: YTMusicUltimate
+Author: dayanch96 & ginsu
+Icon: https://raw.githubusercontent.com/dayanch96/YTMusicUltimate/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTMusicUltimate/main/Resources/depiction.json
+
 Package: com.ps.ytvideoerroralert
 Architecture: iphoneos-arm64e
 Version: 1.0.2
@@ -10123,4 +10200,24 @@ SHA512: 76b843c39135859e359b46d2ff2486a9ac782b52e3157177b8b746d648b346be064f4787
 Description: Remove the notification that the P
 Name: replaced
 Author: 34306
+
+Package: dev.zero.wicked
+Architecture: iphoneos-arm64e
+Version: 3.0b10
+Section: Development
+Maintainer: zero
+Installed-Size: 19416
+Pre-Depends: rootless-compat(>= 0.9)
+Conflicts: dev.zero.wisp
+Replaces: dev.zero.wisp
+Filename: ./debs/arm64e/wicked.3.0b10.arm64e.deb
+Size: 7903260
+MD5sum: 3274dd4a94d3c9a9d5b9d71ce73ff190
+SHA1: 90e1be5e5f687fa23f03f55c3a36279b7502c15f
+SHA256: 125c71df7e19e69c89f98d1312091214d0db2b041e0ec8248c864990182cb8f8
+SHA512: f2987e2fab684375f4c233ac9cf2067c9180c43acf81efd99f3bd1ee652961fc1f6af6d362f1e4271c9b76ce6241fcac00c87526cea11f802b41976ef6d2c1d6
+Description: wicked
+Name: wicked
+Author: zero
+Icon: https://raw.githubusercontent.com/HearseDev/hearsedev.github.io/main/tweak-assets/Wicked_2048x2048.png
 
