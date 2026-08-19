@@ -4143,6 +4143,22 @@ Description: Make AltDaemon great again for rootless/Ellekit!
 Name: AltDaemonFix
 Author: alias20
 
+Package: apple.almohanad.font
+Architecture: iphoneos-arm64e
+Version: 1.0
+Section: Fonts
+Maintainer: Apple
+Depends: mobilesubstrate
+Filename: ./debs/roothide/apple.almohanad.font_1.0_iphoneos-arm64e.deb
+Size: 1107120
+MD5sum: d6f047618dbbf8e1b78cbe33a275baae
+SHA1: 5c769133be1adf20525e2e93fafd3a3d8889b0f2
+SHA256: 760af5a3d6e3a2c223f969c542226e21ebdd222bdc2a0bd31672b41c40afa34a
+SHA512: 873b21d39d5b88cb223273d116f661d9d280f32d2007109a15150c425e61e58c865db1ceea03d4cf7ecd5a651cf0973193a9ea9f97b48fc371c82427d4417432
+Description: Arabic & English
+Name: Almohanad-Long-KAF
+Author: Apple
+
 Package: apple.ios14.font
 Architecture: iphoneos-arm64e
 Version: 1.0
@@ -4342,6 +4358,28 @@ Name: Block WA Updates
 Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=blockwaupdatesDp
 Sponsor: thebigboss.org <http://thebigboss.org>
 dev: 0xkuj
+
+Package: com.0xkuj.ccadsbegone.rootless
+Architecture: iphoneos-arm64e
+Version: 1.5
+Section: Tweaks
+Maintainer: 0xkuj
+Installed-Size: 6096
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: com.opa334.ccsupport, com.ps.letmeblock (>= 1.3.0)
+Conflicts: com.0xkuj.ccadsbegone
+Filename: ./debs/roothide/com.0xkuj.ccadsbegone.rootless_1.5_iphoneos-arm64e.deb
+Size: 1915796
+MD5sum: 8d319a4508ea74bb993881d9796d9cbf
+SHA1: e91e5b097a40c9589b99eec434b1b3e246b38b6a
+SHA256: 98d82873bc91e317d9e017c325f8a848ec0ea23af146d4657f480efaf0889dad
+SHA512: b71e575e03d737aadd8ebf4a31b97f767203363166a5005ce0b2d91fc0302db30d6b16922e4f352fce01b20b94d8d21eee5153951190e0679066d2f359f97fdd
+Description: CC Toggle to block ads on demand!
+Name: CCAdsBeGone (rootless)
+Author: 0xkuj
+Icon: https://cdn-static.yourepo.com/images/debs/com.yourepo.0xkuj.rootless1.png
+Depiction: https://0xkuj.yourepo.com/pack/rootless1
+SileoDepiction: https://0xkuj.yourepo.com/sileo/depiction/rootless1
 
 Package: com.0xkuj.filzadirprobe
 Architecture: iphoneos-arm64e
@@ -4999,6 +5037,22 @@ Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=nowareacti
 Sponsor: thebigboss.org <http://thebigboss.org>
 Author: CydiaGeek <lucaluca86@aol.com>
 dev: lucaluca86
+
+Package: com.cyrex.epiphany
+Architecture: iphoneos-arm64e
+Version: 1.0.1
+Section: Themes
+Maintainer: Cyrex
+Depends: com.anemonetheming.anemone | com.spark.snowboard
+Filename: ./debs/roothide/com.cyrex.epiphany_1.0.1_iphoneos-arm64e.deb
+Size: 1100140
+MD5sum: 67e5be2732ad087271b6f66031838b2c
+SHA1: 44c2cbc9347d8108ee3b0b79bf72e9236b9040fd
+SHA256: acb7cbfbddfa21c9fd859c07c4e2c4e671f94ebc5a135db1f547898d240cd7be
+SHA512: d2c1bd3c278941ca28c3b40b6198aa89353f122296b65f2165e0c92cb4f098dffc70227fc267f6c255821233b39ca289bd085493a7db9f4eba55a0b961b5e067
+Description: A theme with beautiful icons!
+Name: Epiphany
+Author: Cyrex
 
 Package: com.darwindev.CookiesTool-iOS
 Architecture: iphoneos-arm64e
@@ -5857,6 +5911,25 @@ Description: Remove share and lookup from menu
 Name: SkinnyMenu
 Author: FoxfortMobile
 
+Package: com.foxfort.translomatic
+Architecture: iphoneos-arm64e
+Version: 2.18.31
+Section: Tweaks
+Maintainer: FoxfortMobile
+Installed-Size: 5080
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.foxfort.foxforttools (>= 1.4.7), com.opa334.altlist
+Filename: ./debs/roothide/com.foxfort.translomatic_2.18.31_iphoneos-arm64e.deb
+Size: 1170068
+MD5sum: 947f7d5290d09b022a779c1326a00978
+SHA1: 9d82b646787f5ce32b702cc6f8316e29579bb25e
+SHA256: ce4759e0ad44581b3fc4fde378dcdc4a8c7915ebef021dcdc19b241fa70d0a6b
+SHA512: f348174b0d228b39d02e80ce4f377e53d80c24ffaf547ba553503f3623d1bf9652bb03c2fa5e7ca58c5b0fc172a76a3abe2e22e9f8675f524d3c6d3d401a57fe
+Description: Quickly translate any text
+Name: Translomatic
+Author: FoxfortMobile
+Icon: file:///Library/PreferenceBundles/translomaticsettings.bundle/icon@3x.png
+
 Package: com.gilesgc.cccalc
 Architecture: iphoneos-arm64e
 Version: 1.2.2
@@ -6190,6 +6263,25 @@ Description: Disable right-to-left languages across the system!
 Name: DisableRTL
 Author: @iMokhles
 
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64e
+Version: 2.6.9
+Section: Tweaks
+Maintainer: iosdump
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Filename: ./debs/roothide/com.iosdump.appdata_2.6.9_iphoneos-arm64e.deb
+Size: 1714636
+MD5sum: 0a9d975b6ab07179ec6fa3331922323d
+SHA1: 9387d4b3c28bdda62b4b16b5cd5c7a56008475df
+SHA256: eb14968bbeadcf9a95c9c5b9c15d08f7a30b395882ceea4daac57777f141222b
+SHA512: 44bfe9bade1793823d813f167ff598627448062af64bba1b0a72dabf791a82184653a7f8bfb72b718bcedfca837faba565365b3db57d07bff02fdbd457618302
+Description: 在主屏幕查看应用数据与管理应用
+Name: AppData
+Author: iosdump
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64e
 Version: 3.0
@@ -6209,6 +6301,47 @@ Name: Instagram (Arabic Localized)
 Author: ipapplus
 Icon: https://i.postimg.cc/SQ5KCNF0/IMG-7607.jpg
 Header: https://i.postimg.cc/PJNPhPgy/IMG-7790.jpg
+
+Package: com.jailbreak365.safeccmodules
+Architecture: iphoneos-arm64e
+Version: 1.5-1
+Section: Addons (ControlCenter)
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 5131
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0), com.opa334.ccsupport
+Filename: ./debs/roothide/com.jailbreak365.safeccmodules_1.5-1_iphoneos-arm64e.deb
+Size: 1127652
+MD5sum: 726d436eb35501eec1bfe523f23e926c
+SHA1: 8f021b54d02df3fc4934561961fa8d14a8c625d8
+SHA256: 28b8504845598172e29203044701d28ea643da78086a7edebb953a3ead142630
+SHA512: a5840f7006fde33911424dfc3cb01004d1ef62f4a8036ddf668a67dd848e4220ada8dcd5f5b5f1a0b86cfb796640be6fceb622aa4aa10a55421c93a31c5364bd
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Description: More control center modules for iOS 11/12/13
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Author: jailbreak365 <jailbreak365@mail.com>
+Name: CCModules
+dev: jailbreak365
+
+Package: com.jontelang.snapper3
+Architecture: iphoneos-arm64e
+Version: 1.2.1
+Section: Tweaks
+Maintainer: Jonathan Winger-lang
+Installed-Size: 4148
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware(>=14.0), preferenceloader
+Conflicts: com.jontelang.snapper, com.jontelang.snapper2.packix, xyz.cypwn.snapperfr33
+Filename: ./debs/roothide/com.jontelang.snapper3_1.2.1_iphoneos-arm64e.deb
+Size: 1022812
+MD5sum: 3dc3ece9dd5e5afc8181cd8ddb68b0b4
+SHA1: e8a44f734cd50fca55a37906309c3262c2d45619
+SHA256: bebc95f23b9c8d9f5799775c18c4deb72514cfb9892a190cbcd0ec13ec9d02a4
+SHA512: 857e9a2c00af669774d0f0f96dfdb98410f25b32d4b4db5d106ed1d34e0b1e60ea53a84bbe837e48ae0a1503251b821477c6b95ee51e157702f21f9f7f94a6a5
+Description: Pin screenshots on the screen.
+Name: Snapper 3
+Author: Jonathan Winger-lang
 
 Package: com.joshua.volumeflex
 Architecture: iphoneos-arm64e
@@ -6880,6 +7013,25 @@ Author: MTAC
 Icon: https://mtac.app/repo/assets/com.mtac.prefs.localizer/icon-rounded.png
 SileoDepiction: https://mtac.app/repo/depiction/native/com.mtac.prefs.localizer.json
 
+Package: com.mtac.scope
+Architecture: iphoneos-arm64e
+Version: 1.3
+Section: Utilities
+Maintainer: MTAC
+Installed-Size: 2040
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: ./debs/roothide/com.mtac.scope_1.3_iphoneos-arm64e.deb
+Size: 1135532
+MD5sum: 6222e72aa785077dbb251e224497bc84
+SHA1: 8aa10196a4a701b0e81a6449709077788d3352a9
+SHA256: 88c4637dabf678d2b53d978e54f2998e859884c6e470c4dee0f9674e6ac03592
+SHA512: 4b6db177ad52f232824b255a39bc03b068708af7b39564b47f41f3a66aec68fcda1a1e159c2448108a716790a82dcdc7ce1e914a8281b42f90f0f7b65bc026df
+Description: View & manage iOS Runtime headers directly from your device
+Name: Scope
+Author: MTAC
+Icon: https://mtac.app/repo/assets/com.mtac.scope/icon-rounded.png
+SileoDepiction: https://mtac.app/repo/depiction/native/com.mtac.scope.json
+
 Package: com.muirey03.cr4shed
 Architecture: iphoneos-arm64e
 Version: 4.3.1-1
@@ -7212,6 +7364,26 @@ Description: CC toggle to respring
 Name: RespringCC
 Author: Nathan
 
+Package: com.netskao.appdata
+Architecture: iphoneos-arm64e
+Version: 1.4.7
+Section: Netskao-Tweaks
+Maintainer: Nets
+Installed-Size: 5156
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/roothide/com.netskao.appdata_1.4.7_iphoneos-arm64e.deb
+Size: 1500068
+MD5sum: 36e23cde0a0429286be21a8feea3e0a2
+SHA1: 74a269456612c49cdf9fbe51a9c4b32498847d1b
+SHA256: 26f0a2cf610bf3489bd1e9a20aeb7147d9ba9f30c3b502be36f1574defff6be4
+SHA512: 70e29d53a4cad0530319b9c362a1eefbf8ebdebca33afb6d1c830bb13bea23b9d6aefb3a7ee9507648a39c56c401d10b5d338abbac116032486c80e70cd68f3d
+Description: View & Manage Applications Data from your Home Screen
+SileoDepiction: https://jailrepo.initnil.com/api?Package=com.netskao.appdata
+Name: AppData
+Author: Fouad Raheb
+Markdowndescription: View & Manage Applications Data from your Home Screen<br><br>• v1.4.7: Fix app failed to downgrade<br><br>• v1.4.6: Fix iOS15 crash issues<br><br>• v1.4.5: Modify the API interface for obtaining the downgraded version number of an application
+
 Package: com.netskao.disablebottombarlrswipe
 Architecture: iphoneos-arm64e
 Version: 1.1-2
@@ -7249,6 +7421,25 @@ Description: Decrypt iOS Apps and Plugins, Supports iOS15+, Only Tested iOS16.1
 Name: DumpDecrypter
 Author: Netskao
 SileoDepiction: https://jailrepo.initnil.com/Depictions/com.netskao.dumpdecrypter.json
+
+Package: com.netskao.flexlist
+Architecture: iphoneos-arm64e
+Version: 1.4-2
+Section: Netskao-Tweaks
+Maintainer: Nets
+Installed-Size: 5020
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/roothide/com.netskao.flexlist_1.4-2_iphoneos-arm64e.deb
+Size: 1326216
+MD5sum: 000dd001e7ea209d0349a35fae50a32b
+SHA1: ac7b9c1f6d9e39b413f9352d2dd0a21bbc019182
+SHA256: 24d2a71e0bbbe130c45e5295a4bf25cc3c78984bd5a68270cd3c9bd92e7e82b9
+SHA512: a261313f7766b9ceb83f377a4e78719a1bac71e695d98fb2263e2aea588dff0205d21393b3b595365a4bd6cdceb71329ff95aa5a71ed106a174cfb07e9a95fad
+Description: FLEXList is a wrapper tool for FLEX Tool
+Name: FLEXList
+Author: Netskao
+SileoDepiction: https://jailrepo.initnil.com/Depictions/com.netskao.flexlist.json
 
 Package: com.netskao.noappthinning
 Architecture: iphoneos-arm64e
@@ -8048,6 +8239,45 @@ Description: Settings Icons for SnowBoard
 Name: SnowBoard Settings Icons Extension
 Author: Spark
 
+Package: com.spark.snowboard
+Architecture: iphoneos-arm64e
+Version: 1.5.37-Beta4-rootless
+Section: Tweaks
+Maintainer: Spark
+Installed-Size: 3268
+Provides: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader
+Conflicts: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Replaces: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Filename: ./debs/roothide/com.spark.snowboard_1.5.37-Beta4-rootless_iphoneos-arm64e.deb
+Size: 1130048
+MD5sum: 75560c6be809a79abf84b43c77f87d9e
+SHA1: 4b55e6a834d28efc9aeb85defb2486285fb221b6
+SHA256: 6d6fdd167915df096e6126bee34e6ab6f940876faf2ead112375028df0d93604
+SHA512: 1d9389a4e2d53eec561629924da60f65832d0a54d61ff5d5be905fd70c324ad73bb14ea57c72c00e8c15204cd41c1d349f8494948d6158a9389f420c0063ea99
+Description: Snowboard theming engine
+Name: SnowBoard
+Author: Spark & Dennis D. Bednarz
+
+Package: com.squidforce.copyvault
+Architecture: iphoneos-arm64e
+Version: 1.9.0
+Section: Tweaks
+Maintainer: SquidForce
+Installed-Size: 6304
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.opa334.altlist
+Filename: ./debs/roothide/com.squidforce.copyvault_1.9.0_iphoneos-arm64e.deb
+Size: 1700372
+MD5sum: f47098fd716ac5cc777f94c43915b13b
+SHA1: a674675befd656564adb78d31ad8495d9c34bb28
+SHA256: 05365303b3e636c981d9678976a62a7f76638eb34e51f7a7178e9c8a03ece762
+SHA512: dd995d6837ce39d766867583c50d0365cd715a0849df76471b7179ef2a0bdae8af78aa62c4fb673fe16009c3468fb79af9934c8c530d60884df23eea048d738f
+Description: Your Copy Vault, Your Pasteboard
+Name: CopyVault
+Author: SquidForce
+
 Package: com.sugiuta.soundvol
 Architecture: iphoneos-arm64e
 Version: 1.0.0
@@ -8242,6 +8472,26 @@ Name: EmojiSkinPrefs
 Author: PoomSmart & vXBaKeRXv
 Depiction: https://poomsmart.github.io/repo/depictions/emojiskinprefs.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/emojiskinprefs.json
+
+Package: com.wee1ka.ifetch
+Architecture: iphoneos-arm64e
+Version: 6.0.0
+Section: Tweaks
+Maintainer: wee1ka
+Installed-Size: 4140
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0), firmware (<< 18.0), mobilesubstrate, com.opa334.ccsupport
+Filename: ./debs/roothide/com.wee1ka.ifetch_6.0.0_iphoneos-arm64e.deb
+Size: 1922800
+MD5sum: d8119f3c01e2300c7190194578a7bf7a
+SHA1: 3f19964b6900e6d337e3d8f522815b7c1c1222ed
+SHA256: 7ea78492062d0671f8e6c41ea411d53bb72f7712cb25640d7479981c58555d54
+SHA512: eda22de9ebf0c3772480a9afcbedb08156fc52f4dbe6b12a6f8e1f495ddba96269baed1b3593fc9e21189a6aec2f5b1a7ea9d937e8b6d9928f8310a1226640cf
+Description: Advanced system diagnostics, process monitor and CLI fetch for rootless and RootHide jailbreak devices on iOS 14–17
+Name: iFetch
+Author: wee1ka
+Icon: https://weekanya.github.io/iFetch/assets/ifetch-icon.png
+SileoDepiction: https://weekanya.github.io/iFetch/sileodepiction.json
 
 Package: com.wrp1002.nosettingsbadge
 Architecture: iphoneos-arm64e
@@ -8634,6 +8884,24 @@ Description: unlock premium for most apps
 Name: unlock apps
 Author: adry
 Icon: https://i.imgur.com/m2Bn0u4.jpeg
+
+Package: dylv.liquidass
+Architecture: iphoneos-arm64e
+Version: 0.1.0b
+Section: Tweaks
+Maintainer: dylv
+Installed-Size: 3576
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0), preferenceloader
+Filename: ./debs/roothide/dylv.liquidass_0.1.0b_iphoneos-arm64e.deb
+Size: 1299192
+MD5sum: dbcb9e7c7b77b5a33545550099a5dc7b
+SHA1: e331954573fb2ee8d32b093b7c0ffad6d655a912
+SHA256: 70bc8b1ab4de7da125d63155129ae4938fc28687e7e3ef522ff4fdd98e83e0ed
+SHA512: e1332a50c69f0f32e46a0339b9fafdc0d4375a08c74d0f1279cf3c3a976ecea69f0385688dad3ee9b4d9946ea74abc3fb0cf7be24b963c7326b84a588c150e94
+Description: next level diarrhea
+Name: Liquid (Gl)ass
+Author: dylv
+Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
 
 Package: eg.anubistweaks.translux
 Architecture: iphoneos-arm64e
@@ -9122,6 +9390,25 @@ Depiction: http://cydia.nixuge.me/depiction/web/me.nixuge.networkmanager.html
 SileoDepiction: http://cydia.nixuge.me/depiction/native/me.nixuge.networkmanager.json
 ModernDepiction: http://cydia.nixuge.me/depiction/native/me.nixuge.networkmanager.json
 Icon: http://cydia.nixuge.me/assets/me.nixuge.networkmanager/icon.png
+
+Package: me.tomt000.copylog
+Architecture: iphoneos-arm64e
+Version: 1.7.1
+Section: Tweaks
+Maintainer: TomT000
+Installed-Size: 2240
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader
+Conflicts: com.0xkuj.copylogfix16
+Filename: ./debs/roothide/me.tomt000.copylog_1.7.1_iphoneos-arm64e.deb
+Size: 1040940
+MD5sum: 5f34274c686bd124c9d659d82713bfd5
+SHA1: 7f7d964855647c9eb8ee1c60bddacb36c69ddaf0
+SHA256: 988cbfa217eaba3163aa29a50444a0e8bab55c1e0c5188fb4d95ef160778c5d0
+SHA512: 1bf529f9ad9d8520fbb8dbff37714b14b1fe274c7290699edd4abb5bcfbf03591a9bfcb64208f37cb3628c5a28e00b0fe8daa82cacd5c5ba6c06e5eb7a2086f2
+Description: Clipboard history manager for iOS!
+Name: CopyLog
+Author: TomT000
 
 Package: mterminal
 Architecture: iphoneos-arm64e
