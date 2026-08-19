@@ -4488,6 +4488,25 @@ Description: Safari Essential Features
 Name: SafariX
 Author: 0xkuj
 
+Package: com.7md.iqgram
+Architecture: iphoneos-arm64e
+Version: 1.1-1
+Section: Tweaks
+Maintainer: 7md
+Installed-Size: 3408
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Filename: ./debs/roothide/com.7md.iqgram_1.1-1_iphoneos-arm64e.deb
+Size: 10734092
+MD5sum: 40902a15daa6d676e5d183f55bf9f24a
+SHA1: 92481f79f349eacdaa90589ea83edce9349af40e
+SHA256: 43f17c93471e86c2f58c6f26c7d632624d7dc624db5f2ac9aeda61fa37d5707c
+SHA512: 060ec0e506a8b5456e6a117f1830d96f386d91530a5fa852b2d02be488bedf264bafd4432025c4bfcab9b3fa072c47e1aa943371abd2aaf31134d829eaed850f
+Homepage: https://t.me/r71il
+Description: best Tweak for Instagram
+Name: iQGram
+Author: 7md
+
 Package: com.7md.iqtelegram
 Architecture: iphoneos-arm64e
 Version: 1.2
@@ -4737,6 +4756,24 @@ Description: An awesome tweak for TikTok!
 Name: BHTikTok Plus
 Author: dvntm
 Icon: https://i.imgur.com/PKIhkrt.png
+
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64e
+Version: 4.5
+Section: Tweaks
+Maintainer: Bandar Alruwaili
+Installed-Size: 16284
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs/roothide/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.deb
+Size: 12753348
+MD5sum: 80be680e18d91537b81df127acc61eb0
+SHA1: d7f5837aabffeacff9f01317d34e4807b5cee4bf
+SHA256: a6b0e7fa10910e4051ef1f907f72a0f6a7a6fbd2a8d5fbe997da4af020f339a2
+SHA512: 2dfa017a65d7637c06bcdd654d57225e7296e4e7abf89ef0e3c4221537ed229b0067741ccb487f796c9100461c991716aae8e687cd7d2fe115cd1d2fd04c1747
+Description: Awesome tweak for Twitter
+Name: BHTwitter
+Author: Bandar Alruwaili
 
 Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64e
