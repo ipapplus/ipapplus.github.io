@@ -2396,6 +2396,27 @@ Author: ipapplus
 Icon: https://i.postimg.cc/SQ5KCNF0/IMG-7607.jpg
 Header: https://i.postimg.cc/PJNPhPgy/IMG-7790.jpg
 
+Package: com.jailbreak365.safeccmodules
+Architecture: iphoneos-arm64
+Version: 1.5-1
+Section: Addons (ControlCenter)
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 5131
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0), com.opa334.ccsupport
+Filename: ./debs/rootless/com.jailbreak365.safeccmodules_1.5-1_iphoneos-arm64.deb
+Size: 1129464
+MD5sum: 8582e927b75ab7bf00630e53307aa04e
+SHA1: 85d514fb084085b3a3be8b59a75665c979614796
+SHA256: 041dbe74be1b80deeb52011705f604a01df4844fca75b4f519c8cf5afdb818b2
+SHA512: 8df50e018f76b13ee292331851ade3ccb9d5980ee0854f88ee7bc5e82c49e9367f3f208d8efe8283e141972a6c7c25001849d310eb8a0233a57c9d5c4674a963
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Description: More control center modules for iOS 11/12/13
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp
+Author: jailbreak365 <jailbreak365@mail.com>
+Name: CCModules
+dev: jailbreak365
+
 Package: com.julioverne.goodwifi
 Architecture: iphoneos-arm64
 Version: 0.0~beta6
@@ -2433,6 +2454,26 @@ Name: TrollPad
 Author: khanhduytran0
 Depiction: https://khanhduytran0.github.io/repo/depictions/web/?p=com.kdt.trollpad
 SileoDepiction: https://khanhduytran0.github.io/repo/depictions/native/com.kdt.trollpad/depiction.json
+
+Package: com.korboy.sileo
+Architecture: iphoneos-arm64
+Version: 2.5.7
+Section: Packaging
+Maintainer: Korboy <korboybeats@gmail.com>
+Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Filename: ./debs/rootless/com.korboy.sileo_2.5.7_iphoneos-arm64.deb
+Size: 3121056
+MD5sum: 2650f31ba2030383bfe55b50c69cf61e
+SHA1: 8a5b18b328c05e706a5172ac282cb1c0dee72efe
+SHA256: be8fdbf63c7048d08474758f146646b84b90d83ff93b7c6529a65b8986e94da3
+SHA512: db73d8a0de11b3f3450a8b5be0f7e9767e625979cad40d4c1130e6dd398ef9d83146c4857dc9833574764d1c6517d7e71fd154a8af29faccfcb5243cf86a38f2
+Description: A modern APT package manager frontend.
+Name: Sileo
+Author: Korboy <korboybeats@gmail.com>, Amy While, waruhachi
+Icon: https://korboybeats.github.io/sileo/icon.png
+X-Sileo-Fork: com.korboy.sileo
+Depiction: https://korboybeats.github.io/sileo/depiction/?v=2.5.7
+SileoDepiction: https://korboybeats.github.io/sileo/sileo_depiction/index.json?v=2.5.7
 
 Package: com.leftyfl1p.carbackground13
 Architecture: iphoneos-arm64
@@ -3281,6 +3322,26 @@ Description: AppList alternative
 Tag: role::developer
 Name: libSparkAppList
 Author: Spark
+
+Package: com.spark.snowboard
+Architecture: iphoneos-arm64
+Version: 1.5.37-Beta4-rootless
+Section: Tweaks
+Maintainer: Spark
+Installed-Size: 3268
+Provides: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Depends: mobilesubstrate, preferenceloader
+Conflicts: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Replaces: anemoneteam.anemone, com.anemonetheming.anemone, winterboard
+Filename: ./debs/rootless/com.spark.snowboard_1.5.37-Beta4-rootless_iphoneos-arm64.deb
+Size: 1124496
+MD5sum: e9cb1bece703f2cbe6c00fb38c8289c9
+SHA1: 89e493c5fd5fa9c2a0f8a7798b505abc6b74f99d
+SHA256: bb0454974dc800aba6986d4bdeea94f9fea58253aca028776a501218719cb202
+SHA512: 1d66cf8906827a6901b00f5184fd8b05a24f7439cd748b45c7c95bfd8a79b8e76a253951bfd778bdae68a55a6ea5e0b9cd689d87e2e16f714b9bf4c08479e5f0
+Description: Snowboard theming engine
+Name: SnowBoard
+Author: Spark & Dennis D. Bednarz
 
 Package: com.synnyg.reversenotifications
 Architecture: iphoneos-arm64
