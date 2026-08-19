@@ -4489,6 +4489,26 @@ Description: best Tweak for Telegram
 Name: iQTele
 Author: 7md
 
+Package: com.7md.iqtube
+Architecture: iphoneos-arm64e
+Version: 1.1-20260810.131322
+Section: Tweaks
+Maintainer: 7md
+Installed-Size: 16196
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Filename: ./debs/roothide/com.7md.iqtube_1.1-20260810.131322_iphoneos-arm64e.deb
+Size: 5708820
+MD5sum: 74ef87f54ada1c824e0a2696ab4c38a0
+SHA1: b4f67195a1b368f552226be46991ce5d24f0bd36
+SHA256: 267b693b8d02c35c9a790ac4708d3992adbe4f5444334a6e2d31c631ccd57184
+SHA512: c8a72a649e64d17c52652c688bca57deb1beff04131c04c5990c1fe5bdb1bcc49605c7aeb537475a222e6c36d84da5130c14974a590b90adb19340d6475befcc
+Homepage: https://t.me/r71il
+Description: best Tweak for YouTube
+Name: iQTube
+Author: 7md
+Icon: file:///var/jb/Library/Application Support/iQTube.bundle/icon.png
+
 Package: com.82flex.iconrestore
 Architecture: iphoneos-arm64e
 Version: 1.7
@@ -7070,6 +7090,26 @@ Author: MTAC
 Icon: https://mtac.app/repo/assets/com.mtac.scope/icon-rounded.png
 SileoDepiction: https://mtac.app/repo/depiction/native/com.mtac.scope.json
 
+Package: com.mtac.vitreux
+Architecture: iphoneos-arm64e
+Version: 1.3
+Section: Tweaks
+Maintainer: MTAC
+Installed-Size: 7028
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0)
+Filename: ./debs/roothide/com.mtac.vitreux_1.3_iphoneos-arm64e.deb
+Size: 5927572
+MD5sum: 22fc4a788492313408f550b00c8ba175
+SHA1: 1d77b0848b3ff785163c9de81b3825c599853747
+SHA256: fdb790ba6fb4644ae17bc2f2f4d47219783a03a48d0c28825e8cc61560fcdbb4
+SHA512: 4ba30ea6e9d868bb97ade8941d76c739fc7baf36eb151fd5d8690609f064ddf123bd4601ae378356ad8da0da41107e497e0386777cf2cca33042d525ba1fd6c8
+Description: A recreation of Liquid Glass
+Name: Vitreux
+Author: MTAC
+Icon: https://mtac.app/repo/assets/com.mtac.vitreux/icon-rounded.png
+SileoDepiction: https://mtac.app/repo/depiction/native/com.mtac.vitreux.json
+
 Package: com.muirey03.cr4shed
 Architecture: iphoneos-arm64e
 Version: 4.3.1-1
@@ -7556,6 +7596,28 @@ SHA512: 227628fa7eda791121c4c978f87a29a97f87d4a15e9a0da5227e945a4afce737eace4c45
 Description: A full-featured tweak for Messenger.
 Name: SNMessenger
 Author: NguyenASang
+
+Package: com.nightwind.boldersreborn
+Architecture: iphoneos-arm64e
+Version: 1.1.2
+Section: Tweaks
+Maintainer: Nightwind <nightwinddev@gmail.com>
+Installed-Size: 5808
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.ichitaso.iconorder
+Conflicts: com.twickd.sirius24.folderplus, xyz.burritoz.thomz.folded, com.yourepo.i0s-tweak3r-betas.foldercontroller14, com.4nni3.coolfolder, com.lizynz.foldercolor, com.ginsu.4ders, com.iadam1n.statusfolder, gsc.ipad, com.lizynz.folderx.rootless, com.lizynz.folderx
+Filename: ./debs/roothide/com.nightwind.boldersreborn_1.1.2_iphoneos-arm64e.deb
+Size: 4865392
+MD5sum: 5589c881a62fdaac4da2e02bdc15a161
+SHA1: 451197573b8c8141a8caba608ac6f7994c438e58
+SHA256: 8e99798d9d8d42ddc975af4610f80ec1efe940c7f1b70dcd7bc6c74d05f64217
+SHA512: f3e44acc75699d8bec43ec0fa406412ca0f4d36bc2536ff54371bbd277516ab8ed64e8ad3e9077a46e293f818c3e0763871685c029631c4b1d91b6c87973f37c
+Description: Bigger and bolder folders, remade!
+Tag: compatible_min::ios14.0
+Author: Nightwind <nightwinddev@gmail.com>
+Name: Bolders Reborn
+Icon: https://img.chariz.cloud/icon/boldersreborn/icon@3x.png
+Depiction: https://chariz.com/get/boldersreborn
 
 Package: com.nightwind.floatingsafari
 Architecture: iphoneos-arm64e
@@ -8431,6 +8493,21 @@ Author: tesla_man <computerman939+POBsupport@gmail.com>
 Name: PopOutButtons
 Icon: https://img.chariz.cloud/icon/popoutbuttons/icon@3x.png
 Depiction: https://chariz.com/get/popoutbuttons
+
+Package: com.thenatis.vivacity
+Architecture: iphoneos-arm64e
+Version: 2.0
+Section: Themes
+Maintainer: Thenatis
+Filename: ./debs/roothide/com.thenatis.vivacity_2.0_iphoneos-arm64e.deb
+Size: 5141444
+MD5sum: a8ad36ac2de048f50d0691ccb3bd4e2c
+SHA1: 9f2761e19028a5cadb8b1e129dfa11185c661ed4
+SHA256: dd1c36683e0a61c2cfb2dbfbe0eedfc20693d933be8536274aa7badb99afc47f
+SHA512: 398a20330c4e4404fea3c6fe3ed4266e1042d59d602b33af8c75d67154bb91f9713824b30158abefbb9170cc8e89f7761ae00e2c8bda379bb7eae53dd65904f1
+Description: A Vibrant Theme to Light up Your Device!
+Name: Vivacity
+Author: Thenatis
 
 Package: com.tigisoftware.appdatamanager
 Architecture: iphoneos-arm64e
