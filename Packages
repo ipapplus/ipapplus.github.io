@@ -1360,6 +1360,24 @@ Author: Alexandra Aurora Göttlicher
 Icon: https://apt.002599.xyz/web/icon/codes.aurora.kayoko.png
 SileoDepiction: https://apt.002599.xyz/web/codes.aurora.kayoko
 
+Package: com.7md.iqgram
+Architecture: iphoneos-arm64
+Version: 1.1-1
+Section: Tweaks
+Maintainer: 7md
+Installed-Size: 3408
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.7md.iqgram_1.1-1_iphoneos-arm64.deb
+Size: 10849932
+MD5sum: a66c75de2ed6a53a78cfc6a4b7e03c00
+SHA1: a0cb17824f5497ccf37df9bc9db6889138191e83
+SHA256: dac9ef08d11052598f64f0f365bc104f92d39855c93af8a892f3d179726233f9
+SHA512: d1535f030d63a0b2acd4aa356aa9d58e50934e3dd20b6d65321a745d3ab347f3dde27232089df8da8b0754d6d898032579954f350cac3999ba16412f4c88f045
+Homepage: https://t.me/r71il
+Description: best Tweak for Instagram
+Name: iQGram
+Author: 7md
+
 Package: com.7md.iqtelegram
 Architecture: iphoneos-arm64
 Version: 1.2
@@ -1377,6 +1395,25 @@ Homepage: https://t.me/r71il
 Description: best Tweak for Telegram
 Name: iQTele
 Author: 7md
+
+Package: com.7md.iqtube
+Architecture: iphoneos-arm64
+Version: 1.1-20260810.131322
+Section: Tweaks
+Maintainer: 7md
+Installed-Size: 16196
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.7md.iqtube_1.1-20260810.131322_iphoneos-arm64.deb
+Size: 5798460
+MD5sum: 62f8b674160de3192bdc7c017d4e0971
+SHA1: 31b9aedc4a44356706af5883def46540b4c615c8
+SHA256: a4e9b72c4011e34f25d27e8d8517254b092aeb0a2545c624efa5b5474af2375f
+SHA512: 2ec7251e70bd35bf7ee1acb7e97a09e954e4ced36ed82562722cd02b31848c021c6d0f2b42e6302003718a60b04fe9f9813ad7139515e7ecfcc5188f339fb139
+Homepage: https://t.me/r71il
+Description: best Tweak for YouTube
+Name: iQTube
+Author: 7md
+Icon: file:///var/jb/Library/Application Support/iQTube.bundle/icon.png
 
 Package: com.82flex.iconrestore
 Architecture: iphoneos-arm64
@@ -1528,6 +1565,23 @@ Name: BHTikTok Plus
 SileoDepiction: https://raw.githubusercontent.com/Qhtx/qhtx/refs/heads/main/Othx/test.json
 Icon: https://i.imgur.com/Pyp3fg8.jpeg
 Author: dvntm
+
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64
+Version: 4.5
+Section: Tweaks
+Maintainer: Bandar Alruwaili
+Installed-Size: 16284
+Depends: mobilesubstrate, ws.hbang.common
+Filename: ./debs/rootless/com.bandarhl.bhtwitter_4.5_iphoneos-arm64.deb
+Size: 6425116
+MD5sum: c37c2bca4a6e66da1a5b60d8465568bc
+SHA1: 461683c5186e18ca4e49738e70896eba52182fd8
+SHA256: 29fad5eba6862ee245a4a9148c6c4484d485f486906c5047e3b0f10b6caab4a9
+SHA512: 176fb81529161f822a194fad0ed7ebfb7f9c787f0da4134f8eada684e4203f928668dad49fd535a1fbc091588ac0ae9d34065138bf93324d1d174e44fc76b941
+Description: Awesome tweak for Twitter
+Name: BHTwitter
+Author: Bandar Alruwaili
 
 Package: com.brend0n.notransitcardversionlimit
 Architecture: iphoneos-arm64
