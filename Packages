@@ -5758,6 +5758,24 @@ Name: Stalky
 Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.f0u4d.stalky
 
+Package: com.f0u4d.watusitools
+Architecture: iphoneos-arm64e
+Version: 2.8.3
+Section: Development
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0)
+Filename: ./debs/roothide/com.f0u4d.watusitools_2.8.3_iphoneos-arm64e.deb
+Size: 4557112
+MD5sum: 8f694d00c6b3e01fe3791759aad324dd
+SHA1: 859c9ecc5e980eeff6d03e57b4c56f3fbd4a2af7
+SHA256: e8d59a8a0575589bc40e490d7449f46e1a2edf0b0fe164ba829354f02672e243
+SHA512: b67f41c3a986fd2de96c1006889b35bb01eac1eae5e8fe14b95a168aa8be8a3d46b88403fb5852d3f2d4226d7f751e3689e976f9c460bcd04f16907860b06a35
+Description: Library for Watusi and other WhatsApp tweaks
+Name: WatusiTools
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.watusitools
+
 Package: com.fiore.calculatorhistory
 Architecture: iphoneos-arm64e
 Version: 1.2
@@ -8280,6 +8298,27 @@ Description: Snowboard theming engine
 Name: SnowBoard
 Author: Spark & Dennis D. Bednarz
 
+Package: com.sparklechan.swifty
+Architecture: iphoneos-arm64e
+Version: 2.0~alpha5
+Section: Utilities
+Maintainer: FCCT
+Depends: swift, clang-14, ldid, git
+Conflicts: com.sparklechan.sparkkit
+Filename: ./debs/roothide/com.sparklechan.swifty_2.0~alpha5_iphoneos-arm64e.deb
+Size: 3083888
+MD5sum: 51f04e216cb11997b6ecb72b46480deb
+SHA1: 0f6d3a995939ef41ca9e89b7359d9be365567203
+SHA256: 8a1dfcdb2094547a58b0c0f829f1992221ea1b1cc7ecf59e4e7228d3bf9c5110
+SHA512: af6c9c24beac28d46e958e04f07545e26159c39a2c7d694dfa2d5d86a789cb73c48239a039a01910fe606ae79a6abd53df09753300e5ab6c95ac5f8a76030c47
+Description: Full fledged Xcode-like IDE for iOS
+Name: FridaCodeManager
+Icon: https://img.chariz.cloud/icon/fridacodemanager/icon@3x.png
+Depiction: https://chariz.com/get/fridacodemanager
+SileoDepiction: https://chariz.com/api/sileo/package/com.sparklechan.swifty/depiction.json
+Header: https://cdn.chariz.cloud/sileo-banner/fridacodemanager.jpg
+Author: FCCT
+
 Package: com.squidforce.copyvault
 Architecture: iphoneos-arm64e
 Version: 1.9.0
@@ -9473,6 +9512,24 @@ Description: Clipboard history manager for iOS!
 Name: CopyLog
 Author: TomT000
 
+Package: me.tomt000.stageduo
+Architecture: iphoneos-arm64e
+Version: 1.2
+Section: Tweaks
+Maintainer: tomt000
+Installed-Size: 4900
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), com.opa334.altlist, preferenceloader
+Filename: ./debs/roothide/me.tomt000.stageduo_1.2_iphoneos-arm64e.deb
+Size: 3077376
+MD5sum: 5d3789db1d74bbf0e2d31051ad435075
+SHA1: 961f07d072dd5fbe324995bf64dcad3bcff065b4
+SHA256: c9ec9fbf515ea26a9538718aa680ee58b2e8857e9c0bf5842c3b0f43a2b46efd
+SHA512: b4761e6576c186c4c7a789e249b09c410a8ad66bf41bf253707077c6de5a093aeaf9a9c931df556a9d57accebca00abe08c79938400f69453bcbd6475f570bf5
+Description: Stage Manager Reimagined for iPhone
+Name: Dynamic Stage
+Author: tomt000
+
 Package: moe.waru.hoshu
 Architecture: iphoneos-arm64e
 Version: 1.0.0
@@ -9567,6 +9624,23 @@ Description: FreePIP is a tweak to un-snap and scale the view of Picture-in-Pict
 Name: FreePIP
 Author: Soh Satoh
 SileoDepiction: https://repo.keycap.one/depictions/one.keycap.freepip.json
+
+Package: org.coolstar.classicfolders2
+Architecture: iphoneos-arm64e
+Version: 3.0.6
+Section: Tweaks
+Maintainer: CoolStar
+Installed-Size: 4464
+Depends: mobilesubstrate, preferenceloader, firmware(>=15.0), com.ichitaso.iconorder
+Filename: ./debs/roothide/org.coolstar.classicfolders2_3.0.6_iphoneos-arm64e.deb
+Size: 3287860
+MD5sum: 23cfb9c8c3f51d127a9350d5ed888509
+SHA1: 41ca60501a1ca376669316db7483169718934c0a
+SHA256: b4448738a88c72c278ef6fb9212e2fc5fe3c295ae7def99f28a07f8d5725f986
+SHA512: ee07baf7b7e3f7b8be07a79831c182b9a096146ed4008b43284d53054ec1bd6f07293e361993c6b464878aeeff73a45fe8d783038ef24aa295978c9da31e9d96
+Description: An awesome MobileSubstrate tweak!
+Name: ClassicFolders 2
+Author: CoolStar
 
 Package: org.hacx.hacxdaemon
 Architecture: iphoneos-arm64e
