@@ -1583,6 +1583,24 @@ Description: Awesome tweak for Twitter
 Name: BHTwitter
 Author: Bandar Alruwaili
 
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
+Version: 5.3
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 16832
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Filename: ./debs/rootless/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64.deb
+Size: 6553388
+MD5sum: 00c39678cb80fb88f80d7fdfeb1f1542
+SHA1: c78d7bb2b3abcc2059f0865ae4845cae94a658ba
+SHA256: d460cf72ff830ce16f3f0aa8747f19235a8d7354ae8b8041a18d7c630343e594
+SHA512: 65e7143cd49b5819a4422a89d710810989b9a4e344ceee7eea359214706996ccef54752ac51d9f0a6626815e60fcdc67d545493b3a06e261896bbed0e6a7cc68
+Description: Awesome tweak for Twitter
+Name: NFB-BHTwitter
+Author: NeoFreeBird
+
 Package: com.brend0n.notransitcardversionlimit
 Architecture: iphoneos-arm64
 Version: 0.0.2
@@ -1936,6 +1954,25 @@ Name: Flow for Messenger
 Author: dvntm, nowesr1
 Icon: https://raw.githubusercontent.com/dayanch96/Flow/refs/heads/main/Sileo/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json
+
+Package: com.dvntm.glow
+Architecture: iphoneos-arm64
+Version: 1.3.1
+Section: Tweaks
+Maintainer: dvntm, nowesr1
+Installed-Size: 17004
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/rootless/com.dvntm.glow_1.3.1_iphoneos-arm64.deb
+Size: 6892476
+MD5sum: 848d253183bd33fd995deb939192c016
+SHA1: 466eb2b714107ea56e94283b284ef7af84fd1c88
+SHA256: 65d8778ac8da4d79bcfa89d179809b24e48323149f27aaba8c3e90d4f43e8e06
+SHA512: 62041e0f3cf03aeb680407b1495dfd5d664f8d8dfff6630378d153f7b0697616c99f8c350856002ce302b140e9d7608b8fc2082c1d6803cb032837f47999008f
+Description: Cleaner. Smarter. Yours.
+Name: Glow for Facebook
+Author: dvntm, nowesr1
+Icon: https://raw.githubusercontent.com/dayanch96/Glow/refs/heads/main/Sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/Glow/main/Sileo/depiction.json
 
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64
@@ -2376,6 +2413,24 @@ Description: Disable right-to-left languages across the system!
 Name: DisableRTL
 Author: @iMokhles
 SileoDepiction: https://raw.githubusercontent.com/Qhtx/qhtx/refs/heads/main/Othx/DisableRTL.json
+
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64
+Version: 2.6.9
+Section: Tweaks
+Maintainer: iosdump
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Filename: ./debs/rootless/com.iosdump.appdata_2.6.9_iphoneos-arm64.deb
+Size: 1713668
+MD5sum: 891df4713b57e05c496700c8a1d98ce8
+SHA1: 15c60866991d10ec4624ed665a32f9abc233a965
+SHA256: 9fcda9182c56292e0b286944349fca3f3e8c79ccac1bfcdb5688a00122858dc8
+SHA512: e0edf74fa680fb79dc14cc8732df5015c049715ea09af45535911f60e5d486b3fd8ec6a7625e06679f6b7c2b0b15a97308ba468bfe09742cad4ee7f548751ac7
+Description: 在主屏幕查看应用数据与管理应用
+Name: AppData
+Author: iosdump
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
 
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64
