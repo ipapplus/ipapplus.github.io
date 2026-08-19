@@ -3479,6 +3479,24 @@ Name: unlock apps
 Author: adry
 Icon: https://i.imgur.com/m2Bn0u4.jpeg
 
+Package: dylv.liquidass
+Architecture: iphoneos-arm64
+Version: 0.1.0b
+Section: Tweaks
+Maintainer: dylv
+Installed-Size: 3592
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0), preferenceloader
+Filename: ./debs/rootless/dylv.liquidass_0.1.0b_iphoneos-arm64.deb
+Size: 1301516
+MD5sum: 6f6dfc3f4cf6f1083ff7e097501a272b
+SHA1: ac70c79c69a99f168cf9952bf6a42ffd851bd353
+SHA256: 3385b5a87a2179ef8cf12b135a0a4d8b7ac85d6b2d3a55a356986613cc51173a
+SHA512: 8e0fca655ef9bef8e79876d1def2afec9d549fd296342ca75e0b9a6af57bb9b0a26d365e3b00ec8b7b2e889fbd72bddad44658ac3e1546698ae829dea698b565
+Description: next level diarrhea
+Name: Liquid (Gl)ass
+Author: dylv
+Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
+
 Package: jetsamunlimited
 Architecture: iphoneos-arm64
 Version: 1.0
@@ -3796,6 +3814,49 @@ Description: First made by iPadkid358 - then updated by myself. Change Flex 3 pa
 Name: Flex To Theos
 Depiction: https://Randy-420.GitHub.io/depic/ftt.html
 Author: ipad_kid_Randy420 <ipadkid358@gmail.com, randy.skinner@hotmail.com>
+
+Package: tools4cydia.flexpatch.pro
+Architecture: iphoneos-arm64
+Version: 5.3.5-4
+Section: Tweaks
+Maintainer: tools4cydia
+Installed-Size: 240
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/rootless/tools4cydia.flexpatch.pro_5.3.5-4_iphoneos-arm64.deb
+Size: 10301484
+MD5sum: cd83797982fa1b93be7db485e2be4c85
+SHA1: 887ef3bb81b67c71c1f5e9dd9b7ffa45cea7281c
+SHA256: 6732099fb97232bfadf227b1c3755c1debded5d1203475968ce7c40dae6d5db7
+SHA512: 0dd66437567f30637f2e34acdb88e1d0da3a53fcf3e46895e62f26d236fea5dfa562b3cb83f03b1262b65febf1c3707aa13a918ac25441b66247d5af96279c25
+Description: FlexPatch Pro is a powerful on-device tweak builder for jailbroken iOS. Browse installed apps, inspect Objective-C and Swift classes, hook methods, override return values, and intercept arguments — then compile and package your tweak as a .deb file without ever touching a Mac.
+Tag: role::enduser
+Name: FlexPatch Pro (Rootless)
+Author: tools4cydia
+Icon: https://tools4cydia.info/images/FlexPatchPro/AppIcon.png
+
+Package: ws.hbang.newterm3
+Architecture: iphoneos-arm64
+Version: 3.0~beta1-3
+Section: Terminal Support
+Maintainer: HASHBANG Productions <support@hbang.ws>
+Installed-Size: 24244
+Depends: firmware (>= 14.0), zsh | bash | fish, coreutils, ncurses, system-cmds
+Recommends: gettext-localizations, iterm2-shell-integration, zsh-autosuggestions, zsh-syntax-highlighting
+Conflicts: ws.hbang.newterm, ws.hbang.newterm2
+Replaces: ws.hbang.newterm, ws.hbang.newterm2
+Filename: ./debs/rootless/ws.hbang.newterm3_3.0~beta1-3_iphoneos-arm64.deb
+Size: 3946476
+MD5sum: 85c4ca320833bee5fbf6fbaba94eab3d
+SHA1: d33858943939b8bd165a8dc1855dbe06804ea3ac
+SHA256: 2198d4872bb238decbf0f2b4aa0016b9939d3a5f3ab6ecf83f33fcc879d1b3ea
+SHA512: 20bf65586de87d3336410f01cf3bb97a9d0be7fcee076935789de8adfa286fb5cb18e4161060ce84b51065ee6107cf4527d6202b6981f5722d944d5e783bfb98
+Description: Powerful terminal app for iOS
+Tag: compatible_min::ios14.0
+Name: NewTerm 3 Beta
+Author: HASHBANG Productions <support@hbang.ws>
+Icon: https://img.chariz.cloud/icon/newterm-beta/icon@3x.png
+Depiction: https://chariz.com/get/newterm-beta
+Support: https://hashbang.productions/support/
 
 Package: xyz.skitty.ersatz
 Architecture: iphoneos-arm64
