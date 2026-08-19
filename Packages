@@ -3298,6 +3298,24 @@ Description: A CarPlay inspired notifications look!
 Name: ReverseNotifications
 Author: SynnyG_R <synnyg.devjb@gmail.com>
 
+Package: com.tigisoftware.filza64bit
+Architecture: iphoneos-arm64
+Version: 4.0.1-4
+Section: Utilities
+Maintainer: TIGI Software
+Installed-Size: 23200
+Recommends: zip, unzip, gzip, p7zip, unrar, xz-utils
+Conflicts: com.tigisoftware.filza, com.tigisoftware.filza39
+Filename: ./debs/rootless/com.tigisoftware.filza64bit_4.0.1-4_iphoneos-arm64.deb
+Size: 6973616
+MD5sum: d221799aeb1d7f63d8d03e3e19df0fc9
+SHA1: a4a82b651339d4f9a2e248b36712c5427266897b
+SHA256: 9d12b2e3698d2873d2db1cf4ca98d7b3d5f5cd377de9da42108b101b03a3cf46
+SHA512: cafefe03db72be8a7820c0ff25ff182eab2909e1124b70db7bde2db24fc2cc837232f35e0545c437c8412e06bfb319972e9e22696d2d8946e2cf5147375876ef
+Description: File Manager for iPhone, iPad, iPod Touch. Supports iOS 11+. This version only supports 64-bit devices
+Name: Filza File Manager 64-bit
+Author: TIGI Software
+
 Package: com.tonykraft.inosleep
 Architecture: iphoneos-arm64
 Version: 1.2.4
@@ -3352,6 +3370,41 @@ Name: DockX
 Author: udevs
 Icon: https://udevsharold.github.io/repo/depictions/com.udevs.dockx/icon/icon.png
 SileoDepiction: https://lclrc.github.io/repo/depictions/native/com.udevs.dockx/depiction.json
+
+Package: com.w3ltyyy.lead
+Architecture: iphoneos-arm64
+Version: 1.4.4
+Section: Tweaks
+Maintainer: w3ltyyy
+Installed-Size: 25176
+Filename: ./debs/rootless/com.w3ltyyy.lead_1.4.4_iphoneos-arm64.deb
+Size: 5015780
+MD5sum: f794d6552591fa74445acf2c974d026d
+SHA1: 5facf36c69b2142833d93c2f5e3185189656fcca
+SHA256: a9e32a39fa2a5bff3bf94b2e02a43e2fdae78e65fdc2ece6320d288016fbb34a
+SHA512: 9db16a2aff588324604360bc58bfb766bb3e585c8f4ed2619f5d853e05c855e8e29286b16add69f260bb045518565c1a82540e4d6cfdcb3a10e5a13276330a1c
+Description: The best Tweak For Telegram iOS
+Name: Lead
+Author: w3ltyyy
+
+Package: com.wee1ka.ifetch
+Architecture: iphoneos-arm64
+Version: 6.0.0
+Section: Tweaks
+Maintainer: wee1ka
+Installed-Size: 4140
+Depends: firmware (>= 14.0), firmware (<< 99.0), mobilesubstrate, com.opa334.ccsupport
+Filename: ./debs/rootless/com.wee1ka.ifetch_6.0.0_iphoneos-arm64.deb
+Size: 1935384
+MD5sum: 6e01215c7c63802f19613ebabfee1436
+SHA1: afaefcd5d75a6eac56868a923b2ef0ae235d935d
+SHA256: 67ee308adb29bb093786decb0c945e2d606ed1f256f3438e2c9ccd93822fff71
+SHA512: 9780bb9f3d5b6d97d2b84d85e8356f73f26e420fb91495fc538ef1016f843e4998d4ac0e5762642f0ef050309fa93e24895f1dcfe9fcaa41a7f5d693a120eba3
+Description: Advanced system diagnostics, process monitor and CLI fetch for rootless and RootHide jailbreak devices on iOS 14–17
+Name: iFetch
+Author: wee1ka
+Icon: https://weekanya.github.io/iFetch/assets/ifetch-icon.png
+SileoDepiction: https://weekanya.github.io/iFetch/sileodepiction.json
 
 Package: com.wrp1002.nosettingsbadge
 Architecture: iphoneos-arm64
