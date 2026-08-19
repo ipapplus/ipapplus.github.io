@@ -8611,6 +8611,26 @@ Author: TIGI Software <satashi2009@gmail.com>
 dev: satashi2009
 Icon: file:///Applications/ADManager.app/AppIcon60x60@2x.png
 
+Package: com.titand3v.libtitand3vuniversal
+Architecture: iphoneos-arm64e
+Version: 1.9
+Section: System
+Maintainer: TitanD3v
+Installed-Size: 13120
+Filename: ./debs/roothide/com.titand3v.libtitand3vuniversal_1.9_iphoneos-arm64e.deb
+Size: 10088728
+MD5sum: aa7753f74c8ee1e8b0ea1ad4db5be196
+SHA1: eb838ce7af105f2270d072d72ae2aeca27c5a8fc
+SHA256: b944074adb730cd636d334a727c207cb7438ff705d6664bb0b723e797f71b351
+SHA512: 6ab5795c8e1bdb93c8c1c4cd000577e96e4afbb720b98d16f3777dd5cf73ae7042f7c279e315cd81ae873edce5301c1d637bc9edb2cd621557c4f62ecf8342fa
+Description: TitanD3v universal library!
+Tag: role::developer
+Name: libTitanD3vUniversal
+Author: TitanD3v
+Depiction: https://a7m.dev/file/a/titand3vlib/index.html
+Icon: https://a7m.dev/file/a/titand3vlib/assets/icon.png
+SileoDepiction: https://a7m.dev/file/a/titand3vlib/index.json
+
 Package: com.titand3v.speedy
 Architecture: iphoneos-arm64e
 Version: 1.0
@@ -8728,6 +8748,23 @@ Name: EmojiSkinPrefs
 Author: PoomSmart & vXBaKeRXv
 Depiction: https://poomsmart.github.io/repo/depictions/emojiskinprefs.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/emojiskinprefs.json
+
+Package: com.w3ltyyy.lead
+Architecture: iphoneos-arm64e
+Version: 1.4.4
+Section: Tweaks
+Maintainer: w3ltyyy
+Installed-Size: 25176
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: ./debs/roothide/com.w3ltyyy.lead_1.4.4_iphoneos-arm64e.deb
+Size: 10007388
+MD5sum: b36334655aabd19b5c40ccd1a1860f81
+SHA1: 26cda7c590a7549a8f4864e4fc0f4c467d15e2d3
+SHA256: 7e45b722c93ce5a81a8b27da25ff192c2106be9a7d01eeef3f63a4062e771e0d
+SHA512: 41954cb9b8fc7fe41120178f61a54db9902c2b703c4a001140a20903e93ea70b3b9f1b88d4ebb6fef2943f46e882f332c38b72dc1cfcb4ddd8c5c04540295dc0
+Description: The best Tweak For Telegram iOS
+Name: Lead
+Author: w3ltyyy
 
 Package: com.wee1ka.ifetch
 Architecture: iphoneos-arm64e
@@ -9912,6 +9949,25 @@ Name: Graphite Library
 Author: Geometric Software
 Depiction: https://store.geometricsoftware.se/packages/se.geometric.graphite
 SileoDepiction: https://apt.geometricsoftware.se/package/se.geometric.graphite/depiction
+
+Package: tools4cydia.flexpatch.pro
+Architecture: iphoneos-arm64e
+Version: 5.1.0-3
+Section: Tweaks
+Maintainer: tools4cydia
+Installed-Size: 236
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/roothide/tools4cydia.flexpatch.pro_5.1.0-3_iphoneos-arm64e.deb
+Size: 10133312
+MD5sum: 614d727572136c359e68e649d36728e9
+SHA1: 068198ecca87326130691eb4e4158f239384b494
+SHA256: 1fd87a0ecaee6aa3257a11b57f2b0261e2014d92756d1fee89d03cc9674eda53
+SHA512: fe105299f0455fcf1dcb82312e1ecee41226129665fc63cf00fc1abb7d035dcf281732080e63219b54a57b0fa7a7e1ed8c0d3d179fa537acd1fa01f0bbc759e4
+Description: FlexPatch Pro is a powerful on-device tweak builder for jailbroken iOS. Browse installed apps, inspect Objective-C and Swift classes, hook methods, override return values, and intercept arguments — then compile and package your tweak as a .deb file without ever touching a Mac.
+Tag: role::enduser
+Name: FlexPatch Pro (Roothide)
+Author: tools4cydia
+Icon: https://tools4cydia.info/images/FlexPatchPro/AppIcon.png
 
 Package: twitter.nowesr1.location-spoofer
 Architecture: iphoneos-arm64e
