@@ -4416,6 +4416,24 @@ Description: Raises the Jetsam memory limit of WhatsApp's notification ServiceEx
 Name: FixWANotifs
 Author: 0xkuj
 
+Package: com.0xkuj.iparanger
+Architecture: iphoneos-arm64e
+Version: 2.2
+Section: Applications
+Maintainer: 0xkuj
+Installed-Size: 11496
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: gawk, unzip, plutil
+Filename: ./debs/roothide/com.0xkuj.iparanger_2.2_iphoneos-arm64e.deb
+Size: 6866092
+MD5sum: 8628131ff935700e5a43353e885d8e9c
+SHA1: 9831de9ed2b951a34dc1b28473291e28d9e36ddd
+SHA256: e7d4b5f8f1a8f170ba435a841fc63b17be152269828a13bdb23d7c63668f5f37
+SHA512: c91b95cbb97e091caba5e6ee67fe056c219eb5aa578655a992788295c556138ec261001027d9086f821a0354075c9954620233d0a78476cc4b551be042ec647d
+Description: GUI Based Application for ipatool
+Name: IPA Ranger
+Author: 0xkuj
+
 Package: com.0xkuj.nopastealerts16
 Architecture: iphoneos-arm64e
 Version: 1.0.0
@@ -4719,6 +4737,25 @@ Description: An awesome tweak for TikTok!
 Name: BHTikTok Plus
 Author: dvntm
 Icon: https://i.imgur.com/PKIhkrt.png
+
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64e
+Version: 5.3
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 16832
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Filename: ./debs/roothide/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64e.deb
+Size: 6469840
+MD5sum: 75939d3abe9386c36ff5f506e27305d6
+SHA1: ccfcde3fbc1c61ea0f96ed9da7c9aa0564edacc7
+SHA256: d2f0ff5eb96bb4bf67bc52d7a62be9a20032eb91f2b4a9a33bab5a9ff71d8f97
+SHA512: 8e641dbef15a3a9ec5ff55877cb15e0b0133499e851b90e1e55140b6b090976c23c85cd93b51b5209d47431994ccea93ca1bd2fc524b568ee50fdc0799373901
+Description: Awesome tweak for Twitter
+Name: NFB-BHTwitter
+Author: NeoFreeBird
 
 Package: com.brend0n.notransitcardversionlimit
 Architecture: iphoneos-arm64e
@@ -5432,6 +5469,25 @@ Name: Flow for Messenger
 Author: dvntm, nowesr1
 Icon: https://raw.githubusercontent.com/dayanch96/Flow/refs/heads/main/Sileo/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json
+
+Package: com.dvntm.glow
+Architecture: iphoneos-arm64e
+Version: 1.3.1
+Section: Tweaks
+Maintainer: dvntm, nowesr1
+Installed-Size: 17004
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.dvntm.glow_1.3.1_iphoneos-arm64e.deb
+Size: 6905432
+MD5sum: 1b627627ae75af0ab2a32d7e69bca0e7
+SHA1: 9efb44f8cee59856648ae3c76629b5040c5f5e4e
+SHA256: 57e9def109ef0a867f11a1d66ba6b41eb7ba9b99586cd24aa3f39d3db56d0ab6
+SHA512: 0259247fbd36daa9c1f7f1367f9b4d8cf73548d6c5c97f4f21f9d8976b111c846d93d1fb59f62d9ee56230db956c4bb9ca846c40050bf277d886f8b4490d45be
+Description: Cleaner. Smarter. Yours.
+Name: Glow for Facebook
+Author: dvntm, nowesr1
+Icon: https://raw.githubusercontent.com/dayanch96/Glow/refs/heads/main/Sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/Glow/main/Sileo/depiction.json
 
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64e
@@ -6556,6 +6612,27 @@ Author: KingPuffdaddi <kingpuffdaddi@icloud.com>
 Name: CCVPN
 dev: kingpuffdaddi
 Icon: file:///Library/ControlCenter/Bundles/CCVPN.bundle/Icon@2x.png
+
+Package: com.korboy.sileo
+Architecture: iphoneos-arm64e
+Version: 2.5.7
+Section: Packaging
+Maintainer: Korboy <korboybeats@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Filename: ./debs/roothide/com.korboy.sileo_2.5.7_iphoneos-arm64e.deb
+Size: 6190008
+MD5sum: 80b37a3995178082d2f1bf87a26ea295
+SHA1: 71d2a4f140ab8e983dbed0cc9dec926b817276ce
+SHA256: 4afbc32f3bdb9498f1a73398bd19b56660a3f47472f82a9b158c5018f3360767
+SHA512: 34001a8a3c17f1cf83b0972e54cf3bf6af8307f4cf5f238e67389bfc13c4bc5cbd04a3cc6b6f6e206cd76fb5436ad313ee68c4f3c1c06b08a1f95378a2d75260
+Description: A modern APT package manager frontend.
+Name: Sileo
+Author: Korboy <korboybeats@gmail.com>, Amy While, waruhachi
+Icon: https://korboybeats.github.io/sileo/icon.png
+X-Sileo-Fork: com.korboy.sileo
+Depiction: https://korboybeats.github.io/sileo/depiction/?v=2.5.7
+SileoDepiction: https://korboybeats.github.io/sileo/sileo_depiction/index.json?v=2.5.7
 
 Package: com.lclrc.hammerit
 Architecture: iphoneos-arm64e
