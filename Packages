@@ -1195,6 +1195,25 @@ Description: Block applications from creating their own albums
 Name: BlockAppsCreateAlbum
 Author: Netskao
 
+Package: preferenceloader
+Architecture: iphoneos-arm
+Version: 2.3
+Section: System
+Maintainer: Dhinak G <dhinak@dhinak.net>
+Installed-Size: 380
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: preferenceloader-legacy
+Replaces: preferenceloader-legacy
+Filename: ./debs/rootful/preferenceloader_2.3_iphoneos-arm.deb
+Size: 31744
+MD5sum: ea34d4a214a2be6bc2e71d9a4cbc151f
+SHA1: 190a057a2bec2ec5d5e05f28fb94372dcf8d05d7
+SHA256: 83d7dac3dafc44fed13212718218b1e8db7d96c4e2f61d37b6641cef022e431e
+SHA512: a262306308a972a18d8b6b6047e4d34c0721a8583bf5f1178bff34db71213891bf720fcec0aa9ab494d777e5b756b9d48e59101a5200cf324711316644798973
+Description: A MobileSubstrate-based utility that allows developers to add entries to the Settings application
+Name: PreferenceLoader
+Author: Dustin Howett <dustin@howett.net>
+
 Package: ai.akemi.appsyncunified
 Architecture: iphoneos-arm64
 Version: 116.0
@@ -2982,6 +3001,25 @@ Description: Toggle Transparency when paused and when playing!
 Name: Listening
 Author: Ethan Whited, ichitaso
 
+Package: com.nan.disablesblockaftercrash
+Architecture: iphoneos-arm64
+Version: 0.1.0
+Section: System
+Maintainer: zhaonan
+Pre-Depends: firmware (>= 7.0)
+Depends: plutil | com.bingner.plutil
+Filename: ./debs/rootless/com.nan.disablesblockaftercrash_0.1.0_iphoneos-arm64.deb
+Size: 1228
+MD5sum: 1535abd43a89bf102ca1fb821e1549ac
+SHA1: 32ed62e231e0e70791e24efdbc77a51e54825d17
+SHA256: ea5ca9e759c1ef91bb0b2e3a39b6eee6f0c9eedb4c5ddc001457f53c39953e67
+SHA512: c632d66833f8d63dc2ee2977919f11593f6ee60d8c82715a18130690a0588b71fd798e2bbc1426955b4ec2c0d4ffebb7c91b315c94ddf0a11998905619d0d16d
+Description: 禁用 SpringBoard 崩溃后自动锁定的策略
+Name: Disable SB Lock After Crash
+Author: zhaonan
+SileoDepiction: https://invalidunit.github.io/sileodepiction/com.nan.disablesblockaftercrash/js.json
+Icon: https://invalidunit.github.io/sileodepiction/default/image_fix.png
+
 Package: com.nan.disablethermalmonitord
 Architecture: iphoneos-arm64
 Version: 0.1.0
@@ -3929,6 +3967,26 @@ Depiction: https://p2kdev.github.io/repo/depictions/index.html?packageId=org.the
 Icon: https://p2kdev.github.io/repo/api/packageinfo/org.thebigboss.libcolorpicker/icon.png
 SileoDepiction: https://p2kdev.github.io/repo/depictions/native/org.thebigboss.libcolorpicker.json
 
+Package: org.thebigboss.libcolorpicker
+Architecture: iphoneos-arm64
+Version: 1.6.9.2
+Section: System
+Maintainer: Bailey Seymour
+Installed-Size: 304
+Provides: me.nepeta.libcolorpicker, ws.hbang.alderis
+Depends: firmware (>= 6.0)
+Replaces: me.nepeta.libcolorpicker, ws.hbang.alderis
+Filename: ./debs/rootless/org.thebigboss.libcolorpicker_1.6.9.2_iphoneos-arm64.deb
+Size: 45764
+MD5sum: ca820ee221df8feffcf17eeb25f93eca
+SHA1: 7af5d4897744c9d68be8c18b4ce0b421ccdcdc85
+SHA256: aefa324cb0580560d51f724ce2e8cfdfc705c7bcf5e75424eee6224aaa8a7265
+SHA512: 3fce13e882874aa5ecc4f69505c23e30596b425a88de9d3ac9319647cda3298e2a79f4e04b1f19c46dcb1a4867dac38781a19051be3d553306da958a4587db18
+Description: An awesome library of some sort!!
+Tag: role::developer
+Name: libcolorpicker
+Author: Bailey Seymour
+
 Package: org.wuffs.flickplus
 Architecture: iphoneos-arm64
 Version: 0.0.9
@@ -3945,6 +4003,25 @@ SHA512: e6b699bd40f5960f46c9eb5e1d3e5bc8c1d9662cf67f5727f5757674feb6f4ec9fab2e18
 Description: iPad-like key flicks on iPhone (iOS 13)
 Name: FlicksForAll
 Author: Ninji <ninji@wuffs.org>
+
+Package: preferenceloader
+Architecture: iphoneos-arm64
+Version: 2.3
+Section: System
+Maintainer: Dhinak G <dhinak@dhinak.net>
+Installed-Size: 380
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: preferenceloader-legacy
+Replaces: preferenceloader-legacy
+Filename: ./debs/rootless/preferenceloader_2.3_iphoneos-arm64.deb
+Size: 31222
+MD5sum: f6b9c51b3053339d40e51a80bde92d2e
+SHA1: a5615dca549525d6f783b206d1b750e8fdac0115
+SHA256: c3b5fadc338c66cb270e8cfbdab96f88d1fa08a7fd3693782e2428034d541d98
+SHA512: 48a3ed147dfc20eca04506435390c77bb3297520383c54ea21b8542fe7210ccfef0e93cf3dcf84e0bb5f0161691d5d46d47d34298806d0080a434ad69a8c50e0
+Description: A MobileSubstrate-based utility that allows developers to add entries to the Settings application
+Name: PreferenceLoader
+Author: Dustin Howett <dustin@howett.net>
 
 Package: rootfultorootless
 Architecture: iphoneos-arm64
@@ -9964,6 +10041,25 @@ SHA512: 19ad7a19129bd3070ae4071c8d47e6200599502ee62bb18861ac28a7b10e87f7d657056f
 Description: iPad-like key flicks on iPhone (iOS 13)
 Name: FlicksForAll
 Author: Ninji <ninji@wuffs.org>
+
+Package: preferenceloader
+Architecture: iphoneos-arm64e
+Version: 2.3
+Section: System
+Maintainer: Dhinak G <dhinak@dhinak.net>
+Installed-Size: 380
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: preferenceloader-legacy
+Replaces: preferenceloader-legacy
+Filename: ./debs/roothide/preferenceloader_2.3_iphoneos-arm64e.deb
+Size: 29804
+MD5sum: 8b7923455819b928e21e90a4cf51a525
+SHA1: fa5369b1313caaeaa921c1c9b5af2ec3906da6ec
+SHA256: 34f45fbfa947b32249330d5301efecb9faddc5ba04a2fa14fa868d5bb05ab3a5
+SHA512: 2ba06d957971a48692202bf466c5222db7800df6f2cbf671c9ae09ca66afb23335d20fae7c7a47a23198d3bd8c137d54a6836600fe492031fdcb09a8ce3d0f05
+Description: A MobileSubstrate-based utility that allows developers to add entries to the Settings application
+Name: PreferenceLoader
+Author: Dustin Howett <dustin@howett.net>
 
 Package: rootfultorootless
 Architecture: iphoneos-arm64e
