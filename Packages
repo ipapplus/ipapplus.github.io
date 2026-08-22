@@ -7831,6 +7831,29 @@ Description: A full-featured tweak for Messenger.
 Name: SNMessenger
 Author: NguyenASang
 
+Package: com.nicksworks.roadrunnerreborn
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: Nick's Works <hadobedo@gmail.com>
+Installed-Size: 512
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), ellekit, preferenceloader, com.opa334.altlist
+Conflicts: com.nick.keepthepartygoing, se.nosskirneh.roadrunner
+Replaces: com.nick.keepthepartygoing, se.nosskirneh.roadrunner
+Filename: ./debs/roothide/com.nicksworks.roadrunnerreborn_1.0.0_iphoneos-arm64e.deb
+Size: 63644
+MD5sum: d38552522ad27afe2e441f0ed6bed36e
+SHA1: a2c26306ac8dfdf1d3adc5b90c996497eef6e98a
+SHA256: 366b5b723b99bb826f6ad0d93789283cce57552fc4ba0d6da2f7ad20a930a2a6
+SHA512: e2ac8426204cb00376ec9aa8e956708a3fe3a5dc5065a3366e665daa9fbe45dc99d2283ec5e7529897a246a7d912a8ed84e9f16eb81815a6928e49f33c0747de
+Homepage: https://github.com/hadobedo/RoadRunnerReborn
+Description: RoadRunner Reborn preserves Now Playing media and selected applications through SpringBoard resprings on modern iOS jailbreaks.
+Name: RoadRunner Reborn
+Author: Nick's Works (Hadobedo)
+SileoDepiction: https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.json
+Depiction: https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.html
+
 Package: com.nightwind.boldersreborn
 Architecture: iphoneos-arm64e
 Version: 1.1.2
@@ -8313,6 +8336,25 @@ SHA256: b179a40c3cf899a7178c58a5043db9a94541e1425ee954e99b62e709cd0d8dd5
 SHA512: 50ed49bb0afe5a748f9331185be667f29db4492ac97d43a9c721c7e479f0c7629728cc3afadbd56b422b14d9f6b46f345dfcf7c6f6aef44d93666ea01f53c813
 Description: Foreground your apps even if they are in the background!
 Name: Immortalizer
+Author: sergy
+Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
+
+Package: com.sergy.immortalizerjailed
+Architecture: iphoneos-arm64e
+Version: 2.2
+Section: Tweaks
+Maintainer: sergy
+Installed-Size: 652
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.sergy.immortalizerjailed_2.2_iphoneos-arm64e.deb
+Size: 51666
+MD5sum: 92dbe0d25127865ba654b28d914ab09e
+SHA1: 65b9a85368bc3db868b144d580db4b64d8a5c53e
+SHA256: e363a40750a89bb419888e0a56a73c5106f8052243b62c63f7ee63d848e90ef5
+SHA512: f1fc548e004a0851bb4d79fcf25e462e48d2e15a513abb045842ae410fa4bf2221ce42a240e3fee2b1ed4b2cf7d1c8cc8c356f033cd475ac68c8d753728899b9
+Description: Foreground your apps even if they are in the background!
+Name: Immortalizer Jailed
 Author: sergy
 Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
 
