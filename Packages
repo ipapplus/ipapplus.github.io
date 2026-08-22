@@ -650,6 +650,26 @@ Description: Provides legacy WhatsApp version support by spoofing as up-to-date
 Name: WALegacy
 Author: dvntm
 
+Package: com.faroukbmiled.ryukgram
+Architecture: iphoneos-arm
+Version: 1.3.3
+Section: Tweaks
+Maintainer: Ryuk
+Installed-Size: 5028
+Depends: mobilesubstrate
+Conflicts: com.faroukbmiled.ryukgram.legacy
+Replaces: com.faroukbmiled.ryukgram.legacy
+Filename: ./debs/rootful/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm.deb
+Size: 16831080
+MD5sum: 8b4a2216574a61a1f93a15a72a75f356
+SHA1: cf5ed58160484043f417f73c98aa4a28730e371d
+SHA256: c63f2862fc0afc9450daec13bcd8fc27d18920df410865069d9e414680cdcc2d
+SHA512: 388ef5013087042ab525e36be7339ef0800347b80401dd64c0f5bc6f1896bbb8c801cbb8ac51379ada648783c3d588603d2d0db97218d3900f8dd35555464db9
+Homepage: https://github.com/faroukbmiled/RyukGram
+Description: A feature-rich enhancement suite for Instagram on iOS
+Name: RyukGram
+Author: Ryuk
+
 Package: com.guacforlife.reynarddefault
 Architecture: iphoneos-arm
 Version: 1.5.0
@@ -1359,24 +1379,6 @@ Name: Hello Kayoko
 Author: Alexandra Aurora Göttlicher
 Icon: https://apt.002599.xyz/web/icon/codes.aurora.kayoko.png
 SileoDepiction: https://apt.002599.xyz/web/codes.aurora.kayoko
-
-Package: com.7md.iqgram
-Architecture: iphoneos-arm64
-Version: 1.1-1
-Section: Tweaks
-Maintainer: 7md
-Installed-Size: 3408
-Depends: mobilesubstrate
-Filename: ./debs/rootless/com.7md.iqgram_1.1-1_iphoneos-arm64.deb
-Size: 10849932
-MD5sum: a66c75de2ed6a53a78cfc6a4b7e03c00
-SHA1: a0cb17824f5497ccf37df9bc9db6889138191e83
-SHA256: dac9ef08d11052598f64f0f365bc104f92d39855c93af8a892f3d179726233f9
-SHA512: d1535f030d63a0b2acd4aa356aa9d58e50934e3dd20b6d65321a745d3ab347f3dde27232089df8da8b0754d6d898032579954f350cac3999ba16412f4c88f045
-Homepage: https://t.me/r71il
-Description: best Tweak for Instagram
-Name: iQGram
-Author: 7md
 
 Package: com.7md.iqtelegram
 Architecture: iphoneos-arm64
@@ -4605,25 +4607,6 @@ Description: Safari Essential Features
 Name: SafariX
 Author: 0xkuj
 
-Package: com.7md.iqgram
-Architecture: iphoneos-arm64e
-Version: 1.1-1
-Section: Tweaks
-Maintainer: 7md
-Installed-Size: 3408
-Pre-Depends: rootless-compat(>= 0.9)
-Depends: mobilesubstrate
-Filename: ./debs/roothide/com.7md.iqgram_1.1-1_iphoneos-arm64e.deb
-Size: 10734092
-MD5sum: 40902a15daa6d676e5d183f55bf9f24a
-SHA1: 92481f79f349eacdaa90589ea83edce9349af40e
-SHA256: 43f17c93471e86c2f58c6f26c7d632624d7dc624db5f2ac9aeda61fa37d5707c
-SHA512: 060ec0e506a8b5456e6a117f1830d96f386d91530a5fa852b2d02be488bedf264bafd4432025c4bfcab9b3fa072c47e1aa943371abd2aaf31134d829eaed850f
-Homepage: https://t.me/r71il
-Description: best Tweak for Instagram
-Name: iQGram
-Author: 7md
-
 Package: com.7md.iqtelegram
 Architecture: iphoneos-arm64e
 Version: 1.2
@@ -5362,24 +5345,6 @@ Icon: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo.png
 Header: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo2.jpg
 SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json
 
-Package: com.den.ighdmedia
-Architecture: iphoneos-arm64e
-Version: 1.1-2
-Section: Tweaks
-Maintainer: DeNsor
-Installed-Size: 20388
-Pre-Depends: rootless-compat(>= 0.9)
-Depends: mobilesubstrate (>= 0.9.5000)
-Filename: ./debs/roothide/com.den.ighdmedia_1.1-2_iphoneos-arm64e.deb
-Size: 14243664
-MD5sum: 13a8b5e949194124febb2704c2202ee2
-SHA1: 0f42a851b2ffd85f51f4e6f99b2671d04ba4d057
-SHA256: 35d0885a9cc3cfb796e79b61ad5384ee23cd14e5b8b8c4a2b6d617dd2d28c330
-SHA512: 67c809ea758adf2efaa7c585f9e4ea7bb54933d0f5dbc21b84fc37550e5f0e993b6185740d8bdf9fdff3711ce68332f31782ea98bcc5ee3e2f58ad3a7ae19d30
-Description: Download Instagram Reels and Stories in 1080p FHD quality
-Name: IGHDMedia
-Author: DeNsor
-
 Package: com.den.locktouchx
 Architecture: iphoneos-arm64e
 Version: 1.3-18
@@ -6024,6 +5989,26 @@ Name: WatusiTools
 Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.f0u4d.watusitools
 
+Package: com.faroukbmiled.ryukgram
+Architecture: iphoneos-arm64e
+Version: 1.3.3
+Section: Tweaks
+Maintainer: Ryuk
+Installed-Size: 5028
+Depends: mobilesubstrate
+Conflicts: com.faroukbmiled.ryukgram.legacy
+Replaces: com.faroukbmiled.ryukgram.legacy
+Filename: ./debs/roothide/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm64e.deb
+Size: 16831012
+MD5sum: 74939a2b2e3c51f97337a514bc360473
+SHA1: e239cd26c319049103bc27c82e54c737cd264a7e
+SHA256: 6f99772e30757af02bb31a25b9cb47538ababbc67e44f5f5aee180370281b37a
+SHA512: 88ab7c37e89a0682c234856b5f80e4889a61f5b8063aa726348ed6e84b9b5041c8c79ae5bf6f327731ebb9241d0089a44c75bf1bf1d15f2da68f1f50e073c6c2
+Homepage: https://github.com/faroukbmiled/RyukGram
+Description: A feature-rich enhancement suite for Instagram on iOS
+Name: RyukGram
+Author: Ryuk
+
 Package: com.fiore.calculatorhistory
 Architecture: iphoneos-arm64e
 Version: 1.2
@@ -6099,27 +6084,6 @@ Author: Fouad Raheb <support@fouadraheb.com>
 Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
 SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
 Icon: file:///Library/Application Support/ContactSync/Resources.bundle/Logo@3x.png
-
-Package: com.fouadraheb.regram
-Architecture: iphoneos-arm64e
-Version: 5.2.1
-Section: Tweaks
-Maintainer: Fouad Raheb <support@fouadraheb.com>
-Installed-Size: 51148
-Pre-Depends: rootless-compat(>= 0.9)
-Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
-Filename: ./debs/roothide/com.fouadraheb.regram_5.2.1_iphoneos-arm64e.deb
-Size: 18049576
-MD5sum: 4a6dc7f243cde3e45d4ff72d90a23f96
-SHA1: ea2b2601be436c01b95a4ff2a27ccd5f1c5565bc
-SHA256: b25767aaeca9af1e05cfcf83163ee79d3791e599ace8e164b81cf9666990462f
-SHA512: 6df8823525635869e20662167e3267d178f2adb69ace65d565f9257bb1b832f1220e210d28fe32bec7d78ab3245cd7ebb9d027448f72ad7acdb520796c9f59a4
-Description: The all-in-one tweak for Instagram
-Name: Regram for Instagram
-Author: Fouad Raheb <support@fouadraheb.com>
-Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
-SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
-Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
 
 Package: com.fouadraheb.watusi3
 Architecture: iphoneos-arm64e
