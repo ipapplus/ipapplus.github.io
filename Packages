@@ -2191,6 +2191,26 @@ Author: Ivano Bilenchi <support@ib-soft.net>
 Depiction: http://ib-soft.net/depictions/?pkgId=com.exile90.icleanerpro
 Icon: https://raw.githubusercontent.com/ichitaso/file/refs/heads/main/images/Icons/iCleaner.png
 
+Package: com.faroukbmiled.ryukgram
+Architecture: iphoneos-arm64
+Version: 1.3.3
+Section: Tweaks
+Maintainer: Ryuk
+Installed-Size: 5028
+Depends: mobilesubstrate
+Conflicts: com.faroukbmiled.ryukgram.legacy
+Replaces: com.faroukbmiled.ryukgram.legacy
+Filename: ./debs/rootless/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm64.deb
+Size: 16830948
+MD5sum: 20daa1496b7e7334dae8ab77f8c2c52e
+SHA1: d9affdd0b8c18c0c6a251c3c378039dbfab59f37
+SHA256: 4385afda2beb88a6226db93b8210aaef9cfde4718b784610c08e1a01ba344f86
+SHA512: 1f7d526f85e9dda5b88df18793389b1144d2d9fe7072c9d3cbe520fd52ec27ac190383d8f8392265dcb49778514468d790df8f0a237e5886987d8e54cdcf7036
+Homepage: https://github.com/faroukbmiled/RyukGram
+Description: A feature-rich enhancement suite for Instagram on iOS
+Name: RyukGram
+Author: Ryuk
+
 Package: com.fiore.ccborder
 Architecture: iphoneos-arm64
 Version: 1.0
@@ -2509,6 +2529,24 @@ Name: TrollPad
 Author: khanhduytran0
 Depiction: https://khanhduytran0.github.io/repo/depictions/web/?p=com.kdt.trollpad
 SileoDepiction: https://khanhduytran0.github.io/repo/depictions/native/com.kdt.trollpad/depiction.json
+
+Package: com.kingpuffdaddi.audiomix
+Architecture: iphoneos-arm64
+Version: 0.0.10
+Section: Tweaks
+Maintainer: KingPuffdaddi
+Installed-Size: 15488
+Depends: mobilesubstrate, preferenceloader, com.spark.libsparkapplist
+Filename: ./debs/rootless/com.kingpuffdaddi.audiomix_0.0.10_iphoneos-arm64.deb
+Size: 33078
+MD5sum: 59703ab03c441d3b14956939b40765a9
+SHA1: eb6484a2b8768cb522e47cb965b7f7144343fb91
+SHA256: b39a2fcb962fcc0c4ed8452ce36ab8a9f12c3158b8910e8f390dc5c899731d60
+SHA512: 86b6b26a1a234cd0efea33b15aa000edc916ee189d9065efa3a8b08472967e9012f9316f84505624d78d2e13a46efcf075eaa6bcdd78ae3412ad75d025cbec67
+Description: Tweak to play two or more audio sources simultaneously. Doesn't work well with all apps! Sometimes the first audio still gets paused, so you will have to start it again.
+Name: AudioMix
+Author: KingPuffdaddi
+Depiction: https://kingpuffdaddi.github.io/depictions/?p=com.kingpuffdaddi.audiomix
 
 Package: com.korboy.sileo
 Architecture: iphoneos-arm64
@@ -3091,6 +3129,28 @@ Description: A full-featured tweak for Messenger.
 Name: SNMessenger
 Author: NguyenASang
 
+Package: com.nicksworks.roadrunnerreborn
+Architecture: iphoneos-arm64
+Version: 1.0.0
+Section: Tweaks
+Maintainer: Nick's Works <hadobedo@gmail.com>
+Installed-Size: 512
+Depends: firmware (>= 15.0), ellekit, preferenceloader, com.opa334.altlist
+Conflicts: com.nick.keepthepartygoing, se.nosskirneh.roadrunner
+Replaces: com.nick.keepthepartygoing, se.nosskirneh.roadrunner
+Filename: ./debs/rootless/com.nicksworks.roadrunnerreborn_1.0.0_iphoneos-arm64.deb
+Size: 48986
+MD5sum: 0a8d32a74cd15343e5bb01a8cd1278a5
+SHA1: 9a502a2025c9cf6098e588755e78ceb7268ec98f
+SHA256: a41ab174900ba6b6a4fb1556381bb12361e9477586dc3cf3c3e31b1ca469cd10
+SHA512: 2c8704a8e22c299abcddd3eb283257fcf82664310eed9d58cad8d47ac939ce09eb1cb5722a8121d039ddeaef9aeb42a882a47a435fcee5c44bafecdedf1c0268
+Homepage: https://github.com/hadobedo/RoadRunnerReborn
+Description: RoadRunner Reborn preserves Now Playing media and selected applications through SpringBoard resprings on modern iOS jailbreaks.
+Name: RoadRunner Reborn
+Author: Nick's Works (Hadobedo)
+SileoDepiction: https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.json
+Depiction: https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.html
+
 Package: com.nightwind.lockbuttonx
 Architecture: iphoneos-arm64
 Version: 0.0.1
@@ -3344,6 +3404,24 @@ SHA512: ef39db40ef80b28c531508df7985d4dc22d04d4b717836e2eca3f21c3494323c44f08a5b
 Description: Additional Keyboard Features
 Name: Keyboard Plus
 Author: Ryan Nair
+
+Package: com.sergy.immortalizerjailed
+Architecture: iphoneos-arm64
+Version: 2.2
+Section: Tweaks
+Maintainer: sergy
+Installed-Size: 652
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/rootless/com.sergy.immortalizerjailed_2.2_iphoneos-arm64.deb
+Size: 38112
+MD5sum: 2c09f4477a3a6b074bf63650596372fa
+SHA1: e9ea3e720512de2b7e4789a8b46a41c9a020522e
+SHA256: 603c476207ddfa6de47662e636d28b952925cb2ad056b1a82b3390f599b4050a
+SHA512: b4e96e5c0713d0b34aa8f15368605d0b0334ad5be999220bfbab1b4fc3703fa50d668400546fc6f9097417f4de49919f24d58ad56db19a50572682a77d9b5ede
+Description: Foreground your apps even if they are in the background!
+Name: Immortalizer Jailed
+Author: sergy
+Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
 
 Package: com.shepgoba.settingswidgets
 Architecture: iphoneos-arm64
