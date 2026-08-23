@@ -1,3 +1,59 @@
+Package: com.babylon-vip.adblockpro
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 216
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.adblockpro_0.1_iphoneos-arm64.deb
+Size: 43052
+MD5sum: 43f56af590cb133649acb72dcac84a3b
+SHA1: 6e67a2f80f522c4d0d2f0a71cab488aaede19b17
+SHA256: c0adf7403d93549e18da24740f0ae004331661ea5950650d92db6ba987aeb3f0
+SHA512: c30eae70fd2d44cc442a10311bcf11331b579f4b805c0f8dcd43d1a4f6c4a5878057581a6a00ce2644fe957b67e09f9d5d6efef162eed11f780d5008b4da9b17
+Description: Enable Premium Subscription
+Name: AdBlock Pro
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/91cYYdn.jpeg
+
+Package: com.babylon-vip.athkar
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 216
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.athkar_0.1_iphoneos-arm64.deb
+Size: 44256
+MD5sum: c05104c5c055e88a744e67e1a7a815de
+SHA1: b3ec5d969fbbf6f5921cc65af316f81293382a54
+SHA256: 4c63ada4d113768fdc945635e3be5025b680996483d87186cdd4ed4d82aaa2ae
+SHA512: 6a1b5311f4610cdf28131b7a0df50e7a4b081d015633570a6377e100d6f10dd0f474e5f56ea8047908cf4bdd8936fd17499e91535852cb4eec6e5f60f961b8b9
+Homepage:
+Description: Enable Premium Subscription v9.1.4
+Name: Athkar | أذكار
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/1zWICJz.jpeg
+
+Package: com.babylon-vip.hammel
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 396
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.hammel_0.1_iphoneos-arm64.deb
+Size: 94484
+MD5sum: cb3bfdedbbc974cc322959ae3b625449
+SHA1: d535db7dee70770dc5c41d90124966dde5045be5
+SHA256: e1569f685b68ef2906505e231e4a89ba7aea54a74ff9aff159c2b3178111d8b4
+SHA512: 8add3f0dcd8ba3689e2095c7005d54093fd0a564d4d0324aeb03217c0facbcc3c6ec093b61c81bd6a2ff1a3befc887bfc706e16385e5fda19bebea53e805e53c
+Homepage:
+Description: Enable Premium Subscription v8.5
+Name: Hammel Hack | إدارة الملفات
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/5SQvqwm.jpeg
+
 Package: com.iris.kanjied
 Architecture: iphoneos-arm64
 Version: 1.1.0
