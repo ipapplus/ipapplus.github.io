@@ -6,13 +6,14 @@ Maintainer: kanji
 Depends: firmware (>= 15.0)
 Conflicts: com.iristweak.iris
 Filename: ./debs/rootless/com.iris.kanjied_1.1.0_iphoneos-arm64.deb
-Size: 4345504
-MD5sum: 53622dddd994c9f90585f3b32f3c143f
-SHA1: e8346d8501781ddb0d75c9cb111a0e939f038071
-SHA256: 14712f4dea90041f384ee14a730aee009cdfca886c909dbf9efc52727e47a09f
-SHA512: 51fb3a90541f043d06535829fd78235975ece29fee896ea192f4defbec9655167050109a9ef2201b439d339df4e6da71beaf1a9b0f6e8a7fac2b13bbb9f358e3
-Description: Iris 1.1.0 cracked
+Size: 4343868
+MD5sum: 0b4bd4b3ef8b520b0622edd0a3c30674
+SHA1: 73a66e03dfd2bb30dd790899ff0f460a277cb277
+SHA256: d60eedbc0da5587c9459ec75acc3d6c49d01e95a1a43ae4f3357c926e5c86bdf
+SHA512: 0b0397e193c14e070c44034113a9e7d5a2eca000fcc9e5abf445cada96257dec11d27f4cbb064c9759efe3c78587ff1ed797ddbdb53b713a61ac0f1c1adabf25
+Description: Username: kanji
 Name: Iris kanjied
+Password: isastupidnonce
 Author: kanji
 
 Package: com.netskao.filzacrack
