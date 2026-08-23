@@ -1,0 +1,35 @@
+Package: com.iris.kanjied
+Architecture: iphoneos-arm64
+Version: 1.1.0
+Section: Tweaks
+Maintainer: kanji
+Depends: firmware (>= 15.0)
+Conflicts: com.iristweak.iris
+Filename: ./debs/rootless/com.iris.kanjied_1.1.0_iphoneos-arm64.deb
+Size: 4345504
+MD5sum: 53622dddd994c9f90585f3b32f3c143f
+SHA1: e8346d8501781ddb0d75c9cb111a0e939f038071
+SHA256: 14712f4dea90041f384ee14a730aee009cdfca886c909dbf9efc52727e47a09f
+SHA512: 51fb3a90541f043d06535829fd78235975ece29fee896ea192f4defbec9655167050109a9ef2201b439d339df4e6da71beaf1a9b0f6e8a7fac2b13bbb9f358e3
+Description: Iris 1.1.0 cracked
+Name: Iris kanjied
+Author: kanji
+
+Package: com.netskao.filzacrack
+Architecture: iphoneos-arm64
+Version: 1.1-9
+Section: Netskao-Tweaks
+Maintainer: Nets
+Installed-Size: 120
+Depends: firmware (>= 15.0), mobilesubstrate
+Filename: ./debs/rootless/com.netskao.filzacrack_1.1-9_iphoneos-arm64.deb
+Size: 28712
+MD5sum: 6d17abd35ae01672e159061a478cc0ee
+SHA1: ec6a6d49daf1589b41d7115463b7aa8cb4760a90
+SHA256: 2b556a03e175bbbb80b3ea3e19012574902c3a0fc6fc7217119bf0b073532098
+SHA512: dd8ecd50a6556ce837e049935d13dedf6b763b678d83d1e23318e78ae476c57ed404f2182204bc78edd0527d12e2cac90181ff778b6a1bbb351b01550a645a70
+Description: Filza Crack
+SileoDepiction: https://jailrepo.initnil.com/api?Package=com.netskao.filzacrack
+Name: Filza Crack
+Author: Netskao
+
