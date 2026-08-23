@@ -1486,6 +1486,23 @@ Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
 
+Package: com.alilatif.wgold
+Architecture: iphoneos-arm64
+Version: 2.0
+Section: Tweaks
+Maintainer: Ali Latif
+Depends: firmware (>= 14.0), mobilesubstrate
+Filename: ./debs/rootless/com.alilatif.wgold_2.0_iphoneos-arm64.deb
+Size: 6739124
+MD5sum: 7e4d71f86614ee83c394926a7d74520a
+SHA1: 8b871e60ea433fd8b6a1d8f27e6b9897d83f36a0
+SHA256: c4343deda162b3f59d1493b752b4a9415a6c6d190bca7216f13c85ff0330073e
+SHA512: d9fcd1abe5133f2d9aeb94a8c9dac430f678c35db62aa8f2a305cf7095a59031ffc7ad5be4dcaaeda535f327f27e2969abb62e207285afed083833ae5e1ac526
+Description: WhatsApp Customisation Tweak .
+Name: WGold For WhatsApp
+Author: Ali Latif
+Icon: https://github.com/F0rd0w/f0rd0w.github.io/blob/main/depictions/web/com.f0rd0w.sample/screenshots/WGold@100x.png?raw=true
+
 Package: com.alshaman.twiteddate
 Architecture: iphoneos-arm64
 Version: 0.0.1-2
@@ -1621,6 +1638,23 @@ Name: NoTransitCardVersionLimit
 Author: Brend0n <brendonjkding@126.com>
 Depiction: http://brendonjkding.github.io/depictions/web/?p=com.brend0n.notransitcardversionlimit
 SileoDepiction: http://brendonjkding.github.io/depictions/web/com.brend0n.notransitcardversionlimit/depiction.json
+
+Package: com.bypassjb.sniper
+Architecture: iphoneos-arm64
+Version: 6.2
+Section: Tweaks
+Maintainer: Sniper @DNS_Sys
+Installed-Size: 660
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/rootless/com.bypassjb.sniper_6.2_iphoneos-arm64.deb
+Size: 69784
+MD5sum: cb16a0b90af321f90c5e83a5afc172c2
+SHA1: 39f24e24fa380cdde2d2adb9f0b589f8ae389a00
+SHA256: d365c05b9c8df64382f5bc45c454ad27307b0ab9db0ae80dc922e9bd37747a98
+SHA512: 732bd171a6be02c2af7cbd634f810b7d5c3cae6df71652c2b924003c95e9bf2736bc2dbb4c1a22093b19db39895b7b16cc592002c0a6764f478d567458e299e8
+Description: Sniper bypassjb Work in some apps not all applications
+Name: Sniperbypassjb
+Author: Sniper @DNS_Sys
 
 Package: com.choco.tg
 Architecture: iphoneos-arm64
