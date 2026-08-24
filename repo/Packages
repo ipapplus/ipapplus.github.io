@@ -1,3 +1,41 @@
+Package: com.dvntm.tweach
+Architecture: iphoneos-arm
+Version: 2.3.3
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20376
+Depends: mobilesubstrate
+Filename: ./debs/rootful/com.dvntm.tweach_2.3.3_iphoneos-arm.deb
+Size: 8359510
+MD5sum: 5058d9de88d93929b1bb00a65d6eabc9
+SHA1: e19febde13fbdaeb2821863656afb9ff5b5bd045
+SHA256: a688fbe53baffaab705e40dc1bff942553edc6829a2870b586f9459ea3f4a37e
+SHA512: 31c0d34a851da30c2a3b7cdca1ef77609085c147238e4df99d72b72236ca9d89629703fff40d8ac13fe1e700611e123cfbceafcb044655355ab84ec017768389
+Description: Download your favorite clips, VODs and Live Streams with Tweach!
+Name: Tweach
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/Tweach/refs/heads/main/sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/Tweach/main/sileo/depiction.json
+
+Package: com.dvntm.ytlite
+Architecture: iphoneos-arm
+Version: 5.2.1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20816
+Depends: mobilesubstrate
+Filename: ./debs/rootful/com.dvntm.ytlite_5.2.1_iphoneos-arm.deb
+Size: 7435412
+MD5sum: 81800c40dd63693335cfc53378a48982
+SHA1: a4c9257865abcdffd2d1ca339bc2c73f4256155c
+SHA256: 2c2cd90394625f8b830aaa5669337a21482590639043222c93bfcd830b0e09a1
+SHA512: aacf21dae2ec0a50d84e77789fbee1f1cff1f37ade0f1028b3e9740e56220dd23e7e01be0a9403d7ec81c047805c001405fcc3313c07be0633548bb64f0954be
+Description: Lightweight YouTube Enhancer
+Name: YTLite
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
+
 Package: com.babylon-vip.adblockpro
 Architecture: iphoneos-arm64
 Version: 0.1
@@ -53,6 +91,44 @@ Description: Enable Premium Subscription v8.5
 Name: Hammel Hack | إدارة الملفات
 Author: Haidar_Phantom
 Icon: https://i.imgur.com/5SQvqwm.jpeg
+
+Package: com.dvntm.tweach
+Architecture: iphoneos-arm64
+Version: 2.3.3
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20376
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.dvntm.tweach_2.3.3_iphoneos-arm64.deb
+Size: 7203888
+MD5sum: 29a6744dae40cb96600e2434b8f21e4f
+SHA1: 3806e1dc36b2f042a422efbc21b7e27b22c4daeb
+SHA256: aae3755d66a55ec59e53ee682f501b3457f6af4013bd6801fb6829570a635b26
+SHA512: b255f7c8e41e0673094a228244aa1575b509ce1fdf1eee32aab283ab8d50d21990b4481a87b1babef123721cc60ce65c837dac3866ceeef01c630ba5f7c63cd3
+Description: Download your favorite clips, VODs and Live Streams with Tweach!
+Name: Tweach
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/Tweach/refs/heads/main/sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/Tweach/main/sileo/depiction.json
+
+Package: com.dvntm.ytlite
+Architecture: iphoneos-arm64
+Version: 5.2.1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20816
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.dvntm.ytlite_5.2.1_iphoneos-arm64.deb
+Size: 7340452
+MD5sum: 92067c8be74f18e64f2c21df39950abe
+SHA1: a89b1ac50df0dc345aea36e926f603d98d7d8f8a
+SHA256: e3eec2668573678f3d94ee4127f9293c3ac1138a5c2faaa6796c8dcf832d5198
+SHA512: 0361ba7ae1d8486371cc4a570d63520429f2db3ccc092e7632be463425bfcf041f04c8633e614f5437ef3e47096c714dc6f6303a6959b195b4a1ddf6d0fd6d60
+Description: Lightweight YouTube Enhancer
+Name: YTLite
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
 
 Package: com.iris.kanjied
 Architecture: iphoneos-arm64
