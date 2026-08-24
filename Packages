@@ -258,20 +258,20 @@ Name: BHTikTok Plus
 Author: dvntm
 Icon: https://i.imgur.com/PKIhkrt.png
 
-Package: com.bandarhl.bhtwitter
+Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm
 Version: 6.5.0-1+debug
 Section: Tweaks
 Maintainer: NeoFreeBird
 Installed-Size: 13364
 Depends: mobilesubstrate, ws.hbang.common
-Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
-Filename: ./debs/rootful/com.bandarhl.bhtwitter_6.5.0-1+debug_iphoneos-arm.deb
-Size: 4647994
-MD5sum: 2ca9a479660bf49c753c5a19dafba299
-SHA1: 121eaa9893fcf477cc6ccf6e0b36bb5ffa6af5bd
-SHA256: 87b6d65dd7ac3b640f6252053db88295e7abedd0e4fc9487e577d1bae799174d
-SHA512: ce631785c6fcc8e473b913c3d0800c640aa99f55a619a6d47a2516b45686391aab0e61901415302b174c8ad47713214c1851e79c9851848a20669f3443b46c83
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Filename: ./debs/rootful/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm.deb
+Size: 4276056
+MD5sum: 2f8cee22c90cc0697f298218920436bd
+SHA1: ac33e39b2cd0ee7755f278bec4cebdd0d5a1fde8
+SHA256: a33e436dd59c5b249a6cd4bb298b1c9829745a281d49524d4f1b29571f748144
+SHA512: be858d7fc4d4cb3d614974efcdbb5acb9f9f5e4f7f7ecb8a4e9ef83156014741baeb0eab0926268c9f0187b60325b626a684806439522c5656cd96b7dc1e1e4b
 Description: Awesome tweak for Twitter
 Name: orionblur-NFB-BHTwitter
 Author: NeoFreeBird
@@ -1655,24 +1655,6 @@ Description: Awesome tweak for Twitter
 Name: BHTwitter
 Author: Bandar Alruwaili
 
-Package: com.bandarhl.bhtwitter
-Architecture: iphoneos-arm64
-Version: 6.5.0-1+debug
-Section: Tweaks
-Maintainer: NeoFreeBird
-Installed-Size: 13364
-Depends: mobilesubstrate, ws.hbang.common
-Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
-Filename: ./debs/rootless/com.bandarhl.bhtwitter_6.5.0-1+debug_iphoneos-arm64.deb
-Size: 4648132
-MD5sum: df39eb5165afce7eefa0d534deb97cb2
-SHA1: cbf5359042faad71cdff05bfdeba61b1cc1a15e4
-SHA256: 63869d585c85abfbeb16b519e8008f3eddf4d7ba5c7442ca53e6b5e4f081626a
-SHA512: 2ce6dff291a076c64f6f052c0d1be31913573c91c575c22346c81da504af3b8c86fca5acb03d672c4ca8e511445dbe1718c6542cc654509991d6b334dc136298
-Description: Awesome tweak for Twitter
-Name: orionblur-NFB-BHTwitter
-Author: NeoFreeBird
-
 Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64
 Version: 5.3
@@ -1689,6 +1671,24 @@ SHA256: d460cf72ff830ce16f3f0aa8747f19235a8d7354ae8b8041a18d7c630343e594
 SHA512: 65e7143cd49b5819a4422a89d710810989b9a4e344ceee7eea359214706996ccef54752ac51d9f0a6626815e60fcdc67d545493b3a06e261896bbed0e6a7cc68
 Description: Awesome tweak for Twitter
 Name: NFB-BHTwitter
+Author: NeoFreeBird
+
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
+Version: 6.5.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13364
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Filename: ./debs/rootless/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.deb
+Size: 4276616
+MD5sum: d084bf699bcdd39bdbc6c649035bdf78
+SHA1: 0c73ad44f5589ad9fc7e54ea5e7846af6a6b8d19
+SHA256: e67b6bd9ea4061580fde523546b6addcef79cf998d12f782d95c4de968d43a9a
+SHA512: 09fa17bb73d440145ae0135cf7cee8b62bab1ab33f94130417dae8c4620c536d07fa7f107e5c3ea002e5a98fb6a4b8755e3d03a985564d5e2ed0ebb3f0ac8535
+Description: Awesome tweak for Twitter
+Name: orionblur-NFB-BHTwitter
 Author: NeoFreeBird
 
 Package: com.brend0n.notransitcardversionlimit
