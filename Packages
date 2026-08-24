@@ -258,6 +258,24 @@ Name: BHTikTok Plus
 Author: dvntm
 Icon: https://i.imgur.com/PKIhkrt.png
 
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm
+Version: 6.5.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13364
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/rootful/com.bandarhl.bhtwitter_6.5.0-1+debug_iphoneos-arm.deb
+Size: 4647994
+MD5sum: 2ca9a479660bf49c753c5a19dafba299
+SHA1: 121eaa9893fcf477cc6ccf6e0b36bb5ffa6af5bd
+SHA256: 87b6d65dd7ac3b640f6252053db88295e7abedd0e4fc9487e577d1bae799174d
+SHA512: ce631785c6fcc8e473b913c3d0800c640aa99f55a619a6d47a2516b45686391aab0e61901415302b174c8ad47713214c1851e79c9851848a20669f3443b46c83
+Description: Awesome tweak for Twitter
+Name: orionblur-NFB-BHTwitter
+Author: NeoFreeBird
+
 Package: com.blatant.maplereadcx
 Architecture: iphoneos-arm
 Version: 1.0
@@ -1148,6 +1166,23 @@ Sponsor: thebigboss.org <http://thebigboss.org>
 dev: tushaoye
 Icon: file:///Library/PreferenceBundles/SupportUnsupportedAccessories8.bundle/Icon@2x.png
 
+Package: com.ub.disablerec
+Architecture: iphoneos-arm
+Version: 1.0.0-16+debug
+Section: Tweaks
+Maintainer: uB
+Installed-Size: 204
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/rootful/com.ub.disablerec_1.0.0-16+debug_iphoneos-arm.deb
+Size: 24164
+MD5sum: 340c250f8c313b910df96ba28304cae5
+SHA1: 88c5093eb8ba337e2018b005010ac31918987754
+SHA256: f7e2913629bd3ef358bd4041032fb11e1bbfc1fda3a06e18ad8f30f9062b063f
+SHA512: 4779259f4840a5ded7ae9d8ab2664bc7d5f72f535c1c31eeb4be5846b661d2b288180c950420a309e34ab15ef92ab6cca4c7d1d0192dc0a6095a841f937d2b89
+Description: Prevent apps from detecting screen recording! //use at your own risk
+Name: disableREC
+Author: uB
+
 Package: com.yourepo.ibreak.hideseparator
 Architecture: iphoneos-arm
 Version: 1.9.2
@@ -1360,6 +1395,24 @@ Name: Hello App
 Author: zqbb
 Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
 SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.disupdateapp
+
+Package: cn.zqbb.stopautolaunchapps
+Architecture: iphoneos-arm64
+Version: 2.2
+Section: zqbb Tweaks
+Maintainer: zqbb
+Installed-Size: 1168
+Depends: mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)
+Conflicts: zp.stopautolaunchapps
+Filename: ./debs/rootless/cn.zqbb.stopautolaunchapps_2.2_iphoneos-arm64.deb
+Size: 239464
+MD5sum: 42bdecc171b5a15dc3cad59588340651
+SHA1: ed71e6586e0f0bcb6187d8c849d4d0021fdc6ad2
+SHA256: a25f4b3f6e9f01266c759a08e64205d8c43a706da7af4d1b7815574e61e2e800
+SHA512: 9c1e5e58fcb4cbc9b702b2d4540943bf3b8a0323b29efc6585ada5888a52245248fddd64f6ac363b10ed352ed6c11946db8c6258b1250e2288f2fe51fef8ce2d
+Description: Don’t hot-reload the app in the background! Advantages: saves memory, kills fewer background processes.
+Author: zqbb
+Name: Hello 3Q
 
 Package: codes.aurora.kayoko
 Architecture: iphoneos-arm64
@@ -1601,6 +1654,24 @@ SHA512: 176fb81529161f822a194fad0ed7ebfb7f9c787f0da4134f8eada684e4203f928668dad4
 Description: Awesome tweak for Twitter
 Name: BHTwitter
 Author: Bandar Alruwaili
+
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64
+Version: 6.5.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13364
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/rootless/com.bandarhl.bhtwitter_6.5.0-1+debug_iphoneos-arm64.deb
+Size: 4648132
+MD5sum: df39eb5165afce7eefa0d534deb97cb2
+SHA1: cbf5359042faad71cdff05bfdeba61b1cc1a15e4
+SHA256: 63869d585c85abfbeb16b519e8008f3eddf4d7ba5c7442ca53e6b5e4f081626a
+SHA512: 2ce6dff291a076c64f6f052c0d1be31913573c91c575c22346c81da504af3b8c86fca5acb03d672c4ca8e511445dbe1718c6542cc654509991d6b334dc136298
+Description: Awesome tweak for Twitter
+Name: orionblur-NFB-BHTwitter
+Author: NeoFreeBird
 
 Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64
