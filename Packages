@@ -1127,6 +1127,24 @@ Description: A smarter low power mode !!
 Name: SmarterLPM
 Author: smokin1337 <smokin1337@gmail.com>
 
+Package: com.sparkle.sparkle
+Architecture: iphoneos-arm
+Version: 1.2.0
+Section: Tweaks
+Maintainer: efibalogh
+Installed-Size: 36060
+Depends: mobilesubstrate
+Filename: ./debs/rootful/com.sparkle.sparkle_1.2.0_iphoneos-arm.deb
+Size: 8904014
+MD5sum: 0b7bad014ba578cd30f898ca0f6970d4
+SHA1: d7e1a3fafd2ee22ff30e75302c12d40d0d0f3ce4
+SHA256: 8f946eddde558ea87867527d54f63c7dd8c7a4e016bb696c37de5ec9335115c4
+SHA512: 31c3291caaabd01382bebdcf4f760d581dd3e6f7841e155fab44e0684aa1ed8d9fd9e1baa5675bafead2499df9c786ec58d9bdf6484fa9fdf186c7a45b80ebad
+Homepage: https://github.com/efibalogh/sparkle-ig
+Description: Bring the spark back to Instagram!
+Name: Sparkle for Instagram
+Author: efibalogh
+
 Package: com.synnyg.reversenotifications
 Architecture: iphoneos-arm
 Version: 1.0.3
@@ -3601,6 +3619,24 @@ SHA512: 1d66cf8906827a6901b00f5184fd8b05a24f7439cd748b45c7c95bfd8a79b8e76a253951
 Description: Snowboard theming engine
 Name: SnowBoard
 Author: Spark & Dennis D. Bednarz
+
+Package: com.sparkle.sparkle
+Architecture: iphoneos-arm64
+Version: 1.2.0
+Section: Tweaks
+Maintainer: efibalogh
+Installed-Size: 36060
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.sparkle.sparkle_1.2.0_iphoneos-arm64.deb
+Size: 8899002
+MD5sum: 352492a69ceff3ccd606bd77ed13e264
+SHA1: 2d9bd4eed9b64897bd156ef97202e3e8c03878bd
+SHA256: c338c57acd4a011ac0f24d47d7bfafc59edb90fcda0d0766053224a9c62667c4
+SHA512: bd552946d46ce98ea1e8366a812906c6a558d254f4872fe7a1c1896a46aa339acc8eb217fd707d927b9633b6b536ee80934f6711735cc3314ea02db328176942
+Homepage: https://github.com/efibalogh/sparkle-ig
+Description: Bring the spark back to Instagram!
+Name: Sparkle for Instagram
+Author: efibalogh
 
 Package: com.synnyg.reversenotifications
 Architecture: iphoneos-arm64
