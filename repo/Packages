@@ -165,3 +165,67 @@ SileoDepiction: https://jailrepo.initnil.com/api?Package=com.netskao.filzacrack
 Name: Filza Crack
 Author: Netskao
 
+Package: com.nowesr1.dlinsta
+Architecture: iphoneos-arm64
+Version: 2.5.0
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dlinsta_2.5.0_iphoneos-arm64.deb
+Size: 370048
+MD5sum: eb352e422099b4852c77e0ef2b2ed4c0
+SHA1: fa90f5187202ead63e2251df5273607ac22db812
+SHA256: 544af4d4be8acbe76ca3a192f342ecf6f50dbef97475e79f4f33bd4f4480acdc
+SHA512: 6dee2b09ed3a2106bc3193675272b9c71915958bc33b61d89f5b96533768be86cf8d7348669127c640124b070060b73d5dc063444ddd1382905745aad163568f
+Description: free DLInsta no license required best compatible with Instagram V407.0.0
+Name: DLInsta Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltiktok
+Architecture: iphoneos-arm64
+Version: 2.1.4
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltiktok_2.1.4_iphoneos-arm64.deb
+Size: 289916
+MD5sum: db358d7d0c794197a74c3abac498e172
+SHA1: 8985a0f4d3f434d0fb55b88af0b242b9a9d6d02f
+SHA256: 81f5fdf3a56ad1c2109838a42a2fcb48f423116290d699a27347187f2d0b5219
+SHA512: 1cb52c00604cfee94005b061dcd9b204c588bb37399dae37baf49980be503b90af96d87abc322f163561e5d206dbbf63f571557a8a86aad91af77523f9e052b3
+Description: free DLTikTok no license required best compatible with TikTok V42.2.0
+Name: DLTikTok Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltube
+Architecture: iphoneos-arm64
+Version: 2.16.3
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltube_2.16.3_iphoneos-arm64.deb
+Size: 347752
+MD5sum: 8714677d71f0881be7a5a13ad63593cd
+SHA1: 908c213d286f091dff3f9d5940e38cd684d515ca
+SHA256: 1a6b4097cab0fe4f9117f6d06577b4b07ae3799388802413096c2fdefcd8a255
+SHA512: 58b8091831fd7d714d8c25d74efddc4226601cae7e4d5fd7c78dd19ebd46254ee9800273da618975909c9a3873a6b951df800619bb7c047e4dd5f3bb8c1a2f31
+Description: free DLTube no license required best compatible with YouTube V20.42.3
+Name: DLTube Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltwitter
+Architecture: iphoneos-arm64
+Version: 2.1.6
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltwitter_2.1.6_iphoneos-arm64.deb
+Size: 5055856
+MD5sum: 97c4be997e1ee2a1dc445213a1d84dbe
+SHA1: 8397b4b77fc77a3941bc82a6856e948421840a1c
+SHA256: ce654399e1429da0445d6a818a9ca55f6fe87eb2a912f5c13ee0b064ba8d22af
+SHA512: 6b897aa5de51e47cf629c62566d8462cf1346ea2d820872c01415198145678c71fb4e4b37e9d2f5cb8766d2ebe2ba8f5fb4aa487729454c15e9dcbe87e474564
+Description: free DLTwitter no license required best compatible with X V411.48
+Name: DLTwitter Free
+Author: ZeroDeadBeef
+
