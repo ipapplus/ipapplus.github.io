@@ -229,3 +229,19 @@ Description: free DLTwitter no license required best compatible with X V411.48
 Name: DLTwitter Free
 Author: ZeroDeadBeef
 
+Package: com.nowesr1.dltwitter
+Architecture: iphoneos-arm64
+Version: 2.1.7
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltwitter_2.1.7_iphoneos-arm64.deb
+Size: 4954572
+MD5sum: 06c2af0a50e8da3ec256e5eef68e245d
+SHA1: 8ec9a9023cf37052a341196f2f91ba12b08fea03
+SHA256: a2a6587ffba54e09317b608ee6cdd5e8b1602a840962ff82b66c72fb3b793580
+SHA512: f6cbf98ec7148c6182e5da7c90da3578bc9034de5ea4d06cf69543f867b518e78a69d74878d8507392ba9b58ce70e6289fc868203a13df1f22e542354c26f144
+Description: free DLTwitter no license required best compatible with X V411.48
+Name: DLTwitter Free
+Author: ZeroDeadBeef
+
