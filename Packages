@@ -1450,6 +1450,26 @@ Description: Don’t hot-reload the app in the background! Advantages: saves mem
 Author: zqbb
 Name: Hello 3Q
 
+Package: cn.zqbb.stopautolaunchapps
+Architecture: iphoneos-arm64
+Version: 2.3
+Section: zqbb Tweaks
+Maintainer: zqbb
+Installed-Size: 1152
+Depends: mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)
+Conflicts: zp.stopautolaunchapps
+Filename: ./debs/rootless/cn.zqbb.stopautolaunchapps_2.3_iphoneos-arm64.deb
+Size: 234322
+MD5sum: f972ad918311690766f16966e3f0197f
+SHA1: a9c5dddb6e0b9cca07f32cadd461f3a6b0374053
+SHA256: a147020f7fe795170d3a9f187bebc571334a7000f884dadf230b6d7ee0360e3b
+SHA512: b12bb87df24ec69088acc14539b5f2f11676ab99789a079faa18596f9f433192857222a7a12efe04d008d0d864d74584a85dd954df4774629e4bf6b3b8f1c22c
+Description: 别在后台热加载app咯! 
+ - 优点:节约内存,少杀后台.
+Author: zqbb
+Name: Hello 3Q
+SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.stopautolaunchapps
+
 Package: codes.aurora.kayoko
 Architecture: iphoneos-arm64
 Version: 3.3.6-2
@@ -1463,6 +1483,25 @@ MD5sum: e3bb13883820d2c9d29f9089d1ec2d2c
 SHA1: 40ec4ee6b8c8d29e3221301de7d664a78bcabf5c
 SHA256: 8e8954fc0788625f878e8707255dbcce2acc5fbcc8d97f9203dfd1e09c89c7ed
 SHA512: e56526e51b0e757a93afff1d8387e78799579b9823dc0d2be5ee26120e649a165b8cddf3e743bae170fe4fc8718714f2054903d89f7265e17d71a3a06e8302c7
+Description: Clipboard manager for iOS.
+Name: Hello Kayoko
+Author: Alexandra Aurora Göttlicher
+Icon: https://apt.002599.xyz/web/icon/codes.aurora.kayoko.png
+SileoDepiction: https://apt.002599.xyz/web/codes.aurora.kayoko
+
+Package: codes.aurora.kayoko
+Architecture: iphoneos-arm64
+Version: 3.6.0-9
+Section: Tweaks
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 1244
+Depends: firmware (>= 14.0), mobilesubstrate, preferenceloader, com.opa334.libsandy
+Filename: ./debs/rootless/codes.aurora.kayoko_3.6.0-9_iphoneos-arm64.deb
+Size: 176028
+MD5sum: 89f8940bc6e1de5ae949ce13d186f523
+SHA1: 16e73292e0aa3d8d3a59a2485347f45acbccc79f
+SHA256: 681ca3edca16b3c8a0dcb442de85e72c604b9bc304ca5d850319007a65e544ba
+SHA512: d81d2fe71181ddab9cb8c44585e066e73551a83476844e6987ee8c184274e680e3805a85fbeee0ebd523d0a0bc3dd504447bab2c1a398719371d0266718f3f24
 Description: Clipboard manager for iOS.
 Name: Hello Kayoko
 Author: Alexandra Aurora Göttlicher
@@ -1762,6 +1801,25 @@ SHA512: 732bd171a6be02c2af7cbd634f810b7d5c3cae6df71652c2b924003c95e9bf2736bc2dbb
 Description: Sniper bypassjb Work in some apps not all applications
 Name: Sniperbypassjb
 Author: Sniper @DNS_Sys
+
+Package: com.c1d3r.pulloverpro.ios17
+Architecture: iphoneos-arm64
+Version: 2.2.0
+Section: Tweaks
+Maintainer: Sugiuta
+Installed-Size: 880
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/rootless/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64.deb
+Size: 378368
+MD5sum: a90e7f6d8907ec787adb0a64820ff785
+SHA1: a6e602955959bd10190035c1e0c3e8dad33c0041
+SHA256: 94d471d4095f9294ef2439a0be02a7c5740b1af465e6a754f082f4a5804c70a2
+SHA512: a9cfd1d8219f86452462770b2abee9cc0a39166b276e678f8315908dd6eaeff6cdf2a3d77bd9b4cb19da2262ed68d453bbcb71218692e3e8d42578833c8e9314
+Description: description: Bring true multitasking to iOS 17. Quickly open your favorite apps in a floating window without leaving your current app.
+Name: PullOver Pro iOS17
+sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
+icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
+Author: Sugiuta
 
 Package: com.choco.tg
 Architecture: iphoneos-arm64
