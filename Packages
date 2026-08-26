@@ -723,6 +723,24 @@ Name: Res Setter
 Author: @halo_michael
 Icon: https://i.imgur.com/phJx0ua.jpeg
 
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm
+Version: 2.7.1
+Section: Tweaks
+Maintainer: iosdump
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Filename: ./debs/rootful/com.iosdump.appdata_2.7.1_iphoneos-arm.deb
+Size: 2090868
+MD5sum: 41f35ee91fcb9e8b982cc35bec906cf5
+SHA1: 135f033ebc18ada062c30c410fe645f4309a49f9
+SHA256: 94ee7e8997a66634291e1ab79576f8370b4fb2bb94588a94fbd6b3511abefab7
+SHA512: f45e7b6fc2308c4ee0154a8b516577e3d8a6e972bdee1f1c705ae6fc0eac992cad678adf2d5426cbd73a71c6d054be93d28947acf58f4c4225f5e4cb063b7f75
+Description: 在主屏幕查看应用数据与管理应用
+Name: AppData
+Author: iosdump
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm
 Version: 3.0
@@ -2572,6 +2590,24 @@ MD5sum: 891df4713b57e05c496700c8a1d98ce8
 SHA1: 15c60866991d10ec4624ed665a32f9abc233a965
 SHA256: 9fcda9182c56292e0b286944349fca3f3e8c79ccac1bfcdb5688a00122858dc8
 SHA512: e0edf74fa680fb79dc14cc8732df5015c049715ea09af45535911f60e5d486b3fd8ec6a7625e06679f6b7c2b0b15a97308ba468bfe09742cad4ee7f548751ac7
+Description: 在主屏幕查看应用数据与管理应用
+Name: AppData
+Author: iosdump
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64
+Version: 2.7.1
+Section: Tweaks
+Maintainer: iosdump
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Filename: ./debs/rootless/com.iosdump.appdata_2.7.1_iphoneos-arm64.deb
+Size: 2091120
+MD5sum: 3acf5c048675db86660d4e611ef095c9
+SHA1: 7c5521cf2f18ee3c957acaebd0880e268258467f
+SHA256: 083005ad3105d11bf5a9f388da31922e673aa95644cc17181878bc3f0d358483
+SHA512: 581947070bff882ec3b4f1ac3c38f6b9ae871176e9643b6481b206806ca7b6b08522c095fe15089a89b7af651f1bf088b007c4af3a9f9ecfdd5c3e5778a897f3
 Description: 在主屏幕查看应用数据与管理应用
 Name: AppData
 Author: iosdump
@@ -6689,6 +6725,25 @@ MD5sum: 0a9d975b6ab07179ec6fa3331922323d
 SHA1: 9387d4b3c28bdda62b4b16b5cd5c7a56008475df
 SHA256: eb14968bbeadcf9a95c9c5b9c15d08f7a30b395882ceea4daac57777f141222b
 SHA512: 44bfe9bade1793823d813f167ff598627448062af64bba1b0a72dabf791a82184653a7f8bfb72b718bcedfca837faba565365b3db57d07bff02fdbd457618302
+Description: 在主屏幕查看应用数据与管理应用
+Name: AppData
+Author: iosdump
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64e
+Version: 2.7.1
+Section: Tweaks
+Maintainer: iosdump
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Filename: ./debs/roothide/com.iosdump.appdata_2.7.1_iphoneos-arm64e.deb
+Size: 3944654
+MD5sum: e1c2d0092e43d6a85ad008a640334a71
+SHA1: f54f0389e1c318ef5ed94a6f37f8ddc228d26ee4
+SHA256: dfcb80c6334469c93fbea92f5be5f77670068cbbd1a8c691464ae4ed4e373905
+SHA512: 9f032c3e1c1d63de027f18c8c877b1a1a5cecbda3836b190bf18d39098c08b033498d219bb9fe2ffad3737b8a3d4aff35d9bbe14aba009a466530b8eb30610bd
 Description: 在主屏幕查看应用数据与管理应用
 Name: AppData
 Author: iosdump
