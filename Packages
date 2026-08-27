@@ -4898,6 +4898,26 @@ Description: Save and restore the layout of your icons.
 Name: Icon Restore
 Author: Lessica <82flex@gmail.com>
 
+Package: com.82flex.kayoko
+Architecture: iphoneos-arm64e
+Version: 4.3.2
+Section: Tweaks
+Maintainer: 82Flex <82flex@gmail.com>
+Installed-Size: 3176
+Depends: firmware (>= 14.0), mobilesubstrate, preferenceloader, com.opa334.altlist
+Conflicts: codes.aurora.kayoko, dev.traurige.kayoko
+Replaces: codes.aurora.kayoko, dev.traurige.kayoko
+Filename: ./debs/roothide/com.82flex.kayoko_4.3.2_iphoneos-arm64e.deb
+Size: 674030
+MD5sum: 81815eef74d0205d176e59138e4b409b
+SHA1: 20f63550998e727de7ba83d806f5811a2c927f4a
+SHA256: 86347cbbedda1a7acddf2556efa65cb85ef668fa153536e5afcc3c338178a855
+SHA512: 8ca09e13e418786c46db5c5aa1e02f7103e04603288e8f88df6ace4e50ea8fc20b4f407e18b1a84e1a88dba4e44276c57aae84e842381a91896e6b9a24752cd7
+Homepage: https://github.com/OwnGoalStudio/Kayoko
+Description: A smarter clipboard experience that stays close whenever you need it.
+Name: Kayoko
+Author: 82Flex <82flex@gmail.com>
+
 Package: com.82flex.libsandyxpc
 Architecture: iphoneos-arm64e
 Version: 1.1.2
