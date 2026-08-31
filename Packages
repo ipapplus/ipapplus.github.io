@@ -1614,23 +1614,6 @@ Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
 
-Package: com.alilatif.wgold
-Architecture: iphoneos-arm64
-Version: 2.0
-Section: Tweaks
-Maintainer: Ali Latif
-Depends: firmware (>= 14.0), mobilesubstrate
-Filename: ./debs/rootless/com.alilatif.wgold_2.0_iphoneos-arm64.deb
-Size: 6739124
-MD5sum: 7e4d71f86614ee83c394926a7d74520a
-SHA1: 8b871e60ea433fd8b6a1d8f27e6b9897d83f36a0
-SHA256: c4343deda162b3f59d1493b752b4a9415a6c6d190bca7216f13c85ff0330073e
-SHA512: d9fcd1abe5133f2d9aeb94a8c9dac430f678c35db62aa8f2a305cf7095a59031ffc7ad5be4dcaaeda535f327f27e2969abb62e207285afed083833ae5e1ac526
-Description: WhatsApp Customisation Tweak .
-Name: WGold For WhatsApp
-Author: Ali Latif
-Icon: https://github.com/F0rd0w/f0rd0w.github.io/blob/main/depictions/web/com.f0rd0w.sample/screenshots/WGold@100x.png?raw=true
-
 Package: com.alshaman.twiteddate
 Architecture: iphoneos-arm64
 Version: 0.0.1-2
@@ -5064,24 +5047,6 @@ SHA512: 49b4335f01e231b868d11d1baa86b8c1b53b982dc5f45c204414506339c9c9d2da9378c9
 Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
-
-Package: com.alilatif.wgold
-Architecture: iphoneos-arm64e
-Version: 2.0
-Section: Tweaks
-Maintainer: Ali Latif
-Pre-Depends: rootless-compat(>= 0.9)
-Depends: firmware (>= 14.0), mobilesubstrate
-Filename: ./debs/roothide/com.alilatif.wgold_2.0_iphoneos-arm64e.deb
-Size: 6738636
-MD5sum: 8513b4a6a1a7f8c69a94bd3b64d46083
-SHA1: 962e4ab3fd8c7b622da71f503f81223ab6600ce5
-SHA256: 1ed74ffcdb85c76b748672ad17640c6b7a95c4816b98044cc4f94842d5547f11
-SHA512: baacc95bb0f38bc9b1de6905ca7887181e6700821fa40a1c6337bda46de1f83ecfac7f70d13b5bcc19e3403c967d5c1465af056dfd0ac458008b9d73047a9b22
-Description: WhatsApp Customisation Tweak .
-Name: WGold For WhatsApp
-Author: Ali Latif
-Icon: https://github.com/F0rd0w/f0rd0w.github.io/blob/main/depictions/web/com.f0rd0w.sample/screenshots/WGold@100x.png?raw=true
 
 Package: com.alphastream.linearforsb
 Architecture: iphoneos-arm64e
