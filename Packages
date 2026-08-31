@@ -1750,6 +1750,24 @@ Author: NeoFreeBird
 
 Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64
+Version: 6.0.4-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 7900
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Filename: ./debs/rootless/com.bandarhl.nfbbhtwitter_6.0.4-1+debug_iphoneos-arm64.deb
+Size: 2146196
+MD5sum: d282530a399061b647a6f5235a04329a
+SHA1: 31e2f9162d1e82dac798f6cd6f22c2d1f8954082
+SHA256: d08a4ce3c854fe81b874f9f2ce20b0525f68a66daff816e993e6dbf8fc3ebbba
+SHA512: ccb87630731ad89686087d326344c012b571634ceebf71a1257ce0f6636743838c089ce9d18c7855cd3250209cdd5f3abe3af95502080fddf718594e83771098
+Description: Awesome tweak for Twitter
+Name: theacrat-NFB
+Author: NeoFreeBird
+
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
 Version: 6.5.0-1+debug
 Section: Tweaks
 Maintainer: NeoFreeBird
@@ -4635,6 +4653,26 @@ Author: zqbb
 Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
 SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.disupdateapp
 
+Package: cn.zqbb.stopautolaunchapps
+Architecture: iphoneos-arm64e
+Version: 2.3
+Section: zqbb Tweaks
+Maintainer: zqbb
+Installed-Size: 1104
+Depends: mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)
+Conflicts: zp.stopautolaunchapps
+Filename: ./debs/roothide/cn.zqbb.stopautolaunchapps_2.3_iphoneos-arm64e.deb
+Size: 240696
+MD5sum: 7e9294adcf4da3d3972262a512886404
+SHA1: 4754a528dd2d99d75eb60178ff2f35b310e1890a
+SHA256: 4bbaf69169fbfe8c312506436a0f36e662a317586b4df71b26fb5d75cba84106
+SHA512: 76a0c1f7e0aa4472eb1bd0509f2faf30d49ce8615a659ce78cd1162ccf86e438270864cc68cc1d86569b049527c44fecd9b3666871f2a3dfc472729547b4bb7e
+Description: 别在后台热加载app咯! 
+ - 优点:节约内存,少杀后台.
+Author: zqbb
+Name: Hello 3Q
+SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.stopautolaunchapps
+
 Package: codes.aurora.kayoko
 Architecture: iphoneos-arm64e
 Version: 3.3.6-2
@@ -4648,6 +4686,25 @@ MD5sum: a2a0fae05ebd451a89045a5ae31a0dad
 SHA1: 6a97f14d8fd44595a418ea4a55827e9201394981
 SHA256: d6176a8cf8147a141d0bbee7ee19b0bb8b9d11971fe72ce430455fc518bd2326
 SHA512: f713f3ce0e13e5b4a75be94be4d639df1020e589ad9d9011d0f1b6a8d777ecbfda224c072b3f2f8a419ca1ba14db266767c1f8e99962511dc442ae6884472d6d
+Description: Clipboard manager for iOS.
+Name: Hello Kayoko
+Author: Alexandra Aurora Göttlicher
+Icon: https://apt.002599.xyz/web/icon/codes.aurora.kayoko.png
+SileoDepiction: https://apt.002599.xyz/web/codes.aurora.kayoko
+
+Package: codes.aurora.kayoko
+Architecture: iphoneos-arm64e
+Version: 3.6.0-9
+Section: Tweaks
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 1212
+Depends: firmware (>= 14.0), mobilesubstrate, preferenceloader, com.opa334.libsandy
+Filename: ./debs/roothide/codes.aurora.kayoko_3.6.0-9_iphoneos-arm64e.deb
+Size: 177378
+MD5sum: e0d8d6de8d27056f903d917b56534cb6
+SHA1: 2c637097db2525c1b527723c15562b1ffb41534e
+SHA256: c2541bbc9b23469c9b388420ee2731573462f45735423baf92d3d945a172afbe
+SHA512: ef0965c093c6824096f0fbb8882ad84e89df74e025a8a219d5a06ecab518cfb92360bd2a344cb6538f286f9b0ced51e837fb1f0feb0da3a46e5408941356ce7c
 Description: Clipboard manager for iOS.
 Name: Hello Kayoko
 Author: Alexandra Aurora Göttlicher
@@ -5008,6 +5065,24 @@ Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
 
+Package: com.alilatif.wgold
+Architecture: iphoneos-arm64e
+Version: 2.0
+Section: Tweaks
+Maintainer: Ali Latif
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate
+Filename: ./debs/roothide/com.alilatif.wgold_2.0_iphoneos-arm64e.deb
+Size: 6738636
+MD5sum: 8513b4a6a1a7f8c69a94bd3b64d46083
+SHA1: 962e4ab3fd8c7b622da71f503f81223ab6600ce5
+SHA256: 1ed74ffcdb85c76b748672ad17640c6b7a95c4816b98044cc4f94842d5547f11
+SHA512: baacc95bb0f38bc9b1de6905ca7887181e6700821fa40a1c6337bda46de1f83ecfac7f70d13b5bcc19e3403c967d5c1465af056dfd0ac458008b9d73047a9b22
+Description: WhatsApp Customisation Tweak .
+Name: WGold For WhatsApp
+Author: Ali Latif
+Icon: https://github.com/F0rd0w/f0rd0w.github.io/blob/main/depictions/web/com.f0rd0w.sample/screenshots/WGold@100x.png?raw=true
+
 Package: com.alphastream.linearforsb
 Architecture: iphoneos-arm64e
 Version: 1.4.2-1
@@ -5186,6 +5261,26 @@ SHA512: a2f78a42ed5dfdd1e98a8e7eba3825980553205e8a9beaf6e76c79c606cb4aa72056338d
 Description: Sniper bypassjb Work in some apps not all applications
 Name: Sniperbypassjb
 Author: Sniper @DNS_Sys
+
+Package: com.c1d3r.pulloverpro.ios17
+Architecture: iphoneos-arm64e
+Version: 2.2.0
+Section: Tweaks
+Maintainer: Sugiuta
+Installed-Size: 880
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/roothide/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64e.deb
+Size: 407508
+MD5sum: bbeab8628cca7914a48f626e370e4f34
+SHA1: 30c63f0e3fa79099754cab9521d2eb7a26c7849a
+SHA256: 3151cf9033a08ce2de189c222c0207752aa9cc79a8f04aac75313835a77131a6
+SHA512: 6c28c30f6cd386d24c3ab9c5dfb4e2212dec063d8386758bf8e2946390a1132813f1e7683769a40970351e6eff655eae49edf264a43a8318253a493ac3a575cc
+Description: description: Bring true multitasking to iOS 17. Quickly open your favorite apps in a floating window without leaving your current app.
+Name: PullOver Pro iOS17
+sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
+icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
+Author: Sugiuta
 
 Package: com.choco.tg
 Architecture: iphoneos-arm64e
@@ -7180,6 +7275,25 @@ Depiction: https://lizynz.github.io/depictions/?p=com.lizynz.telegaicons
 SileoDepiction: https://lizynz.github.io/depictions/com.lizynz.telegaicons/TelegaIcons.json
 Author: Lizynz <lizynz@ya.ru>
 
+Package: com.m4fn3.mikkyy
+Architecture: iphoneos-arm64e
+Version: 1.0.2
+Section: Tweaks
+Maintainer: m4fn3
+Installed-Size: 1796
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader
+Filename: ./debs/roothide/com.m4fn3.mikkyy_1.0.2_iphoneos-arm64e.deb
+Size: 429752
+MD5sum: 978e2219b749d7869ee6880c26165ce9
+SHA1: ba633e6525598ff239b5b8b19f6e114f81897c49
+SHA256: a43fa5e48097b2d9123edf91672c451f561705d33bf5273967d9618ff6895ef0
+SHA512: 4c40f8eb3be1bf560391fd501ed4a758d4281dab1fe12eb0f92a3ce96899a2c028590765fb0b620a177094e129851f5365af9a7a07da933ec162a69eeba53b24
+Description: Modern, lightweight theme engine for iOS 16 through 26. Applies icon themes to the Home Screen, Dock, App Switcher, Share Sheet, Settings, folder previews, and live Calendar and Clock icons.
+Name: Mikkyy
+Author: m4fn3
+Icon: https://m4fn3.github.io/repo/web/images/Mikkyy.png
+SileoDepiction: https://m4fn3.github.io/repo/web/depictions/Mikkyy.json
+
 Package: com.managedelete.sniper
 Architecture: iphoneos-arm64e
 Version: 1.0
@@ -8320,6 +8434,25 @@ SHA512: 838f16cc1d3ea2dc696e182b20d0c909da61f902f09596b16100eae12c31058512e5c546
 Description: Removes the delay when trying to drag a scroll bar.
 Name: NoScrollbarGrabDelay
 Author: Tanner Bennett <thepantsthief@me.com>
+
+Package: com.opa334.cranelite
+Architecture: iphoneos-arm64e
+Version: 1.3.18-2
+Section: Tweaks
+Maintainer: opa334
+Installed-Size: 2168
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>=11.0), mobilesubstrate, preferenceloader, com.opa334.altlist (>=1.0.5), com.opa334.libsandy (>=1.1.6), com.opa334.libundirect (>=1.1.4) | firmware (<<14.0)
+Conflicts: com.opa334.crane, com.opa334.crane13lite, com.opa334.crane13, com.rpgfarm.slices3, com.subdiox.slices2, com.expetelek.slices
+Filename: ./debs/roothide/com.opa334.cranelite_1.3.18-2_iphoneos-arm64e.deb
+Size: 913212
+MD5sum: 5ec03b0419a20309504978f707e36c00
+SHA1: 302fbddc5de42f5f8a9c8c19acd723411306ef24
+SHA256: 37a02b5a8d399aa7d8b86e1607701c9fadd8ab66b472bc5f6ff8975e22fb2bb4
+SHA512: 10428e8d715dfa74dff5d1c5635ce645529c3c69daeadee123e79a489bfd3e99cb9b8ff0faee4b37cd5848dc824322b6fbba3257af3a3d3231a9658dae08a1a6
+Description: Multiple containers for one application!
+Name: Crane Lite
+Author: opa334
 
 Package: com.opa334.cranelite
 Architecture: iphoneos-arm64e
