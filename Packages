@@ -9946,6 +9946,27 @@ Name: KBApp
 Author: Dcsyhi
 icon: https://dcsyhi1998.github.io/icons/kbappdock/icon@2x.png
 
+Package: jp.dcsyhi.zetsu
+Architecture: iphoneos-arm64e
+Version: 1.6.4
+Section: Tweaks
+Maintainer: Dcsyhi <dcsyhi1998@gmail.com>
+Installed-Size: 15243
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate,firmware (>=15.0),preferenceloader,com.opa334.ccsupport
+Filename: ./debs/roothide/jp.dcsyhi.zetsu_1.6.4_iphoneos-arm64e.deb
+Size: 13163204
+MD5sum: 2f5c15da29575fdfcc5633739d9ed34d
+SHA1: f3acc1c9020baf308014e01212e4e1a4157a790e
+SHA256: 4cf698d8981228f0f1baf28305434fced1c48c37b0c9f5643fbde978b6654be0
+SHA512: 5ab8a08dcf202230153866c88a2d00e1c121ddd95c33e2b6656efc224d11735dbddfc0e15a33a247b00b06cbee8872c7c3af25396228014c72a140384a483931
+Description: Multitasking on iOS15 - iOS16.
+Tag: compatible_min::ios15.0
+Author: Dcsyhi <dcsyhi1998@gmail.com>
+Name: Zetsu
+Icon: https://img.chariz.cloud/icon/zetsu/icon@3x.png
+Depiction: https://chariz.com/get/zetsu
+
 Package: jp.r-plus.menusupport
 Architecture: iphoneos-arm64e
 Version: 1.3.0
