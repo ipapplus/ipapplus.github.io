@@ -4636,6 +4636,26 @@ Author: zqbb
 Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
 SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.disupdateapp
 
+Package: cn.zqbb.hello.ips
+Architecture: iphoneos-arm64e
+Version: 1.6.1
+Section: Tweaks
+Maintainer: zqbb
+Installed-Size: 1132
+Depends: mobilesubstrate (>= 0.9.5000)
+Conflicts: cn.zqbb.hello.diagnosticdata
+Replaces: cn.zqbb.hello.diagnosticdata
+Filename: ./debs/roothide/cn.zqbb.hello.ips_1.6.1_iphoneos-arm64e.deb
+Size: 297922
+MD5sum: f51c533be766317da175f612af4e488a
+SHA1: af7764b0f77d313edeaaa03706c80002096de11e
+SHA256: 336e7d8d03b2274bbad2fb721d5716f6ec22cec4829eec4449c3583e5615330e
+SHA512: f84a62f52308f2a45f9bb155a30f66597c29cd293e9079944dd4e131dbda5344871e7c32c189697d13d54172acfc3035eb6c451b1026fd3effc812530c6fbd28
+Description: 分析数据快速分享、清理、搜索、过滤!
+Name: Hello IPS
+Author: zqbb
+SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.hello.ips
+
 Package: cn.zqbb.stopautolaunchapps
 Architecture: iphoneos-arm64e
 Version: 2.3
@@ -9454,6 +9474,27 @@ Description: Adds a button to switch account in App Store account page on iOS 11
 Name: StoreSwitcher 2 (rootless)
 Author: 0xkuj <0xkujz@gmail.com>
 
+Package: com.yourepo.b4db1r3r3p0.allrounddit
+Architecture: iphoneos-arm64e
+Version: 1.0.70
+Section: Tweaks
+Maintainer: b4db1r3
+Installed-Size: 540
+Provides: com.b4db1r3.redditpromotedcleaner
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 15.0)
+Conflicts: com.b4db1r3.redditpromotedcleaner
+Replaces: com.b4db1r3.redditpromotedcleaner
+Filename: ./debs/roothide/com.yourepo.b4db1r3r3p0.allrounddit_1.0.70_iphoneos-arm64e.deb
+Size: 138758
+MD5sum: 66319adf0f8ac59504fb8dd06a44e673
+SHA1: 618f6784d7bc31fdb6235fe6db97be99db39ab4d
+SHA256: 34e1f996cfdf18b943feff5c30acef94415f3a3c53c63bf66624e587833907b4
+SHA512: cbd509223dff1477878b2a4cf5a830ab226bb2ad5084fea4a4308194f60498c7186fce3be86bd61cfe927868e98642105367310148698a600b001cc95d37f554
+Description: Configurable Reddit enhancements: ad-free feeds and posts, persistent subreddit hiding, color-coded comments, deleted-comment recovery, an optional floating tab bar, global video speed, and original-media sharing. Uses runtime capability checks for current and future Reddit releases.
+Name: AllRounddit
+Author: b4db1r3
+
 Package: com.yourepo.b4db1r3r3p0.oleddarkmode
 Architecture: iphoneos-arm64e
 Version: 0.5.1-11
@@ -9470,6 +9511,26 @@ SHA512: 30e224be4a0692e5f4e20d53628eeb45e353ff009ba9820e5ea724cda2fc41e43066b761
 Description: Make dark mode actual dark.
 Name: OLED Dark Mode
 Author: @fr0st & b4db1r3 <nfive060@gmail.com>
+
+Package: com.yourepo.b4db1r3r3p0.reprovisionrebornagain
+Architecture: iphoneos-arm64e
+Version: 0.8.4-rootless.22
+Section: Utilities
+Maintainer: Soh Satoh, b4db1r3 <nfive060@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), uikittools
+Conflicts: jp.soh.reprovision, com.matchstic.reprovision
+Replaces: jp.soh.reprovision
+Filename: ./debs/roothide/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.22_iphoneos-arm64e.deb
+Size: 14176628
+MD5sum: 3f4a677f099f70be5a48b48a62264cb3
+SHA1: 62b76c9c422938095cac171d73279bcb76822ffa
+SHA256: 6e6635f7ce45b8ca553d25ae367dd3badbcffc1fe9900240d57ebda2e6ffd620
+SHA512: 7845d85fb0f0facc61d9de05fcb72f02ea0736f89aeb8417eccec6718cc281917625a6af04dee22f37a32a89799b30614534eb1200a3698ba460e45e9c125f48
+Description: Re-sign applications directly on your rootless jailbroken deviceThis community-maintained build restores Apple account authentication,trusted-device two-factor authentication, background signing, and modernprovisioning-profile handling for iOS 15 and newer.
+Name: ReProvision Reborn… Again
+Author: Soh Satoh, Matt Clarke <nfive060@gmail.com>
+Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
 
 Package: com.yourepo.cydiageek.twitterlabelback
 Architecture: iphoneos-arm64e
@@ -9843,6 +9904,27 @@ SHA256: a2c8fb302617366f744810db819de56c991d0cdf3cf5af05ab61729a3af1c26b
 SHA512: 3c154ea9c3faaac67401704a4f0b89e869a83de8823a68c0988e2af2d4ee72b636a3f7843b55cf801f763f43dd1eb7649735132650b77a354e4e6f951475f290
 Description: Make keyboard color adaptive to app color.
 Name: ADKeyboard
+Author: Dcsyhi
+
+Package: jp.dcsyhi.culprit
+Architecture: iphoneos-arm64e
+Version: 1.0.1
+Section: Utilities
+Maintainer: Dcsyhi
+Installed-Size: 500
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>=15.0)
+Filename: ./debs/roothide/jp.dcsyhi.culprit_1.0.1_iphoneos-arm64e.deb
+Size: 178266
+MD5sum: 591a0827caf51f3b56ee05a65915b2ef
+SHA1: df64348e21197f208d08808bbd14bc98afcefbcc
+SHA256: 1d8590f8cc6ea2fb2289a3e8b12459211c8ff3774349c0b3310916cdeed04783
+SHA512: 520a364763a148966643728ffdd92bf5e18ebe17c507c155e8b6013725e9d0ecf10ac03dffc2e8187108abdf2273dc6b16ecfcd3606378ca621df07b0fd27082
+Description: Crash reports grouped by process. Colored presentation informed by slog (Ethan Arbuckle, https://github.com/EthanArbuckle/slog).
+Name: Culprit
+Depiction: https://dcsyhi1998.github.io/depiction/Culprit.html
+SileoDepiction: https://dcsyhi1998.github.io/Sileodepiction/Culprit.json
+Icon: https://dcsyhi1998.github.io/icons/Culprit/Culprit.png
 Author: Dcsyhi
 
 Package: jp.dcsyhi.kbappdock
