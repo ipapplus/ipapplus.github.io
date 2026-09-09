@@ -5245,6 +5245,91 @@ Description: Awesome tweak for Twitter
 Name: NFB-BHTwitter
 Author: NeoFreeBird
 
+Package: com.barabadev.fluxion
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: BarabaDev
+Installed-Size: 560
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Conflicts: com.ryannair05.cylinderremade
+Filename: ./debs/roothide/com.barabadev.fluxion_1.0.0_iphoneos-arm64e.deb
+Size: 96356
+MD5sum: 7dfa7e4d82ad0b3267a614c6de4a6dab
+SHA1: aa5359132abf5c4c05c563821d224eabe72bd16e
+SHA256: 1b812f14f8789f33ac2b698f103d2acc731abfd1001f8cff8f1d77c742302791
+SHA512: d60d538467e7092704d0ea309f9861c36800a096c39c3e68ea4a21479749506b696a615cea81af8b2de8843051b7f73f49fada534228ee0d947d11d8701207f4
+Description: A modern SpringBoard page motion engine with original fluid, depth and elastic effects.
+Name: Fluxion
+Author: BarabaDev
+Icon: file:///var/jb/Library/PreferenceBundles/FluxionPrefs.bundle/package-icon.png
+
+Package: com.barabadev.lumaprogress
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: BarabaDev
+Installed-Size: 488
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Filename: ./debs/roothide/com.barabadev.lumaprogress_1.0.0_iphoneos-arm64e.deb
+Size: 126136
+MD5sum: 3631686b2fc3ad5853ea283b850dec01
+SHA1: ad25bb59a8e6129c2a4502199d4019c8614cff85
+SHA256: 46dd65001344899e0816d97216e66eba9425309440aace5ebf4ee7958617031b
+SHA512: 322ca9b603703d866f14fbce74c7b01ab746998530f2183a9105c3404dd0d835d4cc2c882ab72eb7b4afe36a691d1d0575b31a138a5aa6a93d467c2d73623a8c
+Description: App icon progress with adaptive colors and clear percentages for downloads and updates.
+Name: LumaProgress
+Author: BarabaDev
+Icon: https://barabadev.com/assets/lumaprogress.png
+
+Package: com.barabadev.snowboardios17fix
+Architecture: iphoneos-arm64e
+Version: 1.0.3
+Priority: optional
+Section: Tweaks
+Maintainer: BarabaDev
+Installed-Size: 171
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 17.0), firmware (<< 18.0), com.spark.snowboard (= 1.5.37-Beta4-rootless)
+Conflicts: com.barabadev.snowboardsettingsiconsfix
+Replaces: com.barabadev.snowboardsettingsiconsfix
+Filename: ./debs/roothide/com.barabadev.snowboardios17fix_1.0.3_iphoneos-arm64e.deb
+Size: 6012
+MD5sum: ff5c4b827583235d599f04ab2ceb0552
+SHA1: 6ac66df987aa47a13dcd69cefbcfbf1aaddf6078
+SHA256: 848cc32f518ca988d8ecfc78336ca02b74df9f2085ef9ced38a9d26d0bcdca00
+SHA512: 4e28ecd79ce2104b44bcee103fe738176bbadaeb7621f6dc24fafcf189e896ae352334b080a0ced7a165ba2dc7417a7dbeea9765c5aba103461555a5c4ddc18f
+Homepage: https://barabadev.com/
+Description: SnowBoard compatibility patch for iOS 17.
+ .
+ For rootless devices. Respring after installation.
+Tag: role::enduser
+Name: SnowBoard iOS 17 Fix
+Author: BarabaDev
+Icon: https://barabadev.com/assets/snowboard-ios17-fix-1.0.1.png
+
+Package: com.barabadev.vitra
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: BarabaDev
+Installed-Size: 656
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, uikittools
+Filename: ./debs/roothide/com.barabadev.vitra_1.0.0_iphoneos-arm64e.deb
+Size: 113008
+MD5sum: 8ec9d366f180567ba84ced2c1c7109cc
+SHA1: 65df643a0c47b735a93e09582bda710889ae2cc8
+SHA256: e0ff5f1c2f73c8839b7214a0b23c2c8a97adcb6669542214e9fac8d59bae15d3
+SHA512: eaf6981ac41c12d5e7a240facf4de499f69cde6589b0d80abb302df143cb7ce8d07004809842c0bd8f2c6452c63b1aa06fba963a0151412608cb1b652d3f6e4a
+Description: Adjustable glass, edge light and highlights for Home Screen icons.
+ Includes a live preview and Apply & Respring in Settings.
+Name: Vitra
+Author: BarabaDev
+Icon: file:///var/jb/Library/PreferenceBundles/VitraPrefs.bundle/package-icon.png
+
 Package: com.brend0n.notransitcardversionlimit
 Architecture: iphoneos-arm64e
 Version: 0.0.2
@@ -5716,6 +5801,27 @@ Icon: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo.png
 Header: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo2.jpg
 SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json
 
+Package: com.den.igformat
+Architecture: iphoneos-arm64e
+Version: 2.6.0-1+debug
+Section: Tweaks
+Maintainer: MrDeNsor
+Installed-Size: 2880
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.den.igformat_2.6.0-1+debug_iphoneos-arm64e.deb
+Size: 419556
+MD5sum: 53f8fc77eaa517de7462981574cf4978
+SHA1: fcfa1644e140f7b371704deb13f8f68c828d174f
+SHA256: 48be037be3ea66539da0a1c1e8ea76b909937dce7661cfe96bee6a51691e45b7
+SHA512: e49f65d4fc99cfd1ace01ba0e86e48a23921d3c58678d1aee4313bc2f2ca64fc0c21b8b6a34a0d9983a9cafd0bda3b0978d8ff4e72d8a10a37e1504e519ed36f
+Description: Powerful Instagram Tweak
+Name: IGFormat
+Author: MrDeNsor
+Icon: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo.png
+Header: https://github.com/6gr8/IGFormat/raw/main/IGFormatLogo2.jpg
+SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json
+
 Package: com.den.locktouchx
 Architecture: iphoneos-arm64e
 Version: 1.3-18
@@ -5814,6 +5920,45 @@ Icon: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal_logo.png
 Header: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal_header.png
 SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal.json
 
+Package: com.den.twigalaxy
+Architecture: iphoneos-arm64e
+Version: 1.14-1+debug
+Section: Tweaks
+Maintainer: DeNsor
+Installed-Size: 1836
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.den.twigalaxy_1.14-1+debug_iphoneos-arm64e.deb
+Size: 269980
+MD5sum: b77e53d0eecdc7a7039dd444c46df63d
+SHA1: 2e67f47fafbf0b87e236b28a3adb9f6fd980a2ea
+SHA256: 16f63ad673b684c9d27255d5e8fd4e315a97fe2692ddcffbd88b4e09fff82a0a
+SHA512: 329673ae1003dcf4ddeab328ae849f71c8dc74cd1c85c5620542e8bafca7d1a578ff865ff410fc9b7a07c541048281bf03c81b54f6f03555db027fb14d3cc18a
+Description: Make Twitter Better!
+Name: TWIGalaxy
+Author: DeNsor
+Icon: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal_logo.png
+Header: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal_header.png
+SileoDepiction: https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal.json
+
+Package: com.den.vibett
+Architecture: iphoneos-arm64e
+Version: 1.75-1+debug
+Section: Tweaks
+Maintainer: DeNsor
+Installed-Size: 1476
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.den.vibett_1.75-1+debug_iphoneos-arm64e.deb
+Size: 221744
+MD5sum: 4d6b82bf002bdc48ec10adea03aeec09
+SHA1: f7f6595edf776edf1e744825e826b414a92f6b96
+SHA256: 39c06991ba0d74ee9db604fec89a5848aa07676e6e83bb6fd5d5b58559b4605b
+SHA512: 2758eb9cf674b7e11e26a6ca54bd3b1a173c4449c29561d385f950b49ac7d0a6e614155d7a73fc04acd8e707f2644e2dc2ecd587e917cefbada358d90b0c2725
+Description: Make TikTok Better!
+Name: VibeTok
+Author: DeNsor
+
 Package: com.dhinakg.addprofileinstallbutton
 Architecture: iphoneos-arm64e
 Version: 1.0.2
@@ -5827,6 +5972,24 @@ MD5sum: e49441fea862023b222646a6be531525
 SHA1: a166887ccf0f6df1dab40d306791d4b7c350319c
 SHA256: 92937a381edab251894b08768134f77dd34de6933b843b4fd00042fbc536b9fc
 SHA512: c8ae8a7a22ec306ab80661fa87166fc8e9ac8e1c4845a83b014aaf8c36c3462472d6eae9d16f2e7cb289d45968579d68ad0cb01710dad9608fc2fc7ea414a565
+Homepage: https://dhinakg.github.io/repo
+Description: Add an "Install Profile" button to the "Profile Downloaded" popup.
+Name: AddProfileInstallButton
+
+Package: com.dhinakg.addprofileinstallbutton
+Architecture: iphoneos-arm64e
+Version: 1.0.3
+Section: Tweaks
+Maintainer: Dhinak G
+Installed-Size: 152
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 12.0)
+Filename: ./debs/roothide/com.dhinakg.addprofileinstallbutton_1.0.3_iphoneos-arm64e.deb
+Size: 8008
+MD5sum: 40bcc8db990a85ba55d89a1506e26e4a
+SHA1: 10d8731c4000ef72db8f377c688d4e9965f4332c
+SHA256: 84800c333480eb7be1a88a37bfc10724d5fbf93910c728c61fdb415bf0401e46
+SHA512: 4f07b73fe33fcb67917f7ef8966874b1f23a33e84b81033add59e0759c0d7b9e75cf63132ea4097d7a3bf151b1f3f9482eb49298da862534357c8896c8ef73e2
 Homepage: https://dhinakg.github.io/repo
 Description: Add an "Install Profile" button to the "Profile Downloaded" popup.
 Name: AddProfileInstallButton
