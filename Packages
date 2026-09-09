@@ -7093,6 +7093,24 @@ Depiction: https://cydia.ichitaso.com/depiction/spectrogram.html
 dev: ichitaso
 Icon: file:///Library/PreferenceBundles/SpectrogramSettings.bundle/icon@2x.png
 
+Package: com.icraze.fuckoffairdrop
+Architecture: iphoneos-arm64e
+Version: 1.0
+Section: Tweaks
+Maintainer: iCraze
+Installed-Size: 168
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.icraze.fuckoffairdrop_1.0_iphoneos-arm64e.deb
+Size: 2900
+MD5sum: e8dfb6e4b1817a9f4a0a519edf134c6f
+SHA1: 62db60553f9a86eab93732ba4e9fbbc92af9fb34
+SHA256: 52b1250d235f8cc1f79637d5c3352fb05bfe3f9f5e8099dee9a6ddd40880a3d0
+SHA512: 05fd46c40c92bd1e069841d54c8c2b6d737f1eb7d957a9e20aa3c33aaa7d7a3fc07c6bcb9f1dcdb32673bc0d890de5002118cdb6d11a98712af1b45e6c0e3d68
+Description: Stop AirDrop from automatically installing .ipa files
+Name: Fuck Off AirDrop
+Author: iCraze
+
 Package: com.icraze.tempdrop
 Architecture: iphoneos-arm64e
 Version: 1.1
@@ -8095,6 +8113,28 @@ Icon: https://na9.me//public/uploads/images/site-img/ojRkdLuWbGXgZJQ.jpg
 
 Package: com.na9.tiktok
 Architecture: iphoneos-arm64e
+Version: 1.0~beta5-2+debug
+Section: Tweaks
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 2359
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate
+Filename: ./debs/roothide/com.na9.tiktok_1.0~beta5-2+debug_iphoneos-arm64e.deb
+Size: 938414
+MD5sum: 321b69f82b4af8d2b728c5e47c10bf6e
+SHA1: 280c187847976a4e9b22bfaa2d4fc190dad30eed
+SHA256: 8495ef7bce2c69c4474fad1eaf7716ddfa6db6ba30f64ca301d5fb13e82b7a09
+SHA512: e3c6f52b1be799512fdb779fc99a75815fb65e32425aa6ce1877ee6a2d93a129668d9dff735ade0dd7b1bc55b6bed2ad7d3d3cea990436c81c65f1bfcfe8ec25
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp
+Description: An advanced tweak for TikTok by N+Store
+Author: Nasser | NoTimeToChill <nowe9r@hotmail.com>
+Name: NA9 For TikTok
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp
+Sponsor: thebigboss.org <http://thebigboss.org>
+dev: nowesr1
+
+Package: com.na9.tiktok
+Architecture: iphoneos-arm64e
 Version: 1.0~beta5-2
 Section: Tweaks
 Maintainer: BigBoss <bigboss@thebigboss.org>
@@ -8256,6 +8296,24 @@ MD5sum: 985bcc033d119bf149d60bc1838cb93f
 SHA1: bfb0fcddae2fcc08c6cc8ccf00731533e9c749e1
 SHA256: 59d043083144cc09fb095c852a84cef85c63efddadaee49a5fea5fc6f247f2a1
 SHA512: f85ed7a820a50aa4146e2f8a927ef40874a3fa1e53839ca64c8ce4bc722e6722da80574df44905c24355a735c815d683889fcefa448352494f1fc403560b1fbe
+Description: A tweak to hide the Dynamic Island on the 14 Pro series when it's not in use!
+Name: DynamicNotLand
+Author: Nathan
+
+Package: com.nathan.dynamicnotland
+Architecture: iphoneos-arm64e
+Version: 1.2.5
+Section: Tweaks
+Maintainer: Nathan
+Installed-Size: 348
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/roothide/com.nathan.dynamicnotland_1.2.5_iphoneos-arm64e.deb
+Size: 16394
+MD5sum: c8146d97c3a8e5fc38416b773ae4bd60
+SHA1: d90c8f87b2c1ba5b79447c4bf47e1238676f73ba
+SHA256: e7d62452e2081cbc859a74fb71f1927345a8b38ce2cbfcba431cde31c3184244
+SHA512: e0c5e8d8e8c573f3652175e5bd30d15c76d039c173c5b00cc19675d166a233fd2fd4c5422a9604d148827ff553ee162d0faef095d0a812d172e7d4488f1108fa
 Description: A tweak to hide the Dynamic Island on the 14 Pro series when it's not in use!
 Name: DynamicNotLand
 Author: Nathan
@@ -8542,6 +8600,28 @@ MD5sum: 5589c881a62fdaac4da2e02bdc15a161
 SHA1: 451197573b8c8141a8caba608ac6f7994c438e58
 SHA256: 8e99798d9d8d42ddc975af4610f80ec1efe940c7f1b70dcd7bc6c74d05f64217
 SHA512: f3e44acc75699d8bec43ec0fa406412ca0f4d36bc2536ff54371bbd277516ab8ed64e8ad3e9077a46e293f818c3e0763871685c029631c4b1d91b6c87973f37c
+Description: Bigger and bolder folders, remade!
+Tag: compatible_min::ios14.0
+Author: Nightwind <nightwinddev@gmail.com>
+Name: Bolders Reborn
+Icon: https://img.chariz.cloud/icon/boldersreborn/icon@3x.png
+Depiction: https://chariz.com/get/boldersreborn
+
+Package: com.nightwind.boldersreborn
+Architecture: iphoneos-arm64e
+Version: 1.2.0
+Section: Tweaks
+Maintainer: Nightwind <nightwinddev@gmail.com>
+Installed-Size: 5847
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.ichitaso.iconorder
+Conflicts: com.twickd.sirius24.folderplus, xyz.burritoz.thomz.folded, com.yourepo.i0s-tweak3r-betas.foldercontroller14, com.4nni3.coolfolder, com.lizynz.foldercolor, com.ginsu.4ders, com.iadam1n.statusfolder, com.lizynz.folderx.rootless, com.lizynz.folderx
+Filename: ./debs/roothide/com.nightwind.boldersreborn_1.2.0_iphoneos-arm64e.deb
+Size: 10074702
+MD5sum: 2ff37969ab97bc3d42814c62613da879
+SHA1: 44f766321ef15299eca5ce931599ebb1b84b510a
+SHA256: d5c681e1f992b44b094382d6d62a90c61eca3cc302fcbee12c934a1e12a10452
+SHA512: f45dccb8dd2821cdcb1d9028e40bc0f6b3f4e88577d3014e1c1b2ac6a66c9b8eb9d166cd8fc16fd450b7f59dbec0d48ea031bf54e7dd58a1ab51629778c9be2a
 Description: Bigger and bolder folders, remade!
 Tag: compatible_min::ios14.0
 Author: Nightwind <nightwinddev@gmail.com>
@@ -8854,6 +8934,128 @@ Author: P2KDev <p2kdev@gmail.com>
 Depiction: https://p2kdev.github.io/repo/depictions/index.html?packageId=com.p2kdev.waqt
 Icon: https://p2kdev.github.io/repo/api/packageinfo/com.p2kdev.waqt/icon.png
 SileoDepiction: https://p2kdev.github.io/repo/depictions/native/com.p2kdev.waqt.json
+
+Package: com.ps.batteryhealthenabler
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 152
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.3)
+Filename: ./debs/roothide/com.ps.batteryhealthenabler_1.0.0_iphoneos-arm64e.deb
+Size: 7322
+MD5sum: 13a06d976f7585c7f65fa00d4adf67f9
+SHA1: 6f62372e7f32e34791f274cbbc249ea10b4012d1
+SHA256: e74637363f08bb798fa4a0b5316fe71abe7e63f490b25221362a53f465225fe6
+SHA512: 42b24a147b2d4d0640068ec2ff33794b4d3a595107c2a606ee42bb2e994eba92aae12167383d36569c6f1eb535c7ef8ff2e371a8502ca47abfba667a92fa7012
+Description: Enable Battery Health on unsupported devices.
+Name: Battery Health Enabler
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/batteryhealthenabler.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/batteryhealthenabler.json
+
+Package: com.ps.cconandoff
+Architecture: iphoneos-arm64e
+Version: 1.1.0
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 152
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0)
+Conflicts: com.jakeashacks.realcc
+Filename: ./debs/roothide/com.ps.cconandoff_1.1.0_iphoneos-arm64e.deb
+Size: 7462
+MD5sum: 0abb980ca215d87258619477dbd262d4
+SHA1: 227b591b76e27939523b31fe9a2ae5101218b798
+SHA256: c2c1a897e6769dab57964d51259bb441226908b0a30295bb47806c50b065edd4
+SHA512: 0d9da4d9aeced7be254cce3e9f12aa3c93173ac2bd19461f8f8b9805759257eb6ce1e89efe36d92ea190945addfc0bf8db58c6bbd3427bcd7576366b5f08d1ba
+Description: Toggle Wi-Fi and Bluetooth On/Off from Control Center (iOS 11+).
+Name: CC On & Off
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/cconoff.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/cconoff.json
+
+Package: com.ps.highgraphics
+Architecture: iphoneos-arm64e
+Version: 1.1.1
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 168
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 7.0)
+Filename: ./debs/roothide/com.ps.highgraphics_1.1.1_iphoneos-arm64e.deb
+Size: 5458
+MD5sum: 590a84011f4eac48f370abfb1e209b6a
+SHA1: e1430b54ca8150ec9b55df08421ccd6f69a46bf2
+SHA256: 85fd56ca370bacd49941482271ebb23eb6562a6abf259bd50bfddb6acd5dd071
+SHA512: 6aa22b98cde744f6c726dc5b3e6abccdbc10c25723338f09afcea84ca637247e4d53b153238ae20a8e326406106ed1abfa7a479dfc2a76b9e3e88fa487e27795
+Description: Best UIKit graphics for older devices.
+Name: HighGraphics
+Author: PoomSmart
+
+Package: com.ps.letmeblock
+Architecture: iphoneos-arm64e
+Version: 1.3.0
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 140
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 9.0), com.opa334.libsandy
+Filename: ./debs/roothide/com.ps.letmeblock_1.3.0_iphoneos-arm64e.deb
+Size: 8508
+MD5sum: 40222e8e5cda8b5f6a48aa5b234baa01
+SHA1: 69629cf731c5c43f49d0d3a08e06723a90628233
+SHA256: 4f5a31079fca59f376b306a68167a0a4dc333eba455c1a5670b5e363ad285850
+SHA512: c6261660324fcefafe8a137e0981a429fcf5ca742b57c87a1ca0902a9f66c319a4af6833f11b58337fd00df2891028c02120c43ac1d435a21fe3eaff0f7711db
+Description: Make mDNSResponder care more about /etc/hosts
+Name: LetMeBlock
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/letmeblock.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/letmeblock.json
+
+Package: com.ps.recordpause
+Architecture: iphoneos-arm64e
+Version: 2.0.7
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 216
+Provides: org.thebigboss.recordpause, com.spicat.recordpause
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 9.0), firmware (<< 18.0)
+Conflicts: org.thebigboss.recordpause, com.spicat.recordpause
+Replaces: org.thebigboss.recordpause, com.spicat.recordpause
+Filename: ./debs/roothide/com.ps.recordpause_2.0.7_iphoneos-arm64e.deb
+Size: 15756
+MD5sum: d134cdac5accb3132901d55636d43641
+SHA1: 7d6ef20e7afaed65af4eae46b6d0966c55269573
+SHA256: c9f991506001864d59b2a40a4a063090e3167bf1076893d8ad13e4fd1ce3d80d
+SHA512: edd81edb19fdb3220c97fe378a991ed5fa411da7224d63ce0c355ba3263a1d8f252b4f0c730c5ac0e3d25d4f65d9b67dbb1415b8185b16b15397857788a2943b
+Description: Pauses/resumes video recording in iOS Camera app.
+Name: RecordPause
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/recordpause.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/recordpause.json
+
+Package: com.ps.replaykitmax
+Architecture: iphoneos-arm64e
+Version: 1.0.1
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 152
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 9.0)
+Filename: ./debs/roothide/com.ps.replaykitmax_1.0.1_iphoneos-arm64e.deb
+Size: 4844
+MD5sum: 91f258cabe04c8a83cffc93d99d7e6aa
+SHA1: 35d872bd8ad777408e6ba6808615bcba1f92f3b8
+SHA256: aa8e8efcb0cb961006c9036804d08a9ee04fb72fbd08e313283074541b8f17a7
+SHA512: 1be9a971718db50a3d9dd11f0d7eb68c9c7bb052a20f77ea24dd6b42929fed2bb8c97d75cab220493640bfe59c2d04fe8b763b3a35549da362597b9735382c3f
+Description: Record screen without resolution cap.
+Name: ReplayKit Max
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/replaykitmax.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/replaykitmax.json
 
 Package: com.randy420.tools
 Architecture: iphoneos-arm64e
