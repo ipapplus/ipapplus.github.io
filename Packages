@@ -8480,6 +8480,23 @@ Description: Multiple containers for one application!
 Name: Crane Lite
 Author: opa334
 
+Package: com.opa334.trollstorehelper
+Architecture: iphoneos-arm64e
+Version: 2.1
+Section: Applications
+Maintainer: opa334
+Installed-Size: 4400
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: ./debs/roothide/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.deb
+Size: 1913204
+MD5sum: 33d89232c16c645f9a669172b966355b
+SHA1: 92503661e5e52124c8c09396933534f97f94d161
+SHA256: 55f0cab792198fa7e79439a0c55bd346bc9701c02787436f85e4921f56f343cb
+SHA512: 2c0c6a8a5d0faefdf4928deadfbef580e68a88fdd93a9c89645e13e6a51c30c758ff15ef36b8b4d9ff96bdd9cdc4ed90df9ba7d31d45c9aac2846485c59a6f98
+Description: Helper utility to install and manage TrollStore!
+Name: TrollStore Helper
+Author: opa334
+
 Package: com.opa334.trollstorelite
 Architecture: iphoneos-arm64e
 Version: 2.1.1
@@ -9552,6 +9569,26 @@ SHA512: 7845d85fb0f0facc61d9de05fcb72f02ea0736f89aeb8417eccec6718cc281917625a6af
 Description: Re-sign applications directly on your rootless jailbroken deviceThis community-maintained build restores Apple account authentication,trusted-device two-factor authentication, background signing, and modernprovisioning-profile handling for iOS 15 and newer.
 Name: ReProvision Reborn… Again
 Author: Soh Satoh, Matt Clarke <nfive060@gmail.com>
+Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
+
+Package: com.yourepo.b4db1r3r3p0.reprovisionrebornagain
+Architecture: iphoneos-arm64e
+Version: 0.8.4-rootless.27
+Section: Utilities
+Maintainer: Soh Satoh, b4db1r3 <nfive060@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), uikittools
+Conflicts: jp.soh.reprovision, com.matchstic.reprovision
+Replaces: jp.soh.reprovision
+Filename: ./debs/roothide/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.27_iphoneos-arm64e.deb
+Size: 14192000
+MD5sum: 67db67a905ec74967d3474ec1c99b6ed
+SHA1: 9bcf278126fa94b11e031651d913202b250354f6
+SHA256: d4a53d6e2184f6855a49b519c9d51292ba8bb707efc857a1afcd526365d126fc
+SHA512: 9f68417df1646e8c92b84a45eb3cc54c5f170806296328d82f4e4f279c19636032617689686b0c428ba10104945ca282a294cc08a694580fcfdd85e0d36c0a0d
+Description: Re-sign applications directly on your rootless jailbroken deviceThis community-maintained build restores Apple account authentication,trusted-device two-factor authentication, background signing, and modernprovisioning-profile handling for iOS 15 and newer.
+Name: ReProvision Reborn… Again
+Author: Soh Satoh, Matt Clarke, b4db1r3 <nfive060@gmail.com>
 Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
 
 Package: com.yourepo.cydiageek.twitterlabelback
