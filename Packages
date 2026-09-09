@@ -10409,6 +10409,28 @@ Depiction: https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.g
 SileoDepiction: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json
 Icon: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/icons/translux/icon.png
 
+Package: eg.anubistweaks.translux
+Architecture: iphoneos-arm64e
+Version: 1.3
+Section: Tweaks
+Maintainer: AnubisTweaks
+Installed-Size: 2372
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 15.0), preferenceloader, com.opa334.altlist (>= 1.0.4)
+Filename: ./debs/roothide/eg.anubistweaks.translux_1.3_iphoneos-arm64e.deb
+Size: 1681532
+MD5sum: dd38fc6f8decd410926611d1f47e5a7f
+SHA1: 4368f584b4204917583510acdf375aa0f2b6537e
+SHA256: 553e93bd293aeeb004d18cd12c71014be40d261febf6d012dc31eed22e05a63a
+SHA512: e878afc48c0285dac9cab32b44a53c0698d899ffcc2a4e61eb00baa43ef0b58e3a648767501fa1a1582a36f9b783e9cd05a75ba94218f8551eaa4c4fe7fc2d21
+Homepage: https://github.com/AnubisTweaks
+Description: Advanced translation integration for iOS with OCR support (DEBUG BUILD with enhanced logging). Adds translation buttons to text selection menus across all apps. Includes Snapper 3 integration for image OCR and translation. Supports Google, Baidu, ModernMT, Microsoft translation engines and Youdao, Yandex OCR engines. Features customizable UI, app whitelist.
+Name: TransLux
+Author: AnubisTweaks
+Depiction: https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks
+SileoDepiction: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json
+Icon: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/icons/translux/icon.png
+
 Package: jetsamunlimited
 Architecture: iphoneos-arm64e
 Version: 1.0
@@ -10445,6 +10467,25 @@ Description: Make keyboard color adaptive to app color.
 Name: ADKeyboard
 Author: Dcsyhi
 
+Package: jp.dcsyhi.adkeyboard
+Architecture: iphoneos-arm64e
+Version: 1.4
+Section: Tweaks
+Maintainer: Dcsyhi
+Installed-Size: 812
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate,preferenceloader
+Filename: ./debs/roothide/jp.dcsyhi.adkeyboard_1.4_iphoneos-arm64e.deb
+Size: 390976
+MD5sum: 1066c2e16f5f0e5601302328a23e8717
+SHA1: f9442ea0565d8aba0d1246bef9d796a05edf6ee7
+SHA256: 466a6294cfa6257ab68b01a5a5a6cebde4c13986ad4e238011d9fbad30836aaa
+SHA512: ed7e54a2cc9e6498dfeb6ed4a0213417890171c9021c327eeed71e03b478a27a899372bd1dd8763ec5ddf8aca71e29d67541f2713a3208cd6135c3e58deb2446
+Description: Make keyboard color adaptive to app color.
+Name: ADKeyboard
+Author: Dcsyhi
+Icon: https://dcsyhi1998.github.io/icons/ADKeyboard/ADKeyboard.png
+
 Package: jp.dcsyhi.culprit
 Architecture: iphoneos-arm64e
 Version: 1.0.1
@@ -10459,6 +10500,27 @@ MD5sum: 591a0827caf51f3b56ee05a65915b2ef
 SHA1: df64348e21197f208d08808bbd14bc98afcefbcc
 SHA256: 1d8590f8cc6ea2fb2289a3e8b12459211c8ff3774349c0b3310916cdeed04783
 SHA512: 520a364763a148966643728ffdd92bf5e18ebe17c507c155e8b6013725e9d0ecf10ac03dffc2e8187108abdf2273dc6b16ecfcd3606378ca621df07b0fd27082
+Description: Crash reports grouped by process. Colored presentation informed by slog (Ethan Arbuckle, https://github.com/EthanArbuckle/slog).
+Name: Culprit
+Depiction: https://dcsyhi1998.github.io/depiction/Culprit.html
+SileoDepiction: https://dcsyhi1998.github.io/Sileodepiction/Culprit.json
+Icon: https://dcsyhi1998.github.io/icons/Culprit/Culprit.png
+Author: Dcsyhi
+
+Package: jp.dcsyhi.culprit
+Architecture: iphoneos-arm64e
+Version: 1.0.2
+Section: Utilities
+Maintainer: Dcsyhi
+Installed-Size: 500
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>=15.0)
+Filename: ./debs/roothide/jp.dcsyhi.culprit_1.0.2_iphoneos-arm64e.deb
+Size: 180010
+MD5sum: 80dfb40ae225b008d708f83e1a05f54d
+SHA1: 0847f559a5b2065eda3969d117f91dd2e1dd088a
+SHA256: 18b87932cab1f50e6c8682362f7525dd746ceb71ef2213b0d56be437d5265796
+SHA512: 8bd6310374e416efda8c6f745c99b6da0d203c5729c3c8239b00df27f2f1941c8f17d2cd2a370e64679bface642c8bf06dda5d2baf34fa71cb5b3b606fdfb2df
 Description: Crash reports grouped by process. Colored presentation informed by slog (Ethan Arbuckle, https://github.com/EthanArbuckle/slog).
 Name: Culprit
 Depiction: https://dcsyhi1998.github.io/depiction/Culprit.html
@@ -10484,6 +10546,27 @@ Description: You can arrange apps on the dock of keyboard ⌨️.
 Name: KBApp
 Author: Dcsyhi
 icon: https://dcsyhi1998.github.io/icons/kbappdock/icon@2x.png
+
+Package: jp.dcsyhi.kbappdock
+Architecture: iphoneos-arm64e
+Version: 1.8.1
+Section: Tweaks
+Maintainer: Dcsyhi
+Installed-Size: 1936
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/roothide/jp.dcsyhi.kbappdock_1.8.1_iphoneos-arm64e.deb
+Size: 1068916
+MD5sum: a71f2fe683bbd6c5702b5b2e28944d87
+SHA1: 675b93df8d1c1192a71a266eb5c8c9699741f6b1
+SHA256: 32d49642bd4634c8f34d238c469b204db9515b42f6c65924a1b1088a4dbd1981
+SHA512: 746f280ad3057586d641a8749610bb3c04aef3617a10ee1668d853085b123d1979975c8b3817319b7c3063ff15b7d95ccba94b2edb496e815f4dd730cb0fc5df
+Description: You can arrange apps on the dock of keyboard ⌨️.
+Name: KBApp
+Author: Dcsyhi
+Icon: https://dcsyhi1998.github.io/icons/kbappdock/icon-large.png
+Depiction: https://dcsyhi1998.github.io/depiction/KBApp.html
+SileoDepiction: https://dcsyhi1998.github.io/Sileodepiction/KBApp.json
 
 Package: jp.dcsyhi.zetsu
 Architecture: iphoneos-arm64e
@@ -11244,6 +11327,30 @@ Sponsor: thebigboss.org <http://thebigboss.org>
 dev: nowesr1
 Icon: https://raw.githubusercontent.com/nowesr1/WhatsApp-Location-Spoofer/refs/heads/main/Sileo/icon.png
 
+Package: twitter.nowesr1.location-spoofer
+Architecture: iphoneos-arm64e
+Version: 0.0.6
+Section: Tweaks
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 519
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate
+Filename: ./debs/roothide/twitter.nowesr1.location-spoofer_0.0.6_iphoneos-arm64e.deb
+Size: 115260
+MD5sum: 36e6133a284d7249de556974f93f9214
+SHA1: 9747aaebd925bef20b9641d1a36492440e8e4a8c
+SHA256: 765da1bbb45c0cdad18e1692a9b2c08e26a2a68cc112a128ce5dcce7bdfc220c
+SHA512: 1ba5a77dd06f70027dc0f4f1b670f88428d813bb9930e39c23d991139eeb6f4c548474a8b1ffd5fe86babafeed10bb81e6828b28761d4c3ad2c6c7ba9987f83c
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp
+Description: Spoof Location for WhatsApp
+Author: nowesr1 <nowe9r@hotmail.com>
+Name: WALocationSpoofer
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp
+SileoDepiction: https://raw.githubusercontent.com/nowesr1/WhatsApp-Location-Spoofer/main/Sileo/depiction.json
+Sponsor: thebigboss.org <http://thebigboss.org>
+dev: nowesr1
+Icon: https://raw.githubusercontent.com/nowesr1/WhatsApp-Location-Spoofer/refs/heads/main/Sileo/icon.png
+
 Package: twitter.nowesr1.photosplus
 Architecture: iphoneos-arm64e
 Version: 0.0.1
@@ -11455,4 +11562,22 @@ Description: System information in Settings app > General > About, and other sec
 Name: System Info
 Depiction: https://arx8x.github.io/depictions/systeminfo.html
 Author: ARX8x
+
+Package: xyz.xninja.systeminfo
+Architecture: iphoneos-arm64e
+Version: 2.7.2-3
+Section: Tweaks
+Maintainer: AnubisTweaks
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, oldabi
+Filename: ./debs/roothide/xyz.xninja.systeminfo_2.7.2-3_iphoneos-arm64e.deb
+Size: 375598
+MD5sum: 13f07d609856964d9bb16528fede4efc
+SHA1: 1c6b325d699b14172a357b327df1e0e4f07b02e7
+SHA256: 057c839b569d3a79e6f59e4a4cf9aedf8b51901d1d56ed93b2bae25ca1491526
+SHA512: eae135a94d40b71184f57b1f5059334f34d87d2b54b19efb0f35e35d8b368665a9b5a9c9d35246c30d3b292fe94a13b781ca87db20ff69cbae3e57fca12065e0
+Description: System information in Settings app > General > About, and other sections. Set boot-nonce, save SHSH, battery info etc
+Name: System Info (rootless)
+Depiction: https://arx8x.github.io/depictions/systeminfo.html
+Author: ARX8x + AnubisTweaks
 
