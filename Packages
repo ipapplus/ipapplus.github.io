@@ -10387,6 +10387,26 @@ Name: Liquid (Gl)ass
 Author: dylv
 Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
 
+Package: dylv.liquidass
+Architecture: iphoneos-arm64e
+Version: 0.1.1b
+Section: Tweaks
+Maintainer: dylv
+Installed-Size: 8560
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0), firmware (<< 26.0), preferenceloader
+Conflicts: dylv.blurless
+Replaces: dylv.blurless
+Filename: ./debs/roothide/dylv.liquidass_0.1.1b_iphoneos-arm64e.deb
+Size: 3702120
+MD5sum: e2d5ceff595ac7b18eff9b3b9c137490
+SHA1: 8cba70a04b800c421a7fd6a0553f2706ae2457c9
+SHA256: 9752cb9a179cdb6e1820295119015355f26e5d55c371a2627c374fee4a8a6c20
+SHA512: 14691a5af03ec970c29177ca9508b2ed0947797020fc2228f01348824c0aed034fc815b1d12da0088fdb94ca478000a80ecc032c097ecb459dc307060b811ad2
+Description: next level diarrhea
+Name: Liquid (Gl)ass
+Author: dylv
+Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
+
 Package: eg.anubistweaks.translux
 Architecture: iphoneos-arm64e
 Version: 1.2.1
