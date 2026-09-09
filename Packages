@@ -4867,6 +4867,23 @@ Description: GUI Based Application for ipatool
 Name: IPA Ranger
 Author: 0xkuj
 
+Package: com.0xkuj.iparanger
+Architecture: iphoneos-arm64e
+Version: 2.5.2
+Section: Addons
+Maintainer: 0xkuj <0xkujz@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: gawk, unzip, plutil
+Filename: ./debs/roothide/com.0xkuj.iparanger_2.5.2_iphoneos-arm64e.deb
+Size: 8390216
+MD5sum: dfc9535b4ce95368dc489e49a28e7b53
+SHA1: 0b22c3a5ec753097de6ffaf47ff330a1bcf84dba
+SHA256: 80d073a2ed2febc7514e0249d30b68534fa98ee4d18a81fa20b5bd425645d344
+SHA512: 38e258b6a6f63092b98fa9cded967f92fffee9129ad35d164b0b18fc900dfa671ac9fc313bb5ef49720ed78b0534820cca709d3b75a3029b8909f4fd6f6c498a
+Description: GUI Based Application for ipatool
+Name: IPA Ranger
+Author: 0xkuj <0xkujz@gmail.com>
+
 Package: com.0xkuj.nopastealerts16
 Architecture: iphoneos-arm64e
 Version: 1.0.0
