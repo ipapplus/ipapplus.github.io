@@ -5282,6 +5282,25 @@ Description: Awesome tweak for Twitter
 Name: BHTwitter - orionblur
 Author: NeoFreeBird
 
+Package: com.bandarhl.theacrat
+Architecture: iphoneos-arm64e
+Version: 6.0.4-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 7900
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters, com.bandarhl.orionblur
+Filename: ./debs/roothide/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.deb
+Size: 2113148
+MD5sum: 75f93c420c656d7f5b1dbf7def618a8b
+SHA1: 55a839700e76babfe9769f29831bba748377d830
+SHA256: 1094305926fc53b80d4d401f69d2a2c9931d59f701ea496c180b4b6a772c7083
+SHA512: 4b0379894c9385ed401dc1a61246d6eadf5cd9dfe4fe8aee454f4cfa655d4de2a696a12ba33268342da9113c94e0384d3d34b989a73850626fc6018bedd1cce8
+Description: Awesome tweak for Twitter
+Name: BHTwitter - theacrat
+Author: NeoFreeBird
+
 Package: com.barabadev.fluxion
 Architecture: iphoneos-arm64e
 Version: 1.0.0
