@@ -1,0 +1,193 @@
+Package: com.babylon-vip.adblockpro
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 216
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.adblockpro_0.1_iphoneos-arm64.deb
+Size: 43052
+MD5sum: 43f56af590cb133649acb72dcac84a3b
+SHA1: 6e67a2f80f522c4d0d2f0a71cab488aaede19b17
+SHA256: c0adf7403d93549e18da24740f0ae004331661ea5950650d92db6ba987aeb3f0
+SHA512: c30eae70fd2d44cc442a10311bcf11331b579f4b805c0f8dcd43d1a4f6c4a5878057581a6a00ce2644fe957b67e09f9d5d6efef162eed11f780d5008b4da9b17
+Description: Enable Premium Subscription
+Name: AdBlock Pro
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/91cYYdn.jpeg
+
+Package: com.babylon-vip.athkar
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 216
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.athkar_0.1_iphoneos-arm64.deb
+Size: 44256
+MD5sum: c05104c5c055e88a744e67e1a7a815de
+SHA1: b3ec5d969fbbf6f5921cc65af316f81293382a54
+SHA256: 4c63ada4d113768fdc945635e3be5025b680996483d87186cdd4ed4d82aaa2ae
+SHA512: 6a1b5311f4610cdf28131b7a0df50e7a4b081d015633570a6377e100d6f10dd0f474e5f56ea8047908cf4bdd8936fd17499e91535852cb4eec6e5f60f961b8b9
+Homepage:
+Description: Enable Premium Subscription v9.1.4
+Name: Athkar | أذكار
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/1zWICJz.jpeg
+
+Package: com.babylon-vip.hammel
+Architecture: iphoneos-arm64
+Version: 0.1
+Section: Tweaks
+Maintainer: Haidar_Phantom
+Installed-Size: 396
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.babylon-vip.hammel_0.1_iphoneos-arm64.deb
+Size: 94484
+MD5sum: cb3bfdedbbc974cc322959ae3b625449
+SHA1: d535db7dee70770dc5c41d90124966dde5045be5
+SHA256: e1569f685b68ef2906505e231e4a89ba7aea54a74ff9aff159c2b3178111d8b4
+SHA512: 8add3f0dcd8ba3689e2095c7005d54093fd0a564d4d0324aeb03217c0facbcc3c6ec093b61c81bd6a2ff1a3befc887bfc706e16385e5fda19bebea53e805e53c
+Homepage:
+Description: Enable Premium Subscription v8.5
+Name: Hammel Hack | إدارة الملفات
+Author: Haidar_Phantom
+Icon: https://i.imgur.com/5SQvqwm.jpeg
+
+Package: com.dvntm.tweach
+Architecture: iphoneos-arm64
+Version: 2.3.3
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20376
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.dvntm.tweach_2.3.3_iphoneos-arm64.deb
+Size: 7203888
+MD5sum: 29a6744dae40cb96600e2434b8f21e4f
+SHA1: 3806e1dc36b2f042a422efbc21b7e27b22c4daeb
+SHA256: aae3755d66a55ec59e53ee682f501b3457f6af4013bd6801fb6829570a635b26
+SHA512: b255f7c8e41e0673094a228244aa1575b509ce1fdf1eee32aab283ab8d50d21990b4481a87b1babef123721cc60ce65c837dac3866ceeef01c630ba5f7c63cd3
+Description: Download your favorite clips, VODs and Live Streams with Tweach!
+Name: Tweach
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/Tweach/refs/heads/main/sileo/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/Tweach/main/sileo/depiction.json
+
+Package: com.dvntm.ytlite
+Architecture: iphoneos-arm64
+Version: 5.2.1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 20816
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.dvntm.ytlite_5.2.1_iphoneos-arm64.deb
+Size: 7340452
+MD5sum: 92067c8be74f18e64f2c21df39950abe
+SHA1: a89b1ac50df0dc345aea36e926f603d98d7d8f8a
+SHA256: e3eec2668573678f3d94ee4127f9293c3ac1138a5c2faaa6796c8dcf832d5198
+SHA512: 0361ba7ae1d8486371cc4a570d63520429f2db3ccc092e7632be463425bfcf041f04c8633e614f5437ef3e47096c714dc6f6303a6959b195b4a1ddf6d0fd6d60
+Description: Lightweight YouTube Enhancer
+Name: YTLite
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
+
+Package: com.iris.kanjied
+Architecture: iphoneos-arm64
+Version: 1.1.0
+Section: Tweaks
+Maintainer: kanji
+Depends: firmware (>= 15.0)
+Conflicts: com.iristweak.iris
+Filename: ./debs/rootless/com.iris.kanjied_1.1.0_iphoneos-arm64.deb
+Size: 4345236
+MD5sum: 252f692eccf69362b63099c7db2648c4
+SHA1: cdc2d5cb635e90670df55e1358415d3a99b4fccf
+SHA256: fa59f5d1da1d487f2c2a735e7d80b9645ae48b94afd18e71fb5e5c0f04d465bf
+SHA512: df6c29b32b5c8a2a477a0d5b554370154714c639fdfa93945b2a41ba5cd9e0542c7c845f8b20baa17207c467b0321a35ab48c625a87cdfcd71a1b0b0636f86f9
+Description: User : kanji ___ Pass : isastupidnonce
+Name: Iris kanjied
+Author: kanji
+
+Package: com.netskao.filzacrack
+Architecture: iphoneos-arm64
+Version: 1.1-9
+Section: Netskao-Tweaks
+Maintainer: Nets
+Installed-Size: 120
+Depends: firmware (>= 15.0), mobilesubstrate
+Filename: ./debs/rootless/com.netskao.filzacrack_1.1-9_iphoneos-arm64.deb
+Size: 28712
+MD5sum: 6d17abd35ae01672e159061a478cc0ee
+SHA1: ec6a6d49daf1589b41d7115463b7aa8cb4760a90
+SHA256: 2b556a03e175bbbb80b3ea3e19012574902c3a0fc6fc7217119bf0b073532098
+SHA512: dd8ecd50a6556ce837e049935d13dedf6b763b678d83d1e23318e78ae476c57ed404f2182204bc78edd0527d12e2cac90181ff778b6a1bbb351b01550a645a70
+Description: Filza Crack
+SileoDepiction: https://jailrepo.initnil.com/api?Package=com.netskao.filzacrack
+Name: Filza Crack
+Author: Netskao
+
+Package: com.nowesr1.dlinsta
+Architecture: iphoneos-arm64
+Version: 2.5.0
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dlinsta_2.5.0_iphoneos-arm64.deb
+Size: 370048
+MD5sum: eb352e422099b4852c77e0ef2b2ed4c0
+SHA1: fa90f5187202ead63e2251df5273607ac22db812
+SHA256: 544af4d4be8acbe76ca3a192f342ecf6f50dbef97475e79f4f33bd4f4480acdc
+SHA512: 6dee2b09ed3a2106bc3193675272b9c71915958bc33b61d89f5b96533768be86cf8d7348669127c640124b070060b73d5dc063444ddd1382905745aad163568f
+Description: free DLInsta no license required best compatible with Instagram V407.0.0
+Name: DLInsta Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltiktok
+Architecture: iphoneos-arm64
+Version: 2.1.4
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltiktok_2.1.4_iphoneos-arm64.deb
+Size: 289916
+MD5sum: db358d7d0c794197a74c3abac498e172
+SHA1: 8985a0f4d3f434d0fb55b88af0b242b9a9d6d02f
+SHA256: 81f5fdf3a56ad1c2109838a42a2fcb48f423116290d699a27347187f2d0b5219
+SHA512: 1cb52c00604cfee94005b061dcd9b204c588bb37399dae37baf49980be503b90af96d87abc322f163561e5d206dbbf63f571557a8a86aad91af77523f9e052b3
+Description: free DLTikTok no license required best compatible with TikTok V42.2.0
+Name: DLTikTok Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltube
+Architecture: iphoneos-arm64
+Version: 2.16.3
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltube_2.16.3_iphoneos-arm64.deb
+Size: 347752
+MD5sum: 8714677d71f0881be7a5a13ad63593cd
+SHA1: 908c213d286f091dff3f9d5940e38cd684d515ca
+SHA256: 1a6b4097cab0fe4f9117f6d06577b4b07ae3799388802413096c2fdefcd8a255
+SHA512: 58b8091831fd7d714d8c25d74efddc4226601cae7e4d5fd7c78dd19ebd46254ee9800273da618975909c9a3873a6b951df800619bb7c047e4dd5f3bb8c1a2f31
+Description: free DLTube no license required best compatible with YouTube V20.42.3
+Name: DLTube Free
+Author: ZeroDeadBeef
+
+Package: com.nowesr1.dltwitter
+Architecture: iphoneos-arm64
+Version: 2.1.6
+Section: Tweaks
+Maintainer: ZeroDeadBeef
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.nowesr1.dltwitter_2.1.6_iphoneos-arm64.deb
+Size: 5055488
+MD5sum: b384a6baf5f1c89ac8da5da5e52a5eb9
+SHA1: b4b7d0253e7cebd2b5b327ee2dd4b477055133fc
+SHA256: 74bbdff5ecc2834491618789731458c938afab2771e66eb1fc9003d11222ed20
+SHA512: 1b55b6bff8fedcad9532c855b6089b6d370cab9f4c00bcb3d2a76f24bbbbdcae49c1507af4e48455a81b11b40505f3456dbc0b8b6382d41bfd3234ecb7724696
+Description: free DLTwitter no license required best compatible with X v11.48
+Name: DLTwitter Free
+Author: ZeroDeadBeef
+
