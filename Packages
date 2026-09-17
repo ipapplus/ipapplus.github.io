@@ -6814,6 +6814,27 @@ Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.watusi3
 Author: Fouad Raheb <support@fouadraheb.com>
 Icon: file:///Library/Application Support/Watusi/Resources.bundle/Settings.bundle/WatusiSettingsLogo@3x.png
 
+Package: com.fouadraheb.watusi3
+Architecture: iphoneos-arm64e
+Version: 1.3.24
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 9604
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.8.3)
+Conflicts: com.fouadraheb.watusi, com.f0u4d.watusi, org.thebigboss.watusi, com.b4db1r3.cleancopy
+Filename: ./debs/roothide/com.fouadraheb.watusi3_1.3.24_iphoneos-arm64e.deb
+Size: 2573376
+MD5sum: 74f19118c2aee1be125d5afb50dc6bd8
+SHA1: 9c4f00a521a28247aba5c40739c83a528a4cdd85
+SHA256: d5e7a1264fb70437193b2621ed9f1195c6380a8ecb6bcac1534a5e99c414dca6
+SHA512: 3e3a892234efa6b6234e05c39a2ff3984736980d82269e2c7d287c532f17b6c4ffabd80683da958eecdbf5e3445c829f71c8fb440a87c9571e278b4c2e2bb32c
+Description: The all-in-one tweak for WhatsApp Messenger
+Name: Watusi 3 for WhatsApp
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.watusi3
+Author: Fouad Raheb <support@fouadraheb.com>
+Icon: file:///Library/Application Support/Watusi/Resources.bundle/Settings.bundle/WatusiSettingsLogo@3x.png
+
 Package: com.foxfort.foxforttools
 Architecture: iphoneos-arm64e
 Version: 1.4.13
@@ -10145,6 +10166,26 @@ Name: ReProvision Reborn… Again
 Author: Soh Satoh, Matt Clarke, b4db1r3 <nfive060@gmail.com>
 Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
 
+Package: com.yourepo.b4db1r3r3p0.reprovisionrebornagain
+Architecture: iphoneos-arm64e
+Version: 0.8.4-rootless.28
+Section: Utilities
+Maintainer: Soh Satoh, b4db1r3 <nfive060@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0), uikittools
+Conflicts: jp.soh.reprovision, com.matchstic.reprovision
+Replaces: jp.soh.reprovision
+Filename: ./debs/roothide/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.28_iphoneos-arm64e.deb
+Size: 14193432
+MD5sum: 7e4649d465119e69285ef66f92c1d41c
+SHA1: d4e7154b477d74ebd461bdfbed2dd5a2bf0f29fd
+SHA256: e632e5fa46d67945cf32f0e78cae55a09141df6e853c58b768dee7b819bb5599
+SHA512: 3df7cafe4eb6aceb64f4e4bd625da206ad428de8ff0fc5b12b3e542d00075812f20db9f803f34dabaab7d87f1359e6279d93d801c5eb895ac30e66e06394a817
+Description: Re-sign applications directly on your rootless jailbroken deviceThis community-maintained build restores Apple account authentication,trusted-device two-factor authentication, background signing, and modernprovisioning-profile handling for iOS 15 and newer.
+Name: ReProvision Reborn… Again
+Author: Soh Satoh, Matt Clarke, b4db1r3 <nfive060@gmail.com>
+Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
+
 Package: com.yourepo.cydiageek.twitterlabelback
 Architecture: iphoneos-arm64e
 Version: 1.0.0
@@ -10517,6 +10558,28 @@ MD5sum: dd38fc6f8decd410926611d1f47e5a7f
 SHA1: 4368f584b4204917583510acdf375aa0f2b6537e
 SHA256: 553e93bd293aeeb004d18cd12c71014be40d261febf6d012dc31eed22e05a63a
 SHA512: e878afc48c0285dac9cab32b44a53c0698d899ffcc2a4e61eb00baa43ef0b58e3a648767501fa1a1582a36f9b783e9cd05a75ba94218f8551eaa4c4fe7fc2d21
+Homepage: https://github.com/AnubisTweaks
+Description: Advanced translation integration for iOS with OCR support (DEBUG BUILD with enhanced logging). Adds translation buttons to text selection menus across all apps. Includes Snapper 3 integration for image OCR and translation. Supports Google, Baidu, ModernMT, Microsoft translation engines and Youdao, Yandex OCR engines. Features customizable UI, app whitelist.
+Name: TransLux
+Author: AnubisTweaks
+Depiction: https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks
+SileoDepiction: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json
+Icon: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/icons/translux/icon.png
+
+Package: eg.anubistweaks.translux
+Architecture: iphoneos-arm64e
+Version: 1.4
+Section: Tweaks
+Maintainer: AnubisTweaks
+Installed-Size: 2592
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 15.0), preferenceloader, com.opa334.altlist (>= 1.0.4)
+Filename: ./debs/roothide/eg.anubistweaks.translux_1.4_iphoneos-arm64e.deb
+Size: 759336
+MD5sum: 827ff7ee6b1abf31496dc4ae491a8019
+SHA1: 3ef2812f9cc1dda88f4f53170f6bc87cf4499b03
+SHA256: 78d5d873708f6059e329c0228c9bcc6525584d28c89bc94d0acf59a0c77a3106
+SHA512: 2b1c163a4c2958dfaddac6ca7b813640da545fdce21a33f3964e3b7761ee6433c5e0a8d511e0e4a355cf9d56a1f9ce4a40a11e5e08d426e7e8b1f825874b3c42
 Homepage: https://github.com/AnubisTweaks
 Description: Advanced translation integration for iOS with OCR support (DEBUG BUILD with enhanced logging). Adds translation buttons to text selection menus across all apps. Includes Snapper 3 integration for image OCR and translation. Supports Google, Baidu, ModernMT, Microsoft translation engines and Youdao, Yandex OCR engines. Features customizable UI, app whitelist.
 Name: TransLux
