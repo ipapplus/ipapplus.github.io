@@ -354,7 +354,7 @@ body {
 </main>
 
 <button class="sound-fab" id="soundFab" aria-label="Toggle Mute"></button>
-<audio id="audio" autoplay preload="auto" src="http://n08.radiojar.com/dktga74wdd3vv?rj-ttl=5&rj-tok=AAAB"></audio>
+<audio id="audio" playsinline preload="auto" src="https://n08.radiojar.com/dktga74wdd3vv?rj-ttl=5&rj-tok=AAAB"></audio>
 
 <script>
 (function() {
@@ -424,16 +424,34 @@ body {
     }
   }
 
-  audio.play().then(updateFabUI).catch(() => updateFabUI());
+  function tryPlay() {
+    audio.play().then(updateFabUI).catch(updateFabUI);
+  }
 
-  soundFab.addEventListener('click', () => {
+  tryPlay();
+
+  function onFirstInteraction() {
     if (audio.paused) {
-      audio.play();
+      tryPlay();
+    }
+    ['touchstart', 'touchend', 'click', 'pointerdown'].forEach(evt => {
+      document.removeEventListener(evt, onFirstInteraction);
+    });
+  }
+
+  ['touchstart', 'touchend', 'click', 'pointerdown'].forEach(evt => {
+    document.addEventListener(evt, onFirstInteraction, { once: true });
+  });
+
+  soundFab.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (audio.paused) {
       audio.muted = false;
+      audio.play().then(updateFabUI);
     } else {
       audio.muted = !audio.muted;
+      updateFabUI();
     }
-    updateFabUI();
   });
 
 })();
