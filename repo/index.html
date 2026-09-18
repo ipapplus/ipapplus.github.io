@@ -382,7 +382,10 @@ body {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
     const count = reduceMotion ? 15 : Math.min(70, Math.floor(W / 20));
-    flakes = Array.from({length: count}, () => createFlake(true));
+    flakes = Array.from(
+      { length: count },
+      () => createFlake(true)
+    );
   }
 
   function tick() {
@@ -391,9 +394,15 @@ body {
       f.angle += f.sway;
       f.y += f.vy;
       f.x += f.vx + Math.sin(f.angle) * 0.3;
-      if (f.y > H + 5) { f.y = -5; f.x = Math.random() * W; }
+
+      if (f.y > H + 5) {
+        f.y = -5;
+        f.x = Math.random() * W;
+      }
+
       if (f.x > W + 5) f.x = -5;
       if (f.x < -5) f.x = W + 5;
+
       ctx.beginPath();
       ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(220, 225, 240, ${f.o})`;
@@ -409,50 +418,84 @@ body {
   const audio = document.getElementById('audio');
   const soundFab = document.getElementById('soundFab');
 
-  const ICON_SOUND_ON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
-  const ICON_MUTED = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>`;
+  const ICON_SOUND_ON = `
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+  `;
+
+  const ICON_MUTED = `
+    <svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  `;
 
   audio.volume = 0.5;
 
   function updateFabUI() {
-    if (audio.muted || audio.paused) {
-      soundFab.classList.add('muted');
-      soundFab.innerHTML = ICON_MUTED;
-    } else {
-      soundFab.classList.remove('muted');
-      soundFab.innerHTML = ICON_SOUND_ON;
-    }
+    const muted = audio.muted || audio.paused;
+    soundFab.classList.toggle('muted', muted);
+    soundFab.innerHTML = muted ? ICON_MUTED : ICON_SOUND_ON;
   }
 
-  function tryPlay() {
-    audio.play().then(updateFabUI).catch(updateFabUI);
-  }
-
-  tryPlay();
-
-  function onFirstInteraction() {
-    if (audio.paused) {
-      tryPlay();
-    }
-    ['touchstart', 'touchend', 'click', 'pointerdown'].forEach(evt => {
-      document.removeEventListener(evt, onFirstInteraction);
-    });
-  }
-
-  ['touchstart', 'touchend', 'click', 'pointerdown'].forEach(evt => {
-    document.addEventListener(evt, onFirstInteraction, { once: true });
-  });
-
-  soundFab.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (audio.paused) {
+  async function playAudio() {
+    try {
       audio.muted = false;
-      audio.play().then(updateFabUI);
+      await audio.play();
+      updateFabUI();
+      return true;
+    } catch (error) {
+      updateFabUI();
+      return false;
+    }
+  }
+
+  playAudio();
+
+  let interactionHandled = false;
+
+  function firstInteraction() {
+    if (interactionHandled) return;
+    interactionHandled = true;
+
+    if (audio.paused) {
+      playAudio();
+    }
+
+    document.removeEventListener('pointerdown', firstInteraction);
+    document.removeEventListener('touchstart', firstInteraction);
+    document.removeEventListener('keydown', firstInteraction);
+  }
+
+  document.addEventListener('pointerdown', firstInteraction, { passive: true });
+  document.addEventListener('touchstart', firstInteraction, { passive: true });
+  document.addEventListener('keydown', firstInteraction);
+
+  soundFab.addEventListener('click', async function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (audio.paused) {
+      await playAudio();
     } else {
       audio.muted = !audio.muted;
       updateFabUI();
     }
   });
+
+  audio.addEventListener('play', updateFabUI);
+  audio.addEventListener('pause', updateFabUI);
+  audio.addEventListener('volumechange', updateFabUI);
+
+  updateFabUI();
 
 })();
 </script>
