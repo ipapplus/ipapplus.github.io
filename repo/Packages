@@ -92,6 +92,29 @@ Author: dvntm
 Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
 
+Package: com.fouadraheb.regram
+Architecture: iphoneos-arm64
+Version: 6.1+regramfix10+webgate
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 54392
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
+Conflicts: com.spyg.regramcrack, com.school.regramwebgate
+Replaces: com.spyg.regramcrack, com.school.regramwebgate
+Filename: ./debs/rootless/com.fouadraheb.regram_6.1+regramfix10+webgate_iphoneos-arm64.deb
+Size: 18955172
+MD5sum: 3fb56a30f9480fb987e020bb553dd80d
+SHA1: a25a5c57d6ef28a74eb3c97d7b47bde4ec269890
+SHA256: b3e5d29b5b9a9a9844f6fcd69e2ebf2cafee0e38e1a30ecaa445c79b3786586b
+SHA512: 432666101988da61d8c5888735cf28abaf04f7042fc06d998cdb40899bc65a4c8b2a2f7b7b69d0f2396fcc1101639c75a3f83ed17676ae810573541af7f2a55f
+Description: The all-in-one tweak for Instagram
+ .
+ Bundles RegramWebGate (web settings validation shim), previously
+ shipped as com.spyg.regramcrack 6.0.1.
+ .
+ (Repackaged on Wed, 09 Sep 2026 19:00:26 +0200 by dpkg-repack.)
+Name: Regram 6.1 Cracked by Spy_G
+
 Package: com.iris.kanjied
 Architecture: iphoneos-arm64
 Version: 1.1.0
