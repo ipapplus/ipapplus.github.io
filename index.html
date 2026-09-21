@@ -1,49 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>a7m.dev</title>
+<title>a7m.dev — Ahmed AlGhrbi</title>
 <meta name="description" content="Ahmed AlGhrbi — Systems & Apps">
-<meta name="theme-color" content="#0a0d14">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
 <style>
 :root {
-  --bg: #0a0d14;
-  --bg-2: #0f131e;
-  --card: #11151f;
-  --card-2: #161b27;
-  --border: #1e2435;
-  --border-2: #2a3145;
-  --fg: #e4e7ec;
-  --fg-2: #c1c6d1;
-  --muted: #6b7489;
-  --muted-2: #4a5169;
-  --accent: #d4a574;
-  --accent-bright: #e8b059;
-  --accent-soft: rgba(212, 165, 116, 0.1);
-  --online: #4ade80;
-  --online-glow: rgba(74, 222, 128, 0.4);
+  --bg: #07090e;
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(212, 165, 116, 0.12), transparent 75%);
+  --glass-bg: rgba(22, 27, 38, 0.55);
+  --glass-bg-hover: rgba(30, 37, 52, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(212, 165, 116, 0.4);
+  --glass-highlight: inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  --gold: #e5b378;
+  --gold-dark: #c89355;
+  --green: #4ade80;
+  --text: #f0f3f8;
+  --muted: #9aa3b4;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  --hero-bg: rgba(15, 19, 30, 0.75);
+  --nav-bg: rgba(18, 23, 34, 0.65);
+  --nav-border: rgba(255, 255, 255, 0.15);
+  --nav-active: rgba(212, 165, 116, 0.18);
+  --nav-active-border: rgba(212, 165, 116, 0.45);
+  --nav-text: #c5cbd8;
+  --snow-opacity: 1;
+  --flake-color: rgba(230, 235, 250, 0.65);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+[data-theme="light"] {
+  --bg: #f2f4f8;
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(216, 173, 77, 0.18), transparent 75%);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-border-hover: rgba(216, 173, 77, 0.5);
+  --glass-highlight: inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  --gold: #d8ad4d;
+  --gold-dark: #a67c2e;
+  --green: #10b981;
+  --text: #1a1d24;
+  --muted: #6b7280;
+  --shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+  --hero-bg: rgba(255, 255, 255, 0.75);
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --nav-border: rgba(255, 255, 255, 0.9);
+  --nav-active: rgba(216, 173, 77, 0.2);
+  --nav-active-border: rgba(216, 173, 77, 0.5);
+  --nav-text: #4b5563;
+  --snow-opacity: 0.4;
+  --flake-color: rgba(160, 140, 100, 0.5);
+}
 
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 165, 116, 0.05), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74, 222, 128, 0.025), transparent 70%),
-    var(--bg);
-  color: var(--fg);
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  background: var(--bg-gradient), var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  padding-bottom: 110px;
+  transition: background 0.3s ease, color 0.3s ease;
   position: relative;
   overflow-x: hidden;
 }
@@ -53,312 +87,1022 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  opacity: var(--snow-opacity);
+  transition: opacity 0.3s ease;
 }
 
-.card {
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 400px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow:
-    0 24px 60px -12px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.02) inset,
-    0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: max(20px, env(safe-area-inset-top)) 18px 28px;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 28%;
-  right: 28%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 165, 116, 0.55), transparent);
-}
-
-.header {
+.topbar {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
+  justify-content: space-between;
+  height: 58px;
+  margin-bottom: 18px;
 }
 
-.avatar-wrap { position: relative; flex-shrink: 0; }
-
-.avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  object-fit: cover;
-  border: 1px solid var(--border-2);
-  background: var(--bg-2);
-  display: block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-}
-
-.status {
-  position: absolute;
-  bottom: -3px;
-  right: -3px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--online);
-  border: 3px solid var(--card);
-  animation: pulse 2.4s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 var(--online-glow); }
-  50% { box-shadow: 0 0 0 6px transparent; }
-}
-
-.header-text { flex: 1; min-width: 0; }
-
-.title {
+.brand {
+  font-size: 22px;
+  font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  color: var(--muted);
-  letter-spacing: 0.04em;
+  letter-spacing: -.04em;
+  color: var(--text);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.brand span { color: var(--gold); }
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: 'JetBrains Mono', inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.icon-btn:hover {
+  border-color: var(--glass-border-hover);
+  color: var(--gold);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 8px 24px rgba(0,0,0,0.12);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  border-radius: 18px;
+  padding: 11px 0;
+  margin-bottom: 18px;
+  position: relative;
+  direction: ltr;
+}
+
+.ticker-content {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 32s linear infinite;
+}
+
+.ticker-item {
+  white-space: nowrap;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gold);
+  padding: 0 10px;
+  direction: rtl;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+html[dir="rtl"] .ticker-content {
+  animation: ticker-scroll-rtl 32s linear infinite;
+}
+
+@keyframes ticker-scroll-rtl {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-title {
+  color: var(--green);
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 5px 14px;
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 185px;
+  border-radius: 28px;
+  background: var(--hero-bg);
+  box-shadow: var(--glass-highlight), var(--shadow);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+}
+
+.hero:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.hero:active {
+  transform: scale(0.98);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.2) 70%);
+  z-index: 1;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  background: url('https://ipapplus.github.io/CydiaIcon.png') center/cover no-repeat;
+  opacity: .35;
+  filter: blur(1px);
+  transform: scale(1.05);
+}
+
+[data-theme="light"] .hero-art {
+  opacity: .25;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .2;
+  background-image:
+    linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+  background-size: 42px 42px;
+  transform: perspective(500px) rotateX(14deg) scale(1.2);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.hero-kicker {
+  font-size: 13px;
+  opacity: .85;
   margin-bottom: 2px;
 }
 
-.title .sep { color: var(--accent); }
-
-.name {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--fg);
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
+.hero-title {
+  font-size: 26px;
+  font-weight: 700;
 }
 
-.bio {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(212, 165, 116, 0.18);
+.hero-sub {
+  font-size: 13px;
+  opacity: .85;
 }
 
-.bio svg { width: 11px; height: 11px; }
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.link-btn {
-  display: flex;
-  align-items: center;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
-  width: 100%;
-  padding: 13px 14px;
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--fg-2);
-  text-decoration: none;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 13.5px;
-  font-weight: 500;
-  transition: all 0.18s ease;
-  cursor: pointer;
+}
+
+.project {
   position: relative;
+  min-height: 145px;
+  padding: 18px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 10px 30px rgba(0,0,0,.08);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+
+.project:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+  transform: translateY(-3px);
+}
+
+.project:active { transform: scale(.97); }
+
+.project-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+.project-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.project-title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.project-desc {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.video-card {
+  position: relative;
+  padding: 18px;
+  border-radius: 26px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--shadow);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   overflow: hidden;
 }
 
-.link-btn::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%) scaleY(0);
-  width: 2px;
-  height: 60%;
-  background: var(--accent);
-  transition: transform 0.2s;
-  border-radius: 0 2px 2px 0;
-}
-
-.link-btn:hover {
-  border-color: var(--border-2);
-  background: var(--card-2);
-  color: var(--fg);
-}
-
-.link-btn:hover::before { transform: translateY(-50%) scaleY(1); }
-
-.link-btn:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.link-btn .icon {
-  width: 18px;
-  height: 18px;
-  color: var(--muted);
-  transition: color 0.18s;
-  flex-shrink: 0;
-}
-
-.link-btn:hover .icon { color: var(--accent); }
-
-.link-btn .label { flex: 1; text-align: left; }
-
-.link-btn .arrow {
-  width: 12px;
-  height: 12px;
-  color: var(--muted-2);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.18s;
-  flex-shrink: 0;
-}
-
-.link-btn:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
-  color: var(--accent);
-}
-
-.sound-fab {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--card);
-  border: 1px solid var(--border-2);
-  color: var(--accent);
+.video-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.video-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(233, 78, 98, 0.85);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 20px;
+  padding: 5px 11px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 4px 12px rgba(233, 78, 98, 0.3);
+}
+
+.live-badge i {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.audio-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 116px;
+  padding: 16px 18px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(229, 179, 120, 0.85), rgba(200, 147, 85, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.4), 0 16px 35px rgba(0,0,0,.22);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  color: #1a1408;
+}
+
+.audio-play {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: #483714;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  z-index: 99;
-  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.sound-fab:hover {
-  transform: scale(1.08);
-  border-color: var(--accent);
-  background: var(--card-2);
+.audio-play:hover {
+  transform: scale(1.06);
 }
 
-.sound-fab.muted {
+.audio-play:active {
+  transform: scale(0.95);
+}
+
+.audio-play svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+html[dir="rtl"] .audio-play svg { margin-right: 3px; }
+html[dir="ltr"] .audio-play svg { margin-left: 3px; }
+
+.audio-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.audio-label {
+  font-size: 16.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audio-sub {
+  font-size: 12px;
+  opacity: .85;
+}
+
+.radio-icon {
+  width: 42px;
+  height: 42px;
+  color: #2d220a;
+  flex-shrink: 0;
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: .9;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #155e42;
+}
+
+.links-title {
+  margin-top: 28px;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 66px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 6px 20px rgba(0,0,0,.05);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+
+.link:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+  transform: translateY(-2px);
+}
+
+.link:active {
+  transform: scale(0.98);
+}
+
+.link-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.link-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.link-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.link-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.link-desc {
   color: var(--muted);
+  font-size: 11px;
 }
 
-.sound-fab svg {
-  width: 22px;
-  height: 22px;
+.link-arrow {
+  color: var(--muted);
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.link:hover .link-arrow {
+  color: var(--gold);
+}
+
+html[dir="rtl"] .link:hover .link-arrow { transform: translateX(-4px); }
+html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: rgba(30, 41, 59, 0.9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 .footer {
   text-align: center;
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  margin: 32px 0 5px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--muted-2);
-  letter-spacing: 0.05em;
 }
 
-.footer .accent { color: var(--accent); }
+.footer b { color: var(--gold); }
 
-@media (max-width: 440px) {
-  body { padding: 16px; }
-  .card { padding: 20px; border-radius: 18px; }
-  .avatar { width: 52px; height: 52px; }
-  .name { font-size: 16px; }
-  .sound-fab { bottom: 18px; right: 18px; width: 44px; height: 44px; }
+.bottom-nav {
+  position: fixed;
+  z-index: 50;
+  left: 14px;
+  right: 14px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  height: 74px;
+  border-radius: 37px;
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--glass-highlight), 0 20px 50px rgba(0,0,0,.35);
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-item {
+  flex: 1;
+  height: 64px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--nav-text);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-item:active {
+  transform: scale(0.92);
+}
+
+.nav-item.active {
+  background: var(--nav-active);
+  border-color: var(--nav-active-border);
+  color: var(--gold);
+  box-shadow: var(--glass-highlight), 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav-item svg {
+  width: 23px;
+  height: 23px;
+}
+
+.nav-item span {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  .app { padding-top: 35px; }
+  .bottom-nav {
+    width: 520px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 430px) {
+  .section-title { font-size: 23px; }
+  .audio-label { font-size: 15px; }
+  .project { min-height: 138px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  * { scroll-behavior: auto !important; transition: none !important; }
 }
 </style>
 </head>
+
 <body>
+
 <canvas id="snow" aria-hidden="true"></canvas>
 
-<main class="card">
-  <header class="header">
-    <div class="avatar-wrap">
-      <img class="avatar" src="https://i.imgur.com/oMBfPA9.jpeg" alt="Ahmed AlGhrbi" onerror="this.onerror=null;this.src='https://via.placeholder.com/150'">
-      <span class="status" title="Online" aria-label="Online"></span>
-    </div>
-    <div class="header-text">
-      <div class="title">a7m<span class="sep">.</span>dev</div>
-      <div class="name">Ahmed AlGhrbi</div>
-      <div class="bio">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-        Systems &amp; Apps
-      </div>
-    </div>
+<div class="toast" id="toast"></div>
+
+<div class="app">
+
+  <header class="topbar">
+    <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="themeIcon" viewBox="0 0 24 24"></svg>
+    </button>
+
+    <div class="brand">a7m<span>.dev</span></div>
+
+    <button class="icon-btn" id="langToggle" aria-label="Toggle Language">EN</button>
   </header>
 
-  <nav class="links">
-    <a class="link-btn" href="sileo://source/https://ipapplus.github.io">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-        <line x1="12" y1="22.08" x2="12" y2="12"></line>
-      </svg>
-      <span class="label">Add to Sileo</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-    </a>
-    <a class="link-btn" href="https://x.com/ipapplus" target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-      <span class="label">Twitter / X</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-    </a>
-    <a class="link-btn" href="https://github.com/ipapplus" target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
-      <span class="label">GitHub</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-    </a>
-    <a class="link-btn" href="https://github.com/roothide/Dopamine2-roothide/releases" target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"></path></svg>
-      <span class="label">Dopamine (Roothide)</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-    </a>
-    <a class="link-btn" href="https://relaxin.owngoal.dev" target="_blank" rel="noopener noreferrer">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-      <span class="label">Relaxin Roothide</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-    </a>
-  </nav>
+  <section class="section" id="home">
+    <div class="ticker-wrap">
+      <div class="ticker-content">
+        <div class="ticker-item">✦ سبحان الله وبحمده، سبحان الله العظيم ✦ لا حول ولا قوة إلا بالله ✦ اللهم صلِّ وسلم على نبينا محمد ✦ أستغفر الله وأتوب إليه ✦ لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير ✦ سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر ✦ رضيت بالله رباً، وبالإسلام ديناً، وبمحمد نبيّاً ✦</div>
+        <div class="ticker-item">✦ سبحان الله وبحمده، سبحان الله العظيم ✦ لا حول ولا قوة إلا بالله ✦ اللهم صلِّ وسلم على نبينا محمد ✦ أستغفر الله وأتوب إليه ✦ لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير ✦ سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر ✦ رضيت بالله رباً، وبالإسلام ديناً، وبمحمد نبيّاً ✦</div>
+      </div>
+    </div>
 
-  <footer class="footer">© 2016–2026 <span class="accent">a7m.dev</span></footer>
-</main>
+    <h1 class="section-title" data-i18n="welcome">أهلاً بك</h1>
 
-<button class="sound-fab" id="soundFab" aria-label="Toggle Mute"></button>
-<audio id="audio" playsinline preload="auto" src="https://n08.radiojar.com/dktga74wdd3vv?rj-ttl=5&rj-tok=AAAB"></audio>
+    <a class="hero" href="https://x.com/ipapplus" target="_blank" rel="noopener">
+      <div class="hero-art"></div>
+      <div class="hero-grid"></div>
+
+      <div class="hero-content">
+        <div class="hero-kicker">Ahmed AlGhrbi</div>
+        <div class="hero-title">Systems & Apps</div>
+        <div class="hero-sub" data-i18n="heroSub">iOS • Windows • Linux • Android • Jailbreak</div>
+      </div>
+    </a>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title" data-i18n="projects">المشاريع</h2>
+
+    <div class="cards">
+      <a class="project" href="https://github.com/ipapplus/FontTweak" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+          </svg>
+        </div>
+        <div class="project-title">FontTweak</div>
+        <div class="project-desc">iOS Font Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/IGArabic" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        <div class="project-title">IGArabic</div>
+        <div class="project-desc">Instagram Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/TGExtra" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </div>
+        <div class="project-title">TGExtra</div>
+        <div class="project-desc">Telegram Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/NeoFreeBird-BHTwitter" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.46 22H3.34l7.24-8.28L2.8 2h6.4l4.43 5.86L18.9 2zm-1.1 17.8h1.73L8.26 4.08H6.4L17.8 19.8z"/>
+          </svg>
+        </div>
+        <div class="project-title">NeoFreeBird</div>
+        <div class="project-desc">BHTwitter Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/Dopamine2-roothide" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
+            <path d="M8 12l2.5 2.5L16 9"/>
+          </svg>
+        </div>
+        <div class="project-title">Dopamine</div>
+        <div class="project-desc">Roothide Jailbreak</div>
+      </a>
+
+      <div class="project sileo-copy-btn">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
+            <path d="M3 8l9 5 9-5M12 13v8"/>
+          </svg>
+        </div>
+        <div class="project-title">Sileo Repo</div>
+        <div class="project-desc" data-i18n="repoDesc">نسخ رابط السورس</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section links-title" id="links">
+    <h2 class="section-title" data-i18n="links">روابط</h2>
+
+    <div class="link-list">
+      <a class="link" href="https://github.com/ipapplus" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.86 10.93.58.1.79-.25.79-.55v-2.12c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.77.11 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.06.78 2.14v3.17c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">GitHub</div>
+          <div class="link-desc" data-i18n="githubDesc">المشاريع والكود</div>
+        </div>
+        <div class="link-arrow">‹</div>
+      </a>
+
+      <a class="link" href="https://x.com/ipapplus" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.46 22H3.34l7.24-8.28L2.8 2h6.4l4.43 5.86L18.9 2zm-1.1 17.8h1.73L8.26 4.08H6.4L17.8 19.8z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">Twitter / X</div>
+          <div class="link-desc">@ipapplus</div>
+        </div>
+        <div class="link-arrow">‹</div>
+      </a>
+
+      <div class="link sileo-copy-btn">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3l8 5v8l-8 5-8-5V8l8-5z"/>
+            <path d="M4 8l8 5 8-5M12 13v8"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">Sileo Source</div>
+          <div class="link-desc">ipapplus.github.io</div>
+        </div>
+        <div class="link-arrow">‹</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="live-stream">
+    <h2 class="section-title" data-i18n="makkahLive">بث مكة المكرمة</h2>
+
+    <div class="video-card">
+      <div class="video-header">
+        <div class="video-label" data-i18n="makkahLiveSub">بث مباشر - قناة القرآن الكريم</div>
+        <div class="live-badge"><i></i><span data-i18n="live">مباشر</span></div>
+      </div>
+      <div class="video-wrapper">
+        <video id="makkahVideo" controls playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="radio">
+    <h2 class="section-title" data-i18n="madinahRadioTitle">بث المدينة النبوية</h2>
+
+    <div class="audio-card">
+      <button class="audio-play" id="audioPlay" aria-label="Play Radio">
+        <svg id="playIcon" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+
+      <div class="audio-info">
+        <div class="audio-label" data-i18n="madinahRadioTitle">بث المدينة النبوية</div>
+        <div class="audio-sub" data-i18n="radioSub">البث الصوتي المباشر</div>
+        <div class="status-line">
+          <i class="status-dot"></i>
+          <span id="audioStatus" data-i18n="ready">جاهز للتشغيل</span>
+        </div>
+      </div>
+
+      <svg class="radio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <rect x="3" y="7" width="18" height="13" rx="2"/>
+        <path d="M7 7l2-4"/>
+        <circle cx="8" cy="13" r="2"/>
+        <path d="M13 12h5M13 16h3"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="footer">© 2016–2026 <b>a7m.dev</b></div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" data-target="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+      <path d="M12 3 4 9v11h16V9l-8-6z"/>
+      <path d="M9 20v-6h6v6"/>
+    </svg>
+    <span data-i18n="navHome">الرئيسية</span>
+  </button>
+
+  <button class="nav-item" data-target="projects">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+      <circle cx="12" cy="12" r="8"/>
+      <path d="M8 12c2-2 4-2 6 0s4 2 6 0"/>
+      <path d="M9 7c1 1 2 2 3 2s2-1 3-2"/>
+    </svg>
+    <span data-i18n="navProjects">المشاريع</span>
+  </button>
+
+  <button class="nav-item" data-target="links">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m20 20-4-4"/>
+    </svg>
+    <span data-i18n="navLinks">روابط</span>
+  </button>
+
+  <button class="nav-item" data-target="live-stream">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+      <path d="M23 7l-7 5 7 5V7z"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+    <span data-i18n="navMakkah">بث مكة</span>
+  </button>
+
+  <button class="nav-item" data-target="radio">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M5 8a9 9 0 0 0 0 8M19 8a9 9 0 0 1 0 8"/>
+      <path d="M2 5a13 13 0 0 0 0 14M22 5a13 13 0 0 1 0 14"/>
+    </svg>
+    <span data-i18n="navRadio">الراديو</span>
+  </button>
+</nav>
+
+<audio id="audio" playsinline preload="none" src="https://n08.radiojar.com/dktga74wdd3vv?rj-ttl=5&rj-tok=AAAB"></audio>
 
 <script>
-(function() {
-  'use strict';
+(() => {
+  "use strict";
+
+  const i18n = {
+    ar: {
+      welcome: "أهلاً بك",
+      makkahLive: "بث مكة المكرمة",
+      makkahLiveSub: "بث مباشر - قناة القرآن الكريم",
+      madinahRadioTitle: "بث المدينة النبوية",
+      projects: "المشاريع",
+      links: "روابط",
+      live: "مباشر",
+      heroSub: "iOS • Windows • Linux • Android • Jailbreak",
+      repoDesc: "نسخ رابط السورس",
+      githubDesc: "المشاريع والكود",
+      radioSub: "البث الصوتي المباشر",
+      ready: "جاهز للتشغيل",
+      playing: "يعمل الآن",
+      tapToPlay: "اضغط للتشغيل",
+      error: "تعذر الاتصال بالبث",
+      navHome: "الرئيسية",
+      navMakkah: "بث مكة",
+      navRadio: "الراديو",
+      navProjects: "المشاريع",
+      navLinks: "روابط",
+      copied: "تم نسخ رابط السورس للحافظة",
+      arrow: "‹"
+    },
+    en: {
+      welcome: "Welcome",
+      makkahLive: "Makkah Live Stream",
+      makkahLiveSub: "Live - Quran TV Channel",
+      madinahRadioTitle: "Madinah Sunnah Radio",
+      projects: "Projects",
+      links: "Links",
+      live: "LIVE",
+      heroSub: "iOS • Windows • Linux • Android • Jailbreak",
+      repoDesc: "Copy Repo Link",
+      githubDesc: "Projects & Code",
+      radioSub: "Live Audio Stream",
+      ready: "Ready to Play",
+      playing: "Playing Now",
+      tapToPlay: "Tap to Play",
+      error: "Stream Connection Error",
+      navHome: "Home",
+      navMakkah: "Makkah Live",
+      navRadio: "Radio",
+      navProjects: "Projects",
+      navLinks: "Links",
+      copied: "Source link copied to clipboard",
+      arrow: "›"
+    }
+  };
+
+  let currentLang = localStorage.getItem("a7m_lang") || "ar";
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("a7m_lang", lang);
+
+    document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (i18n[lang][key]) {
+        el.textContent = i18n[lang][key];
+      }
+    });
+
+    document.querySelectorAll(".link-arrow").forEach(el => {
+      el.textContent = i18n[lang].arrow;
+    });
+
+    document.getElementById("langToggle").textContent = lang === "ar" ? "EN" : "عربي";
+  }
+
+  document.getElementById("langToggle").addEventListener("click", () => {
+    applyLanguage(currentLang === "ar" ? "en" : "ar");
+  });
+
+  const SUN_ICON = `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+  const MOON_ICON = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+
+  let currentTheme = localStorage.getItem("a7m_theme") || "dark";
+
+  function applyTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem("a7m_theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    const themeIcon = document.getElementById("themeIcon");
+    themeIcon.innerHTML = theme === "dark" ? SUN_ICON : MOON_ICON;
+  }
+
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+  });
+
+  applyLanguage(currentLang);
+  applyTheme(currentTheme);
+
+  function showToast(text) {
+    const toast = document.getElementById("toast");
+    toast.textContent = text;
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2500);
+  }
+
+  document.querySelectorAll(".sileo-copy-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const repoUrl = "https://ipapplus.github.io";
+      navigator.clipboard.writeText(repoUrl).then(() => {
+        showToast(i18n[currentLang].copied);
+      }).catch(() => {
+        const input = document.createElement("input");
+        input.value = repoUrl;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        showToast(i18n[currentLang].copied);
+      });
+    });
+  });
+
+  const makkahStreamUrl = "https://win.holol.com/live/quran/index.m3u8";
+  const makkahVideo = document.getElementById("makkahVideo");
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(makkahStreamUrl);
+    hls.attachMedia(makkahVideo);
+  } else if (makkahVideo.canPlayType("application/vnd.apple.mpegurl")) {
+    makkahVideo.src = makkahStreamUrl;
+  }
 
   const canvas = document.getElementById('snow');
   const ctx = canvas.getContext('2d');
@@ -378,126 +1122,139 @@ body {
     };
   }
 
-  function resize() {
+  function resizeSnow() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    const count = reduceMotion ? 15 : Math.min(70, Math.floor(W / 20));
-    flakes = Array.from(
-      { length: count },
-      () => createFlake(true)
-    );
+    const count = reduceMotion ? 12 : Math.min(65, Math.floor(W / 22));
+    flakes = Array.from({ length: count }, () => createFlake(true));
   }
 
-  function tick() {
+  function tickSnow() {
     ctx.clearRect(0, 0, W, H);
+    const style = getComputedStyle(document.documentElement);
+    const flakeColor = style.getPropertyValue('--flake-color').trim() || 'rgba(230, 235, 250, 0.65)';
+
     for (const f of flakes) {
       f.angle += f.sway;
       f.y += f.vy;
       f.x += f.vx + Math.sin(f.angle) * 0.3;
 
-      if (f.y > H + 5) {
-        f.y = -5;
-        f.x = Math.random() * W;
-      }
-
+      if (f.y > H + 5) { f.y = -5; f.x = Math.random() * W; }
       if (f.x > W + 5) f.x = -5;
       if (f.x < -5) f.x = W + 5;
 
       ctx.beginPath();
       ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(220, 225, 240, ${f.o})`;
+      ctx.fillStyle = flakeColor;
       ctx.fill();
     }
-    requestAnimationFrame(tick);
+    requestAnimationFrame(tickSnow);
   }
 
-  resize();
-  window.addEventListener('resize', resize);
-  tick();
+  resizeSnow();
+  window.addEventListener('resize', resizeSnow);
+  tickSnow();
 
-  const audio = document.getElementById('audio');
-  const soundFab = document.getElementById('soundFab');
+  const audio = document.getElementById("audio");
+  const audioPlay = document.getElementById("audioPlay");
+  const playIcon = document.getElementById("playIcon");
+  const status = document.getElementById("audioStatus");
 
-  const ICON_SOUND_ON = `
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-    </svg>
-  `;
-
-  const ICON_MUTED = `
-    <svg viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-      <line x1="23" y1="9" x2="17" y2="15"></line>
-      <line x1="17" y1="9" x2="23" y2="15"></line>
-    </svg>
-  `;
+  const PLAY_PATH = '<path d="M8 5v14l11-7z"/>';
+  const PAUSE_PATH = '<path d="M7 5h3v14H7zM14 5h3v14h-3z"/>';
 
   audio.volume = 0.5;
 
-  function updateFabUI() {
-    const muted = audio.muted || audio.paused;
-    soundFab.classList.toggle('muted', muted);
-    soundFab.innerHTML = muted ? ICON_MUTED : ICON_SOUND_ON;
+  function uiPlaying() {
+    playIcon.innerHTML = PAUSE_PATH;
+    status.textContent = i18n[currentLang].playing;
+    status.setAttribute("data-i18n", "playing");
+  }
+
+  function uiPaused() {
+    playIcon.innerHTML = PLAY_PATH;
+    status.textContent = i18n[currentLang].tapToPlay;
+    status.setAttribute("data-i18n", "tapToPlay");
   }
 
   async function playAudio() {
     try {
-      audio.muted = false;
       await audio.play();
-      updateFabUI();
+      uiPlaying();
       return true;
-    } catch (error) {
-      updateFabUI();
+    } catch (e) {
+      uiPaused();
       return false;
     }
   }
 
-  playAudio();
-
-  let interactionHandled = false;
-
-  function firstInteraction() {
-    if (interactionHandled) return;
-    interactionHandled = true;
-
-    if (audio.paused) {
-      playAudio();
-    }
-
-    document.removeEventListener('pointerdown', firstInteraction);
-    document.removeEventListener('touchstart', firstInteraction);
-    document.removeEventListener('keydown', firstInteraction);
+  function pauseAudio() {
+    audio.pause();
+    uiPaused();
   }
 
-  document.addEventListener('pointerdown', firstInteraction, { passive: true });
-  document.addEventListener('touchstart', firstInteraction, { passive: true });
-  document.addEventListener('keydown', firstInteraction);
-
-  soundFab.addEventListener('click', async function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
+  async function toggleAudio() {
     if (audio.paused) {
       await playAudio();
     } else {
-      audio.muted = !audio.muted;
-      updateFabUI();
+      pauseAudio();
     }
+  }
+
+  audioPlay.addEventListener("click", toggleAudio);
+
+  audio.addEventListener("play", uiPlaying);
+  audio.addEventListener("pause", uiPaused);
+  audio.addEventListener("error", () => {
+    status.textContent = i18n[currentLang].error;
+    status.setAttribute("data-i18n", "error");
   });
 
-  audio.addEventListener('play', updateFabUI);
-  audio.addEventListener('pause', updateFabUI);
-  audio.addEventListener('volumechange', updateFabUI);
+  const sectionOrder = ["home", "projects", "links", "live-stream", "radio"];
 
-  updateFabUI();
+  function updateActiveNav() {
+    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
+    let activeId = sectionOrder[0];
+
+    for (const id of sectionOrder) {
+      const el = document.getElementById(id);
+      if (el && scrollPosition >= el.offsetTop) {
+        activeId = id;
+      }
+    }
+
+    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+      activeId = sectionOrder[sectionOrder.length - 1];
+    }
+
+    document.querySelectorAll(".nav-item").forEach(item => {
+      if (item.dataset.target === activeId) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  window.addEventListener("resize", updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  document.querySelectorAll(".nav-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const target = document.getElementById(item.dataset.target);
+
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
 })();
 </script>
+
 </body>
 </html>
