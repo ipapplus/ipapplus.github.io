@@ -13,48 +13,58 @@
 
 <style>
 :root {
-  --bg: #0a0d14;
-  --bg-gradient: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 165, 116, 0.08), transparent 70%);
-  --surface: #11151f;
-  --surface-2: #161b27;
-  --gold: #d4a574;
-  --gold-dark: #e8b059;
+  --bg: #07090e;
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(212, 165, 116, 0.12), transparent 75%);
+  --glass-bg: rgba(22, 27, 38, 0.55);
+  --glass-bg-hover: rgba(30, 37, 52, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-hover: rgba(212, 165, 116, 0.4);
+  --glass-highlight: inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  --gold: #e5b378;
+  --gold-dark: #c89355;
   --green: #4ade80;
-  --text: #e4e7ec;
-  --muted: #8c94a6;
-  --line: #1e2435;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  --hero-bg: #0f131e;
-  --nav-bg: rgba(17, 21, 31, 0.85);
-  --nav-border: #1e2435;
-  --nav-active: #161b27;
-  --nav-text: #c1c6d1;
+  --text: #f0f3f8;
+  --muted: #9aa3b4;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  --hero-bg: rgba(15, 19, 30, 0.75);
+  --nav-bg: rgba(18, 23, 34, 0.65);
+  --nav-border: rgba(255, 255, 255, 0.15);
+  --nav-active: rgba(212, 165, 116, 0.18);
+  --nav-active-border: rgba(212, 165, 116, 0.45);
+  --nav-text: #c5cbd8;
   --snow-opacity: 1;
-  --flake-color: rgba(220, 225, 240, 0.6);
+  --flake-color: rgba(230, 235, 250, 0.65);
 }
 
 [data-theme="light"] {
-  --bg: #f8f7f2;
-  --bg-gradient: radial-gradient(circle at 50% -10%, rgba(216,173,77,.13), transparent 34%);
-  --surface: #fffefa;
-  --surface-2: #f2f0e9;
+  --bg: #f2f4f8;
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(216, 173, 77, 0.18), transparent 75%);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-border-hover: rgba(216, 173, 77, 0.5);
+  --glass-highlight: inset 0 1px 2px rgba(255, 255, 255, 0.9);
   --gold: #d8ad4d;
-  --gold-dark: #9a7424;
-  --green: #237c68;
-  --text: #26241f;
-  --muted: #7c776d;
-  --line: rgba(45,40,30,.10);
-  --shadow: 0 16px 45px rgba(58,49,29,.10);
-  --hero-bg: #1f211f;
-  --nav-bg: rgba(255,255,255,.86);
-  --nav-border: rgba(255,255,255,.95);
-  --nav-active: #eceae5;
-  --nav-text: #514d46;
-  --snow-opacity: 0.35;
-  --flake-color: rgba(180, 160, 120, 0.5);
+  --gold-dark: #a67c2e;
+  --green: #10b981;
+  --text: #1a1d24;
+  --muted: #6b7280;
+  --shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+  --hero-bg: rgba(255, 255, 255, 0.75);
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --nav-border: rgba(255, 255, 255, 0.9);
+  --nav-active: rgba(216, 173, 77, 0.2);
+  --nav-active-border: rgba(216, 173, 77, 0.5);
+  --nav-text: #4b5563;
+  --snow-opacity: 0.4;
+  --flake-color: rgba(160, 140, 100, 0.5);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -65,8 +75,8 @@ body {
   min-height: 100vh;
   background: var(--bg-gradient), var(--bg);
   color: var(--text);
-  font-family: "IBM Plex Sans Arabic", "Space Grotesk", system-ui, sans-serif;
-  padding-bottom: 105px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  padding-bottom: 110px;
   transition: background 0.3s ease, color 0.3s ease;
   position: relative;
   overflow-x: hidden;
@@ -81,7 +91,9 @@ body {
   transition: opacity 0.3s ease;
 }
 
-button, a { -webkit-tap-highlight-color: transparent; }
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
 
 .app {
   position: relative;
@@ -105,6 +117,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: -.04em;
   color: var(--text);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .brand span { color: var(--gold); }
@@ -116,26 +129,32 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .icon-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 4px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   color: var(--text);
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   font-family: 'JetBrains Mono', inherit;
   font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .icon-btn:hover {
-  border-color: var(--gold);
+  border-color: var(--glass-border-hover);
   color: var(--gold);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
 }
 
 .icon-btn svg {
@@ -151,29 +170,43 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ticker-wrap {
   overflow: hidden;
   width: 100%;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 10px 0;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 8px 24px rgba(0,0,0,0.12);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
+  border-radius: 18px;
+  padding: 11px 0;
+  margin-bottom: 18px;
+  position: relative;
+  direction: ltr;
 }
 
 .ticker-content {
   display: flex;
   width: max-content;
-  animation: ticker-scroll 35s linear infinite;
+  animation: ticker-scroll 32s linear infinite;
 }
 
 .ticker-item {
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--gold);
-  padding-left: 20px;
+  padding: 0 10px;
+  direction: rtl;
 }
 
 @keyframes ticker-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+html[dir="rtl"] .ticker-content {
+  animation: ticker-scroll-rtl 32s linear infinite;
+}
+
+@keyframes ticker-scroll-rtl {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
 }
@@ -186,28 +219,42 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: var(--green);
   font-size: 25px;
   font-weight: 700;
-  margin: 0 5px 12px;
+  margin: 0 5px 14px;
+  letter-spacing: -0.02em;
 }
 
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 180px;
-  border-radius: 30px;
+  min-height: 185px;
+  border-radius: 28px;
   background: var(--hero-bg);
-  box-shadow: var(--shadow);
-  isolation: isolate;
-  border: 1px solid var(--line);
+  box-shadow: var(--glass-highlight), var(--shadow);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   display: flex;
   align-items: flex-end;
   padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+}
+
+.hero:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.hero:active {
+  transform: scale(0.98);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.35) 70%);
+  background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.2) 70%);
   z-index: 1;
 }
 
@@ -227,7 +274,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-grid {
   position: absolute;
   inset: 0;
-  opacity: .25;
+  opacity: .2;
   background-image:
     linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
@@ -243,7 +290,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero-kicker {
   font-size: 13px;
-  opacity: .8;
+  opacity: .85;
   margin-bottom: 2px;
 }
 
@@ -254,7 +301,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero-sub {
   font-size: 13px;
-  opacity: .8;
+  opacity: .85;
 }
 
 .cards {
@@ -267,31 +314,37 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: relative;
   min-height: 145px;
   padding: 18px;
-  border-radius: 25px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 9px 30px rgba(0,0,0,.06);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 10px 30px rgba(0,0,0,.08);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   text-decoration: none;
   color: var(--text);
   overflow: hidden;
-  transition: transform .18s ease, border-color 0.18s ease;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
 }
 
 .project:hover {
-  border-color: var(--gold);
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+  transform: translateY(-3px);
 }
 
-.project:active { transform: scale(.98); }
+.project:active { transform: scale(.97); }
 
 .project-icon {
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
-  border-radius: 15px;
-  background: var(--surface-2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   color: var(--green);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .project-icon svg {
@@ -313,10 +366,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .video-card {
   position: relative;
   padding: 18px;
-  border-radius: 28px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  border-radius: 26px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), var(--shadow);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   overflow: hidden;
 }
 
@@ -328,7 +383,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .video-label {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text);
 }
@@ -337,13 +392,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #e94e62;
+  background: rgba(233, 78, 98, 0.85);
+  backdrop-filter: blur(10px);
   color: white;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 5px 11px;
   font-size: 11px;
   font-weight: 700;
   font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 4px 12px rgba(233, 78, 98, 0.3);
 }
 
 .live-badge i {
@@ -376,9 +433,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   gap: 14px;
   min-height: 116px;
   padding: 16px 18px;
-  border-radius: 28px;
-  background: linear-gradient(120deg, var(--gold), var(--gold-dark));
-  box-shadow: 0 14px 35px rgba(0,0,0,.18);
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(229, 179, 120, 0.85), rgba(200, 147, 85, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.4), 0 16px 35px rgba(0,0,0,.22);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   color: #1a1408;
 }
 
@@ -388,17 +448,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
   height: 58px;
   border: 0;
   border-radius: 50%;
-  background: #fffdf7;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   color: #483714;
   display: grid;
   place-items: center;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,.15);
-  transition: transform 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .audio-play:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.audio-play:active {
+  transform: scale(0.95);
 }
 
 .audio-play svg {
@@ -416,7 +481,7 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
 }
 
 .audio-label {
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
@@ -425,7 +490,7 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
 
 .audio-sub {
   font-size: 12px;
-  opacity: .8;
+  opacity: .85;
 }
 
 .radio-icon {
@@ -441,8 +506,8 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
   gap: 7px;
   margin-top: 6px;
   font-size: 11px;
-  opacity: .85;
-  font-weight: 500;
+  opacity: .9;
+  font-weight: 600;
 }
 
 .status-dot {
@@ -467,18 +532,27 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
   align-items: center;
   gap: 13px;
   min-height: 66px;
-  padding: 12px 15px;
-  border-radius: 21px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-highlight), 0 6px 20px rgba(0,0,0,.05);
+  backdrop-filter: blur(25px) saturate(190%);
+  -webkit-backdrop-filter: blur(25px) saturate(190%);
   text-decoration: none;
   color: var(--text);
-  box-shadow: 0 7px 24px rgba(0,0,0,.04);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
 }
 
 .link:hover {
-  border-color: var(--gold);
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+  transform: translateY(-2px);
+}
+
+.link:active {
+  transform: scale(0.98);
 }
 
 .link-icon {
@@ -487,7 +561,8 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: var(--surface-2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   color: var(--green);
   flex-shrink: 0;
 }
@@ -515,7 +590,7 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
 .link-arrow {
   color: var(--muted);
   font-size: 18px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .link:hover .link-arrow {
@@ -525,11 +600,36 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
 html[dir="rtl"] .link:hover .link-arrow { transform: translateX(-4px); }
 html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
 
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: rgba(30, 41, 59, 0.9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 .footer {
   text-align: center;
   color: var(--muted);
   font-size: 11px;
-  margin: 30px 0 5px;
+  margin: 32px 0 5px;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -541,27 +641,27 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   left: 14px;
   right: 14px;
   bottom: max(12px, env(safe-area-inset-bottom));
-  height: 76px;
-  border-radius: 38px;
+  height: 74px;
+  border-radius: 37px;
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
-  box-shadow: 0 15px 45px rgba(0,0,0,.2);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--glass-highlight), 0 20px 50px rgba(0,0,0,.35);
+  backdrop-filter: blur(30px) saturate(210%);
+  -webkit-backdrop-filter: blur(30px) saturate(210%);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 5px;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-item {
   flex: 1;
-  height: 66px;
-  border: 0;
+  height: 64px;
+  border: 1px solid transparent;
   background: transparent;
   color: var(--nav-text);
-  border-radius: 34px;
+  border-radius: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -569,17 +669,23 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   gap: 3px;
   font-family: inherit;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-item:active {
+  transform: scale(0.92);
 }
 
 .nav-item.active {
   background: var(--nav-active);
+  border-color: var(--nav-active-border);
   color: var(--gold);
+  box-shadow: var(--glass-highlight), 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .nav-item svg {
-  width: 24px;
-  height: 24px;
+  width: 23px;
+  height: 23px;
 }
 
 .nav-item span {
@@ -613,6 +719,8 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
 
 <canvas id="snow" aria-hidden="true"></canvas>
 
+<div class="toast" id="toast"></div>
+
 <div class="app">
 
   <header class="topbar">
@@ -635,23 +743,66 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
 
     <h1 class="section-title" data-i18n="welcome">أهلاً بك</h1>
 
-    <div class="hero">
+    <a class="hero" href="https://x.com/ipapplus" target="_blank" rel="noopener">
       <div class="hero-art"></div>
       <div class="hero-grid"></div>
 
       <div class="hero-content">
         <div class="hero-kicker">Ahmed AlGhrbi</div>
         <div class="hero-title">Systems & Apps</div>
-        <div class="hero-sub" data-i18n="heroSub">iOS • Windows • Jailbreak</div>
+        <div class="hero-sub" data-i18n="heroSub">iOS • Windows • Linux • Android • Jailbreak</div>
       </div>
-    </div>
+    </a>
   </section>
 
   <section class="section" id="projects">
     <h2 class="section-title" data-i18n="projects">المشاريع</h2>
 
     <div class="cards">
-      <a class="project" href="https://github.com/roothide/Dopamine2-roothide/releases" target="_blank" rel="noopener">
+      <a class="project" href="https://github.com/ipapplus/FontTweak" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+          </svg>
+        </div>
+        <div class="project-title">FontTweak</div>
+        <div class="project-desc">iOS Font Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/IGArabic" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        <div class="project-title">IGArabic</div>
+        <div class="project-desc">Instagram Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/TGExtra" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </div>
+        <div class="project-title">TGExtra</div>
+        <div class="project-desc">Telegram Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/NeoFreeBird-BHTwitter" target="_blank" rel="noopener">
+        <div class="project-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.46 22H3.34l7.24-8.28L2.8 2h6.4l4.43 5.86L18.9 2zm-1.1 17.8h1.73L8.26 4.08H6.4L17.8 19.8z"/>
+          </svg>
+        </div>
+        <div class="project-title">NeoFreeBird</div>
+        <div class="project-desc">BHTwitter Tweak</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/Dopamine2-roothide" target="_blank" rel="noopener">
         <div class="project-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
@@ -662,17 +813,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
         <div class="project-desc">Roothide Jailbreak</div>
       </a>
 
-      <a class="project" href="https://relaxin.owngoal.dev" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="project-title">Relaxin</div>
-        <div class="project-desc">Roothide Project</div>
-      </a>
-
-      <a class="project" href="sileo://source/https://ipapplus.github.io">
+      <div class="project sileo-copy-btn">
         <div class="project-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
@@ -680,18 +821,8 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
           </svg>
         </div>
         <div class="project-title">Sileo Repo</div>
-        <div class="project-desc" data-i18n="repoDesc">سورس جيلبريك</div>
-      </a>
-
-      <a class="project" href="https://github.com/ipapplus" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.86 10.93.58.1.79-.25.79-.55v-2.12c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.77.11 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.35.78 1.06.78 2.14v3.17c0 .3.21.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
-          </svg>
-        </div>
-        <div class="project-title">GitHub</div>
-        <div class="project-desc">ipapplus</div>
-      </a>
+        <div class="project-desc" data-i18n="repoDesc">نسخ رابط السورس</div>
+      </div>
     </div>
   </section>
 
@@ -725,7 +856,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
         <div class="link-arrow">‹</div>
       </a>
 
-      <a class="link" href="sileo://source/https://ipapplus.github.io">
+      <div class="link sileo-copy-btn">
         <div class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M12 3l8 5v8l-8 5-8-5V8l8-5z"/>
@@ -737,12 +868,12 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
           <div class="link-desc">ipapplus.github.io</div>
         </div>
         <div class="link-arrow">‹</div>
-      </a>
+      </div>
     </div>
   </section>
 
   <section class="section" id="live-stream">
-    <h2 class="section-title" data-i18n="makkahLive">بث مكه المكرمه</h2>
+    <h2 class="section-title" data-i18n="makkahLive">بث مكة المكرمة</h2>
 
     <div class="video-card">
       <div class="video-header">
@@ -756,7 +887,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   </section>
 
   <section class="section" id="radio">
-    <h2 class="section-title" data-i18n="madinahRadioTitle">بث المدينه النبويه قناة السنة</h2>
+    <h2 class="section-title" data-i18n="madinahRadioTitle">بث المدينة النبوية</h2>
 
     <div class="audio-card">
       <button class="audio-play" id="audioPlay" aria-label="Play Radio">
@@ -766,7 +897,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       </button>
 
       <div class="audio-info">
-        <div class="audio-label" data-i18n="madinahRadioTitle">بث المدينه النبويه قناة السنة</div>
+        <div class="audio-label" data-i18n="madinahRadioTitle">بث المدينة النبوية</div>
         <div class="audio-sub" data-i18n="radioSub">البث الصوتي المباشر</div>
         <div class="status-line">
           <i class="status-dot"></i>
@@ -839,14 +970,14 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   const i18n = {
     ar: {
       welcome: "أهلاً بك",
-      makkahLive: "بث مكه المكرمه",
+      makkahLive: "بث مكة المكرمة",
       makkahLiveSub: "بث مباشر - قناة القرآن الكريم",
-      madinahRadioTitle: "بث المدينه النبويه قناة السنة",
+      madinahRadioTitle: "بث المدينة النبوية",
       projects: "المشاريع",
       links: "روابط",
       live: "مباشر",
-      heroSub: "iOS • Windows • Jailbreak",
-      repoDesc: "سورس جيلبريك",
+      heroSub: "iOS • Windows • Linux • Android • Jailbreak",
+      repoDesc: "نسخ رابط السورس",
       githubDesc: "المشاريع والكود",
       radioSub: "البث الصوتي المباشر",
       ready: "جاهز للتشغيل",
@@ -858,18 +989,19 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       navRadio: "الراديو",
       navProjects: "المشاريع",
       navLinks: "روابط",
+      copied: "تم نسخ رابط السورس للحافظة",
       arrow: "‹"
     },
     en: {
       welcome: "Welcome",
       makkahLive: "Makkah Live Stream",
       makkahLiveSub: "Live - Quran TV Channel",
-      madinahRadioTitle: "Madinah Sunnah Channel Radio",
+      madinahRadioTitle: "Madinah Sunnah Radio",
       projects: "Projects",
       links: "Links",
       live: "LIVE",
-      heroSub: "iOS • Windows • Jailbreak",
-      repoDesc: "Jailbreak Source",
+      heroSub: "iOS • Windows • Linux • Android • Jailbreak",
+      repoDesc: "Copy Repo Link",
       githubDesc: "Projects & Code",
       radioSub: "Live Audio Stream",
       ready: "Ready to Play",
@@ -881,6 +1013,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       navRadio: "Radio",
       navProjects: "Projects",
       navLinks: "Links",
+      copied: "Source link copied to clipboard",
       arrow: "›"
     }
   };
@@ -933,6 +1066,33 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   applyLanguage(currentLang);
   applyTheme(currentTheme);
 
+  function showToast(text) {
+    const toast = document.getElementById("toast");
+    toast.textContent = text;
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2500);
+  }
+
+  document.querySelectorAll(".sileo-copy-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const repoUrl = "https://ipapplus.github.io";
+      navigator.clipboard.writeText(repoUrl).then(() => {
+        showToast(i18n[currentLang].copied);
+      }).catch(() => {
+        const input = document.createElement("input");
+        input.value = repoUrl;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        showToast(i18n[currentLang].copied);
+      });
+    });
+  });
+
   const makkahStreamUrl = "https://win.holol.com/live/quran/index.m3u8";
   const makkahVideo = document.getElementById("makkahVideo");
 
@@ -972,7 +1132,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
   function tickSnow() {
     ctx.clearRect(0, 0, W, H);
     const style = getComputedStyle(document.documentElement);
-    const flakeColor = style.getPropertyValue('--flake-color').trim() || 'rgba(220, 225, 240, 0.6)';
+    const flakeColor = style.getPropertyValue('--flake-color').trim() || 'rgba(230, 235, 250, 0.65)';
 
     for (const f of flakes) {
       f.angle += f.sway;
@@ -1050,6 +1210,37 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
     status.setAttribute("data-i18n", "error");
   });
 
+  const sectionOrder = ["home", "projects", "links", "live-stream", "radio"];
+
+  function updateActiveNav() {
+    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+
+    let activeId = sectionOrder[0];
+
+    for (const id of sectionOrder) {
+      const el = document.getElementById(id);
+      if (el && scrollPosition >= el.offsetTop) {
+        activeId = id;
+      }
+    }
+
+    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+      activeId = sectionOrder[sectionOrder.length - 1];
+    }
+
+    document.querySelectorAll(".nav-item").forEach(item => {
+      if (item.dataset.target === activeId) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  window.addEventListener("resize", updateActiveNav, { passive: true });
+  updateActiveNav();
+
   document.querySelectorAll(".nav-item").forEach(item => {
     item.addEventListener("click", () => {
       const target = document.getElementById(item.dataset.target);
@@ -1060,39 +1251,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
           block: "start"
         });
       }
-
-      document.querySelectorAll(".nav-item")
-        .forEach(x => x.classList.remove("active"));
-
-      item.classList.add("active");
     });
-  });
-
-  const sections = ["home", "projects", "links", "live-stream", "radio"];
-  const observer = new IntersectionObserver(entries => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-    if (!visible) return;
-
-    const button = document.querySelector(
-      `.nav-item[data-target="${visible.target.id}"]`
-    );
-
-    if (button) {
-      document.querySelectorAll(".nav-item")
-        .forEach(x => x.classList.remove("active"));
-
-      button.classList.add("active");
-    }
-  }, {
-    threshold: [0.35, 0.6]
-  });
-
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
   });
 })();
 </script>
