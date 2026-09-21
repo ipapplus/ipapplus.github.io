@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>a7m.dev — Ahmed AlGhrbi</title>
+<title>ipapplus</title>
+<meta name="apple-mobile-web-app-title" content="ipapplus">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Ahmed AlGhrbi — Systems & Apps">
+
+<link rel="apple-touch-icon" href="https://ipapplus.github.io/CydiaIcon.png">
+<link rel="icon" type="image/png" href="https://ipapplus.github.io/CydiaIcon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +20,14 @@
 <style>
 :root {
   --bg: #07090e;
-  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(212, 165, 116, 0.12), transparent 75%);
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(212, 165, 116, 0.15), transparent 75%);
   --glass-bg: rgba(22, 27, 38, 0.55);
   --glass-bg-hover: rgba(30, 37, 52, 0.7);
   --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-hover: rgba(212, 165, 116, 0.4);
+  --glass-border-hover: rgba(212, 165, 116, 0.45);
   --glass-highlight: inset 0 1px 1px rgba(255, 255, 255, 0.18);
   --gold: #e5b378;
   --gold-dark: #c89355;
-  --green: #4ade80;
   --text: #f0f3f8;
   --muted: #9aa3b4;
   --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
@@ -38,15 +43,14 @@
 
 [data-theme="light"] {
   --bg: #f2f4f8;
-  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(216, 173, 77, 0.18), transparent 75%);
+  --bg-gradient: radial-gradient(ellipse 90% 70% at 50% -10%, rgba(216, 173, 77, 0.22), transparent 75%);
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-bg-hover: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(255, 255, 255, 0.8);
-  --glass-border-hover: rgba(216, 173, 77, 0.5);
+  --glass-border-hover: rgba(216, 173, 77, 0.55);
   --glass-highlight: inset 0 1px 2px rgba(255, 255, 255, 0.9);
   --gold: #d8ad4d;
   --gold-dark: #a67c2e;
-  --green: #10b981;
   --text: #1a1d24;
   --muted: #6b7280;
   --shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
@@ -216,7 +220,7 @@ html[dir="rtl"] .ticker-content {
 }
 
 .section-title {
-  color: var(--green);
+  color: var(--gold);
   font-size: 25px;
   font-weight: 700;
   margin: 0 5px 14px;
@@ -312,7 +316,7 @@ html[dir="rtl"] .ticker-content {
 
 .project {
   position: relative;
-  min-height: 145px;
+  min-height: 155px;
   padding: 18px;
   border-radius: 24px;
   background: var(--glass-bg);
@@ -325,6 +329,9 @@ html[dir="rtl"] .ticker-content {
   overflow: hidden;
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project:hover {
@@ -336,31 +343,32 @@ html[dir="rtl"] .ticker-content {
 .project:active { transform: scale(.97); }
 
 .project-icon {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(212, 165, 116, 0.12);
   border: 1px solid var(--glass-border);
-  color: var(--green);
-  margin-bottom: 20px;
+  color: var(--gold);
+  margin-bottom: 14px;
 }
 
 .project-icon svg {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
 }
 
 .project-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .project-desc {
   color: var(--muted);
-  font-size: 12px;
-  margin-top: 2px;
+  font-size: 11.5px;
+  margin-top: 4px;
+  line-height: 1.4;
 }
 
 .video-card {
@@ -514,11 +522,7 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #155e42;
-}
-
-.links-title {
-  margin-top: 28px;
+  background: #2d220a;
 }
 
 .link-list {
@@ -561,9 +565,9 @@ html[dir="ltr"] .audio-play svg { margin-left: 3px; }
   display: grid;
   place-items: center;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(212, 165, 116, 0.12);
   border: 1px solid var(--glass-border);
-  color: var(--green);
+  color: var(--gold);
   flex-shrink: 0;
 }
 
@@ -706,7 +710,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
 @media (max-width: 430px) {
   .section-title { font-size: 23px; }
   .audio-label { font-size: 15px; }
-  .project { min-height: 138px; }
+  .project { min-height: 145px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -755,78 +759,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
     </a>
   </section>
 
-  <section class="section" id="projects">
-    <h2 class="section-title" data-i18n="projects">المشاريع</h2>
-
-    <div class="cards">
-      <a class="project" href="https://github.com/ipapplus/FontTweak" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
-          </svg>
-        </div>
-        <div class="project-title">FontTweak</div>
-        <div class="project-desc">iOS Font Tweak</div>
-      </a>
-
-      <a class="project" href="https://github.com/ipapplus/IGArabic" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-          </svg>
-        </div>
-        <div class="project-title">IGArabic</div>
-        <div class="project-desc">Instagram Tweak</div>
-      </a>
-
-      <a class="project" href="https://github.com/ipapplus/TGExtra" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <line x1="22" y1="2" x2="11" y2="13"/>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>
-        </div>
-        <div class="project-title">TGExtra</div>
-        <div class="project-desc">Telegram Tweak</div>
-      </a>
-
-      <a class="project" href="https://github.com/ipapplus/NeoFreeBird-BHTwitter" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.46 22H3.34l7.24-8.28L2.8 2h6.4l4.43 5.86L18.9 2zm-1.1 17.8h1.73L8.26 4.08H6.4L17.8 19.8z"/>
-          </svg>
-        </div>
-        <div class="project-title">NeoFreeBird</div>
-        <div class="project-desc">BHTwitter Tweak</div>
-      </a>
-
-      <a class="project" href="https://github.com/ipapplus/Dopamine2-roothide" target="_blank" rel="noopener">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
-            <path d="M8 12l2.5 2.5L16 9"/>
-          </svg>
-        </div>
-        <div class="project-title">Dopamine</div>
-        <div class="project-desc">Roothide Jailbreak</div>
-      </a>
-
-      <div class="project sileo-copy-btn">
-        <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
-            <path d="M3 8l9 5 9-5M12 13v8"/>
-          </svg>
-        </div>
-        <div class="project-title">Sileo Repo</div>
-        <div class="project-desc" data-i18n="repoDesc">نسخ رابط السورس</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section links-title" id="links">
+  <section class="section" id="links">
     <h2 class="section-title" data-i18n="links">روابط</h2>
 
     <div class="link-list">
@@ -856,6 +789,20 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
         <div class="link-arrow">‹</div>
       </a>
 
+      <a class="link" href="https://t.me/ipa4y" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">Telegram</div>
+          <div class="link-desc" data-i18n="contactDesc">للتواصل</div>
+        </div>
+        <div class="link-arrow">‹</div>
+      </a>
+
       <div class="link sileo-copy-btn">
         <div class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -868,6 +815,89 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
           <div class="link-desc">ipapplus.github.io</div>
         </div>
         <div class="link-arrow">‹</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title" data-i18n="projects">المشاريع</h2>
+
+    <div class="cards">
+      <a class="project" href="https://github.com/ipapplus/FontTweak" target="_blank" rel="noopener">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+            </svg>
+          </div>
+          <div class="project-title">FontTweak</div>
+        </div>
+        <div class="project-desc" data-i18n="fontTweakDesc">اداة بصيغه dylib يتم حقنها في التطبيقات لتغيير الخط ios</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/IGArabic" target="_blank" rel="noopener">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <div class="project-title">IGArabic</div>
+        </div>
+        <div class="project-desc" data-i18n="igArabicDesc">اول اداة لتعريب تطبيق الانستقرام على ios</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/TGExtra" target="_blank" rel="noopener">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </div>
+          <div class="project-title">TGExtra</div>
+        </div>
+        <div class="project-desc" data-i18n="tgExtraDesc">اضافه اكثر من 80 ميزه للتلقرام</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/NeoFreeBird-BHTwitter" target="_blank" rel="noopener">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.46 22H3.34l7.24-8.28L2.8 2h6.4l4.43 5.86L18.9 2zm-1.1 17.8h1.73L8.26 4.08H6.4L17.8 19.8z"/>
+            </svg>
+          </div>
+          <div class="project-title">NeoFreeBird</div>
+        </div>
+        <div class="project-desc" data-i18n="neoFreeBirdDesc">اضافه اكثر من 130 ميزه لتويتر</div>
+      </a>
+
+      <a class="project" href="https://github.com/ipapplus/Dopamine2-roothide" target="_blank" rel="noopener">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/>
+              <path d="M8 12l2.5 2.5L16 9"/>
+            </svg>
+          </div>
+          <div class="project-title">Dopamine</div>
+        </div>
+        <div class="project-desc" data-i18n="dopamineDesc">جلبريك مخفي من البنوك ( جميع النسخ السابقه )</div>
+      </a>
+
+      <div class="project sileo-copy-btn">
+        <div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/>
+              <path d="M3 8l9 5 9-5M12 13v8"/>
+            </svg>
+          </div>
+          <div class="project-title">Sileo Repo</div>
+        </div>
+        <div class="project-desc" data-i18n="repoDesc">سورسي في sileo يحتوي على اكثر من 300 اداه محوله الى roothide</div>
       </div>
     </div>
   </section>
@@ -926,6 +956,14 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
     <span data-i18n="navHome">الرئيسية</span>
   </button>
 
+  <button class="nav-item" data-target="links">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m20 20-4-4"/>
+    </svg>
+    <span data-i18n="navLinks">روابط</span>
+  </button>
+
   <button class="nav-item" data-target="projects">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
       <circle cx="12" cy="12" r="8"/>
@@ -933,14 +971,6 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       <path d="M9 7c1 1 2 2 3 2s2-1 3-2"/>
     </svg>
     <span data-i18n="navProjects">المشاريع</span>
-  </button>
-
-  <button class="nav-item" data-target="links">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-      <circle cx="11" cy="11" r="7"/>
-      <path d="m20 20-4-4"/>
-    </svg>
-    <span data-i18n="navLinks">روابط</span>
   </button>
 
   <button class="nav-item" data-target="live-stream">
@@ -977,8 +1007,14 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       links: "روابط",
       live: "مباشر",
       heroSub: "iOS • Windows • Linux • Android • Jailbreak",
-      repoDesc: "نسخ رابط السورس",
+      repoDesc: "سورسي في sileo يحتوي على اكثر من 300 اداه محوله الى roothide",
       githubDesc: "المشاريع والكود",
+      contactDesc: "للتواصل",
+      fontTweakDesc: "اداة بصيغه dylib يتم حقنها في التطبيقات لتغيير الخط ios",
+      igArabicDesc: "اول اداة لتعريب تطبيق الانستقرام على ios",
+      tgExtraDesc: "اضافه اكثر من 80 ميزه للتلقرام",
+      neoFreeBirdDesc: "اضافه اكثر من 130 ميزه لتويتر",
+      dopamineDesc: "جلبريك مخفي من البنوك ( جميع النسخ السابقه )",
       radioSub: "البث الصوتي المباشر",
       ready: "جاهز للتشغيل",
       playing: "يعمل الآن",
@@ -989,7 +1025,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       navRadio: "الراديو",
       navProjects: "المشاريع",
       navLinks: "روابط",
-      copied: "تم نسخ رابط السورس للحافظة",
+      copied: "تم نسخ رابط السورس وفتح Sileo",
       arrow: "‹"
     },
     en: {
@@ -1001,8 +1037,14 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       links: "Links",
       live: "LIVE",
       heroSub: "iOS • Windows • Linux • Android • Jailbreak",
-      repoDesc: "Copy Repo Link",
+      repoDesc: "Sileo repo containing 300+ Roothide tweaks",
       githubDesc: "Projects & Code",
+      contactDesc: "Contact Me",
+      fontTweakDesc: "Dylib tweak injected into iOS apps to change font",
+      igArabicDesc: "First iOS tweak to translate Instagram to Arabic",
+      tgExtraDesc: "Adds 80+ features to Telegram",
+      neoFreeBirdDesc: "Adds 130+ features to Twitter",
+      dopamineDesc: "Bank-bypassing jailbreak (all previous versions)",
       radioSub: "Live Audio Stream",
       ready: "Ready to Play",
       playing: "Playing Now",
@@ -1013,7 +1055,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
       navRadio: "Radio",
       navProjects: "Projects",
       navLinks: "Links",
-      copied: "Source link copied to clipboard",
+      copied: "Repo copied and opening Sileo...",
       arrow: "›"
     }
   };
@@ -1079,17 +1121,34 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       const repoUrl = "https://ipapplus.github.io";
-      navigator.clipboard.writeText(repoUrl).then(() => {
+      const sileoUrl = "sileo://source/" + repoUrl;
+
+      const performCopy = () => {
         showToast(i18n[currentLang].copied);
-      }).catch(() => {
+        setTimeout(() => {
+          window.location.href = sileoUrl;
+        }, 300);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(repoUrl).then(performCopy).catch(() => {
+          const input = document.createElement("input");
+          input.value = repoUrl;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          document.body.removeChild(input);
+          performCopy();
+        });
+      } else {
         const input = document.createElement("input");
         input.value = repoUrl;
         document.body.appendChild(input);
         input.select();
         document.execCommand("copy");
         document.body.removeChild(input);
-        showToast(i18n[currentLang].copied);
-      });
+        performCopy();
+      }
     });
   });
 
@@ -1210,7 +1269,7 @@ html[dir="ltr"] .link:hover .link-arrow { transform: translateX(4px); }
     status.setAttribute("data-i18n", "error");
   });
 
-  const sectionOrder = ["home", "projects", "links", "live-stream", "radio"];
+  const sectionOrder = ["home", "links", "projects", "live-stream", "radio"];
 
   function updateActiveNav() {
     const scrollPosition = window.scrollY + window.innerHeight * 0.35;
