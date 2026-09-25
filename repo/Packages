@@ -92,6 +92,25 @@ Author: dvntm
 Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
 SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
 
+Package: com.dvntm.ytlite
+Architecture: iphoneos-arm64
+Version: 6.0~b1
+Section: Tweaks
+Maintainer: dvntm
+Installed-Size: 39096
+Depends: mobilesubstrate
+Filename: ./debs/rootless/com.dvntm.ytlite_6.0~b1_iphoneos-arm64.deb
+Size: 14094828
+MD5sum: 3ea100cfaf31baf3185c778979444dc5
+SHA1: 4a6bb6a7ea698d7ea274db86406775bade0c2b8b
+SHA256: 7240124d5a542c2b7591ce2814e02461b385924bdcd6cbfc0fb017130d625758
+SHA512: a9b2ba25a67346d5485596fa356be89a9c71437c8a73ad01ecef8ebf2dac6c716d45363f2796cce805fb421731b569ae189b458c729ed9a56ae0a74bfe8f899d
+Description: Lightweight YouTube Enhancer
+Name: YTLite
+Author: dvntm
+Icon: https://raw.githubusercontent.com/dayanch96/YTLite/refs/heads/main/Resources/icon.png
+SileoDepiction: https://raw.githubusercontent.com/dayanch96/YTLite/main/Resources/depiction.json
+
 Package: com.fouadraheb.regram
 Architecture: iphoneos-arm64
 Version: 6.1+regramfix10+webgate
