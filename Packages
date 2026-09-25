@@ -1803,6 +1803,24 @@ Description: Awesome tweak for Twitter
 Name: BHTwitter - orionblur
 Author: NeoFreeBird
 
+Package: com.bandarhl.orionblur
+Architecture: iphoneos-arm64
+Version: 7.0.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13708
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
+Filename: ./debs/rootless/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64.deb
+Size: 4366500
+MD5sum: eb39fd3c34b5ae890952642598d62889
+SHA1: 7c0b369525773fb7b0057fe6f205ad89ec5248cc
+SHA256: b8855548f807bf468eeb12b97f3c8d340f958b153e5082893c560d1d7982ddac
+SHA512: 63b3ef8195831778e67523fc35fb9a496db2fcb4d2c9671e660cd180d3b91a052fa2f6585fc4fe169db44024b6e912d94eb3814b48a08d00c686d48734ed101d
+Description: Awesome tweak for Twitter
+Name: BHTwitter - orionblur
+Author: NeoFreeBird
+
 Package: com.bandarhl.theacrat
 Architecture: iphoneos-arm64
 Version: 6.0.4-1+debug
@@ -4938,6 +4956,23 @@ Description: GUI Based Application for ipatool
 Name: IPA Ranger
 Author: 0xkuj <0xkujz@gmail.com>
 
+Package: com.0xkuj.iparanger
+Architecture: iphoneos-arm64e
+Version: 2.7.0
+Section: Addons
+Maintainer: 0xkuj <0xkujz@gmail.com>
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: gawk, unzip, plutil
+Filename: ./debs/roothide/com.0xkuj.iparanger_2.7.0_iphoneos-arm64e.deb
+Size: 8597708
+MD5sum: d5bbd69db9604541e54161f195f8a820
+SHA1: 9a6d3d340565a837213a0c3d42eeecaa4e2f5cf6
+SHA256: 0b5c32147fb3d5f9836d33128f9a7c194c673d03130bccdc731933cc71cf1b05
+SHA512: e802e7fa9bbade0c4f023126ef4e565393f6af7fc6629c08419691cbbb9c625a5031c9c60cd85501c503846ce38d33579d7b27aae7d1872459dd619094af47bf
+Description: GUI Based Application for ipatool
+Name: IPA Ranger
+Author: 0xkuj <0xkujz@gmail.com>
+
 Package: com.0xkuj.nopastealerts16
 Architecture: iphoneos-arm64e
 Version: 1.0.0
@@ -5333,6 +5368,25 @@ MD5sum: fd2e5dcf0128f966f9ef44cbe2b88f50
 SHA1: 972b553712a3dbfc8fe87d0226947d137f31a8e2
 SHA256: 1b0e6ca5c6c1d444f315a24169ae9c5f0ae93b95ed2df6338e768d7cff3da2e8
 SHA512: be7de5f6f1eb68cb5302ef063d4686047e08a003ce22f62dee537509d769847c008c1e2aa45f54a5c7ab8f03e161ceb2343fc00ca1d27f82176f7bc1bc58d22c
+Description: Awesome tweak for Twitter
+Name: BHTwitter - orionblur
+Author: NeoFreeBird
+
+Package: com.bandarhl.orionblur
+Architecture: iphoneos-arm64e
+Version: 7.0.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13708
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, ws.hbang.common
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
+Filename: ./debs/roothide/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.deb
+Size: 4300448
+MD5sum: 9f1c7ead5d94910f558c199a9b1fb590
+SHA1: 43db4101d3b6e0d5733599afeeb59b1d1040eebe
+SHA256: 8e7da0f7aaff1fde1027629e03cdcb7760916c58f182cdea858259db643532c1
+SHA512: 99d987b70c1a0cafe9d638545a41bcff77b0d1e1fe8de750c1ae8bca0483b156fcfd7a63defa248d8ed93398b083a3bad18c13a31b3c14e8e9391c45a664861a
 Description: Awesome tweak for Twitter
 Name: BHTwitter - orionblur
 Author: NeoFreeBird
