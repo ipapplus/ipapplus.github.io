@@ -203,6 +203,26 @@
          "version" : "2.1.1"
       },
       {
+         "Author" : "0xkuj",
+         "Maintainer" : "0xkuj",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.filzadirprobe_1.7.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:37:13Z",
+         "package" : "com.0xkuj.filzadirprobe",
+         "sha256" : "23c69cfa04dcf75af47dade1c6c450cd4dd626174a8876b4937689b8d8713d68",
+         "version" : "1.7.3"
+      },
+      {
+         "Author" : "0xkuj",
+         "Maintainer" : "0xkuj",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:37:13Z",
+         "package" : "com.0xkuj.fixwanotifs",
+         "sha256" : "552e8139926c283b4a71f11391ad1f1a458b858dd399a67eabf56cd3ba860f33",
+         "version" : "1.1.1"
+      },
+      {
          "Author" : "Lessica <82flex@gmail.com>",
          "Maintainer" : "Lessica <82flex@gmail.com>",
          "architecture" : "iphoneos-arm64",

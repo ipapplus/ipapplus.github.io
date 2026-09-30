@@ -44,6 +44,14 @@
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 11
       },
+      "com.0xkuj.filzadirprobe/1.7.3" : {
+         "first_added" : "2026-09-30T23:37:13Z",
+         "sequence" : 17
+      },
+      "com.0xkuj.fixwanotifs/1.1.1" : {
+         "first_added" : "2026-09-30T23:37:13Z",
+         "sequence" : 18
+      },
       "com.82flex.iconrestore/1.7" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 12

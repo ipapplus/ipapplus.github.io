@@ -375,6 +375,45 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.3dappversionspoo
 Size: 59232
 Version: 2.1.1
 
+Package: com.0xkuj.filzadirprobe
+Architecture: iphoneos-arm64e
+Author: 0xkuj
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.filzadirprobe_1.7.3_iphoneos-arm64e.html
+Description: Filza Extension To Calculate Folders Inside Your Filesystem
+Filename: debs/com.0xkuj.filzadirprobe_1.7.3_iphoneos-arm64e.deb
+Installed-Size: 240
+MD5sum: 260796b6c42eea2bc8bacd04909ae1df
+Maintainer: 0xkuj
+Name: FilzaDirProbe
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: e5c8413e5a8965f94cbf8fa6f400b2cccc60cc3f
+SHA256: 23c69cfa04dcf75af47dade1c6c450cd4dd626174a8876b4937689b8d8713d68
+SHA512: a5a70bbcadc09fe9f52245755e126aaac684135dda8315dde221d2991eeb93deeb68d37131a041683fa813e0559adb1dcdce0489b592ee09e0958310bd389f6d
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.filzadirprobe_1.7.3_iphoneos-arm64e.json
+Size: 36480
+Version: 1.7.3
+
+Package: com.0xkuj.fixwanotifs
+Architecture: iphoneos-arm64e
+Author: 0xkuj
+Depends: ellekit, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.html
+Description: Raises the Jetsam memory limit of WhatsApp's notification ServiceExtension in order to fix missing notifications while WhatsApp is closed. Userspace reboot is needed after install
+Filename: debs/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.deb
+Installed-Size: 384
+MD5sum: afb17bb8382b347e6005e9bc28411a82
+Maintainer: 0xkuj
+Name: FixWANotifs
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: ca5dce0fa321ad9cd4372e0eb72d145812db5d6a
+SHA256: 552e8139926c283b4a71f11391ad1f1a458b858dd399a67eabf56cd3ba860f33
+SHA512: 87326d265e77511cb8fc087713f4570bb129f6e90ae1d9a64ff6bb16d11a1db8c1b35033545c70e5f8955fd74e4970ab2c9ad03cf72b3688c5789c031cd5edb1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.json
+Size: 30096
+Version: 1.1.1
+
 Package: com.82flex.iconrestore
 Architecture: iphoneos-arm64
 Author: Lessica <82flex@gmail.com>
