@@ -4,6 +4,10 @@
          "first_added" : "2026-09-30T21:45:36Z",
          "sequence" : 1
       },
+      "apple.almohanad.font/1.0" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 4
+      },
       "apple.ios14.font/1.0" : {
          "first_added" : "2026-09-30T21:57:18Z",
          "sequence" : 2
@@ -11,6 +15,54 @@
       "apple.ios26.font/1.0" : {
          "first_added" : "2026-09-30T21:57:18Z",
          "sequence" : 3
+      },
+      "apple.ubuntu.font/1.0" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 5
+      },
+      "cm90.crossoveripc/1.1-1+debug" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 6
+      },
+      "cn.zqbb.ccatop/2.3" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 7
+      },
+      "cn.zqbb.cocoatop64.relaxin/2.3.3-2" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 8
+      },
+      "cn.zqbb.disupdateapp/2.0.0-6" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 9
+      },
+      "cn.zqbb.stopautolaunchapps/2.5" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 10
+      },
+      "com.0xkuj.3dappversionspoofer/2.1.1" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 11
+      },
+      "com.82flex.iconrestore/1.7" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 12
+      },
+      "com.82flex.singlemute/1.7" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 13
+      },
+      "com.82flex.singlevpn/2.1-2" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 14
+      },
+      "com.alshaman.twiteddate/0.0.1-2" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 15
+      },
+      "com.asterix.digitalbattery13/1.1.0" : {
+         "first_added" : "2026-09-30T23:25:23Z",
+         "sequence" : 16
       }
    },
    "schema" : 1

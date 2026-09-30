@@ -40,10 +40,40 @@
          "Author" : "Apple",
          "Maintainer" : "Apple",
          "architecture" : "iphoneos-arm64",
+         "filename" : "debs/apple.almohanad.font_1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "apple.almohanad.font",
+         "sha256" : "9f8b39e8eb2b0d17bca8586d55c7cb61531fa636c3114bcf31873af1e7a1bc33",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/apple.almohanad.font_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "apple.almohanad.font",
+         "sha256" : "760af5a3d6e3a2c223f969c542226e21ebdd222bdc2a0bd31672b41c40afa34a",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64",
          "filename" : "debs/apple.ios14.font_1.0_iphoneos-arm64.deb",
          "first_added" : "2026-09-30T21:57:18Z",
          "package" : "apple.ios14.font",
          "sha256" : "3dc7ef57d1739fceadaafeba496c6e1501cc343060992639576debe0284081f9",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/apple.ios14.font_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T21:57:18Z",
+         "package" : "apple.ios14.font",
+         "sha256" : "50b1a96100326c05d6702464a5d459bb140a1f84e9464f71b1f57c42d02f7f5f",
          "version" : "1.0"
       },
       {
@@ -55,6 +85,230 @@
          "package" : "apple.ios26.font",
          "sha256" : "db617df95a0d21a43b368db9a8dcc26344cccc0fe3ac10d92e9fa4a1263ac26b",
          "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/apple.ios26.font_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T21:57:18Z",
+         "package" : "apple.ios26.font",
+         "sha256" : "0bac1f4fad61a38fc2952bf02a91f76e7f9aed2cde40b2597e40952bfd6648ca",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/apple.ubuntu.font_1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "apple.ubuntu.font",
+         "sha256" : "95d730970a1da5157d334461f4aed61c58808173ee6818a8a776078751626c1e",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/apple.ubuntu.font_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "apple.ubuntu.font",
+         "sha256" : "8b2580a418ba8f5926bbf2a16645e776552df2867b8f4de833af6bfb0a169ae7",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "@CrazyMind90",
+         "Maintainer" : "@CrazyMind90",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/cm90.crossoveripc_1.1-1+debug_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cm90.crossoveripc",
+         "sha256" : "fd280696bc1d87bce877504d14ce540d846e85f759f867be13e17eb599f1450a",
+         "version" : "1.1-1+debug"
+      },
+      {
+         "Author" : "Domo, SXX",
+         "Maintainer" : "SXX, Domo",
+         "SileoDepiction" : "https://apt.002599.xyz/web/cn.zqbb.ccatop",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/cn.zqbb.ccatop_2.3_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.ccatop",
+         "sha256" : "f9179b8f8e137e973267cfaa01d8087b2d9d5c8d903d6b6978aa93c33d83a37d",
+         "version" : "2.3"
+      },
+      {
+         "Author" : "Domo, SXX",
+         "Maintainer" : "SXX, Domo",
+         "SileoDepiction" : "https://apt.002599.xyz/web/cn.zqbb.cocoatop64.relaxin",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/cn.zqbb.cocoatop64.relaxin_2.3.3-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.cocoatop64.relaxin",
+         "sha256" : "92c2fe8ff740e89b2c4c7e55fb219b817b5e5c58dfb227685d7c9f1169cde045",
+         "version" : "2.3.3-2"
+      },
+      {
+         "Author" : "zqbb",
+         "Maintainer" : "zqbb",
+         "SileoDepiction" : "https://rootless.002599.xyz/web/cn.zqbb.disupdateapp",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.disupdateapp",
+         "sha256" : "acb6b6f4f96c61f9c061aca4cc4728211ecbfed74038c2167cc717aa335e6859",
+         "version" : "2.0.0-6"
+      },
+      {
+         "Author" : "zqbb",
+         "Maintainer" : "zqbb",
+         "SileoDepiction" : "https://rootless.002599.xyz/web/cn.zqbb.disupdateapp",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.disupdateapp",
+         "sha256" : "8b636260cec451024da0c620602d798533b87d97634991cd531504a79958908f",
+         "version" : "2.0.0-6"
+      },
+      {
+         "Author" : "zqbb",
+         "Maintainer" : "zqbb",
+         "SileoDepiction" : "https://rootless.002599.xyz/web/cn.zqbb.stopautolaunchapps",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.stopautolaunchapps",
+         "sha256" : "75bbaccea40f6d9566143fa01f0250e6b28061679e913232a9169ffab87e2271",
+         "version" : "2.5"
+      },
+      {
+         "Author" : "zqbb",
+         "Maintainer" : "zqbb",
+         "SileoDepiction" : "https://rootless.002599.xyz/web/cn.zqbb.stopautolaunchapps",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.stopautolaunchapps",
+         "sha256" : "0b7d5c67b6ea9c97cdb34418c21ce47e312ad166465d33fbb5332aaa892d3dfa",
+         "version" : "2.5"
+      },
+      {
+         "Author" : "0xkuj",
+         "Maintainer" : "0xkuj",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.3dappversionspoofer_2.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.0xkuj.3dappversionspoofer",
+         "sha256" : "45ca8a8b043fd078669e64053cd9b3404aa329f7a5813a98cd3534292bc580cd",
+         "version" : "2.1.1"
+      },
+      {
+         "Author" : "Lessica <82flex@gmail.com>",
+         "Maintainer" : "Lessica <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.82flex.iconrestore_1.7_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.iconrestore",
+         "sha256" : "5dc8f253e546446194318244171043db34aadb2b22bac16f45911d1dc101d6c2",
+         "version" : "1.7"
+      },
+      {
+         "Author" : "Lessica <82flex@gmail.com>",
+         "Maintainer" : "Lessica <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.82flex.iconrestore_1.7_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.iconrestore",
+         "sha256" : "3295c74e1fb64208ac0aa0018773075b6a16dc60ee11b55d37140ca571011a03",
+         "version" : "1.7"
+      },
+      {
+         "Author" : "82Flex <82flex@gmail.com>",
+         "Maintainer" : "82Flex <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.82flex.singlemute_1.7_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.singlemute",
+         "sha256" : "bde68dd6c285273330d66d8b613239eaec6d037e8e00c15f011e5a47f9148f80",
+         "version" : "1.7"
+      },
+      {
+         "Author" : "82Flex <82flex@gmail.com>",
+         "Maintainer" : "82Flex <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.82flex.singlemute_1.7_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.singlemute",
+         "sha256" : "18f40fe64e6462f159c12ed5b10aedbcc660b78b07459d337bad959ef752be7b",
+         "version" : "1.7"
+      },
+      {
+         "Author" : "82Flex <82flex@gmail.com>",
+         "Maintainer" : "82Flex <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.82flex.singlevpn_2.1-2_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.singlevpn",
+         "sha256" : "64cf11c80cff064441da8f1013a22ba34c0a59e2465b98d8d2b75d8d92064d80",
+         "version" : "2.1-2"
+      },
+      {
+         "Author" : "82Flex <82flex@gmail.com>",
+         "Maintainer" : "82Flex <82flex@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.82flex.singlevpn_2.1-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.82flex.singlevpn",
+         "sha256" : "ed4fe4cc249c988b93755fd3b8250239fffac338945c6e0c5aac550bd4f34424",
+         "version" : "2.1-2"
+      },
+      {
+         "Author" : "Saud Alshaman <alshaman64@gmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.alshaman.twiteddate",
+         "sha256" : "255f3bc05b78291e65f27b86f23b4207727892ff1baaf650cfdbdb8e45c99ab3",
+         "version" : "0.0.1-2"
+      },
+      {
+         "Author" : "Saud Alshaman <alshaman64@gmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.alshaman.twiteddate",
+         "sha256" : "51bba514a6a070936a7e6fe8048ff5820d1af6f23a83834a1e8c29525dd6bf1c",
+         "version" : "0.0.1-2"
+      },
+      {
+         "Author" : "Asterix <asterix_gaul@outlook.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.asterix.digitalbattery13",
+         "sha256" : "31d712df363a50b910309b7004a27036e4e88a12bf65f3f0866eb776ed88b446",
+         "version" : "1.1.0"
+      },
+      {
+         "Author" : "Asterix <asterix_gaul@outlook.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "com.asterix.digitalbattery13",
+         "sha256" : "5c2b94d7a58e5ea1f0fad0f9bc388c1e177900cf68ae8f363bc6dfbed1ac1046",
+         "version" : "1.1.0"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",

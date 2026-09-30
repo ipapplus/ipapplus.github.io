@@ -68,6 +68,42 @@ SileoDepiction: https://ipapplus.github.io/depictions/ai.akemi.appsyncunified_11
 Size: 79596
 Version: 116.0
 
+Package: apple.almohanad.font
+Architecture: iphoneos-arm64
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.almohanad.font_1.0_iphoneos-arm64.html
+Description: Arabic & English
+Filename: debs/apple.almohanad.font_1.0_iphoneos-arm64.deb
+MD5sum: 2bc0db275a653439dd15f1158238fa9e
+Maintainer: Apple
+Name: Almohanad-Long-KAF
+SHA1: 5011973beb00206e8a6f289b7de425c27c8da95a
+SHA256: 9f8b39e8eb2b0d17bca8586d55c7cb61531fa636c3114bcf31873af1e7a1bc33
+SHA512: b1dca1c7ee20cc97c06d53820e57fd1d07eae00bd07ddc6a56b8e09add5d10e50d04e63b5c6a8486e89fd07ca9cf5f8f184ca2b3575de43793b961c9a6db4574
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.almohanad.font_1.0_iphoneos-arm64.json
+Size: 1106724
+Version: 1.0
+
+Package: apple.almohanad.font
+Architecture: iphoneos-arm64e
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.almohanad.font_1.0_iphoneos-arm64e.html
+Description: Arabic & English
+Filename: debs/apple.almohanad.font_1.0_iphoneos-arm64e.deb
+MD5sum: d6f047618dbbf8e1b78cbe33a275baae
+Maintainer: Apple
+Name: Almohanad-Long-KAF
+SHA1: 5c769133be1adf20525e2e93fafd3a3d8889b0f2
+SHA256: 760af5a3d6e3a2c223f969c542226e21ebdd222bdc2a0bd31672b41c40afa34a
+SHA512: 873b21d39d5b88cb223273d116f661d9d280f32d2007109a15150c425e61e58c865db1ceea03d4cf7ecd5a651cf0973193a9ea9f97b48fc371c82427d4417432
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.almohanad.font_1.0_iphoneos-arm64e.json
+Size: 1107120
+Version: 1.0
+
 Package: apple.ios14.font
 Architecture: iphoneos-arm64
 Author: Apple
@@ -84,6 +120,24 @@ SHA512: 53dee82b0f2aaa99a97d5b2407aa0094ee4b444b2796770fccfe2eeaebb42fb8695625c1
 Section: Fonts
 SileoDepiction: https://ipapplus.github.io/depictions/apple.ios14.font_1.0_iphoneos-arm64.json
 Size: 207600
+Version: 1.0
+
+Package: apple.ios14.font
+Architecture: iphoneos-arm64e
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ios14.font_1.0_iphoneos-arm64e.html
+Description: Arabic & English
+Filename: debs/apple.ios14.font_1.0_iphoneos-arm64e.deb
+MD5sum: 4dbd86a9984727f96bb62f328c795865
+Maintainer: Apple
+Name: Arabic UI Display iOS14
+SHA1: d7aa4e02588d167cbbc1a9b4d723dab3df9c7a8b
+SHA256: 50b1a96100326c05d6702464a5d459bb140a1f84e9464f71b1f57c42d02f7f5f
+SHA512: c40af8400926b3beb46d902eec01133d8e78fe9e28861d67dfefd8d60692a5514d7117eb0be1f80ae1ffcfb59a7168df4efcace8e6adbe0ac61db46fd3976787
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ios14.font_1.0_iphoneos-arm64e.json
+Size: 207448
 Version: 1.0
 
 Package: apple.ios26.font
@@ -103,4 +157,432 @@ Section: Fonts
 SileoDepiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm64.json
 Size: 116204
 Version: 1.0
+
+Package: apple.ios26.font
+Architecture: iphoneos-arm64e
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm64e.html
+Description: Arabic & English
+Filename: debs/apple.ios26.font_1.0_iphoneos-arm64e.deb
+MD5sum: abd0c813a23586aea5bfb418518383cd
+Maintainer: Apple
+Name: Arabic UI Text Medium iOS26
+SHA1: c31a7d03e4424e72ba8bf8e1f7b4de44c5f431a8
+SHA256: 0bac1f4fad61a38fc2952bf02a91f76e7f9aed2cde40b2597e40952bfd6648ca
+SHA512: cd0e86913713140b41eca00090914d5a4077c9b0735d91e8dbfe3845c7d5108829e7c2207dfbbd29ee2441301e6a68554e42b2279db080cc37a7cf4e5cb6e33d
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm64e.json
+Size: 116156
+Version: 1.0
+
+Package: apple.ubuntu.font
+Architecture: iphoneos-arm64
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ubuntu.font_1.0_iphoneos-arm64.html
+Description: Arabic & English
+Filename: debs/apple.ubuntu.font_1.0_iphoneos-arm64.deb
+MD5sum: 1a75ec30d24547bf6697b02c8850ce57
+Maintainer: Apple
+Name: Ubuntu Arabic Bold
+SHA1: 18027ea1bdb507de042e6f8cc69b34125c1d589b
+SHA256: 95d730970a1da5157d334461f4aed61c58808173ee6818a8a776078751626c1e
+SHA512: 2dc0f8c89854ed50062ec81624b730fca768ba5aaae751e1a65aeea1cec31201f5af3bf4099ae6e7c5f9b3f80d27e731a4f1180c0002d2ede6bfff9585d4c60a
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ubuntu.font_1.0_iphoneos-arm64.json
+Size: 91628
+Version: 1.0
+
+Package: apple.ubuntu.font
+Architecture: iphoneos-arm64e
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ubuntu.font_1.0_iphoneos-arm64e.html
+Description: Arabic & English
+Filename: debs/apple.ubuntu.font_1.0_iphoneos-arm64e.deb
+MD5sum: 0ce23b160de88c601ad2d6d8f9a04056
+Maintainer: Apple
+Name: Ubuntu Arabic Bold
+SHA1: e44b60b0b92cb6885bab016ec94b1c89bfd25aaa
+SHA256: 8b2580a418ba8f5926bbf2a16645e776552df2867b8f4de833af6bfb0a169ae7
+SHA512: 2419f09efbcdeaa8ddd9bd8daa48bca3fa89d294c25231eab8f19e43f3e3b9f061a3076ee6e71d6a33c2db59c43c0e18c44d1ece3cde5e2e9ab6971f0a44531a
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ubuntu.font_1.0_iphoneos-arm64e.json
+Size: 91600
+Version: 1.0
+
+Package: cm90.crossoveripc
+Architecture: iphoneos-arm64
+Author: @CrazyMind90
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/cm90.crossoveripc_1.1-1+debug_iphoneos-arm64.html
+Description: A cross-process communication tool for sending and receiving messages on iOS 15 & 16 for rootless JBs
+Filename: debs/cm90.crossoveripc_1.1-1+debug_iphoneos-arm64.deb
+Installed-Size: 364
+MD5sum: 9c5c295e391e806ed12ec5792cb895ab
+Maintainer: @CrazyMind90
+Name: CrossOverIPC
+SHA1: 495751494bff50e9d52695616589070053d86046
+SHA256: fd280696bc1d87bce877504d14ce540d846e85f759f867be13e17eb599f1450a
+SHA512: 948216c5d4561ddf19bc99deac13d29090780277cc18494ebf665c5d177e69d8adc5837259810baa1ec452bc63cb765e6677c3a0d04c743d7bb1d1f6e06caf0f
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/cm90.crossoveripc_1.1-1+debug_iphoneos-arm64.json
+Size: 14808
+Version: 1.1-1+debug
+
+Package: cn.zqbb.ccatop
+Architecture: iphoneos-arm64
+Author: Domo, SXX
+Conflicts: ru.domo.cocoatop, ru.domo.cocoatop64, cn.zqbb.cocoatop64.inject.roothide, zp.cocoatop64.unject, zp.cocoatop64.unject.xina, zp.cocoatop64.inject
+Depends: 
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.ccatop_2.3_iphoneos-arm64.html
+Description: Process Viewer for iOS GUI, updated for iOS 13 by SXX.
+Filename: debs/cn.zqbb.ccatop_2.3_iphoneos-arm64.deb
+Icon: https://apt.002599.xyz/web/icon/cn.zqbb.ccatop.png
+Installed-Size: 840
+MD5sum: 471345a7f5fe2bfa8fe13803846bff84
+Maintainer: SXX, Domo
+Name: CocoaTop
+SHA1: e92144d4b2cf3852dd8067dbba1f563b0ec6f539
+SHA256: f9179b8f8e137e973267cfaa01d8087b2d9d5c8d903d6b6978aa93c33d83a37d
+SHA512: b4c418b75220cf3dccec570386bcccc69a034415cf0e733b66057db290d44272c9358c8d4b5e215945a397cd179c97e19e0dacf16930414c6cf33dc8ee674339
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.ccatop_2.3_iphoneos-arm64.json
+Size: 183376
+Version: 2.3
+
+Package: cn.zqbb.cocoatop64.relaxin
+Architecture: iphoneos-arm64e
+Author: Domo, SXX
+Conflicts: ru.domo.cocoatop, ru.domo.cocoatop64, cn.zqbb.cocoatop64.inject.roothide, zp.cocoatop64.unject, zp.cocoatop64.unject.xina, zp.cocoatop64.inject
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.cocoatop64.relaxin_2.3.3-2_iphoneos-arm64e.html
+Description: Process Viewer for iOS GUI, updated for iOS 13 by SXX.
+Filename: debs/cn.zqbb.cocoatop64.relaxin_2.3.3-2_iphoneos-arm64e.deb
+Icon: https://apt.002599.xyz/web/icon/cn.zqbb.cocoatop64.relaxin.png
+Installed-Size: 888
+MD5sum: feb96da7f2cee51159ff75df4904a9cd
+Maintainer: SXX, Domo
+Name: CocoaTop64 Relaxin
+Replaces: ru.domo.cocoatop, ru.domo.cocoatop64, cn.zqbb.cocoatop64.inject.roothide, zp.cocoatop64.unject, zp.cocoatop64.unject.xina, zp.cocoatop64.inject
+SHA1: 8ccc12c207f681ce9ea99afa93bc97d11fffcd9f
+SHA256: 92c2fe8ff740e89b2c4c7e55fb219b817b5e5c58dfb227685d7c9f1169cde045
+SHA512: 371c1af2cf66a4e1fca173d1eff2644ad2535787a51d7ffdc4ed61c3bf6885abc27744391ba5051ab4b4b21c62ff6b0a1241ba0e5ad0c28e52c9ecd057d93d8a
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.cocoatop64.relaxin_2.3.3-2_iphoneos-arm64e.json
+Size: 233292
+Version: 2.3.3-2
+
+Package: cn.zqbb.disupdateapp
+Architecture: iphoneos-arm64
+Author: zqbb
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64.html
+Description: 屏蔽App Store更新提示(Block App Store Updates)!
+Filename: debs/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64.deb
+Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
+Installed-Size: 692
+MD5sum: c75257b62eaea463a9ca9444e21c25ba
+Maintainer: zqbb
+Name: Hello App 
+SHA1: b37330e105bd3e812b5cd143c02d49d8ea55e464
+SHA256: acb6b6f4f96c61f9c061aca4cc4728211ecbfed74038c2167cc717aa335e6859
+SHA512: c07957676e5dab4f059d8985207c95667fb9b016a28010273aaad9b5f3b8b177f9cb20f87e037e62ea360aa4466e8790fc3dddaf43bd336840e2b90245cc12f9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64.json
+Size: 129654
+Version: 2.0.0-6
+
+Package: cn.zqbb.disupdateapp
+Architecture: iphoneos-arm64e
+Author: zqbb
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64e.html
+Description: 屏蔽App Store更新提示(Block App Store Updates)!
+Filename: debs/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64e.deb
+Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
+Installed-Size: 720
+MD5sum: cde720ec3a3c718948f181cfc1a96b67
+Maintainer: zqbb
+Name: Hello App 
+SHA1: a999c2b1c8856ed4485856c76572e72fef7b2360
+SHA256: 8b636260cec451024da0c620602d798533b87d97634991cd531504a79958908f
+SHA512: 8bd9c69ceb669f021212091c0208cc371e893ca7a71b2ff00589808ee951144a934fecb2900fa5de088d5b81dba9cc1797b6796370323b7ce99fc883726ba3af
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64e.json
+Size: 129804
+Version: 2.0.0-6
+
+Package: cn.zqbb.stopautolaunchapps
+Architecture: iphoneos-arm64
+Author: zqbb
+Conflicts: zp.stopautolaunchapps
+Depends: mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64.html
+Description: 别在后台热加载app咯! 
+ - 优点:节约内存,少杀后台. 
+Filename: debs/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64.deb
+Installed-Size: 1104
+MD5sum: 2e72ec534568940c9ca4d5ea6195d948
+Maintainer: zqbb
+Name: Hello 3Q
+SHA1: fb0c6efdff66cb31a9f3bf3f1409e510ef5d89ce
+SHA256: 75bbaccea40f6d9566143fa01f0250e6b28061679e913232a9169ffab87e2271
+SHA512: 2f64ebbd791189daf0d62a07c5731662408fe33ee987cc759c484b6abb4ea7de468dec7bff81ec2eb4d0fee7837b9f1c75d5f1ef33c608bd6f7fb696f123a0fc
+Section: zqbb Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64.json
+Size: 254612
+Version: 2.5
+
+Package: cn.zqbb.stopautolaunchapps
+Architecture: iphoneos-arm64e
+Author: zqbb
+Conflicts: zp.stopautolaunchapps
+Depends: mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64e.html
+Description: 别在后台热加载app咯! 
+ - 优点:节约内存,少杀后台. 
+Filename: debs/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64e.deb
+Installed-Size: 1120
+MD5sum: 10ecfd412cf9df7f3d643bc574f4a3f2
+Maintainer: zqbb
+Name: Hello 3Q
+SHA1: 2ec33e856e953fcde5347dc9eb831e03acee04ec
+SHA256: 0b7d5c67b6ea9c97cdb34418c21ce47e312ad166465d33fbb5332aaa892d3dfa
+SHA512: 6560c86a53a9a8b2af091ff0cd692249387cf86aee10ecdc50857c35a04771939d0ff320e6cf4cf716ab903ecadf0f154002958b0e243c4b36f84855921718c7
+Section: zqbb Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.stopautolaunchapps_2.5_iphoneos-arm64e.json
+Size: 254952
+Version: 2.5
+
+Package: com.0xkuj.3dappversionspoofer
+Architecture: iphoneos-arm64e
+Author: 0xkuj
+Depends: com.opa334.altlist
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.3dappversionspoofer_2.1.1_iphoneos-arm64e.html
+Description: A tweak to add app spoofing capabilities right from your 3D menu and prefs
+Filename: debs/com.0xkuj.3dappversionspoofer_2.1.1_iphoneos-arm64e.deb
+Installed-Size: 408
+MD5sum: b92dfc15db99a0a5c85894e6ba9d18e1
+Maintainer: 0xkuj
+Name: 3DAppVersionSpoofer
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 3977e0d59e2642e4a853048292edfa52691c36bb
+SHA256: 45ca8a8b043fd078669e64053cd9b3404aa329f7a5813a98cd3534292bc580cd
+SHA512: fe1d0c7bd9d05a5ed68dc67c9562cc91a69f64433980bd403faff3c6e2ee10aa6f4649e4ff153fd86340c7335c797e5223b687ab4e2b466e25c6ac396b2dd7dd
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.3dappversionspoofer_2.1.1_iphoneos-arm64e.json
+Size: 59232
+Version: 2.1.1
+
+Package: com.82flex.iconrestore
+Architecture: iphoneos-arm64
+Author: Lessica <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.iconrestore_1.7_iphoneos-arm64.html
+Description: Save and restore the layout of your icons.
+Filename: debs/com.82flex.iconrestore_1.7_iphoneos-arm64.deb
+Installed-Size: 412
+MD5sum: 26c83f45ffe65e95b12b58a57e97363a
+Maintainer: Lessica <82flex@gmail.com>
+Name: Icon Restore
+SHA1: c361fb1efbbf80ed30f8e20f45a3186937f77340
+SHA256: 5dc8f253e546446194318244171043db34aadb2b22bac16f45911d1dc101d6c2
+SHA512: 5539ba8ff8592d081fd48d6a188a762224e0de696bd288ccc7e845c59559254db09cc6fb2715bb731bbeff950a138d7fe130d752033baac8b0b9473f6b212ff4
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.iconrestore_1.7_iphoneos-arm64.json
+Size: 30524
+Version: 1.7
+
+Package: com.82flex.iconrestore
+Architecture: iphoneos-arm64e
+Author: Lessica <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.iconrestore_1.7_iphoneos-arm64e.html
+Description: Save and restore the layout of your icons.
+Filename: debs/com.82flex.iconrestore_1.7_iphoneos-arm64e.deb
+Installed-Size: 412
+MD5sum: 02981d29408cca4e26ad7b02511ab243
+Maintainer: Lessica <82flex@gmail.com>
+Name: Icon Restore
+SHA1: ec4d78685a45564473a20ba04908279f07a99c3f
+SHA256: 3295c74e1fb64208ac0aa0018773075b6a16dc60ee11b55d37140ca571011a03
+SHA512: b8d582a985c8cb3c7c16d490df1ada28f85edf918effdd0b9353e4bc77566538796af4715c3d931354fa374822b0766f44bc16f52e372f1ecf7089cbb1a4d757
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.iconrestore_1.7_iphoneos-arm64e.json
+Size: 30480
+Version: 1.7
+
+Package: com.82flex.singlemute
+Architecture: iphoneos-arm64
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm64.html
+Description: Just a single mute icon on the status bar of iOS.
+Filename: debs/com.82flex.singlemute_1.7_iphoneos-arm64.deb
+Installed-Size: 388
+MD5sum: ef77432d2edf43decb27bf1ee17ebab4
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single Mute
+SHA1: 79b2eebac24e0ecd1be28576fc3985c373e022d6
+SHA256: bde68dd6c285273330d66d8b613239eaec6d037e8e00c15f011e5a47f9148f80
+SHA512: 595004e9960189960003a7afc829415dba49113e160d83db4d3515701d9889315722741ffb68e71475801b3aebf229c80c278a9182904d9ed4ffcfb3faa82d0e
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm64.json
+Size: 27680
+Version: 1.7
+
+Package: com.82flex.singlemute
+Architecture: iphoneos-arm64e
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm64e.html
+Description: Just a single mute icon on the status bar of iOS.
+Filename: debs/com.82flex.singlemute_1.7_iphoneos-arm64e.deb
+Installed-Size: 388
+MD5sum: c316f7d40742d5b2c420b9eee415311d
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single Mute
+SHA1: 38594dabf5a208a48f73d158da571a69d97048d6
+SHA256: 18f40fe64e6462f159c12ed5b10aedbcc660b78b07459d337bad959ef752be7b
+SHA512: 645a7ecf265200ef8287d727dbe627b1a7bbb227839bc325a594a8885b688a0b1626d519d4b8236eb7aba3ff41dada94543e7880eafb1536e6b0ea20659500e0
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm64e.json
+Size: 27628
+Version: 1.7
+
+Package: com.82flex.singlevpn
+Architecture: iphoneos-arm64
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm64.html
+Description: Combine VPN state and wireless state into one icon.
+Filename: debs/com.82flex.singlevpn_2.1-2_iphoneos-arm64.deb
+Installed-Size: 420
+MD5sum: cd1fff931cbaf93a151dadc320e9990e
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single VPN
+SHA1: 3f5e37b459d7ffda210420e62578fe8ff4378c7e
+SHA256: 64cf11c80cff064441da8f1013a22ba34c0a59e2465b98d8d2b75d8d92064d80
+SHA512: bbf9141ff33d6a7d0d62024d1f56712cd7070b5a322a201aaec904106545f1261199e6e9f7732a6b0b5c6cdf0ff834fe58111262e0c3b662ca4a43cb212bee21
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm64.json
+Size: 35288
+Version: 2.1-2
+
+Package: com.82flex.singlevpn
+Architecture: iphoneos-arm64e
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm64e.html
+Description: Combine VPN state and wireless state into one icon.
+Filename: debs/com.82flex.singlevpn_2.1-2_iphoneos-arm64e.deb
+Installed-Size: 420
+MD5sum: a10b362c534447a3ca441692e51ccf72
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single VPN
+SHA1: 3aa0c3a1a805a082cb109b1609cac58b67f32776
+SHA256: ed4fe4cc249c988b93755fd3b8250239fffac338945c6e0c5aac550bd4f34424
+SHA512: 49b4335f01e231b868d11d1baa86b8c1b53b982dc5f45c204414506339c9c9d2da9378c957bfac5d7d021187bbd8f5c59f9b84c114adcbd9da6e20c312c3a8fb
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm64e.json
+Size: 35216
+Version: 2.1-2
+
+Package: com.alshaman.twiteddate
+Architecture: iphoneos-arm64
+Author: Saud Alshaman <alshaman64@gmail.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64.html
+Description: Show account creation date details in Twitter App
+Filename: debs/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp
+Installed-Size: 138
+MD5sum: 12bf91a8337ad47a698f905632bb463a
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: TwitDate
+SHA1: 0f1e52584b559b82e030396fc60d0c3da1cccd0f
+SHA256: 255f3bc05b78291e65f27b86f23b4207727892ff1baaf650cfdbdb8e45c99ab3
+SHA512: c9488bc1f53ba3e56621abc3df70cb579a07664867c88f71bd607fdb5d04361e87be2d5708217153aa4c0dc4f8303a22140b64f208ca090a781cab38871b9f58
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64.json
+Size: 5476
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 0.0.1-2
+dev: alshaman
+
+Package: com.alshaman.twiteddate
+Architecture: iphoneos-arm64e
+Author: Saud Alshaman <alshaman64@gmail.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64e.html
+Description: Show account creation date details in Twitter App
+Filename: debs/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp
+Installed-Size: 138
+MD5sum: b4898ad69e391a25ea8b5cace2181483
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: TwitDate
+SHA1: 009371088cfb509e5b442fec2441acb7425eafc1
+SHA256: 51bba514a6a070936a7e6fe8048ff5820d1af6f23a83834a1e8c29525dd6bf1c
+SHA512: 4d83009021a83a9a7ea5564ab59779cce24aaf35e3ccd3b2b183252178bccb3f462698d0e08019c2992309bb7a85e031c2d20e84e14f43c59fa511cbae538113
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm64e.json
+Size: 7716
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 0.0.1-2
+dev: alshaman
+
+Package: com.asterix.digitalbattery13
+Architecture: iphoneos-arm64
+Author: Asterix <asterix_gaul@outlook.com>
+Conflicts: com.spark.batterypercentx, com.neinzedd9.percentagebatteryx, com.dpkg.batterypercent12, com.dpkg.arkrome, ca.ndoizo.perxent, com.asterix.modernbatteryx, com.laughingquoll.cowbell, com.peterdev.half, com.asterix.digitalnotchedbattery
+Depends: firmware (>= 13.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.creaturesurvive.libcscolorpicker, cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.html
+Description: Digital battery in statusbar for iOS13-iOS16
+Filename: debs/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp
+Icon: file:///Library/PreferenceBundles/DigitalBattery13.bundle/icon@2x.png
+Installed-Size: 509
+MD5sum: a6a44c47f7c027fcb00e453285b74ffb
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: DigitalBattery13-16
+SHA1: 1933ec4722e2125beb2b40b100a95a44f9fd25c5
+SHA256: 31d712df363a50b910309b7004a27036e4e88a12bf65f3f0866eb776ed88b446
+SHA512: 62d85aed0aab6c7d857cd6eb830fb330ac10323124765d975f5b9bdd6e05886130db6179be9eb91e463dfe792c83174b991b8a33d3aea6c82c038109633df112
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.json
+Size: 39632
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension, compatible::ios13
+Version: 1.1.0
+dev: asterix
+
+Package: com.asterix.digitalbattery13
+Architecture: iphoneos-arm64e
+Author: Asterix <asterix_gaul@outlook.com>
+Conflicts: com.spark.batterypercentx, com.neinzedd9.percentagebatteryx, com.dpkg.batterypercent12, com.dpkg.arkrome, ca.ndoizo.perxent, com.asterix.modernbatteryx, com.laughingquoll.cowbell, com.peterdev.half, com.asterix.digitalnotchedbattery
+Depends: firmware (>= 13.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.creaturesurvive.libcscolorpicker, cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.html
+Description: Digital battery in statusbar for iOS13-iOS16
+Filename: debs/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=digitalbattery13Dp
+Icon: file:///Library/PreferenceBundles/DigitalBattery13.bundle/icon@2x.png
+Installed-Size: 509
+MD5sum: f003a757f17117779f83f8e638b88d83
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: DigitalBattery13-16
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: c5bba74ec80e96c7b01c4a740f48b3428764007a
+SHA256: 5c2b94d7a58e5ea1f0fad0f9bc388c1e177900cf68ae8f363bc6dfbed1ac1046
+SHA512: 60e95fcb27ffde5c5c62f5eac9558bedf89c5a5e424f2113a975f5f8abed5db63c34975b7a20d57ec413ff56715ced8dfc93153e9d5a9367f1ab24ea29c3f3f1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.json
+Size: 40984
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension, compatible::ios13
+Version: 1.1.0
+dev: asterix
 
