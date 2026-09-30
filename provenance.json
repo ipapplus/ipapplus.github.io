@@ -1,0 +1,42 @@
+{
+   "archives" : [
+      {
+         "Author" : "Karen/あけみ, Linus Yang <karen@akemi.ai>",
+         "Depiction" : "https://cydia.akemi.ai/?page/ai.akemi.appsyncunified",
+         "Homepage" : "https://cydia.akemi.ai/",
+         "Maintainer" : "Karen/あけみ <karen@akemi.ai>",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/ai.akemi.appsyncunified_116.0_iphoneos-arm.deb",
+         "first_added" : "2026-09-30T21:45:36Z",
+         "package" : "ai.akemi.appsyncunified",
+         "sha256" : "1ebc81a4b146b8bd1d83e90ada0475f2a0e24dd71fa85b7e31a17508e0f6e1c7",
+         "version" : "116.0"
+      },
+      {
+         "Author" : "Karen/あけみ, Linus Yang <karen@akemi.ai>",
+         "Depiction" : "https://cydia.akemi.ai/?page/ai.akemi.appsyncunified",
+         "Homepage" : "https://cydia.akemi.ai/",
+         "Maintainer" : "Karen/あけみ <karen@akemi.ai>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/ai.akemi.appsyncunified_116.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T21:45:36Z",
+         "package" : "ai.akemi.appsyncunified",
+         "sha256" : "2a22a0e39fc03df37baa2899c61d4f566c5fd59bc3ab7f1a3afec3d4badc7b7f",
+         "version" : "116.0"
+      },
+      {
+         "Author" : "Karen/あけみ, Linus Yang <karen@akemi.ai>",
+         "Depiction" : "https://cydia.akemi.ai/?page/ai.akemi.appsyncunified",
+         "Homepage" : "https://cydia.akemi.ai/",
+         "Maintainer" : "Karen/あけみ <karen@akemi.ai>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-09-30T21:45:36Z",
+         "package" : "ai.akemi.appsyncunified",
+         "sha256" : "4ee6bae94c9f9048c87f883944b4903187a7b8d1e546a2213b21de9b8b640281",
+         "version" : "116.0"
+      }
+   ],
+   "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",
+   "schema" : 1
+}

@@ -1,0 +1,11 @@
+{
+   "depictions" : {
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm.html" : "40595dd80960c75e96b29e6c735e135c7569a94643582fe4bb6f244061de2ef8",
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm.json" : "4b57da1dad7f2d4d1ba9466192b97d3b4b77bef5f8c680c7b797033c6cae42bb",
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64.html" : "84d15af7cf43d3275f2e302843defb377060f53c018a2e945ea374359bebe436",
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64.json" : "7e009a4b3341d7da61a74f83d13f2fa268692a33d494a42d1869bb8b0c5c9026",
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.html" : "44bf542540a588de76edd70dc8d2f790c66c67dd16563ccf940f18252d7a2cf0",
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.json" : "0cb0037fbb55fd4943971f9ef82e8776bbb07b0e2709b659561a2ca805578b19"
+   },
+   "schema" : 1
+}

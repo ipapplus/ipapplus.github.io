@@ -1,0 +1,41 @@
+# Runtime and staging
+.repo.lock
+.repo-stage-*/
+codex_repo_upgrade.log
+*.tmp
+*.temp
+*.swp
+*~
+.DS_Store
+# Local backups and regression fixtures
+backups/
+backup/
+*.bak
+*.backup
+.repo-test-*/
+repo-auto-*/
+repo-regression-*/
+repo-apt-*/
+# Root-level imports are local until validated into debs/
+/*.deb
+# Signing secrets; public signatures and public keyrings are not ignored
+.gnupg/
+private-keys-v1.d/
+*.private
+*.key
+*.pem
+*.p12
+*.pfx
+*.passphrase
+.env
+.env.*
+repo-catalog-*/
+*passphrase*
+private*.asc
+secret*.asc
+secring.gpg
+*.bak.*
+backup-*/
+repo-backup*/
+.repo-transaction/
+repo-lifecycle-*/
