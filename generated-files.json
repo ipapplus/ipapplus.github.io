@@ -5,7 +5,11 @@
       "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64.html" : "84d15af7cf43d3275f2e302843defb377060f53c018a2e945ea374359bebe436",
       "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64.json" : "7e009a4b3341d7da61a74f83d13f2fa268692a33d494a42d1869bb8b0c5c9026",
       "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.html" : "44bf542540a588de76edd70dc8d2f790c66c67dd16563ccf940f18252d7a2cf0",
-      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.json" : "0cb0037fbb55fd4943971f9ef82e8776bbb07b0e2709b659561a2ca805578b19"
+      "depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.json" : "0cb0037fbb55fd4943971f9ef82e8776bbb07b0e2709b659561a2ca805578b19",
+      "depictions/apple.ios14.font_1.0_iphoneos-arm64.html" : "6a9e0d6e09bf461eac92e8044204a755dc2040d51936ddd1373c7346955dc6db",
+      "depictions/apple.ios14.font_1.0_iphoneos-arm64.json" : "f114715c6538c68e691257ebce3068fe4b0ab921c4ede048ec3f8d2d0d94452a",
+      "depictions/apple.ios26.font_1.0_iphoneos-arm64.html" : "33f91a17c91de72f2920a5dc72846f0ee7baae3512cba4b3d61166708d13b83f",
+      "depictions/apple.ios26.font_1.0_iphoneos-arm64.json" : "8b408f6e91b23c6af8b3b3241f624e88178fecd3dd1062948f0f496088bef728"
    },
    "schema" : 1
 }

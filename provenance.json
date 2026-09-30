@@ -35,6 +35,26 @@
          "package" : "ai.akemi.appsyncunified",
          "sha256" : "4ee6bae94c9f9048c87f883944b4903187a7b8d1e546a2213b21de9b8b640281",
          "version" : "116.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/apple.ios14.font_1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T21:57:18Z",
+         "package" : "apple.ios14.font",
+         "sha256" : "3dc7ef57d1739fceadaafeba496c6e1501cc343060992639576debe0284081f9",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Apple",
+         "Maintainer" : "Apple",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/apple.ios26.font_1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-09-30T21:57:18Z",
+         "package" : "apple.ios26.font",
+         "sha256" : "db617df95a0d21a43b368db9a8dcc26344cccc0fe3ac10d92e9fa4a1263ac26b",
+         "version" : "1.0"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",

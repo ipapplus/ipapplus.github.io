@@ -3,6 +3,14 @@
       "ai.akemi.appsyncunified/116.0" : {
          "first_added" : "2026-09-30T21:45:36Z",
          "sequence" : 1
+      },
+      "apple.ios14.font/1.0" : {
+         "first_added" : "2026-09-30T21:57:18Z",
+         "sequence" : 2
+      },
+      "apple.ios26.font/1.0" : {
+         "first_added" : "2026-09-30T21:57:18Z",
+         "sequence" : 3
       }
    },
    "schema" : 1

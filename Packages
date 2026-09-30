@@ -68,3 +68,39 @@ SileoDepiction: https://ipapplus.github.io/depictions/ai.akemi.appsyncunified_11
 Size: 79596
 Version: 116.0
 
+Package: apple.ios14.font
+Architecture: iphoneos-arm64
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ios14.font_1.0_iphoneos-arm64.html
+Description: Arabic & English
+Filename: debs/apple.ios14.font_1.0_iphoneos-arm64.deb
+MD5sum: 932322964d8f44031fa11e04d7c0a249
+Maintainer: Apple
+Name: Arabic UI Display iOS14
+SHA1: 776099842b68b8c8acbf83da6322cbfb28a48b86
+SHA256: 3dc7ef57d1739fceadaafeba496c6e1501cc343060992639576debe0284081f9
+SHA512: 53dee82b0f2aaa99a97d5b2407aa0094ee4b444b2796770fccfe2eeaebb42fb8695625c1a42a03761d566c0d3f358f2977dfc9e17054ea265e6e195fa3763c02
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ios14.font_1.0_iphoneos-arm64.json
+Size: 207600
+Version: 1.0
+
+Package: apple.ios26.font
+Architecture: iphoneos-arm64
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm64.html
+Description: Arabic & English
+Filename: debs/apple.ios26.font_1.0_iphoneos-arm64.deb
+MD5sum: 6133c8382573cb43e73c1791da086738
+Maintainer: Apple
+Name: Arabic UI Text Medium iOS26
+SHA1: aa98c2adc19494ca4a5e92d974bb2e738a7a979b
+SHA256: db617df95a0d21a43b368db9a8dcc26344cccc0fe3ac10d92e9fa4a1263ac26b
+SHA512: 0e0a3afeb2d44cbf5171237b8690ef040add0d8b8a5ccfaaeafd3b7d6643af2eefe542eec8c256176987bbcf450d800152d9d7922fc8e5ccac255a4868cbe76c
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm64.json
+Size: 116204
+Version: 1.0
+
