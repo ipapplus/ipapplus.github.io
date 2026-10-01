@@ -1832,6 +1832,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.flow_1.0_iphoneo
 Size: 228364
 Version: 1.0
 
+Package: com.dvntm.glow
+Architecture: iphoneos-arm64e
+Author: dvntm, nowesr1
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.glow_1.3.1_iphoneos-arm64e.html
+Description: Cleaner. Smarter. Yours.
+Filename: debs/com.dvntm.glow_1.3.1_iphoneos-arm64e.deb
+Icon: https://raw.githubusercontent.com/dayanch96/Glow/refs/heads/main/Sileo/icon.png
+Installed-Size: 17004
+MD5sum: 1b627627ae75af0ab2a32d7e69bca0e7
+Maintainer: dvntm, nowesr1
+Name: Glow for Facebook
+SHA1: 9efb44f8cee59856648ae3c76629b5040c5f5e4e
+SHA256: 57e9def109ef0a867f11a1d66ba6b41eb7ba9b99586cd24aa3f39d3db56d0ab6
+SHA512: 0259247fbd36daa9c1f7f1367f9b4d8cf73548d6c5c97f4f21f9d8976b111c846d93d1fb59f62d9ee56230db956c4bb9ca846c40050bf277d886f8b4490d45be
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.glow_1.3.1_iphoneos-arm64e.json
+Size: 6905432
+Version: 1.3.1
+
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64e
 Author: dvntm
@@ -3072,6 +3092,27 @@ Size: 15484
 Tag: purpose::extension
 Version: 1.0.6
 dev: kingpuffdaddi
+
+Package: com.korboy.sileo
+Architecture: iphoneos-arm64e
+Author: Korboy <korboybeats@gmail.com>, Amy While, waruhachi
+Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Depiction: https://ipapplus.github.io/depictions/com.korboy.sileo_2.5.7_iphoneos-arm64e.html
+Description: A modern APT package manager frontend.
+Filename: debs/com.korboy.sileo_2.5.7_iphoneos-arm64e.deb
+Icon: https://korboybeats.github.io/sileo/icon.png
+MD5sum: 80b37a3995178082d2f1bf87a26ea295
+Maintainer: Korboy <korboybeats@gmail.com>
+Name: Sileo
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 71d2a4f140ab8e983dbed0cc9dec926b817276ce
+SHA256: 4afbc32f3bdb9498f1a73398bd19b56660a3f47472f82a9b158c5018f3360767
+SHA512: 34001a8a3c17f1cf83b0972e54cf3bf6af8307f4cf5f238e67389bfc13c4bc5cbd04a3cc6b6f6e206cd76fb5436ad313ee68c4f3c1c06b08a1f95378a2d75260
+Section: Packaging
+SileoDepiction: https://ipapplus.github.io/depictions/com.korboy.sileo_2.5.7_iphoneos-arm64e.json
+Size: 6190008
+Version: 2.5.7
+X-Sileo-Fork: com.korboy.sileo
 
 Package: com.lclrc.hammerit
 Architecture: iphoneos-arm64e
