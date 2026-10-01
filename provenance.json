@@ -303,6 +303,17 @@
          "version" : "2.1-2"
       },
       {
+         "Author" : "Alpha_Stream <alphastream113@gmail.com>",
+         "Depiction" : "https://chariz.com/get/linear",
+         "Maintainer" : "Alpha_Stream <alphastream113@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.alphastream.linearforsb_1.4.2-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:04:10Z",
+         "package" : "com.alphastream.linearforsb",
+         "sha256" : "967ddd02e1b260e47fde7d3f46e6b5857165fe4d31462b983cf66207842e8548",
+         "version" : "1.4.2-1"
+      },
+      {
          "Author" : "Saud Alshaman <alshaman64@gmail.com>",
          "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
          "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp",
@@ -349,6 +360,26 @@
          "package" : "com.asterix.digitalbattery13",
          "sha256" : "5c2b94d7a58e5ea1f0fad0f9bc388c1e177900cf68ae8f363bc6dfbed1ac1046",
          "version" : "1.1.0"
+      },
+      {
+         "Author" : "Bandar Alruwaili",
+         "Maintainer" : "Bandar Alruwaili",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.bandarhl.bhinsta_1.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:04:10Z",
+         "package" : "com.bandarhl.bhinsta",
+         "sha256" : "fe20446308a12012a103ebd0720fe7d877802385e1d8b0e4dde71c5e5bfc4e90",
+         "version" : "1.2"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:04:10Z",
+         "package" : "com.bandarhl.bhtiktok",
+         "sha256" : "c1786003800b68e6a22fcfa6ade0f92e2d8c7df6124956e4bec170af6c06ad27",
+         "version" : "2.3.1"
       },
       {
          "Author" : "Sniper @DNS_Sys",

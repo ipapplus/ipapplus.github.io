@@ -568,6 +568,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2
 Size: 35216
 Version: 2.1-2
 
+Package: com.alphastream.linearforsb
+Architecture: iphoneos-arm64e
+Author: Alpha_Stream <alphastream113@gmail.com>
+Depends: com.spark.snowboard, com.spark.snowboard.statusbar, firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.alphastream.linearforsb_1.4.2-1_iphoneos-arm64e.html
+Description: Status bar icons but in a form of lines.
+Filename: debs/com.alphastream.linearforsb_1.4.2-1_iphoneos-arm64e.deb
+Icon: https://img.chariz.cloud/icon/linear/icon@3x.png
+Installed-Size: 494
+MD5sum: 9e624f1f80d7213db7b591dba24bb825
+Maintainer: Alpha_Stream <alphastream113@gmail.com>
+Name: Linear for Status Bar
+SHA1: 6b9c30f0bcc10164ee7a06840362414e4d5079ad
+SHA256: 967ddd02e1b260e47fde7d3f46e6b5857165fe4d31462b983cf66207842e8548
+SHA512: 97ebb4520fdd2850f23d5c40dc06c9661bdda75e177da3aec2853280776356489f55fe4e3951673f1077be902808b8f670c599097c6a370a1d5052bfdadea363
+Section: Themes
+SileoDepiction: https://ipapplus.github.io/depictions/com.alphastream.linearforsb_1.4.2-1_iphoneos-arm64e.json
+Size: 214952
+Tag: compatible_min::ios12.0
+Version: 1.4.2-1
+
 Package: com.alshaman.twiteddate
 Architecture: iphoneos-arm64
 Author: Saud Alshaman <alshaman64@gmail.com>
@@ -664,6 +685,47 @@ Sponsor: thebigboss.org <http://thebigboss.org>
 Tag: purpose::extension, compatible::ios13
 Version: 1.1.0
 dev: asterix
+
+Package: com.bandarhl.bhinsta
+Architecture: iphoneos-arm64e
+Author: Bandar Alruwaili
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhinsta_1.2_iphoneos-arm64e.html
+Description: An awesome tweak for Instagram!
+Filename: debs/com.bandarhl.bhinsta_1.2_iphoneos-arm64e.deb
+Installed-Size: 460
+MD5sum: 862570fb3e7f84a755853c7c9854ee7e
+Maintainer: Bandar Alruwaili
+Name: BHInsta
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: fa78a5e2289afac2e2cce569f1d4ea4f480baa9c
+SHA256: fe20446308a12012a103ebd0720fe7d877802385e1d8b0e4dde71c5e5bfc4e90
+SHA512: 634e1d69d7a3364e2e227feb3782d68d62af516f2a1a8459196cf86892e7d1b67073c85b1edc19d33fd56afa2c7332d2540924aa100f52ff91c0efc618974841
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhinsta_1.2_iphoneos-arm64e.json
+Size: 67532
+Version: 1.2
+
+Package: com.bandarhl.bhtiktok
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64e.html
+Description: An awesome tweak for TikTok!
+Filename: debs/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64e.deb
+Icon: https://i.imgur.com/PKIhkrt.png
+Installed-Size: 1480
+MD5sum: 6b00a7ccdb953ff116f2d9f170cfe8e0
+Maintainer: dvntm
+Name: BHTikTok Plus
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 36ef354fbb0e6783d0ccdf98a4666486d3754bdb
+SHA256: c1786003800b68e6a22fcfa6ade0f92e2d8c7df6124956e4bec170af6c06ad27
+SHA512: 6e4974aadcd2527181895636c3fb8b032c4d857d495c92cd15ee17e6727461ff6c5de745946bdaee23a6a544748b69febb39f3d4cfce3408652c3939a2270cd3
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64e.json
+Size: 498596
+Version: 2.3.1
 
 Package: com.bypassjb.sniper
 Architecture: iphoneos-arm64

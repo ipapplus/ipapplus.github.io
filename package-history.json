@@ -72,6 +72,10 @@
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 14
       },
+      "com.alphastream.linearforsb/1.4.2-1" : {
+         "first_added" : "2026-10-01T00:04:10Z",
+         "sequence" : 23
+      },
       "com.alshaman.twiteddate/0.0.1-2" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 15
@@ -79,6 +83,14 @@
       "com.asterix.digitalbattery13/1.1.0" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 16
+      },
+      "com.bandarhl.bhinsta/1.2" : {
+         "first_added" : "2026-10-01T00:04:10Z",
+         "sequence" : 24
+      },
+      "com.bandarhl.bhtiktok/2.3.1" : {
+         "first_added" : "2026-10-01T00:04:10Z",
+         "sequence" : 25
       },
       "com.bypassjb.sniper/6.2" : {
          "first_added" : "2026-10-01T00:01:11Z",
