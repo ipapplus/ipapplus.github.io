@@ -887,6 +887,26 @@ Size: 4307656
 Version: 6.6.1-1+debug
 
 Package: com.bandarhl.orionblur
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64.deb
+Installed-Size: 13708
+MD5sum: eb39fd3c34b5ae890952642598d62889
+Maintainer: NeoFreeBird
+Name: BHTwitter - orionblur
+SHA1: 7c0b369525773fb7b0057fe6f205ad89ec5248cc
+SHA256: b8855548f807bf468eeb12b97f3c8d340f958b153e5082893c560d1d7982ddac
+SHA512: 63b3ef8195831778e67523fc35fb9a496db2fcb4d2c9671e660cd180d3b91a052fa2f6585fc4fe169db44024b6e912d94eb3814b48a08d00c686d48734ed101d
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64.json
+Size: 4366500
+Version: 7.0.0-1+debug
+
+Package: com.bandarhl.orionblur
 Architecture: iphoneos-arm64e
 Author: NeoFreeBird
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
@@ -7897,6 +7917,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.vxbakerxv.emojiskinprefs_1.0.1_iphoneos-arm64e.json
 Size: 16756
 Version: 1.0.1
+
+Package: com.w3ltyyy.lead
+Architecture: iphoneos-arm64
+Author: w3ltyyy
+Depiction: https://ipapplus.github.io/depictions/com.w3ltyyy.lead_1.4.4_iphoneos-arm64.html
+Description: The best Tweak For Telegram iOS
+Filename: debs/com.w3ltyyy.lead_1.4.4_iphoneos-arm64.deb
+Installed-Size: 25176
+MD5sum: f794d6552591fa74445acf2c974d026d
+Maintainer: w3ltyyy
+Name: Lead
+SHA1: 5facf36c69b2142833d93c2f5e3185189656fcca
+SHA256: a9e32a39fa2a5bff3bf94b2e02a43e2fdae78e65fdc2ece6320d288016fbb34a
+SHA512: 9db16a2aff588324604360bc58bfb766bb3e585c8f4ed2619f5d853e05c855e8e29286b16add69f260bb045518565c1a82540e4d6cfdcb3a10e5a13276330a1c
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.w3ltyyy.lead_1.4.4_iphoneos-arm64.json
+Size: 5015780
+Version: 1.4.4
 
 Package: com.w3ltyyy.lead
 Architecture: iphoneos-arm64e
