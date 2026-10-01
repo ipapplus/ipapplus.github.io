@@ -1,0 +1,45 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "Hello Charging — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "1.0.8",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Hello Charging (限制充电)\n - Wi-Fi Not Disconnected on Lock Screen (Standby consumes 5% more power)\n - 锁屏不断Wi-Fi(待机多费电5%)",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "zqbb",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "mobilesubstrate (>= 0.9.5000) , firmware (>= 15.0)",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

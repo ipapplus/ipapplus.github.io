@@ -1,0 +1,50 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "LockButtonX — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "0.0.1",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Simple tweak to remap the long press of the power button on notched devices to the power menu instead of Siri.",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Nightwind",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "dev.theos.orion (>= 1.0.0), firmware (>= 12.2)",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "rootless-compat(>= 0.9)",
+               "title" : "Pre-Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

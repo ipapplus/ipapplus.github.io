@@ -1,0 +1,50 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "RecordPause — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "2.0.7",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Pauses/resumes video recording in iOS Camera app.",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "PoomSmart",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "mobilesubstrate, firmware (>= 9.0), firmware (<< 18.0)",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "rootless-compat(>= 0.9)",
+               "title" : "Pre-Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

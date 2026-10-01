@@ -1,0 +1,50 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "BigShot for Snapper 3 and CCSupport — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "1.1",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "BigShot CC module for iOS 14/15/16 and Snapper 3 plugin. Snapper 3 is NOT required to use this. It can be used as a standalone CC module.",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "CyPwn",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "mobilesubstrate, firmware(>=14.0), com.opa334.ccsupport",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "rootless-compat(>= 0.9)",
+               "title" : "Pre-Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

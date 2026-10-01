@@ -136,6 +136,14 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 72
       },
+      "com.den.locktouchx/1.3-18" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 116
+      },
+      "com.den.shortcutx/0.0.1-1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 117
+      },
       "com.dhinakg.addprofileinstallbutton/1.0.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 73
@@ -180,6 +188,10 @@
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 39
       },
+      "com.dvntm.rma/1.0" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 118
+      },
       "com.dvntm.safariii/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 29
@@ -200,6 +212,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 79
       },
+      "com.fiore.calculatorhistory/1.2" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 119
+      },
       "com.fiore.ccborder/1.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 80
@@ -211,6 +227,10 @@
       "com.icraze.fuckoffairdrop/1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 30
+      },
+      "com.icraze.tempdrop/1.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 120
       },
       "com.icraze.twitternoid/1.0" : {
          "first_added" : "2026-10-01T00:13:24Z",
@@ -224,9 +244,21 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 82
       },
+      "com.kingpuffdaddi.control-center.ccvpn/1.0.6" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 121
+      },
+      "com.level3tjg.twitchadblock/0.1.5" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 122
+      },
       "com.level3tjg.visibleapps/0.0.3" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 61
+      },
+      "com.lizynz.telegaicons.rootless/1.3" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 123
       },
       "com.mhsternice.wasendfix/0.0.4" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -236,6 +268,10 @@
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 44
       },
+      "com.mikifp.griddy/1.0.5" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 124
+      },
       "com.mtac.prefs.localizer/1.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 84
@@ -243,6 +279,18 @@
       "com.muirey03.libimagepicker/1.0.4" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 85
+      },
+      "com.muirey03.libmryipc/2.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 125
+      },
+      "com.na9.snaptweak/1.0" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 126
+      },
+      "com.nahtedetihw.closeall/1.0" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 127
       },
       "com.nan.disablesblockaftercrash/0.1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
@@ -256,9 +304,21 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 33
       },
+      "com.nathan.bubblecolor/1.0.3" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 128
+      },
       "com.nathan.dynamichiderecordland/1.0" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 49
+      },
+      "com.nathan.dynamicnotland/1.2.4" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 129
+      },
+      "com.nathan.dynamicnotland/1.2.5" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 130
       },
       "com.nathan.internalstoragesettings/1.0.1" : {
          "first_added" : "2026-10-01T00:13:24Z",
@@ -292,9 +352,21 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 91
       },
+      "com.nightwind.horizontalsliders/0.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 131
+      },
+      "com.nightwind.lockbuttonx/0.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 132
+      },
       "com.nightwind.photosnoinfobutton/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 92
+      },
+      "com.nightwind.powersettings/0.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 133
       },
       "com.nightwind.sileorespringfix/0.0.1" : {
          "first_added" : "2026-10-01T00:16:57Z",
@@ -324,6 +396,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 97
       },
+      "com.ps.recordpause/2.0.7" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 134
+      },
       "com.ps.replaykitmax/1.0.1" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 63
@@ -331,6 +407,22 @@
       "com.sini921.smoothinstall/0.0.1-1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 98
+      },
+      "com.spark.libsparkapplist/1.1.0~rootless" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 135
+      },
+      "com.spark.snowboard.fonts/1.1.0~Beta4-rootless" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 136
+      },
+      "com.spark.snowboard.masks/1.2.2-Beta2-rootless" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 137
+      },
+      "com.spark.snowboard.settingsicons/1.0.26~Beta3-rootless" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 138
       },
       "com.sugiuta.soundvol/1.0.0" : {
          "first_added" : "2026-10-01T00:16:57Z",
@@ -344,9 +436,17 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 100
       },
+      "com.vxbakerxv.emojiskinprefs/1.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 139
+      },
       "com.wrp1002.nosettingsbadge/1.1.0" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 52
+      },
+      "com.yourepo.0xkuj.storeswitcher2rootless/1.0.4" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 140
       },
       "com.yourepo.b4db1r3r3p0.oleddarkmode/0.5.1-11" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -364,9 +464,17 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 53
       },
+      "com.zeroxjf.spoofgpt/1.0.5" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 141
+      },
       "com.zeroxjf.zoom5x/1.0.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 103
+      },
+      "com.zqbb.limitcharging/1.0.8" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 142
       },
       "crackpkcs12/0.2.11" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -383,6 +491,14 @@
       "daniel.trustevaluator/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 34
+      },
+      "dev.mineek.appstoretroller/0.1.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 143
+      },
+      "dev.mineek.appstoretroller/0.1.2" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 144
       },
       "dev.traurige.libkitten/1.4.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -416,6 +532,14 @@
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 40
       },
+      "libskittycolor/1.0" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 145
+      },
+      "me.jjolano.fmwk.hookkit/1.0.15" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 146
+      },
       "me.jjolano.fmwk.modulous/1.0.8" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 108
@@ -440,6 +564,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 112
       },
+      "me.nebula.ding/1.1.0" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 147
+      },
       "net.cadoth.nosbreload/0.1.1-1" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 57
@@ -455,6 +583,14 @@
       "rootfultorootless/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 35
+      },
+      "twitter.nowesr1.photosplus/0.0.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 148
+      },
+      "xyz.cypwn.bigshotsnapper3plugin/1.1" : {
+         "first_added" : "2026-10-01T00:20:37Z",
+         "sequence" : 149
       },
       "xyz.cypwn.transparentpipgrabber/0.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",

@@ -1,0 +1,50 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "PhotosPlus — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "0.0.1",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Awesome tweak for stock iOS Photos App",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "BigBoss <bigboss@thebigboss.org>",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "firmware (>= 15.0), mobilesubstrate, preferenceloader",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "rootless-compat(>= 0.9)",
+               "title" : "Pre-Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}
