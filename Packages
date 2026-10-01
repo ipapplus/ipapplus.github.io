@@ -846,6 +846,46 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_
 Size: 2146196
 Version: 6.0.4-1+debug
 
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.deb
+Installed-Size: 13364
+MD5sum: d084bf699bcdd39bdbc6c649035bdf78
+Maintainer: NeoFreeBird
+Name: orionblur-NFB-BHTwitter
+SHA1: 0c73ad44f5589ad9fc7e54ea5e7846af6a6b8d19
+SHA256: e67b6bd9ea4061580fde523546b6addcef79cf998d12f782d95c4de968d43a9a
+SHA512: 09fa17bb73d440145ae0135cf7cee8b62bab1ab33f94130417dae8c4620c536d07fa7f107e5c3ea002e5a98fb6a4b8755e3d03a985564d5e2ed0ebb3f0ac8535
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.json
+Size: 4276616
+Version: 6.5.0-1+debug
+
+Package: com.bandarhl.orionblur
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_6.6.1-1+debug_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.orionblur_6.6.1-1+debug_iphoneos-arm64.deb
+Installed-Size: 13472
+MD5sum: 6cfc55d4321bb061002af38bfadf53ec
+Maintainer: NeoFreeBird
+Name: BHTwitter - orionblur
+SHA1: 4bcd9e104e6d571cfd9775f0d20a134fc52947fc
+SHA256: 719e9d5d3ed0be0b76236a2887c38b9afd1c2b682d5ac0cba6f6f1eef6676723
+SHA512: f837cdac2dd9a3f797dd39ca9309c90079a36ff007f0f37e0d3dd505f4b3f2276864d4291553f3a4f065c81ca330fbfd952013e3cc192bdcce10d1842bc066c3
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_6.6.1-1+debug_iphoneos-arm64.json
+Size: 4307656
+Version: 6.6.1-1+debug
+
 Package: com.bandarhl.orionblur
 Architecture: iphoneos-arm64e
 Author: NeoFreeBird

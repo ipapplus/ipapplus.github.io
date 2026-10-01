@@ -108,6 +108,14 @@
          "first_added" : "2026-10-01T02:13:53Z",
          "sequence" : 359
       },
+      "com.bandarhl.nfbbhtwitter/6.5.0-1+debug" : {
+         "first_added" : "2026-10-01T02:17:52Z",
+         "sequence" : 361
+      },
+      "com.bandarhl.orionblur/6.6.1-1+debug" : {
+         "first_added" : "2026-10-01T02:17:52Z",
+         "sequence" : 362
+      },
       "com.bandarhl.orionblur/7.0.0-1+debug" : {
          "first_added" : "2026-10-01T01:32:55Z",
          "sequence" : 332

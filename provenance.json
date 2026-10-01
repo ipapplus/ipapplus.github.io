@@ -445,6 +445,26 @@
       {
          "Author" : "NeoFreeBird",
          "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T02:17:52Z",
+         "package" : "com.bandarhl.nfbbhtwitter",
+         "sha256" : "e67b6bd9ea4061580fde523546b6addcef79cf998d12f782d95c4de968d43a9a",
+         "version" : "6.5.0-1+debug"
+      },
+      {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.bandarhl.orionblur_6.6.1-1+debug_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T02:17:52Z",
+         "package" : "com.bandarhl.orionblur",
+         "sha256" : "719e9d5d3ed0be0b76236a2887c38b9afd1c2b682d5ac0cba6f6f1eef6676723",
+         "version" : "6.6.1-1+debug"
+      },
+      {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T01:32:55Z",
