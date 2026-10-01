@@ -1,23 +1,19 @@
-# Runtime and staging
-.repo.lock
+# Disposable rebuild outputs and editor files
 .repo-stage-*/
-codex_repo_upgrade.log
 *.tmp
 *.temp
 *.swp
 *~
 .DS_Store
-# Local backups and regression fixtures
+# Local backups
 backups/
 backup/
 *.bak
 *.backup
-.repo-test-*/
-repo-auto-*/
-repo-regression-*/
-repo-apt-*/
-# Root-level .deb additions are discovered through Git status.
-# Signing secrets; public signatures and public keyrings are not ignored
+*.bak.*
+backup-*/
+repo-backup*/
+# Secrets (the repository publishes unsigned metadata)
 .gnupg/
 private-keys-v1.d/
 *.private
@@ -26,17 +22,9 @@ private-keys-v1.d/
 *.p12
 *.pfx
 *.passphrase
-.env
-.env.*
-repo-catalog-*/
 *passphrase*
 private*.asc
 secret*.asc
 secring.gpg
-*.bak.*
-backup-*/
-repo-backup*/
-.repo-transaction/
-repo-lifecycle-*/
-# Reusable extracted metadata and required APT checksums
-.repo-cache.json
+.env
+.env.*
