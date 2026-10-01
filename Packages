@@ -883,6 +883,28 @@ Tag: purpose::extension, compatible::ios8, compatible::ios9, compatible::ios10, 
 Version: 0.3-6-1
 dev: cokepokes
 
+Package: com.cpdigitaldarkroom.barmoji
+Architecture: iphoneos-arm64e
+Author: CP Digital Darkroom <admin@cpdigitaldarkroom.com>
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.cpdigitaldarkroom.barmoji_2023.3_iphoneos-arm64e.html
+Description: Quick Emoji Access Bar
+Filename: debs/com.cpdigitaldarkroom.barmoji_2023.3_iphoneos-arm64e.deb
+Homepage: https://apt.cpdigitaldarkroom.com/depictions/com.cpdigitaldarkroom.barmoji/
+Installed-Size: 444
+MD5sum: 6dc7550437d85bb77a2a02d618eb3f96
+Maintainer: CP Digital Darkroom <admin@cpdigitaldarkroom.com>
+Name: Barmoji
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 67533490c50af2f7f95c66eeb71629492f4d5f8d
+SHA256: 141b430ad3091851712e0e0d8a2ea1d10ac718859ebfeac3a9d5214d93e4a0b8
+SHA512: fdaa7037c282b70ba4eb27bdae1202a8c01efb23ad2346c39f1ee6c330632bce99c094899025fca23c948bc304a63682737667ed4b06835ef262455a3858216b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.cpdigitaldarkroom.barmoji_2023.3_iphoneos-arm64e.json
+Size: 48604
+Tag: purpose::extension, compatible_min::ios10, compatible_max::ios13.3
+Version: 2023.3
+
 Package: com.cureux.cc26glass
 Architecture: iphoneos-arm64e
 Author: therealhoodboy
@@ -902,6 +924,32 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.cureux.cc26glass_1.0.4_iphoneos-arm64e.json
 Size: 31832
 Version: 1.0.4
+
+Package: com.cydiageek.byeseparatorscell
+Architecture: iphoneos-arm64e
+Author: CydiaGeek <lucaluca86@aol.com>
+Depends: mobilesubstrate, firmware (>= 8.0), preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.cydiageek.byeseparatorscell_1.1.3_iphoneos-arm64e.html
+Description: Remove the Space Between the Cells on System Wide!
+Filename: debs/com.cydiageek.byeseparatorscell_1.1.3_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=byeseparatorscellDp
+Icon: file:///Library/PreferenceBundles/ByeSeparatorsCell.bundle/ByeSeparatorsCell@2x.png
+Installed-Size: 448
+MD5sum: 60cf3528e93a765f215c7763b20cd132
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: ByeSeparatorsCell
+Pre-Depends: rootless-compat(>= 0.9)
+Priority: optional
+SHA1: e29d9121c6b1d6f0952d119a2b4e4601b8dcf8fd
+SHA256: a9847c7ed4ba5b43a958024819132eb805254dc1de8662234cd96e6fd93fef87
+SHA512: e32bd1761cfd1e247009fa08e32331a7fe8347df501255b65156c387d89d106f52158408838d123a1445c595040ae1fecfa1f6aaf19a5a613297762343525d7b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.cydiageek.byeseparatorscell_1.1.3_iphoneos-arm64e.json
+Size: 52300
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 1.1.3
+dev: lucaluca86
 
 Package: com.cydiageek.noeditpages
 Architecture: iphoneos-arm64e
@@ -1378,6 +1426,25 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_i
 Size: 2884
 Version: 0.0.1
 
+Package: com.dvntm.showmytouches
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.showmytouches_1.1.3_iphoneos-arm64e.html
+Description: Displays your touch interactions!
+Filename: debs/com.dvntm.showmytouches_1.1.3_iphoneos-arm64e.deb
+Installed-Size: 472
+MD5sum: 169429cda8df37e30b26775c943138c1
+Maintainer: dvntm
+Name: ShowMyTouches
+SHA1: 49fc1df6bb7807198ff573fddb1d6f0b140f2baf
+SHA256: 0f8d447e4711afe14ae724ac7aa42da128a65787585edf7116b2658dea5c7c82
+SHA512: 098ff94021a92ddcfb344a2be6e68bb1d9b2fe4675005b2fb9767f1973547930279e1d18d67ca28667bae2de3a026fe0c8edd500597fa84ae3bd4580b6a14053
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.showmytouches_1.1.3_iphoneos-arm64e.json
+Size: 52664
+Version: 1.1.3
+
 Package: com.dvntm.silentnotifs
 Architecture: iphoneos-arm64e
 Author: dvntm
@@ -1439,6 +1506,26 @@ Size: 5776
 Sponsor: thebigboss.org <http://thebigboss.org>
 Version: 0.0.3-1
 dev: dvntm
+
+Package: com.eamontracey.secretshot
+Architecture: iphoneos-arm64e
+Author: Eamon Tracey
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.eamontracey.secretshot_1.1.1_iphoneos-arm64e.html
+Description: Block Snapchat screenshot and screen recording detection
+Filename: debs/com.eamontracey.secretshot_1.1.1_iphoneos-arm64e.deb
+Icon: https://raw.githubusercontent.com/ichitaso/SecretShot/main/SecretShotPreferences/Resources/icon%403x.png
+Installed-Size: 412
+MD5sum: d308e55033a9b6abbc01e274b4e60249
+Maintainer: ichitaso
+Name: SecretShot
+SHA1: 0862d36093f294b26a25786c57b39c59a51fb86a
+SHA256: 8af1b40b0bfed6fa3404d7b6537abeb5f13161414e678fdb91232dceb2c33ef2
+SHA512: 0ce4ddb9d30ad80c45c30819e1a1ae891d9746d377f1e4966921794805b7c5aca4ab4dd03f34ce6ccb64f3bb1b6e6d394f3979cf2714a1a2e7aca9f46177393a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.eamontracey.secretshot_1.1.1_iphoneos-arm64e.json
+Size: 44896
+Version: 1.1.1
 
 Package: com.ethanrdoesmc.truecuts
 Architecture: iphoneos-arm64e
@@ -1502,6 +1589,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.fiore.calculatorhistor
 Size: 24932
 Version: 1.2
 
+Package: com.fiore.calculatorhistory
+Architecture: iphoneos-arm64e
+Author: fiore
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.fiore.calculatorhistory_1.3_iphoneos-arm64e.html
+Description: Calculator gains history!
+Filename: debs/com.fiore.calculatorhistory_1.3_iphoneos-arm64e.deb
+Installed-Size: 436
+MD5sum: b3b062538c6901a36a5d73968312a9f9
+Maintainer: fiore
+Name: CalculatorHistory
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: a0d3933eacc11232a54c4753c43c76a833d567d2
+SHA256: aa5993acd23809d5160464352e84c3b73cea410c95d0631b2776008410e7722e
+SHA512: 3552e22d4bd51df1918d0646da21277a0802a7d2f93d24200a83612864892b3a1f212d650ab8d31c01b70723157508cad36ab49049a42846bb75d36354d3a6ef
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.fiore.calculatorhistory_1.3_iphoneos-arm64e.json
+Size: 44804
+Version: 1.3
+
 Package: com.fiore.ccborder
 Architecture: iphoneos-arm64e
 Author: fiore
@@ -1563,6 +1670,30 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.gilshahar7.volumeperce
 Size: 30196
 Version: 1.0.2
 
+Package: com.ichitaso.hidekbsettings
+Architecture: iphoneos-arm64e
+Author: ichitaso <willfeeltips+hks@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.ichitaso.hidekbsettings_1.0.6_iphoneos-arm64e.html
+Description: Hide "Keyboard Settings" from the globe button switcher
+Filename: debs/com.ichitaso.hidekbsettings_1.0.6_iphoneos-arm64e.deb
+Homepage: https://ichitaso.com/
+Icon: https://raw.githubusercontent.com/ichitaso/HideKBSettings/master/Preferences/Resources/icon%403x.png
+Installed-Size: 428
+MD5sum: 081c45be2baf88193e8cab839bdb8930
+Maintainer: ichitaso
+Name: HideKBSettings (iOS 11 to 16)
+Pre-Depends: rootless-compat(>= 0.9), firmware (>= 11.0)
+SHA1: aabdfef1ad8be0a7c14337850962d7dba248b412
+SHA256: 05a883303cfe0460c43bb5845c94bf5df57f608b4fd160d542c431394b6c0d5d
+SHA512: 318fc264619828c66a9c9f057653fa26f30dcf60d7c14d8512c4198f61d126765eaa5570f624223141d7e1276bcfb31116da5f567bfde8247c9ba9e293e66131
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.hidekbsettings_1.0.6_iphoneos-arm64e.json
+Size: 42580
+Tag: purpose::extension, compatible_min::ios11.0, compatible_max::ios16.3.1
+Version: 1.0.6
+dev: ichitaso
+
 Package: com.ichitaso.iconorder
 Architecture: iphoneos-arm64e
 Author: ichitaso
@@ -1587,6 +1718,52 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.iconorder_1.0
 Size: 8508
 Tag: purpose::extension, compatible_min::ios12.0, compatible_max::ios17.5.1
 Version: 1.0.3
+dev: ichitaso
+
+Package: com.ichitaso.otadisabler
+Architecture: iphoneos-arm64e
+Author: ichitaso
+Depends: firmware (>= 9.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.ichitaso.otadisabler_0.6_iphoneos-arm64e.html
+Description: Disable OTA and remove badges on home screen, etc.
+Filename: debs/com.ichitaso.otadisabler_0.6_iphoneos-arm64e.deb
+Homepage: https://ichitaso.com
+Icon: https://raw.githubusercontent.com/ichitaso/OTADisabler-App/main/OTADisabler/Icon-60%403x.png
+Installed-Size: 168
+MD5sum: 065647c623b6962d7a20929ff8e37aa4
+Maintainer: ichitaso
+Name: OTADisabler
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 5a8cd4440d647e5ff312b40e2cdc11f96ae17885
+SHA256: 15d5fc95a040f91206b86ccdabf919b29b126139993e6d7e284f220c8efdadcb
+SHA512: 974a10fc5272479b29b55b506644f93f8d035745c8ed4a7525980f4e4f7cf4a3f1f7449fa8cc42b0e7fb38999a6530a480b14bc637a5ac05914e829015cdcd91
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.otadisabler_0.6_iphoneos-arm64e.json
+Size: 51500
+Version: 0.6
+
+Package: com.ichitaso.spectrogram
+Architecture: iphoneos-arm64e
+Author: ichitaso <willfeeltips+spg@gmail.com>
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader (>= 2.2.4~beta1), cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.ichitaso.spectrogram_0.1.1_iphoneos-arm64e.html
+Description: Use volume buttons to control screenshots and more
+Filename: debs/com.ichitaso.spectrogram_0.1.1_iphoneos-arm64e.deb
+Homepage: https://cydia.ichitaso.com/depiction/spectrogram.html
+Icon: file:///Library/PreferenceBundles/SpectrogramSettings.bundle/icon@2x.png
+Installed-Size: 436
+MD5sum: e906c06213cf67f4899d2f518847398f
+Maintainer: ichitaso <willfeeltips+spg@gmail.com>
+Name: Spectrogram
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: d0f08fd3a1e3962d00184d3d3ac8b7c4febd98ed
+SHA256: dc7b307cfe88e3039229a21b708fc572505855d8cd68196142bc6c0a7d6ddc3f
+SHA512: 9d83dea871ba41073e3f98226eacdc9aa5437bfb5ebc5739202b2bb8bf7360f678c21a365779a457b50b8ac422b3779b7e975995f1f74c444620a9acfcc617e7
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.spectrogram_0.1.1_iphoneos-arm64e.json
+Size: 52868
+Tag: purpose::extension, compatible::ios11, compatible::ios12, compatible::ios13, compatible::ios14
+Version: 0.1.1
 dev: ichitaso
 
 Package: com.icraze.fuckoffairdrop
@@ -1834,6 +2011,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.leftyfl1p.carbackground13_1.0_iphoneos-arm64e.json
 Size: 38088
 Version: 1.0
+
+Package: com.level3tjg.betterccbrightness
+Architecture: iphoneos-arm64e
+Author: level3tjg
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 13.0)
+Depiction: https://ipapplus.github.io/depictions/com.level3tjg.betterccbrightness_1.0.2_iphoneos-arm64e.html
+Description: Add more controls to the expanded brightness CC module
+Filename: debs/com.level3tjg.betterccbrightness_1.0.2_iphoneos-arm64e.deb
+Installed-Size: 304
+MD5sum: ec1bb6b6bfdc01200f1c6ab51ae14701
+Maintainer: level3tjg
+Name: BetterCCBrightness
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 4de70ff8417063834cf62354d7486269584d9145
+SHA256: 50a35ff9658f30d83e6ff32550dcab99e8cf8501e019d744507e9600f66fc4f6
+SHA512: 476cd483b936d0550b364360e2a01d6509fdbc9d2db320a2e54d85a8c1b79f0833aac33666e6259376f731cf652a85184336ca87c021f65cc2525ad42554c4ee
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.level3tjg.betterccbrightness_1.0.2_iphoneos-arm64e.json
+Size: 42540
+Version: 1.0.2
 
 Package: com.level3tjg.twitchadblock
 Architecture: iphoneos-arm64e
@@ -2566,6 +2763,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrab
 Size: 4364
 Version: 0.0.1
 
+Package: com.p2kdev.tinge
+Architecture: iphoneos-arm64e
+Author: P2KDev <p2kdev@gmail.com>
+Depends: firmware (>= 15.0),mobilesubstrate,preferenceloader,org.thebigboss.libcolorpicker
+Depiction: https://ipapplus.github.io/depictions/com.p2kdev.tinge_1.2.2_iphoneos-arm64e.html
+Description: Color your badges with Perfection!
+Filename: debs/com.p2kdev.tinge_1.2.2_iphoneos-arm64e.deb
+Icon: https://media.havoc.app/65d915afdc4f78f77542f9d4
+Installed-Size: 436
+MD5sum: 55202e27e481409336cb32156d98db00
+Maintainer: P2KDev <p2kdev@gmail.com>
+Name: Tinge
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 1a0f4be109a8f35d15bfcc11b856372a3a9103de
+SHA256: 5dc0e53b3319a6c06a907468b4309d55bd3946cca4c1490ad8117f24e92fee43
+SHA512: 9dbf85e1c798f9892c2c349d88c913c3f3a1ecb45ad5f81405dfbec590246c560d8838189c585834f12d42284984306944665f0f8ef3590c8720e56aba424303
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.p2kdev.tinge_1.2.2_iphoneos-arm64e.json
+Size: 43076
+Version: 1.2.2
+
 Package: com.p2kdev.twitternoads
 Architecture: iphoneos-arm64e
 Author: P2KDev <p2kdev@gmail.com>
@@ -2731,6 +2949,48 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.ps.replaykitmax_1.0.1_iphoneos-arm64e.json
 Size: 4844
 Version: 1.0.1
+
+Package: com.sergy.immortalizer
+Architecture: iphoneos-arm64e
+Author: sergy
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist, com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.sergy.immortalizer_2.0.0-1_iphoneos-arm64e.html
+Description: Foreground your apps even if they are in the background!
+Filename: debs/com.sergy.immortalizer_2.0.0-1_iphoneos-arm64e.deb
+Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
+Installed-Size: 652
+MD5sum: 0237ae3e23eb791aea79bc55e5bc991e
+Maintainer: sergy
+Name: Immortalizer
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 8e4ec8b5405070c946ff1cd211cecdc2e2a36ca8
+SHA256: b179a40c3cf899a7178c58a5043db9a94541e1425ee954e99b62e709cd0d8dd5
+SHA512: 50ed49bb0afe5a748f9331185be667f29db4492ac97d43a9c721c7e479f0c7629728cc3afadbd56b422b14d9f6b46f345dfcf7c6f6aef44d93666ea01f53c813
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.sergy.immortalizer_2.0.0-1_iphoneos-arm64e.json
+Size: 45856
+Version: 2.0.0-1
+
+Package: com.sergy.immortalizerjailed
+Architecture: iphoneos-arm64e
+Author: sergy
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.sergy.immortalizerjailed_2.2_iphoneos-arm64e.html
+Description: Foreground your apps even if they are in the background!
+Filename: debs/com.sergy.immortalizerjailed_2.2_iphoneos-arm64e.deb
+Icon: https://media.havoc.app/672ab6f3a80bcf5e2e0abe8c?w=1920&q=75
+Installed-Size: 652
+MD5sum: 92dbe0d25127865ba654b28d914ab09e
+Maintainer: sergy
+Name: Immortalizer Jailed
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 65b9a85368bc3db868b144d580db4b64d8a5c53e
+SHA256: e363a40750a89bb419888e0a56a73c5106f8052243b62c63f7ee63d848e90ef5
+SHA512: f1fc548e004a0851bb4d79fcf25e462e48d2e15a513abb045842ae410fa4bf2221ce42a240e3fee2b1ed4b2cf7d1c8cc8c356f033cd475ac68c8d753728899b9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.sergy.immortalizerjailed_2.2_iphoneos-arm64e.json
+Size: 51666
+Version: 2.2
 
 Package: com.sini921.smoothinstall
 Architecture: iphoneos-arm64e
@@ -3520,6 +3780,30 @@ Size: 21892
 Tag: role::developer
 Version: 1.0
 
+Package: me.ikghd.pmp
+Architecture: iphoneos-arm64e
+Author: iKarwan <ikghd3@gmail.com>
+Conflicts: pro.ikghd.pmp
+Depends: mobilesubstrate, firmware(>= 15.0), com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/me.ikghd.pmp_1.12_iphoneos-arm64e.html
+Description: PMP Protect My Photos!
+Filename: debs/me.ikghd.pmp_1.12_iphoneos-arm64e.deb
+Icon: https://repo.ikghd.me/assets/icons/me.ikghd.pmp.png
+Installed-Size: 772
+MD5sum: 271c65f4e79a912734802b59a6a78b99
+Maintainer: iKarwan <ikghd3@gmail.com>
+Name: PMP
+Pre-Depends: rootless-compat(>= 0.9)
+Replaces: pro.ikghd.pmp
+SHA1: 69589607fc59b60ede01ee63d2c86a0ae20fbdb1
+SHA256: c8f51120087e6786c81b694c26fcc1c2a40fb68d478e9102cfa9f9a57f71f1b1
+SHA512: 65c982a277200c95f408ff4ea91080365cbabacf5ec27792aa052a183d0d101539e473c670dc2d50ba2fcae1f227de7816994220c78080ccdc13bb40daa20b33
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/me.ikghd.pmp_1.12_iphoneos-arm64e.json
+Size: 49352
+Tag: purpose::extension, compatible_min::ios15.0, compatible_max::ios17.8
+Version: 1.12
+
 Package: me.jjolano.fmwk.hookkit
 Architecture: iphoneos-arm64e
 Author: jjolano
@@ -3765,6 +4049,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/one.keycap.freepip_0.0.3_i
 Size: 7100
 Version: 0.0.3
 
+Package: org.thebigboss.libcolorpicker
+Architecture: iphoneos-arm64e
+Author: Bailey Seymour
+Depends: firmware (>= 6.0)
+Depiction: https://ipapplus.github.io/depictions/org.thebigboss.libcolorpicker_1.6.9.2_iphoneos-arm64e.html
+Description: An awesome library of some sort!!
+Filename: debs/org.thebigboss.libcolorpicker_1.6.9.2_iphoneos-arm64e.deb
+Installed-Size: 304
+MD5sum: 300257002a888aa3e9af3ff962c622f5
+Maintainer: Bailey Seymour
+Name: libcolorpicker
+Provides: me.nepeta.libcolorpicker, ws.hbang.alderis
+Replaces: me.nepeta.libcolorpicker, ws.hbang.alderis
+SHA1: 8a49e045e85d78bb7686bedcfba11b78bf975cba
+SHA256: db0b7addc1fa6e703602516cc0df839ddf9a1ec2290ee245596c01b7da0fc1b5
+SHA512: 7d5bfa689ca5d7c0062bd5fc33c6a93e6e3b2d9518fe630650985515666ffbd74c4925e7d84deede3f472e52062c3085f818c28652cc0ad994218204a05ebc64
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/org.thebigboss.libcolorpicker_1.6.9.2_iphoneos-arm64e.json
+Size: 44800
+Tag: role::developer
+Version: 1.6.9.2
+
 Package: org.wuffs.flickplus
 Architecture: iphoneos-arm64e
 Author: Ninji <ninji@wuffs.org>
@@ -3825,6 +4131,30 @@ SileoDepiction: https://ipapplus.github.io/depictions/twitter.nowesr1.photosplus
 Size: 26176
 Sponsor: thebigboss.org <http://thebigboss.org>
 Version: 0.0.1
+dev: nowesr1
+
+Package: twitter.nowesr1.waignorecalls
+Architecture: iphoneos-arm64e
+Author: nowesr1 <nowe9r@hotmail.com>
+Depends: firmware (>= 12.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/twitter.nowesr1.waignorecalls_1.2_iphoneos-arm64e.html
+Description: Ignore unwanted calls! for WhatsApp
+Filename: debs/twitter.nowesr1.waignorecalls_1.2_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=waignorecallsDp
+Icon: https://raw.githubusercontent.com/nowesr1/WhatsApp-Call-Blocker/refs/heads/main/Sileo/icon.png
+Installed-Size: 153
+MD5sum: 83d674500ebaceecc8416bb387e1291f
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: WAIgnoreCalls
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: e2208183845f2d95b3193057303a27671d40124a
+SHA256: 094ace34e723248952c46c3e7d6d55c73434e905ffdacf38a450a4a7df54ef82
+SHA512: 947694e0eca6d79002723ce62281a593f0ae6d0aa40e221cc48652d75fd152cfdc1912619577c7656e9bdf7fdb55513fbacd4560d9040dd318ea2e6d9bc2ca10
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/twitter.nowesr1.waignorecalls_1.2_iphoneos-arm64e.json
+Size: 47680
+Sponsor: thebigboss.org <http://thebigboss.org>
+Version: 1.2
 dev: nowesr1
 
 Package: weeb.lillie.youtubedislikesreturn
@@ -3912,4 +4242,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/xyz.cypwn.transparentpipgrabber_0.0.3_iphoneos-arm64e.json
 Size: 6456
 Version: 0.0.3
+
+Package: xyz.skitty.ersatz
+Architecture: iphoneos-arm64e
+Author: Skitty
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/xyz.skitty.ersatz_1.0.1_iphoneos-arm64e.html
+Description: Replace any text, system-wide!
+Filename: debs/xyz.skitty.ersatz_1.0.1_iphoneos-arm64e.deb
+Icon: https://skitty.xyz/repo/icons/xyz.skitty.ersatz.png
+Installed-Size: 504
+MD5sum: a65025783a792cabf0c9be1dfaad14e7
+Maintainer: Skitty
+Name: Ersatz
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 92646d39581fe75302206aed42789d3050b164d1
+SHA256: 6d8a16dc0af0c527cdf6ea8aeb58f7e696d0e8b13c4c7388de1dfae484c45c01
+SHA512: a2622ec7f813ecb422733f738026e49f352231ce158b35ba119dab866f3679a8b985eb7318dbad82aa870650b6688c9596a68c5394f6a51a6b6dc85ad30d9ea6
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/xyz.skitty.ersatz_1.0.1_iphoneos-arm64e.json
+Size: 47916
+Version: 1.0.1
 

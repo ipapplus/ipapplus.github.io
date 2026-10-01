@@ -116,9 +116,17 @@
          "first_added" : "2026-10-01T00:02:31Z",
          "sequence" : 22
       },
+      "com.cpdigitaldarkroom.barmoji/2023.3" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 178
+      },
       "com.cureux.cc26glass/1.0.4" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 150
+      },
+      "com.cydiageek.byeseparatorscell/1.1.3" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 179
       },
       "com.cydiageek.noeditpages/1.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
@@ -212,6 +220,10 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 29
       },
+      "com.dvntm.showmytouches/1.1.3" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 180
+      },
       "com.dvntm.silentnotifs/0.0.2" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 47
@@ -223,6 +235,10 @@
       "com.dvntm.walegacy/0.0.3-1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 78
+      },
+      "com.eamontracey.secretshot/1.1.1" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 181
       },
       "com.ethanrdoesmc.truecuts/1.2.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -236,6 +252,10 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 119
       },
+      "com.fiore.calculatorhistory/1.3" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 182
+      },
       "com.fiore.ccborder/1.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 80
@@ -248,9 +268,21 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 155
       },
+      "com.ichitaso.hidekbsettings/1.0.6" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 183
+      },
       "com.ichitaso.iconorder/1.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 81
+      },
+      "com.ichitaso.otadisabler/0.6" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 184
+      },
+      "com.ichitaso.spectrogram/0.1.1" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 185
       },
       "com.icraze.fuckoffairdrop/1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
@@ -299,6 +331,10 @@
       "com.leftyfl1p.carbackground13/1.0" : {
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 169
+      },
+      "com.level3tjg.betterccbrightness/1.0.2" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 186
       },
       "com.level3tjg.twitchadblock/0.1.5" : {
          "first_added" : "2026-10-01T00:20:37Z",
@@ -444,6 +480,10 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 51
       },
+      "com.p2kdev.tinge/1.2.2" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 187
+      },
       "com.p2kdev.twitternoads/1.2.5" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 93
@@ -475,6 +515,14 @@
       "com.ps.replaykitmax/1.0.1" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 63
+      },
+      "com.sergy.immortalizer/2.0.0-1" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 188
+      },
+      "com.sergy.immortalizerjailed/2.2" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 189
       },
       "com.sini921.smoothinstall/0.0.1-1" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -632,6 +680,10 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 145
       },
+      "me.ikghd.pmp/1.12" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 190
+      },
       "me.jjolano.fmwk.hookkit/1.0.15" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 146
@@ -680,6 +732,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 114
       },
+      "org.thebigboss.libcolorpicker/1.6.9.2" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 191
+      },
       "org.wuffs.flickplus/0.0.9" : {
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 177
@@ -691,6 +747,10 @@
       "twitter.nowesr1.photosplus/0.0.1" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 148
+      },
+      "twitter.nowesr1.waignorecalls/1.2" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 192
       },
       "weeb.lillie.youtubedislikesreturn/1.13.1" : {
          "first_added" : "2026-10-01T00:24:18Z",
@@ -707,6 +767,10 @@
       "xyz.cypwn.transparentpipgrabber/0.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 115
+      },
+      "xyz.skitty.ersatz/1.0.1" : {
+         "first_added" : "2026-10-01T00:31:16Z",
+         "sequence" : 193
       }
    },
    "schema" : 1
