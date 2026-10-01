@@ -826,6 +826,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_
 Size: 6469840
 Version: 5.3
 
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.0.4-1+debug_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.nfbbhtwitter_6.0.4-1+debug_iphoneos-arm64.deb
+Installed-Size: 7900
+MD5sum: d282530a399061b647a6f5235a04329a
+Maintainer: NeoFreeBird
+Name: theacrat-NFB
+SHA1: 31e2f9162d1e82dac798f6cd6f22c2d1f8954082
+SHA256: d08a4ce3c854fe81b874f9f2ce20b0525f68a66daff816e993e6dbf8fc3ebbba
+SHA512: ccb87630731ad89686087d326344c012b571634ceebf71a1257ce0f6636743838c089ce9d18c7855cd3250209cdd5f3abe3af95502080fddf718594e83771098
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.0.4-1+debug_iphoneos-arm64.json
+Size: 2146196
+Version: 6.0.4-1+debug
+
 Package: com.bandarhl.orionblur
 Architecture: iphoneos-arm64e
 Author: NeoFreeBird
@@ -846,6 +866,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.json
 Size: 4300448
 Version: 7.0.0-1+debug
+
+Package: com.bandarhl.theacrat
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters, com.bandarhl.orionblur
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64.deb
+Installed-Size: 7900
+MD5sum: 4ff311038f505eafa3aa95631e8f0e71
+Maintainer: NeoFreeBird
+Name: BHTwitter - theacrat
+SHA1: 2e2df6237ea0f44d9459ac62cb5f3119b48457f7
+SHA256: d7805fd2af108459f2147aa8cef622db66be83b0e711cbb17cea060e0f8f26ea
+SHA512: 7c397fd2cca70baf13bbb5da0c122677e10f1e2e3882f92b14fb62da53b71bdb71f739a7005795df09f26a2c54a5b1c1c7d7517f647e7a213983f67c449bd43a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64.json
+Size: 2146224
+Version: 6.0.4-1+debug
 
 Package: com.bandarhl.theacrat
 Architecture: iphoneos-arm64e

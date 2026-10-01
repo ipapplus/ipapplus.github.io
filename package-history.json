@@ -104,6 +104,10 @@
          "first_added" : "2026-10-01T00:05:44Z",
          "sequence" : 27
       },
+      "com.bandarhl.nfbbhtwitter/6.0.4-1+debug" : {
+         "first_added" : "2026-10-01T02:13:53Z",
+         "sequence" : 359
+      },
       "com.bandarhl.orionblur/7.0.0-1+debug" : {
          "first_added" : "2026-10-01T01:32:55Z",
          "sequence" : 332
