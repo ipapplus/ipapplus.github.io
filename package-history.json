@@ -112,9 +112,17 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 28
       },
+      "com.cydiageek.nomoredisabled/1.0.3" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 58
+      },
       "com.dcproducts.iossecuritysuitebypass/1.0.0" : {
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 41
+      },
+      "com.dvntm.cc18/0.0.3" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 59
       },
       "com.dvntm.ccappicon/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
@@ -127,6 +135,10 @@
       "com.dvntm.fbo/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 38
+      },
+      "com.dvntm.lsnoswipe/0.0.1" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 60
       },
       "com.dvntm.lsquickactions/0.0.1" : {
          "first_added" : "2026-10-01T00:13:24Z",
@@ -156,6 +168,10 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 48
       },
+      "com.level3tjg.visibleapps/0.0.3" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 61
+      },
       "com.michaelmelita1.detectedtext-rootless/0.0.2" : {
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 44
@@ -184,13 +200,29 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 50
       },
+      "com.nightwind.sileorespringfix/0.0.1" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 62
+      },
       "com.nscake.noscrollbargrabdelay/0.0.1" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 51
       },
+      "com.ps.replaykitmax/1.0.1" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 63
+      },
+      "com.sugiuta.soundvol/1.0.0" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 64
+      },
       "com.wrp1002.nosettingsbadge/1.1.0" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 52
+      },
+      "com.yourepo.cydiageek.twitterlabelback/1.0.0" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 65
       },
       "com.yourepo.ibreak.nobigtitles/1.0.1" : {
          "first_added" : "2026-10-01T00:14:59Z",
@@ -212,6 +244,14 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 55
       },
+      "jp.uzra.frontestpip/1.1" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 66
+      },
+      "jp.uzra.muteplay/1.0" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 67
+      },
       "jp.uzra.squarepip/1.0" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 56
@@ -219,6 +259,10 @@
       "libkrw0-dopamine/2.0.4" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 40
+      },
+      "me.jjolano.fmwk.rootbridge/1.0.1" : {
+         "first_added" : "2026-10-01T00:16:57Z",
+         "sequence" : 68
       },
       "net.cadoth.nosbreload/0.1.1-1" : {
          "first_added" : "2026-10-01T00:14:59Z",

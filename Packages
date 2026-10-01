@@ -835,6 +835,31 @@ Tag: purpose::extension
 Version: 1.0.1
 dev: lucaluca86
 
+Package: com.cydiageek.nomoredisabled
+Architecture: iphoneos-arm64e
+Author: CydiaGeek <lucaluca86@aol.com>
+Depends: mobilesubstrate, firmware (>= 10.0)
+Depiction: https://ipapplus.github.io/depictions/com.cydiageek.nomoredisabled_1.0.3_iphoneos-arm64e.html
+Description: Prevent Permanent Passcode Locking by Mistake!
+Filename: debs/com.cydiageek.nomoredisabled_1.0.3_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=nomoredisabledDp
+Installed-Size: 172
+MD5sum: 5f819c5cf767213cb0d0c29d15520601
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: NoMoreDisabled
+Pre-Depends: rootless-compat(>= 0.9)
+Priority: optional
+SHA1: 027aeeaa288b63b685cc9e52bd533fe25b1bb4fd
+SHA256: 066ed782aba4caaefe4584f020d567e6d7ba00947985486b2f40482112f14347
+SHA512: 243d1f859c2ab63f6afc53b205272425458e62e4a48da21a5d31729014f1cc5152f5f52266a754083d4897f5341f49af47f711e5e1221d5a9590cab0f21e5efa
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.cydiageek.nomoredisabled_1.0.3_iphoneos-arm64e.json
+Size: 4484
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 1.0.3
+dev: lucaluca86
+
 Package: com.dcproducts.iossecuritysuitebypass
 Architecture: iphoneos-arm64e
 Author: Derek Calabro
@@ -855,6 +880,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dcproducts.iossecuritysuitebypass_1.0.0_iphoneos-arm64e.json
 Size: 3600
 Version: 1.0.0
+
+Package: com.dvntm.cc18
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (< 18.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.cc18_0.0.3_iphoneos-arm64e.html
+Description: Round CC modules replication, like in iOS 18
+Filename: debs/com.dvntm.cc18_0.0.3_iphoneos-arm64e.deb
+Icon: https://raw.githubusercontent.com/dayanch96/CC18/refs/heads/main/Sileo/icon.png
+Installed-Size: 152
+MD5sum: 93adb261a4b83d6bc66d1aca9e3187fc
+Maintainer: dvntm
+Name: CC18
+SHA1: 6ca72b1a602389a4085384b954ef7e9c21f7a340
+SHA256: c50202832887613e9f547a220ffa7a00065abc2c0ab6b26ee13c7a348dd73848
+SHA512: 336583d50f4f8807e015507e10e9464d5fb23cb5bd344d45c9ff8a43580278cee94f40e055c39768349c4b4ed3c025204939d7430a0754e0fc3e6a50af22157e
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.cc18_0.0.3_iphoneos-arm64e.json
+Size: 4524
+Version: 0.0.3
 
 Package: com.dvntm.ccappicon
 Architecture: iphoneos-arm64e
@@ -912,6 +957,26 @@ SHA512: 515dc21cfaef83c28b73d937fbf37c86f448c51dc7b3ae9346e49885512bb1913c0281d9
 Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm64e.json
 Size: 3212
+Version: 0.0.1
+
+Package: com.dvntm.lsnoswipe
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm64e.html
+Description: Disables swipe to open cam on the lock screen
+Filename: debs/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 152
+MD5sum: 21c95349bebac4cfabe3b248adad20c9
+Maintainer: dvntm
+Name: LSNoSwipe
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 3e9d5c54bfd1dad478cdf9b14391be5aac2a3e7f
+SHA256: 33db6ff261443a8d433939788aeba7349169ce760fae89e30a82ce05b9907814
+SHA512: 693ae19df2601025404ab8aacd97f7cee0975e564557d31c97dbaf547a7b3b254b1197e7a675fa326de0885a95d4f2b5d38de3917900e39085e57724491be7d4
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm64e.json
+Size: 4944
 Version: 0.0.1
 
 Package: com.dvntm.lsquickactions
@@ -1051,6 +1116,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.imokhles.disablertl_0.
 Size: 4468
 Version: 0.0.1-3+debug
 
+Package: com.level3tjg.visibleapps
+Architecture: iphoneos-arm64e
+Author: level3tjg
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.level3tjg.visibleapps_0.0.3_iphoneos-arm64e.html
+Description: Show hidden apps on the homescreen
+Filename: debs/com.level3tjg.visibleapps_0.0.3_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: c9c355a57df68efcac068d8af30bf0c2
+Maintainer: level3tjg
+Name: VisibleApps
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 04c36b1dc68f3555028c5b5e449e5ff946a852bb
+SHA256: a024c4f82dc6278c5a3257c875f4bbb4f72a054f79f831d2d63f5a5139514fea
+SHA512: a0b2b40c868b9e652263e98e1cb24a694acae1842031df01aa05fff985cbcb1fafebcfd5e2234694cab6ef953b16a4e064652b042678cb39f4bbbbce3344e3d3
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.level3tjg.visibleapps_0.0.3_iphoneos-arm64e.json
+Size: 4620
+Version: 0.0.3
+
 Package: com.michaelmelita1.detectedtext-rootless
 Architecture: iphoneos-arm64e
 Author: Michael Melita
@@ -1189,6 +1274,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.nosirifeedbackl
 Size: 4144
 Version: 1.0.1
 
+Package: com.nightwind.sileorespringfix
+Architecture: iphoneos-arm64e
+Author: Nightwind
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.nightwind.sileorespringfix_0.0.1_iphoneos-arm64e.html
+Description: Changes "sbreload" in Sileo to "killall SpringBoard" to avoid a bug in Dopamine where a black screen happens.
+Filename: debs/com.nightwind.sileorespringfix_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 49a83c7d01180141f109019a41386daa
+Maintainer: Nightwind
+Name: SileoRespringFix
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 95f9d9274be6b357b5b3fe4ecf62c61a19349166
+SHA256: 7d325ec861a9f37af1ec6413bd3e27eaa387b4d8b8ade4ab80b72405352ef105
+SHA512: 06cfb4009e5c93deb658feccd3b580d93023f0a9e506a4c0843d9195dac2f580ec2066de985fda9d84951e2984fab91376293ba5ebb43ef7dcb0932c11e1b99b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nightwind.sileorespringfix_0.0.1_iphoneos-arm64e.json
+Size: 4812
+Version: 0.0.1
+
 Package: com.nscake.noscrollbargrabdelay
 Architecture: iphoneos-arm64e
 Author: Tanner Bennett <thepantsthief@me.com>
@@ -1209,6 +1314,47 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrab
 Size: 4364
 Version: 0.0.1
 
+Package: com.ps.replaykitmax
+Architecture: iphoneos-arm64e
+Author: PoomSmart
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 9.0)
+Depiction: https://ipapplus.github.io/depictions/com.ps.replaykitmax_1.0.1_iphoneos-arm64e.html
+Description: Record screen without resolution cap.
+Filename: debs/com.ps.replaykitmax_1.0.1_iphoneos-arm64e.deb
+Installed-Size: 152
+MD5sum: 91f258cabe04c8a83cffc93d99d7e6aa
+Maintainer: PoomSmart
+Name: ReplayKit Max
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 35d872bd8ad777408e6ba6808615bcba1f92f3b8
+SHA256: aa8e8efcb0cb961006c9036804d08a9ee04fb72fbd08e313283074541b8f17a7
+SHA512: 1be9a971718db50a3d9dd11f0d7eb68c9c7bb052a20f77ea24dd6b42929fed2bb8c97d75cab220493640bfe59c2d04fe8b763b3a35549da362597b9735382c3f
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ps.replaykitmax_1.0.1_iphoneos-arm64e.json
+Size: 4844
+Version: 1.0.1
+
+Package: com.sugiuta.soundvol
+Architecture: iphoneos-arm64e
+Author: sugiuta
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.sugiuta.soundvol_1.0.0_iphoneos-arm64e.html
+Description: Automatically play/pause music depending on volume.
+Filename: debs/com.sugiuta.soundvol_1.0.0_iphoneos-arm64e.deb
+Icon: https://sugiuta.github.io/repo/images/icons/SoundVol.png
+Installed-Size: 168
+MD5sum: 6e86730ec0714a9e208663560e339166
+Maintainer: sugiuta
+Name: SoundVol
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 29bbbff02987ba3aa23894ec59de5332f50abadc
+SHA256: 539debf8dd748ccfb521bf678eb6ce7b087c8e7eff0240967bc1761b9972fc5d
+SHA512: b32ad8a15977a5df35c0b8de5eaa7fbe86c3345360dffc8e748856eef5d6445c41b69995456f5962ea731796780af2a9b053c5c2e429925dac87ab70bedc7097
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.sugiuta.soundvol_1.0.0_iphoneos-arm64e.json
+Size: 4924
+Version: 1.0.0
+
 Package: com.wrp1002.nosettingsbadge
 Architecture: iphoneos-arm64e
 Author: Wes <wes.hamster@gmail.com>
@@ -1228,6 +1374,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.wrp1002.nosettingsbadge_1.1.0_iphoneos-arm64e.json
 Size: 4360
 Version: 1.1.0
+
+Package: com.yourepo.cydiageek.twitterlabelback
+Architecture: iphoneos-arm64e
+Author: CydiaGeek <lucaluca86@aol.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.yourepo.cydiageek.twitterlabelback_1.0.0_iphoneos-arm64e.html
+Description: Bring Back Old Twitter Label Name!
+Filename: debs/com.yourepo.cydiageek.twitterlabelback_1.0.0_iphoneos-arm64e.deb
+MD5sum: e094218f5820616174f3e9d8c021c4e2
+Maintainer: CydiaGeek <lucaluca86@aol.com>
+Name: TwitterLabelBack
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: a6a2c237822750a1cd720d6637bd83733c2ed83a
+SHA256: 4a5a66197ed1b166887ffced3c078002072c815424147807c3ed924b6a8e128f
+SHA512: aca15dd9239de8dcf15fb4b9842842e5389b0ab0da18419e9fcccfaf72afb2f6a25cbfb3db6bdc0cb4bc3d9f472392a44d924f94af18f3bcde447763cbd0c957
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.cydiageek.twitterlabelback_1.0.0_iphoneos-arm64e.json
+Size: 4848
+Version: 1.0.0
 
 Package: com.yourepo.ibreak.nobigtitles
 Architecture: iphoneos-arm64e
@@ -1328,6 +1493,47 @@ SileoDepiction: https://ipapplus.github.io/depictions/jetsamunlimited_1.0_iphone
 Size: 4020
 Version: 1.0
 
+Package: jp.uzra.frontestpip
+Architecture: iphoneos-arm64e
+Author: uz.ra
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/jp.uzra.frontestpip_1.1_iphoneos-arm64e.html
+Description: PiP will always be shown in the front most
+Filename: debs/jp.uzra.frontestpip_1.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 4729537920efe9fdaec5803f57e6fd27
+Maintainer: uz.ra
+Name: FrontestPiP
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 253762b5c2c8be39df2ed53a6962de9f8bd08b89
+SHA256: 7c5ef07a544b25b873e24201080820330bde14fe5accc1e25b40bc7f5139c64c
+SHA512: 92d5442617a7408fb978b736d2072e322ddd0fc87a92590e29a1642f5a3406591fa73080d94b5798fcc4e3601d6efcb1418b7c0137935eab6edb85a9c4681f6d
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.uzra.frontestpip_1.1_iphoneos-arm64e.json
+Size: 4624
+Version: 1.1
+
+Package: jp.uzra.muteplay
+Architecture: iphoneos-arm64e
+Author: uz.ra
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/jp.uzra.muteplay_1.0_iphoneos-arm64e.html
+Description: Mute notification sound while playing music
+Filename: debs/jp.uzra.muteplay_1.0_iphoneos-arm64e.deb
+Icon: https://uz-ra.github.io/icons/MutePlay.png
+Installed-Size: 168
+MD5sum: 95bc18a0510b1a2e5089d97483e6adcf
+Maintainer: uz.ra
+Name: MutePlay
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: fdab8a309ec4308b11bded5f5561a8e52d5577a1
+SHA256: d2e9307f48f5b4376490f8cccfbb24d584bc2b711e69f801840b241935f19948
+SHA512: ab9e0083ba71bd6f5ef69790ac8702217e72e1b536628fabc7961050558d3a254652c10c163db8a45b7e0329dfb4c57db7b416374648abc5401f2349351cc2b6
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.uzra.muteplay_1.0_iphoneos-arm64e.json
+Size: 4708
+Version: 1.0
+
 Package: jp.uzra.squarepip
 Architecture: iphoneos-arm64e
 Author: uz.ra
@@ -1368,6 +1574,27 @@ Section: Libraries
 SileoDepiction: https://ipapplus.github.io/depictions/libkrw0-dopamine_2.0.4_iphoneos-arm64e.json
 Size: 3228
 Version: 2.0.4
+
+Package: me.jjolano.fmwk.rootbridge
+Architecture: iphoneos-arm64e
+Author: jjolano
+Depends: firmware (>= 8.0)
+Depiction: https://ipapplus.github.io/depictions/me.jjolano.fmwk.rootbridge_1.0.1_iphoneos-arm64e.html
+Description: An iOS developer framework for rootless tweak development.
+Filename: debs/me.jjolano.fmwk.rootbridge_1.0.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: c1bc34574d371851efdf7141d4d39d64
+Maintainer: jjolano
+Name: RootBridge Framework
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 0cce9f3689b3a552a7db4d51274b11043290e367
+SHA256: 124447b5da7424b386e712b6d54e3ee7eff170b44a9e44877c97dbf001c22cc1
+SHA512: 895ce548232ecebe41240e94338b96c47a8796a97b532c279b19215c3e23b323006b04a27c931578459493ac12208b5d9b0c573329d8e2c5a4fec09e0c79375c
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/me.jjolano.fmwk.rootbridge_1.0.1_iphoneos-arm64e.json
+Size: 4828
+Tag: role::developer
+Version: 1.0.1
 
 Package: net.cadoth.nosbreload
 Architecture: iphoneos-arm64e
