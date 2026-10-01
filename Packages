@@ -2738,6 +2738,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.imokhles.disablertl_0.
 Size: 4468
 Version: 0.0.1-3+debug
 
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64e
+Author: iosdump
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.6.9_iphoneos-arm64e.html
+Description: 在主屏幕查看应用数据与管理应用
+Filename: debs/com.iosdump.appdata_2.6.9_iphoneos-arm64e.deb
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+MD5sum: 0a9d975b6ab07179ec6fa3331922323d
+Maintainer: iosdump
+Name: AppData
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 9387d4b3c28bdda62b4b16b5cd5c7a56008475df
+SHA256: eb14968bbeadcf9a95c9c5b9c15d08f7a30b395882ceea4daac57777f141222b
+SHA512: 44bfe9bade1793823d813f167ff598627448062af64bba1b0a72dabf791a82184653a7f8bfb72b718bcedfca837faba565365b3db57d07bff02fdbd457618302
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.6.9_iphoneos-arm64e.json
+Size: 1714636
+Version: 2.6.9
+
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64e
 Author: ipapplus
@@ -3957,6 +3978,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.respringcc_1.0_
 Size: 6988
 Version: 1.0
 
+Package: com.netskao.appdata
+Architecture: iphoneos-arm64e
+Author: Fouad Raheb
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.netskao.appdata_1.4.7_iphoneos-arm64e.html
+Description: View & Manage Applications Data from your Home Screen
+Filename: debs/com.netskao.appdata_1.4.7_iphoneos-arm64e.deb
+Installed-Size: 5156
+MD5sum: 36e23cde0a0429286be21a8feea3e0a2
+Maintainer: Nets
+Markdowndescription: View & Manage Applications Data from your Home Screen<br><br>• v1.4.7: Fix app failed to downgrade<br><br>• v1.4.6: Fix iOS15 crash issues<br><br>• v1.4.5: Modify the API interface for obtaining the downgraded version number of an application
+Name: AppData
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 74a269456612c49cdf9fbe51a9c4b32498847d1b
+SHA256: 26f0a2cf610bf3489bd1e9a20aeb7147d9ba9f30c3b502be36f1574defff6be4
+SHA512: 70e29d53a4cad0530319b9c362a1eefbf8ebdebca33afb6d1c830bb13bea23b9d6aefb3a7ee9507648a39c56c401d10b5d338abbac116032486c80e70cd68f3d
+Section: Netskao-Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.netskao.appdata_1.4.7_iphoneos-arm64e.json
+Size: 1500068
+Version: 1.4.7
+
 Package: com.netskao.disablebottombarlrswipe
 Architecture: iphoneos-arm64e
 Author: Netskao
@@ -3996,6 +4038,26 @@ Section: Netskao-Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.netskao.dumpdecrypter_1.5-1_iphoneos-arm64e.json
 Size: 393452
 Version: 1.5-1
+
+Package: com.netskao.flexlist
+Architecture: iphoneos-arm64e
+Author: Netskao
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.netskao.flexlist_1.4-2_iphoneos-arm64e.html
+Description: FLEXList is a wrapper tool for FLEX Tool
+Filename: debs/com.netskao.flexlist_1.4-2_iphoneos-arm64e.deb
+Installed-Size: 5020
+MD5sum: 000dd001e7ea209d0349a35fae50a32b
+Maintainer: Nets
+Name: FLEXList
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: ac7b9c1f6d9e39b413f9352d2dd0a21bbc019182
+SHA256: 24d2a71e0bbbe130c45e5295a4bf25cc3c78984bd5a68270cd3c9bd92e7e82b9
+SHA512: a261313f7766b9ceb83f377a4e78719a1bac71e695d98fb2263e2aea588dff0205d21393b3b595365a4bd6cdceb71329ff95aa5a71ed106a174cfb07e9a95fad
+Section: Netskao-Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.netskao.flexlist_1.4-2_iphoneos-arm64e.json
+Size: 1326216
+Version: 1.4-2
 
 Package: com.netskao.noappthinning
 Architecture: iphoneos-arm64e
@@ -4333,6 +4395,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.opa334.cranelite_1.3.18_iphoneos-arm64e.json
 Size: 337984
 Version: 1.3.18
+
+Package: com.opa334.trollstorehelper
+Architecture: iphoneos-arm64e
+Author: opa334
+Depiction: https://ipapplus.github.io/depictions/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.html
+Description: Helper utility to install and manage TrollStore!
+Filename: debs/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.deb
+Installed-Size: 4400
+MD5sum: 33d89232c16c645f9a669172b966355b
+Maintainer: opa334
+Name: TrollStore Helper
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 92503661e5e52124c8c09396933534f97f94d161
+SHA256: 55f0cab792198fa7e79439a0c55bd346bc9701c02787436f85e4921f56f343cb
+SHA512: 2c0c6a8a5d0faefdf4928deadfbef580e68a88fdd93a9c89645e13e6a51c30c758ff15ef36b8b4d9ff96bdd9cdc4ed90df9ba7d31d45c9aac2846485c59a6f98
+Section: Applications
+SileoDepiction: https://ipapplus.github.io/depictions/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.json
+Size: 1913204
+Version: 2.1
 
 Package: com.opa334.trollstorelite
 Architecture: iphoneos-arm64e
@@ -5100,6 +5181,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.spark.snowboard_1.5.37
 Size: 1130048
 Version: 1.5.37-Beta4-rootless
 
+Package: com.squidforce.copyvault
+Architecture: iphoneos-arm64e
+Author: SquidForce
+Depends: mobilesubstrate, preferenceloader, com.opa334.altlist
+Depiction: https://ipapplus.github.io/depictions/com.squidforce.copyvault_1.9.0_iphoneos-arm64e.html
+Description: Your Copy Vault, Your Pasteboard
+Filename: debs/com.squidforce.copyvault_1.9.0_iphoneos-arm64e.deb
+Installed-Size: 6304
+MD5sum: f47098fd716ac5cc777f94c43915b13b
+Maintainer: SquidForce
+Name: CopyVault
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: a674675befd656564adb78d31ad8495d9c34bb28
+SHA256: 05365303b3e636c981d9678976a62a7f76638eb34e51f7a7178e9c8a03ece762
+SHA512: dd995d6837ce39d766867583c50d0365cd715a0849df76471b7179ef2a0bdae8af78aa62c4fb673fe16009c3468fb79af9934c8c530d60884df23eea048d738f
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.squidforce.copyvault_1.9.0_iphoneos-arm64e.json
+Size: 1700372
+Version: 1.9.0
+
 Package: com.sugiuta.soundvol
 Architecture: iphoneos-arm64e
 Author: sugiuta
@@ -5304,6 +5405,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.vxbakerxv.emojiskinprefs_1.0.1_iphoneos-arm64e.json
 Size: 16756
 Version: 1.0.1
+
+Package: com.wee1ka.ifetch
+Architecture: iphoneos-arm64e
+Author: wee1ka
+Depends: firmware (>= 14.0), firmware (<< 18.0), mobilesubstrate, com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.wee1ka.ifetch_6.0.0_iphoneos-arm64e.html
+Description: Advanced system diagnostics, process monitor and CLI fetch for rootless and RootHide jailbreak devices on iOS 14–17
+Filename: debs/com.wee1ka.ifetch_6.0.0_iphoneos-arm64e.deb
+Icon: https://weekanya.github.io/iFetch/assets/ifetch-icon.png
+Installed-Size: 4140
+MD5sum: d8119f3c01e2300c7190194578a7bf7a
+Maintainer: wee1ka
+Name: iFetch
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 3f19964b6900e6d337e3d8f522815b7c1c1222ed
+SHA256: 7ea78492062d0671f8e6c41ea411d53bb72f7712cb25640d7479981c58555d54
+SHA512: eda22de9ebf0c3772480a9afcbedb08156fc52f4dbe6b12a6f8e1f495ddba96269baed1b3593fc9e21189a6aec2f5b1a7ea9d937e8b6d9928f8310a1226640cf
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.wee1ka.ifetch_6.0.0_iphoneos-arm64e.json
+Size: 1922800
+Version: 6.0.0
 
 Package: com.wrp1002.nosettingsbadge
 Architecture: iphoneos-arm64e
@@ -5775,6 +5897,28 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/eg.anubistweaks.translux_1.2.1_iphoneos-arm64e.json
 Size: 504300
 Version: 1.2.1
+
+Package: eg.anubistweaks.translux
+Architecture: iphoneos-arm64e
+Author: AnubisTweaks
+Depends: mobilesubstrate, firmware (>= 15.0), preferenceloader, com.opa334.altlist (>= 1.0.4)
+Depiction: https://ipapplus.github.io/depictions/eg.anubistweaks.translux_1.3_iphoneos-arm64e.html
+Description: Advanced translation integration for iOS with OCR support (DEBUG BUILD with enhanced logging). Adds translation buttons to text selection menus across all apps. Includes Snapper 3 integration for image OCR and translation. Supports Google, Baidu, ModernMT, Microsoft translation engines and Youdao, Yandex OCR engines. Features customizable UI, app whitelist.
+Filename: debs/eg.anubistweaks.translux_1.3_iphoneos-arm64e.deb
+Homepage: https://github.com/AnubisTweaks
+Icon: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/icons/translux/icon.png
+Installed-Size: 2372
+MD5sum: dd38fc6f8decd410926611d1f47e5a7f
+Maintainer: AnubisTweaks
+Name: TransLux
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 4368f584b4204917583510acdf375aa0f2b6537e
+SHA256: 553e93bd293aeeb004d18cd12c71014be40d261febf6d012dc31eed22e05a63a
+SHA512: e878afc48c0285dac9cab32b44a53c0698d899ffcc2a4e61eb00baa43ef0b58e3a648767501fa1a1582a36f9b783e9cd05a75ba94218f8551eaa4c4fe7fc2d21
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/eg.anubistweaks.translux_1.3_iphoneos-arm64e.json
+Size: 1681532
+Version: 1.3
 
 Package: eg.anubistweaks.translux
 Architecture: iphoneos-arm64e

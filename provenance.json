@@ -1412,6 +1412,16 @@
          "version" : "0.0.1-3+debug"
       },
       {
+         "Author" : "iosdump",
+         "Maintainer" : "iosdump",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.iosdump.appdata_2.6.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.iosdump.appdata",
+         "sha256" : "eb14968bbeadcf9a95c9c5b9c15d08f7a30b395882ceea4daac57777f141222b",
+         "version" : "2.6.9"
+      },
+      {
          "Author" : "ipapplus",
          "Maintainer" : "ipapplus",
          "architecture" : "iphoneos-arm64e",
@@ -2047,6 +2057,17 @@
          "version" : "1.0"
       },
       {
+         "Author" : "Fouad Raheb",
+         "Maintainer" : "Nets",
+         "SileoDepiction" : "https://jailrepo.initnil.com/api?Package=com.netskao.appdata",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.netskao.appdata_1.4.7_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.netskao.appdata",
+         "sha256" : "26f0a2cf610bf3489bd1e9a20aeb7147d9ba9f30c3b502be36f1574defff6be4",
+         "version" : "1.4.7"
+      },
+      {
          "Author" : "Netskao",
          "Maintainer" : "Nets",
          "SileoDepiction" : "https://jailrepo.initnil.com/Depictions/com.netskao.disablebottombarlrswipe.json",
@@ -2067,6 +2088,17 @@
          "package" : "com.netskao.dumpdecrypter",
          "sha256" : "e49f98941934a6b550397428321d1d9f5ef5be5ef71d0666a42a4f352147bfc4",
          "version" : "1.5-1"
+      },
+      {
+         "Author" : "Netskao",
+         "Maintainer" : "Nets",
+         "SileoDepiction" : "https://jailrepo.initnil.com/Depictions/com.netskao.flexlist.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.netskao.flexlist_1.4-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.netskao.flexlist",
+         "sha256" : "24d2a71e0bbbe130c45e5295a4bf25cc3c78984bd5a68270cd3c9bd92e7e82b9",
+         "version" : "1.4-2"
       },
       {
          "Author" : "Netskao",
@@ -2233,6 +2265,16 @@
          "package" : "com.opa334.cranelite",
          "sha256" : "874e993e2648593bb5362131a99c2d873b9be37e4b8b2e10f54919e7c133d851",
          "version" : "1.3.18"
+      },
+      {
+         "Author" : "opa334",
+         "Maintainer" : "opa334",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.opa334.trollstorehelper",
+         "sha256" : "55f0cab792198fa7e79439a0c55bd346bc9701c02787436f85e4921f56f343cb",
+         "version" : "2.1"
       },
       {
          "Author" : "opa334",
@@ -2628,6 +2670,16 @@
          "version" : "1.5.37-Beta4-rootless"
       },
       {
+         "Author" : "SquidForce",
+         "Maintainer" : "SquidForce",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.squidforce.copyvault_1.9.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.squidforce.copyvault",
+         "sha256" : "05365303b3e636c981d9678976a62a7f76638eb34e51f7a7178e9c8a03ece762",
+         "version" : "1.9.0"
+      },
+      {
          "Author" : "sugiuta",
          "Depiction" : "https://sugiuta.github.io/descriptions/index.html?p=com.sugiuta.soundvol",
          "Maintainer" : "sugiuta",
@@ -2736,6 +2788,17 @@
          "package" : "com.vxbakerxv.emojiskinprefs",
          "sha256" : "b0c74adaa329209d9b84ff8fdeac5955c7cfca560296e2acbbfcd65c72b55887",
          "version" : "1.0.1"
+      },
+      {
+         "Author" : "wee1ka",
+         "Maintainer" : "wee1ka",
+         "SileoDepiction" : "https://weekanya.github.io/iFetch/sileodepiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.wee1ka.ifetch_6.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.wee1ka.ifetch",
+         "sha256" : "7ea78492062d0671f8e6c41ea411d53bb72f7712cb25640d7479981c58555d54",
+         "version" : "6.0.0"
       },
       {
          "Author" : "Wes <wes.hamster@gmail.com>",
@@ -2980,6 +3043,19 @@
          "package" : "eg.anubistweaks.translux",
          "sha256" : "07f0a65cd83fd4aaec76985021308b4b2cdb28d5e54857a306618ad1df7941d9",
          "version" : "1.2.1"
+      },
+      {
+         "Author" : "AnubisTweaks",
+         "Depiction" : "https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks",
+         "Homepage" : "https://github.com/AnubisTweaks",
+         "Maintainer" : "AnubisTweaks",
+         "SileoDepiction" : "https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/eg.anubistweaks.translux_1.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "eg.anubistweaks.translux",
+         "sha256" : "553e93bd293aeeb004d18cd12c71014be40d261febf6d012dc31eed22e05a63a",
+         "version" : "1.3"
       },
       {
          "Author" : "AnubisTweaks",
