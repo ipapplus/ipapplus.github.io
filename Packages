@@ -835,6 +835,27 @@ Tag: purpose::extension
 Version: 1.0.1
 dev: lucaluca86
 
+Package: com.dcproducts.iossecuritysuitebypass
+Architecture: iphoneos-arm64e
+Author: Derek Calabro
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dcproducts.iossecuritysuitebypass_1.0.0_iphoneos-arm64e.html
+Description: A bypass for the iOSSecuritySuite Swift library.
+Filename: debs/com.dcproducts.iossecuritysuitebypass_1.0.0_iphoneos-arm64e.deb
+Icon: https://dtcalabro.github.io/repo/depictions/com.dcproducts.iossecuritysuitebypass/icon.png
+Installed-Size: 136
+MD5sum: 33d94d1a647a0d46a5ccd08ef8b0e163
+Maintainer: Derek Calabro
+Name: iOSSecuritySuiteBypass
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 1c5424b4ecadbce17f017040f3338d8e48389d5c
+SHA256: ec53427c2cde5966d1971e4215a9e15aebfd6cb4880ae8334f0347b913865ffa
+SHA512: 3651eb55682e2f9c2627e6a9f4310f2a683a0ce3aab2060a5357436dc085a6a2fe98f47ce472cde45950fb574590d63fc137d2c098bc02a735a9e000f9abec77
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dcproducts.iossecuritysuitebypass_1.0.0_iphoneos-arm64e.json
+Size: 3600
+Version: 1.0.0
+
 Package: com.dvntm.ccappicon
 Architecture: iphoneos-arm64e
 Author: dvntm
@@ -891,6 +912,25 @@ SHA512: 515dc21cfaef83c28b73d937fbf37c86f448c51dc7b3ae9346e49885512bb1913c0281d9
 Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm64e.json
 Size: 3212
+Version: 0.0.1
+
+Package: com.dvntm.lsquickactions
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.lsquickactions_0.0.1_iphoneos-arm64e.html
+Description: Enables quick action buttons on the lock screen
+Filename: debs/com.dvntm.lsquickactions_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 152
+MD5sum: bd607c83c9c44d86e4f7b7a4b011845a
+Maintainer: dvntm
+Name: LSQuickActions
+SHA1: 25d50e11e958ac4df5b7e430a4cc317f7abc9817
+SHA256: efc8ad59371d80458ad5d3aaf79560164b2732e42e9a27535cac602f8b0e6767
+SHA512: 4a2a9498e2e96e5964d9615eb7f434864fcc6d1e59082906a9fda3b47b4186fb73f19b704eaa893817dec48bfff89c535d782a7c8c37ecf9e54dce76dec660f1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.lsquickactions_0.0.1_iphoneos-arm64e.json
+Size: 3636
 Version: 0.0.1
 
 Package: com.dvntm.ratebegone
@@ -952,6 +992,47 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.icraze.fuckoffairdrop_
 Size: 2900
 Version: 1.0
 
+Package: com.icraze.twitternoid
+Architecture: iphoneos-arm64e
+Author: iCraze
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.icraze.twitternoid_1.0_iphoneos-arm64e.html
+Description: Reveal sensitive content within the Twitter app without ID verification
+Filename: debs/com.icraze.twitternoid_1.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: e3fdfade8733e872ebecab17ca5fa054
+Maintainer: iCraze
+Name: TwitterNoID
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 18755e2c49cf1e19cef8ece340f81cff424f317d
+SHA256: 6827a1c56820ca8657b19170f1364311a8bbf910dd1ae2a1248060ab7aed65b6
+SHA512: 11005871bba3e3f361c3f95ea218e860e08ca58995354945a54c9373323596f09b9c7550f41fa537f3992cafd029787d14a4bb4dec86571d749b9984bf118e95
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.icraze.twitternoid_1.0_iphoneos-arm64e.json
+Size: 3676
+Version: 1.0
+
+Package: com.michaelmelita1.detectedtext-rootless
+Architecture: iphoneos-arm64e
+Author: Michael Melita
+Depends: mobilesubstrate, firmware (>= 15.0), gsc.ipad
+Depiction: https://ipapplus.github.io/depictions/com.michaelmelita1.detectedtext-rootless_0.0.2_iphoneos-arm64e.html
+Description: Live Text in the Camera App
+Filename: debs/com.michaelmelita1.detectedtext-rootless_0.0.2_iphoneos-arm64e.deb
+Installed-Size: 88
+MD5sum: 2645d7c9b9bded9b14f00705d3889b10
+Maintainer: Michael Melita
+Name: DetectedText
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 4947fc80ee26ca9febe27b7d1a9904049c3d51d1
+SHA256: 6a3c7f0fd881c47359ddac734def6fa6a6e613df045a98a08322d67676087061
+SHA512: fcd2c50f1b550420d586cc0a7a1de40215cf043ac52d09c3a1ae8ae5d526d377c9fa0b9a9b493036d17f772516cd5dd74f2a63d89e7f06177e490fe2bcc9b662
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.michaelmelita1.detectedtext-rootless_0.0.2_iphoneos-arm64e.json
+Sileodepiction: https://michaelmelita1.github.io/sileodepictions/com.michaelmelita1.detectedtext/info.json
+Size: 3412
+Version: 0.0.2
+
 Package: com.nan.disablesblockaftercrash
 Architecture: iphoneos-arm64e
 Author: zhaonan
@@ -1009,6 +1090,47 @@ Section: System
 SileoDepiction: https://ipapplus.github.io/depictions/com.nan.disableupdates_0.1.1_iphoneos-arm64e.json
 Size: 1104
 Version: 0.1.1
+
+Package: com.nathan.internalstoragesettings
+Architecture: iphoneos-arm64e
+Author: Nathan Senter
+Depiction: https://ipapplus.github.io/depictions/com.nathan.internalstoragesettings_1.0.1_iphoneos-arm64e.html
+Description: Tweak to enable the hidden storage settings
+Filename: debs/com.nathan.internalstoragesettings_1.0.1_iphoneos-arm64e.deb
+Installed-Size: 136
+MD5sum: 11e2cb17136995ed6347ab97dba21479
+Maintainer: Nathan Senter
+Name: InternalStorageSettings
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 5a442d4502d2b6dcd4e6d863420d6de9504a212d
+SHA256: b5f8180d4637f82974108ff1334420f46bfd123b419c14bb372f6c437cda3c5f
+SHA512: 8d37418cc4a9bf823522590657de18459667ebf1843bd054a0c32547a67921d9467434a60428eabbd7c06148d1c8e5e3fc70cb1569c635d974f99836c62a01ba
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.internalstoragesettings_1.0.1_iphoneos-arm64e.json
+Size: 3372
+Version: 1.0.1
+
+Package: daniel.avplayer
+Architecture: iphoneos-arm64e
+Author: Daniel Levi <daniellinkblock@gmail.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/daniel.avplayer_0.0.1_iphoneos-arm64e.html
+Description: Restore the first generation controls of AVPlayerViewController
+Filename: debs/daniel.avplayer_0.0.1_iphoneos-arm64e.deb
+Icon: https://img.chariz.cloud/icon/avplayer/icon@3x.png
+Installed-Size: 189
+MD5sum: 615607cf3bb2b807bfbf6856e7f996d8
+Maintainer: Daniel Levi <daniellinkblock@gmail.com>
+Name: AVPlayer
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 020f5fcdc37ca618ae534bd55c5045cbc8b6553e
+SHA256: 7ca7e06eb37e562a0e41d7b2c33e82deeb4800e619c18614c9bf6355b9c6949b
+SHA512: 2553f0c45aa66e4e8e2267781c41b8e48e8478ecfd0dbb236e8180cab624c7dced3c707609f2a5e2417b3044262a17fa2b4f556460b97dce4de88e6f966285b8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/daniel.avplayer_0.0.1_iphoneos-arm64e.json
+Size: 3572
+Tag: compatible_min::ios16.0
+Version: 0.0.1
 
 Package: daniel.trustevaluator
 Architecture: iphoneos-arm64e

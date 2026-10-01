@@ -436,6 +436,18 @@
          "version" : "1.0.1"
       },
       {
+         "Author" : "Derek Calabro",
+         "Depiction" : "https://dtcalabro.github.io/repo/depictions/?p=com.dcproducts.iossecuritysuitebypass",
+         "Maintainer" : "Derek Calabro",
+         "SileoDepiction" : "https://dtcalabro.github.io/repo/depictions/com.dcproducts.iossecuritysuitebypass/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dcproducts.iossecuritysuitebypass_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "com.dcproducts.iossecuritysuitebypass",
+         "sha256" : "ec53427c2cde5966d1971e4215a9e15aebfd6cb4880ae8334f0347b913865ffa",
+         "version" : "1.0.0"
+      },
+      {
          "Author" : "dvntm",
          "Maintainer" : "dvntm",
          "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/CCAppIcon/main/Sileo/depiction.json",
@@ -464,6 +476,16 @@
          "first_added" : "2026-10-01T00:09:23Z",
          "package" : "com.dvntm.fbo",
          "sha256" : "8a348f228a64e964b53b279369d6ff0eeaf891961960ff6f2d1f91adf2107606",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.lsquickactions_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "com.dvntm.lsquickactions",
+         "sha256" : "efc8ad59371d80458ad5d3aaf79560164b2732e42e9a27535cac602f8b0e6767",
          "version" : "0.0.1"
       },
       {
@@ -498,6 +520,27 @@
          "version" : "1.0"
       },
       {
+         "Author" : "iCraze",
+         "Maintainer" : "iCraze",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.icraze.twitternoid_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "com.icraze.twitternoid",
+         "sha256" : "6827a1c56820ca8657b19170f1364311a8bbf910dd1ae2a1248060ab7aed65b6",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "Michael Melita",
+         "Depiction" : "https://michaelmelita1.github.io/depictions/?p=com.michaelmelita1.detectedtext",
+         "Maintainer" : "Michael Melita",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.michaelmelita1.detectedtext-rootless_0.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "com.michaelmelita1.detectedtext-rootless",
+         "sha256" : "6a3c7f0fd881c47359ddac734def6fa6a6e613df045a98a08322d67676087061",
+         "version" : "0.0.2"
+      },
+      {
          "Author" : "zhaonan",
          "Maintainer" : "zhaonan",
          "SileoDepiction" : "https://invalidunit.github.io/sileodepiction/com.nan.disablesblockaftercrash/js.json",
@@ -528,6 +571,27 @@
          "package" : "com.nan.disableupdates",
          "sha256" : "faca98515309fec298fc7253377df579fc1fcab5b10fd06064161f548b1f7ddc",
          "version" : "0.1.1"
+      },
+      {
+         "Author" : "Nathan Senter",
+         "Maintainer" : "Nathan Senter",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nathan.internalstoragesettings_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "com.nathan.internalstoragesettings",
+         "sha256" : "b5f8180d4637f82974108ff1334420f46bfd123b419c14bb372f6c437cda3c5f",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "Daniel Levi <daniellinkblock@gmail.com>",
+         "Depiction" : "https://chariz.com/get/avplayer",
+         "Maintainer" : "Daniel Levi <daniellinkblock@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/daniel.avplayer_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:13:24Z",
+         "package" : "daniel.avplayer",
+         "sha256" : "7ca7e06eb37e562a0e41d7b2c33e82deeb4800e619c18614c9bf6355b9c6949b",
+         "version" : "0.0.1"
       },
       {
          "Author" : "daniel",

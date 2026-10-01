@@ -1,0 +1,50 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "DetectedText — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "0.0.2",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Live Text in the Camera App",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Michael Melita",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "mobilesubstrate, firmware (>= 15.0), gsc.ipad",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "rootless-compat(>= 0.9)",
+               "title" : "Pre-Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

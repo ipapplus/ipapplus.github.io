@@ -112,6 +112,10 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 28
       },
+      "com.dcproducts.iossecuritysuitebypass/1.0.0" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 41
+      },
       "com.dvntm.ccappicon/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 36
@@ -123,6 +127,10 @@
       "com.dvntm.fbo/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 38
+      },
+      "com.dvntm.lsquickactions/0.0.1" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 42
       },
       "com.dvntm.ratebegone/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
@@ -136,6 +144,14 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 30
       },
+      "com.icraze.twitternoid/1.0" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 43
+      },
+      "com.michaelmelita1.detectedtext-rootless/0.0.2" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 44
+      },
       "com.nan.disablesblockaftercrash/0.1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 31
@@ -147,6 +163,14 @@
       "com.nan.disableupdates/0.1.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 33
+      },
+      "com.nathan.internalstoragesettings/1.0.1" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 45
+      },
+      "daniel.avplayer/0.0.1" : {
+         "first_added" : "2026-10-01T00:13:24Z",
+         "sequence" : 46
       },
       "daniel.trustevaluator/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
