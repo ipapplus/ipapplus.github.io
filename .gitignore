@@ -39,3 +39,5 @@ backup-*/
 repo-backup*/
 .repo-transaction/
 repo-lifecycle-*/
+# Reusable extracted metadata and required APT checksums
+.repo-cache.json
