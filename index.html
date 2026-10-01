@@ -97,7 +97,7 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
     </a>
   </nav>
-  <p id="last-updated">Last Updated: Loading…</p>
+  <p id="last-updated">Last Updated: Unknown</p>
   <section class="package-browser" aria-labelledby="package-heading">
     <h2 id="package-heading">Packages</h2>
     <label for="package-search">Search packages</label>
@@ -212,18 +212,13 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
   }
   const indexURL=new URL('Packages',window.location.href);
   const updated=document.getElementById('last-updated');
-  fetch(new URL('last-updated.txt',indexURL),{cache:'no-cache'}).then(response=>{
-    if(!response.ok)throw new Error('Update time request failed');
-    return response.text();
-  }).then(text=>{
-    const date=new Date(text.trim());
-    if(Number.isNaN(date.getTime()))throw new Error('Invalid update time');
-    updated.textContent='Last Updated: '+date.toLocaleString('en-US',{
-      year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'
-    });
-  }).catch(()=>{updated.textContent='Last Updated: Unavailable';});
   fetch(indexURL).then(response=>{
     if(!response.ok)throw new Error('Package index request failed');
+    const modified=response.headers.get('Last-Modified');
+    const date=modified?new Date(modified):null;
+    updated.textContent=date&&!Number.isNaN(date.getTime())?'Last Updated: '+date.toLocaleString('en-US',{
+      year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'
+    }):'Last Updated: Unknown';
     return response.text();
   }).then(text=>{
     const fragment=document.createDocumentFragment();
