@@ -835,6 +835,84 @@ Tag: purpose::extension
 Version: 1.0.1
 dev: lucaluca86
 
+Package: com.dvntm.ccappicon
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0), firmware (<< 16.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.ccappicon_0.0.1_iphoneos-arm64e.html
+Description: No app icon in Now Playing and Control Center artworks
+Filename: debs/com.dvntm.ccappicon_0.0.1_iphoneos-arm64e.deb
+Icon: https://raw.githubusercontent.com/dayanch96/CCAppIcon/refs/heads/main/Sileo/icon.png
+Installed-Size: 152
+MD5sum: 6170ad0f7d65f039a3794bf79ea4a3a8
+Maintainer: dvntm
+Name: CCAppIcon
+SHA1: afe5e64d19384acc5d2a2721a2e3e48f06d0f381
+SHA256: cf4e352ef7cfee2d1c649f1e5d8fcebb146876f01185d8d492d73593db819d83
+SHA512: 5af63a02ae5fa54c032d854eda5b2726aad6ff9ae043125293858d93bf705bc443c59675d3f942f90aa7043079909de52b16363fb6678460b23284b1707b4d10
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.ccappicon_0.0.1_iphoneos-arm64e.json
+Size: 3160
+Version: 0.0.1
+
+Package: com.dvntm.esignalert
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.esignalert_0.0.1_iphoneos-arm64e.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.dvntm.esignalert_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 152
+MD5sum: 6f5fc7a3230fdb83690515e7225a43fc
+Maintainer: dvntm
+Name: ESignAlert
+SHA1: 29bd8ced1ca2576259fefb8e0618a68c1d8d42c7
+SHA256: 39d25e3f8cb04a0ea5d4bc954d616837269c77991fae99c04f4d14d9fa4aa0bf
+SHA512: 7db4c1d320be85682155605269d28d97707ad284fc08f6f458651af1de14edb38b9de877c5affd8d17c4ddca024d92d609334bcf290075ac9a253d66aba9d591
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.esignalert_0.0.1_iphoneos-arm64e.json
+Size: 3292
+Version: 0.0.1
+
+Package: com.dvntm.fbo
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm64e.html
+Description: Displays only the Browse tab and hides the tab bar
+Filename: debs/com.dvntm.fbo_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 846c440cbc26750e4e34357407b4e9b7
+Maintainer: dvntm
+Name: FilesBrowsingOnly
+SHA1: 5d3ee4aa7e7e0038465cb729d1ab8d3c5e1900d4
+SHA256: 8a348f228a64e964b53b279369d6ff0eeaf891961960ff6f2d1f91adf2107606
+SHA512: 515dc21cfaef83c28b73d937fbf37c86f448c51dc7b3ae9346e49885512bb1913c0281d9ed173dafa20b972a6aadbdb46e87b32c7e95fb525c509c8bdd8b1dfa
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm64e.json
+Size: 3212
+Version: 0.0.1
+
+Package: com.dvntm.ratebegone
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.ratebegone_0.0.1_iphoneos-arm64e.html
+Description: Removes annoying rate app pop-ups
+Filename: debs/com.dvntm.ratebegone_0.0.1_iphoneos-arm64e.deb
+Icon: https://raw.githubusercontent.com/dayanch96/RateBeGone/refs/heads/main/sources/icon.png
+Installed-Size: 152
+MD5sum: 0755e91e4c1a4f70f388fe05f4667777
+Maintainer: dvntm
+Name: RateBeGone
+SHA1: 46b5f69c9f550a94d686721b844add4d21f39919
+SHA256: 960f4da9fcc6ab714e98bb2ff3b16d0cec6945b760b9a16589dcac2158865409
+SHA512: 1323cc900a13e535b01c454ae4deba8657be613a5bec7b3eae3d076396d6bf9e5d5217da963f4e55330c0ce594a974398fe5e6178b055488ce751dad333a3353
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.ratebegone_0.0.1_iphoneos-arm64e.json
+Size: 3268
+Version: 0.0.1
+
 Package: com.dvntm.safariii
 Architecture: iphoneos-arm64e
 Author: dvntm
@@ -950,6 +1028,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/daniel.trustevaluator_0.0.1_iphoneos-arm64e.json
 Size: 2936
 Version: 0.0.1
+
+Package: libkrw0-dopamine
+Architecture: iphoneos-arm64e
+Author: opa334 <opa334@protonmail.com>
+Depends: libiosexec1 (>= 1.3.1)
+Depiction: https://ipapplus.github.io/depictions/libkrw0-dopamine_2.0.4_iphoneos-arm64e.html
+Description: libkrw Plug-in for Dopamine (Shared Library)
+Filename: debs/libkrw0-dopamine_2.0.4_iphoneos-arm64e.deb
+Homepage: https://github.com/opa334/Dopamine/tree/main/Packages/libkrw-provider
+MD5sum: 9772aa21a004aa252f18dc27ab76adc4
+Maintainer: opa334 <opa334@protonmail.com>
+Name: libkrw Plug-in (Dopamine)
+Priority: standard
+Provides: libkrw0-plugin
+SHA1: e5a9cbd701b0b913f11bd580a6290fdecfbc5931
+SHA256: 8dd45ce8b783a50673e747c599ce6d502078909458df5b2601a2fdd7dbd4d39b
+SHA512: 330dfde1ef87824e8bc2d0f4d542082136bc729661c68c1d59dd4301893e6a22fc08e1a170dc4c9462fe08141f78a2b740c8f25ea9730e13e0beb67cc74cbc79
+Section: Libraries
+SileoDepiction: https://ipapplus.github.io/depictions/libkrw0-dopamine_2.0.4_iphoneos-arm64e.json
+Size: 3228
+Version: 2.0.4
 
 Package: rootfultorootless
 Architecture: iphoneos-arm64e

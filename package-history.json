@@ -112,6 +112,22 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 28
       },
+      "com.dvntm.ccappicon/0.0.1" : {
+         "first_added" : "2026-10-01T00:09:23Z",
+         "sequence" : 36
+      },
+      "com.dvntm.esignalert/0.0.1" : {
+         "first_added" : "2026-10-01T00:09:23Z",
+         "sequence" : 37
+      },
+      "com.dvntm.fbo/0.0.1" : {
+         "first_added" : "2026-10-01T00:09:23Z",
+         "sequence" : 38
+      },
+      "com.dvntm.ratebegone/0.0.1" : {
+         "first_added" : "2026-10-01T00:09:23Z",
+         "sequence" : 39
+      },
       "com.dvntm.safariii/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 29
@@ -135,6 +151,10 @@
       "daniel.trustevaluator/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 34
+      },
+      "libkrw0-dopamine/2.0.4" : {
+         "first_added" : "2026-10-01T00:09:23Z",
+         "sequence" : 40
       },
       "rootfultorootless/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",

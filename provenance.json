@@ -438,6 +438,48 @@
       {
          "Author" : "dvntm",
          "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/CCAppIcon/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.ccappicon_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:09:23Z",
+         "package" : "com.dvntm.ccappicon",
+         "sha256" : "cf4e352ef7cfee2d1c649f1e5d8fcebb146876f01185d8d492d73593db819d83",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.esignalert_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:09:23Z",
+         "package" : "com.dvntm.esignalert",
+         "sha256" : "39d25e3f8cb04a0ea5d4bc954d616837269c77991fae99c04f4d14d9fa4aa0bf",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.fbo_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:09:23Z",
+         "package" : "com.dvntm.fbo",
+         "sha256" : "8a348f228a64e964b53b279369d6ff0eeaf891961960ff6f2d1f91adf2107606",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/RateBeGone/main/sources/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.ratebegone_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:09:23Z",
+         "package" : "com.dvntm.ratebegone",
+         "sha256" : "960f4da9fcc6ab714e98bb2ff3b16d0cec6945b760b9a16589dcac2158865409",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.dvntm.safariii_0.0.1_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:08:08Z",
@@ -496,6 +538,17 @@
          "package" : "daniel.trustevaluator",
          "sha256" : "b83fb4a140ae8a1d6fcda9cc37a2e6aa4fedd757e8e2ddc526431f9d4cdeffd5",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "opa334 <opa334@protonmail.com>",
+         "Homepage" : "https://github.com/opa334/Dopamine/tree/main/Packages/libkrw-provider",
+         "Maintainer" : "opa334 <opa334@protonmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/libkrw0-dopamine_2.0.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:09:23Z",
+         "package" : "libkrw0-dopamine",
+         "sha256" : "8dd45ce8b783a50673e747c599ce6d502078909458df5b2601a2fdd7dbd4d39b",
+         "version" : "2.0.4"
       },
       {
          "Author" : "none <a4237019c0@emailabox.pro>",
