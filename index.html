@@ -216,9 +216,18 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
     if(!response.ok)throw new Error('Package index request failed');
     const modified=response.headers.get('Last-Modified');
     const date=modified?new Date(modified):null;
-    updated.textContent=date&&!Number.isNaN(date.getTime())?'Last Updated: '+date.toLocaleString('en-US',{
-      year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'
-    }):'Last Updated: Unknown';
+    if(date&&!Number.isNaN(date.getTime())){
+      const seconds=Math.max(0,Math.floor((Date.now()-date.getTime())/1000));
+      let relative='Just now';
+      if(seconds>=60){
+        const unit=seconds>=86400?'day':seconds>=3600?'hour':'minute';
+        const count=Math.floor(seconds/(unit==='day'?86400:unit==='hour'?3600:60));
+        relative=count+' '+unit+(count===1?'':'s')+' ago';
+      }
+      updated.textContent='Last Updated: '+relative;
+    }else{
+      updated.textContent='Last Updated: Unknown';
+    }
     return response.text();
   }).then(text=>{
     const fragment=document.createDocumentFragment();
