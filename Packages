@@ -5087,6 +5087,28 @@ Icon: https://m4fn3.github.io/repo/web/images/Mikkyy.png
 SileoDepiction: https://m4fn3.github.io/repo/web/depictions/Mikkyy.json
 
 Package: com.macthemes.axolotl
+Architecture: iphoneos-arm64
+Version: 2511
+Section: Tweaks
+Maintainer: Aeneon <me@macthemes.me>
+Installed-Size: 589
+Pre-Depends: mobilesubstrate, preferenceloader | com.artikus.preferenceloader
+Depends: firmware (>= 12)
+Conflicts: com.0xkuj.blockwaupdates, com.ifilipis.fckzck
+Filename: ./debs/com.macthemes.axolotl-arm64.deb
+Size: 256762
+MD5sum: b39bf901b3867e9441346262034a903e
+SHA1: ee50274653e6f9dc3b18c04cd73e048a481de034
+SHA256: 28c4314a6a60fb480d005d41ee5969ffae12bf30df1844a43e947f2abf405325
+SHA512: fd62fb3ca5010facae0c9b95815a65299f88319efee334c5ab2111be982d4040538eedf425f593dd0d1ef932cd339841c91a65b9268ac829417fbc67b95dab96
+Description: Blocks WhatsApp Update Notifications …
+Tag: compatible::ios15
+Name: Axolotl for WhatsApp
+Author: 0xkuj, ifilipis & MacThemes <me@macthemes.me>
+Icon: file:///Library/PreferenceBundles/AxolotlPrefs.bundle/axolotl.png
+Depiction: http://macthemes.me/package.php?id=com.macthemes.axolotl
+
+Package: com.macthemes.axolotl
 Architecture: iphoneos-arm
 Version: 2504
 Section: Tweaks
@@ -9400,6 +9422,24 @@ Author: AnubisTweaks
 Depiction: https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks
 SileoDepiction: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json
 Icon: https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/icons/translux/icon.png
+
+Package: com.f0u4d.watusitools
+Architecture: iphoneos-arm64
+Version: 2.5.32
+Section: Development
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Depends: firmware (>= 12.0)
+Conflicts: com.f0u4d.stalky (<< 4.1.33), com.f0u4d.onlinenotify (<< 3.4.11), com.fouadraheb.contactsync (<< 1.1.13), com.fouadraheb.watusi3 (<< 1.2.47)
+Filename: ./debs/ext.fouadraheb.watusitools-arm64~2.5.32.deb
+Size: 5598184
+MD5sum: 0c929483d436af4174c2e30966033484
+SHA1: 0de6032a2173f09c4d855890667a5048294ab060
+SHA256: 8b1336baa639174571701f7279ef066fcfbfa5f68b433a7df1b31e7df38e9a2c
+SHA512: ff833fda3905fcd2ec2986aca32ba94f5c7b579f0ca9d5603f587f33883a63d8599843870f2ecd4ac28ef5ff9be5a56c1539f3e7d5113df2dfaacc95902d599f
+Description: Library for Watusi and other WhatsApp tweaks
+Name: WatusiTools
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.watusitools
 
 Package: jetsamunlimited
 Architecture: iphoneos-arm64
