@@ -1956,6 +1956,16 @@
       {
          "Author" : "iosdump",
          "Maintainer" : "iosdump",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.iosdump.appdata_2.7.5_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T01:32:55Z",
+         "package" : "com.iosdump.appdata",
+         "sha256" : "d9313782b70d28a01911e924d44d2d7995f8e04015543d6b6cc78c6d1af5053b",
+         "version" : "2.7.5"
+      },
+      {
+         "Author" : "iosdump",
+         "Maintainer" : "iosdump",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.iosdump.appdata_2.7.5_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T01:32:55Z",
@@ -1982,6 +1992,18 @@
          "package" : "com.ipapplus.instarab",
          "sha256" : "a89877667393ab11cbd2c9f23e2fa59d756029bc7b404dcd64b5d91d4c9d6765",
          "version" : "3.0"
+      },
+      {
+         "Author" : "jailbreak365 <jailbreak365@mail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.jailbreak365.safeccmodules_1.5-1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.jailbreak365.safeccmodules",
+         "sha256" : "041dbe74be1b80deeb52011705f604a01df4844fca75b4f519c8cf5afdb818b2",
+         "version" : "1.5-1"
       },
       {
          "Author" : "jailbreak365 <jailbreak365@mail.com>",
@@ -3822,6 +3844,16 @@
       {
          "Author" : "Spark & Dennis D. Bednarz",
          "Maintainer" : "Spark",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.spark.snowboard_1.5.37-Beta4-rootless_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.spark.snowboard",
+         "sha256" : "bb0454974dc800aba6986d4bdeea94f9fea58253aca028776a501218719cb202",
+         "version" : "1.5.37-Beta4-rootless"
+      },
+      {
+         "Author" : "Spark & Dennis D. Bednarz",
+         "Maintainer" : "Spark",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.spark.snowboard_1.5.37-Beta4-rootless_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -4057,6 +4089,17 @@
          "package" : "com.w3ltyyy.lead",
          "sha256" : "7e45b722c93ce5a81a8b27da25ff192c2106be9a7d01eeef3f63a4062e771e0d",
          "version" : "1.4.4"
+      },
+      {
+         "Author" : "wee1ka",
+         "Maintainer" : "wee1ka",
+         "SileoDepiction" : "https://weekanya.github.io/iFetch/sileodepiction.json",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.wee1ka.ifetch_6.0.0_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T01:22:13Z",
+         "package" : "com.wee1ka.ifetch",
+         "sha256" : "67ee308adb29bb093786decb0c945e2d606ed1f256f3438e2c9ccd93822fff71",
+         "version" : "6.0.0"
       },
       {
          "Author" : "wee1ka",
@@ -4382,6 +4425,16 @@
          "package" : "dev.unlock.00",
          "sha256" : "6e9785e477656c9359be4c5edc22c14c9be3c67fe8583863180cdd4c61c5ba6b",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "dylv",
+         "Maintainer" : "dylv",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/dylv.liquidass_0.1.0b_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T01:59:09Z",
+         "package" : "dylv.liquidass",
+         "sha256" : "3385b5a87a2179ef8cf12b135a0a4d8b7ac85d6b2d3a55a356986613cc51173a",
+         "version" : "0.1.0b"
       },
       {
          "Author" : "dylv",
