@@ -68,6 +68,10 @@
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 12
       },
+      "com.82flex.libsandyxpc/1.1.2" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 365
+      },
       "com.82flex.singlemute/1.7" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 13
@@ -87,6 +91,18 @@
       "com.asterix.digitalbattery13/1.1.0" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 16
+      },
+      "com.babylon-vip.adblockpro/0.1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 366
+      },
+      "com.babylon-vip.athkar/0.1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 367
+      },
+      "com.babylon-vip.hammel/0.1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 368
       },
       "com.bandarhl.bhinsta/1.2" : {
          "first_added" : "2026-10-01T00:04:10Z",
@@ -139,6 +155,14 @@
       "com.barabadev.vitra/1.0.0" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 196
+      },
+      "com.blatant.maplereadcx/1.0" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 369
+      },
+      "com.blatant.swiftycompiler/0.0.1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 370
       },
       "com.brend0n.notransitcardversionlimit/0.0.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -356,6 +380,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 77
       },
+      "com.dvntm.walegacy/0.0.3" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 371
+      },
       "com.dvntm.walegacy/0.0.3-1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 78
@@ -536,6 +564,10 @@
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 166
       },
+      "com.julioverne.lowerinstall/0.0~beta6" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 372
+      },
       "com.kdt.trollpad/1.3" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 157
@@ -579,6 +611,10 @@
       "com.level3tjg.visibleapps/0.0.3" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 61
+      },
+      "com.lheap.whatspad/2.0" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 373
       },
       "com.lizynz.folderx.rootless/2.0" : {
          "first_added" : "2026-10-01T01:55:04Z",
@@ -840,6 +876,10 @@
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 62
       },
+      "com.no5up-kanji.librelic/2.1.1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 374
+      },
       "com.noisyflake.velvet2/2.1.2-3" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 262
@@ -956,6 +996,10 @@
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 189
       },
+      "com.shepgoba.settingswidgets/1.2.2" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 375
+      },
       "com.shepgoba.settingswidgets/1.2.3" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 277
@@ -1068,9 +1112,17 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 161
       },
+      "com.tushaoye.supportunsupportedaccessories8/1.0-1" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 376
+      },
       "com.ub.disablerec/1.0.0-12" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 100
+      },
+      "com.ub.disablerec/1.0.0-16+debug" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 377
       },
       "com.uckermark.siriplus/1.4" : {
          "first_added" : "2026-10-01T00:35:15Z",
@@ -1243,6 +1295,10 @@
       "jp.r-plus.menusupport/1.3.0" : {
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 175
+      },
+      "jp.soh.freepip/0.0.3" : {
+         "first_added" : "2026-10-01T02:26:56Z",
+         "sequence" : 378
       },
       "jp.uzra.enabledsreturn/1.2" : {
          "first_added" : "2026-10-01T00:18:16Z",

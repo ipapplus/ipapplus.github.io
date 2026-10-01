@@ -141,6 +141,24 @@ Size: 207448
 Version: 1.0
 
 Package: apple.ios26.font
+Architecture: iphoneos-arm
+Author: Apple
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm.html
+Description: Arabic & English
+Filename: debs/apple.ios26.font_1.0_iphoneos-arm.deb
+MD5sum: 70e07a2ad35acf0a03126caf5ba796f1
+Maintainer: Apple
+Name: Arabic UI Text Medium iOS26
+SHA1: cb9819344700d4b2bc57300bb6a3474b7ea1fa11
+SHA256: f498a19a59d8befb10ce3d37ac42648076f1c86994de83eb918fa7e457778d06
+SHA512: f6617ef9986e80e15dc771b43d16e9b2fa96c1c66158b4e2f9dcfb4a0d37dbb9b11ff959290a740889c31ebf3b4b45243c10a6b8bbe27e932417e54c001df232
+Section: Fonts
+SileoDepiction: https://ipapplus.github.io/depictions/apple.ios26.font_1.0_iphoneos-arm.json
+Size: 116184
+Version: 1.0
+
+Package: apple.ios26.font
 Architecture: iphoneos-arm64
 Author: Apple
 Depends: mobilesubstrate
@@ -511,6 +529,45 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.iconrestore_1.7
 Size: 30480
 Version: 1.7
 
+Package: com.82flex.libsandyxpc
+Architecture: iphoneos-arm
+Author: 82Flex <82flex@gmail.com>
+Depends: com.opa334.libsandy
+Depiction: https://ipapplus.github.io/depictions/com.82flex.libsandyxpc_1.1.2_iphoneos-arm.html
+Description: Yet another XPC library for iOS
+Filename: debs/com.82flex.libsandyxpc_1.1.2_iphoneos-arm.deb
+Installed-Size: 256
+MD5sum: 8b3ea28b7db77a9a7f7e03504836cac3
+Maintainer: 82Flex <82flex@gmail.com>
+Name: libSandyXpc
+SHA1: 488106e7f99470926c471778228762c259f166eb
+SHA256: 53776db2115661818bc75bf3ba46b5fd24e4dfad18e70f5456ff2c8321687417
+SHA512: 734817f4c0b8a7790cbcd5b5ec6a8cf0e0b14490028d372b9b3b4740e78746b1fa38284e0bccc234e5d7bae4b2d6188c82f25fda4855e99a4a69298a476eb0c5
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.libsandyxpc_1.1.2_iphoneos-arm.json
+Size: 28700
+Tag: role::developer
+Version: 1.1.2
+
+Package: com.82flex.singlemute
+Architecture: iphoneos-arm
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm.html
+Description: Just a single mute icon on the status bar of iOS.
+Filename: debs/com.82flex.singlemute_1.7_iphoneos-arm.deb
+Installed-Size: 388
+MD5sum: 133cb1f75d75dd08689308db8660836e
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single Mute
+SHA1: 53dd8b66051a8f99e3115975fd5499bbdb4be4f2
+SHA256: cace3c7000098dda19979f9f4c333c6d91aecc5f48c7197562f4237674caf4c8
+SHA512: af97d43c89cea30d7c96c3ce7503544ac008caf3a517e74c6471c8806c923997f1704e5e8f62e9f8f566f1547fcd8e2dc040a04d1923c7421b9beee934a2f40c
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm.json
+Size: 27616
+Version: 1.7
+
 Package: com.82flex.singlemute
 Architecture: iphoneos-arm64
 Author: 82Flex <82flex@gmail.com>
@@ -548,6 +605,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlemute_1.7_iphoneos-arm64e.json
 Size: 27628
 Version: 1.7
+
+Package: com.82flex.singlevpn
+Architecture: iphoneos-arm
+Author: 82Flex <82flex@gmail.com>
+Depends: firmware (>= 14.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm.html
+Description: Combine VPN state and wireless state into one icon.
+Filename: debs/com.82flex.singlevpn_2.1-2_iphoneos-arm.deb
+Installed-Size: 420
+MD5sum: 3fc29459e1d83d6f4028b757c48de808
+Maintainer: 82Flex <82flex@gmail.com>
+Name: Single VPN
+SHA1: 1c83bf8d618a15c8903db16847a9c0a8918a549e
+SHA256: 699f01014e2757be3cea0bf32244ff86642f9fa21fc2437e271b4516063893b1
+SHA512: 6347161aa62a09e169da7046afbb9fd0c3941edbbf67a934f9b3a3412498a81e3d839de13db44eb278b02f44463b1c8e17a5b4504c185e26e5373e1032ae9d7a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.82flex.singlevpn_2.1-2_iphoneos-arm.json
+Size: 35196
+Version: 2.1-2
 
 Package: com.82flex.singlevpn
 Architecture: iphoneos-arm64
@@ -607,6 +683,29 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.alphastream.linearfors
 Size: 214952
 Tag: compatible_min::ios12.0
 Version: 1.4.2-1
+
+Package: com.alshaman.twiteddate
+Architecture: iphoneos-arm
+Author: Saud Alshaman <alshaman64@gmail.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm.html
+Description: Show account creation date details in Twitter App
+Filename: debs/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=twitdateDp
+Installed-Size: 138
+MD5sum: fbddd129b4281bc0e429e6a5348a588d
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: TwitDate
+SHA1: e15b90bb55a22e64dc813b5e5daed5fffa8e270a
+SHA256: 02e532da6aba8c2a0d24d721a6dac1957fcd76366832c744c35a0ba7ef3bd7ed
+SHA512: b7904dd3fc5e9f71d0ae08c55b846db983dd2e6a5ffe93e21d97746ad146a51f9578b2e19990861d4c2d15d5dd33a6dfaa29131041d652bf55a280b38b587a96
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.alshaman.twiteddate_0.0.1-2_iphoneos-arm.json
+Size: 8324
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 0.0.1-2
+dev: alshaman
 
 Package: com.alshaman.twiteddate
 Architecture: iphoneos-arm64
@@ -704,6 +803,87 @@ Sponsor: thebigboss.org <http://thebigboss.org>
 Tag: purpose::extension, compatible::ios13
 Version: 1.1.0
 dev: asterix
+
+Package: com.babylon-vip.adblockpro
+Architecture: iphoneos-arm
+Author: Haidar_Phantom
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.babylon-vip.adblockpro_0.1_iphoneos-arm.html
+Description: Enable Premium Subscription
+Filename: debs/com.babylon-vip.adblockpro_0.1_iphoneos-arm.deb
+Icon: https://i.imgur.com/91cYYdn.jpeg
+Installed-Size: 216
+MD5sum: d89d8384786f2b967ebe918c71608648
+Maintainer: Haidar_Phantom
+Name: AdBlock Pro
+SHA1: 770060c7432ad0b4bab29f9c564226146dc19689
+SHA256: 33051fb27e2fdff3b9032dd9425cf70daa47a8701d1b0a284b59cb303a2772b6
+SHA512: e0260e0166c086eb95c512b77d0047a4f0bc371e06d11634bcbe79c69e9cd9d6468d9e8d8ff8b8d103b73519eaf32963c43f325ae91c0aebcba6ba13cb27f3d3
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.babylon-vip.adblockpro_0.1_iphoneos-arm.json
+Size: 43844
+Version: 0.1
+
+Package: com.babylon-vip.athkar
+Architecture: iphoneos-arm
+Author: Haidar_Phantom
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.babylon-vip.athkar_0.1_iphoneos-arm.html
+Description: Enable Premium Subscription
+Filename: debs/com.babylon-vip.athkar_0.1_iphoneos-arm.deb
+Homepage: 
+Icon: https://i.imgur.com/1zWICJz.jpeg
+Installed-Size: 216
+MD5sum: bc7c89c0371c45f3a65b628e364d5dc2
+Maintainer: Haidar_Phantom
+Name: Athkar | أذكار
+SHA1: 0311fd8639c1a9cd5f13f52f175dfa61ff80cd92
+SHA256: 46ef0a2f1d0b6ffa53120d87fa9295d5c9a3287ee6df540f7db5992dde356d49
+SHA512: 186740a551f3aa35b8d394468506a6d8adb126026638c2afcdec48aad2ce54b493c1afb8811c1e248d04ea46ad488a4acc3036f49c3ed34036e21d471840cdcc
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.babylon-vip.athkar_0.1_iphoneos-arm.json
+Size: 44136
+Version: 0.1
+
+Package: com.babylon-vip.hammel
+Architecture: iphoneos-arm
+Author: Haidar_Phantom
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.babylon-vip.hammel_0.1_iphoneos-arm.html
+Description: Enable Premium Subscription
+Filename: debs/com.babylon-vip.hammel_0.1_iphoneos-arm.deb
+Homepage: 
+Icon: https://i.imgur.com/5SQvqwm.jpeg
+Installed-Size: 396
+MD5sum: 9ccd5086d55c2477ebb98b33dbb22118
+Maintainer: Haidar_Phantom
+Name: Hammel Hack | إدارة الملفات
+SHA1: 273c73dc34b9e523d5964fab040675bc77ac7ba9
+SHA256: ae4299cbb216c1ef10fa00fc315972a3d4ef98e47d56f0c1e05e77af20e939de
+SHA512: 6f299f762ebe1780b8ee1739f1a4aa597a95325e0d8e227a44c3fc48e04e05c0fdd716615a12449d837a8b819f313a49e63b3004f8867f7b19d07c4605dc2278
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.babylon-vip.hammel_0.1_iphoneos-arm.json
+Size: 96212
+Version: 0.1
+
+Package: com.bandarhl.bhinsta
+Architecture: iphoneos-arm
+Author: Bandar Alruwaili
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhinsta_1.2_iphoneos-arm.html
+Description: An awesome tweak for Instagram!
+Filename: debs/com.bandarhl.bhinsta_1.2_iphoneos-arm.deb
+Installed-Size: 460
+MD5sum: 95b3daa4a896abded08b55fc021b082f
+Maintainer: Bandar Alruwaili
+Name: BHInsta
+SHA1: b365a2d773204b3a83b589dbe61493412ba61a38
+SHA256: bb3f255cf407d3bfd869963043766c3209f42cce2ef12c0ec6e40c7fb3629282
+SHA512: 5ed99dcd90a27c21c6e012780562817bc279345a6a03024685d8d15628740325c812676cd27105da5b7e5c3ce736f03d2d249e435e213325c7f0b21be512440e
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhinsta_1.2_iphoneos-arm.json
+Size: 69124
+Version: 1.2
 
 Package: com.bandarhl.bhinsta
 Architecture: iphoneos-arm64
@@ -1099,6 +1279,45 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.barabadev.vitra_1.0.0_iphoneos-arm64e.json
 Size: 113008
 Version: 1.0.0
+
+Package: com.blatant.maplereadcx
+Architecture: iphoneos-arm
+Author: blatant
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.blatant.maplereadcx_1.0_iphoneos-arm.html
+Description: Cracked By Blatant
+Filename: debs/com.blatant.maplereadcx_1.0_iphoneos-arm.deb
+Icon: https://i.postimg.cc/WzZnGrw9/IMG-5429.jpg
+Installed-Size: 204
+MD5sum: 9ece1ba0ed331e4f2f1538df72c42ea9
+Maintainer: blatant
+Name: MapleReadCX
+SHA1: 04bed5264f9e0592ee8566be95d9fdf9cdcb5dcc
+SHA256: a4c7c18cd6db0fcc6992870ce6691387d1efe52f2e46c59e2b451ee52bbcf5c4
+SHA512: 4b6980b9f7355400b00763b22dcf2795305f385390d9b59ab8c030fb5bde6b6a62ec63e53d567696b4e1db6bbdf20bc36f930b93f23c81aa90ada2b10e88f7ff
+Section: Cracks
+SileoDepiction: https://ipapplus.github.io/depictions/com.blatant.maplereadcx_1.0_iphoneos-arm.json
+Size: 15772
+Version: 1.0
+
+Package: com.blatant.swiftycompiler
+Architecture: iphoneos-arm
+Author: blatant
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.blatant.swiftycompiler_0.0.1_iphoneos-arm.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.blatant.swiftycompiler_0.0.1_iphoneos-arm.deb
+Installed-Size: 216
+MD5sum: 4f1c2eeba96eb04b0f852411707d2d11
+Maintainer: blatant
+Name: swiftycompiler
+SHA1: 968015784d4e989052993b96fbb248952d268571
+SHA256: f10382c40fd9963eea0b868155fcc948daaf937c7ee404a141b3bf9ab75d1804
+SHA512: 0855c5285626607f590bb7e000de7595ab1b95d5efe42859be185e53f86197d1a1fc96f1eb9db10dcdd7a3c9bafa74164b90f30bf21539319ed309f7618c95ae
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.blatant.swiftycompiler_0.0.1_iphoneos-arm.json
+Size: 9368
+Version: 0.0.1
 
 Package: com.brend0n.notransitcardversionlimit
 Architecture: iphoneos-arm64
@@ -1542,6 +1761,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.cureux.cc26glass_1.0.4_iphoneos-arm64e.json
 Size: 31832
 Version: 1.0.4
+
+Package: com.cydiaabdullah.cacloud
+Architecture: iphoneos-arm
+Author: CydiaAbdullah
+Depends: mobilesubstrate(>= 0.9.5015), firmware (>= 8.0), preferenceloader, ws.hbang.common (>= 1.11)
+Depiction: https://ipapplus.github.io/depictions/com.cydiaabdullah.cacloud_2.1_iphoneos-arm.html
+Description: حذف الأعلانات لتطبيق انمي كلاود وتسريع عمل الحلقة اظهار زر المشاهدة والتحميل
+Filename: debs/com.cydiaabdullah.cacloud_2.1_iphoneos-arm.deb
+Installed-Size: 1116
+MD5sum: 073f634dd1a6b3198b5cedb564c61ae0
+Maintainer: CydiaAbdullah
+Name: CACloud
+SHA1: ff4136e7fde97a828a3cb1bc7779be3d1940e25e
+SHA256: cddd2fdee354a7ad333353937b5b895732a631b03f7e7e6e208cdc1504d5dbdb
+SHA512: de6901e0c2de794e62b29492f3da907dfa87f1ad4756f7efcac240932f1f0409aa83051f859ee0995f92d4025afe93b24234d884a22688d5de4eee308c675317
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.cydiaabdullah.cacloud_2.1_iphoneos-arm.json
+Size: 126636
+Version: 2.1
 
 Package: com.cydiaabdullah.cacloud
 Architecture: iphoneos-arm64
@@ -2033,6 +2271,25 @@ Size: 221744
 Version: 1.75-1+debug
 
 Package: com.dhinakg.addprofileinstallbutton
+Architecture: iphoneos-arm
+Depends: mobilesubstrate, firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.dhinakg.addprofileinstallbutton_1.0.2_iphoneos-arm.html
+Description: Add an "Install Profile" button to the "Profile Downloaded" popup.
+Filename: debs/com.dhinakg.addprofileinstallbutton_1.0.2_iphoneos-arm.deb
+Homepage: https://dhinakg.github.io/repo
+Installed-Size: 120
+MD5sum: ae377ced93675c1e07a2899212c85c30
+Maintainer: DhinakG
+Name: AddProfileInstallButton
+SHA1: da6158b942cf739c10f14fb841771410c2bde569
+SHA256: 51184a5cf7e8ab42c08d8ca3adf9662b20e8d8c6105e12dbc181969139919689
+SHA512: e2d3c8a27a0b856b8d83ecf23c7b7882233b716a9311c3ded5ddd913833ce1e895036ac31ae0ee9e8ac62a8773dbce8e090dc3a367aeb88cc844316cd22fbe26
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dhinakg.addprofileinstallbutton_1.0.2_iphoneos-arm.json
+Size: 7656
+Version: 1.0.2
+
+Package: com.dhinakg.addprofileinstallbutton
 Architecture: iphoneos-arm64
 Depends: mobilesubstrate, firmware (>= 12.0)
 Depiction: https://ipapplus.github.io/depictions/com.dhinakg.addprofileinstallbutton_1.0.2_iphoneos-arm64.html
@@ -2091,6 +2348,26 @@ Size: 8008
 Version: 1.0.3
 
 Package: com.dvntm.cc18
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (< 18.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.cc18_0.0.3_iphoneos-arm.html
+Description: Round CC modules replication, like in iOS 18
+Filename: debs/com.dvntm.cc18_0.0.3_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/CC18/refs/heads/main/Sileo/icon.png
+Installed-Size: 152
+MD5sum: ac70e0d187704c371392fa729cea8d13
+Maintainer: dvntm
+Name: CC18
+SHA1: 43be896e9cbdbaf25d28fd13fe6ecf34d2a1db13
+SHA256: 71c6d43a70653687fab0b427da964c77b0c97a1f5fd015814fa88f0730b08b16
+SHA512: 31c7cd99fa90d04893bca1f0b3245161ba110fd76d896d9bc79c00a80c6ff80a42ea0d49472f399015cbf6546fa1b4dcb39c504724a413b4a6f85de0d7378590
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.cc18_0.0.3_iphoneos-arm.json
+Size: 4500
+Version: 0.0.3
+
+Package: com.dvntm.cc18
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000), firmware (< 18.0)
@@ -2129,6 +2406,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.cc18_0.0.3_iphoneos-arm64e.json
 Size: 4524
 Version: 0.0.3
+
+Package: com.dvntm.ccappicon
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0), firmware (<< 16.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.ccappicon_0.0.1_iphoneos-arm.html
+Description: No app icon in Now Playing and Control Center artworks
+Filename: debs/com.dvntm.ccappicon_0.0.1_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/CCAppIcon/refs/heads/main/Sileo/icon.png
+Installed-Size: 152
+MD5sum: 87a6c172abaae66867dc150459e471e5
+Maintainer: dvntm
+Name: CCAppIcon
+SHA1: 2ff9eed45415dd202c236e916ece6baeddb2882a
+SHA256: 54a655ffa68627e2687b5a588baf9bff829e834d919d5dd3b9779fedf3f89bf1
+SHA512: 2f004c59580668bd566038c514c550162a0ef86f3148f056f96c4e89388da9170f70bbb17db154c1bcf604c50579846e40050c10c899f828a827bc61a3cc6e93
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.ccappicon_0.0.1_iphoneos-arm.json
+Size: 3152
+Version: 0.0.1
 
 Package: com.dvntm.ccappicon
 Architecture: iphoneos-arm64
@@ -2189,6 +2486,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.cmm_1.0_iphoneos-arm64e.json
 Size: 34020
 Version: 1.0
+
+Package: com.dvntm.esignalert
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.esignalert_0.0.1_iphoneos-arm.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.dvntm.esignalert_0.0.1_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: 3b5ebffe36af6b8febeb4cb211e2e4f5
+Maintainer: dvntm
+Name: ESignAlert
+SHA1: 7f5fe2017ebe3b0b9376155f0a55ab16dd1b193e
+SHA256: 8e48e11a15a9716e2e768df83397d0190b1a7af218c187b144883af82b2b6aaf
+SHA512: f51bf8a52d79335126095c39d8082d77e2ee95c0f653c2b661972130563d281b6b3c491b864cb587cbef9cc14291a54b8b8899dc2f90b23244d59c2a273853a4
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.esignalert_0.0.1_iphoneos-arm.json
+Size: 3532
+Version: 0.0.1
 
 Package: com.dvntm.esignalert
 Architecture: iphoneos-arm64
@@ -2269,6 +2585,25 @@ Size: 381628
 Version: 1.0.1
 
 Package: com.dvntm.fbo
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm.html
+Description: Displays only the Browse tab and hides the tab bar
+Filename: debs/com.dvntm.fbo_0.0.1_iphoneos-arm.deb
+Installed-Size: 168
+MD5sum: d44721193870eaa6c83efb4aeb143577
+Maintainer: dvntm
+Name: FilesBrowsingOnly
+SHA1: 145c4a97b4b9f40a084ae5d5976c635d7d49c87b
+SHA256: 947b685d06daf7165b021f9dd7c28f107f65886faa9b4b5c1f30400e89fe8e41
+SHA512: 6e99045e1bb78f109713e94de4ca6c1bdbe2eb042adce455b8cb17b41792887ef15867bb9e551e789226416a7b168204aa8e23def9deda2104e40ca62537a5ea
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm.json
+Size: 3192
+Version: 0.0.1
+
+Package: com.dvntm.fbo
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2305,6 +2640,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fbo_0.0.1_iphoneos-arm64e.json
 Size: 3212
 Version: 0.0.1
+
+Package: com.dvntm.firstlook
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), com.anthopak.lastlook
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.firstlook_0.0.3_iphoneos-arm.html
+Description: First look for the LastLook tweak
+Filename: debs/com.dvntm.firstlook_0.0.3_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: 3efc38276d154c72290ec6cb5b92e73e
+Maintainer: dvntm
+Name: FirstLook
+SHA1: a60d6c62ab20e29531b9e91a51ab9cb973417341
+SHA256: 795fa93b6f07870e458d912744a595024f7ac15dbed4755f23897d6ef59fa022
+SHA512: fa907ecbf1e9d5bae79a1c1e29d6aeb8fba3c68b0aaba4b26b1f3abddc32f1375f7e08e5ae1a698b8987a2599d38c053abbdb641ec0dfa9fc56895f2faf3ea68
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.firstlook_0.0.3_iphoneos-arm.json
+Size: 7580
+Version: 0.0.3
 
 Package: com.dvntm.firstlook
 Architecture: iphoneos-arm64
@@ -2466,6 +2820,25 @@ Size: 454424
 Version: 2.5
 
 Package: com.dvntm.lsnoswipe
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm.html
+Description: Disables swipe to open cam on the lock screen
+Filename: debs/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: ef821dcbfa6c31393a73d88fda2deab4
+Maintainer: dvntm
+Name: LSNoSwipe
+SHA1: a386184b3bd87868f53e77ca0fd4645ed78ff2a9
+SHA256: 7e5e2db7e71ebceff63de1e1bb882c4126088b1b09fdbca3ea4fc39ed8c67d61
+SHA512: 1a5deb602e1cb6dba1c1f237aba22d6de047b7ef36c4b8cae9a42861a2b38184a7bcd6231561fb30980ed1dff1ce7bbbec13468e064ca7862d8c87779f25a67a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm.json
+Size: 3948
+Version: 0.0.1
+
+Package: com.dvntm.lsnoswipe
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0)
@@ -2502,6 +2875,25 @@ SHA512: 693ae19df2601025404ab8aacd97f7cee0975e564557d31c97dbaf547a7b3b254b1197e7
 Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.lsnoswipe_0.0.1_iphoneos-arm64e.json
 Size: 4944
+Version: 0.0.1
+
+Package: com.dvntm.lsquickactions
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12.0)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.lsquickactions_0.0.1_iphoneos-arm.html
+Description: Enables quick action buttons on the lock screen
+Filename: debs/com.dvntm.lsquickactions_0.0.1_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: 1c0860fa90ee70ef5501126c40fc0dd9
+Maintainer: dvntm
+Name: LSQuickActions
+SHA1: 40228fcccf6ea8a6966f9bf614c55b17be5f715b
+SHA256: 391bcb5493cad6a7768f8e531d93fb31edeefba55ac32d947b0e54472ecacd60
+SHA512: a2bdb66442d6f9fc77473660cf022f34e55d8139447ce74e3bccc01db470eccc965115086817d2e4b7b9dc808ec7c231b8e41e32df9cf88ac44968132dd445f1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.lsquickactions_0.0.1_iphoneos-arm.json
+Size: 3628
 Version: 0.0.1
 
 Package: com.dvntm.lsquickactions
@@ -2543,6 +2935,26 @@ Size: 3636
 Version: 0.0.1
 
 Package: com.dvntm.oledkeyboard
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.oledkeyboard_0.0.3_iphoneos-arm.html
+Description: OLED Dark Mode for iOS System Keyboard
+Filename: debs/com.dvntm.oledkeyboard_0.0.3_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/OledKeyboard/refs/heads/main/Sileo/icon.png
+Installed-Size: 152
+MD5sum: c3316743d539b08527deda55425fac70
+Maintainer: dvntm
+Name: OledKeyboard
+SHA1: 7804a863030a814710ffab001b630c432b6de7c8
+SHA256: 340e85895e57f7b11a31085bd9d927fea0cbe3fe9e61c90c52c48b6e1646c23f
+SHA512: a9c25834528af27ccb6361ddb9c5fec1645c912be3f5232adcb5ae11e4f389f1f2208fa56df15213a3556df1bc10ff307f0263dee07f8865b6b1c75cdce0aba9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.oledkeyboard_0.0.3_iphoneos-arm.json
+Size: 4700
+Version: 0.0.3
+
+Package: com.dvntm.oledkeyboard
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2582,6 +2994,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.oledkeyboard_0.0.3_iphoneos-arm64e.json
 Size: 5728
 Version: 0.0.3
+
+Package: com.dvntm.ratebegone
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.ratebegone_0.0.1_iphoneos-arm.html
+Description: Removes annoying rate app pop-ups
+Filename: debs/com.dvntm.ratebegone_0.0.1_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/RateBeGone/refs/heads/main/sources/icon.png
+Installed-Size: 152
+MD5sum: cc543ba2a913dd1bb0e153817ee9a661
+Maintainer: dvntm
+Name: RateBeGone
+SHA1: a38cd3d8e745b74717d7bff2cc524ff55029176b
+SHA256: 0e9dec38d5f149e95065d71deb1b99a8e6c11da91c5b516a4cfa2a5db7154a40
+SHA512: be9fc67d47c627da6a84972d45ff3db3352cd244646f7524c4b6a3e1745583ff0c14793afa3b6ba82fbeb8eda65d4d331cffe57c7a80af1f3aae4abe18d3f611
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.ratebegone_0.0.1_iphoneos-arm.json
+Size: 3256
+Version: 0.0.1
 
 Package: com.dvntm.ratebegone
 Architecture: iphoneos-arm64
@@ -2664,6 +3096,25 @@ Size: 25232
 Version: 1.0
 
 Package: com.dvntm.safariii
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_iphoneos-arm.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.dvntm.safariii_0.0.1_iphoneos-arm.deb
+Installed-Size: 168
+MD5sum: 4eef75979cbba846ac1ad873caf9385e
+Maintainer: dvntm
+Name: Safariii
+SHA1: 5a19382ddcfc1f3b1f502d2a80b1aef8c329530c
+SHA256: 1404b77e7c17690f241f404c3f0c403808b12ea2ec98b7a108b0f60b157bee1d
+SHA512: 35bc593f8a7c4a892768adad6427f0f72cd26850242ae0ee5e5b0fc615ce35c6d003393734d3e1e38315c5d8b220c7d65824c5d1c4076addfa625bbfe76f15a4
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_iphoneos-arm.json
+Size: 2872
+Version: 0.0.1
+
+Package: com.dvntm.safariii
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2702,6 +3153,25 @@ Size: 2884
 Version: 0.0.1
 
 Package: com.dvntm.showmytouches
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.showmytouches_1.1.3_iphoneos-arm.html
+Description: Displays your touch interactions!
+Filename: debs/com.dvntm.showmytouches_1.1.3_iphoneos-arm.deb
+Installed-Size: 472
+MD5sum: 4de4c41c637ed71dd680d51d7a128338
+Maintainer: dvntm
+Name: ShowMyTouches
+SHA1: 2b2b53a17c5e230aa2340e5ce8dbe44d2f20541c
+SHA256: 565e07c76afc94400391be2087d521b78e267d0f55dfc49f218d8df275314f9a
+SHA512: 58a4979fb1ccf8b9a4aa1886e61fdbcd58eebc3224ae2559d3b56b4cc50d783e6d03d4d4bf839dc862086accfc7a383a6d1adcd56b8e6ae77982f906abdcf93a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.showmytouches_1.1.3_iphoneos-arm.json
+Size: 53772
+Version: 1.1.3
+
+Package: com.dvntm.showmytouches
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2738,6 +3208,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.showmytouches_1.1.3_iphoneos-arm64e.json
 Size: 52664
 Version: 1.1.3
+
+Package: com.dvntm.silentnotifs
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.silentnotifs_0.0.2_iphoneos-arm.html
+Description: Keep notifications silent while media is playing
+Filename: debs/com.dvntm.silentnotifs_0.0.2_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: 731ed4abf65f25c7d2ab3571a3a98fcd
+Maintainer: dvntm
+Name: SilentNotifs
+SHA1: 8a1b21595d509c108d95c0ec2368cf3d1e0ed0e7
+SHA256: 3e9131cc3c653173664b51e47892f9bee058ce33071c0415091a5c6080a2f88d
+SHA512: d6d0adce57a955986b3fefc3b01345811c5368c9c3c5fbaa7e1f4bc4e4941f9939649a2e7b98bb0b2439c59afc26b96bde504b2730119722a19326bfb2034c5c
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.silentnotifs_0.0.2_iphoneos-arm.json
+Size: 3672
+Version: 0.0.2
 
 Package: com.dvntm.silentnotifs
 Architecture: iphoneos-arm64
@@ -2839,6 +3328,25 @@ Size: 5776
 Sponsor: thebigboss.org <http://thebigboss.org>
 Version: 0.0.3-1
 dev: dvntm
+
+Package: com.dvntm.walegacy
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.walegacy_0.0.3_iphoneos-arm.html
+Description: Provides legacy WhatsApp version support by spoofing as up-to-date
+Filename: debs/com.dvntm.walegacy_0.0.3_iphoneos-arm.deb
+Installed-Size: 152
+MD5sum: d987436a77d4d92f061af53dc2da9e34
+Maintainer: dvntm
+Name: WALegacy
+SHA1: 0d068586b291970153a992c4759a6b07e72981b9
+SHA256: 955116ec1e1a4d863fe8000c4e83eaea8d22a8a0c89ad21e9084a943c5eb3264
+SHA512: 1c603cc4fb75abe9ddca9d0defbcf49b96ddd8809f9a7ae1c5b9dfc7885abb215fad9cf87cb949db3105e95571a2aadcbc1a3277d4d2dfb69c53f8fa7f6c8f9d
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.walegacy_0.0.3_iphoneos-arm.json
+Size: 4568
+Version: 0.0.3
 
 Package: com.eamontracey.secretshot
 Architecture: iphoneos-arm64e
@@ -3380,6 +3888,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.gilshahar7.volumepercent_1.0.2_iphoneos-arm64e.json
 Size: 30196
 Version: 1.0.2
+
+Package: com.guacforlife.reynarddefault
+Architecture: iphoneos-arm
+Author: guacforlife
+Depends: mobilesubstrate, preferenceloader, com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.guacforlife.reynarddefault_1.5.0_iphoneos-arm.html
+Description: Redirects Safari URL opens to Reynard browser. Toggle in Settings and Control Centre.
+Filename: debs/com.guacforlife.reynarddefault_1.5.0_iphoneos-arm.deb
+Homepage: https://github.com/guacforlife/ReynardDefault
+Installed-Size: 572
+MD5sum: 2d34ca33541c88b564c4c7d5d66d0060
+Maintainer: guacforlife
+Name: ReynardDefault
+SHA1: 80b06aecc7a6d4e24caffde1bc38f6341777b7d7
+SHA256: 15a31b96cc2e3625c40b28a71f60da49dbdf119d73e0b48ff3cf63c0bd76ef81
+SHA512: 84e6e4e37c90471671604c1eb883733a2f1cfebe9cd9636aa65bc8af121bc7327a07f3cff26a131ff8e39ab5acd23b59c814ed76c5bd36cb4276c26589ca03bf
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.guacforlife.reynarddefault_1.5.0_iphoneos-arm.json
+Size: 59192
+Version: 1.5.0
 
 Package: com.guacforlife.reynarddefault
 Architecture: iphoneos-arm64
@@ -3949,6 +4477,27 @@ Size: 3950972
 Version: 2.7.5
 
 Package: com.ipapplus.instarab
+Architecture: iphoneos-arm
+Author: ipapplus
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.ipapplus.instarab_3.0_iphoneos-arm.html
+Description: Arabic language for Instagram, translated with contribution from @r22i0.
+Filename: debs/com.ipapplus.instarab_3.0_iphoneos-arm.deb
+Header: https://i.postimg.cc/PJNPhPgy/IMG-7790.jpg
+Icon: https://i.postimg.cc/SQ5KCNF0/IMG-7607.jpg
+Installed-Size: 460
+MD5sum: 4f820ca7c978a9707eaef429cfac9b5f
+Maintainer: ipapplus
+Name: Instagram (Arabic Localized)
+SHA1: fc54d15f8803e90c90b6efca8194f5fad52343cb
+SHA256: 71e56bd6ce2fc112c55e21ab17dc8955f1e74d90dbe0742ed3442d7dba5b8055
+SHA512: 0ac5c69e82a57522e9ae110c2a8a8ac4fafd2ebf275dbb24fc658de30e654b99634e1b3a7926bc472355817a5482f49ef1a28b2f044951f76c9f39bf4bb1c0b7
+Section: Localizations
+SileoDepiction: https://ipapplus.github.io/depictions/com.ipapplus.instarab_3.0_iphoneos-arm.json
+Size: 98168
+Version: 3.0
+
+Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64
 Author: ipapplus
 Depends: mobilesubstrate
@@ -4137,6 +4686,44 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.julioverne.goodwifi_0.0~beta6_iphoneos-arm64e.json
 Size: 40308
 Version: 0.0~beta6
+
+Package: com.julioverne.lowerinstall
+Architecture: iphoneos-arm
+Author: julioverne
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.julioverne.lowerinstall_0.0~beta6_iphoneos-arm.html
+Description: Install Apps In Lower iOS Version
+Filename: debs/com.julioverne.lowerinstall_0.0~beta6_iphoneos-arm.deb
+Homepage: https://twitter.com/ijulioverne
+MD5sum: 84a99c0f02a99b37a694c9d4f733c018
+Maintainer: Julio
+Name: LowerInstall
+SHA1: 0aea34138776dbcd25bd119807c2265d36f6ac84
+SHA256: 01215e524ffb6196d58fb90d6164b41d96d4c602499c8cd07bdaf311bfbe241b
+SHA512: b257060911a5d98b5f3f019efe66b647582079fbee13e1c3f0343ad5a51c48f401adb8b4baff7e46a0b414eedfcacd2724042130f81691d06a9f76a3eee8d1f2
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.julioverne.lowerinstall_0.0~beta6_iphoneos-arm.json
+Size: 46104
+Version: 0.0~beta6
+
+Package: com.kdt.trollpad
+Architecture: iphoneos-arm
+Author: khanhduytran0
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0), plistbuddy
+Depiction: https://ipapplus.github.io/depictions/com.kdt.trollpad_1.3_iphoneos-arm.html
+Description: Troll SpringBoard into thinking it's running on iPadOS.
+Filename: debs/com.kdt.trollpad_1.3_iphoneos-arm.deb
+Installed-Size: 536
+MD5sum: 3caacaa4bfed85c8303d1fa17760ec5b
+Maintainer: khanhduytran0
+Name: TrollPad
+SHA1: 5598144b904152f1eba4367b9aad93c2ff47aedd
+SHA256: e4d7da85d35097f7bd2041edbb6a1ab1169242fda8de371035aaee524ccd3d87
+SHA512: c969fe096dbd76320533526db1f2e32e38d8d45cf7c2e8ba58a568cc48066095ec27b03d2e72a46644fa3351e1bb8e2a659b1f2d370dc970fc8f40ab00729bcc
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.kdt.trollpad_1.3_iphoneos-arm.json
+Size: 28776
+Version: 1.3
 
 Package: com.kdt.trollpad
 Architecture: iphoneos-arm64
@@ -4343,6 +4930,25 @@ Size: 984924
 Version: 1.7.0
 
 Package: com.leftyfl1p.carbackground13
+Architecture: iphoneos-arm
+Author: leftyfl1p
+Depends: mobilesubstrate, com.muirey03.libimagepicker, ws.hbang.common, firmware (>= 13.0)
+Depiction: https://ipapplus.github.io/depictions/com.leftyfl1p.carbackground13_1.0_iphoneos-arm.html
+Description: CarPlay Wallpapers
+Filename: debs/com.leftyfl1p.carbackground13_1.0_iphoneos-arm.deb
+Installed-Size: 448
+MD5sum: 78afa7d5d311eb2f8f437395b5081006
+Maintainer: leftyfl1p
+Name: Canvas (iOS 16)
+SHA1: 73010908f316d443c453a3a4533d1dd925131a9c
+SHA256: 2e2a980bc3fd7a95519d804fbe978986ae9e152bf194e1fd5a4f3f1b5c083228
+SHA512: 4505987cc10fcc4571092b1c6fab591e8bb8feaecbdaba0c982661a775fa8fcc47add27b4de484ad4913c37109239ceb226e2155fce8daa64db004df680bee90
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.leftyfl1p.carbackground13_1.0_iphoneos-arm.json
+Size: 40924
+Version: 1.0
+
+Package: com.leftyfl1p.carbackground13
 Architecture: iphoneos-arm64
 Author: leftyfl1p
 Depends: mobilesubstrate, com.muirey03.libimagepicker, ws.hbang.common, firmware (>= 13.0), cy+cpu.arm64v8 | oldabi-xina | oldabi
@@ -4479,6 +5085,29 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.level3tjg.visibleapps_
 Size: 4620
 Version: 0.0.3
 
+Package: com.lheap.whatspad
+Architecture: iphoneos-arm
+Author: Lee Heap <lee.heap@gmail.com>
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.lheap.whatspad_2.0_iphoneos-arm.html
+Description: Enables WhatsApp Messenger on iPad
+Filename: debs/com.lheap.whatspad_2.0_iphoneos-arm.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=whatspadData
+Installed-Size: 114
+MD5sum: fd17d66ae73dd5adaade8080943ad7ff
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: WhatsPad
+SHA1: 7d6220b74163d2f6f440b028973c0c7d3fb9ecce
+SHA256: af746898dec3390436ff9b7c7e13ae53f89e724b930a69e07634612a886f21f8
+SHA512: e2885463f40db815e887206e03f2df6e38081089e40012f19ba0658214095a2b8e66b070deceb4392cce278e2c743d2ad26c2213ed8ff632d78d1e1612d45341
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.lheap.whatspad_2.0_iphoneos-arm.json
+Size: 7572
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 2.0
+dev: lheap
+
 Package: com.lizynz.folderx.rootless
 Architecture: iphoneos-arm64
 Author: Lizynz <lizynz@ya.ru>
@@ -4600,6 +5229,25 @@ Size: 429752
 Version: 1.0.2
 
 Package: com.managedelete.sniper
+Architecture: iphoneos-arm
+Author: Sniper @DNS_Sys
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.managedelete.sniper_1.0_iphoneos-arm.html
+Description: A tweak to Manage Delete
+Filename: debs/com.managedelete.sniper_1.0_iphoneos-arm.deb
+Installed-Size: 256
+MD5sum: 5a947853bafbe2f9a698099886362073
+Maintainer: Sniper @DNS_Sys
+Name: ManageDelete
+SHA1: a895fc7ee47332a9170948cec6077bd9eeb0f150
+SHA256: 36a53ab7aafd8012545876448d59a82a35c2c0e2bb5d37e9e0f7380c526a5ac4
+SHA512: eaa959702383e7567d73b7b4c2c86654043d6c8290c33ee7d14b58930896f821c19acf2b00781827e81b719c02d3a77ce3ab562b402815324d1af40325c45e83
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.managedelete.sniper_1.0_iphoneos-arm.json
+Size: 32036
+Version: 1.0
+
+Package: com.managedelete.sniper
 Architecture: iphoneos-arm64
 Author: Sniper @DNS_Sys
 Depends: mobilesubstrate, preferenceloader
@@ -4637,6 +5285,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.managedelete.sniper_1.0_iphoneos-arm64e.json
 Size: 32568
 Version: 1.0
+
+Package: com.megadev.sentinel
+Architecture: iphoneos-arm
+Author: MegaDev
+Depends: mobilesubstrate,ws.hbang.common,preferenceloader,com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.megadev.sentinel_1.3.2_iphoneos-arm.html
+Description: Stop losing your jailbreak when your battery dies!
+Filename: debs/com.megadev.sentinel_1.3.2_iphoneos-arm.deb
+Icon: https://media.havoc.app/620e286f62d8a0bb3788377a
+Installed-Size: 752
+MD5sum: f053ef00ece3178bb31d7052ff871831
+Maintainer: MegaDev
+Name: Sentinel
+SHA1: 6457b49996d07ce67f17fb0e4fb0eea7dc90a58f
+SHA256: f7c8540c78ad19676f386b4f06494d5a3f30499e86d9ab3f6159fbcb94104ad5
+SHA512: 644266eeb116dfeb1a5a03b7ab807532ac26768070b63ea62d9ff3648d6f484ba0429c0dc5eec00bac0a67e8e40ae817c449b3e329db385521cdcd5abda3e85e
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.megadev.sentinel_1.3.2_iphoneos-arm.json
+Size: 76692
+Version: 1.3.2
 
 Package: com.megadev.sentinel
 Architecture: iphoneos-arm64
@@ -4678,6 +5346,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.megadev.sentinel_1.3.2_iphoneos-arm64e.json
 Size: 79188
 Version: 1.3.2
+
+Package: com.mhsternice.wasendfix
+Architecture: iphoneos-arm
+Author: Mhster_Nice
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.mhsternice.wasendfix_0.0.4_iphoneos-arm.html
+Description: Fix WhatsApp for iOS 14.x to 15.0.2
+Filename: debs/com.mhsternice.wasendfix_0.0.4_iphoneos-arm.deb
+MD5sum: 73247f7f184034d83a9e873c3bbfbd93
+Maintainer: Mhster_Nice
+Name: WASendFix
+SHA1: 24b3cf551a609e3869a684784768dcf71c7a54f0
+SHA256: c1fcb4a6ed0476257408565bba52c27cbecf481f09ed404e8a8e874955969f8b
+SHA512: 29594a3089a861672a3e54c0f8c60fda19d4d6306507635bc94b52df312b88c94e427cba84f945274d1c0d7cb9b01b313c4fe81838eb4bf9cda18ad2f560f055
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.mhsternice.wasendfix_0.0.4_iphoneos-arm.json
+Size: 12420
+Version: 0.0.4
 
 Package: com.mhsternice.wasendfix
 Architecture: iphoneos-arm64e
@@ -5402,6 +6088,26 @@ Tag: role::developer
 Version: 2.0.1
 
 Package: com.na9.snaptweak
+Architecture: iphoneos-arm
+Author: Nasser | NoTimeToChill
+Depends: firmware (>= 14.0)
+Depiction: https://ipapplus.github.io/depictions/com.na9.snaptweak_1.0_iphoneos-arm.html
+Description: Use at your own risk.
+Filename: debs/com.na9.snaptweak_1.0_iphoneos-arm.deb
+Icon: https://na9.me//public/uploads/images/site-img/ojRkdLuWbGXgZJQ.jpg 
+Installed-Size: 132
+MD5sum: 118284d5e92c294a0b5c27cbcd0eae66
+Maintainer: Nasser | NoTimeToChill
+Name: NA9 For Snapchat
+SHA1: ad5f63d3032c6585c84e85d2671c33211ee5aab9
+SHA256: db0e312c611a38bf72348d68cd43826dfba5aea89804275336df93eb01c8ad3a
+SHA512: f9a8e05718b8fa1a6331884403754d3a7bf3995fbae467c9d8cb50faf7a42c6cb5d1622fa06b8239bfa5d3419398f470c47ee08fa8d5a70468234780f77af20f
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.na9.snaptweak_1.0_iphoneos-arm.json
+Size: 26060
+Version: 1.0
+
+Package: com.na9.snaptweak
 Architecture: iphoneos-arm64
 Author: Nasser | NoTimeToChill
 Depends: firmware (>= 14.0)
@@ -5526,6 +6232,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.nahtedetihw.closeall_1.0_iphoneos-arm64e.json
 Size: 21424
 Version: 1.0
+
+Package: com.nahtedetihw.listening
+Architecture: iphoneos-arm
+Author: Ethan Whited, ichitaso
+Conflicts: com.ichitaso.listening, eu.ivanhrabcak.listening
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.nahtedetihw.listening_1.2.3_iphoneos-arm.html
+Description: Toggle Transparency when paused and when playing!
+Filename: debs/com.nahtedetihw.listening_1.2.3_iphoneos-arm.deb
+Installed-Size: 612
+MD5sum: 61e495a48f5c1e391aa94b4f3e0c4726
+Maintainer: ichitaso
+Name: Listening
+Replaces: com.nahtedetihw.listening
+SHA1: 1f9917aec837ac13c538b1aeb45eba6b138b7a9f
+SHA256: 38b3863860f823c477cc31f23825e9ab1277c7bc986c91302a888b0210979efe
+SHA512: 9b6077fe3bc8b078115c956a6113ae4d22cc53f081766ae1b07d786a4dd2d9b93dbbe29dade5809c9d6fe6efe32fd974d057cb95d67d0aec75ea23855824f76a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nahtedetihw.listening_1.2.3_iphoneos-arm.json
+Size: 83584
+Version: 1.2.3
 
 Package: com.nahtedetihw.listening
 Architecture: iphoneos-arm64
@@ -6304,6 +7031,27 @@ Size: 27228
 Version: 0.0.1
 
 Package: com.nightwind.rootless-patcher
+Architecture: iphoneos-arm
+Author: Nightwind and staturnz
+Depends: odcctools, ldid
+Depiction: https://ipapplus.github.io/depictions/com.nightwind.rootless-patcher_0.0.1_iphoneos-arm.html
+Description: A CLI rootful to rootless patcher.
+ Utilizes a technique that does not require Xina-style symlinks.
+Filename: debs/com.nightwind.rootless-patcher_0.0.1_iphoneos-arm.deb
+Installed-Size: 116
+MD5sum: d77713906a6940e8a9d78524f08682f9
+Maintainer: Nightwind
+Name: rootless-patcher
+SHA1: 363769f99e15b3512575eefbd74f96221ec9a210
+SHA256: 5f842bad2a254c7c019e66c791ea7a60212f1cf5040c4c818d37ee65e1f07719
+SHA512: c5e66a2f353dc639527ec7876f8609ba43e9205ab2a2b1cf2f1eaa2ece49253f748eeacde79f36531ada1f358596cea13aeeb251cdc9e0304842d4191226d339
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.nightwind.rootless-patcher_0.0.1_iphoneos-arm.json
+Size: 24048
+Tag: role::hacker
+Version: 0.0.1
+
+Package: com.nightwind.rootless-patcher
 Architecture: iphoneos-arm64
 Author: Nightwind and staturnz
 Depends: odcctools, ldid
@@ -6362,6 +7110,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.nightwind.sileorespringfix_0.0.1_iphoneos-arm64e.json
 Size: 4812
 Version: 0.0.1
+
+Package: com.no5up-kanji.librelic
+Architecture: iphoneos-arm
+Author: no5up + Kanji <ipodtouchdemohammed313@gmail.com>
+Depends: mobilesubstrate (>= 0.9.5.000)
+Depiction: https://ipapplus.github.io/depictions/com.no5up-kanji.librelic_2.1.1_iphoneos-arm.html
+Description: library for Snapchat hooking
+Filename: debs/com.no5up-kanji.librelic_2.1.1_iphoneos-arm.deb
+MD5sum: 90f702457717f5ae75c86e4aed8c9b75
+Maintainer: no5up + Kanji <ipodtouchdemohammed313@gmail.com>
+Name: librelic
+SHA1: 424685a4fdef7a26f682c12fca5a4a8fc5c8c49e
+SHA256: dbedca3f0621811da294136ddd598fe5fd44e87438e8c2122978a2ed4b95da53
+SHA512: 44168973bd59c585f613d1b3119076078403318b0ce22598050707a3ad8343ae90dbb95abf52ed919b44e638098d4b9fe6a7c19853169593a63a9305ae5c3ac1
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.no5up-kanji.librelic_2.1.1_iphoneos-arm.json
+Size: 6668
+Version: 2.1.1
 
 Package: com.noisyflake.velvet2
 Architecture: iphoneos-arm64e
@@ -6426,6 +7192,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.noisyflake.velvet2_2.2.0_iphoneos-arm64e.json
 Size: 96644
 Version: 2.2.0
+
+Package: com.nscake.noscrollbargrabdelay
+Architecture: iphoneos-arm
+Author: Tanner Bennett <thepantsthief@me.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm.html
+Description: Removes the delay when trying to drag a scroll bar.
+Filename: debs/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm.deb
+Installed-Size: 200
+MD5sum: 167736ae12b3499232c59b53666e403f
+Maintainer: Tanner Bennett <thepantsthief@me.com>
+Name: NoScrollbarGrabDelay
+Pre-Depends: firmware (>= 13.0)
+SHA1: 4234721373058f25d70c7f6d90cbb300f27d3624
+SHA256: cc979c40467d5172d727b65de04213015c84b082b069296c3d065ebfa8f4d7ed
+SHA512: 8d8289f131ffe51f410252072ac3a78f4a11484baa7637b7b7cdde722de697460781d2a8b14b7b4b2f286e649a1c8848f821d5a3d46ebad5bf23b2f1c67dc881
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm.json
+Size: 3908
+Version: 0.0.1
 
 Package: com.nscake.noscrollbargrabdelay
 Architecture: iphoneos-arm64
@@ -7185,6 +7971,25 @@ Size: 51666
 Version: 2.2
 
 Package: com.shepgoba.settingswidgets
+Architecture: iphoneos-arm
+Author: shepgoba
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.shepgoba.settingswidgets_1.2.2_iphoneos-arm.html
+Description: Bring good looking widgets to the front page of settings!
+Filename: debs/com.shepgoba.settingswidgets_1.2.2_iphoneos-arm.deb
+Installed-Size: 472
+MD5sum: ca5bbcb7289de08346739760a3c62b81
+Maintainer: shepgoba
+Name: SettingsWidgets
+SHA1: 48117bb43df4267bfe7cca8b48083557fedc9286
+SHA256: 3bbc895282cfe2850feec6d445043476c4b86df83098253d84c7337faa239d53
+SHA512: 5adcc1543cb745bfb85521820bcb5261a201cd639cff1eec842ac6d2c156ddea123d849a8eb183a7960016b9213b2a4161482ef3ffbc8aa819b84a0cb24330f7
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.shepgoba.settingswidgets_1.2.2_iphoneos-arm.json
+Size: 75996
+Version: 1.2.2
+
+Package: com.shepgoba.settingswidgets
 Architecture: iphoneos-arm64
 Author: shepgoba
 Depends: mobilesubstrate, preferenceloader, cy+cpu.arm64v8 | oldabi-xina | oldabi
@@ -7283,6 +8088,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.skypain.videoadacceleration_1.0.1-1_iphoneos-arm64e.json
 Size: 27360
 Version: 1.0.1-1
+
+Package: com.smokin1337.smarterlpm
+Architecture: iphoneos-arm
+Author: smokin1337 <smokin1337@gmail.com>
+Depends: mobilesubstrate, com.spark.libsparkapplist, com.spark.libsparkcolourpicker, com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.smokin1337.smarterlpm_1.0.9_iphoneos-arm.html
+Description: A smarter low power mode !!
+Filename: debs/com.smokin1337.smarterlpm_1.0.9_iphoneos-arm.deb
+Installed-Size: 560
+MD5sum: ceb10b64f901750cb223fb42fbea45bf
+Maintainer: smokin1337 <smokin1337@gmail.com>
+Name: SmarterLPM
+SHA1: cc4a1018f45ca0da6a6c2e1d46d49e29a66a9b49
+SHA256: e68291bc22ad290e0d220b2cb3f36e91233e007e94a52212a6a0f6ebba5b6c39
+SHA512: bbf4d92c0a857b1aad7d4536a8acca0ed58d5bdf1c9b9493bbfa7682aba176533a31b053c8f4014fd1fbce862860759062765e0f9568f04edbe658da6ddfa30a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.smokin1337.smarterlpm_1.0.9_iphoneos-arm.json
+Size: 55848
+Version: 1.0.9
 
 Package: com.smokin1337.smarterlpm
 Architecture: iphoneos-arm64e
@@ -7875,6 +8699,30 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.tonykraft.inosleep_1.2
 Size: 30572
 Version: 1.2.4
 
+Package: com.tushaoye.supportunsupportedaccessories8
+Architecture: iphoneos-arm
+Author: tushaoye <tushaoye@qq.com>
+Depends: firmware (>= 7.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.tushaoye.supportunsupportedaccessories8_1.0-1_iphoneos-arm.html
+Description: use Unsupported chargers and cables
+Filename: debs/com.tushaoye.supportunsupportedaccessories8_1.0-1_iphoneos-arm.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=supportunsupportedaccessoriesDp
+Icon: file:///Library/PreferenceBundles/SupportUnsupportedAccessories8.bundle/Icon@2x.png
+Installed-Size: 170
+MD5sum: 74859b53daeda83396ad08463ba08ccd
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: Support Unsupported Accessories 8
+SHA1: 865136eda075b45e04dec816e2208750e5711188
+SHA256: 386a0c4acda2ee1d976fe47fddcde4b93637c6830f0c12cab2c209e648bbe545
+SHA512: cf854ba1193a056367e7bdf8a53b05d2ef03a0915b43b9ad8d476de4926ff1f0ea71ab6b9fc37da5d5a6e3fe0f04b3a72607ecbc05216a683e30a1c8e526e79e
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.tushaoye.supportunsupportedaccessories8_1.0-1_iphoneos-arm.json
+Size: 25596
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension, role::enduser, ios8support::1
+Version: 1.0-1
+dev: tushaoye
+
 Package: com.ub.disablerec
 Architecture: iphoneos-arm64
 Author: uB
@@ -7913,6 +8761,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.ub.disablerec_1.0.0-12_iphoneos-arm64e.json
 Size: 10288
 Version: 1.0.0-12
+
+Package: com.ub.disablerec
+Architecture: iphoneos-arm
+Author: uB
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.ub.disablerec_1.0.0-16+debug_iphoneos-arm.html
+Description: Prevent apps from detecting screen recording! //use at your own risk
+Filename: debs/com.ub.disablerec_1.0.0-16+debug_iphoneos-arm.deb
+Installed-Size: 204
+MD5sum: 340c250f8c313b910df96ba28304cae5
+Maintainer: uB
+Name: disableREC
+SHA1: 88c5093eb8ba337e2018b005010ac31918987754
+SHA256: f7e2913629bd3ef358bd4041032fb11e1bbfc1fda3a06e18ad8f30f9062b063f
+SHA512: 4779259f4840a5ded7ae9d8ab2664bc7d5f72f535c1c31eeb4be5846b661d2b288180c950420a309e34ab15ef92ab6cca4c7d1d0192dc0a6095a841f937d2b89
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ub.disablerec_1.0.0-16+debug_iphoneos-arm.json
+Size: 24164
+Version: 1.0.0-16+debug
 
 Package: com.uckermark.siriplus
 Architecture: iphoneos-arm64e
@@ -8260,6 +9127,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.cydiageek.twitterlabelback_1.0.0_iphoneos-arm64e.json
 Size: 4848
 Version: 1.0.0
+
+Package: com.yourepo.ibreak.hideseparator
+Architecture: iphoneos-arm
+Author: iBreak <ibreak2019@qq.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.yourepo.ibreak.hideseparator_1.9.2_iphoneos-arm.html
+Description: Hide separators system-wide  (including third-party Apps)
+Filename: debs/com.yourepo.ibreak.hideseparator_1.9.2_iphoneos-arm.deb
+MD5sum: a57aa811af02a9eee966332c0b2714d9
+Maintainer: iBreak <ibreak2019@qq.com>
+Name: Hide Separator
+SHA1: f77072e7b926ad8b416aa1b0777a014031a59ce2
+SHA256: 9552cdc5bf6c867aaef98a430e2eb00358bdff8cfef96282fe50696531dfcccc
+SHA512: 9f84072174cf09bd2250e071aa42e0bafb8d012ad0a1cc78a1fa951b17c34af5ba73f956c8e47610bfebf8f6b34bcb6e0f61beff5d2df6d47504dc6d9fb2cb1a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.ibreak.hideseparator_1.9.2_iphoneos-arm.json
+Size: 7988
+Version: 1.9.2
 
 Package: com.yourepo.ibreak.hideseparator
 Architecture: iphoneos-arm64
@@ -8644,6 +9529,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/dev.traurige.liddell_1.4.3_iphoneos-arm64e.json
 Size: 95084
 Version: 1.4.3
+
+Package: dev.unlock.00
+Architecture: iphoneos-arm
+Author: adry
+Depends: firmware (>= 13.0)
+Depiction: https://ipapplus.github.io/depictions/dev.unlock.00_0.0.1_iphoneos-arm.html
+Description: unlock premium for most apps
+Filename: debs/dev.unlock.00_0.0.1_iphoneos-arm.deb
+Icon: https://i.imgur.com/m2Bn0u4.jpeg
+MD5sum: 425f656687bdd18118d643dab653d8f0
+Maintainer: adry
+Name: unlock apps
+SHA1: 128bbd5d5e848520d8ce7c0118362e4ab1124cc8
+SHA256: a18fc9086954d9cc5b222d9a0cd3e48c6e2956c8eda0934a644aaebba6839650
+SHA512: ae9ba5001afe34420c7d87e372f477a0a20a2141e683dcd6874274d016dbf802e7c9dd2fc3b02967cab88d62c3bb3ce3a1e428a44e01562da6732958647387ef
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/dev.unlock.00_0.0.1_iphoneos-arm.json
+Size: 8460
+Version: 0.0.1
 
 Package: dev.unlock.00
 Architecture: iphoneos-arm64
@@ -9036,6 +9940,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/jp.r-plus.menusupport_1.3.0_iphoneos-arm64e.json
 Size: 35580
 Version: 1.3.0
+
+Package: jp.soh.freepip
+Architecture: iphoneos-arm
+Author: Soh Satoh
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/jp.soh.freepip_0.0.3_iphoneos-arm.html
+Description: FreePIP is a tweak to un-snap and scale the view of Picture-in-Picture on iOS unlimitedly.
+Filename: debs/jp.soh.freepip_0.0.3_iphoneos-arm.deb
+Installed-Size: 136
+MD5sum: 07e650db34fd59151075d160a7574465
+Maintainer: Soh Satoh
+Name: FreePIP
+SHA1: f0376a37660d3850f771706fb7733721af4211b4
+SHA256: c5deb4be04ecd1a964a0f8236e58b85ba4b006fb66cde93ecc098c08a72f48bd
+SHA512: 763a90758c15f9702eff303e57a699cad98f5df529f682ae9560b831f785b4d3658cbca72e30344110e5d724e7e1c95e390d59901d3607fd98577135539efab7
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.soh.freepip_0.0.3_iphoneos-arm.json
+Size: 6172
+Version: 0.0.3
 
 Package: jp.uzra.enabledsreturn
 Architecture: iphoneos-arm64e
@@ -9715,6 +10638,25 @@ Section: System
 SileoDepiction: https://ipapplus.github.io/depictions/net.cadoth.nosbreload_0.1.1-1_iphoneos-arm64e.json
 Size: 3684
 Version: 0.1.1-1
+
+Package: netskao.blockappscreatealbum
+Architecture: iphoneos-arm
+Author: Netskao
+Depends: firmware (>= 13.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/netskao.blockappscreatealbum_1.1-2_iphoneos-arm.html
+Description: Block applications from creating their own albums
+Filename: debs/netskao.blockappscreatealbum_1.1-2_iphoneos-arm.deb
+Installed-Size: 168
+MD5sum: 30a7927f4a99fab821d614f2b4f7c53e
+Maintainer: Nets
+Name: BlockAppsCreateAlbum
+SHA1: 345944823c6e3f40ff3a5fcebfc0b9f3823af2b7
+SHA256: 3023002c31c4bf898a599dfe852a7fa2833b24747a537a355b4d0612aa2dcb3d
+SHA512: 7c14a4fd67c5ef0684d395a6d209faffaf38694c3d463217039b21d5e399ec8ad3c33d3b45311f8c15a14eac13ef4d2ee881402953905e9df3071d5c0213eb76
+Section: Netskao-Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/netskao.blockappscreatealbum_1.1-2_iphoneos-arm.json
+Size: 4524
+Version: 1.1-2
 
 Package: netskao.blockappscreatealbum
 Architecture: iphoneos-arm64
