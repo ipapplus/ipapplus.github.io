@@ -92,6 +92,14 @@
          "first_added" : "2026-10-01T00:04:10Z",
          "sequence" : 25
       },
+      "com.bandarhl.bhtwitter/4.5" : {
+         "first_added" : "2026-10-01T00:05:44Z",
+         "sequence" : 26
+      },
+      "com.bandarhl.nfbbhtwitter/5.3" : {
+         "first_added" : "2026-10-01T00:05:44Z",
+         "sequence" : 27
+      },
       "com.bypassjb.sniper/6.2" : {
          "first_added" : "2026-10-01T00:01:11Z",
          "sequence" : 21

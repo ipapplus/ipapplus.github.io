@@ -727,6 +727,47 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.
 Size: 498596
 Version: 2.3.1
 
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64e
+Author: Bandar Alruwaili
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.deb
+Installed-Size: 16284
+MD5sum: 80be680e18d91537b81df127acc61eb0
+Maintainer: Bandar Alruwaili
+Name: BHTwitter
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: d7f5837aabffeacff9f01317d34e4807b5cee4bf
+SHA256: a6b0e7fa10910e4051ef1f907f72a0f6a7a6fbd2a8d5fbe997da4af020f339a2
+SHA512: 2dfa017a65d7637c06bcdd654d57225e7296e4e7abf89ef0e3c4221537ed229b0067741ccb487f796c9100461c991716aae8e687cd7d2fe115cd1d2fd04c1747
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.json
+Size: 12753348
+Version: 4.5
+
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64e
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64e.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64e.deb
+Installed-Size: 16832
+MD5sum: 75939d3abe9386c36ff5f506e27305d6
+Maintainer: NeoFreeBird
+Name: NFB-BHTwitter
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: ccfcde3fbc1c61ea0f96ed9da7c9aa0564edacc7
+SHA256: d2f0ff5eb96bb4bf67bc52d7a62be9a20032eb91f2b4a9a33bab5a9ff71d8f97
+SHA512: 8e641dbef15a3a9ec5ff55877cb15e0b0133499e851b90e1e55140b6b090976c23c85cd93b51b5209d47431994ccea93ca1bd2fc524b568ee50fdc0799373901
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64e.json
+Size: 6469840
+Version: 5.3
+
 Package: com.bypassjb.sniper
 Architecture: iphoneos-arm64
 Author: Sniper @DNS_Sys
