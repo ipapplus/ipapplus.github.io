@@ -790,6 +790,16 @@
          "version" : "1.0"
       },
       {
+         "Author" : "FissionDev",
+         "Maintainer" : "FissionDev",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.fissiondev.uranium_1.2.7_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.fissiondev.uranium",
+         "sha256" : "f1b8d02c02ccb4f87318b497081fe16ae1a4cfc840da39a09c58100e1e301ad6",
+         "version" : "1.2.7"
+      },
+      {
          "Author" : "gilshahar7",
          "Maintainer" : "gilshahar7",
          "architecture" : "iphoneos-arm64e",
@@ -863,6 +873,18 @@
          "version" : "0.0.6"
       },
       {
+         "Author" : "julioverne",
+         "Depiction" : "https://julioverne.github.io/description.html?id=com.julioverne.goodwifi",
+         "Homepage" : "https://twitter.com/ijulioverne",
+         "Maintainer" : "Julio",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.julioverne.goodwifi_0.0~beta6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.julioverne.goodwifi",
+         "sha256" : "687cb4c0347eb275690cec43a00099898677797015a5fb64e82cdd7e1f9adf8c",
+         "version" : "0.0~beta6"
+      },
+      {
          "Author" : "khanhduytran0",
          "Depiction" : "https://khanhduytran0.github.io/repo/depictions/web/?p=com.kdt.trollpad",
          "Maintainer" : "khanhduytran0",
@@ -873,6 +895,28 @@
          "package" : "com.kdt.trollpad",
          "sha256" : "f9fcb0e11bb8c57c11e4470c507c31fdaa51292f044250eb5b0ce262dc8ebd89",
          "version" : "1.3"
+      },
+      {
+         "Author" : "KingPuffdaddi",
+         "Depiction" : "https://kingpuffdaddi.github.io/depictions/?p=com.kingpuffdaddi.alwaysdark",
+         "Maintainer" : "KingPuffdaddi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.kingpuffdaddi.alwaysdark_1.2.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.kingpuffdaddi.alwaysdark",
+         "sha256" : "97a371b0e8cc1ae4b3fa9cd8bdc01a975db3fbfeac143c35eeb4a5de7445349e",
+         "version" : "1.2.3"
+      },
+      {
+         "Author" : "KingPuffdaddi",
+         "Depiction" : "https://kingpuffdaddi.github.io/depictions/?p=com.kingpuffdaddi.audiomix",
+         "Maintainer" : "KingPuffdaddi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.kingpuffdaddi.audiomix_0.0.10_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.kingpuffdaddi.audiomix",
+         "sha256" : "0282c9a1f9fb311fbf483f1ec1a1b170ac7149e804b78d65746d249952e8e09a",
+         "version" : "0.0.10"
       },
       {
          "Author" : "KingPuffdaddi",
@@ -896,6 +940,17 @@
          "package" : "com.kingpuffdaddi.control-center.ccvpn",
          "sha256" : "93609d41689611d48880df44b95e1e54a6a452390a4f8c9e589e8717e3233b0c",
          "version" : "1.0.6"
+      },
+      {
+         "Author" : "leftyfl1p",
+         "Depiction" : "https://repo.packix.com/package/com.leftyfl1p.carbackground13/",
+         "Maintainer" : "leftyfl1p",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.leftyfl1p.carbackground13_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.leftyfl1p.carbackground13",
+         "sha256" : "fd42bc69966f5e588d738f309184b46276518eaee4b8adc55dbf5622f76cdaf1",
+         "version" : "1.0"
       },
       {
          "Author" : "level3tjg",
@@ -984,6 +1039,17 @@
          "package" : "com.mtac.ccpowermenu",
          "sha256" : "c67cf40dfd5cac13557a6fb0e0a2bdfaaf6dc96f96e62b37a9a785a164f32327",
          "version" : "1.0.2"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.launchlogo.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.launchlogo_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.mtac.launchlogo",
+         "sha256" : "852feb7afacaaca36099b2178e88cb41f4dbc2add76da45b6efe6b1de3e08581",
+         "version" : "1.0"
       },
       {
          "Author" : "MTAC",
@@ -1182,6 +1248,16 @@
          "version" : "1.4"
       },
       {
+         "Author" : "newwares",
+         "Maintainer" : "newwares",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.newwares.badgesync_1.2.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.newwares.badgesync",
+         "sha256" : "e3f70116553a9b3df141cb38f9367e9446948ee5af0be818668af80ccf3c8c2b",
+         "version" : "1.2.2"
+      },
+      {
          "Author" : "Nightwind",
          "Maintainer" : "Nightwind",
          "architecture" : "iphoneos-arm64e",
@@ -1262,6 +1338,18 @@
          "package" : "com.p2kdev.twitternoads",
          "sha256" : "061c9c05e09b90a45d8ad948a5369d48e334f3f0130c3149fc001daf9ef2eccd",
          "version" : "1.2.5"
+      },
+      {
+         "Author" : "P2KDev <p2kdev@gmail.com>",
+         "Depiction" : "https://p2kdev.github.io/repo/depictions/index.html?packageId=com.p2kdev.waqt",
+         "Maintainer" : "P2KDev <p2kdev@gmail.com>",
+         "SileoDepiction" : "https://p2kdev.github.io/repo/depictions/native/com.p2kdev.waqt.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.p2kdev.waqt_1.4.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.p2kdev.waqt",
+         "sha256" : "28438bdbc19933ffeaeb0c15c192cef67b48462b1a26538015afedc1a194f914",
+         "version" : "1.4.3"
       },
       {
          "Author" : "PoomSmart",
@@ -1362,6 +1450,26 @@
          "package" : "com.spark.libsparkapplist",
          "sha256" : "de08b1d6ca301d3a8fe6eaea37f29b6528c11ad73633cc8044af7d126724b41f",
          "version" : "1.1.0~rootless"
+      },
+      {
+         "Author" : "Spark",
+         "Maintainer" : "Spark",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.spark.snowboard.dock_1.1.3~Beta4-rootless_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.spark.snowboard.dock",
+         "sha256" : "e28ff71b8cb756fa1812b1670afe8bbd4ba429fb10c9905e1f0911111f48fc5f",
+         "version" : "1.1.3~Beta4-rootless"
+      },
+      {
+         "Author" : "Spark",
+         "Maintainer" : "Spark",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.spark.snowboard.effects_1.2.2-Beta2-rootless_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "com.spark.snowboard.effects",
+         "sha256" : "56dbd00dca0fa63c3e9f31fa88d9c5c906a1cc3bbd3a0d2ddd5d1fa6d8db930f",
+         "version" : "1.2.2-Beta2-rootless"
       },
       {
          "Author" : "Spark",
@@ -1647,6 +1755,16 @@
          "version" : "1.0"
       },
       {
+         "Author" : "r_plus",
+         "Maintainer" : "r_plus",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.r-plus.menusupport_1.3.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "jp.r-plus.menusupport",
+         "sha256" : "e2f35c0a574622410adc455a078d0188e9acf825756086863d5686b7a71a6501",
+         "version" : "1.3.0"
+      },
+      {
          "Author" : "uz.ra",
          "Maintainer" : "uz.ra",
          "architecture" : "iphoneos-arm64e",
@@ -1793,6 +1911,18 @@
          "version" : "1.1.0"
       },
       {
+         "Author" : "NoisyFlake, Nixuge",
+         "Depiction" : "http://cydia.nixuge.me/depiction/web/me.nixuge.networkmanager.html",
+         "Maintainer" : "Nixuge",
+         "SileoDepiction" : "http://cydia.nixuge.me/depiction/native/me.nixuge.networkmanager.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/me.nixuge.networkmanager_1.4.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "me.nixuge.networkmanager",
+         "sha256" : "5089e06b4d9ba4a59e6b965ef2c5be396037a24d2cb973fd2a00dbcee3e638b6",
+         "version" : "1.4.3"
+      },
+      {
          "Author" : "alexia <me@alexia.lol>",
          "Depiction" : "https://repo.alexia.lol/depictions/net.cadoth.nosbreload",
          "Maintainer" : "alexia <me@alexia.lol>",
@@ -1824,6 +1954,16 @@
          "package" : "one.keycap.freepip",
          "sha256" : "9cbe0e42cd554c8523407d315156290a1bdf2f0a5eb880309d63bb6bfbec8bff",
          "version" : "0.0.3"
+      },
+      {
+         "Author" : "Ninji <ninji@wuffs.org>",
+         "Maintainer" : "Ninji <ninji@wuffs.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/org.wuffs.flickplus_0.0.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:28:07Z",
+         "package" : "org.wuffs.flickplus",
+         "sha256" : "1e44298cfa440a0c664dc39a02def0e3d67388fb7d3b80e490e41acc5fa2a314",
+         "version" : "0.0.9"
       },
       {
          "Author" : "none <a4237019c0@emailabox.pro>",

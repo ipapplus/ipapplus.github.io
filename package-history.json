@@ -240,6 +240,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 80
       },
+      "com.fissiondev.uranium/1.2.7" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 165
+      },
       "com.gilshahar7.volumepercent/1.0.2" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 155
@@ -268,9 +272,21 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 156
       },
+      "com.julioverne.goodwifi/0.0~beta6" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 166
+      },
       "com.kdt.trollpad/1.3" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 157
+      },
+      "com.kingpuffdaddi.alwaysdark/1.2.3" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 167
+      },
+      "com.kingpuffdaddi.audiomix/0.0.10" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 168
       },
       "com.kingpuffdaddi.ccbalance/1.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -279,6 +295,10 @@
       "com.kingpuffdaddi.control-center.ccvpn/1.0.6" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 121
+      },
+      "com.leftyfl1p.carbackground13/1.0" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 169
       },
       "com.level3tjg.twitchadblock/0.1.5" : {
          "first_added" : "2026-10-01T00:20:37Z",
@@ -311,6 +331,10 @@
       "com.mtac.ccpowermenu/1.0.2" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 159
+      },
+      "com.mtac.launchlogo/1.0" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 170
       },
       "com.mtac.prefs.localizer/1.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -388,6 +412,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 90
       },
+      "com.newwares.badgesync/1.2.2" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 171
+      },
       "com.nightwind.floatingsafari/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 91
@@ -419,6 +447,10 @@
       "com.p2kdev.twitternoads/1.2.5" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 93
+      },
+      "com.p2kdev.waqt/1.4.3" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 172
       },
       "com.ps.batteryhealthenabler/1.0.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -455,6 +487,14 @@
       "com.spark.libsparkapplist/1.1.0~rootless" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 135
+      },
+      "com.spark.snowboard.dock/1.1.3~Beta4-rootless" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 173
+      },
+      "com.spark.snowboard.effects/1.2.2-Beta2-rootless" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 174
       },
       "com.spark.snowboard.fonts/1.1.0~Beta4-rootless" : {
          "first_added" : "2026-10-01T00:20:37Z",
@@ -564,6 +604,10 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 55
       },
+      "jp.r-plus.menusupport/1.3.0" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 175
+      },
       "jp.uzra.enabledsreturn/1.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 107
@@ -620,6 +664,10 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 147
       },
+      "me.nixuge.networkmanager/1.4.3" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 176
+      },
       "net.cadoth.nosbreload/0.1.1-1" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 57
@@ -631,6 +679,10 @@
       "one.keycap.freepip/0.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 114
+      },
+      "org.wuffs.flickplus/0.0.9" : {
+         "first_added" : "2026-10-01T00:28:07Z",
+         "sequence" : 177
       },
       "rootfultorootless/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
