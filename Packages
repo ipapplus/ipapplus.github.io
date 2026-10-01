@@ -9133,6 +9133,42 @@ Description: Modified version of mineeks tweak that lets you specify the minimum
 Name: appstoretroller
 Author: Mineek
 
+Package: dev.objcmsgsend.iota.ar
+Architecture: iphoneos-arm
+Version: 2.4
+Section: Tweaks
+Maintainer: objc_msgSend
+Installed-Size: 2472
+Depends: mobilesubstrate
+Replaces: dev.kanji.iota
+Filename: ./debs/dev.objcmsgsend.iota.ar_2.4_iphoneos-arm.deb
+Size: 560536
+MD5sum: b558764dcbaf1963c625c043ef28e6da
+SHA1: 6af4706b5b0111ab180c0a81848a74597b8985ed
+SHA256: 610b88f0160a9e967f142bda6dd82b10ea33e29b77c55788d20d3a1e4a587d39
+SHA512: dc32f8d437dea62460dc76a421858adb26fc5beed830259d3bcb7eb9a2f140004adb98ab543f123cc89fe34917bc9a5558252475c00d937f70c3448f6cd44786
+Description: A great Snapchat tweak 🥀.
+Name: iota ar
+Author: objc_msgSend
+
+Package: dev.objcmsgsend.iota.ar
+Architecture: iphoneos-arm64
+Version: 2.4
+Section: Tweaks
+Maintainer: objc_msgSend
+Installed-Size: 2472
+Depends: mobilesubstrate
+Replaces: dev.objcmsgsend.iota
+Filename: ./debs/dev.objcmsgsend.iota.ar_2.4_iphoneos-arm64.deb
+Size: 517460
+MD5sum: f42492482e8f9c18ca7850c5013d26f1
+SHA1: 55619cb99d76f561192e53ed52dfcd1df0acf4ed
+SHA256: 0c9ccfac8073f98459abb21aefd0ac3d095b4f9feb4bd1a5206beb8739d0bcc6
+SHA512: 19d0447b328227ecf6657ed3eaa911a036756d6a290d3af2c71a5004edf1efb15d62d07242777345fa75ae2e10bb4f02a32fd885962451f0070bb2365e25fa51
+Description: A great Snapchat tweak 🥀.
+Name: iota arabic
+Author: objc_msgSend
+
 Package: dev.traurige.eneko
 Architecture: iphoneos-arm64
 Version: 1.4.2
