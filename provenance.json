@@ -1242,6 +1242,17 @@
          "Author" : "dvntm, nowesr1",
          "Maintainer" : "dvntm, nowesr1",
          "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Glow/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.dvntm.glow_1.3.1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T01:42:29Z",
+         "package" : "com.dvntm.glow",
+         "sha256" : "65d8778ac8da4d79bcfa89d179809b24e48323149f27aaba8c3e90d4f43e8e06",
+         "version" : "1.3.1"
+      },
+      {
+         "Author" : "dvntm, nowesr1",
+         "Maintainer" : "dvntm, nowesr1",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Glow/main/Sileo/depiction.json",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.dvntm.glow_1.3.1_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T01:42:29Z",
