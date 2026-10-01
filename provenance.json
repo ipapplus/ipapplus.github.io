@@ -223,6 +223,26 @@
          "version" : "1.1.1"
       },
       {
+         "Author" : "0xkuj",
+         "Maintainer" : "0xkuj",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:01:11Z",
+         "package" : "com.0xkuj.nopastealerts16",
+         "sha256" : "ddb0fc8a97519c3c68ede2ca4034cf9fe707b4f097ac0a432caf9c591927dad2",
+         "version" : "1.0.0"
+      },
+      {
+         "Author" : "0xkuj",
+         "Maintainer" : "0xkuj",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:01:11Z",
+         "package" : "com.0xkuj.safarix",
+         "sha256" : "37ebbd850e1097fa2bbb676c09af2d5c3d8d2c84a944291d308a881f6fd2444c",
+         "version" : "1.9.9.1"
+      },
+      {
          "Author" : "Lessica <82flex@gmail.com>",
          "Maintainer" : "Lessica <82flex@gmail.com>",
          "architecture" : "iphoneos-arm64",
@@ -329,6 +349,16 @@
          "package" : "com.asterix.digitalbattery13",
          "sha256" : "5c2b94d7a58e5ea1f0fad0f9bc388c1e177900cf68ae8f363bc6dfbed1ac1046",
          "version" : "1.1.0"
+      },
+      {
+         "Author" : "Sniper @DNS_Sys",
+         "Maintainer" : "Sniper @DNS_Sys",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.bypassjb.sniper_6.2_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:01:11Z",
+         "package" : "com.bypassjb.sniper",
+         "sha256" : "d365c05b9c8df64382f5bc45c454ad27307b0ab9db0ae80dc922e9bd37747a98",
+         "version" : "6.2"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",

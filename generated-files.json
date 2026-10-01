@@ -42,6 +42,10 @@
       "depictions/com.0xkuj.filzadirprobe_1.7.3_iphoneos-arm64e.json" : "d85dce444e8fa1ea3f15c971678d08d95efecb35a196fa426bbe2aa2aab4016b",
       "depictions/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.html" : "55fd717c6b909e5ceff93025d81489fd86a6b900272b7f3267a37847ca948ed0",
       "depictions/com.0xkuj.fixwanotifs_1.1.1_iphoneos-arm64e.json" : "ba5e673e1f36dc566c89cb3c95cfed16a5a23366f0c8e096a1f5c21a29d65c43",
+      "depictions/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.html" : "4d215c6ab518f7f1734c98a6c55ad2a9c960ca964a3615d9966ab6f88efcee27",
+      "depictions/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.json" : "8deea11b2138e0e47c5dde7ffb5271c6bad5240c4edef7d0d9ed133b79453227",
+      "depictions/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.html" : "3cd1d02c5e2f7bf8aa34f129955d8b4289c70f6e8fbf5aeda1eb2a38c6df347d",
+      "depictions/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.json" : "ffa3fae833f9c08da37eb22b2bae268a433987f52379ee684e7ce8d751159787",
       "depictions/com.82flex.iconrestore_1.7_iphoneos-arm64.html" : "d31bb182ed0cc0754a0be98a690ed48e2605a3fef781213ff26101d1a0d7d6de",
       "depictions/com.82flex.iconrestore_1.7_iphoneos-arm64.json" : "9311cf78865ba0c8279ce0c971411749e875b488da97b95d4fa3f5c3f2816bab",
       "depictions/com.82flex.iconrestore_1.7_iphoneos-arm64e.html" : "82dd86dc6addc14309dec6d5d132cf21ef35c479e50d258fce515871711c6d13",
@@ -61,7 +65,9 @@
       "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.html" : "7da9c8284b3904dd974cdc95d0222f2d878aaf4674196419fbe4a6b6afca8a59",
       "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64.json" : "017496ee2f50244f565e8eb8a03deb686bc96c9f1a21e9fb36a26fee9c131cda",
       "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.html" : "79d6224ec5d130dc385a0347dcea52b210aaefdc6a478855b7177892fffc8b77",
-      "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.json" : "8a21d6ec97976fb9083975ff1f285dd3933272009bc00fd7c5b534fba2d26189"
+      "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.json" : "8a21d6ec97976fb9083975ff1f285dd3933272009bc00fd7c5b534fba2d26189",
+      "depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.html" : "125125cca2525fb024ac0da39e4f24da3e8771d8d68dbb6969b22c06ccaf69fe",
+      "depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.json" : "7083f63b930a8cf7a39e0d81c78d2d92e3ae46de0b512bcf71469154986c2d58"
    },
    "schema" : 1
 }

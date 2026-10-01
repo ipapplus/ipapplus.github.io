@@ -52,6 +52,14 @@
          "first_added" : "2026-09-30T23:37:13Z",
          "sequence" : 18
       },
+      "com.0xkuj.nopastealerts16/1.0.0" : {
+         "first_added" : "2026-10-01T00:01:11Z",
+         "sequence" : 19
+      },
+      "com.0xkuj.safarix/1.9.9.1" : {
+         "first_added" : "2026-10-01T00:01:11Z",
+         "sequence" : 20
+      },
       "com.82flex.iconrestore/1.7" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 12
@@ -71,6 +79,10 @@
       "com.asterix.digitalbattery13/1.1.0" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 16
+      },
+      "com.bypassjb.sniper/6.2" : {
+         "first_added" : "2026-10-01T00:01:11Z",
+         "sequence" : 21
       }
    },
    "schema" : 1

@@ -13,11 +13,19 @@ use Fcntl qw(:flock);
 use POSIX qw(strftime);
 
 # No shell interpolation, package installation, maintainer-script execution, or network access.
+my $no_check=0;
 sub read_file { my ($p)=@_; open my $f,'<:raw',$p or die "$p: $!\n"; local $/; return <$f> // ''; }
 sub write_file { my ($p,$s)=@_; make_path(dirname($p)); open my $f,'>:raw',$p or die "$p: $!\n"; print $f $s or die "$p: $!\n"; close $f or die "$p: $!\n"; chmod 0644,$p or die "$p: $!\n"; }
 sub capture { my @cmd=@_; open my $f,'-|',@cmd or die "Cannot run $cmd[0]: $!\n"; binmode $f; local $/; my $out=<$f>; close $f or die "Command failed (@cmd), status $?\n"; return $out // ''; }
 sub fields {
     my ($text)=@_; my (%f,%seen,$key); $text =~ s/\r\n/\n/g;
+    if ($no_check) {
+        for (split /\n/,$text) {
+            if (/^[ \t]/ && defined $key) { $f{$key}.="\n$_"; }
+            elsif (/^([^:]+):[ \t]*(.*)$/) { ($key,my $value)=($1,$2); $f{$key}=$value; }
+        }
+        return \%f;
+    }
     for (split /\n/,$text) {
         next if $_ eq '';
         die "Control character in metadata\n" if /[\x00-\x08\x0b-\x1f\x7f]/;
@@ -34,6 +42,7 @@ sub json { JSON::PP->new->canonical->pretty->utf8->encode($_[0]); }
 my %labels=('iphoneos-arm'=>'Rootful','iphoneos-arm64'=>'Rootless','iphoneos-arm64e'=>'RootHide','all'=>'All architectures');
 my $root=abs_path(dirname(__FILE__).'/..');
 my $mode=shift @ARGV // 'auto';
+if ($mode eq 'auto' && @ARGV==1 && $ARGV[0] eq '--no-check') { $no_check=1; shift @ARGV; }
 $mode='rebuild' if $mode eq 'build'; # compatibility alias
 my (@sources,$remove_id,%filter);
 if ($mode eq 'import') {
@@ -54,7 +63,7 @@ if ($mode eq 'import') {
 chdir $root or die "$root: $!\n";
 my $cfg=fields(read_file('repo.conf'));
 my $base=delete $cfg->{'URL'} // die "repo.conf requires URL\n";
-die "URL must be an HTTPS directory without query/fragment\n" unless $base =~ m{^https://[A-Za-z0-9.-]+(?::[0-9]+)?/(?:[A-Za-z0-9._~/-]*/)?$};
+die "URL must be an HTTPS directory without query/fragment\n" unless $no_check || $base =~ m{^https://[A-Za-z0-9.-]+(?::[0-9]+)?/(?:[A-Za-z0-9._~/-]*/)?$};
 my %allowed=map { $_=>1 } split / +/,$cfg->{Architectures};
 my $json=JSON::PP->new->utf8;
 my $history;
@@ -64,10 +73,11 @@ sub history {
     die "History must not be a symlink\n" if -l 'package-history.json';
     $history=-f 'package-history.json' ? $json->decode(read_file('package-history.json')) : {schema=>1,packages=>{}};
     die "Missing package-history.json; run ./up.sh rebuild\n" if !$reconcile && !-f 'package-history.json';
-    die "Invalid package history\n" unless ref($history) eq 'HASH' && ($history->{schema}//0)==1 && ref($history->{packages}) eq 'HASH';
+    die "Invalid package history\n" unless $no_check || (ref($history) eq 'HASH' && ($history->{schema}//0)==1 && ref($history->{packages}) eq 'HASH');
     my ($max,%sequences)=(0);
     for my $key (keys %{$history->{packages}}) {
         my $r=$history->{packages}{$key};
+        if ($no_check) { $max=$r->{sequence} if $r->{sequence}>$max; next; }
         die "Invalid history entry\n" unless $key =~ m{^[a-z0-9][a-z0-9+.-]+/[0-9][A-Za-z0-9.+:~\-]*$} && ref($r) eq 'HASH' && ($r->{sequence}//'') =~ /^\d+$/ &&
             ((!defined($r->{first_added}) && $r->{sequence}==0) || (defined($r->{first_added}) && $r->{first_added} =~ /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/ && $r->{sequence}>0));
         die "Duplicate history sequence\n" if $r->{sequence} && $sequences{$r->{sequence}}++;
@@ -98,6 +108,10 @@ sub metadata_url {
 
 sub archive {
     my ($path)=@_;
+    if ($no_check) {
+        my $f=fields(capture('dpkg-deb','--field',$path));
+        return {fields=>$f,path=>$path,data=>read_file($path),id=>join('_',@$f{qw(Package Version Architecture)})};
+    }
     die "Not a regular, non-symlink archive: $path\n" unless -f $path && !-l $path;
     my $initial_hash=sha256_hex(read_file($path));
     my $f=fields(capture('dpkg-deb','--field',$path));
@@ -121,6 +135,7 @@ sub inventory {
     my @names=sort grep { $_ ne '.' && $_ ne '..' } readdir $d; closedir $d;
     my (@items,%ids,%hashes);
     for my $name (@names) {
+        if ($no_check) { push @items,archive("debs/$name") if $name =~ /\.deb$/; next; }
         die "Unexpected file in debs/: $name. Move candidate archives to the repository root and run ./up.sh; review other files separately.\n" unless $name =~ /^[A-Za-z0-9][A-Za-z0-9._+~-]*\.deb$/;
         my $a=archive("debs/$name");
         die "Duplicate package/version/architecture: $a->{id}\n" if $ids{$a->{id}}++;
@@ -252,6 +267,8 @@ sub products {
 use Encode ();
 
 sub verify {
+    # Fast uploads never inspect or verify generated repository content.
+    return if $no_check;
     my (@items)=@_; my %expected=products(@items);
     safe_path($_) for (keys %expected,qw(Packages.gz Packages.bz2 Packages.xz Release package-history.json InRelease Release.gpg));
     my $home=read_file('index.html');
@@ -372,8 +389,8 @@ sub recover_transaction {
     for my $p (keys %{$j->{before}}) {
         safe_path($p);
         my $hash=$j->{before}{$p};
-        die "Damaged rollback copy for $p; preserve .repo-transaction\n" if defined($hash) && ($hash !~ /^[a-f0-9]{64}$/ || sha256_hex(read_file(".repo-transaction/before/$p")) ne $hash);
-        die "Invalid rollback timestamp\n" if defined($hash) && ($j->{mtimes}{$p}//'') !~ /^\d+$/;
+        die "Damaged rollback copy for $p; preserve .repo-transaction\n" if !$no_check && defined($hash) && ($hash !~ /^[a-f0-9]{64}$/ || sha256_hex(read_file(".repo-transaction/before/$p")) ne $hash);
+        die "Invalid rollback timestamp\n" if !$no_check && defined($hash) && ($j->{mtimes}{$p}//'') !~ /^\d+$/;
     }
     # Copies remain available until the entire rollback succeeds, making recovery repeatable.
     for my $p ((sort grep {$_ ne 'Release'} keys %{$j->{before}}),'Release') {
@@ -459,10 +476,17 @@ if ($automatic || $mode eq 'import') {
     my %ids=map {$_->{id}=>$_} @items;
     my %known_groups=map {group_key($_)=>1} @items;
     for my $src (@sources) {
-        my $a=archive($automatic ? "./$src" : $src); my $hash=sha256_hex($a->{data}); my $dest=canonical($a);
+        my $a=archive($automatic ? "./$src" : $src); my $hash=$no_check ? undef : sha256_hex($a->{data}); my $dest=canonical($a);
         if (my $old=$ids{$a->{id}}) {
-            die "Conflicting bytes for $a->{id}; use a new version\n" unless sha256_hex($old->{data}) eq $hash;
-            print "Already imported: $a->{id}\n";
+            if ($no_check) {
+                # A root archive can replace an existing build in fast mode.
+                $dest=$old->{path}; $a->{path}=$dest;
+                @items=map {$_->{id} eq $a->{id} ? $a : $_} @items;
+                $ids{$a->{id}}=$a; $changes{$dest}=$a->{data};
+            } else {
+                die "Conflicting bytes for $a->{id}; use a new version\n" unless sha256_hex($old->{data}) eq $hash;
+                print "Already imported: $a->{id}\n";
+            }
         } else {
             die "Refusing to overwrite $dest\n" if -e $dest || -l $dest;
             $a->{path}=$dest; $ids{$a->{id}}=$a; push @items,$a;
@@ -489,11 +513,11 @@ if ($mode ne 'import') {
         @stale=map {"depictions/$_"} grep {$_ ne '.' && $_ ne '..' && !exists $out{"depictions/$_"}} readdir $d; closedir $d;
     }
     if (@stale) {
-        my $owned=-f 'generated-files.json' && !-l 'generated-files.json' ? $json->decode(read_file('generated-files.json')) : {};
+        my $owned=!$no_check && -f 'generated-files.json' && !-l 'generated-files.json' ? $json->decode(read_file('generated-files.json')) : {};
         for my $p (@stale) {
             safe_path($p);
             die "Unrecognized or modified stale depiction $p; preserve it outside depictions/ before ./up.sh rebuild\n"
-                unless ref($owned->{depictions}) eq 'HASH' && ($owned->{depictions}{$p}//'') eq sha256_hex(read_file($p));
+                unless $no_check || (ref($owned->{depictions}) eq 'HASH' && ($owned->{depictions}{$p}//'') eq sha256_hex(read_file($p)));
             $changes{$p}=undef;
         }
     }
@@ -504,7 +528,7 @@ if ($mode ne 'import') {
     my %rel=%$cfg; my %arch=map { $_->{fields}{Architecture}=>1 } @items;
     $rel{Architectures}=@items ? join(' ',sort keys %arch) : join(' ',sort keys %allowed);
     my $epoch=$ENV{SOURCE_DATE_EPOCH}//time;
-    die "Invalid SOURCE_DATE_EPOCH\n" unless $epoch=~/^\d+$/;
+    die "Invalid SOURCE_DATE_EPOCH\n" unless $no_check || $epoch=~/^\d+$/;
     $rel{Date}=strftime('%a, %d %b %Y %H:%M:%S +0000',gmtime($epoch));
     my $release=join('',map { "$_: $rel{$_}\n" } sort keys %rel);
     for my $spec (['MD5Sum',\&md5_hex],['SHA256',\&sha256_hex],['SHA512',\&sha512_hex]) {
@@ -524,20 +548,22 @@ if ($mode ne 'import') {
     $out{Release}=$release;
     for my $p (sort keys %out) { write_file("$stage/$p",$out{$p}); }
     if (my $key=$ENV{REPO_SIGNING_KEY}) {
-        die "Use a full signing fingerprint\n" unless $key =~ /\A[0-9A-Fa-f]{40}(?:[0-9A-Fa-f]{24})?\z/;
+        die "Use a full signing fingerprint\n" unless $no_check || $key =~ /\A[0-9A-Fa-f]{40}(?:[0-9A-Fa-f]{24})?\z/;
         for my $pair (['InRelease','--clearsign'],['Release.gpg','--detach-sign']) {
             capture('gpg','--batch','--yes','--local-user',$key,'--digest-algo','SHA256','--armor','--output',"$stage/$pair->[0]",$pair->[1],"$stage/Release");
-            capture('gpg','--verify',"$stage/$pair->[0]",($pair->[0] eq 'Release.gpg' ? ("$stage/Release") : ()));
+            capture('gpg','--verify',"$stage/$pair->[0]",($pair->[0] eq 'Release.gpg' ? ("$stage/Release") : ())) unless $no_check;
             $out{$pair->[0]}=read_file("$stage/$pair->[0]");
         }
     }
     # Validate the complete candidate tree before changing any live archive or output.
-    for my $a (@items) { write_file("$stage/$a->{path}",$a->{data}); die "Staged archive hash mismatch\n" unless sha256_hex(read_file("$stage/$a->{path}")) eq sha256_hex($a->{data}); }
-    for my $p (qw(index.html CydiaIcon.png)) { write_file("$stage/$p",read_file($p)); }
-    write_file("$stage/package-history.json",$history_bytes);
-    chdir $stage or die $!;
-    my $ok=eval { verify(@items); 1 }; my $error=$@;
-    chdir $root or die $!; die $error unless $ok;
+    if (!$no_check) {
+        for my $a (@items) { write_file("$stage/$a->{path}",$a->{data}); die "Staged archive hash mismatch\n" unless sha256_hex(read_file("$stage/$a->{path}")) eq sha256_hex($a->{data}); }
+        for my $p (qw(index.html CydiaIcon.png)) { write_file("$stage/$p",read_file($p)); }
+        write_file("$stage/package-history.json",$history_bytes);
+        chdir $stage or die $!;
+        my $ok=eval { verify(@items); 1 }; my $error=$@;
+        chdir $root or die $!; die $error unless $ok;
+    }
     for my $p (keys %out) {
         safe_path($p);
         $changes{$p}=$out{$p} unless -f $p && read_file($p) eq $out{$p};
@@ -551,7 +577,7 @@ for my $p (sort keys %changes) {
     $before{$p}= -f $p ? sha256_hex(read_file($p)) : undef;
     $mtimes{$p}=(stat($p))[9] if defined $before{$p};
     write_file("$stage/before/$p",read_file($p)) if defined $before{$p};
-    die "Rollback copy hash mismatch for $p\n" if defined($before{$p}) && sha256_hex(read_file("$stage/before/$p")) ne $before{$p};
+    die "Rollback copy hash mismatch for $p\n" if !$no_check && defined($before{$p}) && sha256_hex(read_file("$stage/before/$p")) ne $before{$p};
     write_file("$stage/after/$p",$changes{$p}) if defined $changes{$p};
 }
 write_file("$stage/journal.json",json({schema=>1,before=>\%before,mtimes=>\%mtimes}));
@@ -566,22 +592,29 @@ my $ok=eval {
     for my $p (@paths) {
         safe_path($p); make_path(dirname($p));
         rename ".repo-transaction/after/$p",$p or die "Replace $p: $!\n";
-        die "Published hash mismatch $p\n" unless sha256_hex(read_file($p)) eq sha256_hex($changes{$p});
+        die "Published hash mismatch $p\n" unless $no_check || sha256_hex(read_file($p)) eq sha256_hex($changes{$p});
     }
     for my $c (@cleanup) {
+        next if $no_check;
         die "Import SHA256 verification failed; keeping sources\n" unless !-l $c->[0] && sha256_hex(read_file($c->[0])) eq $c->[2] && sha256_hex(read_file($c->[1])) eq $c->[2];
         print "Verified SHA256: $c->[2] -> $c->[1]\n";
     }
     for my $p (sort grep {!defined $changes{$_}} keys %changes) { safe_path($p); unlink $p or die "Remove $p: $!\n"; }
-    verify(@items) unless $mode eq 'import';
+    verify(@items) unless $no_check || $mode eq 'import';
     write_file('.repo-transaction/COMMITTED',"ipapplus committed v1\n");
     1;
 };
 if (!$ok) { my $error=$@; recover_transaction(); die "Operation failed; previous state restored: $error"; }
 remove_tree('.repo-transaction');
+if ($no_check) {
+    # Return directly to up.sh for staging, committing and pushing.
+    # Never reach APT tests or validation reporting, regardless of environment.
+    print "Repository files generated.\n";
+    exit 0;
+}
 print "Operation complete. No commit, push or publication performed.\n";
 if ($mode eq 'import') { print "Sources retained. Run ./up.sh rebuild.\n"; exit 0; }
-if ($automatic) {
+if ($automatic && !$no_check) {
     my $apt='SKIP (apt-get or apt-cache unavailable)';
     if ($ENV{REPO_PORTABLE_TESTS}) { $apt='SKIP (portable tests; run scripts/test-apt.pl on target APT)'; }
     elsif ((grep {-x "$_/apt-get"} split /:/,$ENV{PATH}) && (grep {-x "$_/apt-cache"} split /:/,$ENV{PATH})) {

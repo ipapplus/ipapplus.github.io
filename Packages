@@ -414,6 +414,46 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.fixwanotifs_1.1.
 Size: 30096
 Version: 1.1.1
 
+Package: com.0xkuj.nopastealerts16
+Architecture: iphoneos-arm64e
+Author: 0xkuj
+Depends: firmware (>= 16.0)
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.html
+Description: Remove the annoying paste confirmation added on iOS 16
+Filename: debs/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 62f6e77b3cd31c0d022b1d842df6a233
+Maintainer: 0xkuj
+Name: NoPasteAlerts16
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: b93cacaae2fd3c19fa1a3a0bd60a53b247f4083e
+SHA256: ddb0fc8a97519c3c68ede2ca4034cf9fe707b4f097ac0a432caf9c591927dad2
+SHA512: 21402b63c0f2671603b5f9631c0fde40200c13eded323353a356cb264effc6420d489f8db9095f559030a5b8861d5f39f7dc5d9660e8a377fb803af0a38a1e64
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.nopastealerts16_1.0.0_iphoneos-arm64e.json
+Size: 4004
+Version: 1.0.0
+
+Package: com.0xkuj.safarix
+Architecture: iphoneos-arm64e
+Author: 0xkuj
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.html
+Description: Safari Essential Features
+Filename: debs/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.deb
+Installed-Size: 928
+MD5sum: 10c65071f9674ed81422b52195c5218e
+Maintainer: 0xkuj
+Name: SafariX
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 88dbce9b596b63e027a3fd29f3b5d0ac96dfc875
+SHA256: 37ebbd850e1097fa2bbb676c09af2d5c3d8d2c84a944291d308a881f6fd2444c
+SHA512: abdfd506e32eb9097e5299748cc8ae8353dd103a06a48498d5fd0c7f17262d05847ac35083b49d892c8a7b9bf4211c28759ad414130b5035111ccc4f441e0a0b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.safarix_1.9.9.1_iphoneos-arm64e.json
+Size: 318272
+Version: 1.9.9.1
+
 Package: com.82flex.iconrestore
 Architecture: iphoneos-arm64
 Author: Lessica <82flex@gmail.com>
@@ -624,4 +664,23 @@ Sponsor: thebigboss.org <http://thebigboss.org>
 Tag: purpose::extension, compatible::ios13
 Version: 1.1.0
 dev: asterix
+
+Package: com.bypassjb.sniper
+Architecture: iphoneos-arm64
+Author: Sniper @DNS_Sys
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.html
+Description: Sniper bypassjb Work in some apps not all applications
+Filename: debs/com.bypassjb.sniper_6.2_iphoneos-arm64.deb
+Installed-Size: 660
+MD5sum: cb16a0b90af321f90c5e83a5afc172c2
+Maintainer: Sniper @DNS_Sys
+Name: Sniperbypassjb
+SHA1: 39f24e24fa380cdde2d2adb9f0b589f8ae389a00
+SHA256: d365c05b9c8df64382f5bc45c454ad27307b0ab9db0ae80dc922e9bd37747a98
+SHA512: 732bd171a6be02c2af7cbd634f810b7d5c3cae6df71652c2b924003c95e9bf2736bc2dbb4c1a22093b19db39895b7b16cc592002c0a6764f478d567458e299e8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.json
+Size: 69784
+Version: 6.2
 
