@@ -1891,6 +1891,17 @@
          "version" : "1.3"
       },
       {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.vitreux.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.vitreux_1.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:40:29Z",
+         "package" : "com.mtac.vitreux",
+         "sha256" : "fdb790ba6fb4644ae17bc2f2f4d47219783a03a48d0c28825e8cc61560fcdbb4",
+         "version" : "1.3"
+      },
+      {
          "Author" : "Muirey03",
          "Maintainer" : "Muirey03",
          "architecture" : "iphoneos-arm64e",
@@ -2795,6 +2806,16 @@
          "package" : "com.teslaman3092.popoutbuttons",
          "sha256" : "cdb4ec37fbf0301637f4eb290415a3ed808c801e2d82f6a6e6f861a8a5d830ee",
          "version" : "1.0.2"
+      },
+      {
+         "Author" : "Thenatis",
+         "Maintainer" : "Thenatis",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.thenatis.vivacity_2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:40:29Z",
+         "package" : "com.thenatis.vivacity",
+         "sha256" : "dd1c36683e0a61c2cfb2dbfbe0eedfc20693d933be8536274aa7badb99afc47f",
+         "version" : "2.0"
       },
       {
          "Author" : "TIGI Software <satashi2009@gmail.com>",

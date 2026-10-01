@@ -640,6 +640,10 @@
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 253
       },
+      "com.mtac.vitreux/1.3" : {
+         "first_added" : "2026-10-01T01:40:29Z",
+         "sequence" : 336
+      },
       "com.muirey03.cr4shed/4.3.1-1" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 254
@@ -983,6 +987,10 @@
       "com.teslaman3092.popoutbuttons/1.0.2" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 285
+      },
+      "com.thenatis.vivacity/2.0" : {
+         "first_added" : "2026-10-01T01:40:29Z",
+         "sequence" : 337
       },
       "com.tigisoftware.appdatamanager/1.8.2-5" : {
          "first_added" : "2026-10-01T01:25:35Z",

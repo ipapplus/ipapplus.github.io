@@ -1,0 +1,40 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "Vivacity — RootHide"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "2.0",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64e",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "A Vibrant Theme to Light up Your Device!",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Thenatis",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}
