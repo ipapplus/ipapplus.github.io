@@ -230,6 +230,25 @@ SileoDepiction: https://ipapplus.github.io/depictions/apple.ubuntu.font_1.0_ipho
 Size: 91600
 Version: 1.0
 
+Package: chaoge.jbdev
+Architecture: iphoneos-arm
+Author: chaoge
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/chaoge.jbdev_1.0-277+debug_iphoneos-arm.html
+Description: Jailbreak development tool for XCode
+Filename: debs/chaoge.jbdev_1.0-277+debug_iphoneos-arm.deb
+Installed-Size: 20972
+MD5sum: cc74cef2f2d77bafad288a1cfa4c3c40
+Maintainer: chaoge
+Name: JBDev
+SHA1: 6066836d36adf064318396095bf64b27109a77b9
+SHA256: ef044bdbc9bc6574ff0d5be88341f05dada90ccaa7354892e2cbbe4c062f687a
+SHA512: 00d4a923a639cc60ad780aa67d723794b6b1ee7d24fe27c2f16f26242ea85b600b324595281309cbf9f4f9724635659f779104b846524d2900d0e8434f2f1aa2
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/chaoge.jbdev_1.0-277+debug_iphoneos-arm.json
+Size: 740732
+Version: 1.0-277+debug
+
 Package: cm90.crossoveripc
 Architecture: iphoneos-arm64
 Author: @CrazyMind90
@@ -1107,6 +1126,26 @@ Size: 2146196
 Version: 6.0.4-1+debug
 
 Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm.deb
+Installed-Size: 13364
+MD5sum: 2f8cee22c90cc0697f298218920436bd
+Maintainer: NeoFreeBird
+Name: orionblur-NFB-BHTwitter
+SHA1: ac33e39b2cd0ee7755f278bec4cebdd0d5a1fde8
+SHA256: a33e436dd59c5b249a6cd4bb298b1c9829745a281d49524d4f1b29571f748144
+SHA512: be858d7fc4d4cb3d614974efcdbb5acb9f9f5e4f7f7ecb8a4e9ef83156014741baeb0eab0926268c9f0187b60325b626a684806439522c5656cd96b7dc1e1e4b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm.json
+Size: 4276056
+Version: 6.5.0-1+debug
+
+Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64
 Author: NeoFreeBird
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
@@ -1480,6 +1519,24 @@ Size: 407508
 Version: 2.2.0
 icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
 sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
+
+Package: com.choco.tg
+Architecture: iphoneos-arm
+Author: choco
+Depiction: https://ipapplus.github.io/depictions/com.choco.tg_1.7.4_iphoneos-arm.html
+Description: An simple Tweak For Telegram iOS
+Filename: debs/com.choco.tg_1.7.4_iphoneos-arm.deb
+Installed-Size: 3256
+MD5sum: b9a1ccaa4156001d769e3a692177f19a
+Maintainer: choco
+Name: TGExtra
+SHA1: 2c1a908fed9170ac27295842b66a7cd55c790784
+SHA256: 70874fe68d0f37d7b96239cd2cbb26d57438336beb21a41349bea6ca7ab55bb5
+SHA512: 57ae53fa0ba626aab386e884ad65ba82276937ef90ba391ff6c2df1100e32df6d3481d0f8a56d1c746636e360116984d3c68b3eb5cf7467e68924a9ebc75b258
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.choco.tg_1.7.4_iphoneos-arm.json
+Size: 612512
+Version: 1.7.4
 
 Package: com.choco.tg
 Architecture: iphoneos-arm64
@@ -4576,6 +4633,26 @@ Size: 1714636
 Version: 2.6.9
 
 Package: com.iosdump.appdata
+Architecture: iphoneos-arm
+Author: iosdump
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.7.1_iphoneos-arm.html
+Description: 在主屏幕查看应用数据与管理应用
+Filename: debs/com.iosdump.appdata_2.7.1_iphoneos-arm.deb
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+MD5sum: 41f35ee91fcb9e8b982cc35bec906cf5
+Maintainer: iosdump
+Name: AppData
+SHA1: 135f033ebc18ada062c30c410fe645f4309a49f9
+SHA256: 94ee7e8997a66634291e1ab79576f8370b4fb2bb94588a94fbd6b3511abefab7
+SHA512: f45e7b6fc2308c4ee0154a8b516577e3d8a6e972bdee1f1c705ae6fc0eac992cad678adf2d5426cbd73a71c6d054be93d28947acf58f4c4225f5e4cb063b7f75
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.7.1_iphoneos-arm.json
+Size: 2090868
+Version: 2.7.1
+
+Package: com.iosdump.appdata
 Architecture: iphoneos-arm64
 Author: iosdump
 Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
@@ -5306,6 +5383,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.lizynz.telegaicons.rootless_1.3_iphoneos-arm64e.json
 Size: 19644
 Version: 1.3
+
+Package: com.m1337.varclean
+Architecture: iphoneos-arm
+Author: m1337
+Depends: firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.m1337.varclean_1.1_iphoneos-arm.html
+Description: varClean for Rootless
+Filename: debs/com.m1337.varclean_1.1_iphoneos-arm.deb
+Icon: 
+Installed-Size: 876
+MD5sum: f00b37577cec665dc58c6e2b86556b56
+Maintainer: m1337
+Name: varClean
+SHA1: ae3f850ff530656cc8809b98cff5818b4a8623ef
+SHA256: e1eec6979d1a08914a71022dd05a38bad459064bb62956117ccca9c5c036e774
+SHA512: 36a5bb885d0f19eda9a7eb04723dbb09bf95d012fcc25d98dc671c023fd2e5301aa675189c6b522925f047eb899ccfdf07f35004554a9a2b060e5811840df487
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.m1337.varclean_1.1_iphoneos-arm.json
+Size: 721240
+Support: https://github.com/roothide/RootHideManagerApp
+Version: 1.1
 
 Package: com.m1337.varclean
 Architecture: iphoneos-arm64

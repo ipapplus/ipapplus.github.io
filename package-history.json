@@ -20,6 +20,10 @@
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 5
       },
+      "chaoge.jbdev/1.0-277+debug" : {
+         "first_added" : "2026-10-01T02:29:16Z",
+         "sequence" : 383
+      },
       "cm90.crossoveripc/1.1-1+debug" : {
          "first_added" : "2026-09-30T23:25:23Z",
          "sequence" : 6
@@ -539,6 +543,10 @@
       "com.iosdump.appdata/2.6.9" : {
          "first_added" : "2026-10-01T01:22:13Z",
          "sequence" : 316
+      },
+      "com.iosdump.appdata/2.7.1" : {
+         "first_added" : "2026-10-01T02:29:16Z",
+         "sequence" : 384
       },
       "com.iosdump.appdata/2.7.5" : {
          "first_added" : "2026-10-01T01:32:55Z",

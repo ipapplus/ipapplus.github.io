@@ -127,6 +127,18 @@
          "version" : "1.0"
       },
       {
+         "Author" : "chaoge",
+         "Depiction" : "Jailbreak development tool for XCode",
+         "Maintainer" : "chaoge",
+         "SileoDepiction" : "Jailbreak development tool for XCode",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/chaoge.jbdev_1.0-277+debug_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:29:16Z",
+         "package" : "chaoge.jbdev",
+         "sha256" : "ef044bdbc9bc6574ff0d5be88341f05dada90ccaa7354892e2cbbe4c062f687a",
+         "version" : "1.0-277+debug"
+      },
+      {
          "Author" : "@CrazyMind90",
          "Maintainer" : "@CrazyMind90",
          "architecture" : "iphoneos-arm64",
@@ -580,6 +592,16 @@
       {
          "Author" : "NeoFreeBird",
          "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:17:52Z",
+         "package" : "com.bandarhl.nfbbhtwitter",
+         "sha256" : "a33e436dd59c5b249a6cd4bb298b1c9829745a281d49524d4f1b29571f748144",
+         "version" : "6.5.0-1+debug"
+      },
+      {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/com.bandarhl.nfbbhtwitter_6.5.0-1+debug_iphoneos-arm64.deb",
          "first_added" : "2026-10-01T02:17:52Z",
@@ -763,6 +785,16 @@
          "package" : "com.c1d3r.pulloverpro.ios17",
          "sha256" : "3151cf9033a08ce2de189c222c0207752aa9cc79a8f04aac75313835a77131a6",
          "version" : "2.2.0"
+      },
+      {
+         "Author" : "choco",
+         "Maintainer" : "choco",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.choco.tg_1.7.4_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.choco.tg",
+         "sha256" : "70874fe68d0f37d7b96239cd2cbb26d57438336beb21a41349bea6ca7ab55bb5",
+         "version" : "1.7.4"
       },
       {
          "Author" : "choco",
@@ -2393,6 +2425,16 @@
       {
          "Author" : "iosdump",
          "Maintainer" : "iosdump",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.iosdump.appdata_2.7.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:29:16Z",
+         "package" : "com.iosdump.appdata",
+         "sha256" : "94ee7e8997a66634291e1ab79576f8370b4fb2bb94588a94fbd6b3511abefab7",
+         "version" : "2.7.1"
+      },
+      {
+         "Author" : "iosdump",
+         "Maintainer" : "iosdump",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/com.iosdump.appdata_2.7.5_iphoneos-arm64.deb",
          "first_added" : "2026-10-01T01:32:55Z",
@@ -2790,6 +2832,17 @@
          "package" : "com.lizynz.telegaicons.rootless",
          "sha256" : "eb01a480d7459d5f9d0894d526bbe4e2db40d5a8f6f0bc1dc50ceef57608ade2",
          "version" : "1.3"
+      },
+      {
+         "Author" : "m1337",
+         "Depiction" : "https://github.com/roothide/RootHideManagerApp",
+         "Maintainer" : "m1337",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.m1337.varclean_1.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T01:57:05Z",
+         "package" : "com.m1337.varclean",
+         "sha256" : "e1eec6979d1a08914a71022dd05a38bad459064bb62956117ccca9c5c036e774",
+         "version" : "1.1"
       },
       {
          "Author" : "m1337",

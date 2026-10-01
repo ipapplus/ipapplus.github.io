@@ -1,0 +1,45 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "varClean — Rootful"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "1.1",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "varClean for Rootless",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "m1337",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "firmware (>= 15.0)",
+               "title" : "Depends"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}
