@@ -786,6 +786,25 @@ Size: 498596
 Version: 2.3.1
 
 Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64
+Author: Bandar Alruwaili
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtwitter_4.5_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.bhtwitter_4.5_iphoneos-arm64.deb
+Installed-Size: 16284
+MD5sum: c37c2bca4a6e66da1a5b60d8465568bc
+Maintainer: Bandar Alruwaili
+Name: BHTwitter
+SHA1: 461683c5186e18ca4e49738e70896eba52182fd8
+SHA256: 29fad5eba6862ee245a4a9148c6c4484d485f486906c5047e3b0f10b6caab4a9
+SHA512: 176fb81529161f822a194fad0ed7ebfb7f9c787f0da4134f8eada684e4203f928668dad49fd535a1fbc091588ac0ae9d34065138bf93324d1d174e44fc76b941
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtwitter_4.5_iphoneos-arm64.json
+Size: 6425116
+Version: 4.5
+
+Package: com.bandarhl.bhtwitter
 Architecture: iphoneos-arm64e
 Author: Bandar Alruwaili
 Depends: mobilesubstrate, ws.hbang.common
@@ -804,6 +823,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.json
 Size: 12753348
 Version: 4.5
+
+Package: com.bandarhl.nfbbhtwitter
+Architecture: iphoneos-arm64
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64.deb
+Installed-Size: 16832
+MD5sum: 00c39678cb80fb88f80d7fdfeb1f1542
+Maintainer: NeoFreeBird
+Name: NFB-BHTwitter
+SHA1: c78d7bb2b3abcc2059f0865ae4845cae94a658ba
+SHA256: d460cf72ff830ce16f3f0aa8747f19235a8d7354ae8b8041a18d7c630343e594
+SHA512: 65e7143cd49b5819a4422a89d710810989b9a4e344ceee7eea359214706996ccef54752ac51d9f0a6626815e60fcdc67d545493b3a06e261896bbed0e6a7cc68
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64.json
+Size: 6553388
+Version: 5.3
 
 Package: com.bandarhl.nfbbhtwitter
 Architecture: iphoneos-arm64e

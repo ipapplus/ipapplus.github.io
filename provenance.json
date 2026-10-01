@@ -415,12 +415,32 @@
       {
          "Author" : "Bandar Alruwaili",
          "Maintainer" : "Bandar Alruwaili",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.bandarhl.bhtwitter_4.5_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:05:44Z",
+         "package" : "com.bandarhl.bhtwitter",
+         "sha256" : "29fad5eba6862ee245a4a9148c6c4484d485f486906c5047e3b0f10b6caab4a9",
+         "version" : "4.5"
+      },
+      {
+         "Author" : "Bandar Alruwaili",
+         "Maintainer" : "Bandar Alruwaili",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.bandarhl.bhtwitter_4.5_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:05:44Z",
          "package" : "com.bandarhl.bhtwitter",
          "sha256" : "a6b0e7fa10910e4051ef1f907f72a0f6a7a6fbd2a8d5fbe997da4af020f339a2",
          "version" : "4.5"
+      },
+      {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.bandarhl.nfbbhtwitter_5.3_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:05:44Z",
+         "package" : "com.bandarhl.nfbbhtwitter",
+         "sha256" : "d460cf72ff830ce16f3f0aa8747f19235a8d7354ae8b8041a18d7c630343e594",
+         "version" : "5.3"
       },
       {
          "Author" : "NeoFreeBird",
