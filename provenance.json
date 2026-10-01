@@ -2176,6 +2176,18 @@
          "Depiction" : "https://korboybeats.github.io/sileo/depiction/?v=2.5.7",
          "Maintainer" : "Korboy <korboybeats@gmail.com>",
          "SileoDepiction" : "https://korboybeats.github.io/sileo/sileo_depiction/index.json?v=2.5.7",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.korboy.sileo_2.5.7_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T01:42:29Z",
+         "package" : "com.korboy.sileo",
+         "sha256" : "be8fdbf63c7048d08474758f146646b84b90d83ff93b7c6529a65b8986e94da3",
+         "version" : "2.5.7"
+      },
+      {
+         "Author" : "Korboy <korboybeats@gmail.com>, Amy While, waruhachi",
+         "Depiction" : "https://korboybeats.github.io/sileo/depiction/?v=2.5.7",
+         "Maintainer" : "Korboy <korboybeats@gmail.com>",
+         "SileoDepiction" : "https://korboybeats.github.io/sileo/sileo_depiction/index.json?v=2.5.7",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.korboy.sileo_2.5.7_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T01:42:29Z",
@@ -5253,6 +5265,17 @@
          "package" : "weeb.lillie.youtubedislikesreturn",
          "sha256" : "1bb61fd492627bb9fc82febba2418d84ed5b5e395b463f3e4f433280240c4cd7",
          "version" : "1.14.2"
+      },
+      {
+         "Author" : "HASHBANG Productions <support@hbang.ws>",
+         "Depiction" : "https://chariz.com/get/newterm-beta",
+         "Maintainer" : "HASHBANG Productions <support@hbang.ws>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/ws.hbang.newterm3_3.0~beta1-3_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T02:15:10Z",
+         "package" : "ws.hbang.newterm3",
+         "sha256" : "2198d4872bb238decbf0f2b4aa0016b9939d3a5f3ab6ecf83f33fcc879d1b3ea",
+         "version" : "3.0~beta1-3"
       },
       {
          "Author" : "Jonathan Winger-lang",

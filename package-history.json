@@ -1408,6 +1408,10 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 164
       },
+      "ws.hbang.newterm3/3.0~beta1-3" : {
+         "first_added" : "2026-10-01T02:15:10Z",
+         "sequence" : 360
+      },
       "xyz.cypwn.bigshotsnapper3plugin/1.1" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 149

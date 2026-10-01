@@ -4162,6 +4162,26 @@ Version: 1.0.6
 dev: kingpuffdaddi
 
 Package: com.korboy.sileo
+Architecture: iphoneos-arm64
+Author: Korboy <korboybeats@gmail.com>, Amy While, waruhachi
+Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Depiction: https://ipapplus.github.io/depictions/com.korboy.sileo_2.5.7_iphoneos-arm64.html
+Description: A modern APT package manager frontend.
+Filename: debs/com.korboy.sileo_2.5.7_iphoneos-arm64.deb
+Icon: https://korboybeats.github.io/sileo/icon.png
+MD5sum: 2650f31ba2030383bfe55b50c69cf61e
+Maintainer: Korboy <korboybeats@gmail.com>
+Name: Sileo
+SHA1: 8a5b18b328c05e706a5172ac282cb1c0dee72efe
+SHA256: be8fdbf63c7048d08474758f146646b84b90d83ff93b7c6529a65b8986e94da3
+SHA512: db73d8a0de11b3f3450a8b5be0f7e9767e625979cad40d4c1130e6dd398ef9d83146c4857dc9833574764d1c6517d7e71fd154a8af29faccfcb5243cf86a38f2
+Section: Packaging
+SileoDepiction: https://ipapplus.github.io/depictions/com.korboy.sileo_2.5.7_iphoneos-arm64.json
+Size: 3121056
+Version: 2.5.7
+X-Sileo-Fork: com.korboy.sileo
+
+Package: com.korboy.sileo
 Architecture: iphoneos-arm64e
 Author: Korboy <korboybeats@gmail.com>, Amy While, waruhachi
 Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
@@ -10046,6 +10066,31 @@ SileoDepiction: https://ipapplus.github.io/depictions/weeb.lillie.youtubedislike
 Size: 28520
 Tag: compatible_min::ios11.0
 Version: 1.14.2
+
+Package: ws.hbang.newterm3
+Architecture: iphoneos-arm64
+Author: HASHBANG Productions <support@hbang.ws>
+Conflicts: ws.hbang.newterm, ws.hbang.newterm2
+Depends: firmware (>= 14.0), zsh | bash | fish, coreutils, ncurses, system-cmds
+Depiction: https://ipapplus.github.io/depictions/ws.hbang.newterm3_3.0~beta1-3_iphoneos-arm64.html
+Description: Powerful terminal app for iOS
+Filename: debs/ws.hbang.newterm3_3.0~beta1-3_iphoneos-arm64.deb
+Icon: https://img.chariz.cloud/icon/newterm-beta/icon@3x.png
+Installed-Size: 24244
+MD5sum: 85c4ca320833bee5fbf6fbaba94eab3d
+Maintainer: HASHBANG Productions <support@hbang.ws>
+Name: NewTerm 3 Beta
+Recommends: gettext-localizations, iterm2-shell-integration, zsh-autosuggestions, zsh-syntax-highlighting
+Replaces: ws.hbang.newterm, ws.hbang.newterm2
+SHA1: d33858943939b8bd165a8dc1855dbe06804ea3ac
+SHA256: 2198d4872bb238decbf0f2b4aa0016b9939d3a5f3ab6ecf83f33fcc879d1b3ea
+SHA512: 20bf65586de87d3336410f01cf3bb97a9d0be7fcee076935789de8adfa286fb5cb18e4161060ce84b51065ee6107cf4527d6202b6981f5722d944d5e783bfb98
+Section: Terminal Support
+SileoDepiction: https://ipapplus.github.io/depictions/ws.hbang.newterm3_3.0~beta1-3_iphoneos-arm64.json
+Size: 3946476
+Support: https://hashbang.productions/support/
+Tag: compatible_min::ios14.0
+Version: 3.0~beta1-3
 
 Package: xyz.cypwn.bigshotsnapper3plugin
 Architecture: iphoneos-arm64e
