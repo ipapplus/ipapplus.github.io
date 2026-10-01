@@ -1,0 +1,30 @@
+# Disposable rebuild outputs and editor files
+.repo-stage-*/
+*.tmp
+*.temp
+*.swp
+*~
+.DS_Store
+# Local backups
+backups/
+backup/
+*.bak
+*.backup
+*.bak.*
+backup-*/
+repo-backup*/
+# Secrets (the repository publishes unsigned metadata)
+.gnupg/
+private-keys-v1.d/
+*.private
+*.key
+*.pem
+*.p12
+*.pfx
+*.passphrase
+*passphrase*
+private*.asc
+secret*.asc
+secring.gpg
+.env
+.env.*
