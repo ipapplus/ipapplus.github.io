@@ -5202,6 +5202,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.spark.snowboard_1.5.37
 Size: 1130048
 Version: 1.5.37-Beta4-rootless
 
+Package: com.sparklechan.swifty
+Architecture: iphoneos-arm64e
+Author: FCCT
+Conflicts: com.sparklechan.sparkkit
+Depends: swift, clang-14, ldid, git
+Depiction: https://ipapplus.github.io/depictions/com.sparklechan.swifty_2.0~alpha5_iphoneos-arm64e.html
+Description: Full fledged Xcode-like IDE for iOS
+Filename: debs/com.sparklechan.swifty_2.0~alpha5_iphoneos-arm64e.deb
+Header: https://cdn.chariz.cloud/sileo-banner/fridacodemanager.jpg
+Icon: https://img.chariz.cloud/icon/fridacodemanager/icon@3x.png
+MD5sum: 51f04e216cb11997b6ecb72b46480deb
+Maintainer: FCCT
+Name: FridaCodeManager
+SHA1: 0f6d3a995939ef41ca9e89b7359d9be365567203
+SHA256: 8a1dfcdb2094547a58b0c0f829f1992221ea1b1cc7ecf59e4e7228d3bf9c5110
+SHA512: af6c9c24beac28d46e958e04f07545e26159c39a2c7d694dfa2d5d86a789cb73c48239a039a01910fe606ae79a6abd53df09753300e5ab6c95ac5f8a76030c47
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.sparklechan.swifty_2.0~alpha5_iphoneos-arm64e.json
+Size: 3083888
+Version: 2.0~alpha5
+
 Package: com.squidforce.copyvault
 Architecture: iphoneos-arm64e
 Author: SquidForce
@@ -6613,6 +6634,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/me.tomt000.copylog_1.7.1_iphoneos-arm64e.json
 Size: 1040940
 Version: 1.7.1
+
+Package: me.tomt000.stageduo
+Architecture: iphoneos-arm64e
+Author: tomt000
+Depends: mobilesubstrate (>= 0.9.5000), com.opa334.altlist, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/me.tomt000.stageduo_1.2_iphoneos-arm64e.html
+Description: Stage Manager Reimagined for iPhone
+Filename: debs/me.tomt000.stageduo_1.2_iphoneos-arm64e.deb
+Installed-Size: 4900
+MD5sum: 5d3789db1d74bbf0e2d31051ad435075
+Maintainer: tomt000
+Name: Dynamic Stage
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 961f07d072dd5fbe324995bf64dcad3bcff065b4
+SHA256: c9ec9fbf515ea26a9538718aa680ee58b2e8857e9c0bf5842c3b0f43a2b46efd
+SHA512: b4761e6576c186c4c7a789e249b09c410a8ad66bf41bf253707077c6de5a093aeaf9a9c931df556a9d57accebca00abe08c79938400f69453bcbd6475f570bf5
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/me.tomt000.stageduo_1.2_iphoneos-arm64e.json
+Size: 3077376
+Version: 1.2
 
 Package: moe.waru.hoshu
 Architecture: iphoneos-arm64e

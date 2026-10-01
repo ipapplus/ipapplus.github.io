@@ -2680,6 +2680,18 @@
          "version" : "1.5.37-Beta4-rootless"
       },
       {
+         "Author" : "FCCT",
+         "Depiction" : "https://chariz.com/get/fridacodemanager",
+         "Maintainer" : "FCCT",
+         "SileoDepiction" : "https://chariz.com/api/sileo/package/com.sparklechan.swifty/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.sparklechan.swifty_2.0~alpha5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:27:39Z",
+         "package" : "com.sparklechan.swifty",
+         "sha256" : "8a1dfcdb2094547a58b0c0f829f1992221ea1b1cc7ecf59e4e7228d3bf9c5110",
+         "version" : "2.0~alpha5"
+      },
+      {
          "Author" : "SquidForce",
          "Maintainer" : "SquidForce",
          "architecture" : "iphoneos-arm64e",
@@ -3412,6 +3424,16 @@
          "package" : "me.tomt000.copylog",
          "sha256" : "988cbfa217eaba3163aa29a50444a0e8bab55c1e0c5188fb4d95ef160778c5d0",
          "version" : "1.7.1"
+      },
+      {
+         "Author" : "tomt000",
+         "Maintainer" : "tomt000",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/me.tomt000.stageduo_1.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:27:39Z",
+         "package" : "me.tomt000.stageduo",
+         "sha256" : "c9ec9fbf515ea26a9538718aa680ee58b2e8857e9c0bf5842c3b0f43a2b46efd",
+         "version" : "1.2"
       },
       {
          "Author" : "waruhachi",

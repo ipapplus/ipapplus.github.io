@@ -940,6 +940,10 @@
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 283
       },
+      "com.sparklechan.swifty/2.0~alpha5" : {
+         "first_added" : "2026-10-01T01:27:39Z",
+         "sequence" : 327
+      },
       "com.squidforce.copyvault/1.9.0" : {
          "first_added" : "2026-10-01T01:22:13Z",
          "sequence" : 320
@@ -1211,6 +1215,10 @@
       "me.tomt000.copylog/1.7.1" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 305
+      },
+      "me.tomt000.stageduo/1.2" : {
+         "first_added" : "2026-10-01T01:27:39Z",
+         "sequence" : 328
       },
       "moe.waru.hoshu/1.0.0" : {
          "first_added" : "2026-10-01T01:25:35Z",
