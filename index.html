@@ -43,6 +43,19 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
 .footer .accent{color:var(--accent)}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--card);border:1px solid var(--border-2);color:var(--fg);padding:10px 18px;border-radius:10px;font-size:12px;font-weight:500;z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 10px 30px rgba(0,0,0,.4);pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
+.package-browser{margin-top:22px;padding-top:18px;border-top:1px solid var(--border)}
+.package-browser h2{font-size:17px;margin-bottom:12px}
+.package-browser label{display:block;font-size:12px;color:var(--fg-2);margin-bottom:6px}
+#package-search{width:100%;padding:12px;border:1px solid var(--border-2);border-radius:10px;background:var(--bg-2);color:var(--fg);font:inherit;font-size:16px}
+#package-search:focus-visible,.package-download:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#package-status{margin:10px 0;font-size:12px;color:var(--fg-2)}
+#package-list{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto}
+.package-entry{padding:14px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;overflow-wrap:anywhere;flex-shrink:0}
+.package-entry[hidden]{display:none}
+.package-entry h3{font-size:14px;margin-bottom:5px}
+.package-id,.package-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-2);margin-bottom:7px}
+.package-description{font-size:13px;line-height:1.5;white-space:pre-line;margin-bottom:10px}
+.package-download{display:inline-block;padding:10px 14px;border:1px solid var(--border-2);border-radius:8px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font-size:13px}
 @media(max-width:440px){body{padding:16px}.card{padding:20px;border-radius:18px}.avatar{width:52px;height:52px}.name{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
@@ -78,6 +91,14 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
     </a>
   </nav>
+  <section class="package-browser" aria-labelledby="package-heading">
+    <h2 id="package-heading">Packages</h2>
+    <label for="package-search">Search packages</label>
+    <input id="package-search" type="search" placeholder="Name, filename, or description" autocomplete="off" disabled>
+    <p id="package-status" role="status" aria-live="polite">Loading packages…</p>
+    <div id="package-list"></div>
+    <noscript>Enable JavaScript to browse packages.</noscript>
+  </section>
   <footer class="footer">© 2016–2026 <span class="accent">ipapplus</span></footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -99,6 +120,85 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
     if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(source).then(()=>showToast('Source URL copied')).catch(()=>{});}else{
       const area=document.createElement('textarea');area.value=source;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const copied=document.execCommand('copy');area.remove();if(copied)showToast('Source URL copied');
     }
+  });
+})();
+</script>
+<script>
+(function(){
+  'use strict';
+  const search=document.getElementById('package-search');
+  const status=document.getElementById('package-status');
+  const list=document.getElementById('package-list');
+  let entries=[];
+  function parsePackages(text){
+    return text.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n/).filter(block=>block.trim()).map(block=>{
+      const fields=Object.create(null);
+      let key='';
+      for(const line of block.split('\n')){
+        if(/^[ \t]/.test(line)){
+          if(key)fields[key]+='\n'+(line.trim()==='.'?'':line.slice(1));
+        }else{
+          const colon=line.indexOf(':');
+          key=colon>0?line.slice(0,colon):'';
+          if(key)fields[key]=line.slice(colon+1).trim();
+        }
+      }
+      return fields;
+    });
+  }
+  function sizeLabel(value){
+    if(!value)return '';
+    const bytes=Number(value);
+    if(!Number.isFinite(bytes)||bytes<0)return '';
+    if(bytes<1024)return bytes+' B';
+    if(bytes<1048576)return (bytes/1024).toFixed(1)+' KB';
+    return (bytes/1048576).toFixed(1)+' MB';
+  }
+  function addText(parent,tag,className,text){
+    const element=document.createElement(tag);
+    element.className=className;
+    element.textContent=text;
+    parent.appendChild(element);
+    return element;
+  }
+  function filterPackages(){
+    const query=search.value.toLowerCase();
+    let count=0;
+    for(const entry of entries){
+      entry.card.hidden=!entry.searchText.includes(query);
+      if(!entry.card.hidden)count++;
+    }
+    status.textContent=count?count+' of '+entries.length+' packages':'No packages found';
+  }
+  search.addEventListener('input',filterPackages);
+  const indexURL=new URL('Packages',window.location.href);
+  fetch(indexURL).then(response=>{
+    if(!response.ok)throw new Error('Package index request failed');
+    return response.text();
+  }).then(text=>{
+    const fragment=document.createDocumentFragment();
+    entries=parsePackages(text).map(pkg=>{
+      const card=document.createElement('article');
+      card.className='package-entry';
+      addText(card,'h3','',pkg.Name||pkg.Package||'Unnamed package');
+      if(pkg.Package)addText(card,'p','package-id',pkg.Package);
+      addText(card,'p','package-meta',[
+        pkg.Version?'Version '+pkg.Version:'',pkg.Architecture,sizeLabel(pkg.Size)
+      ].filter(Boolean).join(' · '));
+      if(pkg.Description)addText(card,'p','package-description',pkg.Description);
+      if(pkg.Filename){
+        const link=addText(card,'a','package-download','Download');
+        link.href=new URL(pkg.Filename,indexURL).href;
+        link.setAttribute('download','');
+      }
+      fragment.appendChild(card);
+      return {card,searchText:[pkg.Package,pkg.Name,pkg.Filename,pkg.Description].filter(Boolean).join('\n').toLowerCase()};
+    });
+    list.appendChild(fragment);
+    search.disabled=false;
+    filterPackages();
+  }).catch(()=>{
+    status.textContent='Unable to load packages. Please reload to try again.';
   });
 })();
 </script>
