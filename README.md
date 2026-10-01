@@ -32,9 +32,9 @@ Put `.deb` files beside `up.sh` or in `debs/`, or delete packages from `debs/`, 
 ./up.sh
 ```
 
-The command imports root archives, caches extracted metadata and required APT checksums, updates indexes, Release, depictions and catalog files, and removes obsolete depictions. Unchanged archives are not reopened. It stages all changes, commits with `Update repository` when needed, and always pushes to `origin main`. Git hooks are disabled. No checks, validation, audits or tests run.
+The command uses Git status to process only added, changed or deleted `.deb` paths. It reuses unchanged Packages entries, depictions and catalog cards, updates affected records and combined APT metadata, and removes deleted package depictions. Unchanged archives are never reopened. It stages all changes, commits with `Update repository` when needed, and always pushes to `origin main`. Git hooks are disabled. No checks, validation, audits or tests run.
 
-`dpkg-deb --field` extracts metadata only for new or changed archives. Ignored `.repo-cache.json` records filesystem attributes and reusable metadata. The first run populates the cache. Removing it causes extraction again.
+`dpkg-deb --field` extracts metadata only for Git-reported new or changed archives. Existing `Packages` supplies unchanged metadata; there is no full-scan fallback or cache population step. With no changed package paths, the generator exits immediately.
 
 `debs/`, `repo.conf` and `package-history.json` supply inventory, configuration and chronology. Generated outputs include APT indexes, unsigned Release metadata, depictions, catalog, provenance and a depiction manifest.
 
@@ -54,4 +54,4 @@ Cards group exact `Package` + `Version`. Their summary comes from the first avai
 
 Repository-owned scripts, site source code, documentation and original metadata contributions are licensed under the [MIT License](LICENSE), within its stated scope. Repository scripts and site code must be considered separately from third-party `.deb` archives, artwork and upstream metadata. Generated indexes and depictions include third-party descriptions and author information; generation does not establish ownership of that material. No repository license grants rights to redistributed packages. Package authors retain their respective rights, and redistribution permission must be confirmed individually before publication, including the archive identifying Apple as its author.
 
-See [SECURITY.md](SECURITY.md) for problem reports and [maintenance documentation](docs/maintenance.md) for the publishing workflow and metadata cache.
+See [SECURITY.md](SECURITY.md) for problem reports and [maintenance documentation](docs/maintenance.md) for the incremental publishing workflow.

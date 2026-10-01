@@ -16,8 +16,7 @@ backup/
 repo-auto-*/
 repo-regression-*/
 repo-apt-*/
-# Root-level imports are local until validated into debs/
-/*.deb
+# Root-level .deb additions are discovered through Git status.
 # Signing secrets; public signatures and public keyrings are not ignored
 .gnupg/
 private-keys-v1.d/

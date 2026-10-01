@@ -1,19 +1,19 @@
 # Maintenance
 
-Put `.deb` files beside `up.sh` or in `debs/`, or remove archives from `debs/`, then run:
+Put `.deb` files beside `up.sh` or in `debs/`, or delete archives from `debs/`, then run:
 
 ```sh
 ./up.sh
 ```
 
-Root archives move into `debs/` using package, version and architecture filenames. A root archive replaces an existing build with the same identity. Archives placed directly in `debs/` retain their filenames.
+Git status supplies added, modified and deleted `.deb` paths, including staged, unstaged and untracked changes. Root archives are visible to Git status and move into `debs/` using package, version and architecture filenames. A root archive replaces an existing build with the same identity.
 
-The generator extracts control metadata with `dpkg-deb --field` and computes the sizes and checksums needed by Packages. It caches these values in ignored `.repo-cache.json`, using device, inode, size, modification time and change time to detect archive changes. Unchanged archives are not opened. Removing the cache causes metadata extraction on the next run.
+Only added or changed archives are opened and passed to `dpkg-deb --field`. Required APT package sizes and checksums are computed only for those archives. There is no directory inventory, stat-cache traversal, or fallback extraction of unchanged archives. With no changed package paths, the generator exits immediately without reading repository metadata or running dpkg-deb.
 
-Packages, gzip/bzip2/xz indexes, Release, HTML/Sileo depictions, catalog and provenance are generated from the current inventory. Unchanged indexes are not recompressed. Obsolete generated HTML/JSON depictions are removed. Addition history survives package deletion. Unchanged generated files and Release dates remain unchanged.
+Existing `Packages` entries supply the unchanged inventory and are retained byte-for-byte. Existing depictions and catalog cards are reused. Changed packages receive new depictions and catalog cards; surviving siblings in affected groups retain their depictions with available-build links patched. Deleted entries and their depictions are removed using existing package identities without scanning directories. Provenance and depiction-manifest records are retained for unchanged packages.
 
-The repository publishes unsigned metadata. Obsolete InRelease and Release.gpg files are removed. There is no signing or signature verification step.
+Packages changes update the compressed indexes and Release sizes and checksums. The catalog is assembled from reused cards and affected groups. These combined files necessarily include all surviving entries, but generation never reopens their archives. Existing `Packages` metadata is required; deleting it is not a request to rebuild from archives. `.repo-cache.json` is no longer used.
 
-The wrapper disables Git hooks, runs `git add -A`, commits changes with `Update repository` when needed, and always runs `git push origin main`, including when there is no new commit. All working-tree changes are staged.
+The wrapper disables Git hooks, runs `git add -A`, commits with `Update repository` when needed, and always runs `git push origin main`. All working-tree changes are staged. The repository publishes unsigned metadata.
 
-There are no automatic checks, audits, package validation, tests, background suites, post-build verification, transaction backups or rollback. Command failures stop publication. Required tools are POSIX sh, Perl core modules, dpkg-deb, gzip, bzip2, xz and Git.
+No checks, audits, package validation, tests, background suites or post-build verification run. Required tools are POSIX sh, Perl core modules, dpkg-deb, gzip, bzip2, xz and Git.

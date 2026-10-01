@@ -27,11 +27,22 @@ sub json { JSON::PP->new->canonical->pretty->utf8->encode($_[0]); }
 my %labels=('iphoneos-arm'=>'Rootful','iphoneos-arm64'=>'Rootless','iphoneos-arm64e'=>'RootHide','all'=>'All architectures');
 my $root=abs_path(dirname(__FILE__).'/..');
 chdir $root or die "$root: $!\n";
+# Git supplies the work list, including staged, unstaged and untracked archives.
+# Disabling rename detection makes moves explicit additions and deletions.
+my @status=split /\0/,capture('git','--no-optional-locks','status','--porcelain=v1','--no-renames','-z','--untracked-files=all','--','*.deb');
+my %changed;
+for my $record (@status) {
+    my $path=substr($record,3);
+    $changed{$path}=1 if $path =~ m{^(?:debs/)?[^/]+\.deb$};
+}
+if (!keys %changed) { print "No package changes.\n"; exit 0; }
+
 my $cfg=fields(read_file('repo.conf'));
 my $base=delete $cfg->{URL};
 my $decoder=JSON::PP->new->utf8;
 my $history=-f 'package-history.json' ? $decoder->decode(read_file('package-history.json')) : {schema=>1,packages=>{}};
-my $cache=-f '.repo-cache.json' ? $decoder->decode(read_file('.repo-cache.json')) : {};
+my (%affected,%old_cards,%old_provenance,%removed);
+my $manifest=-f 'generated-files.json' ? $decoder->decode(read_file('generated-files.json')) : {schema=>1,depictions=>{}};
 sub group_key { join('/', @{$_[0]->{fields}}{qw(Package Version)}) }
 sub stem { my $id=$_[0]->{id}; $id =~ s/:/_/g; return "depictions/$id"; }
 sub downloads {
@@ -46,14 +57,11 @@ sub metadata_url {
     return html($url) unless $url =~ m{^https?://[^\s<>"\x00-\x1f]+$}i;
     return '<a rel="noreferrer" href="'.html($url).'">'.html($url).'</a>';
 }
-# Filesystem attributes detect changes without opening unchanged archives.
-sub stamp { my @s=stat($_[0]); return join(':',@s[0,1,7,9,10]); }
 sub archive {
-    my ($path)=@_; my $stamp=stamp($path);
-    if (my $a=$cache->{$path}) { return $a if $a->{stamp} eq $stamp; }
+    my ($path)=@_;
     my $f=fields(capture('dpkg-deb','--field',$path));
     my $data=read_file($path);
-    return {fields=>$f,path=>$path,stamp=>$stamp,size=>length($data),
+    return {fields=>$f,path=>$path,size=>length($data),changed=>1,
         id=>join('_',@$f{qw(Package Version Architecture)}),
         hashes=>{MD5sum=>md5_hex($data),SHA1=>sha1_hex($data),SHA256=>sha256_hex($data),SHA512=>sha512_hex($data)}};
 }
@@ -113,10 +121,15 @@ HTML
     return $body;
 }
 
-sub products {
+sub update_metadata {
     my (@items)=@_; my (%out,@stanzas,@cards,%groups,@provenance);
     push @{$groups{group_key($_)}},$_ for @items;
     for my $a (@items) {
+        if (!$a->{changed}) {
+            push @stanzas,$a->{stanza};
+            push @provenance,$old_provenance{$a->{path}} if exists $old_provenance{$a->{path}};
+            next;
+        }
         my %f=%{$a->{fields}};
         my $id=$a->{id}; $id =~ s/:/_/g;
         my $stem="depictions/$id";
@@ -156,8 +169,9 @@ sub products {
             map { $_=>Encode::decode('UTF-8',$a->{fields}{$_},Encode::FB_DEFAULT()|Encode::LEAVE_SRC()) } grep { exists $a->{fields}{$_} } qw(Author Maintainer Homepage Depiction SileoDepiction)};
     }
     for my $key (sort { $history->{packages}{$b}{sequence}<=>$history->{packages}{$a}{sequence} || sha256_hex($a) cmp sha256_hex($b) || $a cmp $b } keys %groups) {
+        if (!$affected{$key} && exists $old_cards{$key}) { push @cards,$old_cards{$key}; next; }
         my @builds=@{$groups{$key}}; my $f=$builds[0]{fields};
-        my $selector='builds-'.scalar(@cards);
+        my $selector='builds-'.sha256_hex($key);
         my $detail=html(stem($builds[0])).'.html';
         my $action;
         if (@builds==1) {
@@ -173,41 +187,95 @@ sub products {
     $out{Packages}=@stanzas ? join("\n",@stanzas)."\n" : '';
     my @dates=sort grep {defined $_} map {$history->{packages}{$_}{first_added}} keys %groups;
     $out{'packages.html'}=catalog_page(\@cards,$dates[-1]);
-    $out{'generated-files.json'}=json({schema=>1,depictions=>{map { $_=>sha256_hex($out{$_}) } grep {m{^depictions/}} keys %out}});
+    $manifest->{depictions}{$_}=sha256_hex($out{$_}) for grep {m{^depictions/}} keys %out;
+    $out{'generated-files.json'}=json($manifest);
     return %out;
 }
 use Encode ();
-make_path('debs');
-opendir my $root_dir,'.' or die $!;
-my @sources=sort grep {/\.deb$/} readdir $root_dir;
-closedir $root_dir;
-my %imported;
-for my $source (@sources) {
-    my $a=archive($source);
-    my $id=$a->{id}; $id =~ s/:/_/g;
-    my $dest="debs/$id.deb";
-    rename $source,$dest or die "Move $source to $dest: $!\n";
-    $a->{path}=$dest; $a->{stamp}=stamp($dest);
-    $cache->{$dest}=$a; $imported{group_key($a)}=1;
+# Existing Packages is the inventory. Keep unchanged stanzas byte-for-byte.
+my %items;
+for my $stanza (split /\n\n+/,read_file('Packages')) {
+    next unless length $stanza;
+    $stanza =~ s/\n+\z//;
+    my $f=fields($stanza);
+    my $path=$f->{Filename};
+    my $a={fields=>$f,path=>$path,stanza=>"$stanza\n",id=>join('_',@$f{qw(Package Version Architecture)})};
+    $items{$path}=$a;
 }
-opendir my $debs,'debs' or die $!;
-my @paths=map {"debs/$_"} sort grep {/\.deb$/} readdir $debs;
-closedir $debs;
-my @items=map {archive($_)} @paths;
+if (-f 'provenance.json') {
+    my $p=$decoder->decode(read_file('provenance.json'));
+    $old_provenance{$_->{filename}}=$_ for @{$p->{archives}};
+}
+# Reuse unaffected catalog cards rather than rendering them again.
+if (-f 'packages.html') {
+    my %keys=map {html(stem($_)).'.html'=>group_key($_)} values %items;
+    my $catalog=read_file('packages.html');
+    while ($catalog =~ m{(<article\b.*?</article>)}sg) {
+        my $card=$1;
+        my ($link)=$card =~ m{<h2><a href="([^"]+)"};
+        $old_cards{$keys{$link}}=$card if defined($link) && exists $keys{$link};
+    }
+}
+sub forget {
+    my ($path)=@_;
+    if (my $a=delete $items{$path}) {
+        $affected{group_key($a)}=1;
+        $removed{stem($a)}=1;
+    }
+}
+# Process only Git's changed paths. No directory inventory or stat cache.
+make_path('debs');
+my %processed;
+for my $path (sort keys %changed) {
+    next if $processed{$path};
+    forget($path);
+    next unless -e $path;
+    my $a=archive($path);
+    if ($path !~ m{^debs/}) {
+        my $id=$a->{id}; $id =~ s/:/_/g;
+        my $dest="debs/$id.deb";
+        forget($dest);
+        rename $path,$dest or die "Move $path to $dest: $!\n";
+        $a->{path}=$dest; $processed{$dest}=1;
+    }
+    $items{$a->{path}}=$a;
+    $affected{group_key($a)}=1;
+}
+my @items=map {$items{$_}} sort keys %items;
 my $sequence=0;
 for my $r (values %{$history->{packages}}) { $sequence=$r->{sequence} if $r->{sequence}>$sequence; }
 for my $a (@items) {
     my $key=group_key($a);
     next if exists $history->{packages}{$key};
-    $history->{packages}{$key}={sequence=>++$sequence,first_added=>strftime('%Y-%m-%dT%H:%M:%SZ',gmtime(time))};
+    $history->{packages}{$key}={sequence=>$a->{changed} ? ++$sequence : 0,
+        first_added=>$a->{changed} ? strftime('%Y-%m-%dT%H:%M:%SZ',gmtime(time)) : undef};
 }
 update_file('package-history.json',json($history));
-my %out=products(@items);
-make_path('depictions');
-opendir my $depictions,'depictions' or die $!;
-my @stale=map {"depictions/$_"} grep {/\.(?:html|json)$/ && !exists $out{"depictions/$_"}} readdir $depictions;
-closedir $depictions;
-for my $p (@stale) { unlink $p or die "Remove $p: $!\n"; }
+my %live=map {stem($_)=>1} @items;
+for my $stem (keys %removed) {
+    next if $live{$stem};
+    for my $ext (qw(html json)) {
+        my $p="$stem.$ext";
+        unlink $p or die "Remove $p: $!\n" if -e $p;
+        delete $manifest->{depictions}{$p};
+    }
+}
+my %out=update_metadata(@items);
+# Patch build/download links only in surviving siblings of affected groups.
+# Their package details and JSON depictions remain the existing files.
+my %groups;
+push @{$groups{group_key($_)}},$_ for @items;
+for my $a (@items) {
+    next if $a->{changed} || !$affected{group_key($a)};
+    my $p=stem($a).'.html';
+    my $page=read_file($p);
+    my @builds=@{$groups{group_key($a)}};
+    my $links='<p>'.join(' · ',map {'<a href="../'.html(stem($_)).'.html">'.html($labels{$_->{fields}{Architecture}}).'</a>'} @builds).'</p>'.downloads('../',@builds);
+    $page =~ s{(<h2>Available builds</h2>).*?(<p><a href="../packages.html">)}{$1$links$2}s;
+    $out{$p}=$page;
+    $manifest->{depictions}{$p}=sha256_hex($page);
+}
+$out{'generated-files.json'}=json($manifest);
 # Recompress only when the index changes or a compressed index is missing.
 my $index_changed=!-f 'Packages' || read_file('Packages') ne $out{Packages};
 my $stage;
@@ -245,5 +313,4 @@ for my $p (sort grep {$_ ne 'Release'} keys %out) { update_file($p,$out{$p}); }
 update_file('Release',$out{Release});
 # This repository publishes unsigned metadata; discard obsolete signatures.
 for my $p (qw(InRelease Release.gpg)) { unlink $p or die "$p: $!\n" if -e $p; }
-update_file('.repo-cache.json',json({map {$_->{path}=>$_} @items}));
 print "Repository files generated.\n";
