@@ -140,6 +140,10 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 29
       },
+      "com.dvntm.silentnotifs/0.0.2" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 47
+      },
       "com.icraze.fuckoffairdrop/1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 30
@@ -147,6 +151,10 @@
       "com.icraze.twitternoid/1.0" : {
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 43
+      },
+      "com.imokhles.disablertl/0.0.1-3+debug" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 48
       },
       "com.michaelmelita1.detectedtext-rootless/0.0.2" : {
          "first_added" : "2026-10-01T00:13:24Z",
@@ -164,9 +172,33 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 33
       },
+      "com.nathan.dynamichiderecordland/1.0" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 49
+      },
       "com.nathan.internalstoragesettings/1.0.1" : {
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 45
+      },
+      "com.nathan.nosirifeedbacklogs/1.0.1" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 50
+      },
+      "com.nscake.noscrollbargrabdelay/0.0.1" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 51
+      },
+      "com.wrp1002.nosettingsbadge/1.1.0" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 52
+      },
+      "com.yourepo.ibreak.nobigtitles/1.0.1" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 53
+      },
+      "daniel.analytics/0.0.4" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 54
       },
       "daniel.avplayer/0.0.1" : {
          "first_added" : "2026-10-01T00:13:24Z",
@@ -176,9 +208,21 @@
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 34
       },
+      "jetsamunlimited/1.0" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 55
+      },
+      "jp.uzra.squarepip/1.0" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 56
+      },
       "libkrw0-dopamine/2.0.4" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 40
+      },
+      "net.cadoth.nosbreload/0.1.1-1" : {
+         "first_added" : "2026-10-01T00:14:59Z",
+         "sequence" : 57
       },
       "rootfultorootless/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",

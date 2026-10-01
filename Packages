@@ -972,6 +972,25 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_i
 Size: 2884
 Version: 0.0.1
 
+Package: com.dvntm.silentnotifs
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.silentnotifs_0.0.2_iphoneos-arm64e.html
+Description: Keep notifications silent while media is playing
+Filename: debs/com.dvntm.silentnotifs_0.0.2_iphoneos-arm64e.deb
+Installed-Size: 152
+MD5sum: 628964dd1ca458ad77a3fcceb81e6867
+Maintainer: dvntm
+Name: SilentNotifs
+SHA1: 4745f3b24fa31b4eb61560ff2e166489517a3cac
+SHA256: 348eff0194737d7b6dfb3bb7b7c716074c3c7d9cd1c8c8798c410920777ab102
+SHA512: 8bf0b450257b2c393aa8b84a84c1027866b6c2e7d4af5ca483d86e1f82f396aa08c20fd6c34768f26ea43f7b3f6b739d08a3a8dea49fe75981b0d055bab1e700
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.silentnotifs_0.0.2_iphoneos-arm64e.json
+Size: 3696
+Version: 0.0.2
+
 Package: com.icraze.fuckoffairdrop
 Architecture: iphoneos-arm64e
 Author: iCraze
@@ -1011,6 +1030,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.icraze.twitternoid_1.0_iphoneos-arm64e.json
 Size: 3676
 Version: 1.0
+
+Package: com.imokhles.disablertl
+Architecture: iphoneos-arm64e
+Author: @iMokhles
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.imokhles.disablertl_0.0.1-3+debug_iphoneos-arm64e.html
+Description: Disable right-to-left languages across the system!
+Filename: debs/com.imokhles.disablertl_0.0.1-3+debug_iphoneos-arm64e.deb
+Installed-Size: 200
+MD5sum: 95be0de8b507994dff5b66a0291fc4e9
+Maintainer: @iMokhles
+Name: DisableRTL
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 64714b975b70d280133d0b17ad76ba7e6cc38bdd
+SHA256: a107660e03b7db104df16afc498129ad8bd2a2383e58785e57fd9f0805910732
+SHA512: 8715ce9a2acbb6d2154de6bb30ead9673edbecb8fbaa6b169afb91b8a8f36a59af5b1477d30860a9e0d5260cf480160286bbb3f3598a11759d7a33ab91dba081
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.imokhles.disablertl_0.0.1-3+debug_iphoneos-arm64e.json
+Size: 4468
+Version: 0.0.1-3+debug
 
 Package: com.michaelmelita1.detectedtext-rootless
 Architecture: iphoneos-arm64e
@@ -1091,6 +1130,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.nan.disableupdates_0.1
 Size: 1104
 Version: 0.1.1
 
+Package: com.nathan.dynamichiderecordland
+Architecture: iphoneos-arm64e
+Author: Nathan
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.nathan.dynamichiderecordland_1.0_iphoneos-arm64e.html
+Description: A tweak to hide the Dynamic Island on the 14 Pro series when it's not in use!
+Filename: debs/com.nathan.dynamichiderecordland_1.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 32e9b9773a529410b85533084692cb54
+Maintainer: Nathan
+Name: DynamicHideRecordLand
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: d051c61c8de37ec0a84fa001e9e7c3ff392933fe
+SHA256: a209ca0388e3a1c181f5456d60c5f4e105456d99377221558eeabaf8462bcf7a
+SHA512: 6aebfa106593c907682e07c7655741e8e55c049c49dba2cb6cf42c01630f9a7f57cfd9dc2640e5b284b45a1cb609042771b45d7e99eb148fccfe1aff40780e82
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.dynamichiderecordland_1.0_iphoneos-arm64e.json
+Size: 3968
+Version: 1.0
+
 Package: com.nathan.internalstoragesettings
 Architecture: iphoneos-arm64e
 Author: Nathan Senter
@@ -1109,6 +1168,104 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.internalstoragesettings_1.0.1_iphoneos-arm64e.json
 Size: 3372
 Version: 1.0.1
+
+Package: com.nathan.nosirifeedbacklogs
+Architecture: iphoneos-arm64e
+Author: Nathan Senter
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.nathan.nosirifeedbacklogs_1.0.1_iphoneos-arm64e.html
+Description: Disables the creation of those pesky SiriSearchFeedback logs!
+Filename: debs/com.nathan.nosirifeedbacklogs_1.0.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 49c23451d173ac0f3669a21b39ec9da5
+Maintainer: Nathan Senter
+Name: NoSiriFeedbackLogs
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: df315e5d23eb767a6f4f42589444959ac82aee79
+SHA256: 2b050c5e421d47ef69c42187a13ad91c05274967a7bf8e2e7dd6ef15c957d4d1
+SHA512: 969d10ae9ec30a689b961b2f14d6cb9bec4269f97ad344f7b89567c0f85c16f602e4655606e9db919bf80ddf534011649519e4dd4e7725169def2b594686aa40
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nathan.nosirifeedbacklogs_1.0.1_iphoneos-arm64e.json
+Size: 4144
+Version: 1.0.1
+
+Package: com.nscake.noscrollbargrabdelay
+Architecture: iphoneos-arm64e
+Author: Tanner Bennett <thepantsthief@me.com>
+Depends: mobilesubstrate, cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm64e.html
+Description: Removes the delay when trying to drag a scroll bar.
+Filename: debs/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 200
+MD5sum: c249fcac44b9e276b490a04c3f58a751
+Maintainer: Tanner Bennett <thepantsthief@me.com>
+Name: NoScrollbarGrabDelay
+Pre-Depends: rootless-compat(>= 0.9), firmware (>= 13.0)
+SHA1: 1effbdd2e480e5f571e0bc17b5e7698fce1d7489
+SHA256: 85b60a1dd280e72bbce4eb5b406a7327e402c01f71e95e1b202c2dee3ff40af4
+SHA512: 838f16cc1d3ea2dc696e182b20d0c909da61f902f09596b16100eae12c31058512e5c54656e2fd8ee64dcbcb06f9dd4ec54104ba3d1c9d986c8490c9d7d869af
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nscake.noscrollbargrabdelay_0.0.1_iphoneos-arm64e.json
+Size: 4364
+Version: 0.0.1
+
+Package: com.wrp1002.nosettingsbadge
+Architecture: iphoneos-arm64e
+Author: Wes <wes.hamster@gmail.com>
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.wrp1002.nosettingsbadge_1.1.0_iphoneos-arm64e.html
+Description: Remove settings notification badge!
+Filename: debs/com.wrp1002.nosettingsbadge_1.1.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 1fb81ed77f9660aa0934bdb33b467b03
+Maintainer: Wes <wes.hamster@gmail.com>
+Name: NoSettingsBadge
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 177a3cd48a44bc8cb98963fe0f81979d99f944fc
+SHA256: 4f8fedaa63fb6b0e44b6ac2ff58d7ab1f5c43e019a89365c7800189e333c009f
+SHA512: 89578660e18a3c43c23cbf7f272e3cf46998e5abf02cccb53c02b12b3299783aa9b1fd756ce87c05113520b4402b6895997df88d303ec0eb5896f8ebfbf30beb
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.wrp1002.nosettingsbadge_1.1.0_iphoneos-arm64e.json
+Size: 4360
+Version: 1.1.0
+
+Package: com.yourepo.ibreak.nobigtitles
+Architecture: iphoneos-arm64e
+Author: iBreak <ibreak2019@qq.com>
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.yourepo.ibreak.nobigtitles_1.0.1_iphoneos-arm64e.html
+Description: no bigtitles
+Filename: debs/com.yourepo.ibreak.nobigtitles_1.0.1_iphoneos-arm64e.deb
+MD5sum: 65af263b09cef938a89873f23b32a5b5
+Maintainer: iBreak <ibreak2019@qq.com>
+Name: No Bigtitles
+SHA1: 59544ffc5f1394db79a4624e9df07c0378a89418
+SHA256: ab0f50bc0a06643f1487a644f24dd18f4d2029660617f80fbf79bc3fff659eb6
+SHA512: d02b542c11da04c4fdb8828290734835dfeb78bbd95926e19ae58deda0ae0acbdb2a129b760190eb22adee73b0789ddb5ea01413569bc42e28b1b1da2b671385
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.ibreak.nobigtitles_1.0.1_iphoneos-arm64e.json
+Size: 4096
+Version: 1.0.1
+
+Package: daniel.analytics
+Architecture: iphoneos-arm64e
+Author: daniel & PoomSmart
+Depends: mobilesubstrate, firmware (>= 13.0)
+Depiction: https://ipapplus.github.io/depictions/daniel.analytics_0.0.4_iphoneos-arm64e.html
+Description: Enables various enhancements within stock iOS crashlogs
+Filename: debs/daniel.analytics_0.0.4_iphoneos-arm64e.deb
+Installed-Size: 136
+MD5sum: 9d86ec62abb7292b9e78b7fe570f89e8
+Maintainer: daniel & PoomSmart
+Name: OSAnalytics
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 4c96560f7aa2ab79135c8f2d88c8e30b03a67a81
+SHA256: a3e3d2e3ac902794081ab8ba03f2764af5c0ec15c3fd6e9cee444b5d9a694f13
+SHA512: f2fb9fff7f0b821b9fb7bb999bb479c40aa8218afb8b66e9c7bfa0fe9b2c11487892f4045e2715fa226d418d5c5f852cc66d223788d6c7e43b6cd14c382c3a45
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/daniel.analytics_0.0.4_iphoneos-arm64e.json
+Size: 4084
+Version: 0.0.4
 
 Package: daniel.avplayer
 Architecture: iphoneos-arm64e
@@ -1151,6 +1308,46 @@ SileoDepiction: https://ipapplus.github.io/depictions/daniel.trustevaluator_0.0.
 Size: 2936
 Version: 0.0.1
 
+Package: jetsamunlimited
+Architecture: iphoneos-arm64e
+Author: iarchiveml
+Depends: firmware (<= 15.8.2), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/jetsamunlimited_1.0_iphoneos-arm64e.html
+Description: 允许iOS进程独立于jetsam运行，有效地禁用了40%的内存限制。适用于iOS 15。
+Filename: debs/jetsamunlimited_1.0_iphoneos-arm64e.deb
+Icon: https://repo.cypwn.xyz/assets/repo/Featured/jetsamunlimited.png
+MD5sum: 1c38fd5d824a8da4e2ebdf039627d641
+Maintainer: M哥
+Name: JetsamUnlimited
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 94f34b4c448adb6d5e68930e0d9475fa7801d87d
+SHA256: f5e9915a09a532de6073b04b29d8ce380dcd2115eee544cd0636f488fee2b9c5
+SHA512: e10c1d1efeb420bd1591d2a0c69bf3fae2a1e17261a7e90c1b9545309f38cc21902b52a632827eacf642c3f04394ac42f94ca44ac4352118b87ce2a66d0eff3f
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/jetsamunlimited_1.0_iphoneos-arm64e.json
+Size: 4020
+Version: 1.0
+
+Package: jp.uzra.squarepip
+Architecture: iphoneos-arm64e
+Author: uz.ra
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/jp.uzra.squarepip_1.0_iphoneos-arm64e.html
+Description: Make pip view square 
+Filename: debs/jp.uzra.squarepip_1.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 889e41e15401198fd449b8bc04467a70
+Maintainer: uz.ra
+Name: SquarePiP
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: ff926f09e3d73a8c0d084d06f51cff5ffde9c276
+SHA256: 6d82eb6106ebb4fd1840ed2a5e275201870fbce22e7e700e84ff1a4aec0d718b
+SHA512: 9b0aaf6811ebfe5014952f5b6efc61437980bbe005c11bb99e69539f680fe81b12a78e0f960b34b7d9fea260e889dd33525a894faa573d16be5301266fac7bc4
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.uzra.squarepip_1.0_iphoneos-arm64e.json
+Size: 3800
+Version: 1.0
+
 Package: libkrw0-dopamine
 Architecture: iphoneos-arm64e
 Author: opa334 <opa334@protonmail.com>
@@ -1171,6 +1368,25 @@ Section: Libraries
 SileoDepiction: https://ipapplus.github.io/depictions/libkrw0-dopamine_2.0.4_iphoneos-arm64e.json
 Size: 3228
 Version: 2.0.4
+
+Package: net.cadoth.nosbreload
+Architecture: iphoneos-arm64e
+Author: alexia <me@alexia.lol>
+Depends: firmware (>> 15.0)
+Depiction: https://ipapplus.github.io/depictions/net.cadoth.nosbreload_0.1.1-1_iphoneos-arm64e.html
+Description: Replace sbreload with traditional respring to fix autofill issues
+Filename: debs/net.cadoth.nosbreload_0.1.1-1_iphoneos-arm64e.deb
+MD5sum: d2d00bbfe33e0b6ee2163128ac92de62
+Maintainer: alexia <me@alexia.lol>
+Name: NoSBReload
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: b43626676ee2d9b181c1b7a46af009a1db3cdb3b
+SHA256: ebb46a4293f8cfe715b1ada1f9d4c0e3422522b1b8ce23909d3c645eb3bc0ee5
+SHA512: 11ae7ce703c93c7b7a907fef6247160f36f04b7d5dd8afdec4e0ba4e2fbb5922b7711e1b851c15a3229a84f2b301e5a098f9d2a875cbb718fdfd2e57f3a60c9d
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/net.cadoth.nosbreload_0.1.1-1_iphoneos-arm64e.json
+Size: 3684
+Version: 0.1.1-1
 
 Package: rootfultorootless
 Architecture: iphoneos-arm64e
