@@ -5963,6 +5963,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/dev.unlock.00_0.0.1_iphone
 Size: 8304
 Version: 0.0.1
 
+Package: dylv.liquidass
+Architecture: iphoneos-arm64e
+Author: dylv
+Conflicts: dylv.blurless
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0), firmware (<< 26.0), preferenceloader
+Depiction: https://ipapplus.github.io/depictions/dylv.liquidass_0.1.1b_iphoneos-arm64e.html
+Description: next level diarrhea
+Filename: debs/dylv.liquidass_0.1.1b_iphoneos-arm64e.deb
+Icon: https://winaviation.github.io/repo/depictions/dylv.liquidass/icon.png
+Installed-Size: 8560
+MD5sum: e2d5ceff595ac7b18eff9b3b9c137490
+Maintainer: dylv
+Name: Liquid (Gl)ass
+Replaces: dylv.blurless
+SHA1: 8cba70a04b800c421a7fd6a0553f2706ae2457c9
+SHA256: 9752cb9a179cdb6e1820295119015355f26e5d55c371a2627c374fee4a8a6c20
+SHA512: 14691a5af03ec970c29177ca9508b2ed0947797020fc2228f01348824c0aed034fc815b1d12da0088fdb94ca478000a80ecc032c097ecb459dc307060b811ad2
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/dylv.liquidass_0.1.1b_iphoneos-arm64e.json
+Size: 3702120
+Version: 0.1.1b
+
 Package: eg.anubistweaks.translux
 Architecture: iphoneos-arm64e
 Author: AnubisTweaks
@@ -6755,6 +6777,44 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/one.keycap.freepip_0.0.3_iphoneos-arm64e.json
 Size: 7100
 Version: 0.0.3
+
+Package: org.coolstar.classicfolders2
+Architecture: iphoneos-arm64e
+Author: CoolStar
+Depends: mobilesubstrate, preferenceloader, firmware(>=15.0), com.ichitaso.iconorder
+Depiction: https://ipapplus.github.io/depictions/org.coolstar.classicfolders2_3.0.6_iphoneos-arm64e.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/org.coolstar.classicfolders2_3.0.6_iphoneos-arm64e.deb
+Installed-Size: 4464
+MD5sum: 23cfb9c8c3f51d127a9350d5ed888509
+Maintainer: CoolStar
+Name: ClassicFolders 2
+SHA1: 41ca60501a1ca376669316db7483169718934c0a
+SHA256: b4448738a88c72c278ef6fb9212e2fc5fe3c295ae7def99f28a07f8d5725f986
+SHA512: ee07baf7b7e3f7b8be07a79831c182b9a096146ed4008b43284d53054ec1bd6f07293e361993c6b464878aeeff73a45fe8d783038ef24aa295978c9da31e9d96
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/org.coolstar.classicfolders2_3.0.6_iphoneos-arm64e.json
+Size: 3287860
+Version: 3.0.6
+
+Package: org.coolstar.sileo
+Architecture: iphoneos-arm64e
+Author: Amy While <me@anamy.gay>
+Depends: firmware (>= 11.0), firmware(>=12.2) | org.swift.libswift (>=5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Depiction: https://ipapplus.github.io/depictions/org.coolstar.sileo_2.5.1-12_iphoneos-arm64e.html
+Description: A modern APT package manager frontend
+Filename: debs/org.coolstar.sileo_2.5.1-12_iphoneos-arm64e.deb
+Icon: https://getsileo.app/img/icon.png
+MD5sum: 7fabc4b298eb9b1834df205163dacd05
+Maintainer: Amy While <me@anamy.gay>
+Name: Sileo
+SHA1: 480e41f3ad9b404ae43c28a36655f5c19a42c5d3
+SHA256: e85ab12f8d98da9a5350293647266b898282b0d766df2397526ab253d84eede3
+SHA512: 762c112ff55323f482b616593b42c7ec9f8832a6d21a89f7687ad0fc0d0a6423193e869697b7a147fcb974904ba81f0a399f1b9a63b6de02ee563f9bca761c61
+Section: Packaging
+SileoDepiction: https://ipapplus.github.io/depictions/org.coolstar.sileo_2.5.1-12_iphoneos-arm64e.json
+Size: 3947388
+Version: 2.5.1-12
 
 Package: org.hacx.hacxdaemon
 Architecture: iphoneos-arm64e

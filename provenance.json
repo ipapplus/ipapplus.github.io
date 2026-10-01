@@ -3077,6 +3077,16 @@
          "version" : "0.0.1"
       },
       {
+         "Author" : "dylv",
+         "Maintainer" : "dylv",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/dylv.liquidass_0.1.1b_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:29:20Z",
+         "package" : "dylv.liquidass",
+         "sha256" : "9752cb9a179cdb6e1820295119015355f26e5d55c371a2627c374fee4a8a6c20",
+         "version" : "0.1.1b"
+      },
+      {
          "Author" : "AnubisTweaks",
          "Depiction" : "https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks",
          "Homepage" : "https://github.com/AnubisTweaks",
@@ -3488,6 +3498,27 @@
          "package" : "one.keycap.freepip",
          "sha256" : "9cbe0e42cd554c8523407d315156290a1bdf2f0a5eb880309d63bb6bfbec8bff",
          "version" : "0.0.3"
+      },
+      {
+         "Author" : "CoolStar",
+         "Maintainer" : "CoolStar",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/org.coolstar.classicfolders2_3.0.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:29:20Z",
+         "package" : "org.coolstar.classicfolders2",
+         "sha256" : "b4448738a88c72c278ef6fb9212e2fc5fe3c295ae7def99f28a07f8d5725f986",
+         "version" : "3.0.6"
+      },
+      {
+         "Author" : "Amy While <me@anamy.gay>",
+         "Maintainer" : "Amy While <me@anamy.gay>",
+         "SileoDepiction" : "https://featuredpage.getsileo.app/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/org.coolstar.sileo_2.5.1-12_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:29:20Z",
+         "package" : "org.coolstar.sileo",
+         "sha256" : "e85ab12f8d98da9a5350293647266b898282b0d766df2397526ab253d84eede3",
+         "version" : "2.5.1-12"
       },
       {
          "Author" : "Yaniv Danan (hAcx)",

@@ -1088,6 +1088,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 106
       },
+      "dylv.liquidass/0.1.1b" : {
+         "first_added" : "2026-10-01T01:29:20Z",
+         "sequence" : 329
+      },
       "eg.anubistweaks.translux/1.2.1" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 293
@@ -1239,6 +1243,14 @@
       "one.keycap.freepip/0.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 114
+      },
+      "org.coolstar.classicfolders2/3.0.6" : {
+         "first_added" : "2026-10-01T01:29:20Z",
+         "sequence" : 330
+      },
+      "org.coolstar.sileo/2.5.1-12" : {
+         "first_added" : "2026-10-01T01:29:20Z",
+         "sequence" : 331
       },
       "org.hacx.hacxdaemon/3.8" : {
          "first_added" : "2026-10-01T00:35:15Z",
