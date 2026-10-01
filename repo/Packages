@@ -5,7 +5,7 @@ Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.ap
 Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.2)
 Depiction: https://ipapplus.github.io/depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm.html
 Description: Enables the ability to install unsigned/fakesigned iOS applications.
-Filename: ai.akemi.appsyncunified_116.0_iphoneos-arm.deb
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm.deb
 Homepage: https://cydia.akemi.ai/
 Installed-Size: 636
 MD5sum: 9acdefe2fa766b5f11a61685a3171b56
@@ -28,7 +28,7 @@ Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.ap
 Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.7.1)
 Depiction: https://ipapplus.github.io/depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64.html
 Description: Enables the ability to install unsigned/fakesigned iOS applications.
-Filename: ai.akemi.appsyncunified_116.0_iphoneos-arm64.deb
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm64.deb
 Homepage: https://cydia.akemi.ai/
 Installed-Size: 668
 MD5sum: 96deae1805b7e61bcc0495df79b93901
@@ -51,7 +51,7 @@ Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.ap
 Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.2)
 Depiction: https://ipapplus.github.io/depictions/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.html
 Description: Enables the ability to install unsigned/fakesigned iOS applications.
-Filename: ai.akemi.appsyncunified_116.0_iphoneos-arm64e.deb
+Filename: debs/ai.akemi.appsyncunified_116.0_iphoneos-arm64e.deb
 Homepage: https://cydia.akemi.ai/
 Installed-Size: 668
 MD5sum: e67204e7df22c53527d22cd26c71bd74
