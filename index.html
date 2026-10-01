@@ -43,45 +43,6 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
 .footer .accent{color:var(--accent)}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--card);border:1px solid var(--border-2);color:var(--fg);padding:10px 18px;border-radius:10px;font-size:12px;font-weight:500;z-index:100;transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 10px 30px rgba(0,0,0,.4);pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
-.package-browser{margin-top:22px;padding-top:18px;border-top:1px solid var(--border)}
-.package-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;margin-bottom:12px}
-.package-browser h2{font-size:17px}
-.package-search-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border-2);border-radius:10px;background:var(--bg-2);color:var(--fg-2);cursor:pointer}
-.package-search-toggle svg{width:19px;height:19px}
-.package-search-toggle[aria-expanded="true"]{color:var(--accent);border-color:var(--accent)}
-.package-search-panel{position:absolute;top:calc(100% + 8px);right:0;width:100%;padding:14px;background:var(--card-2);border:1px solid var(--border-2);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.4);z-index:3}
-.package-search-panel[hidden],.package-choices[hidden]{display:none}
-.package-browser label{display:block;font-size:12px;color:var(--fg-2);margin-bottom:6px}
-#package-search{width:100%;padding:12px;border:1px solid var(--border-2);border-radius:10px;background:var(--bg-2);color:var(--fg);font:inherit;font-size:16px}
-#package-search:focus-visible,.package-download:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-#package-status{margin:10px 0;font-size:12px;color:var(--fg-2)}
-#package-list{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto}
-.package-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;column-gap:8px;row-gap:4px;padding:12px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;flex-shrink:0}
-.package-entry[hidden]{display:none}
-.package-content{min-width:0}
-.package-title{display:flex;align-items:baseline;gap:6px;min-width:0;margin-bottom:6px}
-.package-entry h3{font-size:14px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.package-version{font-size:10px;color:var(--muted);flex-shrink:1;min-width:0;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.package-meta{grid-column:1/-1;font-size:10px;color:var(--muted);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.package-description{font-size:12px;line-height:1.5;color:var(--fg-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.package-download{display:inline-flex;align-items:center;justify-content:center;padding:8px;min-height:36px;border:1px solid var(--border-2);border-radius:8px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font:inherit;font-size:11px;cursor:pointer}
-.package-actions,.architecture-filters{display:flex;align-items:center;gap:6px}
-.architecture-filters{margin-top:10px}
-.package-copy,.architecture-filters button{border:1px solid var(--border-2);border-radius:8px;background:var(--bg-2);color:var(--fg-2);font:inherit;cursor:pointer}
-.architecture-filters{flex-wrap:wrap}
-.architecture-filters button{padding:10px;font-size:12px;min-height:44px}
-.package-copy{width:32px;min-height:36px;padding:3px;font-size:0;flex-shrink:0}
-.package-copy::before{content:'⧉';display:block;font-size:17px;line-height:1.2}
-.package-copy[data-feedback="Copied!"]::before{content:'✓';color:var(--accent)}
-.package-copy[data-feedback="Copy failed"]::before{content:'!'}
-.package-choices{position:fixed;z-index:30;width:140px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--border-2);border-radius:10px;background:var(--card-2);box-shadow:0 12px 28px rgba(0,0,0,.4);overflow-y:auto}
-.package-choice{display:block}
-.package-choice[hidden]{display:none}
-.package-target{display:block;width:100%;padding:11px 10px;min-height:40px;border:0;border-radius:6px;background:transparent;color:var(--fg-2);text-decoration:none;text-align:left;font:inherit;font-size:12px;cursor:pointer}
-.package-target:hover,.package-target:focus-visible{background:var(--accent-soft);color:var(--accent)}
-.package-target[hidden]{display:none}
-.architecture-filters button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-.package-copy:focus-visible,.architecture-filters button:focus-visible,.package-search-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #last-updated{margin-top:18px;color:var(--fg-2);font-size:12px;line-height:1.5}
 @media(max-width:440px){body{padding:16px}.card{padding:20px;border-radius:18px}.avatar{width:52px;height:52px}.name{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
@@ -117,29 +78,13 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       <span class="label">GitHub</span>
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
     </a>
+    <a class="link-btn" href="packages.html">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="5" rx="1"></rect><path d="M5 8v13h14V8M10 12h4"></path></svg>
+      <span class="label">Browse Tweaks</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
+    </a>
   </nav>
   <p id="last-updated">Last Updated: Unknown</p>
-  <section class="package-browser" aria-labelledby="package-heading">
-    <div class="package-toolbar" id="package-toolbar">
-      <h2 id="package-heading">Packages</h2>
-      <button class="package-search-toggle" id="package-search-toggle" type="button" aria-label="Search and filter packages" aria-expanded="false" aria-controls="package-search-panel">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg>
-      </button>
-      <div class="package-search-panel" id="package-search-panel" hidden>
-        <label for="package-search">Search packages</label>
-        <input id="package-search" type="search" placeholder="Name, filename, or description" autocomplete="off">
-        <div class="architecture-filters" role="group" aria-label="Filter by architecture">
-          <button type="button" data-architecture="" aria-pressed="true">All</button>
-          <button type="button" data-architecture="arm" aria-pressed="false">Rootful</button>
-          <button type="button" data-architecture="arm64" aria-pressed="false">Rootless</button>
-          <button type="button" data-architecture="arm64e" aria-pressed="false">RootHide</button>
-        </div>
-      </div>
-    </div>
-    <p id="package-status" role="status" aria-live="polite">Loading packages…</p>
-    <div id="package-list"></div>
-    <noscript>Enable JavaScript to browse packages.</noscript>
-  </section>
   <footer class="footer">© 2016–2026 <span class="accent">ipapplus</span></footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -167,257 +112,26 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
 <script>
 (function(){
   'use strict';
-  const search=document.getElementById('package-search');
-  const status=document.getElementById('package-status');
-  const list=document.getElementById('package-list');
-  const architectureButtons=document.querySelectorAll('[data-architecture]');
-  const architectureNames={'iphoneos-arm':'arm','iphoneos-arm64':'arm64','iphoneos-arm64e':'arm64e'};
-  const architectureLabels={arm:'Rootful',arm64:'Rootless',arm64e:'RootHide'};
-  const searchToggle=document.getElementById('package-search-toggle');
-  const searchPanel=document.getElementById('package-search-panel');
-  const toolbar=document.getElementById('package-toolbar');
-  let selectedArchitecture='';
-  let entries=[];
-  function closeSearch(reset=false){
-    searchPanel.hidden=true;
-    searchToggle.setAttribute('aria-expanded','false');
-    if(reset){
-      search.value='';selectedArchitecture='';
-      architectureButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.architecture==='')));
-      filterPackages();
-    }
-  }
-  searchToggle.addEventListener('click',()=>{
-    if(!searchPanel.hidden){closeSearch(true);return;}
-    entries.forEach(closeChoices);
-    searchPanel.hidden=false;
-    searchToggle.setAttribute('aria-expanded','true');
-    search.focus();
-  });
-  function closeChoices(entry){
-    if(entry.choices){
-      entry.choices.hidden=true;
-      entry.download.setAttribute('aria-expanded','false');
-      entry.copy.setAttribute('aria-expanded','false');
-    }
-  }
-  document.addEventListener('click',event=>{
-    if(!toolbar.contains(event.target))closeSearch();
-    entries.forEach(entry=>{
-      if(!entry.card.contains(event.target)&&!(entry.choices&&entry.choices.contains(event.target)))closeChoices(entry);
-    });
-  });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'){
-      if(!searchPanel.hidden){closeSearch(true);searchToggle.focus();}
-      entries.forEach(entry=>{
-        if(entry.choices&&!entry.choices.hidden){closeChoices(entry);entry.download.focus();}
-      });
-    }
-  });
-  list.addEventListener('scroll',()=>entries.forEach(closeChoices));
-  window.addEventListener('resize',()=>entries.forEach(closeChoices));
-  window.addEventListener('scroll',()=>entries.forEach(closeChoices));
-  function positionChoices(entry,button){
-    const rect=button.getBoundingClientRect();
-    const viewport=window.visualViewport;
-    const left=viewport?viewport.offsetLeft:0,top=viewport?viewport.offsetTop:0;
-    const width=viewport?viewport.width:window.innerWidth,height=viewport?viewport.height:window.innerHeight;
-    const menu=entry.choices;
-    menu.style.width=Math.min(140,width-16)+'px';
-    menu.style.maxHeight=Math.max(40,height-16)+'px';
-    menu.style.left=Math.max(left+8,Math.min(rect.right-menu.offsetWidth,left+width-menu.offsetWidth-8))+'px';
-    const below=rect.bottom+6;
-    menu.style.top=Math.max(top+8,Math.min(below+menu.offsetHeight<=top+height-8?below:rect.top-menu.offsetHeight-6,top+height-menu.offsetHeight-8))+'px';
-  }
-  function parsePackages(text){
-    return text.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n/).filter(block=>block.trim()).map(block=>{
-      const fields=Object.create(null);
-      let key='';
-      for(const line of block.split('\n')){
-        if(/^[ \t]/.test(line)){
-          if(key)fields[key]+='\n'+(line.trim()==='.'?'':line.slice(1));
-        }else{
-          const colon=line.indexOf(':');
-          key=colon>0?line.slice(0,colon):'';
-          if(key)fields[key]=line.slice(colon+1).trim();
-        }
-      }
-      return fields;
-    });
-  }
-  function sizeLabel(value){
-    if(!value)return '';
-    const bytes=Number(value);
-    if(!Number.isFinite(bytes)||bytes<0)return '';
-    if(bytes<1024)return bytes+' B';
-    if(bytes<1048576)return (bytes/1024).toFixed(1)+' KB';
-    return (bytes/1048576).toFixed(1)+' MB';
-  }
-  function addText(parent,tag,className,text){
-    const element=document.createElement(tag);
-    element.className=className;
-    element.textContent=text;
-    parent.appendChild(element);
-    return element;
-  }
-  function filterPackages(){
-    const query=search.value.toLowerCase();
-    let count=0;
-    for(const entry of entries){
-      const matching=entry.variants.filter(variant=>variant.searchText.includes(query)&&(selectedArchitecture===''||variant.architecture===selectedArchitecture));
-      entry.card.hidden=matching.length===0;
-      entry.meta.textContent=[...new Set(matching.map(variant=>architectureLabels[variant.architecture]||variant.architecture))].join(' · ');
-      entry.variants.forEach(variant=>{if(variant.row)variant.row.hidden=!matching.includes(variant);});
-      closeChoices(entry);
-      if(!entry.card.hidden)count++;
-    }
-    status.textContent=count?count+' of '+entries.length+' packages':'No packages found';
-  }
-  search.addEventListener('input',filterPackages);
-  architectureButtons.forEach(button=>button.addEventListener('click',()=>{
-    selectedArchitecture=button.dataset.architecture;
-    architectureButtons.forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
-    filterPackages();
-  }));
-  async function copyLink(button,url){
-    try{
-      if(navigator.clipboard&&window.isSecureContext){
-        await navigator.clipboard.writeText(url);
-      }else{
-        const area=document.createElement('textarea');
-        area.value=url;area.style.position='fixed';area.style.opacity='0';
-        document.body.appendChild(area);area.select();
-        try{if(!document.execCommand('copy'))throw new Error('Copy failed');}
-        finally{area.remove();button.focus();}
-      }
-      button.textContent='Copied!';
-    }catch(error){
-      button.textContent='Copy failed';
-    }
-    button.setAttribute('data-feedback',button.textContent);
-    button.setAttribute('aria-label',button.textContent);
-    clearTimeout(button.copyTimer);
-    button.copyTimer=setTimeout(()=>{
-      button.textContent='Copy Link';button.removeAttribute('data-feedback');
-      button.setAttribute('aria-label','Copy download link');
-    },2000);
-  }
-  const indexURL=new URL('Packages',window.location.href);
   const updated=document.getElementById('last-updated');
-  fetch(indexURL).then(response=>{
-    if(!response.ok)throw new Error('Package index request failed');
-    const modified=response.headers.get('Last-Modified');
-    const date=modified?new Date(modified):null;
-    if(date&&!Number.isNaN(date.getTime())){
-      const seconds=Math.max(0,Math.floor((Date.now()-date.getTime())/1000));
-      let relative='Just now';
-      if(seconds>=60){
-        const unit=seconds>=86400?'day':seconds>=3600?'hour':'minute';
-        const count=Math.floor(seconds/(unit==='day'?86400:unit==='hour'?3600:60));
-        relative=count+' '+unit+(count===1?'':'s')+' ago';
-      }
-      updated.textContent='Last Updated: '+relative;
-    }else{
-      updated.textContent='Last Updated: Unknown';
+  let modifiedDate=null;
+  function updateTime(){
+    if(!modifiedDate)return;
+    const seconds=Math.max(0,Math.floor((Date.now()-modifiedDate.getTime())/1000));
+    let relative='Just now';
+    if(seconds>=60){
+      const unit=seconds>=86400?'day':seconds>=3600?'hour':'minute';
+      const count=Math.floor(seconds/(unit==='day'?86400:unit==='hour'?3600:60));
+      relative=count+' '+unit+(count===1?'':'s')+' ago';
     }
-    return response.text();
-  }).then(text=>{
-    const fragment=document.createDocumentFragment();
-    const groups=[];
-    const groupsByKey=new Map();
-    // Group only matching identities/versions with identical display metadata.
-    // Never hide a second file for the same architecture inside a merged card.
-    parsePackages(text).forEach(pkg=>{
-      const key=JSON.stringify([pkg.Package,pkg.Version,pkg.Name,pkg.Description,pkg.Maintainer]);
-      let group=groupsByKey.get(key);
-      if(!pkg.Package||!pkg.Version||!group||group.some(other=>other.Architecture===pkg.Architecture)){
-        group=[];groups.push(group);groupsByKey.set(key,group);
-      }
-      group.push(pkg);
-    });
-    entries=groups.map((group,groupIndex)=>{
-      const pkg=group[0];
-      const card=document.createElement('article');
-      card.className='package-entry';
-      const content=document.createElement('div');
-      content.className='package-content';card.appendChild(content);
-      const title=document.createElement('div');title.className='package-title';content.appendChild(title);
-      const name=addText(title,'h3','',pkg.Name||pkg.Package||'Unnamed package');
-      name.title=pkg.Package||name.textContent;
-      if(pkg.Version){const version=addText(title,'span','package-version',pkg.Version);version.title=pkg.Version;}
-      if(pkg.Description){const description=addText(content,'p','package-description',pkg.Description);description.title=pkg.Description;}
-      const actions=document.createElement('div');
-      actions.className='package-actions';card.appendChild(actions);
-      const meta=addText(card,'p','package-meta','');
-      const variants=group.map(item=>({
-        pkg:item,architecture:architectureNames[item.Architecture]||item.Architecture,
-        searchText:[item.Package,item.Name,item.Filename,item.Description].filter(Boolean).join('\n').toLowerCase()
-      }));
-      const entry={card,meta,variants};
-      function addDownload(parent,item){
-        const link=addText(parent,'a','package-download','Download');
-        link.href=new URL(item.Filename,indexURL).href;
-        link.setAttribute('download','');
-        link.title=sizeLabel(item.Size)?'Download · '+sizeLabel(item.Size):'Download';
-        const copy=addText(parent,'button','package-copy','Copy Link');
-        copy.type='button';
-        copy.setAttribute('aria-label','Copy download link');
-        copy.addEventListener('click',()=>copyLink(copy,link.href));
-      }
-      if(group.length===1){
-        if(pkg.Filename)addDownload(actions,pkg);
-      }else{
-        entry.download=addText(actions,'button','package-download','Download');
-        entry.copy=addText(actions,'button','package-copy','Copy Link');
-        entry.choices=document.createElement('div');
-        entry.choices.className='package-choices';entry.choices.hidden=true;
-        entry.choices.id='package-choices-'+groupIndex;
-        document.body.appendChild(entry.choices);
-        [entry.download,entry.copy].forEach(button=>{
-          button.type='button';button.setAttribute('aria-expanded','false');
-          button.setAttribute('aria-controls',entry.choices.id);
-          button.setAttribute('aria-label',button===entry.copy?'Choose architecture to copy download link':'Choose download architecture');
-          button.addEventListener('click',()=>{
-            const open=entry.choices.hidden;
-            entries.forEach(closeChoices);
-            entry.choices.hidden=!open;
-            entry.download.setAttribute('aria-expanded',String(open));
-            entry.copy.setAttribute('aria-expanded',String(open));
-            if(open){
-              variants.forEach(variant=>{
-                variant.link.hidden=button===entry.copy;
-                variant.copy.hidden=button!==entry.copy;
-              });
-              positionChoices(entry,button);
-              const first=variants.find(variant=>variant.row&&!variant.row.hidden);
-              if(first)(button===entry.copy?first.copy:first.link).focus();
-            }
-          });
-        });
-        variants.forEach(variant=>{
-          const row=document.createElement('div');row.className='package-choice';variant.row=row;
-          const label=architectureLabels[variant.architecture]||variant.architecture;
-          const link=addText(row,'a','package-target',label);variant.link=link;
-          link.href=new URL(variant.pkg.Filename,indexURL).href;link.setAttribute('download','');
-          link.addEventListener('click',()=>closeChoices(entry));
-          const copy=addText(row,'button','package-target',label);variant.copy=copy;
-          copy.type='button';copy.hidden=true;
-          copy.addEventListener('click',()=>{
-            copyLink(entry.copy,link.href);closeChoices(entry);entry.copy.focus();
-          });
-          entry.choices.appendChild(row);
-        });
-      }
-      fragment.appendChild(card);
-      return entry;
-    });
-    list.appendChild(fragment);
-    search.disabled=false;
-    filterPackages();
-  }).catch(()=>{
-    status.textContent='Unable to load packages. Please reload to try again.';
-  });
+    updated.textContent='Last Updated: '+relative;
+  }
+  fetch('Packages').then(response=>{
+    if(!response.ok)throw new Error('Package index request failed');
+    const header=response.headers.get('Last-Modified');
+    const date=header?new Date(header):null;
+    if(date&&!Number.isNaN(date.getTime())){modifiedDate=date;updateTime();}
+  }).catch(()=>{});
+  setInterval(updateTime,60000);
 })();
 </script>
 </body>
