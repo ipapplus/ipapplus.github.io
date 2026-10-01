@@ -10084,6 +10084,27 @@ Size: 10133312
 Tag: role::enduser
 Version: 5.1.0-3
 
+Package: tools4cydia.flexpatch.pro
+Architecture: iphoneos-arm64
+Author: tools4cydia
+Depends: mobilesubstrate, firmware (>= 14.0)
+Depiction: https://ipapplus.github.io/depictions/tools4cydia.flexpatch.pro_5.3.5-4_iphoneos-arm64.html
+Description: FlexPatch Pro is a powerful on-device tweak builder for jailbroken iOS. Browse installed apps, inspect Objective-C and Swift classes, hook methods, override return values, and intercept arguments — then compile and package your tweak as a .deb file without ever touching a Mac.
+Filename: debs/tools4cydia.flexpatch.pro_5.3.5-4_iphoneos-arm64.deb
+Icon: https://tools4cydia.info/images/FlexPatchPro/AppIcon.png
+Installed-Size: 240
+MD5sum: cd83797982fa1b93be7db485e2be4c85
+Maintainer: tools4cydia
+Name: FlexPatch Pro (Rootless)
+SHA1: 887ef3bb81b67c71c1f5e9dd9b7ffa45cea7281c
+SHA256: 6732099fb97232bfadf227b1c3755c1debded5d1203475968ce7c40dae6d5db7
+SHA512: 0dd66437567f30637f2e34acdb88e1d0da3a53fcf3e46895e62f26d236fea5dfa562b3cb83f03b1262b65febf1c3707aa13a918ac25441b66247d5af96279c25
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/tools4cydia.flexpatch.pro_5.3.5-4_iphoneos-arm64.json
+Size: 10301484
+Tag: role::enduser
+Version: 5.3.5-4
+
 Package: twitter.nowesr1.location-spoofer
 Architecture: iphoneos-arm64e
 Author: nowesr1 <nowe9r@hotmail.com>

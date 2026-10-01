@@ -5275,6 +5275,16 @@
          "version" : "5.1.0-3"
       },
       {
+         "Author" : "tools4cydia",
+         "Maintainer" : "tools4cydia",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/tools4cydia.flexpatch.pro_5.3.5-4_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T02:24:59Z",
+         "package" : "tools4cydia.flexpatch.pro",
+         "sha256" : "6732099fb97232bfadf227b1c3755c1debded5d1203475968ce7c40dae6d5db7",
+         "version" : "5.3.5-4"
+      },
+      {
          "Author" : "nowesr1 <nowe9r@hotmail.com>",
          "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
          "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
