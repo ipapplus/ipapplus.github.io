@@ -568,6 +568,10 @@
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 61
       },
+      "com.lizynz.folderx.rootless/2.0" : {
+         "first_added" : "2026-10-01T01:55:04Z",
+         "sequence" : 353
+      },
       "com.lizynz.telegaicons.rootless/1.3" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 123
@@ -1331,6 +1335,10 @@
       "org.hacx.hacxdaemon/3.8" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 307
+      },
+      "org.thebigboss.libcolorpicker/1.6.9.1" : {
+         "first_added" : "2026-10-01T01:55:04Z",
+         "sequence" : 354
       },
       "org.thebigboss.libcolorpicker/1.6.9.2" : {
          "first_added" : "2026-10-01T00:31:16Z",
