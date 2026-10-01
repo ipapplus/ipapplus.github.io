@@ -104,6 +104,10 @@
          "first_added" : "2026-10-01T00:05:44Z",
          "sequence" : 27
       },
+      "com.bandarhl.theacrat/6.0.4-1+debug" : {
+         "first_added" : "2026-10-01T01:25:35Z",
+         "sequence" : 323
+      },
       "com.barabadev.fluxion/1.0.0" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 194
@@ -940,6 +944,10 @@
          "first_added" : "2026-10-01T01:22:13Z",
          "sequence" : 320
       },
+      "com.sudo.termcolors/2.2.2" : {
+         "first_added" : "2026-10-01T01:25:35Z",
+         "sequence" : 324
+      },
       "com.sugiuta.soundvol/1.0.0" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 64
@@ -955,6 +963,10 @@
       "com.teslaman3092.popoutbuttons/1.0.2" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 285
+      },
+      "com.tigisoftware.appdatamanager/1.8.2-5" : {
+         "first_added" : "2026-10-01T01:25:35Z",
+         "sequence" : 325
       },
       "com.titand3v.speedy/1.0" : {
          "first_added" : "2026-10-01T00:35:15Z",
@@ -1199,6 +1211,10 @@
       "me.tomt000.copylog/1.7.1" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 305
+      },
+      "moe.waru.hoshu/1.0.0" : {
+         "first_added" : "2026-10-01T01:25:35Z",
+         "sequence" : 326
       },
       "mterminal/1.6" : {
          "first_added" : "2026-10-01T00:35:15Z",

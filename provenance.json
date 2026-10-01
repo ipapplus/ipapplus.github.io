@@ -412,6 +412,16 @@
          "version" : "5.3"
       },
       {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:25:35Z",
+         "package" : "com.bandarhl.theacrat",
+         "sha256" : "1094305926fc53b80d4d401f69d2a2c9931d59f701ea496c180b4b6a772c7083",
+         "version" : "6.0.4-1+debug"
+      },
+      {
          "Author" : "BarabaDev",
          "Maintainer" : "BarabaDev",
          "architecture" : "iphoneos-arm64e",
@@ -2680,6 +2690,17 @@
          "version" : "1.9.0"
       },
       {
+         "Author" : "Sudo",
+         "Depiction" : "https://sudo9000.github.io/depictions/termcolors/index.html",
+         "Maintainer" : "Sudo",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.sudo.termcolors_2.2.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:25:35Z",
+         "package" : "com.sudo.termcolors",
+         "sha256" : "aa7c755ffdb817f40aa1f365370da5eef11c261c39081a8955785f0c8dc430bf",
+         "version" : "2.2.2"
+      },
+      {
          "Author" : "sugiuta",
          "Depiction" : "https://sugiuta.github.io/descriptions/index.html?p=com.sugiuta.soundvol",
          "Maintainer" : "sugiuta",
@@ -2720,6 +2741,18 @@
          "package" : "com.teslaman3092.popoutbuttons",
          "sha256" : "cdb4ec37fbf0301637f4eb290415a3ed808c801e2d82f6a6e6f861a8a5d830ee",
          "version" : "1.0.2"
+      },
+      {
+         "Author" : "TIGI Software <satashi2009@gmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appsmanagerDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appsmanagerDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.tigisoftware.appdatamanager_1.8.2-5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:25:35Z",
+         "package" : "com.tigisoftware.appdatamanager",
+         "sha256" : "8a4e186daec09f5ac61b8f650485659342b98528149fba7862ebc1cc5191b951",
+         "version" : "1.8.2-5"
       },
       {
          "Author" : "TitanD3v <titand3veloper@gmail.com>",
@@ -3379,6 +3412,16 @@
          "package" : "me.tomt000.copylog",
          "sha256" : "988cbfa217eaba3163aa29a50444a0e8bab55c1e0c5188fb4d95ef160778c5d0",
          "version" : "1.7.1"
+      },
+      {
+         "Author" : "waruhachi",
+         "Maintainer" : "waruhachi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/moe.waru.hoshu_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:25:35Z",
+         "package" : "moe.waru.hoshu",
+         "sha256" : "956e836be2033dc6fe597c54e6d9e9152669d5b8e5bdd78aa24af727cc321495",
+         "version" : "1.0.0"
       },
       {
          "Author" : "lordscotland <admin@officialscheduler.com>",

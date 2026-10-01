@@ -787,6 +787,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_
 Size: 6469840
 Version: 5.3
 
+Package: com.bandarhl.theacrat
+Architecture: iphoneos-arm64e
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters, com.bandarhl.orionblur
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.deb
+Installed-Size: 7900
+MD5sum: 75f93c420c656d7f5b1dbf7def618a8b
+Maintainer: NeoFreeBird
+Name: BHTwitter - theacrat
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 55a839700e76babfe9769f29831bba748377d830
+SHA256: 1094305926fc53b80d4d401f69d2a2c9931d59f701ea496c180b4b6a772c7083
+SHA512: 4b0379894c9385ed401dc1a61246d6eadf5cd9dfe4fe8aee454f4cfa655d4de2a696a12ba33268342da9113c94e0384d3d34b989a73850626fc6018bedd1cce8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.json
+Size: 2113148
+Version: 6.0.4-1+debug
+
 Package: com.barabadev.fluxion
 Architecture: iphoneos-arm64e
 Author: BarabaDev
@@ -5201,6 +5222,25 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.squidforce.copyvault_1
 Size: 1700372
 Version: 1.9.0
 
+Package: com.sudo.termcolors
+Architecture: iphoneos-arm64e
+Author: Sudo
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.sudo.termcolors_2.2.2_iphoneos-arm64e.html
+Description: Bash and Zsh setup with colorized prompt, text, dircolors, cat (bat) syntax highlighting and nano colors. Random color prompt generator by typing 'random' in your terminal.
+Filename: debs/com.sudo.termcolors_2.2.2_iphoneos-arm64e.deb
+Icon: https://sudo9000.github.io/depictions/termcolors/assets/icon.png
+MD5sum: b8ca2cdde28e16a862b8e26981c590fe
+Maintainer: Sudo
+Name: Term Colors
+SHA1: 225958cd947a6929e85294f0bb1fb2af13d6f178
+SHA256: aa7c755ffdb817f40aa1f365370da5eef11c261c39081a8955785f0c8dc430bf
+SHA512: b9cc537b0a3b24410a048105754c60cd5d317051b191067f869100f1a1ee4dd7cf5724c70d948b0662ed47d0d61e9e9bd8f9da43b94dc69383844565eca26c05
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.sudo.termcolors_2.2.2_iphoneos-arm64e.json
+Size: 2079704
+Version: 2.2.2
+
 Package: com.sugiuta.soundvol
 Architecture: iphoneos-arm64e
 Author: sugiuta
@@ -5283,6 +5323,32 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.teslaman3092.popoutbut
 Size: 59456
 Tag: compatible_min::ios13.0
 Version: 1.0.2
+
+Package: com.tigisoftware.appdatamanager
+Architecture: iphoneos-arm64e
+Author: TIGI Software <satashi2009@gmail.com>
+Depends: firmware (>= 7.0), ldid
+Depiction: https://ipapplus.github.io/depictions/com.tigisoftware.appdatamanager_1.8.2-5_iphoneos-arm64e.html
+Description: Tool to WIPE, BACKUP, RESTORE AppData for installed Apps
+Filename: debs/com.tigisoftware.appdatamanager_1.8.2-5_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=appsmanagerDp
+Icon: file:///Applications/ADManager.app/AppIcon60x60@2x.png
+Installed-Size: 9121
+MD5sum: 3bdbd0ca9dc093b47fb5af0d21e2cc4f
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: Apps Manager
+Pre-Depends: rootless-compat(>= 0.9)
+Priority: optional
+SHA1: a32bbb899f448a133452a35e24c15b25602a65ea
+SHA256: 8a4e186daec09f5ac61b8f650485659342b98528149fba7862ebc1cc5191b951
+SHA512: 4f3c086ef992dac8188c1ffcd18177b3360a314045b7368afba9c5884afae167f4e14174fb16a93e7780f86d1e1344b54628c20e7dcf576a8bb9b6e753cb46e7
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.tigisoftware.appdatamanager_1.8.2-5_iphoneos-arm64e.json
+Size: 2475500
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::uikit
+Version: 1.8.2-5
+dev: satashi2009
 
 Package: com.titand3v.speedy
 Architecture: iphoneos-arm64e
@@ -6547,6 +6613,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/me.tomt000.copylog_1.7.1_iphoneos-arm64e.json
 Size: 1040940
 Version: 1.7.1
+
+Package: moe.waru.hoshu
+Architecture: iphoneos-arm64e
+Author: waruhachi
+Depends: firmware (>= 15.0), com.nightwind.rootless-patcher
+Depiction: https://ipapplus.github.io/depictions/moe.waru.hoshu_1.0.0_iphoneos-arm64e.html
+Description: a GUI wrapper for Nightwind's rootless-patcher
+Filename: debs/moe.waru.hoshu_1.0.0_iphoneos-arm64e.deb
+Icon: https://github.com/waruhachi/Hoshu/blob/main/Resources/Hoshu.png?raw=true
+Installed-Size: 5256
+MD5sum: 02611dbf74ad7ae07912c84c2f9118b6
+Maintainer: waruhachi
+Name: Hoshu
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: eaff9f52ea21ca4f504be88138b52826454336e1
+SHA256: 956e836be2033dc6fe597c54e6d9e9152669d5b8e5bdd78aa24af727cc321495
+SHA512: c82376baa3baa9807f6caedf1fdb5fb7050211d126aeb6758653a7f22ce50e80753c12a06e8d10bde4d45fadd9f7367fca342ec44ddc3d188cd4543417e08f72
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/moe.waru.hoshu_1.0.0_iphoneos-arm64e.json
+Size: 2078432
+Version: 1.0.0
 
 Package: mterminal
 Architecture: iphoneos-arm64e
