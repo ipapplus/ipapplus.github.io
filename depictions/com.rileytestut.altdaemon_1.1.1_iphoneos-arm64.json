@@ -1,0 +1,40 @@
+{
+   "class" : "DepictionTabView",
+   "minVersion" : "0.4",
+   "tabs" : [
+      {
+         "class" : "DepictionStackView",
+         "tabname" : "Details",
+         "views" : [
+            {
+               "class" : "DepictionHeaderView",
+               "title" : "AltDaemon Modern — Rootless"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "1.1.1",
+               "title" : "Version"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "iphoneos-arm64",
+               "title" : "Architecture"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "Rootless AltDaemon with modern anisette v3 support.\n AltDaemon allows compatible AltStore builds to install and refresh apps\n without a computer. This fork targets standard Dopamine rootless jailbreaks.",
+               "title" : "Description"
+            },
+            {
+               "class" : "DepictionTableTextView",
+               "text" : "AltDaemonModern contributors",
+               "title" : "Maintainer"
+            },
+            {
+               "class" : "DepictionLabelView",
+               "text" : "Archive metadata; device compatibility has not been independently tested."
+            }
+         ]
+      }
+   ]
+}

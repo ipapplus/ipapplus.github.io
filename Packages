@@ -745,6 +745,26 @@ Size: 67532
 Version: 1.2
 
 Package: com.bandarhl.bhtiktok
+Architecture: iphoneos-arm64
+Author: dvntm
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64.html
+Description: An awesome tweak fot TikTok!
+Filename: debs/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64.deb
+Icon: https://i.imgur.com/Pyp3fg8.jpeg
+Installed-Size: 1480
+MD5sum: 6b3998b26b6d087c98657cedca6e9925
+Maintainer: dvntm
+Name: BHTikTok Plus
+SHA1: f106d5f5c5d11a830db6f355ee9149c272f7eeee
+SHA256: 36358b13875a6fae5c4accaaf509804fef062a2e0aa3afe02e351bbcb0920ae2
+SHA512: 53236b94a3ef58c3a7ecb1b41b5b95198461aef2d33f460b7983e2c219739a822e171757cd68a41943cc05b8c0d1cd9093ca4582783c4749da4901e4dc862cc9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.1_iphoneos-arm64.json
+Size: 506512
+Version: 2.3.1
+
+Package: com.bandarhl.bhtiktok
 Architecture: iphoneos-arm64e
 Author: dvntm
 Depends: mobilesubstrate
@@ -1020,6 +1040,27 @@ Size: 69676
 Version: 6.2
 
 Package: com.c1d3r.pulloverpro.ios17
+Architecture: iphoneos-arm64
+Author: Sugiuta
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64.html
+Description: description: Bring true multitasking to iOS 17. Quickly open your favorite apps in a floating window without leaving your current app.
+Filename: debs/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64.deb
+Installed-Size: 880
+MD5sum: a90e7f6d8907ec787adb0a64820ff785
+Maintainer: Sugiuta
+Name: PullOver Pro iOS17
+SHA1: a6e602955959bd10190035c1e0c3e8dad33c0041
+SHA256: 94d471d4095f9294ef2439a0be02a7c5740b1af465e6a754f082f4a5804c70a2
+SHA512: a9cfd1d8219f86452462770b2abee9cc0a39166b276e678f8315908dd6eaeff6cdf2a3d77bd9b4cb19da2262ed68d453bbcb71218692e3e8d42578833c8e9314
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64.json
+Size: 378368
+Version: 2.2.0
+icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
+sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
+
+Package: com.c1d3r.pulloverpro.ios17
 Architecture: iphoneos-arm64e
 Author: Sugiuta
 Depends: mobilesubstrate, preferenceloader
@@ -1040,6 +1081,24 @@ Size: 407508
 Version: 2.2.0
 icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
 sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
+
+Package: com.choco.tg
+Architecture: iphoneos-arm64
+Author: choco
+Depiction: https://ipapplus.github.io/depictions/com.choco.tg_1.7.4_iphoneos-arm64.html
+Description: An simple Tweak For Telegram iOS
+Filename: debs/com.choco.tg_1.7.4_iphoneos-arm64.deb
+Installed-Size: 3256
+MD5sum: 74c750c4ee10a81463b65df0b517eeec
+Maintainer: choco
+Name: TGExtra
+SHA1: 417c1e60775927015b29d545a8f5e0334f7c4f22
+SHA256: a2843d209ba47384d59cf4aab18e4921f688f91aad90d9ef95e4ecd3080e3e2f
+SHA512: a66ce4af6ccc2ba55e4f1eebb3032f703fe20766a09cc01cee1d9a139db2c1060ee970c504f056e4c311fbeec72f6218ae048ea1189b3253caa9a3e26d4d6490
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.choco.tg_1.7.4_iphoneos-arm64.json
+Size: 614388
+Version: 1.7.4
 
 Package: com.choco.tg
 Architecture: iphoneos-arm64e
@@ -1149,6 +1208,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.cpdigitaldarkroom.barm
 Size: 48604
 Tag: purpose::extension, compatible_min::ios10, compatible_max::ios13.3
 Version: 2023.3
+
+Package: com.creaturecoding.libcspreferences
+Architecture: iphoneos-arm64
+Author: CreatureSurvive <support@creaturecoding.com>
+Depiction: https://ipapplus.github.io/depictions/com.creaturecoding.libcspreferences_1.5.8_iphoneos-arm64.html
+Description: A Preference Library that doesn't suck!
+Filename: debs/com.creaturecoding.libcspreferences_1.5.8_iphoneos-arm64.deb
+Homepage: https://creaturecoding.com/
+Installed-Size: 2332
+MD5sum: 8c0e7bd69226fd15bacd847c8d55b849
+Maintainer: CreatureSurvive <support@creaturecoding.com>
+Name: libCSPreferences
+Pre-Depends: firmware (>= 8.0), com.ex.libsubstitute | mobilesubstrate
+SHA1: e37bbaf043874060479db63ae232c7e72d1fd36c
+SHA256: 2a77fe81b99c6a2e8a5a12b361ae93a4c58398ff95fd88e809839a8abe39d9f1
+SHA512: 8294ad1510e519c99775cfd1cc0099a18f62499f2891da07e7e6643fa3c9b900cb4fb38e72cc90439a644390a323100849f27299c3c5e136d7ddcc81166c83ee
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.creaturecoding.libcspreferences_1.5.8_iphoneos-arm64.json
+Size: 334236
+Tag: compatible_min::iOS9
+Version: 1.5.8
 
 Package: com.creaturecoding.libcspreferences
 Architecture: iphoneos-arm64e
@@ -2010,6 +2090,26 @@ Size: 3292
 Version: 0.0.1
 
 Package: com.dvntm.fastlock
+Architecture: iphoneos-arm64
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.fastlock_1.0.1_iphoneos-arm64.html
+Description: Lock your screen using gestures on SpringBoard
+Filename: debs/com.dvntm.fastlock_1.0.1_iphoneos-arm64.deb
+Icon: https://raw.githubusercontent.com/dayanch96/FastLock/refs/heads/main/Sileo/icon.png
+Installed-Size: 856
+MD5sum: 641d5999ea9d60182748984ad7ca3231
+Maintainer: dvntm
+Name: FastLock
+SHA1: efd4e70aa893ac25ba640ad7c2e752b4b6a4bc18
+SHA256: ca5d40343ac31b3842df1920079800291b28bab89f26a78a6debbeab8aaa8023
+SHA512: 904ca11cf572bb48d7f3ce0006903b9feb3cfaedbdd1631e9e825c108d52de287644004c64506ef5d8da4f0fc970a6f5fcb8683dfd6377887de0b75e78851967
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fastlock_1.0.1_iphoneos-arm64.json
+Size: 382808
+Version: 1.0.1
+
+Package: com.dvntm.fastlock
 Architecture: iphoneos-arm64e
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2165,6 +2265,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.glow_1.3.1_iphoneos-arm64e.json
 Size: 6905432
 Version: 1.3.1
+
+Package: com.dvntm.infuseplus
+Architecture: iphoneos-arm64
+Author: dvntm
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.infuseplus_2.5_iphoneos-arm64.html
+Description: Enhancer for Infuse app
+Filename: debs/com.dvntm.infuseplus_2.5_iphoneos-arm64.deb
+Icon: https://raw.githubusercontent.com/dayanch96/InfusePlus/refs/heads/main/Resources/icon.png
+Installed-Size: 1292
+MD5sum: c9cef360f70c081c9914e82697bc684a
+Maintainer: dvntm
+Name: Infuse Plus
+SHA1: d92bfffe6ed5b8024fc22edc77badb220ad7982f
+SHA256: 67943f1bafc5889c79548715f7a5a30fad3198665b5b6e8672c47f6b8ac0e9a3
+SHA512: f70e9ef51069fcd66203d4a92ae243163b5b910b543b207eae543bd3d7ce71762685365ebc3e8a217a59d6fbb9f2f2c4d81043c82d5d30638fab0a8277f6b2c0
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.infuseplus_2.5_iphoneos-arm64.json
+Size: 455520
+Version: 2.5
 
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64e
@@ -2641,6 +2761,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.ethxnn88.visibleisland
 Size: 28428
 Tags: compatible_min::ios16.0, compatible_max::ios16.6.1
 Version: 2.0
+
+Package: com.exile90.icleanerpro
+Architecture: iphoneos-arm64
+Author: Ivano Bilenchi <support@ib-soft.net>
+Conflicts: org.altervista.exilecom.icleaner
+Depends: firmware (>= 4.0), findutils, apt | apt7
+Depiction: https://ipapplus.github.io/depictions/com.exile90.icleanerpro_7.10.0_iphoneos-arm64.html
+Description: The first real iOS system cleanup and management utility
+Filename: debs/com.exile90.icleanerpro_7.10.0_iphoneos-arm64.deb
+Homepage: http://ib-soft.net/icleaner
+Icon: https://raw.githubusercontent.com/ichitaso/file/refs/heads/main/images/Icons/iCleaner.png
+MD5sum: 38c6e074f247460f8d6d2f3b59e3ddbd
+Maintainer: Ivano Bilenchi <support@ib-soft.net>
+Name: iCleaner Pro
+Replaces: org.altervista.exilecom.icleaner
+SHA1: f98a3474b49372f282f1b3ad070aa383e6d4b4dd
+SHA256: 1fc96c373f7a068683ee31e45c462ec6cbe252bca413a47adf0051eb47c4b082
+SHA512: 09b6fbee714e22ff237d3a837987eeff8fc3bb8ffe38beee5539b3f207fd13c02ceddac55f802e174f762ab4d7f7b5482e119cab6adf839c5bd72ce918b2aab8
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.exile90.icleanerpro_7.10.0_iphoneos-arm64.json
+Size: 980836
+Version: 7.10.0
 
 Package: com.exile90.icleanerpro
 Architecture: iphoneos-arm64e
@@ -4175,6 +4317,47 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.lizynz.telegaicons.roo
 Size: 19644
 Version: 1.3
 
+Package: com.m1337.varclean
+Architecture: iphoneos-arm64
+Author: m1337
+Depends: firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.m1337.varclean_1.1_iphoneos-arm64.html
+Description: varClean for Rootless
+Filename: debs/com.m1337.varclean_1.1_iphoneos-arm64.deb
+Icon: 
+Installed-Size: 876
+MD5sum: 3a4e6f37a9c55d7388811b330930b3eb
+Maintainer: m1337
+Name: varClean
+SHA1: 1e5be52b6956d482e26e01a48a9d30f46b11b2bf
+SHA256: b5ff58812ab490c8fe455a219e1a188bb61460f3a7dd5636c5723c252845ef70
+SHA512: 1ea551448c73a01741dd6a18d94ece7c0e0a3c92a21237a22bf117e730e7b9288fc7877d03612a2ace0efe7dec1b4b3a7f9bd7d015e31eb2d6bc10256812aaab
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.m1337.varclean_1.1_iphoneos-arm64.json
+Size: 721240
+Support: https://github.com/roothide/RootHideManagerApp
+Version: 1.1
+
+Package: com.m4fn3.mikkyy
+Architecture: iphoneos-arm64
+Author: m4fn3
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.m4fn3.mikkyy_1.0.2_iphoneos-arm64.html
+Description: Modern, lightweight theme engine for iOS 16 through 26. Applies icon themes to the Home Screen, Dock, App Switcher, Share Sheet, Settings, folder previews, and live Calendar and Clock icons.
+Filename: debs/com.m4fn3.mikkyy_1.0.2_iphoneos-arm64.deb
+Icon: https://m4fn3.github.io/repo/web/images/Mikkyy.png
+Installed-Size: 1812
+MD5sum: 57c2c912e5877d6e2c939d90b44691b8
+Maintainer: m4fn3
+Name: Mikkyy
+SHA1: c27dc51ea0c6de4789a5470ad8eb0c10b1014840
+SHA256: cb44a96d43758e899a15f89c2a6dc7fcd64a83236a6d5b9d3abb6d5ff34fe50c
+SHA512: f2a9d963a805262854ac17aec20417f5c22fc106aebc15d966e694173221e8db2f8ae4520cf2caa3be36bbec7d85ad78dc77c8faa8f10589ff066e4ab7c288a8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.m4fn3.mikkyy_1.0.2_iphoneos-arm64.json
+Size: 426360
+Version: 1.0.2
+
 Package: com.m4fn3.mikkyy
 Architecture: iphoneos-arm64e
 Author: m4fn3
@@ -4461,6 +4644,26 @@ Tag: role::developer, compatible_min::ios14
 Version: 1.1
 
 Package: com.miro.libmiroshared
+Architecture: iphoneos-arm64
+Author: MiRO <tweaks_support@miro92.com>
+Depends: firmware (>=14.0)
+Depiction: https://ipapplus.github.io/depictions/com.miro.libmiroshared_1.0.2_iphoneos-arm64.html
+Description: Shared library for my tweaks.
+Filename: debs/com.miro.libmiroshared_1.0.2_iphoneos-arm64.deb
+Installed-Size: 4936
+MD5sum: 4aa1b800826101e7693f464398da22a2
+Maintainer: MiRO <tweaks_support@miro92.com>
+Name: libMiROShared
+SHA1: ba2c8a80d18d187209a379c75fcfb24b7b2ca995
+SHA256: b450ae9bc0dd402c26d4e4e474b164409c446506811e7d15e8c6fc571a60ac0b
+SHA512: 6494b30070913bb8c5b2dbf8c9525437d31dfe6cca628cfd7b68f56cbbe5031d80983dae447dabcbf746c7dc08e827be9661dca88142b67e83006c5f99530e9a
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libmiroshared_1.0.2_iphoneos-arm64.json
+Size: 733696
+Tag: role::developer, compatible_min::ios14
+Version: 1.0.2
+
+Package: com.miro.libmiroshared
 Architecture: iphoneos-arm64e
 Author: MiRO <tweaks_support@miro92.com>
 Depends: firmware (>=14.0)
@@ -4672,6 +4875,26 @@ Tag: purpose::extension, role::developer
 Version: 1.0
 
 Package: com.mtac.lynxapp
+Architecture: iphoneos-arm64
+Author: MTAC
+Depends: com.mtac.lynxtwo
+Depiction: https://ipapplus.github.io/depictions/com.mtac.lynxapp_2.1_iphoneos-arm64.html
+Description: Homescreen Application for Lynx
+Filename: debs/com.mtac.lynxapp_2.1_iphoneos-arm64.deb
+Icon: file:///Applications/Lynx.app/icon.png
+Installed-Size: 804
+MD5sum: 750546698aca54e8aea331051ac930a9
+Maintainer: MTAC
+Name: Lynx Application
+SHA1: 634028713567507f21f70c2a3a569db4e29bdec5
+SHA256: 50bc7e7a1e8dadd7ec368588d5bb8613787dd3319ae57f30552f60fd6e8df071
+SHA512: d1bde22987e4477d2a527bf21b3ffe3024a6de11a10bfbf341b86ad2485d1622fd5a2a8c564510d7eeecb94a44af756fb03822f7099299d00584c5dd860157d3
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.mtac.lynxapp_2.1_iphoneos-arm64.json
+Size: 557100
+Version: 2.1
+
+Package: com.mtac.lynxapp
 Architecture: iphoneos-arm64e
 Author: MTAC
 Depends: com.mtac.lynxtwo
@@ -4732,6 +4955,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.mtac.lynxtwo.localizations_2.5_iphoneos-arm64e.json
 Size: 118648
 Version: 2.5
+
+Package: com.mtac.lynxtwo
+Architecture: iphoneos-arm64
+Author: MTAC
+Depends: mobilesubstrate, firmware (>= 14.0), preferenceloader, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.mtac.lynxtwo_2.5.4_iphoneos-arm64.html
+Description: Ultimate iDevice Customization for iOS 14, 15 & 16
+Filename: debs/com.mtac.lynxtwo_2.5.4_iphoneos-arm64.deb
+Icon: https://media.havoc.app/64a1d7f9351a82652447cb09
+Installed-Size: 2952
+MD5sum: b601238cc0c59d711a7ceee302e8d4b1
+Maintainer: MTAC
+Name: Lynx 2
+SHA1: 611370c227c91b11c5e6f0d6dd118a49d3d3548c
+SHA256: 70e9c1cf2c7ef30c46e5bd47745ba200c31c1f4105522e909a8684a383b2916a
+SHA512: 75cb5bcfbfa82001d71a200c6db47bb01377d4353e85c809ce2fb75c50bf1819c4d2ceb3aa01b734d94aaa5e2fc62edd9a06c28593fefc96630cfe4125f47902
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.mtac.lynxtwo_2.5.4_iphoneos-arm64.json
+Size: 678680
+Version: 2.5.4
 
 Package: com.mtac.lynxtwo
 Architecture: iphoneos-arm64e
@@ -4977,6 +5220,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.na9.snaptweak_1.0_iphoneos-arm64e.json
 Size: 25696
 Version: 1.0
+
+Package: com.na9.tiktok
+Architecture: iphoneos-arm64
+Author: Nasser | NoTimeToChill
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.na9.tiktok_1.0~beta5-1_iphoneos-arm64.html
+Description: An advanced tweak for TikTok by N+Store. Nasser iPA Sideload Store https://na9.me to access Tweak settings press bolt icon in your profile
+Filename: debs/com.na9.tiktok_1.0~beta5-1_iphoneos-arm64.deb
+Installed-Size: 2208
+MD5sum: 62c64ffc430a5d23b73187e9a6ebdefc
+Maintainer: Nasser | NoTimeToChill
+Name: NA9 For TikTok
+SHA1: a4d919ce181f79787f7bab085661a1cb71000d25
+SHA256: aa4425372fd3b441ad7094bac8a62b295d0546d645e4ccfc18d90f356efe0825
+SHA512: 8f38a227cdecbac7788700c621ee78e9f3178d8a31df17751a03c2efe935205f73a2c2b2895f4d624129a126a510f3285d46f4efdfd1a8d71bcfb6fa2a7c32ad
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.na9.tiktok_1.0~beta5-1_iphoneos-arm64.json
+Size: 346656
+Version: 1.0~beta5-1
 
 Package: com.na9.tiktok
 Architecture: iphoneos-arm64e
@@ -5441,6 +5703,25 @@ Size: 6740
 Version: 1.1-2
 
 Package: com.netskao.dumpdecrypter
+Architecture: iphoneos-arm64
+Author: Netskao
+Depends: firmware (>= 15.0), mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.netskao.dumpdecrypter_1.5-1_iphoneos-arm64.html
+Description: Decrypt iOS Apps and Plugins, Supports iOS15+, Only Tested iOS16.1
+Filename: debs/com.netskao.dumpdecrypter_1.5-1_iphoneos-arm64.deb
+Installed-Size: 952
+MD5sum: 08a00bd7ff03290855777c9d32753ad6
+Maintainer: Nets
+Name: DumpDecrypter
+SHA1: 2c436c4887750f81db88b442452250b803b845b6
+SHA256: c089e86527ac73fbc32c725cddfc858c866a498d5b1b7a97e9abd66893e9a314
+SHA512: 14a78decc4132efc3b739d1d656108b24156ecd4c9310ad78e3b374c7b8ed964e492d38604264e9aa02bbf74234f16aec5b02f4aac2686beef55ea9cdd3c4fcb
+Section: Netskao-Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.netskao.dumpdecrypter_1.5-1_iphoneos-arm64.json
+Size: 393768
+Version: 1.5-1
+
+Package: com.netskao.dumpdecrypter
 Architecture: iphoneos-arm64e
 Author: Netskao
 Depends: firmware (>= 15.0), mobilesubstrate
@@ -5541,6 +5822,28 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.newwares.badgesync_1.2.2_iphoneos-arm64e.json
 Size: 37312
 Version: 1.2.2
+
+Package: com.nguyenasang.snmessenger
+Architecture: iphoneos-arm64
+Author: NguyenASang
+Conflicts: com.haoict.messengernoads
+Depends: mobilesubstrate, firmware (>= 12.4)
+Depiction: https://ipapplus.github.io/depictions/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm64.html
+Description: A full-featured tweak for Messenger.
+Filename: debs/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm64.deb
+Installed-Size: 792
+MD5sum: a2787ab1a9228ae00a4ded9510f5610f
+Maintainer: NguyenASang
+Name: SNMessenger
+Provides: com.haoict.messengernoads
+Replaces: com.haoict.messengernoads
+SHA1: 57f1c9d20607d741a0bbddd2fccea70feb6e5979
+SHA256: 80f2e562ea5b1b2933f7ff54ee9555cdb2e087dcb04d859646e4bc25f1ab6635
+SHA512: 43ddabd91911001373706ba761dd8cbefb9d4f72bee30c05e0584fb4dda51e811476b9ee69cfdf425673e8b86d4affc428d9263673ff1421bcf746c309004ba3
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm64.json
+Size: 419036
+Version: 2.0.0
 
 Package: com.nguyenasang.snmessenger
 Architecture: iphoneos-arm64e
@@ -6250,6 +6553,28 @@ Size: 4844
 Version: 1.0.1
 
 Package: com.randy420.tools
+Architecture: iphoneos-arm64
+Author: Randy420 <randy.skinner@hotmail.com>
+Depends: firmware (<= 15.0) | cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.randy420.tools_2.3.9_iphoneos-arm64.html
+Description: 420Tools holds the preferences for all my tweaks as well as shared files for my tweaks.
+Filename: debs/com.randy420.tools_2.3.9_iphoneos-arm64.deb
+Homepage: https://theemeraldisle.family
+Installed-Size: 2392
+MD5sum: 5c9a6d236e33252a63c2b8a346a079c6
+Maintainer: Randy420 <randy.skinner@hotmail.com>
+Name: 420 Tools
+Replaces: com.randy420.encrypt
+SHA1: 9d4fc91aad8ce895e777f7f3d6a2c4c11e13b910
+SHA256: beb84903b21f8ebd5d295e6a4fdc09fca87b982025978a207cc0e4ea55a17637
+SHA512: c1082f5560907f4bb0fae1eedbdea5efefe204a9c9822314bc5d8b4ed58e8cc93b9befa4c33e32bb1e075fab74bbf55e19c3c73524e99791705d4c231a7b9afa
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.randy420.tools_2.3.9_iphoneos-arm64.json
+Size: 548028
+Tag: role::hacker
+Version: 2.3.9
+
+Package: com.randy420.tools
 Architecture: iphoneos-arm64e
 Author: Randy420 <randy.skinner@hotmail.com>
 Depends: firmware (<= 15.0) | cy+cpu.arm64v8 | oldabi-xina | oldabi
@@ -6334,6 +6659,26 @@ Tag: compatible_min::ios12.2
 Version: 1.0.1
 
 Package: com.rileytestut.altdaemon
+Architecture: iphoneos-arm64
+Author: Riley Testut and AltDaemonModern contributors
+Depiction: https://ipapplus.github.io/depictions/com.rileytestut.altdaemon_1.1.1_iphoneos-arm64.html
+Description: Rootless AltDaemon with modern anisette v3 support.
+ AltDaemon allows compatible AltStore builds to install and refresh apps
+ without a computer. This fork targets standard Dopamine rootless jailbreaks.
+Filename: debs/com.rileytestut.altdaemon_1.1.1_iphoneos-arm64.deb
+Homepage: https://github.com/altstoreio/AltStore
+MD5sum: 3b5814d6e4feb09248415f121409fa12
+Maintainer: AltDaemonModern contributors
+Name: AltDaemon Modern
+SHA1: 67de612ba56b70cfc2684e094386752a88cb95a3
+SHA256: d89cf4eabbdc7904764e1708a4a3c9e5d3f57c5f7d13f7e832ec412018e09b57
+SHA512: e692a2dd5fe9bb17d019fda507112c41a48c310ebbd79a5fbc860f7185963236575d2dc7aafdc27002959e68d55c99586ddee1bd836567865376819dab3c1906
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.rileytestut.altdaemon_1.1.1_iphoneos-arm64.json
+Size: 890232
+Version: 1.1.1
+
+Package: com.rileytestut.altdaemon
 Architecture: iphoneos-arm64e
 Author: Riley Testut and AltDaemonModern contributors
 Depiction: https://ipapplus.github.io/depictions/com.rileytestut.altdaemon_1.1.1_iphoneos-arm64e.html
@@ -6375,6 +6720,46 @@ Size: 754942
 Support: https://github.com/roothide/RootHideManagerApp
 Version: 1.3.9
 
+Package: com.roothide.managers
+Architecture: iphoneos-arm64
+Author: roothide
+Depends: firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.roothide.managers_1.1_iphoneos-arm64.html
+Description: Configuare RootHide's Features
+Filename: debs/com.roothide.managers_1.1_iphoneos-arm64.deb
+Icon: 
+Installed-Size: 896
+MD5sum: b95b35505432d8b7ce1483d7ca24fa91
+Maintainer: roothide
+Name: RootHide Manager
+SHA1: 0cac20284560a3c2f8497570eefe6d80bed91804
+SHA256: 5a1a8208e32387ffff4c2a857a4d0e1f7ecf47f4fc1d29745f92b1f3d66d70db
+SHA512: ae6b954061492897d2d2eabc9da3865baec6565819ccd1142372b4d790bac6f057f86321a1df8cd63ec2e09503035cda2cc855e9b91aa3f89903025e3f6182b4
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.roothide.managers_1.1_iphoneos-arm64.json
+Size: 731552
+Support: https://github.com/roothide/RootHideManagerApp
+Version: 1.1
+
+Package: com.rpgfarm.a-font
+Architecture: iphoneos-arm64
+Author: Baw Appie <pp121324@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.rpgfarm.a-font_1.10.1_iphoneos-arm64.html
+Description: Change your font!
+Filename: debs/com.rpgfarm.a-font_1.10.1_iphoneos-arm64.deb
+Installed-Size: 2476
+MD5sum: 3df634d20930fd1aa80d060c7a624d18
+Maintainer: Baw Appie <pp121324@gmail.com>
+Name: A-Font
+SHA1: 02d5e87193201e7eb021575d431b012d28ff3447
+SHA256: bbafc48a489fc70d89e197ebb8d205ae5158d337cd7bdf0e3051407a45fa1370
+SHA512: c579530356f359151a8756811e63b8f79ce9afe22911e1d839e3fb1c223c72a0f0500951fe8adbfee964d8662a2c3e6bf2e3c70e9b6b963c13afc3f60cfe946c
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.rpgfarm.a-font_1.10.1_iphoneos-arm64.json
+Size: 493660
+Version: 1.10.1
+
 Package: com.rpgfarm.a-font
 Architecture: iphoneos-arm64e
 Author: Baw Appie <pp121324@gmail.com>
@@ -6394,6 +6779,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.rpgfarm.a-font_1.10.1_iphoneos-arm64e.json
 Size: 602004
 Version: 1.10.1
+
+Package: com.rpgfarm.a-font
+Architecture: iphoneos-arm64
+Author: Baw Appie <pp121324@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.rpgfarm.a-font_2.0.1_iphoneos-arm64.html
+Description: Change your font!
+Filename: debs/com.rpgfarm.a-font_2.0.1_iphoneos-arm64.deb
+Installed-Size: 2476
+MD5sum: 33bd20e541cfc0d6cbea00377f4a5e2c
+Maintainer: m4fn3
+Name: A-Font
+SHA1: 908c7c51ab6bef2b22331c7ef8ab777504a0f5d3
+SHA256: 1e8b727c7ae9255dc9e168e287631cec79427944ab3898054c14fc160a7b11c5
+SHA512: 7483e1d119a736890323faec8b0838ad9818492fb790083afb3692ac15a1d6fab414a31c97ef7ec8a155bd35bb25dca32fe8325347ee160044b052cbddb61468
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.rpgfarm.a-font_2.0.1_iphoneos-arm64.json
+Size: 496240
+Version: 2.0.1
 
 Package: com.rpgfarm.a-font
 Architecture: iphoneos-arm64e
@@ -6457,6 +6861,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.ryannair05.cylinderremade_0.0.3-beta_iphoneos-arm64e.json
 Size: 102752
 Version: 0.0.3-beta
+
+Package: com.ryannair05.keyboardplus
+Architecture: iphoneos-arm64
+Author: Ryan Nair
+Depends: mobilesubstrate, preferenceloader, ws.hbang.alderis, cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm64.html
+Description: Additional Keyboard Features
+Filename: debs/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm64.deb
+Installed-Size: 744
+MD5sum: e3ec39dd362a873f60ceb454b8c5aab3
+Maintainer: Ryan Nair
+Name: Keyboard Plus
+SHA1: f17f73b1065bd31801e190a175a686708f817f0b
+SHA256: 1bc669b86762f6e7c156c42664b5ba3c6810ba5da1f32c0bded20f94a602ce5c
+SHA512: ef39db40ef80b28c531508df7985d4dc22d04d4b717836e2eca3f21c3494323c44f08a5b429dc5b1757e090bf054e2ba6fdaa8c9a94a0ed8cbf8b060bb9a1cd5
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm64.json
+Size: 387024
+Version: 1.1.1
 
 Package: com.ryannair05.keyboardplus
 Architecture: iphoneos-arm64e
@@ -7009,6 +7432,24 @@ Size: 5012
 Version: 0.0.1
 
 Package: com.synnyg.reversenotifications
+Architecture: iphoneos-arm64
+Author: SynnyG_R <synnyg.devjb@gmail.com>
+Depends: mobilesubstrate, firmware (>= 12.0), ws.hbang.common (>= 1.11), preferenceloader, cy+cpu.arm64v8 | oldabi-xina | oldabi
+Depiction: https://ipapplus.github.io/depictions/com.synnyg.reversenotifications_1.0.3_iphoneos-arm64.html
+Description: A CarPlay inspired notifications look!
+Filename: debs/com.synnyg.reversenotifications_1.0.3_iphoneos-arm64.deb
+MD5sum: 06afbd95a3683d2248e5a4b4a7d15f94
+Maintainer: SynnyG_R <synnyg.devjb@gmail.com>
+Name: ReverseNotifications
+SHA1: b3d74704158dfaf4926c9d8ad6e515f054cae843
+SHA256: 90f937b37952a65aa95163cc2ca9bf48b96de620b1126fc0a1b764237b081160
+SHA512: 021381dc6af52cf5cdeecfadeaf3e9634b594a1803ee358860303061e771bdeb1736b6e95628d2b08de371223d15196e89318da42e5e506f1d3d376b1517b305
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.synnyg.reversenotifications_1.0.3_iphoneos-arm64.json
+Size: 305332
+Version: 1.0.3
+
+Package: com.synnyg.reversenotifications
 Architecture: iphoneos-arm64e
 Author: SynnyG_R <synnyg.devjb@gmail.com>
 Depends: mobilesubstrate, firmware (>= 12.0), ws.hbang.common (>= 1.11), preferenceloader, cy+cpu.arm64v8 | oldabi-xina | oldabi
@@ -7230,6 +7671,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.uckermark.siriplus_1.4_iphoneos-arm64e.json
 Size: 258264
 Version: 1.4
+
+Package: com.udevs.dockx
+Architecture: iphoneos-arm64
+Author: udevs
+Conflicts: com.restiveconch.actionbar
+Depends: mobilesubstrate, preferenceloader, firmware(>=14.0)
+Depiction: https://ipapplus.github.io/depictions/com.udevs.dockx_2.6.2_iphoneos-arm64.html
+Description: Pasteboard shortcuts on your keyboard dock!
+Filename: debs/com.udevs.dockx_2.6.2_iphoneos-arm64.deb
+Icon: https://udevsharold.github.io/repo/depictions/com.udevs.dockx/icon/icon.png
+Installed-Size: 2068
+MD5sum: 541cab04adfa5d4833cf528ff8ea6917
+Maintainer: udevs
+Name: DockX
+SHA1: c216e39fc765b6180726519d171f7cbb50356052
+SHA256: 56755d32198a8f4c4750627f36d32b28674235db8dae716c0f2f289635268712
+SHA512: 0d15c09172dc74496cd40ffdd6c9ff67fc6992ea8a5260c1dcacd934a6ec184d8a19d5da2e059085decf6fc4d7b8835e1410df2b96e6f3ffb0de691c2351fe19
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.udevs.dockx_2.6.2_iphoneos-arm64.json
+Size: 421156
+Version: 2.6.2
 
 Package: com.udevs.dockx
 Architecture: iphoneos-arm64e
@@ -8148,6 +8610,26 @@ Section: Utilities
 SileoDepiction: https://ipapplus.github.io/depictions/jp.dcsyhi.culprit_1.0.2_iphoneos-arm64e.json
 Size: 180010
 Version: 1.0.2
+
+Package: jp.dcsyhi.kbappdock
+Architecture: iphoneos-arm64
+Author: Dcsyhi
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/jp.dcsyhi.kbappdock_1.5_iphoneos-arm64.html
+Description: You can arrange apps on the dock of keyboard ⌨️.
+Filename: debs/jp.dcsyhi.kbappdock_1.5_iphoneos-arm64.deb
+Installed-Size: 1364
+MD5sum: 3a9a29848f1a403dd9d3a0abe2c5187c
+Maintainer: Dcsyhi
+Name: KBApp
+SHA1: 685573972b4cdaa0d0cf1e0efcd2346f0dd4db44
+SHA256: 433e83f7c0bffc172ebd52bf735b7b6683801eaf4deb075a4366aa035df0da6e
+SHA512: 57d78a230a40635d676e94b8e68013fc351c41a65d967c0ea8a480d69dca50f1e692b890286a2934d34076b65d54ee563647077cf3f383370e0f57019b02e928
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.dcsyhi.kbappdock_1.5_iphoneos-arm64.json
+Size: 806872
+Version: 1.5
+icon: https://dcsyhi1998.github.io/icons/kbappdock/icon@2x.png
 
 Package: jp.dcsyhi.kbappdock
 Architecture: iphoneos-arm64e
@@ -9190,6 +9672,29 @@ Section: Scripting
 SileoDepiction: https://ipapplus.github.io/depictions/rootfultorootless_0.0.1_iphoneos-arm64e.json
 Size: 2168
 Version: 0.0.1
+
+Package: ru.rj.ftt
+Architecture: iphoneos-arm64
+Author: ipad_kid_Randy420 <ipadkid358@gmail.com, randy.skinner@hotmail.com>
+Depends: mobilesubstrate, com.randy420.tools (>=2.3.7)
+Depiction: https://ipapplus.github.io/depictions/ru.rj.ftt_1.4_iphoneos-arm64.html
+Description: First made by iPadkid358 - then updated by myself. Change Flex 3 patches into Theos projects using simple terminal commands. 
+  
+ - Use 'ftt -?' For a full list of options.
+Filename: debs/ru.rj.ftt_1.4_iphoneos-arm64.deb
+Homepage: https://theemeraldisle.family
+Installed-Size: 1300
+MD5sum: 8ccc8d99bd0a9fdd0ab545eab80aaa85
+Maintainer: Randy420 <randy.skinner@hotmail.com>
+Name: Flex To Theos
+Replaces: com.ipadkid.ftt, com.azmilaila.ftt, com.ceadd.flextotheosbyipadkid358, com.randy420.ipadkid.ftt
+SHA1: 14abbac16e99ad74696fe8494980dd858bfad6e7
+SHA256: 38d9b547bd1b17379d8cc0bb0b643e3cf71f0ccaf6c583efb0dad124ace4fa37
+SHA512: e1429476a74aba3cdd1e14f65bb049ffce77a55cf996cc723e3b68d13d73049248283c9bf2bc958773c31a728d6493498c850dcaf7fe7eae1858cfad38a650b2
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/ru.rj.ftt_1.4_iphoneos-arm64.json
+Size: 354788
+Version: 1.4
 
 Package: ru.rj.ftt
 Architecture: iphoneos-arm64e
