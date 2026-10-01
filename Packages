@@ -7776,6 +7776,26 @@ Tag: purpose::uikit
 Version: 1.8.2-5
 dev: satashi2009
 
+Package: com.tigisoftware.filza64bit
+Architecture: iphoneos-arm64
+Author: TIGI Software
+Conflicts: com.tigisoftware.filza, com.tigisoftware.filza39
+Depiction: https://ipapplus.github.io/depictions/com.tigisoftware.filza64bit_4.0.1-4_iphoneos-arm64.html
+Description: File Manager for iPhone, iPad, iPod Touch. Supports iOS 11+. This version only supports 64-bit devices
+Filename: debs/com.tigisoftware.filza64bit_4.0.1-4_iphoneos-arm64.deb
+Installed-Size: 23200
+MD5sum: d221799aeb1d7f63d8d03e3e19df0fc9
+Maintainer: TIGI Software
+Name: Filza File Manager 64-bit
+Recommends: zip, unzip, gzip, p7zip, unrar, xz-utils
+SHA1: a4a82b651339d4f9a2e248b36712c5427266897b
+SHA256: 9d12b2e3698d2873d2db1cf4ca98d7b3d5f5cd377de9da42108b101b03a3cf46
+SHA512: cafefe03db72be8a7820c0ff25ff182eab2909e1124b70db7bde2db24fc2cc837232f35e0545c437c8412e06bfb319972e9e22696d2d8946e2cf5147375876ef
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.tigisoftware.filza64bit_4.0.1-4_iphoneos-arm64.json
+Size: 6973616
+Version: 4.0.1-4
+
 Package: com.titand3v.libtitand3vuniversal
 Architecture: iphoneos-arm64e
 Author: TitanD3v

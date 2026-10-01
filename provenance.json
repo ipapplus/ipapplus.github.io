@@ -4062,6 +4062,16 @@
          "version" : "1.8.2-5"
       },
       {
+         "Author" : "TIGI Software",
+         "Maintainer" : "TIGI Software",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.tigisoftware.filza64bit_4.0.1-4_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T02:23:46Z",
+         "package" : "com.tigisoftware.filza64bit",
+         "sha256" : "9d12b2e3698d2873d2db1cf4ca98d7b3d5f5cd377de9da42108b101b03a3cf46",
+         "version" : "4.0.1-4"
+      },
+      {
          "Author" : "TitanD3v",
          "Depiction" : "https://a7m.dev/file/a/titand3vlib/index.html",
          "Maintainer" : "TitanD3v",
