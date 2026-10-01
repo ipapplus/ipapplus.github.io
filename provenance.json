@@ -223,6 +223,16 @@
          "version" : "1.1.1"
       },
       {
+         "Author" : "0xkuj <0xkujz@gmail.com>",
+         "Maintainer" : "0xkuj <0xkujz@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.0xkuj.iparanger_2.7.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:20:07Z",
+         "package" : "com.0xkuj.iparanger",
+         "sha256" : "0b5c32147fb3d5f9836d33128f9a7c194c673d03130bccdc731933cc71cf1b05",
+         "version" : "2.7.0"
+      },
+      {
          "Author" : "0xkuj",
          "Maintainer" : "0xkuj",
          "architecture" : "iphoneos-arm64e",

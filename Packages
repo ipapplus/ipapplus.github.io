@@ -414,6 +414,25 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.fixwanotifs_1.1.
 Size: 30096
 Version: 1.1.1
 
+Package: com.0xkuj.iparanger
+Architecture: iphoneos-arm64e
+Author: 0xkuj <0xkujz@gmail.com>
+Depends: gawk, unzip, plutil
+Depiction: https://ipapplus.github.io/depictions/com.0xkuj.iparanger_2.7.0_iphoneos-arm64e.html
+Description: GUI Based Application for ipatool
+Filename: debs/com.0xkuj.iparanger_2.7.0_iphoneos-arm64e.deb
+MD5sum: d5bbd69db9604541e54161f195f8a820
+Maintainer: 0xkuj <0xkujz@gmail.com>
+Name: IPA Ranger
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 9a6d3d340565a837213a0c3d42eeecaa4e2f5cf6
+SHA256: 0b5c32147fb3d5f9836d33128f9a7c194c673d03130bccdc731933cc71cf1b05
+SHA512: e802e7fa9bbade0c4f023126ef4e565393f6af7fc6629c08419691cbbb9c625a5031c9c60cd85501c503846ce38d33579d7b27aae7d1872459dd619094af47bf
+Section: Addons
+SileoDepiction: https://ipapplus.github.io/depictions/com.0xkuj.iparanger_2.7.0_iphoneos-arm64e.json
+Size: 8597708
+Version: 2.7.0
+
 Package: com.0xkuj.nopastealerts16
 Architecture: iphoneos-arm64e
 Author: 0xkuj
