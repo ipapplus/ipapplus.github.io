@@ -364,6 +364,10 @@
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 219
       },
+      "com.f0u4d.watusitools/2.8.4" : {
+         "first_added" : "2026-10-01T01:38:46Z",
+         "sequence" : 334
+      },
       "com.fiore.calculatorhistory/1.2" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 119
@@ -751,6 +755,10 @@
       "com.nicksworks.roadrunnerreborn/1.0.0" : {
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 261
+      },
+      "com.nightwind.boldersreborn/1.1.2" : {
+         "first_added" : "2026-10-01T01:38:46Z",
+         "sequence" : 335
       },
       "com.nightwind.floatingsafari/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",

@@ -1138,6 +1138,17 @@
          "version" : "4.3.0"
       },
       {
+         "Author" : "Fouad Raheb <support@fouadraheb.com>",
+         "Depiction" : "https://apt.fouadraheb.com/package/com.f0u4d.watusitools",
+         "Maintainer" : "Fouad Raheb <support@fouadraheb.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.f0u4d.watusitools_2.8.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:38:46Z",
+         "package" : "com.f0u4d.watusitools",
+         "sha256" : "6acd6aa831502e4de89ae1d98435715c4ae1d687e7436d3a1849da66d67361b0",
+         "version" : "2.8.4"
+      },
+      {
          "Author" : "fiore",
          "Maintainer" : "fiore",
          "architecture" : "iphoneos-arm64e",
@@ -2184,6 +2195,17 @@
          "package" : "com.nicksworks.roadrunnerreborn",
          "sha256" : "366b5b723b99bb826f6ad0d93789283cce57552fc4ba0d6da2f7ad20a930a2a6",
          "version" : "1.0.0"
+      },
+      {
+         "Author" : "Nightwind <nightwinddev@gmail.com>",
+         "Depiction" : "https://chariz.com/get/boldersreborn",
+         "Maintainer" : "Nightwind <nightwinddev@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nightwind.boldersreborn_1.1.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:38:46Z",
+         "package" : "com.nightwind.boldersreborn",
+         "sha256" : "8e99798d9d8d42ddc975af4610f80ec1efe940c7f1b70dcd7bc6c74d05f64217",
+         "version" : "1.1.2"
       },
       {
          "Author" : "Nightwind",
