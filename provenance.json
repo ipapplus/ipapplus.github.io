@@ -140,6 +140,17 @@
          "Author" : "Domo, SXX",
          "Maintainer" : "SXX, Domo",
          "SileoDepiction" : "https://apt.002599.xyz/web/cn.zqbb.ccatop",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/cn.zqbb.ccatop_2.3_iphoneos-arm.deb",
+         "first_added" : "2026-09-30T23:25:23Z",
+         "package" : "cn.zqbb.ccatop",
+         "sha256" : "4bc65ebea41b35fb62dc36ba1ed740cd502bd18a233e04914d29524a419c64a2",
+         "version" : "2.3"
+      },
+      {
+         "Author" : "Domo, SXX",
+         "Maintainer" : "SXX, Domo",
+         "SileoDepiction" : "https://apt.002599.xyz/web/cn.zqbb.ccatop",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/cn.zqbb.ccatop_2.3_iphoneos-arm64.deb",
          "first_added" : "2026-09-30T23:25:23Z",
@@ -1705,6 +1716,17 @@
          "package" : "com.dvntm.silentnotifs",
          "sha256" : "348eff0194737d7b6dfb3bb7b7c716074c3c7d9cd1c8c8798c410920777ab102",
          "version" : "0.0.2"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/NoItsNotTimeToUpdate/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.dvntm.twlegacy_0.0.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:18:16Z",
+         "package" : "com.dvntm.twlegacy",
+         "sha256" : "599cf80968201ecaeb2431e9e8cdd441d1ab084ba9ea8d862bd0854586b72a97",
+         "version" : "0.0.1"
       },
       {
          "Author" : "dvntm",
@@ -4016,6 +4038,16 @@
          "package" : "com.raulsaeed.bhtiktok++",
          "sha256" : "c6c17e29c38cd4ae72d062cf5967a899c986481861cafa9ab47d29859078eb00",
          "version" : "1.8-119"
+      },
+      {
+         "Author" : "raul saeed",
+         "Maintainer" : "raul saeed",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.raulsaeed.bhtiktok++_1.8-120_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:27:29Z",
+         "package" : "com.raulsaeed.bhtiktok++",
+         "sha256" : "7ceea1ee08250f19a5f52f6616d1b230af4428774a54d00c4f377d387ae31d1f",
+         "version" : "1.8-120"
       },
       {
          "Author" : "Riley Testut <support@altstore.io>",

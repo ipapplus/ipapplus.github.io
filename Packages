@@ -250,6 +250,27 @@ Size: 14808
 Version: 1.1-1+debug
 
 Package: cn.zqbb.ccatop
+Architecture: iphoneos-arm
+Author: Domo, SXX
+Conflicts: ru.domo.cocoatop, ru.domo.cocoatop64, cn.zqbb.cocoatop64.inject.roothide, zp.cocoatop64.unject, zp.cocoatop64.unject.xina, zp.cocoatop64.inject
+Depends: 
+Depiction: https://ipapplus.github.io/depictions/cn.zqbb.ccatop_2.3_iphoneos-arm.html
+Description: Process Viewer for iOS GUI, updated for iOS 13 by SXX.
+Filename: debs/cn.zqbb.ccatop_2.3_iphoneos-arm.deb
+Icon: https://apt.002599.xyz/web/icon/cn.zqbb.ccatop.png
+Installed-Size: 840
+MD5sum: 3db9e31e11969357f7478d5c2de7351d
+Maintainer: SXX, Domo
+Name: CocoaTop
+SHA1: 96e5a883bc1617a1ab888f754db8164f99c059c9
+SHA256: 4bc65ebea41b35fb62dc36ba1ed740cd502bd18a233e04914d29524a419c64a2
+SHA512: f4da1af6b3c50500a9fcb8d78a958d03248fe3d04936b8ab088dd10c0b815fa0f3484cd8128e955a2720f0343e9131fba57381cfcb13dcfb4df9d6a1e3fcaa6c
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/cn.zqbb.ccatop_2.3_iphoneos-arm.json
+Size: 182912
+Version: 2.3
+
+Package: cn.zqbb.ccatop
 Architecture: iphoneos-arm64
 Author: Domo, SXX
 Conflicts: ru.domo.cocoatop, ru.domo.cocoatop64, cn.zqbb.cocoatop64.inject.roothide, zp.cocoatop64.unject, zp.cocoatop64.unject.xina, zp.cocoatop64.inject
@@ -3265,6 +3286,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.silentnotifs_0.0.2_iphoneos-arm64e.json
 Size: 3696
 Version: 0.0.2
+
+Package: com.dvntm.twlegacy
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.twlegacy_0.0.1_iphoneos-arm.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.dvntm.twlegacy_0.0.1_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/NoItsNotTimeToUpdate/refs/heads/main/Sileo/icon.png
+Installed-Size: 56
+MD5sum: f66c7215a50468e6c64982b3739d42eb
+Maintainer: dvntm
+Name: NoItsNotTimeToUpdate
+SHA1: 1921828b6376abab3cd12197b034e1f496e53292
+SHA256: 599cf80968201ecaeb2431e9e8cdd441d1ab084ba9ea8d862bd0854586b72a97
+SHA512: 768a822bcc27702cd6e7f9d1813d1de3de12c0d185d2bec511d8857e5697a57ea90f03eed4a11927050747886fae041c7cbf3a26cb2b6ae0477a2b7a362239d1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.twlegacy_0.0.1_iphoneos-arm.json
+Size: 6084
+Version: 0.0.1
 
 Package: com.dvntm.twlegacy
 Architecture: iphoneos-arm64
@@ -7642,6 +7683,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.raulsaeed.bhtiktok++_1.8-119_iphoneos-arm64e.json
 Size: 137960
 Version: 1.8-119
+
+Package: com.raulsaeed.bhtiktok++
+Architecture: iphoneos-arm
+Author: raul saeed
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.raulsaeed.bhtiktok++_1.8-120_iphoneos-arm.html
+Description: An awesome tweak for TikTok!
+Filename: debs/com.raulsaeed.bhtiktok++_1.8-120_iphoneos-arm.deb
+Installed-Size: 792
+MD5sum: 9a3f233cd5bbb469bc58645e36755ee8
+Maintainer: raul saeed
+Name: BHTikTok++
+SHA1: ba268efbc22e29a925fffba5c78bbcb77465d7d9
+SHA256: 7ceea1ee08250f19a5f52f6616d1b230af4428774a54d00c4f377d387ae31d1f
+SHA512: dba2acf52295fb06b2a5cde534bc803dbfd5f44e1b47cd989748d5d76d58d9d1a9ab366b9120c30f146f55dbb1d1fd17d283878259502031ce2bef7cb66b1fc8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.raulsaeed.bhtiktok++_1.8-120_iphoneos-arm.json
+Size: 137692
+Version: 1.8-120
 
 Package: com.rileytestut.altdaemon
 Architecture: iphoneos-arm64e
