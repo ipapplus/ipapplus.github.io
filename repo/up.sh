@@ -41,7 +41,7 @@ for deb in ./*.deb; do
     printf 'Moved %s -> %s/\n' "$name" "$target"
 done
 
-perl scripts/repo.pl
+perl repo.pl
 
 git add -A
 if git diff --cached --quiet --exit-code; then
