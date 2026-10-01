@@ -811,3 +811,161 @@ Tag: purpose::extension, compatible::ios8, compatible::ios9, compatible::ios10, 
 Version: 0.3-6-1
 dev: cokepokes
 
+Package: com.cydiageek.noeditpages
+Architecture: iphoneos-arm64e
+Author: CydiaGeek <lucaluca86@aol.com>
+Depends: mobilesubstrate, firmware (>= 14.0)
+Depiction: https://ipapplus.github.io/depictions/com.cydiageek.noeditpages_1.0.1_iphoneos-arm64e.html
+Description: Disable Edit Pages iOS 14+ Feature!
+Filename: debs/com.cydiageek.noeditpages_1.0.1_iphoneos-arm64e.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=noeditpagesDp
+Installed-Size: 173
+MD5sum: 5260c60e3821bbe5135db33d449de358
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: NoEditPages
+Priority: optional
+SHA1: c7daffd071ea3a7df82903ccc7cd22c711c0139f
+SHA256: 9743ecd68cfe1799df6f244cd8d8eaa1fb48b23089d8bf69ceb0309d96aff280
+SHA512: 75bdeb61b49f118bd865566d7fa5465505cd960fcc88a04970c82639f9aeb66c712669529436400dd6863dd197a915d1f10830d6707b4afa1aa1da1047755dc5
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.cydiageek.noeditpages_1.0.1_iphoneos-arm64e.json
+Size: 3136
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension
+Version: 1.0.1
+dev: lucaluca86
+
+Package: com.dvntm.safariii
+Architecture: iphoneos-arm64e
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_iphoneos-arm64e.html
+Description: An awesome MobileSubstrate tweak!
+Filename: debs/com.dvntm.safariii_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: 4598b32964909769634345f93bc9bc1d
+Maintainer: dvntm
+Name: Safariii
+SHA1: 2c14631e5bdf618d0fac29e9d852be7cb5d77de7
+SHA256: 802e86713cb772753dd64de30232f9e56d3a9f539b97e01aac0453f6d4bb34cc
+SHA512: 0ec56302e6561a81b8c1645c9f0548b06f31bd6179faf06f25810cd9c3a7df296fe38afb501188b8ee6d4751cf11ce643e3647870300c0bff1b6204e533d36e1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.safariii_0.0.1_iphoneos-arm64e.json
+Size: 2884
+Version: 0.0.1
+
+Package: com.icraze.fuckoffairdrop
+Architecture: iphoneos-arm64e
+Author: iCraze
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.icraze.fuckoffairdrop_1.0_iphoneos-arm64e.html
+Description: Stop AirDrop from automatically installing .ipa files
+Filename: debs/com.icraze.fuckoffairdrop_1.0_iphoneos-arm64e.deb
+Installed-Size: 168
+MD5sum: e8dfb6e4b1817a9f4a0a519edf134c6f
+Maintainer: iCraze
+Name: Fuck Off AirDrop
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 62db60553f9a86eab93732ba4e9fbbc92af9fb34
+SHA256: 52b1250d235f8cc1f79637d5c3352fb05bfe3f9f5e8099dee9a6ddd40880a3d0
+SHA512: 05fd46c40c92bd1e069841d54c8c2b6d737f1eb7d957a9e20aa3c33aaa7d7a3fc07c6bcb9f1dcdb32673bc0d890de5002118cdb6d11a98712af1b45e6c0e3d68
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.icraze.fuckoffairdrop_1.0_iphoneos-arm64e.json
+Size: 2900
+Version: 1.0
+
+Package: com.nan.disablesblockaftercrash
+Architecture: iphoneos-arm64e
+Author: zhaonan
+Depends: plutil | com.bingner.plutil
+Depiction: https://ipapplus.github.io/depictions/com.nan.disablesblockaftercrash_0.1.0_iphoneos-arm64e.html
+Description: 禁用 SpringBoard 崩溃后自动锁定的策略
+Filename: debs/com.nan.disablesblockaftercrash_0.1.0_iphoneos-arm64e.deb
+Icon: https://invalidunit.github.io/sileodepiction/Default/image_fix.png
+MD5sum: c74f6482347e159ae4112b89197690b1
+Maintainer: zhaonan
+Name: Disable SB Lock After Crash
+Pre-Depends: firmware (>= 7.0)
+SHA1: d1b71ffb1192fc496cc2ab0ed2cd42ccd205ea7f
+SHA256: cfa2683450ad02a27828df507c6151ee5ae141de90ff9f518c57f060783b6af8
+SHA512: 2bd77eae73b7c4c052e6674bdc92576332865c1cb88d842cdbb3dcab58f764d288b0e5bbaca3a69284231c3223958e52f61435d6ff897b6aad7beca906591e49
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.nan.disablesblockaftercrash_0.1.0_iphoneos-arm64e.json
+Size: 1212
+Version: 0.1.0
+
+Package: com.nan.disablethermalmonitord
+Architecture: iphoneos-arm64e
+Author: zhaonan
+Depends: plutil
+Depiction: https://ipapplus.github.io/depictions/com.nan.disablethermalmonitord_0.1.0_iphoneos-arm64e.html
+Description: disables ios thermal monitoring system, preventing performance throttling due to high temperatures. 
+Filename: debs/com.nan.disablethermalmonitord_0.1.0_iphoneos-arm64e.deb
+Icon: https://invalidunit.github.io/sileodepiction/Default/image_fix.png
+MD5sum: d30ba2d3aa2f505e813ffc095087270d
+Maintainer: zhaonan
+Name: Disable Thermalmonitord
+SHA1: 57c3c765f0d99fcf6c9015480ab66b9b15acff72
+SHA256: 5d187c282aabee54f9535367fba4381a039b774f6138c74a0a1102b5d54c5f65
+SHA512: b7c0f9139fd4ae65497eb87beca90abdd0b9c0aebccae93dc9883316ca5ecc861f4ea424e6ebab1c39609d63d2d3fecc0661fd743bb0256ebf654929f0c4d4fa
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.nan.disablethermalmonitord_0.1.0_iphoneos-arm64e.json
+Size: 1188
+Version: 0.1.0
+
+Package: com.nan.disableupdates
+Architecture: iphoneos-arm64e
+Author: zhaonan
+Depiction: https://ipapplus.github.io/depictions/com.nan.disableupdates_0.1.1_iphoneos-arm64e.html
+Description: 通过锁定 /var/MobileSoftwareUpdate/MobileAsset/AssetsV2 来阻止系统更新
+Filename: debs/com.nan.disableupdates_0.1.1_iphoneos-arm64e.deb
+Icon: https://invalidunit.github.io/sileodepiction/Default/image_fix.png
+MD5sum: 43b908e6ad412866635f63621fee7a4e
+Maintainer: zhaonan
+Name: Disable Updates
+Pre-Depends: file-cmds
+SHA1: c360e9868b4cd8e9277f40a623213af12759b159
+SHA256: faca98515309fec298fc7253377df579fc1fcab5b10fd06064161f548b1f7ddc
+SHA512: ac558d27fc8f4a9d078ee931634e78654cc933fea1336953ca1989dce07ed7603d068fe23e97a9c55b36a7c33d3e8ef5f2af3f8c6b639668498821549d8b95e8
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.nan.disableupdates_0.1.1_iphoneos-arm64e.json
+Size: 1104
+Version: 0.1.1
+
+Package: daniel.trustevaluator
+Architecture: iphoneos-arm64e
+Author: daniel
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/daniel.trustevaluator_0.0.1_iphoneos-arm64e.html
+Description: Allow installing unsigned profiles with the ability to write global defaults.
+Filename: debs/daniel.trustevaluator_0.0.1_iphoneos-arm64e.deb
+Installed-Size: 136
+MD5sum: 126e1a902b8a24fbc6ca5a82c5f1d1cb
+Maintainer: daniel
+Name: TrustEvaluator
+SHA1: 8999e9415d76da97215d17dce46542421a2e2eb0
+SHA256: b83fb4a140ae8a1d6fcda9cc37a2e6aa4fedd757e8e2ddc526431f9d4cdeffd5
+SHA512: 7dc9d10b8bfa73eef06fa5d26f9d12f6f62285d6a9d5fda0ae1a43a0a5cc4216effee455147747c04b7b95f88a5a15037bf580e5bd5b3afc4bf98fa46e6e122d
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/daniel.trustevaluator_0.0.1_iphoneos-arm64e.json
+Size: 2936
+Version: 0.0.1
+
+Package: rootfultorootless
+Architecture: iphoneos-arm64e
+Author: none <a4237019c0@emailabox.pro>
+Depends: mobilesubstrate, ldid ,file ,odcctools ,gawk ,plutil
+Depiction: https://ipapplus.github.io/depictions/rootfultorootless_0.0.1_iphoneos-arm64e.html
+Description: Filza script
+Filename: debs/rootfultorootless_0.0.1_iphoneos-arm64e.deb
+MD5sum: 4d150f382ec2d5df3498027328f37ab6
+Maintainer: none <a4237019c0@emailabox.pro>
+Name: Rootful To Rootless
+SHA1: e3ae1a19aad1d09900acfbd5f1db20297eec617e
+SHA256: aa253f655d8d74ebc7904da7dcde734978f7a90cbcb82c1376dea60ddee83e30
+SHA512: 153035dbff08ab7ec1a28be43edd01f1c4d3134e6614a9bbc1770615121efc0d7d6e518f4f776c7bcf392a7956c0c4eda46cd500b1b3786f671bc6b8570108a3
+Section: Scripting
+SileoDepiction: https://ipapplus.github.io/depictions/rootfultorootless_0.0.1_iphoneos-arm64e.json
+Size: 2168
+Version: 0.0.1
+

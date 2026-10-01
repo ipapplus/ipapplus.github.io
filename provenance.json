@@ -422,6 +422,90 @@
          "package" : "com.cokepokes.libnotifications",
          "sha256" : "cd4f9058b76fad9930374342df0d11c78c7d03c5a478e1ce9813ccae8482ae02",
          "version" : "0.3-6-1"
+      },
+      {
+         "Author" : "CydiaGeek <lucaluca86@aol.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=noeditpagesDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=noeditpagesDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.cydiageek.noeditpages_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.cydiageek.noeditpages",
+         "sha256" : "9743ecd68cfe1799df6f244cd8d8eaa1fb48b23089d8bf69ceb0309d96aff280",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.safariii_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.dvntm.safariii",
+         "sha256" : "802e86713cb772753dd64de30232f9e56d3a9f539b97e01aac0453f6d4bb34cc",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "iCraze",
+         "Maintainer" : "iCraze",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.icraze.fuckoffairdrop_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.icraze.fuckoffairdrop",
+         "sha256" : "52b1250d235f8cc1f79637d5c3352fb05bfe3f9f5e8099dee9a6ddd40880a3d0",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "zhaonan",
+         "Maintainer" : "zhaonan",
+         "SileoDepiction" : "https://invalidunit.github.io/sileodepiction/com.nan.disablesblockaftercrash/js.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nan.disablesblockaftercrash_0.1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.nan.disablesblockaftercrash",
+         "sha256" : "cfa2683450ad02a27828df507c6151ee5ae141de90ff9f518c57f060783b6af8",
+         "version" : "0.1.0"
+      },
+      {
+         "Author" : "zhaonan",
+         "Maintainer" : "zhaonan",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nan.disablethermalmonitord_0.1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.nan.disablethermalmonitord",
+         "sha256" : "5d187c282aabee54f9535367fba4381a039b774f6138c74a0a1102b5d54c5f65",
+         "version" : "0.1.0"
+      },
+      {
+         "Author" : "zhaonan",
+         "Maintainer" : "zhaonan",
+         "SileoDepiction" : "https://invalidunit.github.io/sileodepiction/com.nan.disableupdates/js.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nan.disableupdates_0.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "com.nan.disableupdates",
+         "sha256" : "faca98515309fec298fc7253377df579fc1fcab5b10fd06064161f548b1f7ddc",
+         "version" : "0.1.1"
+      },
+      {
+         "Author" : "daniel",
+         "Maintainer" : "daniel",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/daniel.trustevaluator_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "daniel.trustevaluator",
+         "sha256" : "b83fb4a140ae8a1d6fcda9cc37a2e6aa4fedd757e8e2ddc526431f9d4cdeffd5",
+         "version" : "0.0.1"
+      },
+      {
+         "Author" : "none <a4237019c0@emailabox.pro>",
+         "Maintainer" : "none <a4237019c0@emailabox.pro>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/rootfultorootless_0.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:08:08Z",
+         "package" : "rootfultorootless",
+         "sha256" : "aa253f655d8d74ebc7904da7dcde734978f7a90cbcb82c1376dea60ddee83e30",
+         "version" : "0.0.1"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",

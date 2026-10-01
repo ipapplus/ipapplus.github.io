@@ -107,6 +107,38 @@
       "com.cokepokes.libnotifications/0.3-6-1" : {
          "first_added" : "2026-10-01T00:02:31Z",
          "sequence" : 22
+      },
+      "com.cydiageek.noeditpages/1.0.1" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 28
+      },
+      "com.dvntm.safariii/0.0.1" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 29
+      },
+      "com.icraze.fuckoffairdrop/1.0" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 30
+      },
+      "com.nan.disablesblockaftercrash/0.1.0" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 31
+      },
+      "com.nan.disablethermalmonitord/0.1.0" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 32
+      },
+      "com.nan.disableupdates/0.1.1" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 33
+      },
+      "daniel.trustevaluator/0.0.1" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 34
+      },
+      "rootfultorootless/0.0.1" : {
+         "first_added" : "2026-10-01T00:08:08Z",
+         "sequence" : 35
       }
    },
    "schema" : 1
