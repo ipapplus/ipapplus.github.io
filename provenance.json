@@ -3321,6 +3321,17 @@
          "version" : "1.8.1"
       },
       {
+         "Author" : "Dcsyhi <dcsyhi1998@gmail.com>",
+         "Depiction" : "https://chariz.com/get/zetsu",
+         "Maintainer" : "Dcsyhi <dcsyhi1998@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.zetsu_1.6.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:48:03Z",
+         "package" : "jp.dcsyhi.zetsu",
+         "sha256" : "4cf698d8981228f0f1baf28305434fced1c48c37b0c9f5643fbde978b6654be0",
+         "version" : "1.6.4"
+      },
+      {
          "Author" : "r_plus",
          "Maintainer" : "r_plus",
          "architecture" : "iphoneos-arm64e",

@@ -6422,6 +6422,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/jp.dcsyhi.kbappdock_1.8.1_
 Size: 1068916
 Version: 1.8.1
 
+Package: jp.dcsyhi.zetsu
+Architecture: iphoneos-arm64e
+Author: Dcsyhi <dcsyhi1998@gmail.com>
+Depends: mobilesubstrate,firmware (>=15.0),preferenceloader,com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/jp.dcsyhi.zetsu_1.6.4_iphoneos-arm64e.html
+Description: Multitasking on iOS15 - iOS16.
+Filename: debs/jp.dcsyhi.zetsu_1.6.4_iphoneos-arm64e.deb
+Icon: https://img.chariz.cloud/icon/zetsu/icon@3x.png
+Installed-Size: 15243
+MD5sum: 2f5c15da29575fdfcc5633739d9ed34d
+Maintainer: Dcsyhi <dcsyhi1998@gmail.com>
+Name: Zetsu
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: f3acc1c9020baf308014e01212e4e1a4157a790e
+SHA256: 4cf698d8981228f0f1baf28305434fced1c48c37b0c9f5643fbde978b6654be0
+SHA512: 5ab8a08dcf202230153866c88a2d00e1c121ddd95c33e2b6656efc224d11735dbddfc0e15a33a247b00b06cbee8872c7c3af25396228014c72a140384a483931
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/jp.dcsyhi.zetsu_1.6.4_iphoneos-arm64e.json
+Size: 13163204
+Tag: compatible_min::ios15.0
+Version: 1.6.4
+
 Package: jp.r-plus.menusupport
 Architecture: iphoneos-arm64e
 Author: r_plus
