@@ -1172,6 +1172,31 @@ Tag: compatible_min::iOS9
 Version: 1.5.8
 
 Package: com.creaturecoding.shuffle
+Architecture: iphoneos-arm64
+Author: CreatureSurvive <support@creaturecoding.com>
+Conflicts: com.cpdigitaldarkroom.placeholder
+Depends: com.creaturecoding.libcspreferences
+Depiction: https://ipapplus.github.io/depictions/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64.html
+Description: Organize your settings
+Filename: debs/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64.deb
+Homepage: https://creaturecoding.com/
+Icon: file:///Library/PreferenceBundles/shuffle.bundle/SettingsIcon@3x.png
+Installed-Size: 1484
+MD5sum: 8267934e59d03366bf6c2744747e4313
+Maintainer: CreatureSurvive <support@creaturecoding.com>
+Name: Shuffle
+Pre-Depends: firmware (>= 8.0), com.ex.libsubstitute | org.coolstar.libhooker | mobilesubstrate
+Replaces: com.cpdigitaldarkroom.placeholder
+SHA1: f6d794de9043d61e8096a21df8c04009158bfce1
+SHA256: e6a6c5dcbfc00b6635aedaae5719a7224ff448d1d96088e442636394b099929f
+SHA512: 63130d476be01bfa8c573879436c9a17fbab1696c59497dcfb14e5ae73c3a13e5ad5d607a599272fcb41e69d6164f735c28d90f19b7b25278cbc4dc67259a6c7
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64.json
+Size: 253664
+Tag: purpose::extension, compatible_min::ios10
+Version: 1.6.2
+
+Package: com.creaturecoding.shuffle
 Architecture: iphoneos-arm64e
 Author: CreatureSurvive <support@creaturecoding.com>
 Conflicts: com.cpdigitaldarkroom.placeholder
@@ -1220,6 +1245,23 @@ Size: 383704
 Tag: purpose::application, compatible_min::ios10
 Version: 1.0.8
 dev: CreatureSurvive
+
+Package: com.creaturesurvive.libcscolorpicker
+Architecture: iphoneos-arm64
+Author: CreatureSurvive <support@creaturecoding.com>
+Depiction: https://ipapplus.github.io/depictions/com.creaturesurvive.libcscolorpicker_1.0.6_iphoneos-arm64.html
+Description: A minimal color picker library for developers
+Filename: debs/com.creaturesurvive.libcscolorpicker_1.0.6_iphoneos-arm64.deb
+MD5sum: 091a5a370ee9e6db37622b7816416d74
+Maintainer: CreatureSurvive <support@creaturecoding.com>
+Name: libCSColorPicker
+SHA1: 744ebc39ba5ded7762a229b1b9807bd20bef0876
+SHA256: 5885ba67ce77e37efdc4cc3a94f5e313e2e141aa81540edf3cd4220143cf1a7b
+SHA512: 51bcf73adaa60432e871a30341af45ebfa4d83f3c7f7c96311a4e9c3b37bc8c3d9b9a79427ea6899684194ebf7387ade328b1a7d82be03eb229f2f7fc833cb59
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.creaturesurvive.libcscolorpicker_1.0.6_iphoneos-arm64.json
+Size: 149140
+Version: 1.0.6
 
 Package: com.creaturesurvive.libcscolorpicker
 Architecture: iphoneos-arm64e
@@ -2063,6 +2105,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.firstlook_0.0.3_iphoneos-arm64e.json
 Size: 8548
 Version: 0.0.3
+
+Package: com.dvntm.flow
+Architecture: iphoneos-arm64
+Author: dvntm, nowesr1
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.flow_1.0_iphoneos-arm64.html
+Description: A lightweight Messenger enhancer
+Filename: debs/com.dvntm.flow_1.0_iphoneos-arm64.deb
+Icon: https://raw.githubusercontent.com/dayanch96/Flow/refs/heads/main/Sileo/icon.png
+Installed-Size: 532
+MD5sum: 398b1c9556ecec78b48b29b6bdffb010
+Maintainer: dvntm, nowesr1
+Name: Flow for Messenger
+SHA1: 8dee0f3a4e5fed6e2045a0dd4610a4f7b44753f4
+SHA256: dedb85ea5b8c78db4b8a5dcf429637b73d1025cbe070bb3e4b8f4b082514535c
+SHA512: 4150de15e2884397ef3b902a262d7584e7b81197983333b969089ee6fc4088c0c86e7bbcacd5ed98907dc4da6fdd3d7850490c058d093d2bd184519a785b3433
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.flow_1.0_iphoneos-arm64.json
+Size: 229032
+Version: 1.0
 
 Package: com.dvntm.flow
 Architecture: iphoneos-arm64e
@@ -3060,6 +3122,25 @@ Size: 61532
 Version: 1.5.0
 
 Package: com.haoict.ResolutionSetterSwift
+Architecture: iphoneos-arm64
+Author: @halo_michael
+Depends: firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64.html
+Description: Resolution Setter
+Filename: debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64.deb
+Icon: https://i.imgur.com/phJx0ua.jpeg
+MD5sum: 9a7f95f75a555d45f4e4e301257ef6b2
+Maintainer: @haoict
+Name: Res Setter
+SHA1: c74c89edb6bc93bab2291550fac5aa4e8cb0579a
+SHA256: 013f17c5e60e18fc582884c257b7569ecb3c0ea7b0b8951b4c9d5a4436ff9e12
+SHA512: eae4d925a7d36049cfaa8435e93ba90b7a6a1db12e5dbf36c681d185581531dee011024262cba0049b7bfc11e14ea999511a2eb94dc812a592b8d9f0b00b3c07
+Section: Applications
+SileoDepiction: https://ipapplus.github.io/depictions/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64.json
+Size: 193476
+Version: 1.1
+
+Package: com.haoict.ResolutionSetterSwift
 Architecture: iphoneos-arm64e
 Author: @halo_michael
 Depends: firmware (>= 15.0)
@@ -3260,6 +3341,32 @@ Section: System
 SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.otadisabler_0.6_iphoneos-arm64e.json
 Size: 51500
 Version: 0.6
+
+Package: com.ichitaso.powerselector11
+Architecture: iphoneos-arm64
+Author: ichitaso <willfeeltips+ps11@gmail.com>
+Conflicts: com.ichitaso.powerselector, com.dpkgdan.powertap, com.weesstt.powerdownoptions, com.subdiox.powertap2, com.rustybalboa.powertapxi
+Depends: mobilesubstrate, preferenceloader, com.opa334.ccsupport
+Depiction: https://ipapplus.github.io/depictions/com.ichitaso.powerselector11_1.4.0_iphoneos-arm64.html
+Description: The power supply relation of a device is operated.
+Filename: debs/com.ichitaso.powerselector11_1.4.0_iphoneos-arm64.deb
+Homepage: https://cydia.ichitaso.com/depiction/powerselector11.html
+Icon: https://cydia.ichitaso.com/icons/PowerSelector.png
+Installed-Size: 2212
+MD5sum: 3efcdeedae87f3303fdcc63b96d5e9da
+Maintainer: ichitaso <willfeeltips+ps11@gmail.com>
+Name: PowerSelector
+Pre-Depends: firmware (>= 11.0)
+Replaces: com.ichitaso.powerselector11
+SHA1: 008c370e54435354e1f989595ecd73e4d59dee47
+SHA256: fd341c2defc42e4b0bb67b61534e210dae16425df8c34b72dbd55d8576f37b63
+SHA512: 23030fff1e5f5a1205c88340a512195da6c0c4646f2af371a40b4c62dad4ceda7237848f3e260d89a7385312bd430faa4694685b42337ddeffa57f6c341c75c4
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.ichitaso.powerselector11_1.4.0_iphoneos-arm64.json
+Size: 201888
+Tag: purpose::extension, compatible_min::ios11.0, compatible_max::ios17.1.2
+Version: 1.4.0
+dev: ichitaso
 
 Package: com.ichitaso.powerselector11
 Architecture: iphoneos-arm64e
@@ -4272,6 +4379,26 @@ Size: 20868
 Version: 1.0.5
 
 Package: com.miro.libmiro
+Architecture: iphoneos-arm64
+Author: MiRO <tweaks_support@miro92.com>
+Depends: firmware (>=14.0)
+Depiction: https://ipapplus.github.io/depictions/com.miro.libmiro_1.1_iphoneos-arm64.html
+Description: Shared library for my tweaks.
+Filename: debs/com.miro.libmiro_1.1_iphoneos-arm64.deb
+Installed-Size: 1876
+MD5sum: 3ef753776569c431f3a73afc4eb79391
+Maintainer: MiRO <tweaks_support@miro92.com>
+Name: libMiRO
+SHA1: d26a3fd31788bda4e10e096b722f35a9e82f54ca
+SHA256: 7abd99ed14088e9b30899acd2f0df7bbb44874de2b063c0b08b534bd2a0c1e7c
+SHA512: 750727108f667f0675934b2b8b72cf0cd1276243cc18c3e46eacc1ee9dabffd1a3cee88e56abad25884a99a39aa9e4b3d054d45e21f14cf7f5608fa209d4bf56
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libmiro_1.1_iphoneos-arm64.json
+Size: 255876
+Tag: role::developer, compatible_min::ios14
+Version: 1.1
+
+Package: com.miro.libmiro
 Architecture: iphoneos-arm64e
 Author: MiRO <tweaks_support@miro92.com>
 Depends: firmware (>=14.0)
@@ -4289,6 +4416,26 @@ SHA512: 43ce2986e29b6baa641093e7b5551db28e004becb5be7511ad7a208064c89e7b2ad3dc24
 Section: Development
 SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libmiro_1.1_iphoneos-arm64e.json
 Size: 247104
+Tag: role::developer, compatible_min::ios14
+Version: 1.1
+
+Package: com.miro.libmiroprefs
+Architecture: iphoneos-arm64
+Author: MiRO <tweaks_support@miro92.com>
+Depends: firmware (>=14.0)
+Depiction: https://ipapplus.github.io/depictions/com.miro.libmiroprefs_1.1_iphoneos-arm64.html
+Description: Shared library for my tweaks' preferences.
+Filename: debs/com.miro.libmiroprefs_1.1_iphoneos-arm64.deb
+Installed-Size: 1140
+MD5sum: 4ccfaf13851e8b18bbe7a4946a6eeeeb
+Maintainer: MiRO <tweaks_support@miro92.com>
+Name: libMiROPrefs
+SHA1: 95cf3fd1400760a3f408d96d8facd251b1cde47a
+SHA256: 781c456a48851805dae5400730e27023d6640e0bca36f948bdd783be21aab79e
+SHA512: c67a79d76139d25ce81a0c028e4085a773f63c1d19c6e338145ee993c9728ec9071b9d0ea232aba40289eac2fa2ab4b03f69a3ea5ddd71d4d0adc3d0a20fd92c
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libmiroprefs_1.1_iphoneos-arm64.json
+Size: 212304
 Tag: role::developer, compatible_min::ios14
 Version: 1.1
 
@@ -4333,6 +4480,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libmiroshared_1.0
 Size: 708524
 Tag: role::developer, compatible_min::ios14
 Version: 1.0.2
+
+Package: com.miro.libphonenumber
+Architecture: iphoneos-arm64
+Author: MiRO <tweaks_support@miro92.com>
+Depends: firmware (>=14.0)
+Depiction: https://ipapplus.github.io/depictions/com.miro.libphonenumber_2.0_iphoneos-arm64.html
+Description: Google's phone number handling library.
+Filename: debs/com.miro.libphonenumber_2.0_iphoneos-arm64.deb
+Installed-Size: 796
+MD5sum: ae3f9d36135b319eaa7bee9f7aba1d85
+Maintainer: MiRO <tweaks_support@miro92.com>
+Name: libPhoneNumber
+SHA1: 399bb631a57458781768c31d21e7610de8c1d961
+SHA256: ccfb41743c92bda36a98f3c53f112be6d0a72787dfbe8720815787bdf3c72123
+SHA512: bbb76cbe74128e237a1b81750821113d3167ec0cecd24ef65856b943cd5c492fb26e9e378f834bb35555e12cb3a8a6245b2d22cd96f156c16b2d9621cebcb517
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.miro.libphonenumber_2.0_iphoneos-arm64.json
+Size: 145072
+Tag: role::developer, compatible_min::ios14
+Version: 2.0
 
 Package: com.miro.libphonenumber
 Architecture: iphoneos-arm64e
@@ -4667,6 +4834,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.mtac.vitreux_1.3_iphoneos-arm64e.json
 Size: 5927572
 Version: 1.3
+
+Package: com.muirey03.cr4shed
+Architecture: iphoneos-arm64
+Author: Muirey03
+Depends: mobilesubstrate, firmware (>= 9.0), ws.hbang.common (>= 1.11), cm90.crossoveripc, com.cokepokes.libnotifications
+Depiction: https://ipapplus.github.io/depictions/com.muirey03.cr4shed_4.3.1-1_iphoneos-arm64.html
+Description: A modern crash reporter for iOS
+Filename: debs/com.muirey03.cr4shed_4.3.1-1_iphoneos-arm64.deb
+Installed-Size: 2404
+MD5sum: 2c84e35732752ac1e43fa4d941585cd5
+Maintainer: Muirey03
+Name: Cr4shed
+SHA1: e3a69dce0883a3ade2ef00c3c13fff471da50140
+SHA256: ce4fb25afae5fd8c6207876c422112e49f7d45d9a46fdf322f97859ff7e4572e
+SHA512: 89080f52c2bc90c16c1795d43d210b29eae016502d9b32239fee1a0d2c3dc7bd7097e9778faf5c59213970164ecd8a8641424319e7081ca6b170e83d088fd50b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.muirey03.cr4shed_4.3.1-1_iphoneos-arm64.json
+Size: 197516
+Version: 4.3.1-1
 
 Package: com.muirey03.cr4shed
 Architecture: iphoneos-arm64e
@@ -5817,6 +6003,25 @@ Section: Applications
 SileoDepiction: https://ipapplus.github.io/depictions/com.opa334.trollstorehelper_2.1_iphoneos-arm64e.json
 Size: 1913204
 Version: 2.1
+
+Package: com.opa334.trollstorelite
+Architecture: iphoneos-arm64
+Author: opa334
+Depends: ldid
+Depiction: https://ipapplus.github.io/depictions/com.opa334.trollstorelite_2.1.1_iphoneos-arm64.html
+Description: TrollStore for jailbroken iOS
+Filename: debs/com.opa334.trollstorelite_2.1.1_iphoneos-arm64.deb
+Installed-Size: 592
+MD5sum: 81b64953d5407c536bf2c10d24f65a60
+Maintainer: opa334
+Name: TrollStore Lite
+SHA1: 6ca01090d28c6f87bb8c8c0fa7227fae9740762e
+SHA256: 0ef7d0c40642c24c36760fe34234f2830d6f4870e73a444571e1ae020ee8f627
+SHA512: aea903eb857972f5f02e2fb68de0ac62eda26d92143127bd6162819833aaea1c1578d3254b412a4a499ae1893de565d8044e3cd891294bff4b32a0cc19e69276
+Section: Applications
+SileoDepiction: https://ipapplus.github.io/depictions/com.opa334.trollstorelite_2.1.1_iphoneos-arm64.json
+Size: 212984
+Version: 2.1.1
 
 Package: com.opa334.trollstorelite
 Architecture: iphoneos-arm64e
@@ -9316,6 +9521,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/xyz.skitty.spectrum_1.1_iphoneos-arm64e.json
 Size: 58276
 Version: 1.1
+
+Package: xyz.xninja.systeminfo
+Architecture: iphoneos-arm64
+Author: ARX8x
+Depends: mobilesubstrate, oldabi
+Depiction: https://ipapplus.github.io/depictions/xyz.xninja.systeminfo_2.7.2-2_iphoneos-arm64.html
+Description: System information in Settings app > General > About, and other sections. Set boot-nonce, save SHSH, battery info etc
+Filename: debs/xyz.xninja.systeminfo_2.7.2-2_iphoneos-arm64.deb
+MD5sum: 0cc2b3c66158b92576d1f9594edfb7bd
+Maintainer: ARX8x
+Name: System Info
+SHA1: fc886d36cec692619507b266c156c8b1487d12f7
+SHA256: c57af2935ed9c91602c1b423ad7c5b148b314219d5bb4021460c10323bbc0aa4
+SHA512: 9d63c00bf2dcf47fea9fd69af93012eb45c9e63331421322727fd8aba41aac6d5273ec491e77b1f0b7f5dd38984583704dd94452f5528be81c5665d6b4254043
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/xyz.xninja.systeminfo_2.7.2-2_iphoneos-arm64.json
+Size: 272628
+Version: 2.7.2-2
 
 Package: xyz.xninja.systeminfo
 Architecture: iphoneos-arm64e

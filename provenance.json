@@ -613,6 +613,19 @@
          "Homepage" : "https://creaturecoding.com/",
          "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
          "SileoDepiction" : "https://creaturecoding.com/sileo/depiction/?package_id=shuffle",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturecoding.shuffle",
+         "sha256" : "e6a6c5dcbfc00b6635aedaae5719a7224ff448d1d96088e442636394b099929f",
+         "version" : "1.6.2"
+      },
+      {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Depiction" : "https://creaturecoding.com/?page=depiction&id=shuffle",
+         "Homepage" : "https://creaturecoding.com/",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "SileoDepiction" : "https://creaturecoding.com/sileo/depiction/?package_id=shuffle",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -632,6 +645,16 @@
          "package" : "com.creaturecoding.tweaksettings",
          "sha256" : "f358fdc10ec56b1d560ba1fa3e9cdf37142465dfe11bc7576ea5e08c9647b90e",
          "version" : "1.0.8"
+      },
+      {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.creaturesurvive.libcscolorpicker_1.0.6_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturesurvive.libcscolorpicker",
+         "sha256" : "5885ba67ce77e37efdc4cc3a94f5e313e2e141aa81540edf3cd4220143cf1a7b",
+         "version" : "1.0.6"
       },
       {
          "Author" : "CreatureSurvive <support@creaturecoding.com>",
@@ -1067,6 +1090,17 @@
          "package" : "com.dvntm.firstlook",
          "sha256" : "45343c29c4d0414c3a97faa94ce459ef4d40d63c70b8696ad65e3827d28cfcd2",
          "version" : "0.0.3"
+      },
+      {
+         "Author" : "dvntm, nowesr1",
+         "Maintainer" : "dvntm, nowesr1",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.dvntm.flow_1.0_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.flow",
+         "sha256" : "dedb85ea5b8c78db4b8a5dcf429637b73d1025cbe070bb3e4b8f4b082514535c",
+         "version" : "1.0"
       },
       {
          "Author" : "dvntm, nowesr1",
@@ -1590,6 +1624,16 @@
       {
          "Author" : "@halo_michael",
          "Maintainer" : "@haoict",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.haoict.ResolutionSetterSwift",
+         "sha256" : "013f17c5e60e18fc582884c257b7569ecb3c0ea7b0b8951b4c9d5a4436ff9e12",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "@halo_michael",
+         "Maintainer" : "@haoict",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -1695,6 +1739,19 @@
          "package" : "com.ichitaso.otadisabler",
          "sha256" : "15d5fc95a040f91206b86ccdabf919b29b126139993e6d7e284f220c8efdadcb",
          "version" : "0.6"
+      },
+      {
+         "Author" : "ichitaso <willfeeltips+ps11@gmail.com>",
+         "Depiction" : "https://cydia.ichitaso.com/depiction/powerselector11.html",
+         "Homepage" : "https://cydia.ichitaso.com/depiction/powerselector11.html",
+         "Maintainer" : "ichitaso <willfeeltips+ps11@gmail.com>",
+         "SileoDepiction" : "https://cydia.ichitaso.com/depiction/powerselector11.json",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.ichitaso.powerselector11_1.4.0_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ichitaso.powerselector11",
+         "sha256" : "fd341c2defc42e4b0bb67b61534e210dae16425df8c34b72dbd55d8576f37b63",
+         "version" : "1.4.0"
       },
       {
          "Author" : "ichitaso <willfeeltips+ps11@gmail.com>",
@@ -2243,11 +2300,33 @@
          "Author" : "MiRO <tweaks_support@miro92.com>",
          "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiro",
          "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.miro.libmiro_1.1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libmiro",
+         "sha256" : "7abd99ed14088e9b30899acd2f0df7bbb44874de2b063c0b08b534bd2a0c1e7c",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiro",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.miro.libmiro_1.1_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:35:15Z",
          "package" : "com.miro.libmiro",
          "sha256" : "1ea0641f9c0d8b558a7667e5c29c953a6ae446afbd4ee1bf38dab0690fdaa89d",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiroprefs",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.miro.libmiroprefs_1.1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libmiroprefs",
+         "sha256" : "781c456a48851805dae5400730e27023d6640e0bca36f948bdd783be21aab79e",
          "version" : "1.1"
       },
       {
@@ -2271,6 +2350,17 @@
          "package" : "com.miro.libmiroshared",
          "sha256" : "126e9e72e35e79da44e46c591295e683de5256846bc8d20e1f564c3c7ecd3a54",
          "version" : "1.0.2"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libphonenumber",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.miro.libphonenumber_2.0_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libphonenumber",
+         "sha256" : "ccfb41743c92bda36a98f3c53f112be6d0a72787dfbe8720815787bdf3c72123",
+         "version" : "2.0"
       },
       {
          "Author" : "MiRO <tweaks_support@miro92.com>",
@@ -2446,6 +2536,16 @@
          "package" : "com.mtac.vitreux",
          "sha256" : "fdb790ba6fb4644ae17bc2f2f4d47219783a03a48d0c28825e8cc61560fcdbb4",
          "version" : "1.3"
+      },
+      {
+         "Author" : "Muirey03",
+         "Maintainer" : "Muirey03",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.muirey03.cr4shed_4.3.1-1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.muirey03.cr4shed",
+         "sha256" : "ce4fb25afae5fd8c6207876c422112e49f7d45d9a46fdf322f97859ff7e4572e",
+         "version" : "4.3.1-1"
       },
       {
          "Author" : "Muirey03",
@@ -3032,6 +3132,16 @@
          "package" : "com.opa334.trollstorehelper",
          "sha256" : "55f0cab792198fa7e79439a0c55bd346bc9701c02787436f85e4921f56f343cb",
          "version" : "2.1"
+      },
+      {
+         "Author" : "opa334",
+         "Maintainer" : "opa334",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.opa334.trollstorelite_2.1.1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.opa334.trollstorelite",
+         "sha256" : "0ef7d0c40642c24c36760fe34234f2830d6f4870e73a444571e1ae020ee8f627",
+         "version" : "2.1.1"
       },
       {
          "Author" : "opa334",
@@ -4869,6 +4979,17 @@
          "package" : "xyz.skitty.spectrum",
          "sha256" : "9c7d9578dba915c3f463e026d7a3ed77fa14d0411bc81d5a66e02eb52dc1f08d",
          "version" : "1.1"
+      },
+      {
+         "Author" : "ARX8x",
+         "Depiction" : "https://arx8x.github.io/depictions/systeminfo.html",
+         "Maintainer" : "ARX8x",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/xyz.xninja.systeminfo_2.7.2-2_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "xyz.xninja.systeminfo",
+         "sha256" : "c57af2935ed9c91602c1b423ad7c5b148b314219d5bb4021460c10323bbc0aa4",
+         "version" : "2.7.2-2"
       },
       {
          "Author" : "ARX8x",
