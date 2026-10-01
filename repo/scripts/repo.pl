@@ -178,14 +178,10 @@ sub update_metadata {
     $out{'packages.html'}=catalog_page(\@cards,$dates[-1]);
     return %out;
 }
-# Archives are the inventory. Never consult Git or an old Packages file.
+# Archives under debs/ are the inventory. up.sh creates the directory tree
+# and moves any archives dropped in the repository root before this runs.
 my @paths;
-opendir my $top,'.' or die $!;
-push @paths,grep {/\.deb\z/} readdir $top;
-closedir $top;
-if (-d 'debs') {
-    find({no_chdir=>1,wanted=>sub {push @paths,$File::Find::name if /\.deb\z/}},'debs');
-}
+find({no_chdir=>1,wanted=>sub {push @paths,$File::Find::name if /\.deb\z/}},'debs') if -d 'debs';
 my (@items,%identities);
 for my $path (sort @paths) {
     my $a=archive($path);
