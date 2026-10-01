@@ -2864,6 +2864,18 @@
          "version" : "1.8.2-5"
       },
       {
+         "Author" : "TitanD3v",
+         "Depiction" : "https://a7m.dev/file/a/titand3vlib/index.html",
+         "Maintainer" : "TitanD3v",
+         "SileoDepiction" : "https://a7m.dev/file/a/titand3vlib/index.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.titand3v.libtitand3vuniversal_1.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:45:33Z",
+         "package" : "com.titand3v.libtitand3vuniversal",
+         "sha256" : "b944074adb730cd636d334a727c207cb7438ff705d6664bb0b723e797f71b351",
+         "version" : "1.9"
+      },
+      {
          "Author" : "TitanD3v <titand3veloper@gmail.com>",
          "Depiction" : "https://a7m.dev/file/a/speedy/index.html",
          "Maintainer" : "TitanD3v <titand3veloper@gmail.com>",

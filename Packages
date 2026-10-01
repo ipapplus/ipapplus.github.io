@@ -5558,6 +5558,26 @@ Tag: purpose::uikit
 Version: 1.8.2-5
 dev: satashi2009
 
+Package: com.titand3v.libtitand3vuniversal
+Architecture: iphoneos-arm64e
+Author: TitanD3v
+Depiction: https://ipapplus.github.io/depictions/com.titand3v.libtitand3vuniversal_1.9_iphoneos-arm64e.html
+Description: TitanD3v universal library!
+Filename: debs/com.titand3v.libtitand3vuniversal_1.9_iphoneos-arm64e.deb
+Icon: https://a7m.dev/file/a/titand3vlib/assets/icon.png
+Installed-Size: 13120
+MD5sum: aa7753f74c8ee1e8b0ea1ad4db5be196
+Maintainer: TitanD3v
+Name: libTitanD3vUniversal
+SHA1: eb838ce7af105f2270d072d72ae2aeca27c5a8fc
+SHA256: b944074adb730cd636d334a727c207cb7438ff705d6664bb0b723e797f71b351
+SHA512: 6ab5795c8e1bdb93c8c1c4cd000577e96e4afbb720b98d16f3777dd5cf73ae7042f7c279e315cd81ae873edce5301c1d637bc9edb2cd621557c4f62ecf8342fa
+Section: System
+SileoDepiction: https://ipapplus.github.io/depictions/com.titand3v.libtitand3vuniversal_1.9_iphoneos-arm64e.json
+Size: 10088728
+Tag: role::developer
+Version: 1.9
+
 Package: com.titand3v.speedy
 Architecture: iphoneos-arm64e
 Author: TitanD3v <titand3veloper@gmail.com>
