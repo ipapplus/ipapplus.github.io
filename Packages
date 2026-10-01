@@ -2241,6 +2241,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.f0u4d.watusitools_2.8.
 Size: 4663568
 Version: 2.8.4
 
+Package: com.faroukbmiled.ryukgram
+Architecture: iphoneos-arm64e
+Author: Ryuk
+Conflicts: com.faroukbmiled.ryukgram.legacy
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm64e.html
+Description: A feature-rich enhancement suite for Instagram on iOS
+Filename: debs/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm64e.deb
+Homepage: https://github.com/faroukbmiled/RyukGram
+Installed-Size: 5028
+MD5sum: 74939a2b2e3c51f97337a514bc360473
+Maintainer: Ryuk
+Name: RyukGram
+Replaces: com.faroukbmiled.ryukgram.legacy
+SHA1: e239cd26c319049103bc27c82e54c737cd264a7e
+SHA256: 6f99772e30757af02bb31a25b9cb47538ababbc67e44f5f5aee180370281b37a
+SHA512: 88ab7c37e89a0682c234856b5f80e4889a61f5b8063aa726348ed6e84b9b5041c8c79ae5bf6f327731ebb9241d0089a44c75bf1bf1d15f2da68f1f50e073c6c2
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.faroukbmiled.ryukgram_1.3.3_iphoneos-arm64e.json
+Size: 16831012
+Version: 1.3.3
+
 Package: com.fiore.calculatorhistory
 Architecture: iphoneos-arm64e
 Author: fiore
