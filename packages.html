@@ -1,53 +1,35 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0a0d14"><title>Latest additions · ipapplus Repo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0a0d14"><title>Tweaks · ipapplus Repo</title>
+<style>
 *{box-sizing:border-box}body{margin:0;background:#0a0d14;color:#e4e7ec;font:14px/1.4 system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}main{max-width:760px;margin:0 auto;padding:24px 14px;padding-bottom:calc(24px + env(safe-area-inset-bottom))}a{color:#d4a574}button,input{font:inherit}button,a{-webkit-tap-highlight-color:rgba(212,165,116,.15)}a:focus,button:focus,input:focus{outline:2px solid #d4a574;outline-offset:3px}[hidden]{display:none!important}.back{display:inline-block;min-height:44px;padding:10px 0;text-decoration:none}.heading{display:flex;align-items:center;justify-content:space-between;margin:10px 0 2px}h1{font-size:26px;line-height:1.1;letter-spacing:-.04em;margin:0 8px 0 0}.icon-button{flex-shrink:0;width:44px;height:44px;background:#11151f;color:#d4a574;border:1px solid #30384a;border-radius:10px;cursor:pointer}.icon-button svg{width:19px;height:19px;vertical-align:middle}.updated{display:block;color:#9aa3b7;font-size:12px;min-height:17px;margin-bottom:14px}.search{display:flex;margin:12px 0}.search input{min-width:0;flex:1;width:100%;height:44px;border:1px solid #30384a;border-radius:10px;background:#11151f;color:#e4e7ec;padding:10px;font-size:16px;-webkit-appearance:none}.search button{margin-left:8px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}article{position:relative;display:flex;align-items:center;background:#11151f;border:1px solid #262d3d;border-radius:12px;padding:10px 12px;margin:7px 0}.summary{flex:1;min-width:0;margin-right:10px}h2{font-size:15px;line-height:1.25;margin:0;overflow-wrap:break-word;word-wrap:break-word}h2 a{text-decoration:none;color:#e4e7ec}.version{color:#9aa3b7;font-size:11px;font-weight:400;margin-left:6px;word-break:break-all}.description{color:#c1c6d1;font-size:12px;line-height:1.35;margin:4px 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.targets{color:#d4a574;font-size:10px;margin:0}.action{flex-shrink:0}.download{display:inline-block;text-align:center;text-decoration:none;min-height:44px;padding:12px 10px;color:#e7b987;background:#191922;border:1px solid #5c4b3c;border-radius:9px;font-size:12px;cursor:pointer}.download:hover,.choices a:hover{background:#30271f}.choices{position:absolute;z-index:3;right:10px;top:calc(100% - 5px);width:156px;padding:4px;background:#161b27;border:1px solid #5c4b3c;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.45)}.choices a{display:block;padding:12px;min-height:44px;text-decoration:none;border-radius:6px}.empty{color:#c1c6d1;padding:24px 4px}.metadata{font-size:12px;margin-top:24px}.metadata a{display:inline-block;padding:10px 0}noscript a{display:inline-block;margin:4px;padding:8px}@media(min-width:600px){main{padding-top:36px}h1{font-size:34px}article{padding:12px 16px}h2{font-size:16px}.description{font-size:13px}}@supports(padding:max(0px)){main{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}}
 
-:root{--bg:#0a0d14;--bg-2:#0f131e;--card:#11151f;--card-2:#161b27;--border:#1e2435;--border-2:#2a3145;--fg:#e4e7ec;--fg-2:#c1c6d1;--muted:#6b7489;--accent:#d4a574;--accent-soft:rgba(212,165,116,.1)}
-.package-browser{margin-top:22px;padding-top:18px;border-top:1px solid var(--border)}
-.package-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;margin-bottom:12px}
-.package-browser h2{font-size:17px}
-.package-search-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border-2);border-radius:10px;background:var(--bg-2);color:var(--fg-2);cursor:pointer}
-.package-search-toggle svg{width:19px;height:19px}
-.package-search-toggle[aria-expanded="true"]{color:var(--accent);border-color:var(--accent)}
-.package-search-panel{position:absolute;top:calc(100% + 8px);right:0;width:100%;padding:14px;background:var(--card-2);border:1px solid var(--border-2);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.4);z-index:3}
-.package-search-panel[hidden],.package-choices[hidden]{display:none}
-.package-browser label{display:block;font-size:12px;color:var(--fg-2);margin-bottom:6px}
-#package-search{width:100%;padding:12px;border:1px solid var(--border-2);border-radius:10px;background:var(--bg-2);color:var(--fg);font:inherit;font-size:16px}
-#package-search:focus-visible,.package-download:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-#package-status{margin:10px 0;font-size:12px;color:var(--fg-2)}
-#package-list{display:flex;flex-direction:column;gap:10px;max-height:60vh;overflow-y:auto}
-.package-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;column-gap:8px;row-gap:4px;padding:12px;background:var(--bg-2);border:1px solid var(--border);border-radius:12px;flex-shrink:0}
-.package-entry[hidden]{display:none}
-.package-content{min-width:0}
-.package-title{display:flex;align-items:baseline;gap:6px;min-width:0;margin-bottom:6px}
-.package-entry h3{font-size:14px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.package-version{font-size:10px;color:var(--muted);flex-shrink:1;min-width:0;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.package-meta{grid-column:1/-1;font-size:10px;color:var(--muted);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.package-description{font-size:12px;line-height:1.5;color:var(--fg-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.package-download{display:inline-flex;align-items:center;justify-content:center;padding:8px;min-height:36px;border:1px solid var(--border-2);border-radius:8px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font:inherit;font-size:11px;cursor:pointer}
-.package-actions,.architecture-filters{display:flex;align-items:center;gap:6px}
-.architecture-filters{margin-top:10px}
-.package-copy,.architecture-filters button{border:1px solid var(--border-2);border-radius:8px;background:var(--bg-2);color:var(--fg-2);font:inherit;cursor:pointer}
-.architecture-filters{flex-wrap:wrap}
-.architecture-filters button{padding:10px;font-size:12px;min-height:44px}
-.package-copy{width:32px;min-height:36px;padding:3px;font-size:0;flex-shrink:0}
-.package-copy::before{content:'⧉';display:block;font-size:17px;line-height:1.2}
-.package-copy[data-feedback="Copied!"]::before{content:'✓';color:var(--accent)}
+/* Dynamic cards use the original uploaded page's compact styling. */
+#package-status{margin:10px 0;color:#c1c6d1;font-size:12px}
+.package-content{flex:1;min-width:0;margin-right:10px}
+.package-title{display:flex;align-items:baseline;gap:6px;min-width:0}
+.package-entry h3{font-size:15px;line-height:1.25;margin:0;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.package-version{color:#9aa3b7;font-size:11px;font-weight:400;min-width:0;max-width:45%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.package-description{color:#c1c6d1;font-size:12px;line-height:1.35;margin:4px 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.package-meta{color:#d4a574;font-size:10px;margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.package-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.package-download,.package-copy{display:inline-flex;align-items:center;justify-content:center;width:34px;min-height:44px;padding:3px;color:#e7b987;background:#191922;border:1px solid #5c4b3c;border-radius:9px;text-decoration:none;cursor:pointer}
+.package-download svg,.package-copy svg{width:17px;height:17px}
+.package-download:hover,.package-copy:hover{background:#30271f}
+.package-copy{font-size:0}
+.package-copy[data-feedback] svg{display:none}
+.package-copy[data-feedback]::before{display:block;font-size:17px;line-height:1.2}
+.package-copy[data-feedback="Copied!"]::before{content:'✓';color:#d4a574}
 .package-copy[data-feedback="Copy failed"]::before{content:'!'}
-.package-choices{position:fixed;z-index:30;width:140px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--border-2);border-radius:10px;background:var(--card-2);box-shadow:0 12px 28px rgba(0,0,0,.4);overflow-y:auto}
-.package-choice{display:block}
-.package-choice[hidden]{display:none}
-.package-target{display:block;width:100%;padding:11px 10px;min-height:40px;border:0;border-radius:6px;background:transparent;color:var(--fg-2);text-decoration:none;text-align:left;font:inherit;font-size:12px;cursor:pointer}
-.package-target:hover,.package-target:focus-visible{background:var(--accent-soft);color:var(--accent)}
-.package-target[hidden]{display:none}
-.architecture-filters button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
-.package-copy:focus-visible,.architecture-filters button:focus-visible,.package-search-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-
-body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-list{max-height:none;overflow:visible;gap:0}.package-entry{margin:7px 0;padding:10px 12px;background:var(--card);align-items:start}.package-entry h3{margin:0}.package-title{margin-bottom:4px}.package-description{margin:0}.package-meta{margin:0;color:var(--accent)}.package-actions{align-self:start}.package-download{min-height:44px}.package-copy{min-height:44px;width:34px}.package-copy::before{content:none}.package-copy svg{width:17px;height:17px}.package-copy[data-feedback] svg{display:none}.package-copy[data-feedback]::before{display:block}.architecture-filters{margin:0 0 14px}.heading{gap:8px}h1{font-size:clamp(18px,5.5vw,26px);min-width:0}.package-choices{margin:0}.icon-button:hover,.package-copy:hover{background:var(--card-2);border-color:var(--border-2)}
+.package-choices{position:fixed;z-index:30;width:156px;max-width:calc(100vw - 16px);padding:4px;background:#161b27;border:1px solid #5c4b3c;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.45);overflow-y:auto}
+.package-target{display:block;width:100%;padding:12px;min-height:44px;border:0;border-radius:6px;background:transparent;color:#d4a574;text-decoration:none;text-align:left;cursor:pointer}
+.package-target:hover{background:#30271f}
+.architecture-filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.architecture-filters button{min-height:44px;padding:10px;font-size:12px;color:#c1c6d1;background:#11151f;border:1px solid #30384a;border-radius:10px;cursor:pointer}
+.architecture-filters button[aria-pressed="true"]{color:#e7b987;background:#191922;border-color:#5c4b3c}
+@media(min-width:600px){.package-entry h3{font-size:16px}.package-description{font-size:13px}}
 </style></head><body><main>
 <a class="back" href="index.html">← ipapplus Repo</a>
-<header><div class="heading"><h1>LATEST ADDITIONS</h1><button class="icon-button" id="package-search-toggle" type="button" aria-label="Search packages" aria-controls="package-search-panel" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button></div>
+<header><div class="heading"><h1>Tweaks</h1><button class="icon-button" id="package-search-toggle" type="button" aria-label="Search packages" aria-controls="package-search-panel" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"></circle><path d="m15 15 6 6"></path></svg></button></div>
 <p class="updated" id="last-updated">Last Updated: Unknown</p></header><div id="package-search-panel" hidden><label class="sr-only" for="package-search">Search packages</label><div class="search"><input id="package-search" type="search" placeholder="Name, identifier, description, or filename" autocomplete="off" autocapitalize="none" spellcheck="false"></div><div class="architecture-filters" role="group" aria-label="Filter by architecture"><button type="button" data-architecture="" aria-pressed="true">All</button><button type="button" data-architecture="arm" aria-pressed="false">Rootful</button><button type="button" data-architecture="arm64" aria-pressed="false">Rootless</button><button type="button" data-architecture="arm64e" aria-pressed="false">RootHide</button></div></div><p id="package-status" role="status" aria-live="polite">Loading packages…</p><div id="package-list"></div><noscript>Enable JavaScript to browse packages.</noscript>
 </main><script>
 (function(){
@@ -60,6 +42,7 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
   const architectureLabels={arm:'Rootful',arm64:'Rootless',arm64e:'RootHide'};
   const searchToggle=document.getElementById('package-search-toggle');
   const searchPanel=document.getElementById('package-search-panel');
+  const downloadIcon='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg>';
   const copyIcon='<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V4H4v12h4"></path></svg>';
   let selectedArchitecture='';
   let entries=[];
@@ -113,7 +96,7 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
     const left=viewport?viewport.offsetLeft:0,top=viewport?viewport.offsetTop:0;
     const width=viewport?viewport.width:window.innerWidth,height=viewport?viewport.height:window.innerHeight;
     const menu=entry.choices;
-    menu.style.width=Math.min(140,width-16)+'px';
+    menu.style.width=Math.min(156,width-16)+'px';
     menu.style.maxHeight=Math.max(40,height-16)+'px';
     menu.style.left=Math.max(left+8,Math.min(rect.right-menu.offsetWidth,left+width-menu.offsetWidth-8))+'px';
     const below=rect.bottom+6;
@@ -246,7 +229,7 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
       if(pkg.Description){const description=addText(content,'p','package-description',pkg.Description);description.title=pkg.Description;}
       const actions=document.createElement('div');
       actions.className='package-actions';card.appendChild(actions);
-      const meta=addText(card,'p','package-meta','');
+      const meta=addText(content,'p','package-meta','');
       const variants=group.map(item=>({
         pkg:item,architecture:architectureNames[item.Architecture]||item.Architecture,
         searchText:[item.Package,item.Name,item.Filename,item.Description].filter(Boolean).join('\n').toLowerCase()
@@ -254,7 +237,9 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
       const entry={card,meta,variants};
       const available=variants.filter(variant=>downloadURL(variant.pkg.Filename));
       function addDownload(parent,item){
-        const link=addText(parent,'a','package-download','Download');
+        const link=addText(parent,'a','package-download','');
+        link.innerHTML=downloadIcon;
+        link.setAttribute('aria-label','Download');
         link.href=downloadURL(item.Filename);
         link.setAttribute('download','');
         link.title=sizeLabel(item.Size)?'Download · '+sizeLabel(item.Size):'Download';
@@ -267,7 +252,8 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
       if(available.length===1){
         addDownload(actions,available[0].pkg);
       }else if(available.length>1){
-        entry.download=addText(actions,'button','package-download','Download');
+        entry.download=addText(actions,'button','package-download','');
+        entry.download.innerHTML=downloadIcon;
         entry.copy=addText(actions,'button','package-copy','Copy Link');
         entry.copy.innerHTML=copyIcon;
         entry.choices=document.createElement('div');
@@ -277,7 +263,7 @@ body{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif}#package-lis
         [entry.download,entry.copy].forEach(button=>{
           button.type='button';button.setAttribute('aria-expanded','false');
           button.setAttribute('aria-controls',entry.choices.id);
-          button.setAttribute('aria-label',button===entry.copy?'Choose architecture to copy download link':'Choose download architecture');
+          button.setAttribute('aria-label',button===entry.copy?'Choose architecture to copy download link':'Download');
           button.addEventListener('click',()=>{
             const open=entry.choices.hidden;
             entries.forEach(closeChoices);

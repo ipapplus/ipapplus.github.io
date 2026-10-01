@@ -84,7 +84,7 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg>
     </a>
   </nav>
-  <p id="last-updated">Last Updated: Unknown</p>
+  <p id="last-updated">Last Seen: Unknown</p>
   <footer class="footer">© 2016–2026 <span class="accent">ipapplus</span></footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -123,7 +123,7 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       const count=Math.floor(seconds/(unit==='day'?86400:unit==='hour'?3600:60));
       relative=count+' '+unit+(count===1?'':'s')+' ago';
     }
-    updated.textContent='Last Updated: '+relative;
+    updated.textContent='Last Seen: '+relative;
   }
   fetch('Packages').then(response=>{
     if(!response.ok)throw new Error('Package index request failed');
