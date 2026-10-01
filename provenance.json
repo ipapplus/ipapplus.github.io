@@ -359,6 +359,18 @@
          "package" : "com.bypassjb.sniper",
          "sha256" : "d365c05b9c8df64382f5bc45c454ad27307b0ab9db0ae80dc922e9bd37747a98",
          "version" : "6.2"
+      },
+      {
+         "Author" : "CokePokes <cokepokes@gmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libnotificationsDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libnotificationsDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64",
+         "filename" : "debs/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.deb",
+         "first_added" : "2026-10-01T00:02:31Z",
+         "package" : "com.cokepokes.libnotifications",
+         "sha256" : "cd4f9058b76fad9930374342df0d11c78c7d03c5a478e1ce9813ccae8482ae02",
+         "version" : "0.3-6-1"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",

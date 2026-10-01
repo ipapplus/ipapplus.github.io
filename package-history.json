@@ -83,6 +83,10 @@
       "com.bypassjb.sniper/6.2" : {
          "first_added" : "2026-10-01T00:01:11Z",
          "sequence" : 21
+      },
+      "com.cokepokes.libnotifications/0.3-6-1" : {
+         "first_added" : "2026-10-01T00:02:31Z",
+         "sequence" : 22
       }
    },
    "schema" : 1

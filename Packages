@@ -684,3 +684,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bypassjb.sniper_6.2_ip
 Size: 69784
 Version: 6.2
 
+Package: com.cokepokes.libnotifications
+Architecture: iphoneos-arm64
+Author: CokePokes <cokepokes@gmail.com>
+Depends: firmware (>= 8.0)
+Depiction: https://ipapplus.github.io/depictions/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.html
+Description: App notification library.
+Filename: debs/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.deb
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libnotificationsDp
+Installed-Size: 376
+MD5sum: de0fe9cec6bbc3253c7a2c70fbfca887
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Name: libnotifications
+Priority: optional
+SHA1: 16b118445aa9f05bae8ddceedd5e52708f11d575
+SHA256: cd4f9058b76fad9930374342df0d11c78c7d03c5a478e1ce9813ccae8482ae02
+SHA512: 4b371b719d702a95e5a0399db6728b2f464cd4d5c949c8fda0c2ad632d1e4afced2d3a042d387379342ab4d9cb8bb4881f726fa7ffb8e2e01da6c34717213764
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.json
+Size: 14704
+Sponsor: thebigboss.org <http://thebigboss.org>
+Tag: purpose::extension, compatible::ios8, compatible::ios9, compatible::ios10, compatible::ios11, compatible::ios12, compatible::ios13, compatible::ios14
+Version: 0.3-6-1
+dev: cokepokes
+

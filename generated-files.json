@@ -67,7 +67,9 @@
       "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.html" : "79d6224ec5d130dc385a0347dcea52b210aaefdc6a478855b7177892fffc8b77",
       "depictions/com.asterix.digitalbattery13_1.1.0_iphoneos-arm64e.json" : "8a21d6ec97976fb9083975ff1f285dd3933272009bc00fd7c5b534fba2d26189",
       "depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.html" : "125125cca2525fb024ac0da39e4f24da3e8771d8d68dbb6969b22c06ccaf69fe",
-      "depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.json" : "7083f63b930a8cf7a39e0d81c78d2d92e3ae46de0b512bcf71469154986c2d58"
+      "depictions/com.bypassjb.sniper_6.2_iphoneos-arm64.json" : "7083f63b930a8cf7a39e0d81c78d2d92e3ae46de0b512bcf71469154986c2d58",
+      "depictions/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.html" : "587e04e53c88dd1d08af7a5f3c751fa4bd3f79f2c2e5c8091e2aff6e57249757",
+      "depictions/com.cokepokes.libnotifications_0.3-6-1_iphoneos-arm64.json" : "0ae49ba03a2cb66f3140295cf085697df150bc3943fdab2299119d65c0ffa281"
    },
    "schema" : 1
 }
