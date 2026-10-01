@@ -518,6 +518,16 @@
          "version" : "2.3.1"
       },
       {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.bandarhl.bhtiktok_2.3_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:28:44Z",
+         "package" : "com.bandarhl.bhtiktok",
+         "sha256" : "586d89c2e07d7d58bfe27bb5bda0ecbdc6f474eb89ec08e45f16c8f86ad9cd4b",
+         "version" : "2.3"
+      },
+      {
          "Author" : "Bandar Alruwaili",
          "Maintainer" : "Bandar Alruwaili",
          "architecture" : "iphoneos-arm64",
@@ -1337,6 +1347,17 @@
          "Author" : "dvntm",
          "Maintainer" : "dvntm",
          "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/FastLock/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.dvntm.fastlock_1.0.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.fastlock",
+         "sha256" : "a3e4b9e72dff34c3a1c917bc485125e816935c7587c2b280208847676bb1a599",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/FastLock/main/Sileo/depiction.json",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/com.dvntm.fastlock_1.0.1_iphoneos-arm64.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -1469,6 +1490,17 @@
          "package" : "com.dvntm.glow",
          "sha256" : "57e9def109ef0a867f11a1d66ba6b41eb7ba9b99586cd24aa3f39d3db56d0ab6",
          "version" : "1.3.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/InfusePlus/main/Resources/depiction.json",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.dvntm.infuseplus_2.5_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.infuseplus",
+         "sha256" : "9de17a941468c89c6025ef0efa480cd4ffabcd9de219c004d5600b4822d8b21e",
+         "version" : "2.5"
       },
       {
          "Author" : "dvntm",
@@ -3633,6 +3665,16 @@
       {
          "Author" : "NguyenASang",
          "Maintainer" : "NguyenASang",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.nguyenasang.snmessenger",
+         "sha256" : "a2d2d081461b49f63a8fd9420adb70ac2221f177a1c8febdd66eedea14619e8a",
+         "version" : "2.0.0"
+      },
+      {
+         "Author" : "NguyenASang",
+         "Maintainer" : "NguyenASang",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm64.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -4216,6 +4258,16 @@
          "package" : "com.ryannair05.cylinderremade",
          "sha256" : "fa7e2bcded07a77c01beed4e54993ff11d02657411215b98d7813a211a28dc4e",
          "version" : "0.0.3-beta"
+      },
+      {
+         "Author" : "Ryan Nair",
+         "Maintainer" : "Ryan Nair",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ryannair05.keyboardplus",
+         "sha256" : "4eefa94f3125ca211b3de318a74bea70bd5972ce30e1127498a6e2371dd2a9a7",
+         "version" : "1.1.1"
       },
       {
          "Author" : "Ryan Nair",

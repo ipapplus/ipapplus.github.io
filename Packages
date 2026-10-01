@@ -986,6 +986,26 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3.
 Size: 498596
 Version: 2.3.1
 
+Package: com.bandarhl.bhtiktok
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3_iphoneos-arm.html
+Description: An awesome tweak for TikTok!
+Filename: debs/com.bandarhl.bhtiktok_2.3_iphoneos-arm.deb
+Icon: https://i.imgur.com/PKIhkrt.png
+Installed-Size: 1480
+MD5sum: b804ea5a83668ad57d39587acb50b7a0
+Maintainer: dvntm
+Name: BHTikTok Plus
+SHA1: bb1d00f1ae11996022d30be15d24d108ad59fd41
+SHA256: 586d89c2e07d7d58bfe27bb5bda0ecbdc6f474eb89ec08e45f16c8f86ad9cd4b
+SHA512: 20119ca6df90b4c87b9e1ac2f9c1067d8226db36b6a1bb003d4ed237ac287cc5dcee68b9c572cf014e4b3d4b1afb82b889cd4455fc7be66a2b59a7e6ad8a81ea
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.bhtiktok_2.3_iphoneos-arm.json
+Size: 483216
+Version: 2.3
+
 Package: com.bandarhl.bhtwitter
 Architecture: iphoneos-arm64
 Author: Bandar Alruwaili
@@ -2566,6 +2586,26 @@ Size: 3292
 Version: 0.0.1
 
 Package: com.dvntm.fastlock
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.fastlock_1.0.1_iphoneos-arm.html
+Description: Lock your screen using gestures on SpringBoard
+Filename: debs/com.dvntm.fastlock_1.0.1_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/FastLock/refs/heads/main/Sileo/icon.png
+Installed-Size: 856
+MD5sum: ecffab44699750fd31da4b43db6754fa
+Maintainer: dvntm
+Name: FastLock
+SHA1: bdad5fd15a43fc12495121455c5519d9367e5a25
+SHA256: a3e4b9e72dff34c3a1c917bc485125e816935c7587c2b280208847676bb1a599
+SHA512: b65d71c6ed048c5c9f080a247c7b5baf25cbc9e7d768874f2da0c346247dfa0a0ebd345c82534b02fb6b1e99147939b5965758666dfefa3c9f7cf0271365bf50
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.fastlock_1.0.1_iphoneos-arm.json
+Size: 382888
+Version: 1.0.1
+
+Package: com.dvntm.fastlock
 Architecture: iphoneos-arm64
 Author: dvntm
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -2819,6 +2859,26 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.glow_1.3.1_iphoneos-arm64e.json
 Size: 6905432
 Version: 1.3.1
+
+Package: com.dvntm.infuseplus
+Architecture: iphoneos-arm
+Author: dvntm
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.infuseplus_2.5_iphoneos-arm.html
+Description: Enhancer for Infuse app
+Filename: debs/com.dvntm.infuseplus_2.5_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/InfusePlus/refs/heads/main/Resources/icon.png
+Installed-Size: 1292
+MD5sum: 8985a3bdde7ac347a7180114b1845032
+Maintainer: dvntm
+Name: Infuse Plus
+SHA1: 62da4a71cba0669be471d9f53576fde9ec6d7b05
+SHA256: 9de17a941468c89c6025ef0efa480cd4ffabcd9de219c004d5600b4822d8b21e
+SHA512: f29cac4c05deea586d13ccd219e6c93ad4e244a1157321fc8ee4ab67c9bc5af835352f7c3e7ac6ee4d206c4a9a2b3e5c0d0f06d73f35ed5de91ee11bb6dfafb9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.infuseplus_2.5_iphoneos-arm.json
+Size: 455032
+Version: 2.5
 
 Package: com.dvntm.infuseplus
 Architecture: iphoneos-arm64
@@ -6894,6 +6954,28 @@ Size: 37312
 Version: 1.2.2
 
 Package: com.nguyenasang.snmessenger
+Architecture: iphoneos-arm
+Author: NguyenASang
+Conflicts: com.haoict.messengernoads
+Depends: mobilesubstrate, firmware (>= 12.4)
+Depiction: https://ipapplus.github.io/depictions/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm.html
+Description: A full-featured tweak for Messenger.
+Filename: debs/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm.deb
+Installed-Size: 776
+MD5sum: 8f0dd4d092e1f36599063d94cc2540a6
+Maintainer: NguyenASang
+Name: SNMessenger
+Provides: com.haoict.messengernoads
+Replaces: com.haoict.messengernoads
+SHA1: c6a34172d1b9bf151c990c214030083f0fdd0134
+SHA256: a2d2d081461b49f63a8fd9420adb70ac2221f177a1c8febdd66eedea14619e8a
+SHA512: 32a9081dc43153b39facce5d5354b94042af38a3e2631c0657326a9c5cd951d6447eb0d11ba05e744ab27c5a60ca828c22fcc7d159b0492911e906242caac6d1
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm.json
+Size: 420024
+Version: 2.0.0
+
+Package: com.nguyenasang.snmessenger
 Architecture: iphoneos-arm64
 Author: NguyenASang
 Conflicts: com.haoict.messengernoads
@@ -8028,6 +8110,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.ryannair05.cylinderremade_0.0.3-beta_iphoneos-arm64e.json
 Size: 102752
 Version: 0.0.3-beta
+
+Package: com.ryannair05.keyboardplus
+Architecture: iphoneos-arm
+Author: Ryan Nair
+Depends: mobilesubstrate, preferenceloader, ws.hbang.alderis
+Depiction: https://ipapplus.github.io/depictions/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm.html
+Description: Additional Keyboard Features
+Filename: debs/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm.deb
+Installed-Size: 744
+MD5sum: 2c47da2c0f54e66b9d1ac222e7f675c4
+Maintainer: Ryan Nair
+Name: Keyboard Plus
+SHA1: 2f81e5f4c14c44c1cb6644ffe0c7944bab5935f7
+SHA256: 4eefa94f3125ca211b3de318a74bea70bd5972ce30e1127498a6e2371dd2a9a7
+SHA512: 045d51e9bd80ad569071ddbe2c2d51ea858838d285f345f37c438847f864666810fc8732840d3adb336e0eb9e3f9f73f08dd3c93d8ad619f1e037ec8725bf0b8
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm.json
+Size: 388472
+Version: 1.1.1
 
 Package: com.ryannair05.keyboardplus
 Architecture: iphoneos-arm64
