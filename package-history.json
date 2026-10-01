@@ -772,6 +772,10 @@
          "first_added" : "2026-10-01T01:38:46Z",
          "sequence" : 335
       },
+      "com.nightwind.boldersreborn/1.2.0" : {
+         "first_added" : "2026-10-01T01:43:55Z",
+         "sequence" : 340
+      },
       "com.nightwind.floatingsafari/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 91
@@ -1027,6 +1031,10 @@
       "com.vxbakerxv.emojiskinprefs/1.0.1" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 139
+      },
+      "com.w3ltyyy.lead/1.4.4" : {
+         "first_added" : "2026-10-01T01:43:55Z",
+         "sequence" : 341
       },
       "com.wee1ka.ifetch/6.0.0" : {
          "first_added" : "2026-10-01T01:22:13Z",

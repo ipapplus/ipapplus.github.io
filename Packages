@@ -4334,6 +4334,29 @@ Size: 4865392
 Tag: compatible_min::ios14.0
 Version: 1.1.2
 
+Package: com.nightwind.boldersreborn
+Architecture: iphoneos-arm64e
+Author: Nightwind <nightwinddev@gmail.com>
+Conflicts: com.twickd.sirius24.folderplus, xyz.burritoz.thomz.folded, com.yourepo.i0s-tweak3r-betas.foldercontroller14, com.4nni3.coolfolder, com.lizynz.foldercolor, com.ginsu.4ders, com.iadam1n.statusfolder, com.lizynz.folderx.rootless, com.lizynz.folderx
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.ichitaso.iconorder
+Depiction: https://ipapplus.github.io/depictions/com.nightwind.boldersreborn_1.2.0_iphoneos-arm64e.html
+Description: Bigger and bolder folders, remade!
+Filename: debs/com.nightwind.boldersreborn_1.2.0_iphoneos-arm64e.deb
+Icon: https://img.chariz.cloud/icon/boldersreborn/icon@3x.png
+Installed-Size: 5847
+MD5sum: 2ff37969ab97bc3d42814c62613da879
+Maintainer: Nightwind <nightwinddev@gmail.com>
+Name: Bolders Reborn
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 44f766321ef15299eca5ce931599ebb1b84b510a
+SHA256: d5c681e1f992b44b094382d6d62a90c61eca3cc302fcbee12c934a1e12a10452
+SHA512: f45dccb8dd2821cdcb1d9028e40bc0f6b3f4e88577d3014e1c1b2ac6a66c9b8eb9d166cd8fc16fd450b7f59dbec0d48ea031bf54e7dd58a1ab51629778c9be2a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.nightwind.boldersreborn_1.2.0_iphoneos-arm64e.json
+Size: 10074702
+Tag: compatible_min::ios14.0
+Version: 1.2.0
+
 Package: com.nightwind.floatingsafari
 Architecture: iphoneos-arm64e
 Author: Nightwind
@@ -5656,6 +5679,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.vxbakerxv.emojiskinprefs_1.0.1_iphoneos-arm64e.json
 Size: 16756
 Version: 1.0.1
+
+Package: com.w3ltyyy.lead
+Architecture: iphoneos-arm64e
+Author: w3ltyyy
+Depiction: https://ipapplus.github.io/depictions/com.w3ltyyy.lead_1.4.4_iphoneos-arm64e.html
+Description: The best Tweak For Telegram iOS
+Filename: debs/com.w3ltyyy.lead_1.4.4_iphoneos-arm64e.deb
+Installed-Size: 25176
+MD5sum: b36334655aabd19b5c40ccd1a1860f81
+Maintainer: w3ltyyy
+Name: Lead
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 26cda7c590a7549a8f4864e4fc0f4c467d15e2d3
+SHA256: 7e45b722c93ce5a81a8b27da25ff192c2106be9a7d01eeef3f63a4062e771e0d
+SHA512: 41954cb9b8fc7fe41120178f61a54db9902c2b703c4a001140a20903e93ea70b3b9f1b88d4ebb6fef2943f46e882f332c38b72dc1cfcb4ddd8c5c04540295dc0
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.w3ltyyy.lead_1.4.4_iphoneos-arm64e.json
+Size: 10007388
+Version: 1.4.4
 
 Package: com.wee1ka.ifetch
 Architecture: iphoneos-arm64e

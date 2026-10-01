@@ -2242,6 +2242,17 @@
          "version" : "1.1.2"
       },
       {
+         "Author" : "Nightwind <nightwinddev@gmail.com>",
+         "Depiction" : "https://chariz.com/get/boldersreborn",
+         "Maintainer" : "Nightwind <nightwinddev@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nightwind.boldersreborn_1.2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:43:55Z",
+         "package" : "com.nightwind.boldersreborn",
+         "sha256" : "d5c681e1f992b44b094382d6d62a90c61eca3cc302fcbee12c934a1e12a10452",
+         "version" : "1.2.0"
+      },
+      {
          "Author" : "Nightwind",
          "Maintainer" : "Nightwind",
          "architecture" : "iphoneos-arm64e",
@@ -2919,6 +2930,16 @@
          "package" : "com.vxbakerxv.emojiskinprefs",
          "sha256" : "b0c74adaa329209d9b84ff8fdeac5955c7cfca560296e2acbbfcd65c72b55887",
          "version" : "1.0.1"
+      },
+      {
+         "Author" : "w3ltyyy",
+         "Maintainer" : "w3ltyyy",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.w3ltyyy.lead_1.4.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:43:55Z",
+         "package" : "com.w3ltyyy.lead",
+         "sha256" : "7e45b722c93ce5a81a8b27da25ff192c2106be9a7d01eeef3f63a4062e771e0d",
+         "version" : "1.4.4"
       },
       {
          "Author" : "wee1ka",
