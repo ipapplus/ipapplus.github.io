@@ -1,0 +1,25 @@
+Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
+Codename: ‏​‏  ipapplus | Repo
+Components: main
+Date: Thu, 01 Oct 2026 11:49:00 +0000
+Description: rootful & rootless & roothide
+Icon: https://ipapplus.github.io/CydiaIcon.png
+Label: ‏​‏  ipapplus | Repo
+Origin: ‏​‏  ipapplus | Repo
+Suite: stable
+Version: 1.0
+MD5Sum:
+ 41b25d01df16440d7510ac9695c38f2a 5654 Packages
+ 5fb51ae49b4a0be4a71dfd7a0f9a76e5 1364 Packages.gz
+ 93d0fd8c444deb523b98aa2ea51f1ba8 1665 Packages.bz2
+ 4673beaf9086ea8925d89e684226f8b6 1348 Packages.xz
+SHA256:
+ 9170cbaf0448cef119d9b65d4faf3801f4ee96690a36b6c262c664352dc86cfa 5654 Packages
+ f3ee6beb8236fd630af95937ec48878e889c2a27e51c5fd2fc8ec4cee6de918f 1364 Packages.gz
+ 1fd594515aa9f794eec5cdbc62a47d290086cc25c56e497e6b3448f25132501b 1665 Packages.bz2
+ 451d55a1921dae14f18750b6cf2fd481e5b580ed2132a1106e8b160769866b22 1348 Packages.xz
+SHA512:
+ 140ee512738858b9e9e27ac5232dbaa33b905ae0818545f1a1ff736175f30bb0ae89dc425710e6a719f8bde101235141319430f23e85117c860e0997fe9078ef 5654 Packages
+ 544db56075d91be0777c44212b23b60ca6620189d58296b67f70c5ab8030795169393862a03d559e8efa8b98c9a0b0f17314abdfe223c2e5a522c4b552beea55 1364 Packages.gz
+ 3ac919b846bb185f7058279381e35071e4b6222c5edb14db9efdaf997305bab592db66569afcde16a7d1aa74f623471238fc421841586591cf86a145bc9f3866 1665 Packages.bz2
+ 779d35c0c198defddb1aee21fe6fec328916cf13e16a55b87941ba724be90b275739ee85524f7214848f122f7b31eeef451f639a55591f49b89d13c25e480f4b 1348 Packages.xz
