@@ -1,8 +1,0 @@
-*.deb binary
-*.gz binary
-*.bz2 binary
-*.xz binary
-Packages text eol=lf
-Release text eol=lf
-*.sh text eol=lf
-*.pl text eol=lf
