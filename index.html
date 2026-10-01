@@ -56,6 +56,12 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
 .package-id,.package-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-2);margin-bottom:7px}
 .package-description{font-size:13px;line-height:1.5;white-space:pre-line;margin-bottom:10px}
 .package-download{display:inline-block;padding:10px 14px;border:1px solid var(--border-2);border-radius:8px;background:var(--accent-soft);color:var(--accent);text-decoration:none;font-size:13px}
+.package-actions,.architecture-filters{display:flex;flex-wrap:wrap;gap:8px}
+.architecture-filters{margin-top:10px}
+.package-copy,.architecture-filters button{padding:10px 14px;border:1px solid var(--border-2);border-radius:8px;background:var(--bg-2);color:var(--fg-2);font:inherit;font-size:13px;cursor:pointer}
+.architecture-filters button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.package-copy:focus-visible,.architecture-filters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#last-updated{margin-top:18px;color:var(--fg-2);font-size:12px;line-height:1.5}
 @media(max-width:440px){body{padding:16px}.card{padding:20px;border-radius:18px}.avatar{width:52px;height:52px}.name{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
@@ -91,10 +97,17 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
     </a>
   </nav>
+  <p id="last-updated">Last Updated: Loading…</p>
   <section class="package-browser" aria-labelledby="package-heading">
     <h2 id="package-heading">Packages</h2>
     <label for="package-search">Search packages</label>
     <input id="package-search" type="search" placeholder="Name, filename, or description" autocomplete="off" disabled>
+    <div class="architecture-filters" role="group" aria-label="Filter by architecture">
+      <button type="button" data-architecture="" aria-pressed="true">All</button>
+      <button type="button" data-architecture="arm" aria-pressed="false">arm</button>
+      <button type="button" data-architecture="arm64" aria-pressed="false">arm64</button>
+      <button type="button" data-architecture="arm64e" aria-pressed="false">arm64e</button>
+    </div>
     <p id="package-status" role="status" aria-live="polite">Loading packages…</p>
     <div id="package-list"></div>
     <noscript>Enable JavaScript to browse packages.</noscript>
@@ -129,6 +142,9 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
   const search=document.getElementById('package-search');
   const status=document.getElementById('package-status');
   const list=document.getElementById('package-list');
+  const architectureButtons=document.querySelectorAll('[data-architecture]');
+  const architectureNames={'iphoneos-arm':'arm','iphoneos-arm64':'arm64','iphoneos-arm64e':'arm64e'};
+  let selectedArchitecture='';
   let entries=[];
   function parsePackages(text){
     return text.replace(/\r\n?/g,'\n').split(/\n[ \t]*\n/).filter(block=>block.trim()).map(block=>{
@@ -165,13 +181,47 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
     const query=search.value.toLowerCase();
     let count=0;
     for(const entry of entries){
-      entry.card.hidden=!entry.searchText.includes(query);
+      entry.card.hidden=!entry.searchText.includes(query)||(selectedArchitecture!==''&&entry.architecture!==selectedArchitecture);
       if(!entry.card.hidden)count++;
     }
     status.textContent=count?count+' of '+entries.length+' packages':'No packages found';
   }
   search.addEventListener('input',filterPackages);
+  architectureButtons.forEach(button=>button.addEventListener('click',()=>{
+    selectedArchitecture=button.dataset.architecture;
+    architectureButtons.forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
+    filterPackages();
+  }));
+  async function copyLink(button,url){
+    try{
+      if(navigator.clipboard&&window.isSecureContext){
+        await navigator.clipboard.writeText(url);
+      }else{
+        const area=document.createElement('textarea');
+        area.value=url;area.style.position='fixed';area.style.opacity='0';
+        document.body.appendChild(area);area.select();
+        try{if(!document.execCommand('copy'))throw new Error('Copy failed');}
+        finally{area.remove();button.focus();}
+      }
+      button.textContent='Copied!';
+    }catch(error){
+      button.textContent='Copy failed';
+    }
+    clearTimeout(button.copyTimer);
+    button.copyTimer=setTimeout(()=>{button.textContent='Copy Link';},2000);
+  }
   const indexURL=new URL('Packages',window.location.href);
+  const updated=document.getElementById('last-updated');
+  fetch(new URL('last-updated.txt',indexURL),{cache:'no-cache'}).then(response=>{
+    if(!response.ok)throw new Error('Update time request failed');
+    return response.text();
+  }).then(text=>{
+    const date=new Date(text.trim());
+    if(Number.isNaN(date.getTime()))throw new Error('Invalid update time');
+    updated.textContent='Last Updated: '+date.toLocaleString('en-US',{
+      year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'
+    });
+  }).catch(()=>{updated.textContent='Last Updated: Unavailable';});
   fetch(indexURL).then(response=>{
     if(!response.ok)throw new Error('Package index request failed');
     return response.text();
@@ -183,16 +233,21 @@ body{min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(
       addText(card,'h3','',pkg.Name||pkg.Package||'Unnamed package');
       if(pkg.Package)addText(card,'p','package-id',pkg.Package);
       addText(card,'p','package-meta',[
-        pkg.Version?'Version '+pkg.Version:'',pkg.Architecture,sizeLabel(pkg.Size)
+        pkg.Version?'Version '+pkg.Version:'',architectureNames[pkg.Architecture]||pkg.Architecture,sizeLabel(pkg.Size)
       ].filter(Boolean).join(' · '));
       if(pkg.Description)addText(card,'p','package-description',pkg.Description);
       if(pkg.Filename){
-        const link=addText(card,'a','package-download','Download');
+        const actions=document.createElement('div');
+        actions.className='package-actions';card.appendChild(actions);
+        const link=addText(actions,'a','package-download','Download');
         link.href=new URL(pkg.Filename,indexURL).href;
         link.setAttribute('download','');
+        const copy=addText(actions,'button','package-copy','Copy Link');
+        copy.type='button';
+        copy.addEventListener('click',()=>copyLink(copy,link.href));
       }
       fragment.appendChild(card);
-      return {card,searchText:[pkg.Package,pkg.Name,pkg.Filename,pkg.Description].filter(Boolean).join('\n').toLowerCase()};
+      return {card,architecture:architectureNames[pkg.Architecture]||pkg.Architecture,searchText:[pkg.Package,pkg.Name,pkg.Filename,pkg.Description].filter(Boolean).join('\n').toLowerCase()};
     });
     list.appendChild(fragment);
     search.disabled=false;
