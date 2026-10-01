@@ -459,6 +459,16 @@
          "version" : "0.3-6-1"
       },
       {
+         "Author" : "therealhoodboy",
+         "Maintainer" : "therealhoodboy",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.cureux.cc26glass_1.0.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.cureux.cc26glass",
+         "sha256" : "e8a9ca53a1433631fd1db996cb1488b39579acc72699306b1884d78d9729e40a",
+         "version" : "1.0.4"
+      },
+      {
          "Author" : "CydiaGeek <lucaluca86@aol.com>",
          "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=noeditpagesDp",
          "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=noeditpagesDp",
@@ -517,6 +527,16 @@
          "version" : "1.0-8"
       },
       {
+         "Author" : "DeNsor",
+         "Maintainer" : "DeNsor",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.icatch_1.1-120_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.den.icatch",
+         "sha256" : "23a485d99349d0d779bd33228b5045aa3e4325f2359766003c32cdff3d85ff86",
+         "version" : "1.1-120"
+      },
+      {
          "Author" : "MrDeNsor",
          "Maintainer" : "MrDeNsor",
          "architecture" : "iphoneos-arm64e",
@@ -525,6 +545,16 @@
          "package" : "com.den.locktouchx",
          "sha256" : "d74bb3cd4f90ed7b507074610f4bfbe643ef80aa62b9634085a50c08b4e6a6b3",
          "version" : "1.3-18"
+      },
+      {
+         "Author" : "MrDeNsor",
+         "Maintainer" : "MrDeNsor",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.quickvpn_1.0-6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.den.quickvpn",
+         "sha256" : "816dd2bab30e2e919f5bd6ed6a0e293d8927d17e44f6ec7c5f88b9d1a83067b9",
+         "version" : "1.0-6"
       },
       {
          "Author" : "MrDeNsor <alianwer9988@gmail.com>",
@@ -579,6 +609,17 @@
          "package" : "com.dvntm.ccappicon",
          "sha256" : "cf4e352ef7cfee2d1c649f1e5d8fcebb146876f01185d8d492d73593db819d83",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/CallMeMaybe/main/sources/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.cmm_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.dvntm.cmm",
+         "sha256" : "d740d53ab308430bd50979f572750efb361c1f26e9a01ba1d5222d348b58cb64",
+         "version" : "1.0"
       },
       {
          "Author" : "dvntm",
@@ -716,6 +757,19 @@
          "version" : "1.2.0"
       },
       {
+         "Author" : "ethxnn88 <ethxnn88@gmail.com>",
+         "Depiction" : "https://ethxnn88.github.io/repo/depiction/web/com.ethxnn88.visibleisland-arm64e.html",
+         "Homepage" : "https://shuga.co/",
+         "Maintainer" : "ethxnn88 <ethxnn88@gmail.com>",
+         "SileoDepiction" : "https://ethxnn88.github.io/repo/depiction/native/com.ethxnn88.visibleisland-arm64e.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ethxnn88.visibleisland-arm64e_2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.ethxnn88.visibleisland-arm64e",
+         "sha256" : "3467aaa0f92d1fc8de8e36e803411806012b3dbf8b0bca026addedd2003ba909",
+         "version" : "2.0"
+      },
+      {
          "Author" : "fiore",
          "Maintainer" : "fiore",
          "architecture" : "iphoneos-arm64e",
@@ -734,6 +788,16 @@
          "package" : "com.fiore.ccborder",
          "sha256" : "0bd056a588f0669d3b87a02458aac887fb536a7ef1913f03f194f662cd83f68d",
          "version" : "1.0"
+      },
+      {
+         "Author" : "gilshahar7",
+         "Maintainer" : "gilshahar7",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.gilshahar7.volumepercent_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.gilshahar7.volumepercent",
+         "sha256" : "f1db951d2202dd86ac9350bbb05d3a214478f58c2311baa003152ee14f4a6b12",
+         "version" : "1.0.2"
       },
       {
          "Author" : "ichitaso",
@@ -787,6 +851,28 @@
          "package" : "com.imokhles.disablertl",
          "sha256" : "a107660e03b7db104df16afc498129ad8bd2a2383e58785e57fd9f0805910732",
          "version" : "0.0.1-3+debug"
+      },
+      {
+         "Author" : "Joshua Wheeler",
+         "Maintainer" : "Joshua Wheeler",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.joshua.volumeflex_0.0.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.joshua.volumeflex",
+         "sha256" : "85ea796dfbd52816f0935419e721ec2002f72e09c4cf33ce5112f4ac7f66550e",
+         "version" : "0.0.6"
+      },
+      {
+         "Author" : "khanhduytran0",
+         "Depiction" : "https://khanhduytran0.github.io/repo/depictions/web/?p=com.kdt.trollpad",
+         "Maintainer" : "khanhduytran0",
+         "SileoDepiction" : "https://khanhduytran0.github.io/repo/depictions/native/com.kdt.trollpad/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.kdt.trollpad_1.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.kdt.trollpad",
+         "sha256" : "f9fcb0e11bb8c57c11e4470c507c31fdaa51292f044250eb5b0ce262dc8ebd89",
+         "version" : "1.3"
       },
       {
          "Author" : "KingPuffdaddi",
@@ -846,6 +932,16 @@
          "version" : "1.3"
       },
       {
+         "Author" : "Sniper @DNS_Sys",
+         "Maintainer" : "Sniper @DNS_Sys",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.managedelete.sniper_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.managedelete.sniper",
+         "sha256" : "5923674bc3f07c70f853509f6bb2281ed27d59af70fb9bc55ae3171fcbceeee0",
+         "version" : "1.0"
+      },
+      {
          "Author" : "Mhster_Nice",
          "Maintainer" : "Mhster_Nice",
          "architecture" : "iphoneos-arm64e",
@@ -877,6 +973,17 @@
          "package" : "com.mikifp.griddy",
          "sha256" : "357f1611095c151e33ed210910c9e2af3d8f9d0f72f2e6bbb24f60c37261a8ec",
          "version" : "1.0.5"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.ccpowermenu.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.ccpowermenu_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.mtac.ccpowermenu",
+         "sha256" : "c67cf40dfd5cac13557a6fb0e0a2bdfaaf6dc96f96e62b37a9a785a164f32327",
+         "version" : "1.0.2"
       },
       {
          "Author" : "MTAC",
@@ -1237,6 +1344,16 @@
          "version" : "0.0.1-1"
       },
       {
+         "Author" : "Mr.Zhang <mr_zhang_00@163.com>",
+         "Maintainer" : "Mr.Zhang <mr_zhang_00@163.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.skypain.videoadacceleration_1.0.1-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.skypain.videoadacceleration",
+         "sha256" : "7d48ab4aecf392a360539ca0018d8aa6b418887d12f0bddf0518d0cbaac6caba",
+         "version" : "1.0.1-1"
+      },
+      {
          "Author" : "Spark",
          "Maintainer" : "Spark",
          "architecture" : "iphoneos-arm64e",
@@ -1296,6 +1413,17 @@
          "package" : "com.swing.appstorenoads",
          "sha256" : "ffaa40c19667bb0c549028e923e674a5aa783219117f03bcd26a778749c71b44",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "Tony Kraft <iostonykraft@gmail.com>",
+         "Depiction" : "http://iostonykraft.github.io/depictions/com.tonykraft.inosleep.html",
+         "Maintainer" : "Tony Kraft <iostonykraft@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.tonykraft.inosleep_1.2.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "com.tonykraft.inosleep",
+         "sha256" : "273c3b2ed2f8fcbfa1c1822f276237517ae2b58313a8a402b9f56dc31a1cb32e",
+         "version" : "1.2.4"
       },
       {
          "Author" : "uB",
@@ -1477,6 +1605,16 @@
          "package" : "dev.mineek.appstoretroller",
          "sha256" : "e0b5a2c3d98f02beb804abe840c2f888fdf7c665f1ff932fb1516a1ccd3fb6b0",
          "version" : "0.1.2"
+      },
+      {
+         "Author" : "Traurige <hello@traurige.dev>",
+         "Maintainer" : "Traurige <hello@traurige.dev>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/dev.traurige.eneko_1.4.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "dev.traurige.eneko",
+         "sha256" : "c87a613f4b6f7482d99620f23126fa53dfaa5546af2c7603eae11d111db9a673",
+         "version" : "1.4.2"
       },
       {
          "Author" : "Traurige <hello@traurige.dev>",
@@ -1708,6 +1846,28 @@
          "package" : "twitter.nowesr1.photosplus",
          "sha256" : "8b5f9e49e696393a0d3c0a7f15918c3680ae87b3216b39148a867bc50a65c2cd",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "PoomSmart and kirb <ytdislikesreturn@gmail.com>",
+         "Depiction" : "https://chariz.com/get/return-youtube-dislike",
+         "Maintainer" : "PoomSmart and kirb <ytdislikesreturn@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/weeb.lillie.youtubedislikesreturn_1.13.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "weeb.lillie.youtubedislikesreturn",
+         "sha256" : "88c3dfdb8519eb6c050d5bd499c297928d7d1f1201b48beacf49ff31f29ab474",
+         "version" : "1.13.1"
+      },
+      {
+         "Author" : "PoomSmart and kirb <ytdislikesreturn@gmail.com>",
+         "Depiction" : "https://chariz.com/get/return-youtube-dislike",
+         "Maintainer" : "PoomSmart and kirb <ytdislikesreturn@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/weeb.lillie.youtubedislikesreturn_1.14.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:24:18Z",
+         "package" : "weeb.lillie.youtubedislikesreturn",
+         "sha256" : "1bb61fd492627bb9fc82febba2418d84ed5b5e395b463f3e4f433280240c4cd7",
+         "version" : "1.14.2"
       },
       {
          "Author" : "Jonathan Winger-lang",
