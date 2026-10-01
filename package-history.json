@@ -632,6 +632,10 @@
          "first_added" : "2026-10-01T00:35:15Z",
          "sequence" : 239
       },
+      "com.macthemes.axolotl/2504" : {
+         "first_added" : "2026-10-01T02:28:05Z",
+         "sequence" : 380
+      },
       "com.managedelete.sniper/1.0" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 158
@@ -879,6 +883,10 @@
       "com.no5up-kanji.librelic/2.1.1" : {
          "first_added" : "2026-10-01T02:26:56Z",
          "sequence" : 374
+      },
+      "com.no5up-kanji.relicloader/3.3.3" : {
+         "first_added" : "2026-10-01T02:28:05Z",
+         "sequence" : 381
       },
       "com.noisyflake.velvet2/2.1.2-3" : {
          "first_added" : "2026-10-01T00:35:15Z",

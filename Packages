@@ -2721,6 +2721,26 @@ Size: 8548
 Version: 0.0.3
 
 Package: com.dvntm.flow
+Architecture: iphoneos-arm
+Author: dvntm, nowesr1
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://ipapplus.github.io/depictions/com.dvntm.flow_1.0_iphoneos-arm.html
+Description: A lightweight Messenger enhancer
+Filename: debs/com.dvntm.flow_1.0_iphoneos-arm.deb
+Icon: https://raw.githubusercontent.com/dayanch96/Flow/refs/heads/main/Sileo/icon.png
+Installed-Size: 532
+MD5sum: 5eba643a08bcea8af7af664961cb3173
+Maintainer: dvntm, nowesr1
+Name: Flow for Messenger
+SHA1: 76ef5c71f80f56c01da1428d17e202a8f1dc18a8
+SHA256: b43b378c4f2474f1d5e22c611a9b8dc7da0d57c230a60c40b7dfae7991906da5
+SHA512: de6a842a2f868453ddf5669e2b72236c67edb77e4e1659bc4728cc709f159ae713302496e5d9e0ec7007197ecfbe609c5a3c6b47e65bd8c2d82e144480e34dac
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.dvntm.flow_1.0_iphoneos-arm.json
+Size: 228676
+Version: 1.0
+
+Package: com.dvntm.flow
 Architecture: iphoneos-arm64
 Author: dvntm, nowesr1
 Depends: mobilesubstrate (>= 0.9.5000)
@@ -3990,6 +4010,25 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.guacforlife.reynarddefault_1.5.0_iphoneos-arm64e.json
 Size: 61532
 Version: 1.5.0
+
+Package: com.haoict.ResolutionSetterSwift
+Architecture: iphoneos-arm
+Author: @halo_michael
+Depends: firmware (>= 15.0)
+Depiction: https://ipapplus.github.io/depictions/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm.html
+Description: Resolution Setter
+Filename: debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm.deb
+Icon: https://i.imgur.com/phJx0ua.jpeg
+MD5sum: e367661d8d98c328ab6c276346257f87
+Maintainer: @haoict
+Name: Res Setter
+SHA1: 6f5849f50fcf7e68dc724b2c817c1674f8a08ad9
+SHA256: 87d7f358d65f2eb20de14914a3c1f8ed574985a675e978f934b49c7f6e771607
+SHA512: 33afd70c3875defdaa9e896bc622cf90dd764b934eeb53855209d06554f251db695448ecf374eb9e5a672b89316501cad74126ec666163ec0a8ae53e0cc2a1ab
+Section: Applications
+SileoDepiction: https://ipapplus.github.io/depictions/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm.json
+Size: 193632
+Version: 1.1
 
 Package: com.haoict.ResolutionSetterSwift
 Architecture: iphoneos-arm64
@@ -5269,6 +5308,29 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.m4fn3.mikkyy_1.0.2_iph
 Size: 429752
 Version: 1.0.2
 
+Package: com.macthemes.axolotl
+Architecture: iphoneos-arm
+Author: 0xkuj, ifilipis & MacThemes <me@macthemes.me>
+Conflicts: com.0xkuj.blockwaupdates, com.ifilipis.fckzck
+Depends: firmware (>= 12)
+Depiction: https://ipapplus.github.io/depictions/com.macthemes.axolotl_2504_iphoneos-arm.html
+Description: Blocks WhatsApp Update Notifications …
+Filename: debs/com.macthemes.axolotl_2504_iphoneos-arm.deb
+Icon: file:///Library/PreferenceBundles/AxolotlPrefs.bundle/axolotl.png
+Installed-Size: 523
+MD5sum: 59626bcb3a470c1e200cff702d59a803
+Maintainer: Aeneon <me@macthemes.me>
+Name: Axolotl for WhatsApp
+Pre-Depends: mobilesubstrate, preferenceloader | com.artikus.preferenceloader
+SHA1: 068a3967f5843d58ffa114c5be1f8512c7eea22c
+SHA256: 22958fa0e2afe73bbdf50a4c2cf05dd22d765297795def3b5cf76c00c497e349
+SHA512: a8f50c5c669ed8afe792f9fa1e613bd18f1215567a75f77f7ab14c31ff26a3d79d8f08a2233384cf0fb6ff72725eabf0a74e34050ce0f067f2fe8c8261373ef6
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.macthemes.axolotl_2504_iphoneos-arm.json
+Size: 239216
+Tag: compatible::ios12, compatible::ios13, compatible::ios14
+Version: 2504
+
 Package: com.managedelete.sniper
 Architecture: iphoneos-arm
 Author: Sniper @DNS_Sys
@@ -6232,6 +6294,25 @@ Version: 1.0~beta5-2+debug
 dev: nowesr1
 
 Package: com.na9.tiktok
+Architecture: iphoneos-arm
+Author: Nasser | NoTimeToChill
+Depends: mobilesubstrate
+Depiction: https://ipapplus.github.io/depictions/com.na9.tiktok_1.0~beta5-2_iphoneos-arm.html
+Description: An advanced tweak for TikTok by N+Store. Nasser iPA Sideload Store https://na9.me to access Tweak settings press bolt icon in your profile
+Filename: debs/com.na9.tiktok_1.0~beta5-2_iphoneos-arm.deb
+Installed-Size: 2208
+MD5sum: c06d2ffe9aa7b4897deb2ec585aa9e97
+Maintainer: Nasser | NoTimeToChill
+Name: NA9 For TikTok
+SHA1: 9afaf73bfba32894cda735507d34240fff29127b
+SHA256: cbdb3cb39a7f090b6b0e8c7db7faba4e1fcb3f6d0f7b66922cc4ca67c58466e2
+SHA512: f25cbbf442c0b62a2ec602214235c94114c6ad165ff2bc4a5be9b368d5066cd374f36533f40341dfc449f249b34619f09a98de462544e18a7eb6088e323c7cd9
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.na9.tiktok_1.0~beta5-2_iphoneos-arm.json
+Size: 344928
+Version: 1.0~beta5-2
+
+Package: com.na9.tiktok
 Architecture: iphoneos-arm64e
 Author: Nasser | NoTimeToChill <nowe9r@hotmail.com>
 Depends: firmware (>= 12.0), mobilesubstrate
@@ -7169,6 +7250,25 @@ Section: Development
 SileoDepiction: https://ipapplus.github.io/depictions/com.no5up-kanji.librelic_2.1.1_iphoneos-arm.json
 Size: 6668
 Version: 2.1.1
+
+Package: com.no5up-kanji.relicloader
+Architecture: iphoneos-arm
+Author: no5up + Kanji <ipodtouchdemohammed313@gmail.com>
+Conflicts: com.wyattgahm-kanji.shadowx
+Depends: mobilesubstrate, com.no5up-kanji.librelic
+Depiction: https://ipapplus.github.io/depictions/com.no5up-kanji.relicloader_3.3.3_iphoneos-arm.html
+Description: A ShadowX implementation for librelic 2.1
+Filename: debs/com.no5up-kanji.relicloader_3.3.3_iphoneos-arm.deb
+MD5sum: eedb465ec5adbc887e7117607521239d
+Maintainer: no5up + Kanji <ipodtouchdemohammed313@gmail.com>
+Name: relicloader
+SHA1: 6e870078eb14122015f321eee2ac218ddac51385
+SHA256: 619eb04f0db70825442f97fbc1666c223feea26b117c8ad4f4a6b4ff6a3bd61d
+SHA512: 737acfc25a1a3caa5f15438809ab4783e79fd787e4f4cdb718ee778c195dcf3025332800b76378619c74a2210e0ce75386c3f473d2ee3757cad1609799e182fc
+Section: Development
+SileoDepiction: https://ipapplus.github.io/depictions/com.no5up-kanji.relicloader_3.3.3_iphoneos-arm.json
+Size: 321952
+Version: 3.3.3
 
 Package: com.noisyflake.velvet2
 Architecture: iphoneos-arm64e
@@ -8557,6 +8657,24 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.swing.appstorenoads_0.0.1_iphoneos-arm64e.json
 Size: 5012
 Version: 0.0.1
+
+Package: com.synnyg.reversenotifications
+Architecture: iphoneos-arm
+Author: SynnyG_R <synnyg.devjb@gmail.com>
+Depends: mobilesubstrate, firmware (>= 12.0), ws.hbang.common (>= 1.11), preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.synnyg.reversenotifications_1.0.3_iphoneos-arm.html
+Description: A CarPlay inspired notifications look!
+Filename: debs/com.synnyg.reversenotifications_1.0.3_iphoneos-arm.deb
+MD5sum: 943d5ffe8a140d2b1cb43c2a4b07ae43
+Maintainer: SynnyG_R <synnyg.devjb@gmail.com>
+Name: ReverseNotifications
+SHA1: 4579cd22d7f8d6ed7eece87003bac1528270d4a2
+SHA256: 81e0bf59d4f6cf70031e64d5ca5e0b652003dd631a893d3e4309689109bdd0c9
+SHA512: 8dda061c706fa5c6ccc6ba9454bedc3569a27a2e093ed53c4bf65537d54d774f497f02482ce332626db24636cb986ecad2ba232d9f1d8741921a4e2f66914718
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.synnyg.reversenotifications_1.0.3_iphoneos-arm.json
+Size: 311368
+Version: 1.0.3
 
 Package: com.synnyg.reversenotifications
 Architecture: iphoneos-arm64

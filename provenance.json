@@ -1419,6 +1419,17 @@
          "Author" : "dvntm, nowesr1",
          "Maintainer" : "dvntm, nowesr1",
          "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.dvntm.flow_1.0_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.flow",
+         "sha256" : "b43b378c4f2474f1d5e22c611a9b8dc7da0d57c230a60c40b7dfae7991906da5",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "dvntm, nowesr1",
+         "Maintainer" : "dvntm, nowesr1",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json",
          "architecture" : "iphoneos-arm64",
          "filename" : "debs/com.dvntm.flow_1.0_iphoneos-arm64.deb",
          "first_added" : "2026-10-01T00:35:15Z",
@@ -2082,6 +2093,16 @@
          "package" : "com.guacforlife.reynarddefault",
          "sha256" : "57e7875bb3ae356cf09cb7128a29b639d90dc74c8d338eb53eb7972d59e04329",
          "version" : "1.5.0"
+      },
+      {
+         "Author" : "@halo_michael",
+         "Maintainer" : "@haoict",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.haoict.ResolutionSetterSwift",
+         "sha256" : "87d7f358d65f2eb20de14914a3c1f8ed574985a675e978f934b49c7f6e771607",
+         "version" : "1.1"
       },
       {
          "Author" : "@halo_michael",
@@ -2772,6 +2793,17 @@
          "version" : "1.0.2"
       },
       {
+         "Author" : "0xkuj, ifilipis & MacThemes <me@macthemes.me>",
+         "Depiction" : "http://macthemes.me/package.php?id=com.macthemes.axolotl",
+         "Maintainer" : "Aeneon <me@macthemes.me>",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.macthemes.axolotl_2504_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:28:05Z",
+         "package" : "com.macthemes.axolotl",
+         "sha256" : "22958fa0e2afe73bbdf50a4c2cf05dd22d765297795def3b5cf76c00c497e349",
+         "version" : "2504"
+      },
+      {
          "Author" : "Sniper @DNS_Sys",
          "Maintainer" : "Sniper @DNS_Sys",
          "architecture" : "iphoneos-arm",
@@ -3285,6 +3317,16 @@
          "version" : "1.0~beta5-2+debug"
       },
       {
+         "Author" : "Nasser | NoTimeToChill",
+         "Maintainer" : "Nasser | NoTimeToChill",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.na9.tiktok_1.0~beta5-2_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.na9.tiktok",
+         "sha256" : "cbdb3cb39a7f090b6b0e8c7db7faba4e1fcb3f6d0f7b66922cc4ca67c58466e2",
+         "version" : "1.0~beta5-2"
+      },
+      {
          "Author" : "Nasser | NoTimeToChill <nowe9r@hotmail.com>",
          "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
          "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
@@ -3765,6 +3807,16 @@
          "package" : "com.no5up-kanji.librelic",
          "sha256" : "dbedca3f0621811da294136ddd598fe5fd44e87438e8c2122978a2ed4b95da53",
          "version" : "2.1.1"
+      },
+      {
+         "Author" : "no5up + Kanji <ipodtouchdemohammed313@gmail.com>",
+         "Maintainer" : "no5up + Kanji <ipodtouchdemohammed313@gmail.com>",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.no5up-kanji.relicloader_3.3.3_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T02:28:05Z",
+         "package" : "com.no5up-kanji.relicloader",
+         "sha256" : "619eb04f0db70825442f97fbc1666c223feea26b117c8ad4f4a6b4ff6a3bd61d",
+         "version" : "3.3.3"
       },
       {
          "Author" : "NoisyFlake <support@noisyflake.com>",
@@ -4480,6 +4532,16 @@
          "package" : "com.swing.appstorenoads",
          "sha256" : "ffaa40c19667bb0c549028e923e674a5aa783219117f03bcd26a778749c71b44",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "SynnyG_R <synnyg.devjb@gmail.com>",
+         "Maintainer" : "SynnyG_R <synnyg.devjb@gmail.com>",
+         "architecture" : "iphoneos-arm",
+         "filename" : "debs/com.synnyg.reversenotifications_1.0.3_iphoneos-arm.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.synnyg.reversenotifications",
+         "sha256" : "81e0bf59d4f6cf70031e64d5ca5e0b652003dd631a893d3e4309689109bdd0c9",
+         "version" : "1.0.3"
       },
       {
          "Author" : "SynnyG_R <synnyg.devjb@gmail.com>",
