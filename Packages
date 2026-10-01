@@ -5866,6 +5866,28 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.b4db1r3r3p0.ol
 Size: 9140
 Version: 0.5.1-11
 
+Package: com.yourepo.b4db1r3r3p0.reprovisionrebornagain
+Architecture: iphoneos-arm64e
+Author: Soh Satoh, Matt Clarke, b4db1r3 <nfive060@gmail.com>
+Conflicts: jp.soh.reprovision, com.matchstic.reprovision
+Depends: firmware (>= 15.0), uikittools
+Depiction: https://ipapplus.github.io/depictions/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.28_iphoneos-arm64e.html
+Description: Re-sign applications directly on your rootless jailbroken deviceThis community-maintained build restores Apple account authentication,trusted-device two-factor authentication, background signing, and modernprovisioning-profile handling for iOS 15 and newer.
+Filename: debs/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.28_iphoneos-arm64e.deb
+Icon: file:///var/jb/Applications/ReProvision.app/AppIcon60x60@2x.png
+MD5sum: 7e4649d465119e69285ef66f92c1d41c
+Maintainer: Soh Satoh, b4db1r3 <nfive060@gmail.com>
+Name: ReProvision Reborn… Again
+Pre-Depends: rootless-compat(>= 0.9)
+Replaces: jp.soh.reprovision
+SHA1: d4e7154b477d74ebd461bdfbed2dd5a2bf0f29fd
+SHA256: e632e5fa46d67945cf32f0e78cae55a09141df6e853c58b768dee7b819bb5599
+SHA512: 3df7cafe4eb6aceb64f4e4bd625da206ad428de8ff0fc5b12b3e542d00075812f20db9f803f34dabaab7d87f1359e6279d93d801c5eb895ac30e66e06394a817
+Section: Utilities
+SileoDepiction: https://ipapplus.github.io/depictions/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.28_iphoneos-arm64e.json
+Size: 14193432
+Version: 0.8.4-rootless.28
+
 Package: com.yourepo.cydiageek.twitterlabelback
 Architecture: iphoneos-arm64e
 Author: CydiaGeek <lucaluca86@aol.com>

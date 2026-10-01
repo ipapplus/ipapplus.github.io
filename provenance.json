@@ -3027,6 +3027,16 @@
          "version" : "0.5.1-11"
       },
       {
+         "Author" : "Soh Satoh, Matt Clarke, b4db1r3 <nfive060@gmail.com>",
+         "Maintainer" : "Soh Satoh, b4db1r3 <nfive060@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.yourepo.b4db1r3r3p0.reprovisionrebornagain_0.8.4-rootless.28_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:49:45Z",
+         "package" : "com.yourepo.b4db1r3r3p0.reprovisionrebornagain",
+         "sha256" : "e632e5fa46d67945cf32f0e78cae55a09141df6e853c58b768dee7b819bb5599",
+         "version" : "0.8.4-rootless.28"
+      },
+      {
          "Author" : "CydiaGeek <lucaluca86@aol.com>",
          "Maintainer" : "CydiaGeek <lucaluca86@aol.com>",
          "architecture" : "iphoneos-arm64e",
