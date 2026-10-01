@@ -100,9 +100,21 @@
          "first_added" : "2026-10-01T00:05:44Z",
          "sequence" : 27
       },
+      "com.barabadev.fluxion/1.0.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 194
+      },
+      "com.barabadev.lumaprogress/1.0.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 195
+      },
       "com.barabadev.snowboardios17fix/1.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 69
+      },
+      "com.barabadev.vitra/1.0.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 196
       },
       "com.brend0n.notransitcardversionlimit/0.0.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -112,6 +124,14 @@
          "first_added" : "2026-10-01T00:01:11Z",
          "sequence" : 21
       },
+      "com.c1d3r.pulloverpro.ios17/2.2.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 197
+      },
+      "com.choco.tg/1.7.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 198
+      },
       "com.cokepokes.libnotifications/0.3-6-1" : {
          "first_added" : "2026-10-01T00:02:31Z",
          "sequence" : 22
@@ -120,9 +140,33 @@
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 178
       },
+      "com.creaturecoding.libcspreferences/1.5.8" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 199
+      },
+      "com.creaturecoding.shuffle/1.6.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 200
+      },
+      "com.creaturecoding.tweaksettings/1.0.8" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 201
+      },
+      "com.creaturesurvive.libcscolorpicker/1.0.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 202
+      },
+      "com.cureux.cc26/1.0.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 203
+      },
       "com.cureux.cc26glass/1.0.4" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 150
+      },
+      "com.cydiaabdullah.cacloud/2.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 204
       },
       "com.cydiageek.byeseparatorscell/1.1.3" : {
          "first_added" : "2026-10-01T00:31:16Z",
@@ -140,6 +184,14 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 71
       },
+      "com.cyrex.epiphany/1.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 205
+      },
+      "com.darwindev.CookiesTool-iOS/0.1-2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 206
+      },
       "com.dcproducts.iossecuritysuitebypass/1.0.0" : {
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 41
@@ -152,9 +204,21 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 151
       },
+      "com.den.igformat/2.4.0-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 207
+      },
+      "com.den.igformat/2.6.0-1+debug" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 208
+      },
       "com.den.locktouchx/1.3-18" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 116
+      },
+      "com.den.msgplusx/1.1-2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 209
       },
       "com.den.quickvpn/1.0-6" : {
          "first_added" : "2026-10-01T00:24:18Z",
@@ -163,6 +227,18 @@
       "com.den.shortcutx/0.0.1-1" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 117
+      },
+      "com.den.twigalaxy/1.13-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 210
+      },
+      "com.den.twigalaxy/1.14-1+debug" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 211
+      },
+      "com.den.vibett/1.75-1+debug" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 212
       },
       "com.dhinakg.addprofileinstallbutton/1.0.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -188,6 +264,10 @@
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 37
       },
+      "com.dvntm.fastlock/1.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 213
+      },
       "com.dvntm.fbo/0.0.1" : {
          "first_added" : "2026-10-01T00:09:23Z",
          "sequence" : 38
@@ -195,6 +275,14 @@
       "com.dvntm.firstlook/0.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 75
+      },
+      "com.dvntm.flow/1.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 214
+      },
+      "com.dvntm.infuseplus/2.5" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 215
       },
       "com.dvntm.lsnoswipe/0.0.1" : {
          "first_added" : "2026-10-01T00:16:57Z",
@@ -248,6 +336,22 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 154
       },
+      "com.exile90.icleanerpro/7.10.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 216
+      },
+      "com.f0u4d.onlinenotify/3.5.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 217
+      },
+      "com.f0u4d.stalky/4.2.16" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 218
+      },
+      "com.f0u4d.stalky/4.3.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 219
+      },
       "com.fiore.calculatorhistory/1.2" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 119
@@ -264,13 +368,57 @@
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 165
       },
+      "com.fouadraheb.contactsync/1.1.15" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 220
+      },
+      "com.foxfort.foxforttools/1.4.13" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 221
+      },
+      "com.foxfort.krashkop/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 222
+      },
+      "com.foxfort.libfoxfortutils/1.4.7" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 223
+      },
+      "com.foxfort.skinnymenu/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 224
+      },
+      "com.foxfort.translomatic/2.18.31" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 225
+      },
+      "com.gilesgc.cccalc/1.2.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 226
+      },
       "com.gilshahar7.volumepercent/1.0.2" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 155
       },
+      "com.guacforlife.reynarddefault/1.5.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 227
+      },
+      "com.haoict.ResolutionSetterSwift/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 228
+      },
+      "com.i0stweak3r.glitch/1.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 229
+      },
       "com.ichitaso.hidekbsettings/1.0.6" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 183
+      },
+      "com.ichitaso.hideserialnumber/0.0.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 230
       },
       "com.ichitaso.iconorder/1.0.3" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -279,6 +427,14 @@
       "com.ichitaso.otadisabler/0.6" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 184
+      },
+      "com.ichitaso.powerselector11/1.4.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 231
+      },
+      "com.ichitaso.regionchanger/0.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 232
       },
       "com.ichitaso.spectrogram/0.1.1" : {
          "first_added" : "2026-10-01T00:31:16Z",
@@ -296,13 +452,33 @@
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 43
       },
+      "com.idevicelover.smartbatteryios15/1.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 233
+      },
       "com.imokhles.disablertl/0.0.1-3+debug" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 48
       },
+      "com.ipapplus.instarab/3.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 234
+      },
+      "com.jailbreak365.safeccmodules/1.5-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 235
+      },
+      "com.jontelang.snapper3/1.2.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 236
+      },
       "com.joshua.volumeflex/0.0.6" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 156
+      },
+      "com.joshua.volumeflex/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 237
       },
       "com.julioverne.goodwifi/0.0~beta6" : {
          "first_added" : "2026-10-01T00:28:07Z",
@@ -328,6 +504,10 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 121
       },
+      "com.lclrc.hammerit/1.7.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 238
+      },
       "com.leftyfl1p.carbackground13/1.0" : {
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 169
@@ -348,9 +528,17 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 123
       },
+      "com.m4fn3.mikkyy/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 239
+      },
       "com.managedelete.sniper/1.0" : {
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 158
+      },
+      "com.megadev.sentinel/1.3.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 240
       },
       "com.mhsternice.wasendfix/0.0.4" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -360,9 +548,45 @@
          "first_added" : "2026-10-01T00:13:24Z",
          "sequence" : 44
       },
+      "com.mikey820.pleasedontstopthemusic/2.2.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 241
+      },
       "com.mikifp.griddy/1.0.5" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 124
+      },
+      "com.miro.libmiro/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 242
+      },
+      "com.miro.libmiroprefs/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 243
+      },
+      "com.miro.libmiroshared/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 244
+      },
+      "com.miro.libphonenumber/2.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 245
+      },
+      "com.miro.yellowpages2/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 246
+      },
+      "com.mrgcgamer.libgcuniversal/1.7.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 247
+      },
+      "com.mtac.alpine/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 248
+      },
+      "com.mtac.ampere/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 249
       },
       "com.mtac.ccpowermenu/1.0.2" : {
          "first_added" : "2026-10-01T00:24:18Z",
@@ -372,9 +596,29 @@
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 170
       },
+      "com.mtac.lynxapp/2.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 250
+      },
+      "com.mtac.lynxtwo.localizations/2.5" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 251
+      },
+      "com.mtac.lynxtwo/2.5.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 252
+      },
       "com.mtac.prefs.localizer/1.2" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 84
+      },
+      "com.mtac.scope/1.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 253
+      },
+      "com.muirey03.cr4shed/4.3.1-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 254
       },
       "com.muirey03.libimagepicker/1.0.4" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -388,9 +632,21 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 126
       },
+      "com.na9.tiktok/1.0~beta5-2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 256
+      },
+      "com.na9.tiktok/1.0~beta5-2+debug" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 255
+      },
       "com.nahtedetihw.closeall/1.0" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 127
+      },
+      "com.nahtedetihw.listening/1.2.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 257
       },
       "com.nan.disablesblockaftercrash/0.1.0" : {
          "first_added" : "2026-10-01T00:08:08Z",
@@ -444,13 +700,29 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 89
       },
+      "com.netskao.dumpdecrypter/1.5-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 258
+      },
       "com.netskao.noappthinning/1.4" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 90
       },
+      "com.netskao.pulloverpro/2.1.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 259
+      },
       "com.newwares.badgesync/1.2.2" : {
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 171
+      },
+      "com.nguyenasang.snmessenger/2.0.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 260
+      },
+      "com.nicksworks.roadrunnerreborn/1.0.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 261
       },
       "com.nightwind.floatingsafari/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -476,9 +748,29 @@
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 62
       },
+      "com.noisyflake.velvet2/2.1.2-3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 262
+      },
+      "com.noisyflake.velvet2/2.2.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 263
+      },
       "com.nscake.noscrollbargrabdelay/0.0.1" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 51
+      },
+      "com.opa334.cranelite/1.3.18" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 265
+      },
+      "com.opa334.cranelite/1.3.18-2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 264
+      },
+      "com.opa334.trollstorelite/2.1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 266
       },
       "com.p2kdev.tinge/1.2.2" : {
          "first_added" : "2026-10-01T00:31:16Z",
@@ -516,6 +808,46 @@
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 63
       },
+      "com.randy420.tools/2.3.9" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 267
+      },
+      "com.raulsaeed.bhtiktok++/1.8-119" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 268
+      },
+      "com.rileytestut.altdaemon/1.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 269
+      },
+      "com.rileytestut.altdaemon/1.1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 270
+      },
+      "com.roothide.manager/1.3.9" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 271
+      },
+      "com.rpgfarm.a-font/1.10.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 272
+      },
+      "com.rpgfarm.a-font/2.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 273
+      },
+      "com.ryannair05.cylinder/1.1.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 274
+      },
+      "com.ryannair05.cylinderremade/0.0.3-beta" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 275
+      },
+      "com.ryannair05.keyboardplus/1.1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 276
+      },
       "com.sergy.immortalizer/2.0.0-1" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 188
@@ -523,6 +855,14 @@
       "com.sergy.immortalizerjailed/2.2" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 189
+      },
+      "com.shepgoba.settingswidgets/1.2.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 277
+      },
+      "com.sini921.ccborder/1.1.2-42" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 278
       },
       "com.sini921.smoothinstall/0.0.1-1" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -532,9 +872,25 @@
          "first_added" : "2026-10-01T00:24:18Z",
          "sequence" : 160
       },
+      "com.smokin1337.smarterlpm/1.0.9" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 279
+      },
+      "com.snail.autovpn.roothide/1.0.8" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 280
+      },
+      "com.socuul.scinsta/1.1.1-1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 281
+      },
       "com.spark.libsparkapplist/1.1.0~rootless" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 135
+      },
+      "com.spark.libsparkcolourpicker/1.0.3-rootless" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 282
       },
       "com.spark.snowboard.dock/1.1.3~Beta4-rootless" : {
          "first_added" : "2026-10-01T00:28:07Z",
@@ -556,6 +912,10 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 138
       },
+      "com.spark.snowboard/1.5.37-Beta4-rootless" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 283
+      },
       "com.sugiuta.soundvol/1.0.0" : {
          "first_added" : "2026-10-01T00:16:57Z",
          "sequence" : 64
@@ -563,6 +923,18 @@
       "com.swing.appstorenoads/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 99
+      },
+      "com.synnyg.reversenotifications/1.0.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 284
+      },
+      "com.teslaman3092.popoutbuttons/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 285
+      },
+      "com.titand3v.speedy/1.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 286
       },
       "com.tonykraft.inosleep/1.2.4" : {
          "first_added" : "2026-10-01T00:24:18Z",
@@ -572,6 +944,14 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 100
       },
+      "com.uckermark.siriplus/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 287
+      },
+      "com.udevs.dockx/2.6.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 288
+      },
       "com.vxbakerxv.emojiskinprefs/1.0.1" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 139
@@ -580,9 +960,21 @@
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 52
       },
+      "com.xcxiao.bottomcontrolx/1.3.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 289
+      },
+      "com.xyaman.tako/3.5.2.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 290
+      },
       "com.yourepo.0xkuj.storeswitcher2rootless/1.0.4" : {
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 140
+      },
+      "com.yourepo.b4db1r3r3p0.allrounddit/1.0.70" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 291
       },
       "com.yourepo.b4db1r3r3p0.oleddarkmode/0.5.1-11" : {
          "first_added" : "2026-10-01T00:18:16Z",
@@ -644,13 +1036,49 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 105
       },
+      "dev.traurige.liddell/1.4.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 292
+      },
       "dev.unlock.00/0.0.1" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 106
       },
+      "eg.anubistweaks.translux/1.2.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 293
+      },
+      "eg.anubistweaks.translux/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 294
+      },
       "jetsamunlimited/1.0" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 55
+      },
+      "jp.dcsyhi.adkeyboard/1.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 295
+      },
+      "jp.dcsyhi.adkeyboard/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 296
+      },
+      "jp.dcsyhi.culprit/1.0.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 297
+      },
+      "jp.dcsyhi.culprit/1.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 298
+      },
+      "jp.dcsyhi.kbappdock/1.5" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 299
+      },
+      "jp.dcsyhi.kbappdock/1.8.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 300
       },
       "jp.r-plus.menusupport/1.3.0" : {
          "first_added" : "2026-10-01T00:28:07Z",
@@ -680,6 +1108,14 @@
          "first_added" : "2026-10-01T00:20:37Z",
          "sequence" : 145
       },
+      "libvolumeflex/0.0.2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 301
+      },
+      "lilliana.reverie/0.0.3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 302
+      },
       "me.ikghd.pmp/1.12" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 190
@@ -704,6 +1140,14 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 110
       },
+      "me.jjolano.shadow/3.7.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 303
+      },
+      "me.kritanta.gravitation/0.1.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 304
+      },
       "me.luki.arres/0.9.0" : {
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 111
@@ -720,6 +1164,14 @@
          "first_added" : "2026-10-01T00:28:07Z",
          "sequence" : 176
       },
+      "me.tomt000.copylog/1.7.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 305
+      },
+      "mterminal/1.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 306
+      },
       "net.cadoth.nosbreload/0.1.1-1" : {
          "first_added" : "2026-10-01T00:14:59Z",
          "sequence" : 57
@@ -732,6 +1184,10 @@
          "first_added" : "2026-10-01T00:18:16Z",
          "sequence" : 114
       },
+      "org.hacx.hacxdaemon/3.8" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 307
+      },
       "org.thebigboss.libcolorpicker/1.6.9.2" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 191
@@ -743,6 +1199,22 @@
       "rootfultorootless/0.0.1" : {
          "first_added" : "2026-10-01T00:08:08Z",
          "sequence" : 35
+      },
+      "ru.rj.ftt/1.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 308
+      },
+      "se.geometric.graphite/2.0" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 309
+      },
+      "twitter.nowesr1.location-spoofer/0.0.4" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 310
+      },
+      "twitter.nowesr1.location-spoofer/0.0.6" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 311
       },
       "twitter.nowesr1.photosplus/0.0.1" : {
          "first_added" : "2026-10-01T00:20:37Z",
@@ -771,6 +1243,18 @@
       "xyz.skitty.ersatz/1.0.1" : {
          "first_added" : "2026-10-01T00:31:16Z",
          "sequence" : 193
+      },
+      "xyz.skitty.spectrum/1.1" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 312
+      },
+      "xyz.xninja.systeminfo/2.7.2-2" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 313
+      },
+      "xyz.xninja.systeminfo/2.7.2-3" : {
+         "first_added" : "2026-10-01T00:35:15Z",
+         "sequence" : 314
       }
    },
    "schema" : 1

@@ -403,6 +403,26 @@
       },
       {
          "Author" : "BarabaDev",
+         "Maintainer" : "BarabaDev",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.barabadev.fluxion_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.barabadev.fluxion",
+         "sha256" : "1b812f14f8789f33ac2b698f103d2acc731abfd1001f8cff8f1d77c742302791",
+         "version" : "1.0.0"
+      },
+      {
+         "Author" : "BarabaDev",
+         "Maintainer" : "BarabaDev",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.barabadev.lumaprogress_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.barabadev.lumaprogress",
+         "sha256" : "46dd65001344899e0816d97216e66eba9425309440aace5ebf4ee7958617031b",
+         "version" : "1.0.0"
+      },
+      {
+         "Author" : "BarabaDev",
          "Homepage" : "https://barabadev.com/",
          "Maintainer" : "BarabaDev",
          "architecture" : "iphoneos-arm64e",
@@ -411,6 +431,16 @@
          "package" : "com.barabadev.snowboardios17fix",
          "sha256" : "848cc32f518ca988d8ecfc78336ca02b74df9f2085ef9ced38a9d26d0bcdca00",
          "version" : "1.0.3"
+      },
+      {
+         "Author" : "BarabaDev",
+         "Maintainer" : "BarabaDev",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.barabadev.vitra_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.barabadev.vitra",
+         "sha256" : "e0ff5f1c2f73c8839b7214a0b23c2c8a97adcb6669542214e9fac8d59bae15d3",
+         "version" : "1.0.0"
       },
       {
          "Author" : "Brend0n <brendonjkding@126.com>",
@@ -433,6 +463,36 @@
          "package" : "com.bypassjb.sniper",
          "sha256" : "d365c05b9c8df64382f5bc45c454ad27307b0ab9db0ae80dc922e9bd37747a98",
          "version" : "6.2"
+      },
+      {
+         "Author" : "Sniper @DNS_Sys",
+         "Maintainer" : "Sniper @DNS_Sys",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.bypassjb.sniper_6.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:01:11Z",
+         "package" : "com.bypassjb.sniper",
+         "sha256" : "29fcb3bb768d5a7d984bbc7101e0d70bd1575ee119523b2dc5d60e1d785e483a",
+         "version" : "6.2"
+      },
+      {
+         "Author" : "Sugiuta",
+         "Maintainer" : "Sugiuta",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.c1d3r.pulloverpro.ios17_2.2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.c1d3r.pulloverpro.ios17",
+         "sha256" : "3151cf9033a08ce2de189c222c0207752aa9cc79a8f04aac75313835a77131a6",
+         "version" : "2.2.0"
+      },
+      {
+         "Author" : "choco",
+         "Maintainer" : "choco",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.choco.tg_1.7.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.choco.tg",
+         "sha256" : "23a299bf8638a00c3fda06cd7895e41d869a2f5f572456d5aad440309cc52cab",
+         "version" : "1.7.4"
       },
       {
          "Author" : "CokePokes <cokepokes@gmail.com>",
@@ -471,6 +531,65 @@
          "version" : "2023.3"
       },
       {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Depiction" : "https://creaturecoding.com/?page=depiction&id=libcspreferences",
+         "Homepage" : "https://creaturecoding.com/",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "SileoDepiction" : "https://creaturecoding.com/sileo/depiction/?package_id=libcspreferences",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.creaturecoding.libcspreferences_1.5.8_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturecoding.libcspreferences",
+         "sha256" : "98b9dcebec2076d22cd7dd262ec35427b7ab5115a48779ce2fce3f859b060655",
+         "version" : "1.5.8"
+      },
+      {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Depiction" : "https://creaturecoding.com/?page=depiction&id=shuffle",
+         "Homepage" : "https://creaturecoding.com/",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "SileoDepiction" : "https://creaturecoding.com/sileo/depiction/?package_id=shuffle",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.creaturecoding.shuffle_1.6.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturecoding.shuffle",
+         "sha256" : "3c5cb7ee76ebd90775b854c8258236e25c41d53169cb519d3f5ff4ab876e2c78",
+         "version" : "1.6.2"
+      },
+      {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Depiction" : "https://creaturecoding.com/?page=depiction&id=tweaksettings",
+         "Homepage" : "https://creaturecoding.com/",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "SileoDepiction" : "https://creaturecoding.com/sileo/depiction/?package_id=tweaksettings",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.creaturecoding.tweaksettings_1.0.8_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturecoding.tweaksettings",
+         "sha256" : "f358fdc10ec56b1d560ba1fa3e9cdf37142465dfe11bc7576ea5e08c9647b90e",
+         "version" : "1.0.8"
+      },
+      {
+         "Author" : "CreatureSurvive <support@creaturecoding.com>",
+         "Maintainer" : "CreatureSurvive <support@creaturecoding.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.creaturesurvive.libcscolorpicker_1.0.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.creaturesurvive.libcscolorpicker",
+         "sha256" : "6e34a778407a3abdbf7723543105263f4ea2cf3b2648f838d0d8cc88cab60bc8",
+         "version" : "1.0.6"
+      },
+      {
+         "Author" : "therealhoodboy",
+         "Maintainer" : "therealhoodboy",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.cureux.cc26_1.0.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.cureux.cc26",
+         "sha256" : "70f9f1d584a272f477f87c62b9167a40bbdba653b930ad8b15e83e7928bc67a3",
+         "version" : "1.0.6"
+      },
+      {
          "Author" : "therealhoodboy",
          "Maintainer" : "therealhoodboy",
          "architecture" : "iphoneos-arm64e",
@@ -479,6 +598,16 @@
          "package" : "com.cureux.cc26glass",
          "sha256" : "e8a9ca53a1433631fd1db996cb1488b39579acc72699306b1884d78d9729e40a",
          "version" : "1.0.4"
+      },
+      {
+         "Author" : "CydiaAbdullah",
+         "Maintainer" : "CydiaAbdullah",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.cydiaabdullah.cacloud_2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.cydiaabdullah.cacloud",
+         "sha256" : "0e49fa7b2eea32c315190811215d9f4941ebec6dbd2a33e9df44f00a388fc59f",
+         "version" : "2.1"
       },
       {
          "Author" : "CydiaGeek <lucaluca86@aol.com>",
@@ -529,6 +658,27 @@
          "version" : "1.0.1"
       },
       {
+         "Author" : "Cyrex",
+         "Maintainer" : "Cyrex",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.cyrex.epiphany_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.cyrex.epiphany",
+         "sha256" : "acb7cbfbddfa21c9fd859c07c4e2c4e671f94ebc5a135db1f547898d240cd7be",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "Lessica <i.82@me.com>",
+         "Homepage" : "https://github.com/Lessica/CookiesTool",
+         "Maintainer" : "Lessica <i.82@me.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.darwindev.CookiesTool-iOS_0.1-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.darwindev.CookiesTool-iOS",
+         "sha256" : "2e98a16df9292873573e52d660b1f1a6687bba679ed23708112a290818d2fd69",
+         "version" : "0.1-2"
+      },
+      {
          "Author" : "Derek Calabro",
          "Depiction" : "https://dtcalabro.github.io/repo/depictions/?p=com.dcproducts.iossecuritysuitebypass",
          "Maintainer" : "Derek Calabro",
@@ -563,12 +713,44 @@
       {
          "Author" : "MrDeNsor",
          "Maintainer" : "MrDeNsor",
+         "SileoDepiction" : "https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.igformat_2.4.0-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.igformat",
+         "sha256" : "c3a3b29e74c6f1282fe36729749bb44ecd92f757a9af94fe027179cea43a9863",
+         "version" : "2.4.0-1"
+      },
+      {
+         "Author" : "MrDeNsor",
+         "Maintainer" : "MrDeNsor",
+         "SileoDepiction" : "https://raw.githubusercontent.com/6gr8/IGFormat/main/format.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.igformat_2.6.0-1+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.igformat",
+         "sha256" : "48be037be3ea66539da0a1c1e8ea76b909937dce7661cfe96bee6a51691e45b7",
+         "version" : "2.6.0-1+debug"
+      },
+      {
+         "Author" : "MrDeNsor",
+         "Maintainer" : "MrDeNsor",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.den.locktouchx_1.3-18_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:20:37Z",
          "package" : "com.den.locktouchx",
          "sha256" : "d74bb3cd4f90ed7b507074610f4bfbe643ef80aa62b9634085a50c08b4e6a6b3",
          "version" : "1.3-18"
+      },
+      {
+         "Author" : "DeNsor",
+         "Maintainer" : "DeNsor",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.msgplusx_1.1-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.msgplusx",
+         "sha256" : "3d7950e49e180b44246815ac9d31d860d42db55813bf45e8b29f1ba60f92cb3c",
+         "version" : "1.1-2"
       },
       {
          "Author" : "MrDeNsor",
@@ -591,6 +773,38 @@
          "package" : "com.den.shortcutx",
          "sha256" : "99a5799d7f2cadcea060509a8bbac56ae2c06887622433467bdb0d3e4e5ae4e0",
          "version" : "0.0.1-1"
+      },
+      {
+         "Author" : "DeNsor",
+         "Maintainer" : "DeNsor",
+         "SileoDepiction" : "https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.twigalaxy_1.13-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.twigalaxy",
+         "sha256" : "671094492063f74cdcb59ee9039614e3525ee5ed78186f9b308034a2f5f70380",
+         "version" : "1.13-1"
+      },
+      {
+         "Author" : "DeNsor",
+         "Maintainer" : "DeNsor",
+         "SileoDepiction" : "https://raw.githubusercontent.com/6gr8/IGFormat/main/twigal.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.twigalaxy_1.14-1+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.twigalaxy",
+         "sha256" : "16f63ad673b684c9d27255d5e8fd4e315a97fe2692ddcffbd88b4e09fff82a0a",
+         "version" : "1.14-1+debug"
+      },
+      {
+         "Author" : "DeNsor",
+         "Maintainer" : "DeNsor",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.den.vibett_1.75-1+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.den.vibett",
+         "sha256" : "39c06991ba0d74ee9db604fec89a5848aa07676e6e83bb6fd5d5b58559b4605b",
+         "version" : "1.75-1+debug"
       },
       {
          "Homepage" : "https://dhinakg.github.io/repo",
@@ -658,6 +872,17 @@
       {
          "Author" : "dvntm",
          "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/FastLock/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.fastlock_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.fastlock",
+         "sha256" : "1d655e3ebcb76e92e7ba1d7839663055d79a06135083ff61a76197d34ed9a321",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
          "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.dvntm.fbo_0.0.1_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T00:09:23Z",
@@ -674,6 +899,28 @@
          "package" : "com.dvntm.firstlook",
          "sha256" : "45343c29c4d0414c3a97faa94ce459ef4d40d63c70b8696ad65e3827d28cfcd2",
          "version" : "0.0.3"
+      },
+      {
+         "Author" : "dvntm, nowesr1",
+         "Maintainer" : "dvntm, nowesr1",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/Flow/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.flow_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.flow",
+         "sha256" : "360277c923841846ebeb735accaa1d04e5e4d3ee62b930792eb5194b199033e8",
+         "version" : "1.0"
+      },
+      {
+         "Author" : "dvntm",
+         "Maintainer" : "dvntm",
+         "SileoDepiction" : "https://raw.githubusercontent.com/dayanch96/InfusePlus/main/Resources/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.dvntm.infuseplus_2.5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.dvntm.infuseplus",
+         "sha256" : "00f82f4d44809ccb1f972697f045cb52b7bb22c62b244bf43e3ef6c93c1725ad",
+         "version" : "2.5"
       },
       {
          "Author" : "dvntm",
@@ -816,6 +1063,51 @@
          "version" : "2.0"
       },
       {
+         "Author" : "Ivano Bilenchi <support@ib-soft.net>",
+         "Depiction" : "http://ib-soft.net/depictions/?pkgId=com.exile90.icleanerpro",
+         "Homepage" : "http://ib-soft.net/icleaner",
+         "Maintainer" : "Ivano Bilenchi <support@ib-soft.net>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.exile90.icleanerpro_7.10.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.exile90.icleanerpro",
+         "sha256" : "ac3f8179f74507bf8ba886974f4fe58b9f3526a0965deabbc89f04a6f7cb77ca",
+         "version" : "7.10.0"
+      },
+      {
+         "Author" : "Fouad Raheb <support@fouadraheb.com>",
+         "Depiction" : "https://apt.fouadraheb.com/package/com.f0u4d.onlinenotify",
+         "Maintainer" : "Fouad Raheb <support@fouadraheb.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.f0u4d.onlinenotify_3.5.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.f0u4d.onlinenotify",
+         "sha256" : "cde7182dece883a3deff9383f262d67775498e27c18540156d1b6ef5e9a37f9a",
+         "version" : "3.5.4"
+      },
+      {
+         "Author" : "Fouad Raheb <support@fouadraheb.com>",
+         "Depiction" : "https://apt.fouadraheb.com/package/com.f0u4d.stalky",
+         "Maintainer" : "Fouad Raheb <support@fouadraheb.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.f0u4d.stalky_4.2.16_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.f0u4d.stalky",
+         "sha256" : "b4fe41927161667ad0bf08c352e7201220baeb483207ab3c0174f25e2ed3eab6",
+         "version" : "4.2.16"
+      },
+      {
+         "Author" : "Fouad Raheb <support@fouadraheb.com>",
+         "Depiction" : "https://apt.fouadraheb.com/package/com.f0u4d.stalky",
+         "Maintainer" : "Fouad Raheb <support@fouadraheb.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.f0u4d.stalky_4.3.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.f0u4d.stalky",
+         "sha256" : "3a39335cb95a172d66a466790fc3e814da9d4b3fba538a0323dc644c16a4d1f7",
+         "version" : "4.3.0"
+      },
+      {
          "Author" : "fiore",
          "Maintainer" : "fiore",
          "architecture" : "iphoneos-arm64e",
@@ -856,6 +1148,79 @@
          "version" : "1.2.7"
       },
       {
+         "Author" : "Fouad Raheb <support@fouadraheb.com>",
+         "Depiction" : "https://apt.fouadraheb.com/package/com.fouadraheb.contactsync",
+         "Maintainer" : "Fouad Raheb <support@fouadraheb.com>",
+         "SileoDepiction" : "https://apt.fouadraheb.com/package/com.fouadraheb.contactsync",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.fouadraheb.contactsync_1.1.15_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.fouadraheb.contactsync",
+         "sha256" : "c72f26305c04818d08677309215f856ddae29c27c07fd4a5e2e8f97d24a92146",
+         "version" : "1.1.15"
+      },
+      {
+         "Author" : "FoxfortMobile",
+         "Maintainer" : "FoxfortMobile",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.foxfort.foxforttools_1.4.13_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.foxfort.foxforttools",
+         "sha256" : "b6bb1cdf349179950107cc7d91da6bb5efafa29007a236f58857db12081117e2",
+         "version" : "1.4.13"
+      },
+      {
+         "Author" : "FoxfortMobile",
+         "Maintainer" : "FoxfortMobile",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.foxfort.krashkop_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.foxfort.krashkop",
+         "sha256" : "ce5912a0fc10d814795f62dc76973eeb34bbc500355bcf6e4a3c23b21e140bde",
+         "version" : "1.0.2"
+      },
+      {
+         "Author" : "FoxfortMobile",
+         "Maintainer" : "FoxfortMobile",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.foxfort.libfoxfortutils_1.4.7_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.foxfort.libfoxfortutils",
+         "sha256" : "b48e9200242dd12293a98fedd40d890a0477f0b976e132ec1fa3c2d64d210d3b",
+         "version" : "1.4.7"
+      },
+      {
+         "Author" : "FoxfortMobile",
+         "Maintainer" : "FoxfortMobile",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.foxfort.skinnymenu_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.foxfort.skinnymenu",
+         "sha256" : "dcf688eb675f1d7a8110447f2770fd477b0e53a5831d5af042805330dc23cd8e",
+         "version" : "1.0.2"
+      },
+      {
+         "Author" : "FoxfortMobile",
+         "Maintainer" : "FoxfortMobile",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.foxfort.translomatic_2.18.31_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.foxfort.translomatic",
+         "sha256" : "ce4759e0ad44581b3fc4fde378dcdc4a8c7915ebef021dcdc19b241fa70d0a6b",
+         "version" : "2.18.31"
+      },
+      {
+         "Author" : "gilesgc",
+         "Depiction" : "https://gilesgc.github.io/repo/depictions/?p=com.gilesgc.cccalc",
+         "Maintainer" : "gilesgc",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.gilesgc.cccalc_1.2.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.gilesgc.cccalc",
+         "sha256" : "21ab9cda6bcb3fc9ebf8b32aecabeb98be74df49b0a116bc70bc079ed473b561",
+         "version" : "1.2.2"
+      },
+      {
          "Author" : "gilshahar7",
          "Maintainer" : "gilshahar7",
          "architecture" : "iphoneos-arm64e",
@@ -864,6 +1229,37 @@
          "package" : "com.gilshahar7.volumepercent",
          "sha256" : "f1db951d2202dd86ac9350bbb05d3a214478f58c2311baa003152ee14f4a6b12",
          "version" : "1.0.2"
+      },
+      {
+         "Author" : "guacforlife",
+         "Homepage" : "https://github.com/guacforlife/ReynardDefault",
+         "Maintainer" : "guacforlife",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.guacforlife.reynarddefault_1.5.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.guacforlife.reynarddefault",
+         "sha256" : "57e7875bb3ae356cf09cb7128a29b639d90dc74c8d338eb53eb7972d59e04329",
+         "version" : "1.5.0"
+      },
+      {
+         "Author" : "@halo_michael",
+         "Maintainer" : "@haoict",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.haoict.ResolutionSetterSwift_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.haoict.ResolutionSetterSwift",
+         "sha256" : "f0ad35b93156f62a7a3009a2364293c6e83cad501b17a30a3db9a0675164380a",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "i0s_tweak3r",
+         "Maintainer" : "i0s_tweak3r",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.i0stweak3r.glitch_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.i0stweak3r.glitch",
+         "sha256" : "4e3caa65cd6211a9a7ad11c058865ff679202a16da22660f7c8d89e29133a50f",
+         "version" : "1.0.1"
       },
       {
          "Author" : "ichitaso <willfeeltips+hks@gmail.com>",
@@ -876,6 +1272,19 @@
          "package" : "com.ichitaso.hidekbsettings",
          "sha256" : "05a883303cfe0460c43bb5845c94bf5df57f608b4fd160d542c431394b6c0d5d",
          "version" : "1.0.6"
+      },
+      {
+         "Author" : "ichitaso",
+         "Depiction" : "https://cydia.ichitaso.com/depiction/hidesn.html",
+         "Homepage" : "https://cydia.ichitaso.com/depiction/hidesn.html",
+         "Maintainer" : "ichitaso",
+         "SileoDepiction" : "https://cydia.ichitaso.com/depiction/hidesn.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ichitaso.hideserialnumber_0.0.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ichitaso.hideserialnumber",
+         "sha256" : "ea40d976431e0aeb536ee9dcb11bf10cc948ccd4787937e384dab73ca8dc3089",
+         "version" : "0.0.4"
       },
       {
          "Author" : "ichitaso",
@@ -902,6 +1311,31 @@
          "package" : "com.ichitaso.otadisabler",
          "sha256" : "15d5fc95a040f91206b86ccdabf919b29b126139993e6d7e284f220c8efdadcb",
          "version" : "0.6"
+      },
+      {
+         "Author" : "ichitaso <willfeeltips+ps11@gmail.com>",
+         "Depiction" : "https://cydia.ichitaso.com/depiction/powerselector11.html",
+         "Homepage" : "https://cydia.ichitaso.com/depiction/powerselector11.html",
+         "Maintainer" : "ichitaso <willfeeltips+ps11@gmail.com>",
+         "SileoDepiction" : "https://cydia.ichitaso.com/depiction/powerselector11.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ichitaso.powerselector11_1.4.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ichitaso.powerselector11",
+         "sha256" : "d0d18739da4ea24415c2673ddfceac13ab02147a70284182546aa26d17af41d8",
+         "version" : "1.4.0"
+      },
+      {
+         "Author" : "ichitaso",
+         "Depiction" : "https://cydia.ichitaso.com/depiction/regionchanger.html",
+         "Homepage" : "https://ichitaso.com/",
+         "Maintainer" : "ichitaso",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ichitaso.regionchanger_0.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ichitaso.regionchanger",
+         "sha256" : "9f31ce04ce358093550790a057aa8ea059f94a1ef8ff1804fa9968ffdcc39897",
+         "version" : "0.0.2"
       },
       {
          "Author" : "ichitaso <willfeeltips+spg@gmail.com>",
@@ -946,6 +1380,18 @@
          "version" : "1.0"
       },
       {
+         "Author" : "elias",
+         "Depiction" : "https://havoc.app/depiction/smartbatteryios",
+         "Maintainer" : "elias",
+         "SileoDepiction" : "https://havoc.app/package/smartbatteryios/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.idevicelover.smartbatteryios15_1.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.idevicelover.smartbatteryios15",
+         "sha256" : "ddaa639dbc9bcb8a70ea0951aba7a3a56e09fe482c4a1acfa76661c66578598d",
+         "version" : "1.6"
+      },
+      {
          "Author" : "@iMokhles",
          "Maintainer" : "@iMokhles",
          "architecture" : "iphoneos-arm64e",
@@ -956,6 +1402,38 @@
          "version" : "0.0.1-3+debug"
       },
       {
+         "Author" : "ipapplus",
+         "Maintainer" : "ipapplus",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ipapplus.instarab_3.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ipapplus.instarab",
+         "sha256" : "a89877667393ab11cbd2c9f23e2fa59d756029bc7b404dcd64b5d91d4c9d6765",
+         "version" : "3.0"
+      },
+      {
+         "Author" : "jailbreak365 <jailbreak365@mail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccmodulesDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.jailbreak365.safeccmodules_1.5-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.jailbreak365.safeccmodules",
+         "sha256" : "28b8504845598172e29203044701d28ea643da78086a7edebb953a3ead142630",
+         "version" : "1.5-1"
+      },
+      {
+         "Author" : "Jonathan Winger-lang",
+         "Maintainer" : "Jonathan Winger-lang",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.jontelang.snapper3_1.2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.jontelang.snapper3",
+         "sha256" : "bebc95f23b9c8d9f5799775c18c4deb72514cfb9892a190cbcd0ec13ec9d02a4",
+         "version" : "1.2.1"
+      },
+      {
          "Author" : "Joshua Wheeler",
          "Maintainer" : "Joshua Wheeler",
          "architecture" : "iphoneos-arm64e",
@@ -964,6 +1442,16 @@
          "package" : "com.joshua.volumeflex",
          "sha256" : "85ea796dfbd52816f0935419e721ec2002f72e09c4cf33ce5112f4ac7f66550e",
          "version" : "0.0.6"
+      },
+      {
+         "Author" : "Joshua Wheeler",
+         "Maintainer" : "Joshua Wheeler",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.joshua.volumeflex_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.joshua.volumeflex",
+         "sha256" : "55f88d4a5dec8a39f7bb297dd4ba3a01c5a83ea74a84c2feb68287e1dd730125",
+         "version" : "1.1"
       },
       {
          "Author" : "julioverne",
@@ -1035,6 +1523,16 @@
          "version" : "1.0.6"
       },
       {
+         "Author" : "lclrc(SquidForce)",
+         "Maintainer" : "lclrc(SquidForce)",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.lclrc.hammerit_1.7.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.lclrc.hammerit",
+         "sha256" : "87b0de74b8500ad378d4d9535e4abb756e906677fcf0d4598dde4d95403851f9",
+         "version" : "1.7.0"
+      },
+      {
          "Author" : "leftyfl1p",
          "Depiction" : "https://repo.packix.com/package/com.leftyfl1p.carbackground13/",
          "Maintainer" : "leftyfl1p",
@@ -1091,6 +1589,17 @@
          "version" : "1.3"
       },
       {
+         "Author" : "m4fn3",
+         "Maintainer" : "m4fn3",
+         "SileoDepiction" : "https://m4fn3.github.io/repo/web/depictions/Mikkyy.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.m4fn3.mikkyy_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.m4fn3.mikkyy",
+         "sha256" : "a43fa5e48097b2d9123edf91672c451f561705d33bf5273967d9618ff6895ef0",
+         "version" : "1.0.2"
+      },
+      {
          "Author" : "Sniper @DNS_Sys",
          "Maintainer" : "Sniper @DNS_Sys",
          "architecture" : "iphoneos-arm64e",
@@ -1099,6 +1608,18 @@
          "package" : "com.managedelete.sniper",
          "sha256" : "5923674bc3f07c70f853509f6bb2281ed27d59af70fb9bc55ae3171fcbceeee0",
          "version" : "1.0"
+      },
+      {
+         "Author" : "MegaDev",
+         "Depiction" : "https://havoc.app/depiction/sentinel",
+         "Maintainer" : "MegaDev",
+         "SileoDepiction" : "https://havoc.app/package/sentinel/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.megadev.sentinel_1.3.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.megadev.sentinel",
+         "sha256" : "934f085c725c1874356e662b5bce6dfa3857c926bbd47f027d988cd567fba67d",
+         "version" : "1.3.2"
       },
       {
          "Author" : "Mhster_Nice",
@@ -1122,6 +1643,17 @@
          "version" : "0.0.2"
       },
       {
+         "Author" : "Mikey <splatmikey@gmail.com>",
+         "Depiction" : "https://chariz.com/get/pleasedontstopmusic",
+         "Maintainer" : "Mikey <splatmikey@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mikey820.pleasedontstopthemusic_2.2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mikey820.pleasedontstopthemusic",
+         "sha256" : "3872063f8be6823144692dc4d96eefc2dd69ec10bc728b299d2d03c1ff7f1b0e",
+         "version" : "2.2.0"
+      },
+      {
          "Author" : "mikifp",
          "Depiction" : "https://havoc.app/depiction/griddy",
          "Maintainer" : "mikifp",
@@ -1132,6 +1664,93 @@
          "package" : "com.mikifp.griddy",
          "sha256" : "357f1611095c151e33ed210910c9e2af3d8f9d0f72f2e6bbb24f60c37261a8ec",
          "version" : "1.0.5"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiro",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.miro.libmiro_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libmiro",
+         "sha256" : "1ea0641f9c0d8b558a7667e5c29c953a6ae446afbd4ee1bf38dab0690fdaa89d",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiroprefs",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.miro.libmiroprefs_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libmiroprefs",
+         "sha256" : "52cf29a805fe8aa208d280fb0d3709641b9aa74c480339b968805b8753a290e4",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libmiroshared",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.miro.libmiroshared_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libmiroshared",
+         "sha256" : "126e9e72e35e79da44e46c591295e683de5256846bc8d20e1f564c3c7ecd3a54",
+         "version" : "1.0.2"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.libphonenumber",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.miro.libphonenumber_2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.libphonenumber",
+         "sha256" : "6ef42d6c1393538b2bae5619ff7922df71c6ee0066a8a9ff639a669760458dcc",
+         "version" : "2.0"
+      },
+      {
+         "Author" : "MiRO <tweaks_support@miro92.com>",
+         "Depiction" : "https://miro92.com/repo/depictions/?p=com.miro.yellowpages2",
+         "Maintainer" : "MiRO <tweaks_support@miro92.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.miro.yellowpages2_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.miro.yellowpages2",
+         "sha256" : "16e75e812b2e342612d0e1501f91091b1534523ca4c5ee39d5a3f9f5a77cddba",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "MrGcGamer",
+         "Maintainer" : "MrGcGamer",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mrgcgamer.libgcuniversal_1.7.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mrgcgamer.libgcuniversal",
+         "sha256" : "659c394fe85333f0bf07f8b7608169b38cc15877de7d6d63b196e14690d3ef98",
+         "version" : "1.7.0"
+      },
+      {
+         "Author" : "MTAC",
+         "Depiction" : "https://havoc.app/depiction/alpine",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://havoc.app/package/alpine/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.alpine_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.alpine",
+         "sha256" : "fdadea9954327e8786d80d53a24132b47734d740d6c2bd495052bdd0ee6670ed",
+         "version" : "1.4"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.ampere_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.ampere",
+         "sha256" : "a3d3bae0d43a72654963c237db49e3d9f8f4863e0a220786608c2ad3e6285db4",
+         "version" : "1.4"
       },
       {
          "Author" : "MTAC",
@@ -1157,6 +1776,39 @@
       },
       {
          "Author" : "MTAC",
+         "Depiction" : "https://mtac.app/repo/depiction/web/com.mtac.lynxapp.html",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.lynxapp.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.lynxapp_2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.lynxapp",
+         "sha256" : "7d0122551ded2125a3b9e34163d3ce7cea7c9179a1579efec5626e53924b5007",
+         "version" : "2.1"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.lynxtwo.localizations.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.lynxtwo.localizations_2.5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.lynxtwo.localizations",
+         "sha256" : "0911f7bba55d078ebcdd60573fef9fc3d94305384c2ba58e3954f0404fefa62b",
+         "version" : "2.5"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.lynxtwo_2.5.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.lynxtwo",
+         "sha256" : "9825398c1951c7ca551d6bbaa4a4dd2be61df583ae2f391ea78d3e9e0eca8938",
+         "version" : "2.5.4"
+      },
+      {
+         "Author" : "MTAC",
          "Maintainer" : "MTAC",
          "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.prefs.localizer.json",
          "architecture" : "iphoneos-arm64e",
@@ -1165,6 +1817,27 @@
          "package" : "com.mtac.prefs.localizer",
          "sha256" : "ba1e55434531d0b3c74610d5963a0f57c946544e5d3bf8cc65780952c077418e",
          "version" : "1.2"
+      },
+      {
+         "Author" : "MTAC",
+         "Maintainer" : "MTAC",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.mtac.scope.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.mtac.scope_1.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.mtac.scope",
+         "sha256" : "88c4637dabf678d2b53d978e54f2998e859884c6e470c4dee0f9674e6ac03592",
+         "version" : "1.3"
+      },
+      {
+         "Author" : "Muirey03",
+         "Maintainer" : "Muirey03",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.muirey03.cr4shed_4.3.1-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.muirey03.cr4shed",
+         "sha256" : "dba9adbfe0a8f947c7820f044c626fbf3ff0fa846fe2c248b1347072ebddc46f",
+         "version" : "4.3.1-1"
       },
       {
          "Author" : "Muirey03",
@@ -1198,6 +1871,30 @@
          "version" : "1.0"
       },
       {
+         "Author" : "Nasser | NoTimeToChill <nowe9r@hotmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.na9.tiktok_1.0~beta5-2+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.na9.tiktok",
+         "sha256" : "8495ef7bce2c69c4474fad1eaf7716ddfa6db6ba30f64ca301d5fb13e82b7a09",
+         "version" : "1.0~beta5-2+debug"
+      },
+      {
+         "Author" : "Nasser | NoTimeToChill <nowe9r@hotmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=na9fortiktokDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.na9.tiktok_1.0~beta5-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.na9.tiktok",
+         "sha256" : "ad61efaa2d09e1d91e61d28b79c2c1bfba57f8221cd39060e5d574131d83c376",
+         "version" : "1.0~beta5-2"
+      },
+      {
          "Author" : "Ethan Whited",
          "Maintainer" : "Ethan Whited",
          "architecture" : "iphoneos-arm64e",
@@ -1206,6 +1903,16 @@
          "package" : "com.nahtedetihw.closeall",
          "sha256" : "3f9556d20d6cd4222fa5ad66655fe7ae2ff555ef3c29c578621caf25719a6125",
          "version" : "1.0"
+      },
+      {
+         "Author" : "Ethan Whited, ichitaso",
+         "Maintainer" : "ichitaso",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nahtedetihw.listening_1.2.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.nahtedetihw.listening",
+         "sha256" : "ac6b06ab7d4325ec1e9e5e6a7d1c2dffc35032bc0fa656e1273f5fd2bc8f0645",
+         "version" : "1.2.3"
       },
       {
          "Author" : "zhaonan",
@@ -1342,6 +2049,17 @@
       },
       {
          "Author" : "Netskao",
+         "Maintainer" : "Nets",
+         "SileoDepiction" : "https://jailrepo.initnil.com/Depictions/com.netskao.dumpdecrypter.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.netskao.dumpdecrypter_1.5-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.netskao.dumpdecrypter",
+         "sha256" : "e49f98941934a6b550397428321d1d9f5ef5be5ef71d0666a42a4f352147bfc4",
+         "version" : "1.5-1"
+      },
+      {
+         "Author" : "Netskao",
          "Maintainer" : "Netskao",
          "SileoDepiction" : "https://jailrepo.initnil.com/Depictions/com.netskao.noappthinning.json",
          "architecture" : "iphoneos-arm64e",
@@ -1352,6 +2070,17 @@
          "version" : "1.4"
       },
       {
+         "Author" : "c1d3r",
+         "Maintainer" : "Nets",
+         "SileoDepiction" : "https://jailrepo.initnil.com/Depictions/com.netskao.pulloverpro.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.netskao.pulloverpro_2.1.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.netskao.pulloverpro",
+         "sha256" : "1f6a04aae9547b6d7457c748136e81f84ad3f69b55154659beb87ab609ff42cb",
+         "version" : "2.1.6"
+      },
+      {
          "Author" : "newwares",
          "Maintainer" : "newwares",
          "architecture" : "iphoneos-arm64e",
@@ -1360,6 +2089,29 @@
          "package" : "com.newwares.badgesync",
          "sha256" : "e3f70116553a9b3df141cb38f9367e9446948ee5af0be818668af80ccf3c8c2b",
          "version" : "1.2.2"
+      },
+      {
+         "Author" : "NguyenASang",
+         "Maintainer" : "NguyenASang",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nguyenasang.snmessenger_2.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.nguyenasang.snmessenger",
+         "sha256" : "f5382c6d3d641a824eaf43c0089a0106fe9b49552c47b6206535203ec9e7e70b",
+         "version" : "2.0.0"
+      },
+      {
+         "Author" : "Nick's Works (Hadobedo)",
+         "Depiction" : "https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.html",
+         "Homepage" : "https://github.com/hadobedo/RoadRunnerReborn",
+         "Maintainer" : "Nick's Works <hadobedo@gmail.com>",
+         "SileoDepiction" : "https://hadobedo.github.io/repo/depictions/com.nicksworks.roadrunnerreborn.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.nicksworks.roadrunnerreborn_1.0.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.nicksworks.roadrunnerreborn",
+         "sha256" : "366b5b723b99bb826f6ad0d93789283cce57552fc4ba0d6da2f7ad20a930a2a6",
+         "version" : "1.0.0"
       },
       {
          "Author" : "Nightwind",
@@ -1422,6 +2174,27 @@
          "version" : "0.0.1"
       },
       {
+         "Author" : "NoisyFlake <support@noisyflake.com>",
+         "Depiction" : "https://chariz.com/get/velvet-2",
+         "Maintainer" : "NoisyFlake <support@noisyflake.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.noisyflake.velvet2_2.1.2-3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.noisyflake.velvet2",
+         "sha256" : "72b6e9554ee826cf3352aad392a231b7a02bc0188e849244f64de19fe3b875e8",
+         "version" : "2.1.2-3"
+      },
+      {
+         "Author" : "NoisyFlake",
+         "Maintainer" : "m4fn3",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.noisyflake.velvet2_2.2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.noisyflake.velvet2",
+         "sha256" : "3140147625c64a048ffbf6dd10a9886c8b2e530c218a69b5e57200b0d5155f35",
+         "version" : "2.2.0"
+      },
+      {
          "Author" : "Tanner Bennett <thepantsthief@me.com>",
          "Maintainer" : "Tanner Bennett <thepantsthief@me.com>",
          "architecture" : "iphoneos-arm64e",
@@ -1430,6 +2203,36 @@
          "package" : "com.nscake.noscrollbargrabdelay",
          "sha256" : "85b60a1dd280e72bbce4eb5b406a7327e402c01f71e95e1b202c2dee3ff40af4",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "opa334",
+         "Maintainer" : "opa334",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.opa334.cranelite_1.3.18-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.opa334.cranelite",
+         "sha256" : "37a02b5a8d399aa7d8b86e1607701c9fadd8ab66b472bc5f6ff8975e22fb2bb4",
+         "version" : "1.3.18-2"
+      },
+      {
+         "Author" : "opa334",
+         "Maintainer" : "opa334",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.opa334.cranelite_1.3.18_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.opa334.cranelite",
+         "sha256" : "874e993e2648593bb5362131a99c2d873b9be37e4b8b2e10f54919e7c133d851",
+         "version" : "1.3.18"
+      },
+      {
+         "Author" : "opa334",
+         "Maintainer" : "opa334",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.opa334.trollstorelite_2.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.opa334.trollstorelite",
+         "sha256" : "8ab993350f08f764164c0ff3bfdd99723d50adb5eae19bf7c96f8aac9cbc3c97",
+         "version" : "2.1.1"
       },
       {
          "Author" : "P2KDev <p2kdev@gmail.com>",
@@ -1538,6 +2341,112 @@
          "version" : "1.0.1"
       },
       {
+         "Author" : "Randy420 <randy.skinner@hotmail.com>",
+         "Depiction" : "https://Randy-420.GitHub.io/depic/420Tools.html",
+         "Homepage" : "https://theemeraldisle.family",
+         "Maintainer" : "Randy420 <randy.skinner@hotmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.randy420.tools_2.3.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.randy420.tools",
+         "sha256" : "0ce044a512af7c1c9765ca4309bfc808f22607adf4ceec7d1cf8254a1e69dece",
+         "version" : "2.3.9"
+      },
+      {
+         "Author" : "raul saeed",
+         "Maintainer" : "raul saeed",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.raulsaeed.bhtiktok++_1.8-119_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.raulsaeed.bhtiktok++",
+         "sha256" : "c6c17e29c38cd4ae72d062cf5967a899c986481861cafa9ab47d29859078eb00",
+         "version" : "1.8-119"
+      },
+      {
+         "Author" : "Riley Testut <support@altstore.io>",
+         "Depiction" : "https://chariz.com/get/altdaemon",
+         "Maintainer" : "Riley Testut <support@altstore.io>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.rileytestut.altdaemon_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.rileytestut.altdaemon",
+         "sha256" : "33b8f2a6c9379d42e2c2585e7b091e1fd2f289162df7c656097adec8d616680b",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "Riley Testut and AltDaemonModern contributors",
+         "Homepage" : "https://github.com/altstoreio/AltStore",
+         "Maintainer" : "AltDaemonModern contributors",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.rileytestut.altdaemon_1.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.rileytestut.altdaemon",
+         "sha256" : "f76bfc9f23de88d1589a4ac5fb8b0cb0bfc40eab327881984b809602ad4e9655",
+         "version" : "1.1.1"
+      },
+      {
+         "Author" : "roothide",
+         "Depiction" : "https://github.com/roothide/RootHideManagerApp",
+         "Maintainer" : "roothide",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.roothide.manager_1.3.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.roothide.manager",
+         "sha256" : "b8f075e1844709845962900b22fe71136a66369a2c35bb1201087f2fd9476b7d",
+         "version" : "1.3.9"
+      },
+      {
+         "Author" : "Baw Appie <pp121324@gmail.com>",
+         "Maintainer" : "Baw Appie <pp121324@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.rpgfarm.a-font_1.10.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.rpgfarm.a-font",
+         "sha256" : "f957fa6934565e394c671afe4a36e29c1166390baa4d9dd6a265e96706ea09e3",
+         "version" : "1.10.1"
+      },
+      {
+         "Author" : "Baw Appie <pp121324@gmail.com>",
+         "Maintainer" : "m4fn3",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.rpgfarm.a-font_2.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.rpgfarm.a-font",
+         "sha256" : "ce8bc1db43e48e8f73ad16784ec4a815a6627b40cda09196e3a7bb29630ed127",
+         "version" : "2.0.1"
+      },
+      {
+         "Author" : "Ryan Nair <ryannairtweaks@gmail.com>",
+         "Depiction" : "https://chariz.com/get/cylinder-reborn",
+         "Maintainer" : "Ryan Nair <ryannairtweaks@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ryannair05.cylinder_1.1.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ryannair05.cylinder",
+         "sha256" : "2215169e453d12383c3e8cbe2758e4e648df5a531b8f1423c56e3e673c811a15",
+         "version" : "1.1.2"
+      },
+      {
+         "Author" : "Ryan Nair",
+         "Maintainer" : "Ryan Nair",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ryannair05.cylinderremade_0.0.3-beta_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ryannair05.cylinderremade",
+         "sha256" : "fa7e2bcded07a77c01beed4e54993ff11d02657411215b98d7813a211a28dc4e",
+         "version" : "0.0.3-beta"
+      },
+      {
+         "Author" : "Ryan Nair",
+         "Maintainer" : "Ryan Nair",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.ryannair05.keyboardplus_1.1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.ryannair05.keyboardplus",
+         "sha256" : "4f5a7f2b8c3b1172a191f679b063a3444bb62c2d910c72413281f1785aa2652f",
+         "version" : "1.1.1"
+      },
+      {
          "Author" : "sergy",
          "Maintainer" : "sergy",
          "architecture" : "iphoneos-arm64e",
@@ -1556,6 +2465,26 @@
          "package" : "com.sergy.immortalizerjailed",
          "sha256" : "e363a40750a89bb419888e0a56a73c5106f8052243b62c63f7ee63d848e90ef5",
          "version" : "2.2"
+      },
+      {
+         "Author" : "shepgoba",
+         "Maintainer" : "shepgoba",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.shepgoba.settingswidgets_1.2.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.shepgoba.settingswidgets",
+         "sha256" : "ecc0e30c658c1bbc977a52f24c1a717ffeeacd38d1e5161a2ddcab9ec3eedbb4",
+         "version" : "1.2.3"
+      },
+      {
+         "Author" : "fiore & p2kdev & SINI",
+         "Maintainer" : "fiore & p2kdev & SINI",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.sini921.ccborder_1.1.2-42_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.sini921.ccborder",
+         "sha256" : "4115711aeeba4e4ead34b96dedfc964c74c0a7fb7ee4a934b9cb9c96e6a85d07",
+         "version" : "1.1.2-42"
       },
       {
          "Author" : "SINI",
@@ -1578,6 +2507,37 @@
          "version" : "1.0.1-1"
       },
       {
+         "Author" : "smokin1337 <smokin1337@gmail.com>",
+         "Maintainer" : "smokin1337 <smokin1337@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.smokin1337.smarterlpm_1.0.9_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.smokin1337.smarterlpm",
+         "sha256" : "0e747c69fb7cddb49be1576a878a4c39b9596909e80dc5b11eaa7108c6637537",
+         "version" : "1.0.9"
+      },
+      {
+         "Author" : "Snail <mu514983786@gmail.com>",
+         "Maintainer" : "Snail <mu514983786@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.snail.autovpn.roothide_1.0.8_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.snail.autovpn.roothide",
+         "sha256" : "e20ec60001fb1ccadd3ced13a81a9044d5951b7db13ae433e7220c381aaec62f",
+         "version" : "1.0.8"
+      },
+      {
+         "Author" : "SoCuul",
+         "Homepage" : "https://github.com/SoCuul/SCInsta",
+         "Maintainer" : "SoCuul",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.socuul.scinsta_1.1.1-1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.socuul.scinsta",
+         "sha256" : "395d4d5bc305bf8f690cf2842cce4c0a7644f836ad2cfcfcfc95e67e5c325165",
+         "version" : "1.1.1-1"
+      },
+      {
          "Author" : "Spark",
          "Maintainer" : "Spark",
          "architecture" : "iphoneos-arm64e",
@@ -1586,6 +2546,16 @@
          "package" : "com.spark.libsparkapplist",
          "sha256" : "de08b1d6ca301d3a8fe6eaea37f29b6528c11ad73633cc8044af7d126724b41f",
          "version" : "1.1.0~rootless"
+      },
+      {
+         "Author" : "Spark",
+         "Maintainer" : "Spark",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.spark.libsparkcolourpicker_1.0.3-rootless_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.spark.libsparkcolourpicker",
+         "sha256" : "165bf505e058d001e42e43d8d598d20f16037d0861efa41a2685c23d58d27ffa",
+         "version" : "1.0.3-rootless"
       },
       {
          "Author" : "Spark",
@@ -1638,6 +2608,16 @@
          "version" : "1.0.26~Beta3-rootless"
       },
       {
+         "Author" : "Spark & Dennis D. Bednarz",
+         "Maintainer" : "Spark",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.spark.snowboard_1.5.37-Beta4-rootless_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.spark.snowboard",
+         "sha256" : "6d6fdd167915df096e6126bee34e6ab6f940876faf2ead112375028df0d93604",
+         "version" : "1.5.37-Beta4-rootless"
+      },
+      {
          "Author" : "sugiuta",
          "Depiction" : "https://sugiuta.github.io/descriptions/index.html?p=com.sugiuta.soundvol",
          "Maintainer" : "sugiuta",
@@ -1659,6 +2639,39 @@
          "version" : "0.0.1"
       },
       {
+         "Author" : "SynnyG_R <synnyg.devjb@gmail.com>",
+         "Maintainer" : "SynnyG_R <synnyg.devjb@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.synnyg.reversenotifications_1.0.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.synnyg.reversenotifications",
+         "sha256" : "79d3b7749520c38ebcc36d6ee7104be14e54f92dda01503aaeac83b365f9fa98",
+         "version" : "1.0.3"
+      },
+      {
+         "Author" : "tesla_man <computerman939+POBsupport@gmail.com>",
+         "Depiction" : "https://chariz.com/get/popoutbuttons",
+         "Maintainer" : "tesla_man <computerman939+POBsupport@gmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.teslaman3092.popoutbuttons_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.teslaman3092.popoutbuttons",
+         "sha256" : "cdb4ec37fbf0301637f4eb290415a3ed808c801e2d82f6a6e6f861a8a5d830ee",
+         "version" : "1.0.2"
+      },
+      {
+         "Author" : "TitanD3v <titand3veloper@gmail.com>",
+         "Depiction" : "https://a7m.dev/file/a/speedy/index.html",
+         "Maintainer" : "TitanD3v <titand3veloper@gmail.com>",
+         "SileoDepiction" : "https://a7m.dev/file/a/speedy/index.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.titand3v.speedy_1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.titand3v.speedy",
+         "sha256" : "aff4e3d6a0df74adcebf39233bc187b73c78e58746fda859074132f7293a526d",
+         "version" : "1.0"
+      },
+      {
          "Author" : "Tony Kraft <iostonykraft@gmail.com>",
          "Depiction" : "http://iostonykraft.github.io/depictions/com.tonykraft.inosleep.html",
          "Maintainer" : "Tony Kraft <iostonykraft@gmail.com>",
@@ -1678,6 +2691,29 @@
          "package" : "com.ub.disablerec",
          "sha256" : "c8f92a66ec47f443e492beaff49b186ca39009d9302770e04edd52d16afc57bc",
          "version" : "1.0.0-12"
+      },
+      {
+         "Author" : "Uckermark",
+         "Depiction" : "https://havoc.app/depiction/siriplus",
+         "Maintainer" : "Uckermark",
+         "SileoDepiction" : "https://havoc.app/package/siriplus/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.uckermark.siriplus_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.uckermark.siriplus",
+         "sha256" : "e6033ffdae543094d022584aa6830236bd25f52634f2f2c24a77ad8ef9c21c25",
+         "version" : "1.4"
+      },
+      {
+         "Author" : "udevs",
+         "Maintainer" : "udevs",
+         "SileoDepiction" : "https://lclrc.github.io/repo/depictions/native/com.udevs.dockx/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.udevs.dockx_2.6.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.udevs.dockx",
+         "sha256" : "f0e27981d4525b62757a62dbb1e7ece0a5239c69aa2adfdc4330e47be26996a9",
+         "version" : "2.6.2"
       },
       {
          "Author" : "PoomSmart & vXBaKeRXv",
@@ -1702,6 +2738,28 @@
          "version" : "1.1.0"
       },
       {
+         "Author" : "XCXiao <958169971@qq.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=bottomcontrolxDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=bottomcontrolxDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.xcxiao.bottomcontrolx_1.3.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.xcxiao.bottomcontrolx",
+         "sha256" : "daa34c65bfc6ae7d912114fbc515290ed3c187eb576d64b323b7c1c168210ae4",
+         "version" : "1.3.3"
+      },
+      {
+         "Author" : "Xyaman & b4db1r3",
+         "Maintainer" : "b4db1r3",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.xyaman.tako_3.5.2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.xyaman.tako",
+         "sha256" : "aa08e7c42d4950e27b34a08c45263b7a45d0c351c741dc793961eb050b5e3e51",
+         "version" : "3.5.2.1"
+      },
+      {
          "Author" : "0xkuj <0xkujz@gmail.com>",
          "Maintainer" : "0xkuj <0xkujz@gmail.com>",
          "architecture" : "iphoneos-arm64e",
@@ -1710,6 +2768,16 @@
          "package" : "com.yourepo.0xkuj.storeswitcher2rootless",
          "sha256" : "23f454299b6111cf6a7c179ebf9c038c4f3dd0d3890405ccc7c8b413f861499c",
          "version" : "1.0.4"
+      },
+      {
+         "Author" : "b4db1r3",
+         "Maintainer" : "b4db1r3",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.yourepo.b4db1r3r3p0.allrounddit_1.0.70_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "com.yourepo.b4db1r3r3p0.allrounddit",
+         "sha256" : "34e1f996cfdf18b943feff5c30acef94415f3a3c53c63bf66624e587833907b4",
+         "version" : "1.0.70"
       },
       {
          "Author" : "@fr0st & b4db1r3 <nfive060@gmail.com>",
@@ -1871,6 +2939,16 @@
          "version" : "1.4.1"
       },
       {
+         "Author" : "Traurige <hello@traurige.dev>",
+         "Maintainer" : "Traurige <hello@traurige.dev>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/dev.traurige.liddell_1.4.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "dev.traurige.liddell",
+         "sha256" : "cfdd2838848ae7f95fb7129d290478c85ba4bcbb8bbed0b1eaf071c507da5d0f",
+         "version" : "1.4.3"
+      },
+      {
          "Author" : "adry",
          "Maintainer" : "adry",
          "architecture" : "iphoneos-arm64e",
@@ -1881,6 +2959,32 @@
          "version" : "0.0.1"
       },
       {
+         "Author" : "AnubisTweaks",
+         "Depiction" : "https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks",
+         "Homepage" : "https://github.com/AnubisTweaks",
+         "Maintainer" : "AnubisTweaks",
+         "SileoDepiction" : "https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/eg.anubistweaks.translux_1.2.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "eg.anubistweaks.translux",
+         "sha256" : "07f0a65cd83fd4aaec76985021308b4b2cdb28d5e54857a306618ad1df7941d9",
+         "version" : "1.2.1"
+      },
+      {
+         "Author" : "AnubisTweaks",
+         "Depiction" : "https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json&name=TransLux&dev=AnubisTweaks",
+         "Homepage" : "https://github.com/AnubisTweaks",
+         "Maintainer" : "AnubisTweaks",
+         "SileoDepiction" : "https://raw.githubusercontent.com/AnubisTweaks/AnubisTweaks.github.io/main/assets/json/translux/translux.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/eg.anubistweaks.translux_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "eg.anubistweaks.translux",
+         "sha256" : "78d5d873708f6059e329c0228c9bcc6525584d28c89bc94d0acf59a0c77a3106",
+         "version" : "1.4"
+      },
+      {
          "Author" : "iarchiveml",
          "Maintainer" : "M哥",
          "architecture" : "iphoneos-arm64e",
@@ -1889,6 +2993,72 @@
          "package" : "jetsamunlimited",
          "sha256" : "f5e9915a09a532de6073b04b29d8ce380dcd2115eee544cd0636f488fee2b9c5",
          "version" : "1.0"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Maintainer" : "Dcsyhi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.adkeyboard_1.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.adkeyboard",
+         "sha256" : "a2c8fb302617366f744810db819de56c991d0cdf3cf5af05ab61729a3af1c26b",
+         "version" : "1.3"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Maintainer" : "Dcsyhi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.adkeyboard_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.adkeyboard",
+         "sha256" : "466a6294cfa6257ab68b01a5a5a6cebde4c13986ad4e238011d9fbad30836aaa",
+         "version" : "1.4"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Depiction" : "https://dcsyhi1998.github.io/depiction/Culprit.html",
+         "Maintainer" : "Dcsyhi",
+         "SileoDepiction" : "https://dcsyhi1998.github.io/Sileodepiction/Culprit.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.culprit_1.0.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.culprit",
+         "sha256" : "1d8590f8cc6ea2fb2289a3e8b12459211c8ff3774349c0b3310916cdeed04783",
+         "version" : "1.0.1"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Depiction" : "https://dcsyhi1998.github.io/depiction/Culprit.html",
+         "Maintainer" : "Dcsyhi",
+         "SileoDepiction" : "https://dcsyhi1998.github.io/Sileodepiction/Culprit.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.culprit_1.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.culprit",
+         "sha256" : "18b87932cab1f50e6c8682362f7525dd746ceb71ef2213b0d56be437d5265796",
+         "version" : "1.0.2"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Maintainer" : "Dcsyhi",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.kbappdock_1.5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.kbappdock",
+         "sha256" : "e57400332891530cee815329435ee30cd2e1a49f146fc29766528a2e52b7b6b3",
+         "version" : "1.5"
+      },
+      {
+         "Author" : "Dcsyhi",
+         "Depiction" : "https://dcsyhi1998.github.io/depiction/KBApp.html",
+         "Maintainer" : "Dcsyhi",
+         "SileoDepiction" : "https://dcsyhi1998.github.io/Sileodepiction/KBApp.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/jp.dcsyhi.kbappdock_1.8.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "jp.dcsyhi.kbappdock",
+         "sha256" : "32d49642bd4634c8f34d238c469b204db9515b42f6c65924a1b1088a4dbd1981",
+         "version" : "1.8.1"
       },
       {
          "Author" : "r_plus",
@@ -1962,6 +3132,30 @@
          "version" : "1.0"
       },
       {
+         "Author" : "Tanner Bennett <tannerbennett@me.com>",
+         "Depiction" : "https://nscake.github.io/package.html?package=libflex",
+         "Maintainer" : "Tanner Bennett <tannerbennett@me.com>",
+         "SileoDepiction" : "https://nscake.github.io/depictions/libflex.sileo.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/libvolumeflex_0.0.2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "libvolumeflex",
+         "sha256" : "1595da08fef8616d290e0ab4b38790e6461e9f259a61ba26ddfc75ed27305b14",
+         "version" : "0.0.2"
+      },
+      {
+         "Author" : "Paisseon",
+         "Depiction" : "https://pinpal.github.io/Sileo-Depiction-WebViews/?json=https://paisseon.github.io/depictions/Reverie.json&name=Reverie&dev=Paisseon",
+         "Maintainer" : "Paisseon",
+         "SileoDepiction" : "https://paisseon.github.io/depictions/Reverie.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/lilliana.reverie_0.0.3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "lilliana.reverie",
+         "sha256" : "5f8c8379ab2f365432817fcff67d0ec2b8345722bcbcaa3f0a8775efbf1f8266",
+         "version" : "0.0.3"
+      },
+      {
          "Author" : "iKarwan <ikghd3@gmail.com>",
          "Depiction" : "https://repo.ikghd.me/depictions/?p=me.ikghd.pmp",
          "Maintainer" : "iKarwan <ikghd3@gmail.com>",
@@ -2024,6 +3218,26 @@
          "version" : "1.0.8"
       },
       {
+         "Author" : "jjolano",
+         "Maintainer" : "jjolano",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/me.jjolano.shadow_3.7.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "me.jjolano.shadow",
+         "sha256" : "f2454ed46dcf2f1ecf0addceba8a1d85c4f457d1f18c30de5eb2752e1ba0acda",
+         "version" : "3.7.6"
+      },
+      {
+         "Author" : "Kritanta",
+         "Maintainer" : "Kritanta",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/me.kritanta.gravitation_0.1.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "me.kritanta.gravitation",
+         "sha256" : "33a5761ddd348660b75a2a29626680f9721c57353521af2d760c79518467a0ea",
+         "version" : "0.1.0"
+      },
+      {
          "Author" : "Luki",
          "Depiction" : "https://luki120.github.io/depictions/web/?p=me.luki.arres",
          "Maintainer" : "Luki",
@@ -2071,6 +3285,27 @@
          "version" : "1.4.3"
       },
       {
+         "Author" : "TomT000",
+         "Maintainer" : "TomT000",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/me.tomt000.copylog_1.7.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "me.tomt000.copylog",
+         "sha256" : "988cbfa217eaba3163aa29a50444a0e8bab55c1e0c5188fb4d95ef160778c5d0",
+         "version" : "1.7.1"
+      },
+      {
+         "Author" : "lordscotland <admin@officialscheduler.com>",
+         "Maintainer" : "D.F (MTAC) <mtac@mtac.app>",
+         "SileoDepiction" : "https://mtac.app/repo/depiction/native/com.officialscheduler.mterminal.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/mterminal_1.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "mterminal",
+         "sha256" : "f810e740b4b7d2ca379cd5c80bcdd5f0ac1690b2c9c7870480c44b4b49f576da",
+         "version" : "1.6"
+      },
+      {
          "Author" : "alexia <me@alexia.lol>",
          "Depiction" : "https://repo.alexia.lol/depictions/net.cadoth.nosbreload",
          "Maintainer" : "alexia <me@alexia.lol>",
@@ -2104,6 +3339,16 @@
          "version" : "0.0.3"
       },
       {
+         "Author" : "Yaniv Danan (hAcx)",
+         "Maintainer" : "Yaniv Danan (hAcx)",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/org.hacx.hacxdaemon_3.8_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "org.hacx.hacxdaemon",
+         "sha256" : "eeabd2fcb49d850694774e68eae759f470afdf4ddcff91d0fc747f3e74dcc6dc",
+         "version" : "3.8"
+      },
+      {
          "Author" : "Bailey Seymour",
          "Maintainer" : "Bailey Seymour",
          "architecture" : "iphoneos-arm64e",
@@ -2132,6 +3377,56 @@
          "package" : "rootfultorootless",
          "sha256" : "aa253f655d8d74ebc7904da7dcde734978f7a90cbcb82c1376dea60ddee83e30",
          "version" : "0.0.1"
+      },
+      {
+         "Author" : "ipad_kid_Randy420 <ipadkid358@gmail.com, randy.skinner@hotmail.com>",
+         "Depiction" : "https://Randy-420.GitHub.io/depic/ftt.html",
+         "Homepage" : "https://theemeraldisle.family",
+         "Maintainer" : "Randy420 <randy.skinner@hotmail.com>",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/ru.rj.ftt_1.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "ru.rj.ftt",
+         "sha256" : "0028d32b93c0fa7a5ab174c2ef7ad5002806cda66dcfa87eb1d3602db5d83a5d",
+         "version" : "1.4"
+      },
+      {
+         "Author" : "Geometric Software",
+         "Depiction" : "https://store.geometricsoftware.se/packages/se.geometric.graphite",
+         "Maintainer" : "Geometric Software",
+         "SileoDepiction" : "https://apt.geometricsoftware.se/package/se.geometric.graphite/depiction",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/se.geometric.graphite_2.0_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "se.geometric.graphite",
+         "sha256" : "ba5a27f72302a035248ab29bfc02034c1e404711c01221bca73367641d212257",
+         "version" : "2.0"
+      },
+      {
+         "Author" : "nowesr1 <nowe9r@hotmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "SileoDepiction" : "https://raw.githubusercontent.com/nowesr1/WhatsApp-Location-Spoofer/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/twitter.nowesr1.location-spoofer_0.0.4_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "twitter.nowesr1.location-spoofer",
+         "sha256" : "4937595c7979331458c4efbbefcf582653c6b037030ccdc955010cd5c02a7e41",
+         "version" : "0.0.4"
+      },
+      {
+         "Author" : "nowesr1 <nowe9r@hotmail.com>",
+         "Depiction" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
+         "Homepage" : "http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=walocationspooferDp",
+         "Maintainer" : "BigBoss <bigboss@thebigboss.org>",
+         "SileoDepiction" : "https://raw.githubusercontent.com/nowesr1/WhatsApp-Location-Spoofer/main/Sileo/depiction.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/twitter.nowesr1.location-spoofer_0.0.6_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "twitter.nowesr1.location-spoofer",
+         "sha256" : "765da1bbb45c0cdad18e1692a9b2c08e26a2a68cc112a128ce5dcce7bdfc220c",
+         "version" : "0.0.6"
       },
       {
          "Author" : "nowesr1 <nowe9r@hotmail.com>",
@@ -2215,6 +3510,40 @@
          "package" : "xyz.skitty.ersatz",
          "sha256" : "6d8a16dc0af0c527cdf6ea8aeb58f7e696d0e8b13c4c7388de1dfae484c45c01",
          "version" : "1.0.1"
+      },
+      {
+         "Author" : "Skitty & EvenDev",
+         "Depiction" : "https://skitty.xyz/repo/depictions/xyz.skitty.spectrum/",
+         "Maintainer" : "Skitty",
+         "SileoDepiction" : "https://skitty.xyz/repo/depictions/xyz.skitty.spectrum/sileo.json",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/xyz.skitty.spectrum_1.1_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "xyz.skitty.spectrum",
+         "sha256" : "9c7d9578dba915c3f463e026d7a3ed77fa14d0411bc81d5a66e02eb52dc1f08d",
+         "version" : "1.1"
+      },
+      {
+         "Author" : "ARX8x",
+         "Depiction" : "https://arx8x.github.io/depictions/systeminfo.html",
+         "Maintainer" : "ARX8x",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/xyz.xninja.systeminfo_2.7.2-2_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "xyz.xninja.systeminfo",
+         "sha256" : "03a2c4466f21ae8c805dfe756b3da34ed5a53fbb8b0601850d76fe6b42d445fc",
+         "version" : "2.7.2-2"
+      },
+      {
+         "Author" : "ARX8x + AnubisTweaks",
+         "Depiction" : "https://arx8x.github.io/depictions/systeminfo.html",
+         "Maintainer" : "AnubisTweaks",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/xyz.xninja.systeminfo_2.7.2-3_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T00:35:15Z",
+         "package" : "xyz.xninja.systeminfo",
+         "sha256" : "057c839b569d3a79e6f59e4a4cf9aedf8b51901d1d56ed93b2bae25ca1491526",
+         "version" : "2.7.2-3"
       }
    ],
    "note" : "Archive metadata is unverified. Original download sources are unknown unless separately documented.",
