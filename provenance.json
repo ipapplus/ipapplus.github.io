@@ -415,6 +415,16 @@
          "Author" : "NeoFreeBird",
          "Maintainer" : "NeoFreeBird",
          "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:32:55Z",
+         "package" : "com.bandarhl.orionblur",
+         "sha256" : "8e7da0f7aaff1fde1027629e03cdcb7760916c58f182cdea858259db643532c1",
+         "version" : "7.0.0-1+debug"
+      },
+      {
+         "Author" : "NeoFreeBird",
+         "Maintainer" : "NeoFreeBird",
+         "architecture" : "iphoneos-arm64e",
          "filename" : "debs/com.bandarhl.theacrat_6.0.4-1+debug_iphoneos-arm64e.deb",
          "first_added" : "2026-10-01T01:25:35Z",
          "package" : "com.bandarhl.theacrat",
@@ -1430,6 +1440,16 @@
          "package" : "com.iosdump.appdata",
          "sha256" : "eb14968bbeadcf9a95c9c5b9c15d08f7a30b395882ceea4daac57777f141222b",
          "version" : "2.6.9"
+      },
+      {
+         "Author" : "iosdump",
+         "Maintainer" : "iosdump",
+         "architecture" : "iphoneos-arm64e",
+         "filename" : "debs/com.iosdump.appdata_2.7.5_iphoneos-arm64e.deb",
+         "first_added" : "2026-10-01T01:32:55Z",
+         "package" : "com.iosdump.appdata",
+         "sha256" : "422c963b9ed8535459b0b3c49b44a9e0708e6e3eb0007e76c361ef79364c6b0a",
+         "version" : "2.7.5"
       },
       {
          "Author" : "ipapplus",

@@ -787,6 +787,27 @@ SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.nfbbhtwitter_
 Size: 6469840
 Version: 5.3
 
+Package: com.bandarhl.orionblur
+Architecture: iphoneos-arm64e
+Author: NeoFreeBird
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter, com.bandarhl.bhtwitter, com.bandarhl.theacrat, com.bandarhl.nfbbhtwitter, com.bandarhl.bhtwitters
+Depends: mobilesubstrate, ws.hbang.common
+Depiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.html
+Description: Awesome tweak for Twitter
+Filename: debs/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.deb
+Installed-Size: 13708
+MD5sum: 9f1c7ead5d94910f558c199a9b1fb590
+Maintainer: NeoFreeBird
+Name: BHTwitter - orionblur
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 43db4101d3b6e0d5733599afeeb59b1d1040eebe
+SHA256: 8e7da0f7aaff1fde1027629e03cdcb7760916c58f182cdea858259db643532c1
+SHA512: 99d987b70c1a0cafe9d638545a41bcff77b0d1e1fe8de750c1ae8bca0483b156fcfd7a63defa248d8ed93398b083a3bad18c13a31b3c14e8e9391c45a664861a
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.bandarhl.orionblur_7.0.0-1+debug_iphoneos-arm64e.json
+Size: 4300448
+Version: 7.0.0-1+debug
+
 Package: com.bandarhl.theacrat
 Architecture: iphoneos-arm64e
 Author: NeoFreeBird
@@ -2779,6 +2800,27 @@ Section: Tweaks
 SileoDepiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.6.9_iphoneos-arm64e.json
 Size: 1714636
 Version: 2.6.9
+
+Package: com.iosdump.appdata
+Architecture: iphoneos-arm64e
+Author: iosdump
+Conflicts: com.netskao.appdatas, com.netskao.appdata, cn.zqbb.appdata, com.fouadraheb.appdata
+Depends: firmware (>= 11.0), mobilesubstrate, preferenceloader
+Depiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.7.5_iphoneos-arm64e.html
+Description: 在主屏幕查看应用数据与管理应用
+Filename: debs/com.iosdump.appdata_2.7.5_iphoneos-arm64e.deb
+Icon: file:///Library/PreferenceBundles/AppDataPrefs.bundle/AppData@3x.png
+MD5sum: 40ddc81b1b68b6986a140249a548e1a3
+Maintainer: iosdump
+Name: AppData
+Pre-Depends: rootless-compat(>= 0.9)
+SHA1: 09309a4237d83460527eb8a34bcf08a48044fe9c
+SHA256: 422c963b9ed8535459b0b3c49b44a9e0708e6e3eb0007e76c361ef79364c6b0a
+SHA512: 13701fa2a15bf40ce48dc30371f0e9bac6f2680e479b776e05091b1a5eafed0a9e70b2bab3393d56ca4b47ea817e75480014c968ca4aa3d9f661c17eadc3f21b
+Section: Tweaks
+SileoDepiction: https://ipapplus.github.io/depictions/com.iosdump.appdata_2.7.5_iphoneos-arm64e.json
+Size: 3950972
+Version: 2.7.5
 
 Package: com.ipapplus.instarab
 Architecture: iphoneos-arm64e

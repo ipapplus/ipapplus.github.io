@@ -104,6 +104,10 @@
          "first_added" : "2026-10-01T00:05:44Z",
          "sequence" : 27
       },
+      "com.bandarhl.orionblur/7.0.0-1+debug" : {
+         "first_added" : "2026-10-01T01:32:55Z",
+         "sequence" : 332
+      },
       "com.bandarhl.theacrat/6.0.4-1+debug" : {
          "first_added" : "2026-10-01T01:25:35Z",
          "sequence" : 323
@@ -471,6 +475,10 @@
       "com.iosdump.appdata/2.6.9" : {
          "first_added" : "2026-10-01T01:22:13Z",
          "sequence" : 316
+      },
+      "com.iosdump.appdata/2.7.5" : {
+         "first_added" : "2026-10-01T01:32:55Z",
+         "sequence" : 333
       },
       "com.ipapplus.instarab/3.0" : {
          "first_added" : "2026-10-01T00:35:15Z",
