@@ -5,7 +5,7 @@ use POSIX qw(strftime);
 use File::Temp qw(tempfile);
 
 # Fail if the permanent record is missing or invalid; never silently reset it.
-my $path = 'latest-additions.json';
+my $path = 'assets/data/latest-additions.json';
 open my $record, '<:raw', $path or die "Read $path: $!\n";
 my $json = JSON::PP->new->utf8->pretty->canonical;
 my $entries = $json->decode(do { local $/; <$record> });
@@ -16,7 +16,7 @@ for my $entry (@$entries) {
     die "Invalid or duplicate entry in $path\n"
         unless ref($entry) eq 'HASH' && $entry->{package}
         && defined($entry->{name}) && defined($entry->{version})
-        && exists($entry->{addedAt}) && !$seen{$entry->{package}}++;
+        && defined($entry->{addedAt}) && !$seen{$entry->{package}}++;
 }
 
 open my $index, '<:encoding(UTF-8)', $ARGV[0] or die "Read package index: $!\n";
@@ -39,7 +39,7 @@ while (my $block = <$index>) {
 }
 close $index;
 if ($added) {
-    my ($file, $temporary) = tempfile('latest-additions.XXXXXX', DIR => '.', UNLINK => 1);
+    my ($file, $temporary) = tempfile('latest-additions.XXXXXX', DIR => 'assets/data', UNLINK => 1);
     binmode $file, ':raw';
     print {$file} $json->encode($entries) or die "Write additions: $!\n";
     close $file or die "Close additions: $!\n";

@@ -15,6 +15,12 @@
   };
   const indexURL=new URL('Packages',window.location.href);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
+  let addedDates=new Map();
+  function refreshAdditionTimes(){
+    entries.forEach(entry=>{if(entry.addedTime)entry.addedTime.textContent=RepoUI.additionTime(new Date(entry.addedAt));});
+  }
+  setInterval(refreshAdditionTimes,60000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshAdditionTimes();});
 
   function text(parent,tag,className,value){
     const node=document.createElement(tag);node.className=className;node.textContent=value;
@@ -139,6 +145,9 @@
     const heading=text(title,'h2','',name);heading.id='package-name-'+index;heading.title=name;
     card.setAttribute('aria-labelledby',heading.id);
     if(pkg.Version){const version=text(title,'span','package-version',pkg.Version);version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
+    const addedAt=addedDates.get(pkg.Package);
+    const addedTime=addedAt?text(title,'time','package-added',RepoUI.additionTime(new Date(addedAt))):null;
+    if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
     const description=text(card,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     const meta=text(card,'p','package-meta','');
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
@@ -151,7 +160,7 @@
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
-    const entry={card,name,meta,download,copy,variants,available:[]};
+    const entry={card,name,meta,download,copy,variants,available:[],addedAt,addedTime};
     download.addEventListener('click',event=>{
       if(entry.available.length===0){event.preventDefault();return;}
       if(entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}
@@ -249,10 +258,12 @@
     loadState='loading';list.setAttribute('aria-busy','true');status.textContent='Loading packages…';$('empty-state').hidden=true;
     try{
       // The same response provides both the package data and its update timestamp.
-      const response=await fetch('Packages');
+      const [response,history]=await Promise.all([fetch('Packages'),RepoUI.loadAdditions().catch(()=>[])]);
       if(!response.ok)throw new Error('Package index request failed');
       RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
       const groups=groupPackages(parsePackages(await response.text()));
+      addedDates=new Map(history.map(entry=>[entry.package,entry.addedAt]));
+      groups.sort((a,b)=>(Date.parse(addedDates.get(b[0].Package))||0)-(Date.parse(addedDates.get(a[0].Package))||0));
       entries=groups.map(createEntry);
       const fragment=document.createDocumentFragment();entries.forEach(entry=>fragment.appendChild(entry.card));list.replaceChildren(fragment);
       loadState='ready';filterPackages();

@@ -1,6 +1,6 @@
 [
    {
-      "addedAt" : null,
+      "addedAt" : "2026-10-02T00:00:00+03:00",
       "name" : "AppSync Unified",
       "package" : "ai.akemi.appsyncunified",
       "version" : "116.0"
