@@ -7,12 +7,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ipapplus">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png">
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
 <title>Tweaks · ipapplus Repo</title>
-<link rel="stylesheet" href="/assets/css/website.css">
+<link rel="stylesheet" href="assets/css/website.css">
 </head>
 <body>
 <a class="skip-link" href="#package-list">Skip to packages</a>
@@ -21,16 +21,15 @@
   <header class="browser-header">
     <div class="heading">
       <h1>Tweaks</h1>
-      <button class="icon-button" id="package-search-toggle" type="button" aria-label="Search and filter packages" title="Search and filter packages" aria-controls="package-search-panel" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
     </div>
     <p class="updated" id="last-updated">Last Updated: Unknown</p>
   </header>
-  <section class="search-panel" id="package-search-panel" aria-label="Search and filter packages" hidden>
+  <section class="search-panel" aria-label="Search and filter packages">
     <label class="sr-only" for="package-search">Search by name, identifier, description, or filename</label>
     <div class="search-field">
       <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
       <input id="package-search" type="search" placeholder="Search packages" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
-      <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" title="Clear search"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg></button>
+      <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg></button>
     </div>
     <div class="architecture-filters" role="group" aria-label="Filter by architecture">
       <button type="button" data-architecture="" aria-pressed="true">All</button>
@@ -53,7 +52,7 @@
 </main>
 <div class="package-choices" id="build-menu" role="menu" aria-label="Choose a build" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-<script src="/assets/js/website.js"></script>
-<script src="/assets/js/packages.js"></script>
+<script src="assets/js/website.js?v=always-visible-search-2"></script>
+<script src="assets/js/packages.js?v=always-visible-search-2"></script>
 </body>
 </html>
