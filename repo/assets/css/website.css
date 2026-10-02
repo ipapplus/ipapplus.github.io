@@ -24,11 +24,6 @@ svg{display:block;flex-shrink:0}
 .icon-button[aria-expanded="true"]{color:var(--accent);border-color:var(--accent-border);background:var(--accent-soft)}
 .icon-button:active,.link-btn:active,.package-target:active{background:var(--raised)}
 .updated{margin:0;color:var(--muted);font-size:12px}
-.latest-additions{margin:20px 0;color:var(--muted);font-size:12px}
-.latest-additions h2{margin:0 0 10px;color:var(--text);font-size:15px}
-.addition{display:flex;justify-content:space-between;gap:12px;margin:8px 0}
-.addition span{min-width:0;overflow-wrap:anywhere;color:var(--secondary)}
-.addition time{flex-shrink:0}
 .package-added{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:11px;white-space:nowrap}
 .toast{position:fixed;z-index:100;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 32px);padding:10px 16px;border:1px solid var(--border);border-radius:12px;background:var(--raised);color:var(--text);font-size:13px;text-align:center;box-shadow:0 8px 24px #0005;opacity:0;transform:translate(-50%,8px);pointer-events:none;transition:opacity .15s,transform .15s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
