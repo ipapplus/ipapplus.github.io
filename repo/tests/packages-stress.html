@@ -1,0 +1,106 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Package interaction stress check</title>
+<style>body{font:14px system-ui;background:#0a0d14;color:#e4e7ec}iframe{width:320px;height:620px;border:1px solid #69503a}pre{white-space:pre-wrap}</style>
+<p>Serve the repository over HTTP and open this page in Safari. The frame uses the real page, CSS, and scripts with synthetic package data. Network downloads and clipboard writes are intercepted.</p>
+<button id="run">Run at 320px, 375px, and 390px</button>
+<pre id="results" role="status"></pre>
+<iframe id="preview" title="Package stress viewport"></iframe>
+<script>
+const frame=document.getElementById('preview'),results=document.getElementById('results');
+const assert=(condition,message)=>{if(!condition)throw new Error(message);};
+const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const extreme='ExtremePackageName'.repeat(35);
+const description=('Original description with a deliberately unbroken token '+ 'x'.repeat(200)+' and more text. ').repeat(15);
+let data='';
+for(let i=0;i<80;i++)for(const architecture of ['iphoneos-arm','iphoneos-arm64','iphoneos-arm64e']){
+  data+=`Package: stress.${i}\nName: ${i===0?extreme:'Short package '+i}\nVersion: ${i%2?'v1.0':'1.0'}\nArchitecture: ${architecture}\nDescription: ${i===0?description:'Short description.'}\nFilename: debs/stress-${i}-${architecture}.deb\nSize: 1024\n\n`;
+}
+const history=Array.from({length:80},(_,i)=>({package:'stress.'+i,addedAt:new Date(Date.now()-i*60000).toISOString()}));
+async function check(width){
+  frame.style.width=width+'px';
+  const w=frame.contentWindow,d=w.document;
+  const cards=[...d.querySelectorAll('.package-entry')];
+  assert(cards.length===80,'all packages loaded');
+  function layout(){
+    assert(d.documentElement.scrollWidth<=d.documentElement.clientWidth,'no horizontal overflow at '+width);
+    for(const card of cards.filter(card=>!card.hidden)){
+      const info=card.querySelector('.package-info').getBoundingClientRect();
+      const actions=card.querySelector('.package-actions').getBoundingClientRect();
+      assert(info.right<actions.left,'reserved actions area at '+width);
+      assert(Math.round(actions.width)===88,'stable 88px actions width');
+      const title=card.querySelector('.package-expand').getBoundingClientRect();
+      assert(title.right<=actions.left,'title cannot enter actions');
+    }
+    assert(d.querySelectorAll('.is-expanded').length<=1,'at most one expanded card');
+    for(const card of cards)assert(card.classList.contains('is-expanded')===(card.querySelector('.package-expand').getAttribute('aria-expanded')==='true'),'selected border matches ARIA state');
+  }
+  const first=cards[0],actions=first.querySelector('.package-actions');
+  const initial=actions.getBoundingClientRect();
+  first.click();layout();
+  assert(first.querySelector('.package-expand').textContent===extreme,'full original name');
+  assert(first.querySelector('.package-description').textContent===description,'full original description');
+  assert(first.querySelector('.package-info').getBoundingClientRect().height>200,'extreme content wraps when expanded');
+  const expanded=actions.getBoundingClientRect();
+  assert(initial.left===expanded.left&&initial.top===expanded.top,'timestamp/actions do not move on expansion');
+  for(let i=0;i<35;i++){
+    cards[i%8].click();layout();await pause(12);
+    if(i%3===0){cards[i%8].click();layout();}
+  }
+  first.click();if(!first.classList.contains('is-expanded'))first.click();
+  const version=first.querySelector('.package-version');assert(version.textContent==='v1.0','single lowercase version prefix');
+  w.RepoUI.copyText=async()=>{};
+  first.querySelector('.package-download').click();
+  assert(!d.getElementById('build-menu').hidden,'multi-architecture download chooser');
+  assert(first.classList.contains('is-expanded'),'download does not toggle card');
+  first.querySelector('.package-copy').click();
+  d.querySelector('#build-menu button').click();
+  assert(first.classList.contains('is-expanded'),'copy does not toggle card');
+  d.querySelector('[data-architecture="iphoneos-arm64"]').click();
+  assert(!first.querySelector('.package-download').hasAttribute('aria-haspopup'),'filtered architecture uses direct download');
+  assert(first.querySelector('.package-download').href.endsWith('iphoneos-arm64.deb'),'correct architecture URL');
+  // Cancel navigation after the real download handler has run.
+  first.querySelector('.package-download').addEventListener('click',event=>event.preventDefault(),{once:true});
+  first.querySelector('.package-download').click();
+  assert(first.classList.contains('is-expanded'),'direct download remains independent');
+  const search=d.getElementById('package-search');search.value='Short package 42';search.dispatchEvent(new w.Event('input'));
+  assert(cards.filter(card=>!card.hidden).length===1,'instant search');
+  assert(!first.classList.contains('is-expanded'),'hidden selected card collapses');
+  d.getElementById('reset-filters').click();layout();
+  w.scrollTo(0,900);await pause(250);
+  assert(d.getElementById('back-to-top').classList.contains('is-visible'),'back to top appears');
+  d.getElementById('back-to-top').click();await pause(1000);
+  assert(w.scrollY<5,'native scroll reaches top');
+  assert(!d.getElementById('back-to-top').classList.contains('is-visible'),'back to top hides');
+  const before=w.stressRequests;
+  for(let i=0;i<10;i++)d.getElementById('refresh-packages').click();
+  await pause(350);
+  assert(w.stressRequests===before+1,'rapid refresh makes one request');
+  assert(!d.getElementById('refresh-packages').disabled,'refresh unlocked');
+  assert(d.querySelectorAll('.is-expanded').length===0,'refresh clears selection');
+  results.textContent+='PASS '+width+'px: layout, rapid accordion, controls, filters, search, scrolling, refresh\n';
+}
+document.getElementById('run').onclick=async function(){
+  this.disabled=true;results.textContent='';
+  try{
+    const url=new URL('../packages.html',location.href);
+    let html=await (await fetch(url)).text();
+    const setup=`<base href="${url.href}"><script>
+      window.stressRequests=0;
+      const nativeFetch=window.fetch.bind(window);
+      window.fetch=async(input,options)=>{
+        const path=new URL(input,document.baseURI).pathname;
+        if(path.endsWith('/Packages')){window.stressRequests++;await new Promise(resolve=>setTimeout(resolve,80));return new Response(${JSON.stringify(data)},{headers:{'Last-Modified':new Date().toUTCString()}});}
+        if(path.endsWith('/latest-additions.json'))return new Response(${JSON.stringify(JSON.stringify(history))});
+        return nativeFetch(input,options);
+      };
+    <\/script>`;
+    html=html.replace('<head>','<head>'+setup);
+    const ready=new Promise(resolve=>frame.onload=resolve);frame.srcdoc=html;await ready;await pause(350);
+    for(const width of [320,375,390])await check(width);
+    results.textContent+='Inspect touch response, masks, and scrolling on the device; use Safari Web Inspector to measure frame rate and layouts.\n';
+  }catch(error){results.textContent+='FAIL: '+error.message+'\n';}
+  finally{this.disabled=false;}
+};
+</script>

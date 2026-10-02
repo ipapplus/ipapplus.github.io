@@ -1,8 +1,6 @@
 {
   "name": "ipapplus",
   "short_name": "ipapplus",
-  "lang": "en",
-  "dir": "ltr",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
