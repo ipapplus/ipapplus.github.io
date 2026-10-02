@@ -140,11 +140,11 @@ Maintainer: Lessica <82flex@gmail.com>
 Installed-Size: 412
 Depends: firmware (>= 14.0), mobilesubstrate
 Filename: ./debs/com.82flex.iconrestore_1.7_iphoneos-arm64e.deb
-Size: 30480
-MD5sum: 02981d29408cca4e26ad7b02511ab243
-SHA1: ec4d78685a45564473a20ba04908279f07a99c3f
-SHA256: 3295c74e1fb64208ac0aa0018773075b6a16dc60ee11b55d37140ca571011a03
-SHA512: b8d582a985c8cb3c7c16d490df1ada28f85edf918effdd0b9353e4bc77566538796af4715c3d931354fa374822b0766f44bc16f52e372f1ecf7089cbb1a4d757
+Size: 30492
+MD5sum: d324f3f04be2803a2989625f8f8e8b5f
+SHA1: 950eb3e68db3287f1c8e685d22478c8860b9a50b
+SHA256: 964f5f61db1a9c5c66b8829e16f54456544a9cde72f7a6fb8676d2676ec55e52
+SHA512: f5c13d882a9c32fb5b6c77bd954bba6f368b5aaf92db7d7ab318250b0a6dc3d93978977b2076a28d756b472ba1efb1019ba5da31d001bca64aeeaebe8fcd7ad8
 Description: Save and restore the layout of your icons.
 Name: Icon Restore
 Author: Lessica <82flex@gmail.com>

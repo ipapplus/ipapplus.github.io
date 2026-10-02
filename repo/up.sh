@@ -32,6 +32,21 @@ import_deb() {
     mv "$src" "$destination"
 }
 
+remove_dir() {
+    dir="$1"
+
+    if rm -rf -- "$dir" 2>/dev/null; then
+        return
+    fi
+
+    if chmod -R u+rwX -- "$dir" 2>/dev/null && rm -rf -- "$dir" 2>/dev/null; then
+        return
+    fi
+
+    sudo chmod -R u+rwX -- "$dir"
+    sudo rm -rf -- "$dir"
+}
+
 for deb in ./*.deb; do
     [ -f "$deb" ] || continue
     import_deb "$deb"
@@ -61,6 +76,7 @@ for dir in ./*; do
 
     dpkg-deb --build "$dir" "$output"
     import_deb "$output"
+    remove_dir "$dir"
 done
 
 for deb in "$DEBS_DIR"/*.deb; do
