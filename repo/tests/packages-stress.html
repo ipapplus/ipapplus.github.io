@@ -38,15 +38,45 @@ async function check(width){
   }
   const first=cards[0],actions=first.querySelector('.package-actions');
   const initial=actions.getBoundingClientRect();
-  first.click();layout();
+  const collapsedHeight=first.getBoundingClientRect().height;
+  assert(collapsedHeight>=110,'comfortable collapsed vertical spacing');
+  assert(first.getBoundingClientRect().width>=width-33,'full-width cards without the old gutter');
+  first.querySelector('.package-description').click();
+  assert(first.classList.contains('is-expanded'),'description tap expands (tabindex ancestor regression)');
+  await pause(80);
+  const midwayHeight=first.getBoundingClientRect().height;
+  await pause(180);layout();
+  const expandedHeight=first.getBoundingClientRect().height;
+  assert(expandedHeight>collapsedHeight+100,'the physical card grows');
+  if(!w.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    assert(midwayHeight>collapsedHeight&&midwayHeight<expandedHeight,'card passes through intermediate expansion heights');
+  }
   assert(first.querySelector('.package-expand').textContent===extreme,'full original name');
   assert(first.querySelector('.package-description').textContent===description,'full original description');
   assert(first.querySelector('.package-info').getBoundingClientRect().height>200,'extreme content wraps when expanded');
   const expanded=actions.getBoundingClientRect();
   assert(initial.left===expanded.left&&initial.top===expanded.top,'timestamp/actions do not move on expansion');
+  first.querySelector('.package-meta').click();
+  assert(!first.classList.contains('is-expanded'),'second tap collapses');
+  await pause(80);
+  const midwayCollapse=first.getBoundingClientRect().height;
+  await pause(180);
+  assert(Math.abs(first.getBoundingClientRect().height-collapsedHeight)<1,'physical card returns to collapsed height');
+  if(!w.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    assert(midwayCollapse>collapsedHeight&&midwayCollapse<expandedHeight,'card passes through intermediate collapse heights');
+  }
+  first.querySelector('.package-added').click();
+  cards[1].querySelector('.package-version').click();
+  assert(!first.classList.contains('is-expanded')&&cards[1].classList.contains('is-expanded'),'A to B switches selection');
+  cards[1].click();assert(!cards[1].classList.contains('is-expanded'),'card padding tap collapses');
   for(let i=0;i<35;i++){
-    cards[i%8].click();layout();await pause(12);
+    cards[i%8].querySelector('.package-description').click();layout();await pause(12);
     if(i%3===0){cards[i%8].click();layout();}
+  }
+  await pause(250);
+  for(const card of cards){
+    assert(card.querySelector('.package-info').getAnimations().length===0,'no stale height animation');
+    assert(card.classList.contains('is-open')===card.classList.contains('is-expanded'),'final content state matches selection');
   }
   first.click();if(!first.classList.contains('is-expanded'))first.click();
   const version=first.querySelector('.package-version');assert(version.textContent==='v1.0','single lowercase version prefix');
@@ -60,6 +90,9 @@ async function check(width){
   d.querySelector('[data-architecture="iphoneos-arm64"]').click();
   assert(!first.querySelector('.package-download').hasAttribute('aria-haspopup'),'filtered architecture uses direct download');
   assert(first.querySelector('.package-download').href.endsWith('iphoneos-arm64.deb'),'correct architecture URL');
+  cards[2].querySelector('.package-meta').click();
+  assert(cards[2].classList.contains('is-expanded'),'filtered cards remain expandable');
+  first.click();
   // Cancel navigation after the real download handler has run.
   first.querySelector('.package-download').addEventListener('click',event=>event.preventDefault(),{once:true});
   first.querySelector('.package-download').click();
@@ -67,6 +100,10 @@ async function check(width){
   const search=d.getElementById('package-search');search.value='Short package 42';search.dispatchEvent(new w.Event('input'));
   assert(cards.filter(card=>!card.hidden).length===1,'instant search');
   assert(!first.classList.contains('is-expanded'),'hidden selected card collapses');
+  const searchResult=cards.find(card=>!card.hidden);
+  searchResult.querySelector('.package-description').click();
+  assert(searchResult.classList.contains('is-expanded'),'search result expands');
+  searchResult.click();
   d.getElementById('reset-filters').click();layout();
   w.scrollTo(0,900);await pause(250);
   assert(d.getElementById('back-to-top').classList.contains('is-visible'),'back to top appears');
@@ -79,6 +116,12 @@ async function check(width){
   assert(w.stressRequests===before+1,'rapid refresh makes one request');
   assert(!d.getElementById('refresh-packages').disabled,'refresh unlocked');
   assert(d.querySelectorAll('.is-expanded').length===0,'refresh clears selection');
+  const refreshed=d.querySelector('.package-entry');
+  assert(refreshed!==first,'refresh regenerated card DOM');
+  refreshed.querySelector('.package-description').click();
+  assert(refreshed.classList.contains('is-expanded'),'delegated taps work on regenerated cards');
+  refreshed.click();await pause(250);
+  assert(!refreshed.classList.contains('is-open'),'refreshed card collapses completely');
   results.textContent+='PASS '+width+'px: layout, rapid accordion, controls, filters, search, scrolling, refresh\n';
 }
 document.getElementById('run').onclick=async function(){
@@ -103,4 +146,5 @@ document.getElementById('run').onclick=async function(){
   }catch(error){results.textContent+='FAIL: '+error.message+'\n';}
   finally{this.disabled=false;}
 };
+if(new URLSearchParams(location.search).has('autorun'))document.getElementById('run').click();
 </script>
