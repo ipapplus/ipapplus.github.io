@@ -139,20 +139,40 @@
   function createEntry(group,index){
     const pkg=group[0],name=pkg.Name||pkg.Package||'Unnamed package';
     const card=document.createElement('article');card.className='package-entry';
-    const title=document.createElement('div');title.className='package-title';card.appendChild(title);
-    const heading=text(title,'h2','',name);heading.id='package-name-'+index;heading.title=name;
+    const info=document.createElement('div');info.className='package-info';card.appendChild(info);
+    const title=document.createElement('div');title.className='package-title';info.appendChild(title);
+    const heading=text(title,'h2','','');heading.id='package-name-'+index;heading.title=name;
+    const expand=text(heading,'button','package-expand',name);expand.type='button';
+    expand.setAttribute('aria-expanded','false');
     card.setAttribute('aria-labelledby',heading.id);
-    if(pkg.Version){const version=text(title,'span','package-version',pkg.Version);version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
-    const addedAt=addedDates.get(pkg.Package);
-    const addedTime=addedAt?text(title,'time','package-added',RepoUI.additionTime(new Date(addedAt))):null;
-    if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
-    const description=text(card,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
-    const meta=text(card,'p','package-meta','');
+    if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
+    const meta=text(info,'p','package-meta','');
+    const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
+    description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
+    const addedAt=addedDates.get(pkg.Package);
+    const time=text(actions,'time','package-added',addedAt?RepoUI.additionTime(new Date(addedAt)):'');
+    const addedTime=addedAt?time:null;
+    if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
+    else time.setAttribute('aria-hidden','true');
+    const controls=document.createElement('div');controls.className='package-controls';actions.appendChild(controls);
     const download=document.createElement('a');download.className='icon-button package-download';download.innerHTML=icons.download;download.setAttribute('download','');
-    download.setAttribute('aria-label','Download '+name);actions.appendChild(download);
+    download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy;
-    copy.setAttribute('aria-label','Copy download link for '+name);actions.appendChild(copy);
+    copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
+    let expansionAnimation;
+    card.addEventListener('click',event=>{
+      if(controls.contains(event.target))return;
+      closeMenu();
+      const before=card.getBoundingClientRect().height;
+      if(expansionAnimation)expansionAnimation.cancel();
+      const expanded=card.classList.toggle('is-expanded');
+      expand.setAttribute('aria-expanded',String(expanded));
+      const after=card.getBoundingClientRect().height;
+      if(card.animate&&before!==after&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        expansionAnimation=card.animate([{height:before+'px'},{height:after+'px'}],{duration:150,easing:'ease-out'});
+      }
+    });
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
@@ -160,13 +180,15 @@
     });
     const entry={card,name,meta,download,copy,variants,available:[],addedAt,addedTime};
     download.addEventListener('click',event=>{
+      event.stopPropagation();
       if(entry.available.length===0){event.preventDefault();return;}
       if(entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}
     });
     download.addEventListener('keydown',event=>{
       if(event.key===' '&&entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}
     });
-    copy.addEventListener('click',()=>{
+    copy.addEventListener('click',event=>{
+      event.stopPropagation();
       if(entry.available.length>1)showMenu(entry,'copy',copy);
       else if(entry.available.length)copyLink(entry,entry.available[0].url);
     });
