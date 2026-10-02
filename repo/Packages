@@ -65,3 +65,19 @@ Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
 Name: AppSync Unified
 Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
 
+Package: apple.almohanad.font
+Architecture: iphoneos-arm64
+Version: 1.0
+Section: Fonts
+Maintainer: Apple
+Depends: mobilesubstrate
+Filename: ./debs/apple.almohanad.font_1.0_iphoneos-arm64.deb
+Size: 1106724
+MD5sum: 2bc0db275a653439dd15f1158238fa9e
+SHA1: 5011973beb00206e8a6f289b7de425c27c8da95a
+SHA256: 9f8b39e8eb2b0d17bca8586d55c7cb61531fa636c3114bcf31873af1e7a1bc33
+SHA512: b1dca1c7ee20cc97c06d53820e57fd1d07eae00bd07ddc6a56b8e09add5d10e50d04e63b5c6a8486e89fd07ca9cf5f8f184ca2b3575de43793b961c9a6db4574
+Description: Arabic & English
+Name: Almohanad-Long-KAF
+Author: Apple
+

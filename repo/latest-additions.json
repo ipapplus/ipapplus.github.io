@@ -1,8 +1,14 @@
 [
-  {
-    "name": "AppSync Unified",
-    "package": "ai.akemi.appsyncunified",
-    "version": "116.0",
-    "addedAt": null
-  }
+   {
+      "addedAt" : null,
+      "name" : "AppSync Unified",
+      "package" : "ai.akemi.appsyncunified",
+      "version" : "116.0"
+   },
+   {
+      "addedAt" : "2026-10-02T17:34:36Z",
+      "name" : "Almohanad-Long-KAF",
+      "package" : "apple.almohanad.font",
+      "version" : "1.0"
+   }
 ]
