@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
-  const search=$('package-search'),toggle=$('package-search-toggle'),panel=$('package-search-panel');
+  const search=$('package-search'),clear=$('search-clear');
   const list=$('package-list'),status=$('package-status'),menu=$('build-menu');
   const filters=[...document.querySelectorAll('[data-architecture]')];
   const labels={'iphoneos-arm':'Rootful','iphoneos-arm64':'Rootless','iphoneos-arm64e':'RootHide'};
@@ -9,9 +9,7 @@
   const icons={
     download:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>',
     copy:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
-    check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>',
-    close:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg>',
-    search:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>'
+    check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>'
   };
   const indexURL=new URL('Packages',window.location.href);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
@@ -175,6 +173,7 @@
     return entry;
   }
   function filterPackages(){
+    clear.hidden=search.value.length===0;
     closeMenu();
     if(loadState!=='ready')return;
     const query=search.value.trim().toLowerCase();let count=0;
@@ -200,20 +199,8 @@
     filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.architecture==='')));
     filterPackages();
   }
-  function closeSearch(){
-    // Closing search restores the complete list, with no hidden active filters.
-    panel.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Search and filter packages');toggle.title='Search and filter packages';toggle.innerHTML=icons.search;
-    resetFilters();toggle.focus({preventScroll:true});
-  }
-  toggle.addEventListener('click',()=>{
-    closeMenu();
-    if(!panel.hidden){closeSearch();return;}
-    panel.hidden=false;toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Close search');toggle.title='Close search';toggle.innerHTML=icons.close;
-    // Focus in the tap handler so Mobile Safari can open its keyboard.
-    search.focus();
-  });
   search.addEventListener('input',filterPackages);
-  $('search-clear').addEventListener('click',()=>{search.value='';filterPackages();search.focus();});
+  clear.addEventListener('click',()=>{search.value='';filterPackages();search.focus();});
   filters.forEach(button=>button.addEventListener('click',()=>{
     selectedArchitecture=button.dataset.architecture;
     filters.forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
@@ -232,7 +219,6 @@
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
       if(activeTrigger){event.preventDefault();closeMenu(true);}
-      else if(!panel.hidden){event.preventDefault();closeSearch();}
     }else if(activeTrigger&&event.key==='Tab'){
       // Return to the trigger before the browser advances to the adjacent control.
       closeMenu(true);
