@@ -1395,6 +1395,28 @@ sileodepiction: https://sugiuta.github.io/repo/depictions/pulloverpro.json
 icon: https://sugiuta.github.io/repo/images/icons/pulloverpro.png
 Author: Sugiuta
 
+Package: com.cercube.ios
+Architecture: iphoneos-arm64e
+Version: 6.3.0
+Priority: optional
+Section: Tweaks
+Maintainer: Cercube Tweak <support@cercube.com>
+Installed-Size: 3452
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0)
+Filename: ./debs/com.cercube.ios_6.3.0_iphoneos-arm64e.deb
+Size: 2022600
+MD5sum: d3e1965102de62d9180ffec8d89d180a
+SHA1: c7cd0a57411e016ffa30572c6d00c738653e13e9
+SHA256: 261cb4aec88d1037dec71d61a9464ae6ef1935fcbeffa50fc4a5b9368d8396ba
+SHA512: a3747acd1f38db0ae3a7778ef0c425a873b2f80ce8af3cb0e8c014fe1d7d13272c6531c32edf7bce9678f89f9bf48aed1d93d4228497c680a826a72547df1ebc
+Description: Supercharge your YouTube app.
+Name: Cercube for YouTube
+Author: Cercube
+Depiction: https://apt.cercube.com/depiction/FDXO5R
+SileoDepiction: https://apt.cercube.com/depiction/sileo/FDXO5R
+Icon: https://cdn.cercube.com/assets/icon.png
+
 Package: com.choco.tg
 Architecture: iphoneos-arm
 Version: 1.7.4
@@ -2186,6 +2208,24 @@ MD5sum: 4d6b82bf002bdc48ec10adea03aeec09
 SHA1: f7f6595edf776edf1e744825e826b414a92f6b96
 SHA256: 39c06991ba0d74ee9db604fec89a5848aa07676e6e83bb6fd5d5b58559b4605b
 SHA512: 2758eb9cf674b7e11e26a6ca54bd3b1a173c4449c29561d385f950b49ac7d0a6e614155d7a73fc04acd8e707f2644e2dc2ecd587e917cefbada358d90b0c2725
+Description: Make TikTok Better!
+Name: VibeTok
+Author: DeNsor
+
+Package: com.den.vibett
+Architecture: iphoneos-arm64e
+Version: 1.76-1+debug
+Section: Tweaks
+Maintainer: DeNsor
+Installed-Size: 1536
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/com.den.vibett_1.76-1+debug_iphoneos-arm64e.deb
+Size: 234916
+MD5sum: 074b576f66a69a572a791823c578d47a
+SHA1: 74f56af6cef14084546c9056633fbb27125bb66b
+SHA256: e6d3a198111fb33ecb1fda02d8c38342e54428e0e49552aba3dc3e2f1bdd8cf4
+SHA512: 3789458a052093aff1c20a130865315e6da01e688fbb1b95c57f3012ee9ef86ddff6a3d156d450cd87a6b2c1b9a59f8e08f00f4270cc7a686ea1a6d849690412
 Description: Make TikTok Better!
 Name: VibeTok
 Author: DeNsor
@@ -3277,6 +3317,29 @@ Author: Eamon Tracey
 Depiction: https://cydia.ichitaso.com/depiction/secretshot.html
 SileoDepiction: https://cydia.ichitaso.com/depiction/secretshot.json
 Icon: https://raw.githubusercontent.com/ichitaso/SecretShot/main/SecretShotPreferences/Resources/icon%403x.png
+
+Package: com.eolnmsuk.netshield
+Architecture: iphoneos-arm64e
+Version: 2.2.7
+Section: Networking
+Maintainer: EolnMsuk
+Installed-Size: 3340
+Depends: firmware (>= 15.0), firmware (<< 19.0), uikittools
+Conflicts: com.netshield.tweak
+Replaces: com.netshield.tweak
+Filename: ./debs/com.eolnmsuk.netshield_2.2.7_roothide.deb
+Size: 2973854
+MD5sum: f33f152aa4b7bca66639a1b2722246c6
+SHA1: 4b36a20293bfe79d930419aa85a568348f797b64
+SHA256: 20dcbc6fa9d7e53e4a62a89d5dddfad255c0e54813dd0094e511625dfb72bdbe
+SHA512: 0a302fdb97bccaa79d5dfdedaa51bdf293bd51052d5c8cdf25585895af2af2c0601312ae1b0f80d3d8f102d66d562b8ca6abf4292f42574c94efd5b0ec6ce31b
+Homepage: https://github.com/EolnMsuk/NetShield2/
+Description: Control app internet access with permission notifications, saved rules and connection monitoring.
+Name: NetShield2
+Author: EolnMsuk
+Icon: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/App/Resources/Icon.png
+Depiction: https://github.com/EolnMsuk/NetShield2/#readme
+SileoDepiction: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/depiction.json
 
 Package: com.ethanrdoesmc.truecuts
 Architecture: iphoneos-arm64
@@ -8748,6 +8811,27 @@ Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=bottomcont
 Sponsor: thebigboss.org <http://thebigboss.org>
 Author: XCXiao <958169971@qq.com>
 dev: xcxiao
+
+Package: com.xsxs18.lumenboard
+Architecture: iphoneos-arm64e
+Version: 1.0.0
+Section: Tweaks
+Maintainer: xsxs18-dev
+Installed-Size: 680
+Provides: com.spark.snowboard, com.anemonetheming.anemone, winterboard
+Depends: mobilesubstrate, firmware (>= 17.0)
+Conflicts: com.spark.snowboard, com.anemonetheming.anemone, winterboard, com.artikus.neonboard, com.xsxs18.neonboard, com.xsxs18.avalanche, com.xsxs18.lumen
+Replaces: com.xsxs18.avalanche, com.xsxs18.lumen
+Filename: ./debs/com.xsxs18.lumenboard_1.0.0_iphoneos-arm64e.deb
+Size: 70866
+MD5sum: 288e24b289098b7e43e920e22e752904
+SHA1: 5d19d4de8ef448159fb7822cfc80a16ee25d0403
+SHA256: ab2ce1a6965be3172af1c952cb9f8ae9d7d02f276b60f47cb6259404d9c6fe74
+SHA512: 335da7995c90db209eedf10f7eaca5bcd914ae59337c29797bdf8dd275e5caaccda9af7ba188d1b46a3719b6e2553df9c280a658a1fb174826ceef9768f621da
+Description: Icon theme engine for iOS 17 - 26. Works with SnowBoard, Anemone and WinterBoard themes.
+Name: LumenBoard
+Author: xsxs18-dev
+Icon: file:///Applications/LumenBoard.app/AppIcon60x60@3x.png
 
 Package: com.xyaman.tako
 Architecture: iphoneos-arm64e
