@@ -12,7 +12,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
 <title>Tweaks · ipapplus Repo</title>
-<link rel="stylesheet" href="assets/css/website.css?v=package-cards-3">
+<link rel="stylesheet" href="assets/css/website.css?v=package-cards-4">
 </head>
 <body>
 <a class="skip-link" href="#package-list">Skip to packages</a>
@@ -21,6 +21,7 @@
   <header class="browser-header">
     <div class="heading">
       <h1>Tweaks</h1>
+      <button class="icon-button" id="refresh-packages" type="button" aria-label="Refresh packages" title="Refresh packages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1"/></svg></button>
     </div>
     <p class="updated" id="last-updated">Last Updated: Unknown</p>
   </header>
@@ -50,9 +51,10 @@
   </section>
   <noscript>Enable JavaScript to browse packages.</noscript>
 </main>
+<button class="icon-button back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" inert aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 13 6-6 6 6M12 7v13"/></svg></button>
 <div class="package-choices" id="build-menu" role="menu" aria-label="Choose a build" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-<script src="assets/js/website.js?v=always-visible-search-2"></script>
-<script src="assets/js/packages.js?v=package-cards-3"></script>
+<script src="assets/js/website.js?v=package-cards-4"></script>
+<script src="assets/js/packages.js?v=package-cards-4"></script>
 </body>
 </html>

@@ -12,7 +12,8 @@
     return minutes>=1440?Math.floor(minutes/1440)+'d ago':minutes>=60?Math.floor(minutes/60)+'h ago':minutes+'m ago';
   }
   let additions;
-  function loadAdditions(){
+  function loadAdditions(force=false){
+    if(force)additions=null;
     if(!additions)additions=fetch('assets/data/latest-additions.json',{cache:'no-cache'}).then(response=>{
       if(!response.ok)throw new Error('Additions request failed');
       return response.json();
@@ -23,13 +24,16 @@
     return additions;
   }
   function trackModified(element,header,label){
+    if(element.modifiedCleanup)element.modifiedCleanup();
     const date=header?new Date(header):null;
     if(!date||Number.isNaN(date.getTime()))return;
     element.title=date.toLocaleString('en-US');
     function refresh(){element.textContent=label+': '+relativeTime(date);}
     refresh();
-    setInterval(refresh,60000);
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
+    const timer=setInterval(refresh,60000);
+    const onVisible=()=>{if(!document.hidden)refresh();};
+    document.addEventListener('visibilitychange',onVisible);
+    element.modifiedCleanup=()=>{clearInterval(timer);document.removeEventListener('visibilitychange',onVisible);};
   }
   function toast(message){
     const element=document.getElementById('toast');

@@ -14,6 +14,53 @@
   const indexURL=new URL('Packages',window.location.href);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
   let addedDates=new Map();
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const refreshButton=$('refresh-packages'),topButton=$('back-to-top');
+  let expandedEntry=null,loading=false;
+  const animations=new Set();
+  function stopAnimations(){animations.forEach(animation=>animation.cancel());animations.clear();}
+  function animate(node,frames){
+    const animation=node.animate(frames,{duration:190,easing:'cubic-bezier(.2,.7,.2,1)'});
+    animations.add(animation);
+    animation.onfinish=()=>animations.delete(animation);
+  }
+  function toggleEntry(entry){
+    closeMenu();
+    const visible=entries.filter(item=>!item.card.hidden);
+    // Read the current presentation before cancelling, so rapid taps retarget smoothly.
+    const before=visible.map(item=>({item,top:item.card.getBoundingClientRect().top,height:item.shell.getBoundingClientRect().height}));
+    const previous=expandedEntry,next=previous===entry?null:entry;
+    stopAnimations();
+    if(previous){previous.card.classList.remove('is-expanded');previous.expand.setAttribute('aria-expanded','false');}
+    expandedEntry=next;
+    if(next){next.card.classList.add('is-expanded');next.expand.setAttribute('aria-expanded','true');}
+    if(reducedMotion.matches||!entry.card.animate)return;
+    // One layout after the state change; every animation frame uses only transform/opacity.
+    const after=before.map(state=>({...state,rect:state.item.card.getBoundingClientRect()}));
+    after.forEach(({item,top,height,rect})=>{
+      // Keep offscreen cards out of the compositor layer budget on long lists.
+      if(Math.max(top+height,rect.bottom)<0||Math.min(top,rect.top)>window.innerHeight)return;
+      const offset=top-rect.top;
+      if(Math.abs(offset)>.5)animate(item.card,[{transform:'translateY('+offset+'px)'},{transform:'translateY(0)'}]);
+      if(Math.abs(height-rect.height)>.5)animate(item.shell,[{transform:'scaleY('+height/rect.height+')'},{transform:'scaleY(1)'}]);
+      if(item===previous||item===next)animate(item.info,[{opacity:.55,transform:'translateY(2px)'},{opacity:1,transform:'translateY(0)'}]);
+    });
+  }
+  function updateTopButton(){
+    const visible=window.scrollY>320;
+    topButton.classList.toggle('is-visible',visible);
+    topButton.inert=!visible;topButton.tabIndex=visible?0:-1;
+    topButton.setAttribute('aria-hidden',String(!visible));
+  }
+  let scrollPending=false;
+  window.addEventListener('scroll',()=>{
+    if(scrollPending)return;
+    scrollPending=true;
+    requestAnimationFrame(()=>{scrollPending=false;updateTopButton();});
+  },{passive:true});
+  topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'}));
+  refreshButton.addEventListener('click',()=>loadPackages(true));
+  updateTopButton();
   function refreshAdditionTimes(){
     entries.forEach(entry=>{if(entry.addedTime)entry.addedTime.textContent=RepoUI.additionTime(new Date(entry.addedAt));});
   }
@@ -139,6 +186,7 @@
   function createEntry(group,index){
     const pkg=group[0],name=pkg.Name||pkg.Package||'Unnamed package';
     const card=document.createElement('article');card.className='package-entry';
+    const shell=document.createElement('div');shell.className='package-shell';shell.setAttribute('aria-hidden','true');card.appendChild(shell);
     const info=document.createElement('div');info.className='package-info';card.appendChild(info);
     const title=document.createElement('div');title.className='package-title';info.appendChild(title);
     const heading=text(title,'h2','','');heading.id='package-name-'+index;heading.title=name;
@@ -160,25 +208,16 @@
     download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy;
     copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
-    let expansionAnimation;
     card.addEventListener('click',event=>{
       if(controls.contains(event.target))return;
-      closeMenu();
-      const before=card.getBoundingClientRect().height;
-      if(expansionAnimation)expansionAnimation.cancel();
-      const expanded=card.classList.toggle('is-expanded');
-      expand.setAttribute('aria-expanded',String(expanded));
-      const after=card.getBoundingClientRect().height;
-      if(card.animate&&before!==after&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        expansionAnimation=card.animate([{height:before+'px'},{height:after+'px'}],{duration:150,easing:'ease-out'});
-      }
+      toggleEntry(entry);
     });
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
-    const entry={card,name,meta,download,copy,variants,available:[],addedAt,addedTime};
+    const entry={card,shell,info,expand,name,meta,download,copy,variants,available:[],addedAt,addedTime};
     download.addEventListener('click',event=>{
       event.stopPropagation();
       if(entry.available.length===0){event.preventDefault();return;}
@@ -195,6 +234,7 @@
     return entry;
   }
   function filterPackages(){
+    stopAnimations();
     clear.hidden=search.value.length===0;
     closeMenu();
     if(loadState!=='ready')return;
@@ -202,7 +242,10 @@
     for(const entry of entries){
       const matching=entry.variants.filter(variant=>variant.searchText.includes(query)&&(!selectedArchitecture||variant.pkg.Architecture===selectedArchitecture));
       entry.card.hidden=matching.length===0;
-      if(entry.card.hidden)continue;
+      if(entry.card.hidden){
+        if(expandedEntry===entry){entry.card.classList.remove('is-expanded');entry.expand.setAttribute('aria-expanded','false');expandedEntry=null;}
+        continue;
+      }
       count++;
       entry.meta.textContent=[...new Set(matching.map(variant=>labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other'))].join(' · ');
       entry.meta.title=entry.meta.textContent;
@@ -257,30 +300,37 @@
     event.preventDefault();items[index].focus();
   });
   document.addEventListener('scroll',event=>{if(activeTrigger&&!menu.contains(event.target))closeMenu(true);},true);
-  window.addEventListener('resize',()=>closeMenu(true));
+  window.addEventListener('resize',()=>{closeMenu(true);stopAnimations();});
   if(window.visualViewport){
     window.visualViewport.addEventListener('resize',()=>{if(activeTrigger)positionMenu(activeTrigger);});
     window.visualViewport.addEventListener('scroll',()=>{if(activeTrigger)positionMenu(activeTrigger);});
   }
-  async function loadPackages(){
+  async function loadPackages(force=false){
+    if(loading)return;
+    loading=true;refreshButton.disabled=true;refreshButton.classList.add('is-refreshing');refreshButton.setAttribute('aria-busy','true');
+    closeMenu();stopAnimations();
     loadState='loading';list.setAttribute('aria-busy','true');status.textContent='Loading packages…';$('empty-state').hidden=true;
     try{
       // The same response provides both the package data and its update timestamp.
-      const [response,history]=await Promise.all([fetch('Packages'),RepoUI.loadAdditions().catch(()=>[])]);
+      const [response,history]=await Promise.all([fetch('Packages',{cache:'no-cache'}),RepoUI.loadAdditions(force).catch(()=>[...addedDates].map(([packageId,addedAt])=>({package:packageId,addedAt})))]);
       if(!response.ok)throw new Error('Package index request failed');
       RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
       const groups=groupPackages(parsePackages(await response.text()));
       addedDates=new Map(history.map(entry=>[entry.package,entry.addedAt]));
       groups.sort((a,b)=>(Date.parse(addedDates.get(b[0].Package))||0)-(Date.parse(addedDates.get(a[0].Package))||0));
-      entries=groups.map(createEntry);
+      expandedEntry=null;entries=groups.map(createEntry);
       const fragment=document.createDocumentFragment();entries.forEach(entry=>fragment.appendChild(entry.card));list.replaceChildren(fragment);
       loadState='ready';filterPackages();
     }catch(error){
+      if(entries.length){loadState='ready';filterPackages();RepoUI.toast('Unable to refresh. Try again.');return;}
       loadState='error';status.textContent='Unable to load packages';$('empty-state').hidden=false;
       $('empty-heading').textContent='The package index could not be loaded';
       $('empty-message').textContent='Check your connection and try again.';
       $('empty-action').hidden=false;$('empty-action').textContent='Try again';
-    }finally{list.setAttribute('aria-busy','false');}
+    }finally{
+      loading=false;list.setAttribute('aria-busy','false');refreshButton.disabled=false;
+      refreshButton.classList.remove('is-refreshing');refreshButton.setAttribute('aria-busy','false');updateTopButton();
+    }
   }
   loadPackages();
 })();
