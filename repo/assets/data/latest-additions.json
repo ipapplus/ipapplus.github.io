@@ -10,5 +10,29 @@
       "name" : "Almohanad-Long-KAF",
       "package" : "apple.almohanad.font",
       "version" : "1.0"
+   },
+   {
+      "addedAt" : "2026-10-02T18:01:14Z",
+      "name" : "Arabic UI Display iOS14",
+      "package" : "apple.ios14.font",
+      "version" : "1.0"
+   },
+   {
+      "addedAt" : "2026-10-02T18:01:14Z",
+      "name" : "Ubuntu Arabic Bold",
+      "package" : "apple.ubuntu.font",
+      "version" : "1.0"
+   },
+   {
+      "addedAt" : "2026-10-02T18:01:14Z",
+      "name" : "Hello App",
+      "package" : "cn.zqbb.disupdateapp",
+      "version" : "2.0.0-6"
+   },
+   {
+      "addedAt" : "2026-10-02T18:01:14Z",
+      "name" : "Icon Restore",
+      "package" : "com.82flex.iconrestore",
+      "version" : "1.7"
    }
 ]

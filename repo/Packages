@@ -81,3 +81,71 @@ Description: Arabic & English
 Name: Almohanad-Long-KAF
 Author: Apple
 
+Package: apple.ios14.font
+Architecture: iphoneos-arm64
+Version: 1.0
+Section: Fonts
+Maintainer: Apple
+Depends: mobilesubstrate
+Filename: ./debs/apple.ios14.font_1.0_iphoneos-arm64.deb
+Size: 207600
+MD5sum: 932322964d8f44031fa11e04d7c0a249
+SHA1: 776099842b68b8c8acbf83da6322cbfb28a48b86
+SHA256: 3dc7ef57d1739fceadaafeba496c6e1501cc343060992639576debe0284081f9
+SHA512: 53dee82b0f2aaa99a97d5b2407aa0094ee4b444b2796770fccfe2eeaebb42fb8695625c1a42a03761d566c0d3f358f2977dfc9e17054ea265e6e195fa3763c02
+Description: Arabic & English
+Name: Arabic UI Display iOS14
+Author: Apple
+
+Package: apple.ubuntu.font
+Architecture: iphoneos-arm64e
+Version: 1.0
+Section: Fonts
+Maintainer: Apple
+Depends: mobilesubstrate
+Filename: ./debs/apple.ubuntu.font_1.0_iphoneos-arm64e.deb
+Size: 91600
+MD5sum: 0ce23b160de88c601ad2d6d8f9a04056
+SHA1: e44b60b0b92cb6885bab016ec94b1c89bfd25aaa
+SHA256: 8b2580a418ba8f5926bbf2a16645e776552df2867b8f4de833af6bfb0a169ae7
+SHA512: 2419f09efbcdeaa8ddd9bd8daa48bca3fa89d294c25231eab8f19e43f3e3b9f061a3076ee6e71d6a33c2db59c43c0e18c44d1ece3cde5e2e9ab6971f0a44531a
+Description: Arabic & English
+Name: Ubuntu Arabic Bold
+Author: Apple
+
+Package: cn.zqbb.disupdateapp
+Architecture: iphoneos-arm64e
+Version: 2.0.0-6
+Section: Tweaks
+Maintainer: zqbb
+Installed-Size: 720
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: ./debs/cn.zqbb.disupdateapp_2.0.0-6_iphoneos-arm64e.deb
+Size: 129804
+MD5sum: cde720ec3a3c718948f181cfc1a96b67
+SHA1: a999c2b1c8856ed4485856c76572e72fef7b2360
+SHA256: 8b636260cec451024da0c620602d798533b87d97634991cd531504a79958908f
+SHA512: 8bd9c69ceb669f021212091c0208cc371e893ca7a71b2ff00589808ee951144a934fecb2900fa5de088d5b81dba9cc1797b6796370323b7ce99fc883726ba3af
+Description: 屏蔽App Store更新提示(Block App Store Updates)!
+Name: Hello App
+Author: zqbb
+Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.disupdateapp
+SileoDepiction: https://rootless.002599.xyz/web/cn.zqbb.disupdateapp
+
+Package: com.82flex.iconrestore
+Architecture: iphoneos-arm64e
+Version: 1.7
+Section: Tweaks
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 412
+Depends: firmware (>= 14.0), mobilesubstrate
+Filename: ./debs/com.82flex.iconrestore_1.7_iphoneos-arm64e.deb
+Size: 30480
+MD5sum: 02981d29408cca4e26ad7b02511ab243
+SHA1: ec4d78685a45564473a20ba04908279f07a99c3f
+SHA256: 3295c74e1fb64208ac0aa0018773075b6a16dc60ee11b55d37140ca571011a03
+SHA512: b8d582a985c8cb3c7c16d490df1ada28f85edf918effdd0b9353e4bc77566538796af4715c3d931354fa374822b0766f44bc16f52e372f1ecf7089cbb1a4d757
+Description: Save and restore the layout of your icons.
+Name: Icon Restore
+Author: Lessica <82flex@gmail.com>
+
