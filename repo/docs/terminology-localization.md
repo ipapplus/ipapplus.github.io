@@ -47,11 +47,11 @@ Architecture filters describe the repository's packaging conventions; they are n
 
 ## RTL and icons
 
-- Document direction controls flex/grid flow. Search padding, toolbar placement, skip-link placement, safe-area spacing, and the floating button use logical CSS or direction-aware safe-area variables.
+- Document direction controls Arabic textual flow and search placement. Technical layouts use explicit LTR composition: architecture filters keep All / Rootful / Rootless / RootHide order, and cards keep their action column on the right. Skip-link and content safe-area spacing use logical properties; Back to Top stays at the physical bottom-right in both languages.
 - The package action column remains 88px in both directions. Name/description alignment follows its component, while author text determines reading direction. Versions remain LTR. Architecture/menu labels use bdi elements.
 - Mixed Arabic metadata retains its original text. Latin runs, including IDs, versions, iOS numbers, and .deb extensions, receive LTR bdi wrappers. No directional characters are inserted into stored metadata.
 - Arabic headings, text leading, and letter spacing are tuned separately. Ellipsis fades follow the content's reading direction, including Arabic metadata in the English UI.
-- Back and internal navigation chevrons mirror in RTL; Search, Download, Copy, Refresh, Back to Top, brand logos, and external arrows retain their conventional shapes.
+- Navigation chevrons keep their fixed back/forward conventions alongside the stable navigation layout. Search, Download, Copy, Refresh, Back to Top, brand logos, and external arrows retain their conventional shapes.
 - Added a globe language icon; changed the internal package-navigation arrow to a chevron; clarified Refresh's circular arrows; standardized outline icons to stroke width 2. Action targets retain at least 44px dimensions.
 - Physical coordinates remain in the viewport-positioned architecture menu and geometrically centered toast. These are measured viewport coordinates, not unmirrored content alignment.
 - The 190ms transform/opacity accordion implementation is retained. Language changes cancel current animations cleanly, preserving the expanded card and active filters where applicable.
@@ -65,3 +65,13 @@ The simulated viewport was 390×844. It does not verify CSS rendering, touch beh
 Before release, render both pages in iPhone Safari at 390×844 and a narrow 320px width. In both languages, verify persistence after navigation/reload, card/menu placement, long Arabic names/descriptions with iOS 15 / v1.0 / com.example.package / .deb, icon alignment, safe areas with the bottom toolbar open, rapid card switching, scroll controls, and reduced motion. Check Safari's console for errors. Run Download/Copy for single-architecture and multi-architecture packages, and check that Sileo receives the original source URL.
 
 APT metadata, .deb files, package history, repository endpoints, build scripts, and third-party depictions are unchanged. Package-provided English/Chinese text and external depiction pages can therefore remain non-Arabic; the website's localization intentionally does not translate them.
+
+## Focused visual cleanup — 2026-10-03
+
+Removed the homepage's standalone language row and full-language labels. Both switches now use an 18px globe, a compact inset border, and a 44px touch target with localized accessible labels. The homepage switch sits beside the footer metadata, leaving the profile header dominant. Package-page Language and Refresh share the repository-navigation row; the title/update block has smaller, explicit margins.
+
+Restored the homepage's avatar/name and action-icon composition in both languages. Arabic labels/subtitle retain their reading direction. Card layout, architecture order, timestamps, and action positions remain stable; package-provided Arabic text and mixed technical content keep their bidi handling.
+
+Final CSS/DOM review covered 375, 390, and 430px widths: browser content widths are 343, 358, and 398px. After card padding/borders, the fixed 88px action column and 12px gap leave approximately 217, 232, and 272px for package text. No language labels compete for this space. The two header controls occupy 90px total. The search field stays 46px high with 16px input text; touch targets remain 44px. Collapsed Arabic title/description leading differs from English by approximately 1–2px total, rather than the earlier oversized typography. Long content remains ellipsized until expansion.
+
+JavaScriptCore syntax and simulated bilingual interaction checks passed after the cleanup. The final narrow-screen review was of CSS geometry and DOM structure; rendered iPhone Safari appearance remains unverified in this environment.

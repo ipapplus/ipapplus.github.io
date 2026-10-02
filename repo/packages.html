@@ -12,20 +12,22 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta data-i18n-content="packagesDescription" name="description" content="Browse, search, and download packages from the ipapplus repository.">
 <title data-i18n="packagesTitle">Packages · ipapplus Repo</title>
-<script src="assets/js/i18n.js?v=locale-1"></script>
-<link rel="stylesheet" href="assets/css/website.css?v=locale-1">
+<script src="assets/js/i18n.js?v=compact-rtl-2"></script>
+<link rel="stylesheet" href="assets/css/website.css?v=compact-rtl-2">
 </head>
 <body>
 <a class="skip-link" data-i18n="skipPackages" href="#package-list">Skip to packages</a>
 <main class="browser">
-  <div class="browser-toolbar">
-  <a class="back" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg><span data-i18n="repoName" dir="auto">ipapplus Repo</span></a>
-    <button class="language-switch" type="button" data-language-switch aria-label="Switch to Arabic" title="Switch to Arabic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a18 18 0 0 1 0 18 18 18 0 0 1 0-18"/></svg><span lang="ar" dir="auto">العربية</span></button>
+  <div class="browser-toolbar" dir="ltr">
+  <a class="back" dir="ltr" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg><span data-i18n="repoName" dir="auto">ipapplus Repo</span></a>
+    <div class="header-controls">
+      <button class="icon-button header-control language-switch" type="button" data-language-switch aria-label="Switch to Arabic" title="Switch to Arabic"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a18 18 0 0 1 0 18 18 18 0 0 1 0-18"/></svg></button>
+      <button class="icon-button header-control" id="refresh-packages" type="button" data-i18n-aria-label="refreshPackages" aria-label="Refresh packages" data-i18n-title="refreshPackages" title="Refresh packages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14-5L3 9m0-6v6h6M4 13a8 8 0 0 0 14 5l3-3m0 6v-6h-6"/></svg></button>
+    </div>
   </div>
   <header class="browser-header">
     <div class="heading">
       <h1 data-i18n="packages">Packages</h1>
-      <button class="icon-button" id="refresh-packages" type="button" data-i18n-aria-label="refreshPackages" aria-label="Refresh packages" data-i18n-title="refreshPackages" title="Refresh packages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14-5L3 9m0-6v6h6M4 13a8 8 0 0 0 14 5l3-3m0 6v-6h-6"/></svg></button>
     </div>
     <p class="updated" id="last-updated" data-i18n="updatedUnknown">Last updated: Unavailable</p>
   </header>
@@ -36,8 +38,8 @@
       <input id="package-search" dir="auto" data-i18n-placeholder="searchPackages" type="search" placeholder="Search packages" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
       <button class="search-clear" id="search-clear" type="button" data-i18n-aria-label="clearSearch" aria-label="Clear search" data-i18n-title="clearSearch" title="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg></button>
     </div>
-    <div class="architecture-filters" role="group" data-i18n-aria-label="filterArchitecture" aria-label="Filter by package architecture">
-      <button data-i18n="all" type="button" data-architecture="" aria-pressed="true">All</button>
+    <div class="architecture-filters" dir="ltr" role="group" data-i18n-aria-label="filterArchitecture" aria-label="Filter by package architecture">
+      <button data-i18n="all" dir="auto" type="button" data-architecture="" aria-pressed="true">All</button>
       <button type="button" data-architecture="iphoneos-arm" dir="ltr" lang="en" aria-pressed="false">Rootful</button>
       <button type="button" data-architecture="iphoneos-arm64" dir="ltr" lang="en" aria-pressed="false">Rootless</button>
       <button type="button" data-architecture="iphoneos-arm64e" dir="ltr" lang="en" aria-pressed="false">RootHide</button>
@@ -58,7 +60,7 @@
 <button class="icon-button back-to-top" id="back-to-top" type="button" data-i18n-aria-label="backToTop" aria-label="Back to top" data-i18n-title="backToTop" title="Back to top" inert aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 13 6-6 6 6M12 7v13"/></svg></button>
 <div class="package-choices" id="build-menu" role="menu" data-i18n-aria-label="chooseArchitecture" aria-label="Choose a package architecture" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-<script src="assets/js/website.js?v=locale-1"></script>
-<script src="assets/js/packages.js?v=locale-1"></script>
+<script src="assets/js/website.js?v=compact-rtl-2"></script>
+<script src="assets/js/packages.js?v=compact-rtl-2"></script>
 </body>
 </html>

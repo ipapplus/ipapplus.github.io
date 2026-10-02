@@ -89,8 +89,8 @@
     }
     document.querySelectorAll('[data-language-switch]').forEach(button=>{
       const next=language==='ar'?'en':'ar';
-      button.querySelector('span').textContent=next==='ar'?'العربية':'English';
-      button.querySelector('span').lang=next;
+      const label=button.querySelector('span');
+      if(label){label.textContent=next==='ar'?'العربية':'English';label.lang=next;}
       button.setAttribute('aria-label',t(next==='ar'?'switchArabic':'switchEnglish'));
       button.title=button.getAttribute('aria-label');
     });
