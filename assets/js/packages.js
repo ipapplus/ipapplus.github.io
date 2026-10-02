@@ -11,9 +11,65 @@
     copy:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
     check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>'
   };
-  const indexURL=new URL('Packages',window.location.href);
+  const indexURL=new URL('Packages',document.baseURI);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
   let addedDates=new Map();
+  let expandedEntry=null,loading=false;
+  const cardEntries=new WeakMap();
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const interactive='a,button,input,textarea,select,summary,[contenteditable],[role="button"],[role="link"],[tabindex]';
+  function commitExpansion(entry,expanded){
+    entry.card.classList.toggle('is-expanded',expanded);
+    entry.expand.setAttribute('aria-expanded',String(expanded));
+    entry.card.classList.toggle('is-open',expanded);
+  }
+  function expandCards(changes){
+    // Read current presentation heights together, including interrupted animations.
+    const before=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    changes.forEach(([entry,expanded])=>{
+      if(entry.expansion){entry.expansion.cancel();entry.expansion=null;}
+      commitExpansion(entry,expanded);
+    });
+    // One batched layout for both natural targets; no reads in an animation loop.
+    const after=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    changes.forEach(([entry,expanded],index)=>{
+      if(!entry.info.animate||reducedMotion.matches||entry.card.hidden||before[index]===after[index])return;
+      // Keep full text while shrinking. Selection/ARIA already reflect the target.
+      entry.card.classList.add('is-open');
+      const animation=entry.info.animate([
+        {height:before[index]+'px'},
+        {height:after[index]+'px'}
+      ],{duration:200,easing:'cubic-bezier(.25,.8,.25,1)',fill:'both'});
+      entry.expansion=animation;
+      animation.finished.then(()=>{
+        if(entry.expansion!==animation)return;
+        entry.card.classList.toggle('is-open',expanded);
+        entry.expansion=null;animation.cancel();
+      }).catch(()=>{/* Canceled by a newer interaction or refresh. */});
+    });
+  }
+  function setExpanded(entry,expanded){
+    if(entry.expansion){entry.expansion.cancel();entry.expansion=null;}
+    commitExpansion(entry,expanded);
+  }
+  list.addEventListener('click',event=>{
+    const target=event.target instanceof Element?event.target:event.target.parentElement;
+    const card=target.closest('.package-entry'),entry=card&&cardEntries.get(card);
+    if(!entry)return;
+    const control=target.closest(interactive);
+    // Only interactive descendants count; never the list's tabindex ancestor.
+    if(control&&card.contains(control)&&control!==entry.expand)return;
+    toggleEntry(entry);
+  });
+  function toggleEntry(entry){
+    closeMenu();
+    const previous=expandedEntry;
+    expandedEntry=previous===entry?null:entry;
+    const changes=[];
+    if(previous)changes.push([previous,false]);
+    if(expandedEntry)changes.push([expandedEntry,true]);
+    expandCards(changes);
+  }
   function refreshAdditionTimes(){
     entries.forEach(entry=>{if(entry.addedTime)entry.addedTime.textContent=RepoUI.additionTime(new Date(entry.addedAt));});
   }
@@ -160,25 +216,13 @@
     download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy;
     copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
-    let expansionAnimation;
-    card.addEventListener('click',event=>{
-      if(controls.contains(event.target))return;
-      closeMenu();
-      const before=card.getBoundingClientRect().height;
-      if(expansionAnimation)expansionAnimation.cancel();
-      const expanded=card.classList.toggle('is-expanded');
-      expand.setAttribute('aria-expanded',String(expanded));
-      const after=card.getBoundingClientRect().height;
-      if(card.animate&&before!==after&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-        expansionAnimation=card.animate([{height:before+'px'},{height:after+'px'}],{duration:150,easing:'ease-out'});
-      }
-    });
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
-    const entry={card,name,meta,download,copy,variants,available:[],addedAt,addedTime};
+    const entry={card,info,expand,name,meta,download,copy,variants,available:[],addedAt,addedTime};
+    cardEntries.set(card,entry);
     download.addEventListener('click',event=>{
       event.stopPropagation();
       if(entry.available.length===0){event.preventDefault();return;}
@@ -202,7 +246,10 @@
     for(const entry of entries){
       const matching=entry.variants.filter(variant=>variant.searchText.includes(query)&&(!selectedArchitecture||variant.pkg.Architecture===selectedArchitecture));
       entry.card.hidden=matching.length===0;
-      if(entry.card.hidden)continue;
+      if(entry.card.hidden){
+        if(expandedEntry===entry){setExpanded(entry,false);expandedEntry=null;}
+        continue;
+      }
       count++;
       entry.meta.textContent=[...new Set(matching.map(variant=>labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other'))].join(' · ');
       entry.meta.title=entry.meta.textContent;
@@ -256,31 +303,70 @@
     else return;
     event.preventDefault();items[index].focus();
   });
-  document.addEventListener('scroll',event=>{if(activeTrigger&&!menu.contains(event.target))closeMenu(true);},true);
-  window.addEventListener('resize',()=>closeMenu(true));
+  document.addEventListener('scroll',event=>{if(activeTrigger&&!menu.contains(event.target))closeMenu(true);},{capture:true,passive:true});
+  window.addEventListener('resize',()=>{
+    closeMenu(true);
+    // Let natural text reflow immediately if the viewport changes mid-animation.
+    entries.forEach(entry=>{if(entry.expansion)setExpanded(entry,entry===expandedEntry);});
+  });
   if(window.visualViewport){
     window.visualViewport.addEventListener('resize',()=>{if(activeTrigger)positionMenu(activeTrigger);});
     window.visualViewport.addEventListener('scroll',()=>{if(activeTrigger)positionMenu(activeTrigger);});
   }
-  async function loadPackages(){
+  const refresh=$('refresh-packages'),backToTop=$('back-to-top');
+  refresh.addEventListener('click',()=>loadPackages(true));
+  // A sentinel avoids doing work on every scroll event.
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(([entry])=>{
+      backToTop.classList.toggle('is-visible',!entry.isIntersecting);
+      backToTop.disabled=entry.isIntersecting;
+    });
+    observer.observe($('top-sentinel'));
+  }else{
+    let pending=false;
+    window.addEventListener('scroll',()=>{
+      if(pending)return;
+      pending=true;requestAnimationFrame(()=>{
+        const visible=window.scrollY>500;
+        backToTop.classList.toggle('is-visible',visible);backToTop.disabled=!visible;pending=false;
+      });
+    },{passive:true});
+  }
+  backToTop.addEventListener('click',()=>{
+    $('refresh-packages').focus({preventScroll:true});
+    window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'});
+  });
+  async function loadPackages(force=false){
+    if(loading)return;
+    loading=true;refresh.disabled=true;refresh.classList.add('is-refreshing');refresh.setAttribute('aria-busy','true');
+    const hadEntries=entries.length>0;
+    closeMenu();
     loadState='loading';list.setAttribute('aria-busy','true');status.textContent='Loading packages…';$('empty-state').hidden=true;
     try{
       // The same response provides both the package data and its update timestamp.
-      const [response,history]=await Promise.all([fetch('Packages'),RepoUI.loadAdditions().catch(()=>[])]);
+      const [response,history]=await Promise.all([
+        fetch('Packages',{cache:'no-cache'}),
+        RepoUI.loadAdditions(force).catch(()=>[...addedDates].map(([packageId,addedAt])=>({package:packageId,addedAt})))
+      ]);
       if(!response.ok)throw new Error('Package index request failed');
       RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
       const groups=groupPackages(parsePackages(await response.text()));
       addedDates=new Map(history.map(entry=>[entry.package,entry.addedAt]));
       groups.sort((a,b)=>(Date.parse(addedDates.get(b[0].Package))||0)-(Date.parse(addedDates.get(a[0].Package))||0));
-      entries=groups.map(createEntry);
+      entries.forEach(entry=>{if(entry.expansion)entry.expansion.cancel();clearTimeout(entry.copy.copyTimer);});
+      expandedEntry=null;entries=groups.map(createEntry);
       const fragment=document.createDocumentFragment();entries.forEach(entry=>fragment.appendChild(entry.card));list.replaceChildren(fragment);
       loadState='ready';filterPackages();
     }catch(error){
+      if(hadEntries){loadState='ready';filterPackages();RepoUI.toast('Unable to refresh. Try again.');return;}
       loadState='error';status.textContent='Unable to load packages';$('empty-state').hidden=false;
       $('empty-heading').textContent='The package index could not be loaded';
       $('empty-message').textContent='Check your connection and try again.';
       $('empty-action').hidden=false;$('empty-action').textContent='Try again';
-    }finally{list.setAttribute('aria-busy','false');}
+    }finally{
+      loading=false;list.setAttribute('aria-busy','false');refresh.disabled=false;
+      refresh.classList.remove('is-refreshing');refresh.removeAttribute('aria-busy');
+    }
   }
   loadPackages();
 })();

@@ -12,14 +12,15 @@
     return minutes>=1440?Math.floor(minutes/1440)+'d ago':minutes>=60?Math.floor(minutes/60)+'h ago':minutes+'m ago';
   }
   let additions;
-  function loadAdditions(){
+  function loadAdditions(force=false){
+    if(force)additions=null;
     if(!additions)additions=fetch('assets/data/latest-additions.json',{cache:'no-cache'}).then(response=>{
       if(!response.ok)throw new Error('Additions request failed');
       return response.json();
     }).then(entries=>{
       if(!Array.isArray(entries)||entries.some(entry=>!entry||!entry.package||!entry.addedAt||!Number.isFinite(Date.parse(entry.addedAt))))throw new Error('Invalid additions JSON');
       return entries.sort((a,b)=>Date.parse(b.addedAt)-Date.parse(a.addedAt));
-    });
+    }).catch(error=>{additions=null;throw error;});
     return additions;
   }
   function trackModified(element,header,label){
@@ -28,8 +29,11 @@
     element.title=date.toLocaleString('en-US');
     function refresh(){element.textContent=label+': '+relativeTime(date);}
     refresh();
-    setInterval(refresh,60000);
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
+    clearInterval(element.modifiedTimer);
+    if(element.modifiedListener)document.removeEventListener('visibilitychange',element.modifiedListener);
+    element.modifiedTimer=setInterval(refresh,60000);
+    element.modifiedListener=()=>{if(!document.hidden)refresh();};
+    document.addEventListener('visibilitychange',element.modifiedListener);
   }
   function toast(message){
     const element=document.getElementById('toast');
