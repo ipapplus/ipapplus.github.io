@@ -3364,6 +3364,52 @@ Icon: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/App/Resources/I
 Depiction: https://github.com/EolnMsuk/NetShield2/#readme
 SileoDepiction: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/depiction.json
 
+Package: com.eolnmsuk.netshield
+Architecture: iphoneos-arm64
+Version: 2.2.8
+Section: Networking
+Maintainer: EolnMsuk
+Installed-Size: 3308
+Depends: firmware (>= 15.0), firmware (<< 19.0), uikittools
+Conflicts: com.netshield.tweak
+Replaces: com.netshield.tweak
+Filename: ./debs/com.eolnmsuk.netshield_2.2.8_iphoneos-arm64.deb
+Size: 2973022
+MD5sum: 6f3f786362733e312d6594e9d9d4feca
+SHA1: 5aa7639ca9b034dc7ba9ab8aa959ca3634701a65
+SHA256: 2931874a5860901ca24123f4ea7c616a0a903c43e99451444f9be68d63a0116e
+SHA512: 7a4cc6831326e4a6cc9306a86738045b7bb2a126d5723c65260581ed60211e8fb48cb5a749918b4dd1483da1908c9527ec04f32e79ce66bb19d83b9f8279242e
+Homepage: https://github.com/EolnMsuk/NetShield2/
+Description: Control app internet access with permission notifications, saved rules and connection monitoring.
+Name: NetShield2
+Author: EolnMsuk
+Icon: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/App/Resources/Icon.png
+Depiction: https://github.com/EolnMsuk/NetShield2/#readme
+SileoDepiction: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/depiction.json
+
+Package: com.eolnmsuk.netshield
+Architecture: iphoneos-arm64e
+Version: 2.2.8
+Section: Networking
+Maintainer: EolnMsuk
+Installed-Size: 3308
+Depends: firmware (>= 15.0), firmware (<< 19.0), uikittools
+Conflicts: com.netshield.tweak
+Replaces: com.netshield.tweak
+Filename: ./debs/com.eolnmsuk.netshield_2.2.8_iphoneos-arm64e.deb
+Size: 2973064
+MD5sum: daeaf9a9b5c925837273fe91d0794688
+SHA1: ebc817bc9af7288fb2bd19a1ad37bb03027a6881
+SHA256: 711be5c37688e25dfdeb068d82fd5c7ae916fe041e9e0f6acc4c00a5b1ad2973
+SHA512: 649610231bb02566cece1d05c394058f0ace8789d1264ef08e411feb342aede7f2bf0825147d251887a0a8cba473b2086e871ca26d27e104fc4c5fe980a6ebda
+Homepage: https://github.com/EolnMsuk/NetShield2/
+Description: Control app internet access with permission notifications, saved rules and connection monitoring.
+Name: NetShield2
+Author: EolnMsuk
+Icon: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/App/Resources/Icon.png
+Depiction: https://github.com/EolnMsuk/NetShield2/#readme
+SileoDepiction: https://raw.githubusercontent.com/EolnMsuk/NetShield2/HEAD/depiction.json
+
 Package: com.ethanrdoesmc.truecuts
 Architecture: iphoneos-arm64
 Version: 1.2.0
