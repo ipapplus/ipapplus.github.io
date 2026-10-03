@@ -16,6 +16,48 @@
   let addedDates=new Map();
   let expandedEntry=null,loading=false;
   const cardEntries=new WeakMap();
+  // Snapshot natural card sizes on load/filter/width changes before allowing
+  // offscreen rendering to be skipped. This never runs on animation frames.
+  const canSkipCards=typeof CSS!=='undefined'&&CSS.supports('content-visibility','auto')&&CSS.supports('contain-intrinsic-block-size','auto 0px');
+  let renderGeneration=0;
+  function refreshCardRendering(){
+    if(!canSkipCards)return;
+    const generation=++renderGeneration;
+    list.classList.remove('package-render-ready');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(generation===renderGeneration)list.classList.add('package-render-ready');
+    }));
+  }
+  if(canSkipCards){
+    // Pin both accordion participants before production's height measurements.
+    // A closing offscreen card must snapshot its collapsed size before skipping.
+    const releaseCard=card=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(!card.classList.contains('is-open')&&!card.classList.contains('is-expanded'))card.classList.remove('package-render-active');
+    }));
+    list.addEventListener('click',event=>{
+      const target=event.target instanceof Element?event.target:event.target.parentElement;
+      const card=target.closest('.package-entry');
+      if(!card||!list.contains(card))return;
+      card.classList.add('package-render-active');releaseCard(card);
+      if(expandedEntry)expandedEntry.card.classList.add('package-render-active');
+    },{capture:true});
+    new MutationObserver(mutations=>{
+      for(const mutation of mutations){
+        const card=mutation.target;
+        if(!card.classList.contains('package-entry'))continue;
+        if((mutation.oldValue||'').split(/\s+/).includes('is-open')&&!card.classList.contains('is-open'))releaseCard(card);
+      }
+    }).observe(list,{subtree:true,attributes:true,attributeFilter:['class'],attributeOldValue:true});
+  }
+  // Observe width only: animated card heights must not restart the snapshot.
+  if(canSkipCards&&typeof ResizeObserver!=='undefined'){
+    let listWidth;
+    new ResizeObserver(([entry])=>{
+      const width=entry.contentRect.width;
+      if(width===listWidth)return;
+      listWidth=width;refreshCardRendering();
+    }).observe(list);
+  }
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
   reducedMotion.addEventListener('change',()=>{
     if(!reducedMotion.matches)return;
@@ -268,6 +310,7 @@
     clear.hidden=search.value.length===0;
     closeMenu();
     if(loadState!=='ready')return;
+    refreshCardRendering();
     const query=search.value.trim().toLowerCase();let count=0;
     for(const entry of entries){
       const matching=entry.variants.filter(variant=>variant.searchText.includes(query)&&(!selectedArchitecture||variant.pkg.Architecture===selectedArchitecture));

@@ -79,7 +79,17 @@ svg{display:block;flex-shrink:0}
 .results-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;min-height:24px}
 #package-status{margin:0;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
 .reset-filters{min-height:44px;margin:0;padding:0;border:0;background:transparent;color:var(--accent);font-size:12px}
-#package-list{display:flex;flex-direction:column;gap:8px}
+/* Ordinary vertical flow avoids flex intrinsic sizing across the whole list.
+   Only visible siblings contribute the existing 8px spacing after filtering. */
+#package-list{display:flow-root}
+#package-list>.package-entry:not([hidden])~.package-entry:not([hidden]){margin-top:8px}
+/* Capture real sizes before enabling skipping; never guess collapsed heights.
+   Keep dynamic and keyboard-focused cards available for natural measurement. */
+@supports (content-visibility:auto) and (contain-intrinsic-block-size:auto 0px){
+  #package-list>.package-entry{contain-intrinsic-block-size:auto 0px}
+  #package-list.package-render-ready>.package-entry{content-visibility:auto}
+  #package-list.package-render-ready>.package-entry:is(.is-expanded,.is-open,.package-render-active,:focus-within){content-visibility:visible}
+}
 .package-entry{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:12px;align-items:start;min-width:0;overflow:hidden;contain:layout paint;padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;touch-action:manipulation}
 .package-entry.is-expanded{border-color:var(--accent)}
 /* Keep the card surface stable on press; retain the expanded-state border. */
@@ -96,7 +106,12 @@ svg{display:block;flex-shrink:0}
 .package-controls{display:flex;gap:0}
 .package-actions .icon-button{border:1px solid transparent;background:transparent;border-radius:10px;color:var(--muted)}
 .package-entry.is-open .package-title h2,.package-entry.is-open .package-expand,.package-entry.is-open .package-description,.package-entry.is-open .package-meta,.package-entry.is-open .package-version{white-space:normal;overflow-wrap:anywhere;text-overflow:clip}
-.package-entry.is-open .package-description{display:block;-webkit-line-clamp:unset;white-space:pre-wrap}
+/* Constrain the reveal to the animated card's content box. The row's zero
+   minimum prevents the full paragraph's intrinsic height from overflowing it.
+   Headers retain their natural heights; only the description gives up space. */
+.package-entry.is-open{grid-template-rows:minmax(0,1fr)}
+.package-entry.is-open .package-info{height:100%;min-height:0}
+.package-entry.is-open .package-description{flex-shrink:1;min-height:0;-webkit-line-clamp:unset;white-space:pre-wrap}
 @supports (-webkit-mask-image:linear-gradient(to right,#000,transparent)) or (mask-image:linear-gradient(to right,#000,transparent)){
   .package-entry:not(.is-open) .package-expand{text-overflow:clip;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 20px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 20px),transparent)}
 }
