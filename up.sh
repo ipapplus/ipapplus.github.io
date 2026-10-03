@@ -11,9 +11,11 @@ mkdir -p "$DEBS_DIR"
 import_deb() {
     src="$1"
 
-    package=$(dpkg-deb -f "$src" Package)
-    version=$(dpkg-deb -f "$src" Version)
-    architecture=$(dpkg-deb -f "$src" Architecture)
+    metadata=$(dpkg-deb -f "$src" Package Version Architecture)
+
+    package=$(printf '%s\n' "$metadata" | sed -n 's/^Package:[[:space:]]*//p')
+    version=$(printf '%s\n' "$metadata" | sed -n 's/^Version:[[:space:]]*//p')
+    architecture=$(printf '%s\n' "$metadata" | sed -n 's/^Architecture:[[:space:]]*//p')
 
     [ -n "$package" ] || exit 1
     [ -n "$version" ] || exit 1
@@ -59,11 +61,18 @@ for dir in ./*; do
             ;;
     esac
 
-    [ -f "$dir/DEBIAN/control" ] || continue
+    control="$dir/DEBIAN/control"
+    [ -f "$control" ] || continue
 
-    package=$(sed -n 's/^Package:[[:space:]]*//p' "$dir/DEBIAN/control" | head -n 1)
-    version=$(sed -n 's/^Version:[[:space:]]*//p' "$dir/DEBIAN/control" | head -n 1)
-    architecture=$(sed -n 's/^Architecture:[[:space:]]*//p' "$dir/DEBIAN/control" | head -n 1)
+    metadata=$(sed -n \
+        -e 's/^Package:[[:space:]]*/Package: /p' \
+        -e 's/^Version:[[:space:]]*/Version: /p' \
+        -e 's/^Architecture:[[:space:]]*/Architecture: /p' \
+        "$control")
+
+    package=$(printf '%s\n' "$metadata" | sed -n 's/^Package:[[:space:]]*//p' | head -n 1)
+    version=$(printf '%s\n' "$metadata" | sed -n 's/^Version:[[:space:]]*//p' | head -n 1)
+    architecture=$(printf '%s\n' "$metadata" | sed -n 's/^Architecture:[[:space:]]*//p' | head -n 1)
 
     [ -n "$package" ] || exit 1
     [ -n "$version" ] || exit 1
@@ -80,7 +89,7 @@ done
 index=$(mktemp ./Packages.XXXXXX)
 trap 'rm -f "$index"' EXIT HUP INT TERM
 
-apt-ftparchive packages ./debs > "$index"
+apt-ftparchive packages "$DEBS_DIR" > "$index"
 LC_ALL=C perl ./record-additions.pl "$index"
 chmod 644 "$index"
 mv "$index" "$PACKAGES_FILE"
