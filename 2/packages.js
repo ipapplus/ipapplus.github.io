@@ -29,27 +29,31 @@
     entry.card.classList.toggle('is-open',expanded);
   }
   function expandCards(changes){
-    // Read current presentation heights together, including interrupted animations.
-    const before=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    // CSS layout heights exclude the press transform; capture interrupted motion too.
+    const before=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded])=>{
       if(entry.expansion){entry.expansion.cancel();entry.expansion=null;}
       commitExpansion(entry,expanded);
     });
-    // One batched layout for both natural targets; no reads in an animation loop.
-    const after=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    // Measure the actual border-box targets, including padding and the action column.
+    // Reads and writes are batched, never repeated on animation frames.
+    const after=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded],index)=>{
-      if(!entry.info.animate||reducedMotion.matches||entry.card.hidden||before[index]===after[index])return;
-      // Keep full text while shrinking. Selection/ARIA already reflect the target.
+      if(!entry.card.animate||reducedMotion.matches||entry.card.hidden||!Number.isFinite(before[index])||!Number.isFinite(after[index])||before[index]===after[index])return;
+      // Wrap full content once, then reveal/clip it as the card's bottom edge moves.
+      // WAAPI installs both explicit pixel endpoints in this task, without an
+      // intermediate intrinsic-height paint or a CSS transition startup reflow.
       entry.card.classList.add('is-open');
-      const animation=entry.info.animate([
+      const animation=entry.card.animate([
         {height:before[index]+'px'},
         {height:after[index]+'px'}
-      ],{duration:200,easing:'cubic-bezier(.25,.8,.25,1)',fill:'both'});
+      ],{duration:260,easing:'cubic-bezier(.25,.1,.25,1)',fill:'both'});
       entry.expansion=animation;
       animation.finished.then(()=>{
         if(entry.expansion!==animation)return;
         entry.card.classList.toggle('is-open',expanded);
         entry.expansion=null;animation.cancel();
+        // Removing the effect restores intrinsic height for responsive reflow.
       }).catch(()=>{/* Canceled by a newer interaction or refresh. */});
     });
   }
