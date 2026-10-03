@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0d14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ipapplus">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
+<title>Tweaks · ipapplus Repo</title>
+<link rel="stylesheet" href="website.css?v=motion-polish-1">
+</head>
+<body>
+<main class="browser">
+  <div id="top-sentinel" aria-hidden="true"></div>
+  <a class="back" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>ipapplus Repo</a>
+  <header class="browser-header">
+    <div class="heading">
+      <h1>Tweaks</h1>
+      <button class="icon-button" id="refresh-packages" type="button" aria-label="Refresh packages" title="Refresh packages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
+    </div>
+    <p class="updated" id="last-updated">Last Updated: Unknown</p>
+  </header>
+  <section class="search-panel" aria-label="Search and filter packages">
+    <label class="sr-only" for="package-search">Search by name, identifier, description, or filename</label>
+    <div class="search-field">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+      <input id="package-search" type="search" placeholder="Search packages" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
+      <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg></button>
+    </div>
+    <div class="architecture-filters" role="group" aria-label="Filter by architecture">
+      <button type="button" data-architecture="" aria-pressed="true">All</button>
+      <button type="button" data-architecture="iphoneos-arm" aria-pressed="false">Rootful</button>
+      <button type="button" data-architecture="iphoneos-arm64" aria-pressed="false">Rootless</button>
+      <button type="button" data-architecture="iphoneos-arm64e" aria-pressed="false">RootHide</button>
+    </div>
+  </section>
+  <div class="results-bar">
+    <p id="package-status" role="status" aria-live="polite" aria-atomic="true">Loading packages…</p>
+    <button class="reset-filters" id="reset-filters" type="button" hidden>Reset filters</button>
+  </div>
+  <div id="package-list" tabindex="-1" aria-label="Available packages" aria-busy="true"></div>
+  <section class="empty-state" id="empty-state" hidden>
+    <h2 id="empty-heading">No packages found</h2>
+    <p id="empty-message">Try another search or architecture.</p>
+    <button id="empty-action" type="button">Reset filters</button>
+  </section>
+  <noscript>Enable JavaScript to browse packages.</noscript>
+</main>
+<button class="icon-button back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" disabled><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4m-7 7 7-7 7 7"/></svg></button>
+<div class="package-choices" id="build-menu" role="menu" aria-label="Choose a build" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<script src="website.js?v=motion-polish-1"></script>
+<script src="packages.js?v=motion-polish-1"></script>
+</body>
+</html>
