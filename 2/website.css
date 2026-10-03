@@ -81,8 +81,9 @@ svg{display:block;flex-shrink:0}
 .reset-filters{min-height:44px;margin:0;padding:0;border:0;background:transparent;color:var(--accent);font-size:12px}
 #package-list{display:flex;flex-direction:column;gap:8px}
 .package-entry{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:12px;align-items:start;min-width:0;overflow:hidden;contain:layout paint;padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;touch-action:manipulation}
-.package-entry:active,.package-entry.is-expanded{border-color:var(--accent)}
-.package-entry:active{background:var(--raised)}
+.package-entry.is-expanded{border-color:var(--accent)}
+/* Keep the card surface stable on press; retain the expanded-state border. */
+.package-entry{-webkit-tap-highlight-color:transparent}
 .package-info{display:flex;flex-direction:column;gap:6px;min-width:0;overflow:hidden}
 .package-info>*{flex-shrink:0}
 .package-title{min-width:0}
@@ -120,6 +121,9 @@ svg{display:block;flex-shrink:0}
 .package-entry.is-pressed{transform:scale(.995)}
 .back-to-top{transition:opacity var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease),visibility var(--motion-duration)}
 .architecture-filters button,.icon-button{transition:transform var(--motion-fast) var(--motion-ease),background-color var(--motion-duration) var(--motion-ease),border-color var(--motion-duration) var(--motion-ease),color var(--motion-duration) var(--motion-ease)}
+/* Restore the historical inset gold press outline, independently of selection.
+   Pointer feedback uses the cancelable press class; :active is keyboard-only. */
+.architecture-filters button:not(:disabled):is(.is-pressed,:focus-visible:active){border-color:var(--accent);outline:1px solid var(--accent);outline-offset:-1px;background:var(--raised)}
 .search-field{transition:border-color var(--motion-duration) var(--motion-ease),box-shadow var(--motion-duration) var(--motion-ease)}
 .package-download svg{transition:transform var(--motion-fast) var(--motion-ease)}
 .package-download:is(:active,.is-pressed) svg{transform:translateY(1px)}
