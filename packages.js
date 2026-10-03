@@ -206,7 +206,7 @@
     const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
-    const addedAt=addedDates.get(pkg.Package);
+    const addedAt=addedDates.get(RepoUI.versionKey(pkg.Package,pkg.Version));
     const time=text(actions,'time','package-added',addedAt?RepoUI.additionTime(new Date(addedAt)):'');
     const addedTime=addedAt?time:null;
     if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
@@ -346,13 +346,13 @@
       // The same response provides both the package data and its update timestamp.
       const [response,history]=await Promise.all([
         fetch('Packages',{cache:'no-cache'}),
-        RepoUI.loadAdditions(force).catch(()=>[...addedDates].map(([packageId,addedAt])=>({package:packageId,addedAt})))
+        RepoUI.loadAdditions(force).catch(()=>[...addedDates].map(([key,addedAt])=>{const [packageId,version]=JSON.parse(key);return {package:packageId,version,addedAt};}))
       ]);
       if(!response.ok)throw new Error('Package index request failed');
       RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
       const groups=groupPackages(parsePackages(await response.text()));
-      addedDates=new Map(history.map(entry=>[entry.package,entry.addedAt]));
-      groups.sort((a,b)=>(Date.parse(addedDates.get(b[0].Package))||0)-(Date.parse(addedDates.get(a[0].Package))||0));
+      addedDates=new Map(history.map(entry=>[RepoUI.versionKey(entry.package,entry.version),entry.addedAt]));
+      groups.sort((a,b)=>(Date.parse(addedDates.get(RepoUI.versionKey(b[0].Package,b[0].Version)))||0)-(Date.parse(addedDates.get(RepoUI.versionKey(a[0].Package,a[0].Version)))||0));
       entries.forEach(entry=>{if(entry.expansion)entry.expansion.cancel();clearTimeout(entry.copy.copyTimer);});
       expandedEntry=null;entries=groups.map(createEntry);
       const fragment=document.createDocumentFragment();entries.forEach(entry=>fragment.appendChild(entry.card));list.replaceChildren(fragment);

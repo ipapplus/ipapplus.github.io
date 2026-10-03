@@ -12,11 +12,14 @@ my $entries = $json->decode(do { local $/; <$record> });
 close $record;
 die "Expected an array in $path\n" unless ref($entries) eq 'ARRAY';
 my %seen;
+sub version_key { $json->encode([$_[0], $_[1]]) }
 for my $entry (@$entries) {
     die "Invalid or duplicate entry in $path\n"
         unless ref($entry) eq 'HASH' && $entry->{package}
         && defined($entry->{name}) && defined($entry->{version})
-        && defined($entry->{addedAt}) && !$seen{$entry->{package}}++;
+        && defined($entry->{addedAt})
+        && $entry->{addedAt} =~ /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/
+        && !$seen{version_key($entry->{package}, $entry->{version})}++;
 }
 
 open my $index, '<:encoding(UTF-8)', $ARGV[0] or die "Read package index: $!\n";
@@ -26,15 +29,16 @@ local $/ = '';
 while (my $block = <$index>) {
     my %fields = $block =~ /^([\w-]+):[ \t]*(.*)$/mg;
     my $id = $fields{Package} or next;
-    next if $seen{$id};
     die "Missing version for $id\n" unless $fields{Version};
+    my $key = version_key($id, $fields{Version});
+    next if $seen{$key};
     push @$entries, {
         name => $fields{Name} || $id,
         package => $id,
         version => $fields{Version},
         addedAt => $now,
     };
-    $seen{$id} = 1;
+    $seen{$key} = 1;
     $added++;
 }
 close $index;
