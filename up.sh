@@ -89,9 +89,8 @@ trap - EXIT HUP INT TERM
 
 git add --all
 
-if git diff --cached --quiet; then
-    exit 0
+if ! git diff --cached --quiet; then
+    git commit -m "Update repository"
 fi
 
-git commit -m "Update repository"
 git push
