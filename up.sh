@@ -54,7 +54,7 @@ for dir in ./*; do
     [ -d "$dir" ] || continue
 
     case "$dir" in
-        ./debs|./assets|./.git|./tests)
+        ./debs|./.git|./tests)
             continue
             ;;
     esac
@@ -81,7 +81,7 @@ index=$(mktemp ./Packages.XXXXXX)
 trap 'rm -f "$index"' EXIT HUP INT TERM
 
 apt-ftparchive packages ./debs > "$index"
-LC_ALL=C perl ./assets/scripts/record-additions.pl "$index"
+LC_ALL=C perl ./record-additions.pl "$index"
 chmod 644 "$index"
 mv "$index" "$PACKAGES_FILE"
 

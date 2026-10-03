@@ -14,7 +14,7 @@
   let additions;
   function loadAdditions(force=false){
     if(force)additions=null;
-    if(!additions)additions=fetch('assets/data/latest-additions.json',{cache:'no-cache'}).then(response=>{
+    if(!additions)additions=fetch('latest-additions.json',{cache:'no-cache'}).then(response=>{
       if(!response.ok)throw new Error('Additions request failed');
       return response.json();
     }).then(entries=>{
