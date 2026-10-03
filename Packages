@@ -7599,6 +7599,27 @@ Author: PoomSmart
 Depiction: https://poomsmart.github.io/repo/depictions/replaykitmax.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/replaykitmax.json
 
+Package: com.ps.yougroupsettings
+Architecture: iphoneos-arm64e
+Version: 1.0.11
+Section: Tweaks
+Maintainer: PoomSmart <unicorn03.glimmer@icloud.com>
+Installed-Size: 114
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0)
+Filename: ./debs/com.ps.yougroupsettings_1.0.11_iphoneos-arm64e.deb
+Size: 5404
+MD5sum: 11fff985a0000a92e5220df941ec4327
+SHA1: 3a7477992736c01c671d6c5ad954511d695782ba
+SHA256: 0ff4265fe97650cae940180d6db537e2d757d351279ecdfafb7156c3cefd1d65
+SHA512: 98291a1169efd727b9a597665131f98e24304f64bfa0348d9701dd604444f89e963ab89f5b231958f9afa421a284540e8c0994d1290694b99bcb36d069768ab0
+Description: Allows tweak-made settings to be grouped and displayed in iOS YouTube app.
+Tag: compatible_min::ios11.0
+Author: PoomSmart <unicorn03.glimmer@icloud.com>
+Name: YouGroupSettings
+Icon: https://img.chariz.cloud/icon/yougroupsettings/icon@3x.png
+Depiction: https://chariz.com/get/yougroupsettings
+
 Package: com.randy420.tools
 Architecture: iphoneos-arm64
 Version: 2.3.9

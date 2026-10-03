@@ -2116,5 +2116,11 @@
       "name" : "UnderDock",
       "package" : "com.p2kdev.underdock",
       "version" : "1.3"
+   },
+   {
+      "addedAt" : "2026-10-03T20:44:42Z",
+      "name" : "YouGroupSettings",
+      "package" : "com.ps.yougroupsettings",
+      "version" : "1.0.11"
    }
 ]
