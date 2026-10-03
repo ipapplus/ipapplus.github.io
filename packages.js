@@ -16,7 +16,54 @@
   let addedDates=new Map();
   let expandedEntry=null,loading=false;
   const cardEntries=new WeakMap();
+  // Snapshot natural card sizes on load/filter/width changes before allowing
+  // offscreen rendering to be skipped. This never runs on animation frames.
+  const canSkipCards=typeof CSS!=='undefined'&&CSS.supports('content-visibility','auto')&&CSS.supports('contain-intrinsic-block-size','auto 0px');
+  let renderGeneration=0;
+  function refreshCardRendering(){
+    if(!canSkipCards)return;
+    const generation=++renderGeneration;
+    list.classList.remove('package-render-ready');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(generation===renderGeneration)list.classList.add('package-render-ready');
+    }));
+  }
+  if(canSkipCards){
+    // Pin both accordion participants before production's height measurements.
+    // A closing offscreen card must snapshot its collapsed size before skipping.
+    const releaseCard=card=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(!card.classList.contains('is-open')&&!card.classList.contains('is-expanded'))card.classList.remove('package-render-active');
+    }));
+    list.addEventListener('click',event=>{
+      const target=event.target instanceof Element?event.target:event.target.parentElement;
+      const card=target.closest('.package-entry');
+      if(!card||!list.contains(card))return;
+      card.classList.add('package-render-active');releaseCard(card);
+      if(expandedEntry)expandedEntry.card.classList.add('package-render-active');
+    },{capture:true});
+    new MutationObserver(mutations=>{
+      for(const mutation of mutations){
+        const card=mutation.target;
+        if(!card.classList.contains('package-entry'))continue;
+        if((mutation.oldValue||'').split(/\s+/).includes('is-open')&&!card.classList.contains('is-open'))releaseCard(card);
+      }
+    }).observe(list,{subtree:true,attributes:true,attributeFilter:['class'],attributeOldValue:true});
+  }
+  // Observe width only: animated card heights must not restart the snapshot.
+  if(canSkipCards&&typeof ResizeObserver!=='undefined'){
+    let listWidth;
+    new ResizeObserver(([entry])=>{
+      const width=entry.contentRect.width;
+      if(width===listWidth)return;
+      listWidth=width;refreshCardRendering();
+    }).observe(list);
+  }
   const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  reducedMotion.addEventListener('change',()=>{
+    if(!reducedMotion.matches)return;
+    entries.forEach(entry=>{if(entry.expansion)setExpanded(entry,entry===expandedEntry);});
+    if(menuAnimation){menuAnimation.cancel();menuAnimation=null;menu.hidden=!activeTrigger;}
+  });
   const interactive='a,button,input,textarea,select,summary,[contenteditable],[role="button"],[role="link"],[tabindex]';
   function commitExpansion(entry,expanded){
     entry.card.classList.toggle('is-expanded',expanded);
@@ -24,27 +71,31 @@
     entry.card.classList.toggle('is-open',expanded);
   }
   function expandCards(changes){
-    // Read current presentation heights together, including interrupted animations.
-    const before=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    // CSS layout heights exclude the press transform; capture interrupted motion too.
+    const before=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded])=>{
       if(entry.expansion){entry.expansion.cancel();entry.expansion=null;}
       commitExpansion(entry,expanded);
     });
-    // One batched layout for both natural targets; no reads in an animation loop.
-    const after=changes.map(([entry])=>entry.info.getBoundingClientRect().height);
+    // Measure the actual border-box targets, including padding and the action column.
+    // Reads and writes are batched, never repeated on animation frames.
+    const after=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded],index)=>{
-      if(!entry.info.animate||reducedMotion.matches||entry.card.hidden||before[index]===after[index])return;
-      // Keep full text while shrinking. Selection/ARIA already reflect the target.
+      if(!entry.card.animate||reducedMotion.matches||entry.card.hidden||!Number.isFinite(before[index])||!Number.isFinite(after[index])||before[index]===after[index])return;
+      // Wrap full content once, then reveal/clip it as the card's bottom edge moves.
+      // WAAPI installs both explicit pixel endpoints in this task, without an
+      // intermediate intrinsic-height paint or a CSS transition startup reflow.
       entry.card.classList.add('is-open');
-      const animation=entry.info.animate([
+      const animation=entry.card.animate([
         {height:before[index]+'px'},
         {height:after[index]+'px'}
-      ],{duration:200,easing:'cubic-bezier(.25,.8,.25,1)',fill:'both'});
+      ],{duration:260,easing:'cubic-bezier(.25,.1,.25,1)',fill:'both'});
       entry.expansion=animation;
       animation.finished.then(()=>{
         if(entry.expansion!==animation)return;
         entry.card.classList.toggle('is-open',expanded);
         entry.expansion=null;animation.cancel();
+        // Removing the effect restores intrinsic height for responsive reflow.
       }).catch(()=>{/* Canceled by a newer interaction or refresh. */});
     });
   }
@@ -115,10 +166,26 @@
     }
     return [...groups.values()];
   }
+  let menuAnimation=null;
+  function animateMenu(opening){
+    if(menuAnimation){menuAnimation.cancel();menuAnimation=null;}
+    menu.classList.toggle('is-closing',!opening);
+    menu.inert=!opening;
+    if(opening)menu.removeAttribute('aria-hidden');else menu.setAttribute('aria-hidden','true');
+    if(reducedMotion.matches||!menu.animate){menu.hidden=!opening;return;}
+    const frames=[{opacity:0,transform:'translateY(-3px)'},{opacity:1,transform:'translateY(0)'}];
+    const animation=menu.animate(opening?frames:frames.slice().reverse(),{duration:180,easing:'cubic-bezier(.25,.8,.25,1)',fill:'both'});
+    menuAnimation=animation;
+    animation.finished.then(()=>{
+      if(menuAnimation!==animation)return;
+      menu.hidden=!opening;menuAnimation=null;animation.cancel();
+    }).catch(()=>{/* Replaced by a newer open/close. */});
+  }
   function closeMenu(restoreFocus=false){
     const previous=activeTrigger;
     if(previous)previous.setAttribute('aria-expanded','false');
-    activeTrigger=null;menu.hidden=true;
+    activeTrigger=null;
+    if(previous)animateMenu(false);
     if(restoreFocus&&previous&&previous.isConnected)previous.focus({preventScroll:true});
   }
   function positionMenu(trigger){
@@ -137,13 +204,13 @@
     const button=entry.copy;
     try{
       await RepoUI.copyText(url);
-      button.innerHTML=icons.check;button.dataset.feedback='Copied!';
+      button.dataset.feedback='Copied!';
       button.setAttribute('aria-label','Copied download link for '+entry.name);
       RepoUI.toast('Copied!');
     }catch(error){RepoUI.toast('Unable to copy. Try again.');}
     clearTimeout(button.copyTimer);
     button.copyTimer=setTimeout(()=>{
-      button.innerHTML=icons.copy;delete button.dataset.feedback;
+      delete button.dataset.feedback;
       button.setAttribute('aria-label','Copy download link for '+entry.name);
     },2000);
   }
@@ -171,6 +238,7 @@
     menu.setAttribute('aria-label',(mode==='copy'?'Copy download link for ':'Download ')+entry.name);
     activeTrigger=trigger;trigger.setAttribute('aria-expanded','true');menu.hidden=false;
     positionMenu(trigger);
+    animateMenu(true);
     menu.querySelector('[role="menuitem"]').focus({preventScroll:true});
   }
   function configureActions(entry){
@@ -214,7 +282,7 @@
     const controls=document.createElement('div');controls.className='package-controls';actions.appendChild(controls);
     const download=document.createElement('a');download.className='icon-button package-download';download.innerHTML=icons.download;download.setAttribute('download','');
     download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
-    const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy;
+    const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy.replace('<svg ', '<svg class="copy-original" ')+icons.check.replace('<svg ', '<svg class="copy-check" ');
     copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
@@ -242,6 +310,7 @@
     clear.hidden=search.value.length===0;
     closeMenu();
     if(loadState!=='ready')return;
+    refreshCardRendering();
     const query=search.value.trim().toLowerCase();let count=0;
     for(const entry of entries){
       const matching=entry.variants.filter(variant=>variant.searchText.includes(query)&&(!selectedArchitecture||variant.pkg.Architecture===selectedArchitecture));

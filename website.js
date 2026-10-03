@@ -58,6 +58,26 @@
     try{if(!document.execCommand('copy'))throw new Error('Copy failed');}
     finally{area.remove();if(previous&&previous.isConnected)previous.focus({preventScroll:true});}
   }
+  // Delegation covers dynamically inserted cards and menu items on iOS Safari.
+  let pressed=null,pressPointer=null,pressX=0,pressY=0;
+  function releasePress(){
+    if(pressed)pressed.classList.remove('is-pressed');
+    pressed=null;pressPointer=null;
+  }
+  document.addEventListener('pointerdown',event=>{
+    if(!event.isPrimary||event.button!==0)return;
+    releasePress();
+    const target=event.target.closest('button,a,.package-entry');
+    if(!target||target.disabled||target.getAttribute('aria-disabled')==='true')return;
+    pressed=target;pressPointer=event.pointerId;pressX=event.clientX;pressY=event.clientY;
+    pressed.classList.add('is-pressed');
+  },{passive:true});
+  document.addEventListener('pointermove',event=>{
+    if(event.pointerId===pressPointer&&Math.hypot(event.clientX-pressX,event.clientY-pressY)>10)releasePress();
+  },{passive:true});
+  ['pointerup','pointercancel','lostpointercapture'].forEach(type=>document.addEventListener(type,releasePress,{passive:true}));
+  window.addEventListener('blur',releasePress);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)releasePress();});
   const versionKey=(packageId,version)=>JSON.stringify([packageId,version]);
   window.RepoUI={versionKey,relativeTime,additionTime,loadAdditions,trackModified,toast,copyText};
 })();

@@ -1,5 +1,7 @@
 :root{
   color-scheme:dark;
+  --motion-fast:120ms;--motion-duration:180ms;
+  --motion-ease:cubic-bezier(.25,.8,.25,1);--press-scale:.97;
   --bg:#0a0d14;--surface:#11151f;--raised:#191e2b;--border:#272e3e;
   --text:#e4e7ec;--secondary:#bcc4d3;--muted:#9aa5b9;--accent:#d4a574;
   --accent-soft:#241e1b;--accent-border:#69503a;
@@ -25,7 +27,7 @@ svg{display:block;flex-shrink:0}
 .icon-button:active,.link-btn:active,.package-target:active{background:var(--raised)}
 .updated{margin:0;color:var(--muted);font-size:12px}
 .package-added{display:block;height:16px;line-height:16px;text-align:right;color:var(--muted);font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}
-.toast{position:fixed;z-index:100;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 32px);padding:10px 16px;border:1px solid var(--border);border-radius:12px;background:var(--raised);color:var(--text);font-size:13px;text-align:center;box-shadow:0 8px 24px #0005;opacity:0;transform:translate(-50%,8px);pointer-events:none;transition:opacity .15s,transform .15s}
+.toast{position:fixed;z-index:100;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 32px);padding:10px 16px;border:1px solid var(--border);border-radius:12px;background:var(--raised);color:var(--text);font-size:13px;text-align:center;box-shadow:0 8px 24px #0005;opacity:0;transform:translate(-50%,8px);pointer-events:none;transition:opacity var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 /* A concise landing page, with the browser one tap away. */
 .landing{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:24px 16px;padding-top:max(24px,env(safe-area-inset-top));padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:max(24px,env(safe-area-inset-bottom))}
@@ -77,10 +79,21 @@ svg{display:block;flex-shrink:0}
 .results-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px;min-height:24px}
 #package-status{margin:0;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
 .reset-filters{min-height:44px;margin:0;padding:0;border:0;background:transparent;color:var(--accent);font-size:12px}
-#package-list{display:flex;flex-direction:column;gap:8px}
+/* Ordinary vertical flow avoids flex intrinsic sizing across the whole list.
+   Only visible siblings contribute the existing 8px spacing after filtering. */
+#package-list{display:flow-root}
+#package-list>.package-entry:not([hidden])~.package-entry:not([hidden]){margin-top:8px}
+/* Capture real sizes before enabling skipping; never guess collapsed heights.
+   Keep dynamic and keyboard-focused cards available for natural measurement. */
+@supports (content-visibility:auto) and (contain-intrinsic-block-size:auto 0px){
+  #package-list>.package-entry{contain-intrinsic-block-size:auto 0px}
+  #package-list.package-render-ready>.package-entry{content-visibility:auto}
+  #package-list.package-render-ready>.package-entry:is(.is-expanded,.is-open,.package-render-active,:focus-within){content-visibility:visible}
+}
 .package-entry{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:12px;align-items:start;min-width:0;overflow:hidden;contain:layout paint;padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;touch-action:manipulation}
-.package-entry:active,.package-entry.is-expanded{border-color:var(--accent)}
-.package-entry:active{background:var(--raised)}
+.package-entry.is-expanded{border-color:var(--accent)}
+/* Keep the card surface stable on press; retain the expanded-state border. */
+.package-entry{-webkit-tap-highlight-color:transparent}
 .package-info{display:flex;flex-direction:column;gap:6px;min-width:0;overflow:hidden}
 .package-info>*{flex-shrink:0}
 .package-title{min-width:0}
@@ -93,7 +106,12 @@ svg{display:block;flex-shrink:0}
 .package-controls{display:flex;gap:0}
 .package-actions .icon-button{border:1px solid transparent;background:transparent;border-radius:10px;color:var(--muted)}
 .package-entry.is-open .package-title h2,.package-entry.is-open .package-expand,.package-entry.is-open .package-description,.package-entry.is-open .package-meta,.package-entry.is-open .package-version{white-space:normal;overflow-wrap:anywhere;text-overflow:clip}
-.package-entry.is-open .package-description{display:block;-webkit-line-clamp:unset;white-space:pre-wrap}
+/* Constrain the reveal to the animated card's content box. The row's zero
+   minimum prevents the full paragraph's intrinsic height from overflowing it.
+   Headers retain their natural heights; only the description gives up space. */
+.package-entry.is-open{grid-template-rows:minmax(0,1fr)}
+.package-entry.is-open .package-info{height:100%;min-height:0}
+.package-entry.is-open .package-description{flex-shrink:1;min-height:0;-webkit-line-clamp:unset;white-space:pre-wrap}
 @supports (-webkit-mask-image:linear-gradient(to right,#000,transparent)) or (mask-image:linear-gradient(to right,#000,transparent)){
   .package-entry:not(.is-open) .package-expand{text-overflow:clip;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 20px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 20px),transparent)}
 }
@@ -109,9 +127,29 @@ svg{display:block;flex-shrink:0}
 .package-target{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;width:100%;padding:10px;border:0;border-radius:8px;background:transparent;color:var(--text);text-decoration:none;font-size:13px;text-align:left}
 .build-size{font-size:11px;color:var(--muted);white-space:nowrap}
 .package-target:focus-visible{outline-offset:-2px;background:var(--surface)}
-@media(hover:hover){.icon-button:hover,.link-btn:hover,.package-target:hover{background:var(--raised);color:var(--text)}.package-target:hover{background:var(--surface)}.back:hover{color:var(--accent)}}
-:where(button,a):not(.package-expand):not(.back-to-top){transition:transform .1s}
-button:not(.package-expand):not(:disabled):active,a:not([aria-disabled="true"]):active{border-color:var(--accent);outline:1px solid var(--accent);outline-offset:-1px;background:var(--raised);transform:scale(.99)}
+@media(hover:hover) and (pointer:fine){.icon-button:hover,.link-btn:hover,.package-target:hover{background:var(--raised);color:var(--text)}.package-target:hover{background:var(--surface)}.back:hover{color:var(--accent)}}
+/* Motion stays local to the touched control; result lists never animate. */
+:where(button,a){transition:transform var(--motion-fast) var(--motion-ease),opacity var(--motion-fast) var(--motion-ease)}
+:where(button,a):not(:disabled):not([aria-disabled="true"]):is(:active,.is-pressed){transform:scale(var(--press-scale))}
+.package-expand{transform-origin:left center}
+.package-entry{transition:transform var(--motion-fast) var(--motion-ease)}
+.package-entry.is-pressed{transform:scale(.995)}
+.back-to-top{transition:opacity var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease),visibility var(--motion-duration)}
+.architecture-filters button,.icon-button{transition:transform var(--motion-fast) var(--motion-ease),background-color var(--motion-duration) var(--motion-ease),border-color var(--motion-duration) var(--motion-ease),color var(--motion-duration) var(--motion-ease)}
+/* Restore the historical inset gold press outline, independently of selection.
+   Pointer feedback uses the cancelable press class; :active is keyboard-only. */
+.architecture-filters button:not(:disabled):is(.is-pressed,:focus-visible:active){border-color:var(--accent);outline:1px solid var(--accent);outline-offset:-1px;background:var(--raised)}
+.search-field{transition:border-color var(--motion-duration) var(--motion-ease),box-shadow var(--motion-duration) var(--motion-ease)}
+.package-download svg{transition:transform var(--motion-fast) var(--motion-ease)}
+.package-download:is(:active,.is-pressed) svg{transform:translateY(1px)}
+.package-copy{display:grid;place-items:center}
+.package-copy svg{grid-area:1 / 1;transition:opacity var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease)}
+.package-copy .copy-check{opacity:0;transform:scale(.9)}
+.package-copy[data-feedback] .copy-original{opacity:0;transform:scale(.9)}
+.package-copy[data-feedback] .copy-check{opacity:1;transform:none}
+.package-choices.is-closing{pointer-events:none}
 @media(min-width:600px){.browser{padding-top:32px}.heading h1{font-size:36px}.package-entry{padding:15px 16px}.package-title h2{font-size:16px}.package-description{font-size:13px}}
 @media(max-width:350px){.profile{padding:20px}.profile h1{font-size:18px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+@media(prefers-reduced-motion:reduce){:where(button,a,.package-entry):is(:active,.is-pressed),.package-download:is(:active,.is-pressed) svg{transform:none!important}}
