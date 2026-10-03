@@ -22,8 +22,6 @@ import_deb() {
     filename="${package}_${version}_${architecture}.deb"
     destination="$DEBS_DIR/$filename"
 
-    [ "$src" = "$destination" ] && return
-
     if [ -e "$destination" ]; then
         rm -f "$src"
         return
@@ -77,24 +75,6 @@ for dir in ./*; do
     dpkg-deb --build "$dir" "$output"
     import_deb "$output"
     remove_dir "$dir"
-done
-
-for deb in "$DEBS_DIR"/*.deb; do
-    [ -f "$deb" ] || continue
-
-    package=$(dpkg-deb -f "$deb" Package)
-    version=$(dpkg-deb -f "$deb" Version)
-    architecture=$(dpkg-deb -f "$deb" Architecture)
-
-    correct="$DEBS_DIR/${package}_${version}_${architecture}.deb"
-
-    if [ "$deb" != "$correct" ]; then
-        if [ -e "$correct" ]; then
-            rm -f "$deb"
-        else
-            mv "$deb" "$correct"
-        fi
-    fi
 done
 
 index=$(mktemp ./Packages.XXXXXX)
