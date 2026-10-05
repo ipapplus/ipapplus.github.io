@@ -156,6 +156,19 @@
     if(size<1048576)return (size/1024).toFixed(1)+' KB';
     return (size/1048576).toFixed(1)+' MB';
   }
+  function cardSizeLabel(available){
+    const sizes=available.map(variant=>variant.pkg.Size).filter(value=>/^\d+$/.test(value)).map(Number).filter(Number.isSafeInteger);
+    return sizes.length?sizeLabel(String(Math.min(...sizes))):'';
+  }
+  function developerName(group){
+    for(const field of ['Author','Maintainer']){
+      for(const pkg of group){
+        const name=(pkg[field]||'').replace(/<[^>]*>/g,'').trim();
+        if(name)return name;
+      }
+    }
+    return '';
+  }
   function groupPackages(packages){
     const groups=new Map();
     for(const pkg of packages){
@@ -243,6 +256,7 @@
   }
   function configureActions(entry){
     const available=entry.available;
+    entry.size.textContent=cardSizeLabel(available);
     [entry.download,entry.copy].forEach(button=>{
       button.removeAttribute('aria-haspopup');button.removeAttribute('aria-expanded');button.removeAttribute('aria-controls');
       if(available.length>1){
@@ -270,6 +284,8 @@
     expand.setAttribute('aria-expanded','false');
     card.setAttribute('aria-labelledby',heading.id);
     if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
+    const developer=developerName(group);
+    if(developer){const author=text(info,'p','package-developer',developer);author.title=developer;}
     const meta=text(info,'p','package-meta','');
     const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
@@ -284,12 +300,13 @@
     download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy.replace('<svg ', '<svg class="copy-original" ')+icons.check.replace('<svg ', '<svg class="copy-check" ');
     copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
+    const size=text(controls,'span','package-size','');
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
-    const entry={card,info,expand,name,meta,download,copy,variants,available:[],addedAt,addedTime};
+    const entry={card,info,expand,name,meta,download,copy,size,variants,available:[],addedAt,addedTime};
     cardEntries.set(card,entry);
     download.addEventListener('click',event=>{
       event.stopPropagation();
