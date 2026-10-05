@@ -36,7 +36,7 @@
       elements.forEach(element=>{element.hidden=true;document.body.appendChild(document.adoptNode(element));});
       if(view==='home')initHome();
       else await new Promise((resolve,reject)=>{
-        const script=document.createElement('script');script.src=new URL('packages.js?v=card-panel-1',base);
+        const script=document.createElement('script');script.src=new URL('packages.js?v=card-boxes-1',base);
         script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('Package script request failed'));};
         document.body.appendChild(script);
       }).catch(error=>{elements.forEach(element=>element.remove());throw error;});

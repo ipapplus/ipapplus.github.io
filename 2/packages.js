@@ -106,7 +106,7 @@
   list.addEventListener('click',event=>{
     const target=event.target instanceof Element?event.target:event.target.parentElement;
     const card=target.closest('.package-entry'),entry=card&&cardEntries.get(card);
-    if(!entry)return;
+    if(!entry||target.closest('.package-actions'))return;
     const control=target.closest(interactive);
     // Only interactive descendants count; never the list's tabindex ancestor.
     if(control&&card.contains(control)&&control!==entry.expand)return;
@@ -290,6 +290,8 @@
     const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
+    // Informational boxes do not trigger the parent card's press feedback.
+    actions.addEventListener('pointerdown',event=>{if(!event.target.closest('a,button'))event.stopPropagation();});
     const addedAt=addedDates.get(RepoUI.versionKey(pkg.Package,pkg.Version));
     const time=text(actions,'time','package-added',addedAt?RepoUI.additionTime(new Date(addedAt)):'');
     const addedTime=addedAt?time:null;
