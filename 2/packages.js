@@ -400,8 +400,7 @@
     window.visualViewport.addEventListener('resize',()=>{if(activeTrigger)positionMenu(activeTrigger);});
     window.visualViewport.addEventListener('scroll',()=>{if(activeTrigger)positionMenu(activeTrigger);});
   }
-  const refresh=$('refresh-packages'),backToTop=$('back-to-top');
-  refresh.addEventListener('click',()=>loadPackages(true));
+  const backToTop=$('back-to-top');
   // A sentinel avoids doing work on every scroll event.
   if('IntersectionObserver' in window){
     const observer=new IntersectionObserver(([entry])=>{
@@ -423,9 +422,9 @@
     $('refresh-packages').focus({preventScroll:true});
     window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'});
   });
-  async function loadPackages(force=false){
+  async function loadPackages(){
     if(loading)return;
-    loading=true;refresh.disabled=true;refresh.classList.add('is-refreshing');refresh.setAttribute('aria-busy','true');
+    loading=true;
     const hadEntries=entries.length>0;
     closeMenu();
     loadState='loading';list.setAttribute('aria-busy','true');status.textContent='Loading packages…';$('empty-state').hidden=true;
@@ -433,7 +432,7 @@
       // The same response provides both the package data and its update timestamp.
       const [response,history]=await Promise.all([
         fetch('Packages',{cache:'no-cache'}),
-        RepoUI.loadAdditions(force).catch(()=>[...addedDates].map(([key,addedAt])=>{const [packageId,version]=JSON.parse(key);return {package:packageId,version,addedAt};}))
+        RepoUI.loadAdditions().catch(()=>[...addedDates].map(([key,addedAt])=>{const [packageId,version]=JSON.parse(key);return {package:packageId,version,addedAt};}))
       ]);
       if(!response.ok)throw new Error('Package index request failed');
       RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
@@ -451,8 +450,7 @@
       $('empty-message').textContent='Check your connection and try again.';
       $('empty-action').hidden=false;$('empty-action').textContent='Try again';
     }finally{
-      loading=false;list.setAttribute('aria-busy','false');refresh.disabled=false;
-      refresh.classList.remove('is-refreshing');refresh.removeAttribute('aria-busy');
+      loading=false;list.setAttribute('aria-busy','false');
     }
   }
   loadPackages();
