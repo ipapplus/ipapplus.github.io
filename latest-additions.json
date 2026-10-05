@@ -2380,5 +2380,11 @@
       "name" : "NetShield2",
       "package" : "com.eolnmsuk.netshield",
       "version" : "2.2.8"
+   },
+   {
+      "addedAt" : "2026-10-05T06:32:16Z",
+      "name" : "orionblur-NFB-BHTwitter",
+      "package" : "com.bandarhl.bhtwitter",
+      "version" : "7.1.0-1+debug"
    }
 ]
