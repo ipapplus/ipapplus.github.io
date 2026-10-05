@@ -12,9 +12,8 @@
 body{margin:0;background:var(--bg);color:var(--text);font-size:14px;line-height:1.45}
 /* Decorative canvas stays below every existing control and card. */
 body{isolation:isolate}
-#adhkar-background{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#adhkar-background{--ambient-top:max(24px,env(safe-area-inset-top,0px));--ambient-right:max(12px,env(safe-area-inset-right,0px));--ambient-left:max(12px,env(safe-area-inset-left,0px));--ambient-bottom:calc(100px + env(safe-area-inset-bottom,0px));position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .quran-radio-button{position:fixed;z-index:40;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));color:var(--accent);box-shadow:0 8px 24px #0005}
-body:not(.landing) .quran-radio-button{right:calc(72px + env(safe-area-inset-right,0px))}
 .quran-radio-button[aria-pressed="true"]{border-color:var(--accent-border);background:var(--accent-soft)}
 button,input{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
@@ -59,7 +58,7 @@ svg{display:block;flex-shrink:0}
 /* Package browser: text stays inside the left column; actions stay at the top right. */
 .browser{width:100%;max-width:760px;margin:0 auto;padding:20px 16px 32px;padding-top:max(20px,env(safe-area-inset-top));padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
 #top-sentinel{position:absolute;top:0;left:0;width:1px;height:500px;pointer-events:none}
-.back-to-top{position:fixed;z-index:40;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .18s,transform .18s,visibility .18s}
+.back-to-top{position:fixed;z-index:40;right:calc(72px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .18s,transform .18s,visibility .18s}
 .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
 /* Bottom page padding lets the final card scroll clear of the floating control. */
 #refresh-packages.is-refreshing svg{animation:refresh-turn .7s linear infinite}

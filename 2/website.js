@@ -1,5 +1,6 @@
 (function(){
   'use strict';
+  if(window.RepoUI)return;
   function relativeTime(date,now=Date.now()){
     if(!Number.isFinite(date.getTime())||!Number.isFinite(now))return '';
     const seconds=Math.max(0,Math.floor((now-date.getTime())/1000));
@@ -93,18 +94,38 @@
     'اللَّهُ أَكْبَرُ',
     'أَسْتَغْفِرُ اللَّهَ',
     'لَا إِلَٰهَ إِلَّا اللَّهُ',
+    'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+    'سُبْحَانَ اللَّهِ الْعَظِيمِ',
+    'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+    'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+    'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
     'اللَّهُمَّ صَلِّ عَلَى نَبِيِّنَا مُحَمَّدٍ',
+    'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
     'رَبِّ اغْفِرْ لِي',
-    'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى',
+    'رَبِّ زِدْنِي عِلْمًا',
+    'اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي',
     'اللَّهُمَّ اهْدِنِي وَسَدِّدْنِي',
+    'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي',
     'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ',
-    'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ'
+    'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى',
+    'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ',
+    'اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
+    'يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ',
+    'اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ',
+    'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ',
+    'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ'
   ];
   if(ctx){
     let width=0,height=0,phrases=[],sprites=[],frame=0,last=0,next=0,lastShown=-1;
-    const main=document.querySelector('main'),list=document.getElementById('package-list');
+    let bag=[],insets={top:24,right:12,bottom:100,left:12};
+    function refill(){
+      bag=sprites.slice();
+      for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]];}
+      if(bag[bag.length-1].index===lastShown)[bag[0],bag[bag.length-1]]=[bag[bag.length-1],bag[0]];
+    }
     let protectedRect=null;
     function measure(){
+      const main=document.querySelector('main:not([hidden])'),list=main.querySelector('#package-list');
       const rect=main.getBoundingClientRect();
       protectedRect={left:rect.left-6,right:rect.right+6,top:rect.top+window.scrollY-6,
         bottom:(list?list.getBoundingClientRect().top:rect.bottom)+window.scrollY+6};
@@ -113,13 +134,13 @@
       ctx.clearRect(0,0,width,height);
       if(now>=next&&phrases.length<4){
         measure();
-        const available=sprites.filter(sprite=>sprite.index!==lastShown&&!phrases.some(p=>p.sprite===sprite));
-        const sprite=available[Math.floor(Math.random()*available.length)];
+        if(!bag.length)refill();
+        const sprite=bag[bag.length-1];
         if(sprite){
           for(let attempt=0;attempt<12;attempt++){
-            const x=12+Math.random()*Math.max(0,width-sprite.width-24),y=24+Math.random()*Math.max(0,height-140);
-            if(phrases.every(p=>Math.abs(p.y-y)>40)){
-              phrases.push({sprite,x,y,age:0});lastShown=sprite.index;break;
+            const x=insets.left+Math.random()*Math.max(0,width-sprite.width-insets.left-insets.right),y=insets.top+Math.random()*Math.max(0,height-sprite.height-insets.top-insets.bottom-128);
+            if(phrases.every(p=>Math.abs(p.y-y)>Math.max(p.sprite.height,sprite.height)+120)){
+              phrases.push({sprite,x,y,age:0});lastShown=sprite.index;bag.pop();break;
             }
           }
         }
@@ -129,8 +150,8 @@
         const p=phrases[i];p.age+=dt;
         if(!motion.matches)p.y+=8*dt;
         if(p.age>16||p.y>height){phrases.splice(i,1);continue;}
-        ctx.globalAlpha=motion.matches ? .55 : .55*Math.min(1,p.age/1.2,(16-p.age)/2);
-        ctx.drawImage(p.sprite.canvas,p.x,p.y,p.sprite.width,36);
+        ctx.globalAlpha=motion.matches ? .72 : .72*Math.min(1,p.age/1.2,(16-p.age)/2);
+        ctx.drawImage(p.sprite.canvas,p.x,p.y,p.sprite.width,p.sprite.height);
       }
       ctx.globalAlpha=1;
       // Opaque cards already mask the background; protect transparent headings too.
@@ -152,19 +173,42 @@
     }
     function resize(){
       width=window.innerWidth;height=window.innerHeight;
+      const style=getComputedStyle(canvas);
+      // Resolve safe-area lengths through computed padding on a lightweight probe.
+      const probe=document.createElement('div');
+      probe.style.cssText='position:fixed;visibility:hidden;pointer-events:none;padding-top:'+style.getPropertyValue('--ambient-top')+';padding-right:'+style.getPropertyValue('--ambient-right')+';padding-bottom:'+style.getPropertyValue('--ambient-bottom')+';padding-left:'+style.getPropertyValue('--ambient-left');
+      document.body.appendChild(probe);
+      const resolved=getComputedStyle(probe);
+      insets={top:parseFloat(resolved.paddingTop)||24,right:parseFloat(resolved.paddingRight)||12,bottom:parseFloat(resolved.paddingBottom)||100,left:parseFloat(resolved.paddingLeft)||12};
+      probe.remove();
       const scale=Math.min(window.devicePixelRatio||1,2);
       canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);
       ctx.setTransform(scale,0,0,scale,0,0);
       sprites=adhkar.map((value,index)=>{
         const surface=document.createElement('canvas'),text=surface.getContext('2d');
-        text.font='12px system-ui, sans-serif';
-        const w=Math.min(width-24,Math.ceil(text.measureText(value).width)+8);
-        surface.width=Math.ceil(w*scale);surface.height=36*scale;
-        text.scale(scale,scale);text.font='12px system-ui, sans-serif';text.direction='rtl';
-        text.textAlign='center';text.textBaseline='middle';text.fillStyle='#d4c8b9';
-        text.fillText(value,w/2,18,w-8);
-        return {canvas:surface,width:w,index};
+        const family='"Geeza Pro", "Damascus", "Al Nile", "Noto Naskh Arabic", system-ui, sans-serif';
+        let size=16;
+        text.font='500 '+size+'px '+family;text.direction='rtl';text.textAlign='center';
+        while(text.measureText(value).width>width-48&&size>13){size--;text.font='500 '+size+'px '+family;}
+        // Wrap long phrases instead of horizontally compressing Arabic glyphs.
+        const lines=[];let line='';
+        for(const word of value.split(' ')){
+          const candidate=line?line+' '+word:word;
+          if(line&&text.measureText(candidate).width>width-48){lines.push(line);line=word;}else line=candidate;
+        }
+        lines.push(line);
+        const metrics=lines.map(line=>text.measureText(line));
+        const w=Math.ceil(Math.max(...metrics.map(m=>Math.max(m.width,2*Math.abs(m.actualBoundingBoxLeft||0),2*Math.abs(m.actualBoundingBoxRight||0)))))+24;
+        const ascent=Math.max(size,...metrics.map(m=>m.actualBoundingBoxAscent||size));
+        const descent=Math.max(size*.5,...metrics.map(m=>m.actualBoundingBoxDescent||size*.5));
+        const lineHeight=Math.ceil(ascent+descent+8),h=lineHeight*lines.length+24;
+        surface.width=Math.ceil(w*scale);surface.height=Math.ceil(h*scale);
+        text.scale(scale,scale);text.font='500 '+size+'px '+family;text.direction='rtl';
+        text.textAlign='center';text.textBaseline='alphabetic';text.fillStyle='#c9b79f';
+        lines.forEach((line,i)=>text.fillText(line,w/2,12+ascent+i*lineHeight));
+        return {canvas:surface,width:w,height:h,index};
       });
+      bag=[];
       phrases=[];next=0;measure();restart();
     }
     let resizing=0;
@@ -181,6 +225,7 @@
       if(!motion.matches)return;
       clearTimeout(scrolling);scrolling=setTimeout(()=>{if(!document.hidden){measure();draw(performance.now(),0);}},120);
     },{passive:true});
+    document.addEventListener('repoviewchange',()=>{phrases=[];next=0;measure();restart();});
     resize();
   }
   const radio=document.createElement('audio');radio.id='quran-radio';radio.preload='none';
@@ -202,7 +247,7 @@
   button.addEventListener('click',()=>{
     const token=++request;
     if(wanted){wanted=false;radio.pause();radioUI(false);button.removeAttribute('aria-busy');return;}
-    wanted=true;failureShown=false;radioUI(true);button.setAttribute('aria-busy','true');
+    wanted=true;failureShown=false;radioUI(!radio.paused);button.setAttribute('aria-busy','true');
     if(!radio.getAttribute('src'))radio.src='https://stream.radiojar.com/0tpy1h0kxtzuv';
     // Keep play() in the direct tap handler for iPhone Safari user activation.
     try{Promise.resolve(radio.play()).then(()=>{
@@ -210,6 +255,8 @@
       button.removeAttribute('aria-busy');radioUI(wanted&&!radio.paused);
     }).catch(()=>{if(token===request&&wanted)fail();});}catch(error){fail();}
   });
+  radio.addEventListener('play',()=>radioUI(!radio.paused));
+  radio.addEventListener('waiting',()=>{if(wanted)button.setAttribute('aria-busy','true');});
   radio.addEventListener('playing',()=>{if(!wanted){radio.pause();return;}button.removeAttribute('aria-busy');radioUI(true);});
   radio.addEventListener('pause',()=>{if(radio.paused){wanted=false;radioUI(false);button.removeAttribute('aria-busy');}});
   radio.addEventListener('ended',()=>{wanted=false;radioUI(false);button.removeAttribute('aria-busy');});

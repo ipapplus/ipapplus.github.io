@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="website.css?v=adhkar-radio-1">
+<link rel="stylesheet" href="website.css?v=persistent-radio-2">
 </head>
 <body class="landing">
 <main class="profile">
@@ -55,18 +55,7 @@
   </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="website.js?v=adhkar-radio-1"></script>
-<script>
-(function(){
-  'use strict';
-  document.getElementById('sileo').addEventListener('click',()=>{
-    RepoUI.copyText('https://ipapplus.github.io').then(()=>RepoUI.toast('Source URL copied')).catch(()=>{});
-  });
-  fetch('Packages').then(response=>{
-    if(!response.ok)throw new Error('Package index request failed');
-    RepoUI.trackModified(document.getElementById('last-seen'),response.headers.get('Last-Modified'),'Last Seen');
-  }).catch(()=>{});
-})();
-</script>
+<script src="website.js?v=persistent-radio-2"></script>
+<script src="navigation.js?v=persistent-radio-2"></script>
 </body>
 </html>
