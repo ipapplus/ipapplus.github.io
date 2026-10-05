@@ -230,18 +230,23 @@
       button.setAttribute('aria-label','Copy download link for '+entry.name);
     },2000);
   }
-  function isIOSStandalone(){
-    // iPadOS may identify itself as a Mac when requesting desktop websites.
-    const ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||
-      (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-    return navigator.standalone===true||(ios&&typeof window.matchMedia==='function'&&
-      window.matchMedia('(display-mode: standalone)').matches);
+  const standaloneDisplay=typeof window.matchMedia==='function'?
+    window.matchMedia('(display-mode: standalone)'):null;
+  function isStandalone(){
+    return window.navigator.standalone===true||Boolean(standaloneDisplay&&standaloneDisplay.matches);
   }
-  function handleDownload(event,url){
-    if(!isIOSStandalone())return; // Preserve the existing native Safari anchor action.
-    event.preventDefault();
-    RepoUI.copyText(url).then(()=>RepoUI.toast('Download link copied'))
-      .catch(()=>RepoUI.toast('Unable to copy. Try again.'));
+  function updateDownloadVisibility(entry){
+    const standalone=isStandalone();
+    entry.download.hidden=standalone;
+    entry.download.parentElement.classList.toggle('copy-only',standalone);
+  }
+  function updateStandaloneMode(){
+    closeMenu();
+    entries.forEach(updateDownloadVisibility);
+  }
+  if(standaloneDisplay){
+    if(typeof standaloneDisplay.addEventListener==='function')standaloneDisplay.addEventListener('change',updateStandaloneMode);
+    else if(typeof standaloneDisplay.addListener==='function')standaloneDisplay.addListener(updateStandaloneMode);
   }
   function showMenu(entry,mode,trigger){
     const opening=activeTrigger!==trigger;
@@ -259,7 +264,7 @@
         item.addEventListener('click',()=>{closeMenu(true);copyLink(entry,variant.url);});
       }else{
         item.href=variant.url;item.setAttribute('download','');
-        item.addEventListener('click',event=>{closeMenu(true);handleDownload(event,variant.url);});
+        item.addEventListener('click',()=>closeMenu(true));
       }
       fragment.appendChild(item);
     }
@@ -324,12 +329,12 @@
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
     const entry={card,info,expand,name,meta,download,copy,size,variants,available:[],addedAt,addedTime};
+    updateDownloadVisibility(entry);
     cardEntries.set(card,entry);
     download.addEventListener('click',event=>{
       event.stopPropagation();
       if(entry.available.length===0){event.preventDefault();return;}
       if(entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}
-      else handleDownload(event,entry.available[0].url);
     });
     download.addEventListener('keydown',event=>{
       if(event.key===' '&&entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}

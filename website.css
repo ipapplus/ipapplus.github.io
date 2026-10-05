@@ -127,6 +127,7 @@ svg{display:block;flex-shrink:0}
 .package-actions{width:110px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:44px 24px;gap:6px;align-items:center;justify-items:center;align-content:space-between;align-self:stretch}
 .package-actions .package-download{grid-column:1;grid-row:1}
 .package-actions .package-copy{grid-column:2;grid-row:1}
+.package-actions.copy-only .package-copy{grid-column:1 / -1}
 .package-actions .package-added{grid-column:1;grid-row:2}
 .package-actions .package-size{grid-column:2;grid-row:2}
 .package-actions :is(.package-added,.package-size){display:block;min-width:0;width:100%;max-width:100%;height:24px;border:1px solid var(--border);border-radius:10px;line-height:22px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default}
