@@ -12,6 +12,9 @@
     check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>'
   };
   const indexURL=new URL('Packages',document.baseURI);
+  // Package filenames belong to the repository root, including when this UI
+  // is served from /2/. A /2/debs/ URL returns HTML rather than the package.
+  const packageBaseURL=new URL('/',indexURL);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
   let addedDates=new Map();
   let expandedEntry=null,loading=false;
@@ -147,7 +150,7 @@
   }
   function downloadURL(filename){
     if(!filename)return null;
-    try{const url=new URL(filename,indexURL);return ['http:','https:'].includes(url.protocol)?url.href:null;}
+    try{const url=new URL(filename,packageBaseURL);return ['http:','https:'].includes(url.protocol)?url.href:null;}
     catch(error){return null;}
   }
   function sizeLabel(value){
@@ -227,6 +230,49 @@
       button.setAttribute('aria-label','Copy download link for '+entry.name);
     },2000);
   }
+  function isIOSStandalone(){
+    // iPadOS may identify itself as a Mac when requesting desktop websites.
+    const ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||
+      (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+    return navigator.standalone===true||(ios&&typeof window.matchMedia==='function'&&
+      window.matchMedia('(display-mode: standalone)').matches);
+  }
+  let safariDownloadDialog=null;
+  function handleDownload(event,url){
+    if(!isIOSStandalone())return; // Preserve the existing native Safari anchor action.
+    event.preventDefault();
+    // iOS cannot reliably force a URL into external Safari. Never fall back to
+    // same-window navigation or an in-app file preview; offer the exact URL instead.
+    if(!safariDownloadDialog){
+      const dialog=document.createElement('dialog');
+      dialog.className='safari-download-dialog';
+      dialog.setAttribute('aria-labelledby','safari-download-heading');
+      text(dialog,'h2','','Download in Safari').id='safari-download-heading';
+      text(dialog,'p','','Copy this download link, open Safari, and paste it into the address bar to download. Your package list stays open here.');
+      const input=document.createElement('input');
+      input.type='text';input.readOnly=true;input.setAttribute('aria-label','Download URL');
+      input.addEventListener('click',()=>input.select());dialog.appendChild(input);
+      const copy=document.createElement('button');copy.type='button';copy.className='package-target';copy.textContent='Copy download link';
+      copy.addEventListener('click',()=>{
+        RepoUI.copyText(input.value).then(()=>RepoUI.toast('Link copied. Paste it into Safari.')).catch(()=>{
+          input.focus();input.select();RepoUI.toast('Select and copy the link, then paste it into Safari.');
+        });
+      });dialog.appendChild(copy);
+      const close=document.createElement('button');close.type='button';close.className='package-target';close.textContent='Close';
+      close.addEventListener('click',()=>{
+        if(typeof dialog.close==='function')dialog.close();else dialog.removeAttribute('open');
+        if(dialog.downloadTrigger&&dialog.downloadTrigger.isConnected)dialog.downloadTrigger.focus({preventScroll:true});
+      });dialog.appendChild(close);
+      document.body.appendChild(dialog);safariDownloadDialog=dialog;
+    }
+    safariDownloadDialog.querySelector('input').value=url;
+    safariDownloadDialog.downloadTrigger=event.currentTarget;
+    if(!safariDownloadDialog.open){
+      if(typeof safariDownloadDialog.showModal==='function')safariDownloadDialog.showModal();
+      else safariDownloadDialog.setAttribute('open','');
+    }
+    safariDownloadDialog.querySelector('button').focus({preventScroll:true});
+  }
   function showMenu(entry,mode,trigger){
     const opening=activeTrigger!==trigger;
     closeMenu();if(!opening)return;
@@ -243,7 +289,7 @@
         item.addEventListener('click',()=>{closeMenu(true);copyLink(entry,variant.url);});
       }else{
         item.href=variant.url;item.setAttribute('download','');
-        item.addEventListener('click',()=>closeMenu(true));
+        item.addEventListener('click',event=>{closeMenu(true);handleDownload(event,variant.url);});
       }
       fragment.appendChild(item);
     }
@@ -313,6 +359,7 @@
       event.stopPropagation();
       if(entry.available.length===0){event.preventDefault();return;}
       if(entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}
+      else handleDownload(event,entry.available[0].url);
     });
     download.addEventListener('keydown',event=>{
       if(event.key===' '&&entry.available.length>1){event.preventDefault();showMenu(entry,'download',download);}

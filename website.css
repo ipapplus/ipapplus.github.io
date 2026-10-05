@@ -179,3 +179,10 @@ svg{display:block;flex-shrink:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 @media(prefers-reduced-motion:reduce){:where(button,a,.package-entry):is(:active,.is-pressed),.package-download:is(:active,.is-pressed) svg{transform:none!important}}
+
+.safari-download-dialog{position:fixed;inset:0;margin:auto;width:calc(100% - 32px);max-width:360px;max-height:calc(100% - 32px);box-sizing:border-box;overflow:auto;padding:20px;background:var(--raised);color:var(--text);border:1px solid #3a4356;border-radius:13px;z-index:60}
+.safari-download-dialog:not([open]){display:none}
+.safari-download-dialog::backdrop{background:#0009}
+.safari-download-dialog h2{margin:0 0 12px;font-size:18px}
+.safari-download-dialog p{font-size:14px;line-height:1.5}
+.safari-download-dialog input{width:100%;box-sizing:border-box;margin-bottom:12px;padding:8px;font:inherit;color:inherit;background:transparent;border:1px solid #3a4356;border-radius:6px}
