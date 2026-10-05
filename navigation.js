@@ -10,7 +10,7 @@
     if(url.pathname===base.pathname||url.pathname===new URL('index.html',base).pathname)return 'home';
     return url.pathname===new URL('packages.html',base).pathname?'packages':null;
   }
-  function nodes(root){return [...root.querySelectorAll('main,#back-to-top,#build-menu')];}
+  function nodes(root){return [...root.querySelectorAll('main,#back-to-top,#back-home,#build-menu')];}
   views.set(current,{nodes:nodes(document),title:document.title,description:document.querySelector('meta[name="description"]').content,scroll:0});
   function initHome(){
     const sileo=document.getElementById('sileo');
@@ -36,7 +36,7 @@
       elements.forEach(element=>{element.hidden=true;document.body.appendChild(document.adoptNode(element));});
       if(view==='home')initHome();
       else await new Promise((resolve,reject)=>{
-        const script=document.createElement('script');script.src=new URL('packages.js?v=card-boxes-1',base);
+        const script=document.createElement('script');script.src=new URL('packages.js?v=page-refresh-back-1',base);
         script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('Package script request failed'));};
         document.body.appendChild(script);
       }).catch(error=>{elements.forEach(element=>element.remove());throw error;});

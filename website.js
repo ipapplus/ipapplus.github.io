@@ -81,6 +81,18 @@
   document.addEventListener('visibilitychange',()=>{if(document.hidden)releasePress();});
   const versionKey=(packageId,version)=>JSON.stringify([packageId,version]);
   window.RepoUI={versionKey,relativeTime,additionTime,loadAdditions,trackModified,toast,copyText};
+  // Delegation also covers the other view's lazily inserted Refresh button.
+  document.addEventListener('click',event=>{
+    const control=event.target.closest('[data-page-refresh]');
+    if(!control||control.disabled)return;
+    control.classList.add('is-refreshing');control.setAttribute('aria-busy','true');
+    window.location.reload();
+  });
+  window.addEventListener('pageshow',()=>{
+    document.querySelectorAll('[data-page-refresh]').forEach(control=>{
+      control.classList.remove('is-refreshing');control.removeAttribute('aria-busy');
+    });
+  });
   // Shared features initialize once, including if this script is loaded twice.
   if(document.getElementById('adhkar-background'))return;
   const canvas=document.createElement('canvas');
@@ -131,7 +143,7 @@
       // The complete list is a conservative exclusion: no text in card gaps
       // can be overtaken by loading, filtering or accordion expansion.
       const elements=main.matches('.profile')?[main]:[...main.children].filter(el=>el.id!=='top-sentinel');
-      elements.push(...document.querySelectorAll('#quran-radio-button,#back-to-top,#build-menu,.toast.show,.skip-link:focus'));
+      elements.push(...document.querySelectorAll('#quran-radio-button,#back-to-top,#back-home,#build-menu,.toast.show,.skip-link:focus'));
       const home=main.matches('.profile');
       exclusions=elements.filter(el=>!el.hidden&&getComputedStyle(el).visibility!=='hidden').map(el=>{
         const r=el.getBoundingClientRect();

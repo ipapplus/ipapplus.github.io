@@ -13,7 +13,7 @@
 <meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
 <title>Tweaks · ipapplus Repo</title>
 <link rel="preload" href="26.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="website.css?v=card-boxes-bottom-1">
+<link rel="stylesheet" href="website.css?v=page-refresh-back-1">
 </head>
 <body>
 <main data-navigation-focus tabindex="-1" class="browser">
@@ -22,7 +22,7 @@
   <header class="browser-header">
     <div class="heading">
       <h1>Tweaks</h1>
-      <button class="icon-button" id="refresh-packages" type="button" aria-label="Refresh packages" title="Refresh packages"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
+      <button class="icon-button page-refresh" id="refresh-packages" data-page-refresh type="button" aria-label="Refresh page" title="Refresh page"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
     </div>
     <p class="updated" id="last-updated">Last Updated: Unknown</p>
   </header>
@@ -52,11 +52,12 @@
   </section>
   <noscript>Enable JavaScript to browse packages.</noscript>
 </main>
+<a class="icon-button home-back" id="back-home" href="index.html" aria-label="Home" title="Home"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></a>
 <button class="icon-button back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" disabled><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4m-7 7 7-7 7 7"/></svg></button>
 <div class="package-choices" id="build-menu" role="menu" aria-label="Choose a build" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-<script src="website.js?v=navigation-visual-3"></script>
-<script src="packages.js?v=card-boxes-1"></script>
-<script src="navigation.js?v=card-boxes-1"></script>
+<script src="website.js?v=page-refresh-back-1"></script>
+<script src="packages.js?v=page-refresh-back-1"></script>
+<script src="navigation.js?v=page-refresh-back-1"></script>
 </body>
 </html>
