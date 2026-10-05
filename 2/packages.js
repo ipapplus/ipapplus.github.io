@@ -12,6 +12,9 @@
     check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>'
   };
   const indexURL=new URL('Packages',document.baseURI);
+  // Package filenames belong to the repository root, including when this UI
+  // is served from /2/. A /2/debs/ URL returns HTML rather than the package.
+  const packageBaseURL=new URL('/',indexURL);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
   let addedDates=new Map();
   let expandedEntry=null,loading=false;
@@ -147,7 +150,7 @@
   }
   function downloadURL(filename){
     if(!filename)return null;
-    try{const url=new URL(filename,indexURL);return ['http:','https:'].includes(url.protocol)?url.href:null;}
+    try{const url=new URL(filename,packageBaseURL);return ['http:','https:'].includes(url.protocol)?url.href:null;}
     catch(error){return null;}
   }
   function sizeLabel(value){
