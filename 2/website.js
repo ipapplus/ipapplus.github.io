@@ -80,7 +80,12 @@
   window.addEventListener('blur',releasePress);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)releasePress();});
   const versionKey=(packageId,version)=>JSON.stringify([packageId,version]);
-  window.RepoUI={versionKey,relativeTime,additionTime,loadAdditions,trackModified,toast,copyText};
+  const standaloneDisplay=typeof window.matchMedia==='function'?
+    window.matchMedia('(display-mode: standalone)'):null;
+  function isStandalone(){
+    return window.navigator.standalone===true||Boolean(standaloneDisplay&&standaloneDisplay.matches);
+  }
+  window.RepoUI={isStandalone,standaloneDisplay,versionKey,relativeTime,additionTime,loadAdditions,trackModified,toast,copyText};
   // Delegation also covers the other view's lazily inserted Refresh button.
   document.addEventListener('click',event=>{
     const control=event.target.closest('[data-page-refresh]');

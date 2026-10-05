@@ -230,11 +230,7 @@
       button.setAttribute('aria-label','Copy download link for '+entry.name);
     },2000);
   }
-  const standaloneDisplay=typeof window.matchMedia==='function'?
-    window.matchMedia('(display-mode: standalone)'):null;
-  function isStandalone(){
-    return window.navigator.standalone===true||Boolean(standaloneDisplay&&standaloneDisplay.matches);
-  }
+  const {standaloneDisplay,isStandalone}=RepoUI;
   function updateDownloadVisibility(entry){
     const standalone=isStandalone();
     entry.download.hidden=standalone;

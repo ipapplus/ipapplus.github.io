@@ -180,3 +180,9 @@ svg{display:block;flex-shrink:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 @media(prefers-reduced-motion:reduce){:where(button,a,.package-entry):is(:active,.is-pressed),.package-download:is(:active,.is-pressed) svg{transform:none!important}}
+
+/* Installation stays in the home flow, clear of the floating controls. */
+.home-install{margin-top:14px}
+.home-install button{min-height:44px;padding:8px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--muted);font-size:12px}
+.home-install p{margin:8px 0 0;color:var(--secondary);font-size:12px;overflow-wrap:anywhere}
+.home-install:has(button[hidden]){display:none}

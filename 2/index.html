@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ipapplus</title>
 <meta name="description" content="Ahmed AlGhrbi — Systems & Apps">
+<link rel="canonical" href="https://ipapplus.github.io/">
+<meta property="og:title" content="Ahmed AlGhrbi">
+<meta property="og:description" content="ipapplus repo">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ipapplus.github.io/">
+<meta property="og:image" content="https://ipapplus.github.io/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ahmed AlGhrbi">
+<meta name="twitter:description" content="ipapplus repo">
+<meta name="twitter:image" content="https://ipapplus.github.io/social-preview.png">
 <meta name="theme-color" content="#0a0d14">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -13,7 +25,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="26.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="website.css?v=standalone-copy-only-4">
+<link rel="stylesheet" href="website.css?v=pwa-1">
 </head>
 <body class="landing">
 <main data-navigation-focus tabindex="-1" class="profile">
@@ -51,13 +63,18 @@
       <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"></path></svg>
     </a>
   </nav>
+  <div class="home-install">
+    <button id="home-install" type="button" aria-controls="home-install-help" aria-expanded="false" hidden>Add to Home Screen</button>
+    <p id="home-install-help" role="status" hidden></p>
+  </div>
   <footer class="profile-footer">
     <p class="updated" id="last-seen">Last Seen: Unknown</p>
     <p class="copyright">© 2016–2026 ipapplus</p>
   </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="website.js?v=page-refresh-back-1"></script>
+<script src="website.js?v=pwa-1"></script>
+<script src="pwa.js?v=1"></script>
 <script src="navigation.js?v=page-refresh-back-1"></script>
 </body>
 </html>
