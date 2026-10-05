@@ -285,7 +285,7 @@
     card.setAttribute('aria-labelledby',heading.id);
     if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
     const developer=developerName(group);
-    if(developer){const author=text(info,'p','package-developer',developer);author.title=developer;}
+    if(developer){const displayName=developer.startsWith('@')?developer:'@'+developer;const author=text(info,'p','package-developer',displayName);author.title=displayName;}
     const meta=text(info,'p','package-meta','');
     const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
