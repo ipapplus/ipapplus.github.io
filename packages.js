@@ -106,7 +106,7 @@
   list.addEventListener('click',event=>{
     const target=event.target instanceof Element?event.target:event.target.parentElement;
     const card=target.closest('.package-entry'),entry=card&&cardEntries.get(card);
-    if(!entry)return;
+    if(!entry||target.closest('.package-actions'))return;
     const control=target.closest(interactive);
     // Only interactive descendants count; never the list's tabindex ancestor.
     if(control&&card.contains(control)&&control!==entry.expand)return;
@@ -155,6 +155,19 @@
     if(size<1024)return size+' B';
     if(size<1048576)return (size/1024).toFixed(1)+' KB';
     return (size/1048576).toFixed(1)+' MB';
+  }
+  function cardSizeLabel(available){
+    const sizes=available.map(variant=>variant.pkg.Size).filter(value=>/^\d+$/.test(value)).map(Number).filter(Number.isSafeInteger);
+    return sizes.length?sizeLabel(String(Math.min(...sizes))):'';
+  }
+  function developerName(group){
+    for(const field of ['Author','Maintainer']){
+      for(const pkg of group){
+        const name=(pkg[field]||'').replace(/<[^>]*>/g,'').trim();
+        if(name)return name;
+      }
+    }
+    return '';
   }
   function groupPackages(packages){
     const groups=new Map();
@@ -243,6 +256,7 @@
   }
   function configureActions(entry){
     const available=entry.available;
+    entry.size.textContent=cardSizeLabel(available);
     [entry.download,entry.copy].forEach(button=>{
       button.removeAttribute('aria-haspopup');button.removeAttribute('aria-expanded');button.removeAttribute('aria-controls');
       if(available.length>1){
@@ -270,26 +284,30 @@
     expand.setAttribute('aria-expanded','false');
     card.setAttribute('aria-labelledby',heading.id);
     if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
+    const developer=developerName(group);
+    if(developer){const displayName=developer.startsWith('@')?developer:'@'+developer;const author=text(info,'p','package-developer',displayName);author.title=displayName;}
     const meta=text(info,'p','package-meta','');
     const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
+    // Informational boxes do not trigger the parent card's press feedback.
+    actions.addEventListener('pointerdown',event=>{if(!event.target.closest('a,button'))event.stopPropagation();});
     const addedAt=addedDates.get(RepoUI.versionKey(pkg.Package,pkg.Version));
     const time=text(actions,'time','package-added',addedAt?RepoUI.additionTime(new Date(addedAt)):'');
     const addedTime=addedAt?time:null;
     if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
     else time.setAttribute('aria-hidden','true');
-    const controls=document.createElement('div');controls.className='package-controls';actions.appendChild(controls);
     const download=document.createElement('a');download.className='icon-button package-download';download.innerHTML=icons.download;download.setAttribute('download','');
-    download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
+    download.setAttribute('aria-label','Download '+name);actions.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy.replace('<svg ', '<svg class="copy-original" ')+icons.check.replace('<svg ', '<svg class="copy-check" ');
-    copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
+    copy.setAttribute('aria-label','Copy download link for '+name);actions.appendChild(copy);
+    const size=text(actions,'span','package-size','');
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);
       return (ai<0?order.length:ai)-(bi<0?order.length:bi);
     });
-    const entry={card,info,expand,name,meta,download,copy,variants,available:[],addedAt,addedTime};
+    const entry={card,info,expand,name,meta,download,copy,size,variants,available:[],addedAt,addedTime};
     cardEntries.set(card,entry);
     download.addEventListener('click',event=>{
       event.stopPropagation();

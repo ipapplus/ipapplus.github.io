@@ -12,10 +12,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="website.css?v=interaction-fixes-1">
+<link rel="preload" href="26.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="website.css?v=card-boxes-bottom-1">
 </head>
 <body class="landing">
-<main class="profile">
+<main data-navigation-focus tabindex="-1" class="profile">
   <header class="profile-header">
     <div class="avatar-wrap"><span aria-hidden="true">AG</span>
       <img class="avatar" src="https://i.imgur.com/oMBfPA9.jpeg" alt="Ahmed AlGhrbi" width="56" height="56" onerror="this.hidden=true">
@@ -55,18 +56,7 @@
   </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="website.js?v=motion-polish-1"></script>
-<script>
-(function(){
-  'use strict';
-  document.getElementById('sileo').addEventListener('click',()=>{
-    RepoUI.copyText('https://ipapplus.github.io').then(()=>RepoUI.toast('Source URL copied')).catch(()=>{});
-  });
-  fetch('Packages').then(response=>{
-    if(!response.ok)throw new Error('Package index request failed');
-    RepoUI.trackModified(document.getElementById('last-seen'),response.headers.get('Last-Modified'),'Last Seen');
-  }).catch(()=>{});
-})();
-</script>
+<script src="website.js?v=navigation-visual-3"></script>
+<script src="navigation.js?v=card-boxes-1"></script>
 </body>
 </html>
