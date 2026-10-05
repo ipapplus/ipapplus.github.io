@@ -50,18 +50,22 @@
     const token=++generation;
     try{
       const next=await load(view);
+      if(document.fonts)await document.fonts.ready;
       if(token!==generation)return;
       const previous=views.get(current);previous.scroll=window.scrollY;
       // Close any open architecture menu before hiding its view.
       if(current==='packages')document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape'}));
+      const active=document.activeElement;
+      if(previous.nodes.some(element=>element.contains(active))&&active instanceof HTMLElement)active.blur();
+      document.dispatchEvent(new Event('repoviewwillchange'));
       previous.nodes.forEach(element=>{element.hidden=true;});
-      next.nodes.forEach(element=>{if(element.id!=='build-menu')element.hidden=false;});
       current=view;document.body.classList.toggle('landing',view==='home');
+      next.nodes.forEach(element=>{if(element.id!=='build-menu')element.hidden=false;});
       document.title=next.title;document.querySelector('meta[name="description"]').content=next.description;
       if(!pop)history.pushState(null,'',url.href);
       window.scrollTo(0,pop?next.scroll:0);
       document.dispatchEvent(new Event('repoviewchange'));
-      if(!pop){const main=next.nodes[0];main.setAttribute('tabindex','-1');main.focus({preventScroll:true});}
+      const main=next.nodes[0];main.focus({preventScroll:true});
     }catch(error){
       if(token===generation)RepoUI.toast('Unable to open page. Check your connection and try again.');
     }

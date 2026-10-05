@@ -123,41 +123,66 @@
       for(let i=bag.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bag[i],bag[j]]=[bag[j],bag[i]];}
       if(bag[bag.length-1].index===lastShown)[bag[0],bag[bag.length-1]]=[bag[bag.length-1],bag[0]];
     }
-    let protectedRect=null;
+    let exclusions=[],viewportX=0,viewportY=0,fontReady=false;
+    const margin=12;
     function measure(){
-      const main=document.querySelector('main:not([hidden])'),list=main.querySelector('#package-list');
-      const rect=main.getBoundingClientRect();
-      protectedRect={left:rect.left-6,right:rect.right+6,top:rect.top+window.scrollY-6,
-        bottom:(list?list.getBoundingClientRect().top:rect.bottom)+window.scrollY+6};
+      const main=document.querySelector('main:not([hidden])');
+      if(!main){exclusions=[];return;}
+      // The complete list is a conservative exclusion: no text in card gaps
+      // can be overtaken by loading, filtering or accordion expansion.
+      const elements=main.matches('.profile')?[main]:[...main.children].filter(el=>el.id!=='top-sentinel');
+      elements.push(...document.querySelectorAll('#quran-radio-button,#back-to-top,#build-menu,.toast.show,.skip-link:focus'));
+      const home=main.matches('.profile');
+      exclusions=elements.filter(el=>!el.hidden&&getComputedStyle(el).visibility!=='hidden').map(el=>{
+        const r=el.getBoundingClientRect();
+        return {left:home&&el===main?0:r.left-viewportX-margin,right:home&&el===main?width:r.right-viewportX+margin,
+          top:r.top-viewportY-margin,bottom:r.bottom-viewportY+margin};
+      }).filter(r=>r.right>0&&r.left<width&&r.bottom>0&&r.top<height);
+    }
+    function fits(sprite,x,y,others=[]){
+      const r={left:x,right:x+sprite.width,top:y,bottom:y+sprite.height};
+      return r.left>=insets.left&&r.right<=width-insets.right&&r.top>=insets.top&&r.bottom<=height-insets.bottom&&
+        !exclusions.some(e=>r.left<e.right&&r.right>e.left&&r.top<e.bottom&&r.bottom>e.top)&&
+        !others.some(p=>r.left<p.x+p.sprite.width+margin&&r.right>p.x-margin&&r.top<p.y+p.sprite.height+margin&&r.bottom>p.y-margin);
+    }
+    function place(sprite){
+      // Partition the current viewport at obstacle edges. Every candidate is
+      // tested with the entire padded sprite; insufficient space skips spawn.
+      const xs=[insets.left,...exclusions.map(r=>r.right)];
+      const ys=[insets.top,...exclusions.map(r=>r.bottom)];
+      const candidates=[];
+      for(const x of xs)for(const y of ys)if(fits(sprite,x,y,phrases))candidates.push({x,y});
+      if(!candidates.length)return null;
+      const point=candidates[Math.floor(Math.random()*candidates.length)];
+      const x=point.x+Math.random()*Math.max(0,width-insets.right-sprite.width-point.x);
+      const y=point.y+Math.random()*Math.max(0,height-insets.bottom-sprite.height-point.y);
+      return fits(sprite,x,y,phrases)?{x,y}:point;
     }
     function draw(now,dt){
       ctx.clearRect(0,0,width,height);
+      if(!fontReady)return;
+      measure();
+      // Revalidate complete bounds before drawing, including after scrolling
+      // or a moving toolbar. Never mask only part of an existing phrase.
+      phrases=phrases.filter(p=>fits(p.sprite,p.x,p.y));
       if(now>=next&&phrases.length<4){
-        measure();
         if(!bag.length)refill();
-        const sprite=bag[bag.length-1];
-        if(sprite){
-          for(let attempt=0;attempt<12;attempt++){
-            const x=insets.left+Math.random()*Math.max(0,width-sprite.width-insets.left-insets.right),y=insets.top+Math.random()*Math.max(0,height-sprite.height-insets.top-insets.bottom-128);
-            if(phrases.every(p=>Math.abs(p.y-y)>Math.max(p.sprite.height,sprite.height)+120)){
-              phrases.push({sprite,x,y,age:0});lastShown=sprite.index;bag.pop();break;
-            }
-          }
+        for(let i=bag.length-1;i>=0;i--){
+          const sprite=bag[i],point=place(sprite);
+          if(point){phrases.push({sprite,...point,age:0});lastShown=sprite.index;bag.splice(i,1);break;}
         }
         next=now+3000+Math.random()*2000;
       }
       for(let i=phrases.length-1;i>=0;i--){
         const p=phrases[i];p.age+=dt;
-        if(!motion.matches)p.y+=8*dt;
-        if(p.age>16||p.y>height){phrases.splice(i,1);continue;}
-        ctx.globalAlpha=motion.matches ? .72 : .72*Math.min(1,p.age/1.2,(16-p.age)/2);
+        const y=p.y+(motion.matches?0:8*dt);
+        // Stop drift at an exclusion boundary rather than clipping the text.
+        if(fits(p.sprite,p.x,y,phrases.filter(other=>other!==p)))p.y=y;
+        if(p.age>16){phrases.splice(i,1);continue;}
+        ctx.globalAlpha=motion.matches?.72:.72*Math.min(1,p.age/1.2,(16-p.age)/2);
         ctx.drawImage(p.sprite.canvas,p.x,p.y,p.sprite.width,p.sprite.height);
       }
       ctx.globalAlpha=1;
-      // Opaque cards already mask the background; protect transparent headings too.
-      if(protectedRect)ctx.clearRect(protectedRect.left,protectedRect.top-window.scrollY,
-        protectedRect.right-protectedRect.left,protectedRect.bottom-protectedRect.top);
-      ctx.clearRect(width-76,height-140,76,140);
     }
     function tick(now){
       frame=0;
@@ -167,12 +192,16 @@
     }
     function restart(){
       cancelAnimationFrame(frame);frame=0;last=0;
-      if(document.hidden)return;
+      if(document.hidden||!fontReady)return;
       if(motion.matches){phrases=[];next=0;draw(performance.now(),0);}
       else frame=requestAnimationFrame(tick);
     }
     function resize(){
-      width=window.innerWidth;height=window.innerHeight;
+      const viewport=window.visualViewport;
+      width=viewport?viewport.width:window.innerWidth;height=viewport?viewport.height:window.innerHeight;
+      viewportX=viewport?viewport.offsetLeft:0;viewportY=viewport?viewport.offsetTop:0;
+      canvas.style.width=width+'px';canvas.style.height=height+'px';
+      canvas.style.left=viewportX+'px';canvas.style.top=viewportY+'px';
       const style=getComputedStyle(canvas);
       // Resolve safe-area lengths through computed padding on a lightweight probe.
       const probe=document.createElement('div');
@@ -184,9 +213,10 @@
       const scale=Math.min(window.devicePixelRatio||1,2);
       canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);
       ctx.setTransform(scale,0,0,scale,0,0);
+      if(!fontReady)return;
       sprites=adhkar.map((value,index)=>{
         const surface=document.createElement('canvas'),text=surface.getContext('2d');
-        const family='"Geeza Pro", "Damascus", "Al Nile", "Noto Naskh Arabic", system-ui, sans-serif';
+        const family=getComputedStyle(document.documentElement).getPropertyValue('--repo-font').trim();
         let size=16;
         text.font='500 '+size+'px '+family;text.direction='rtl';text.textAlign='center';
         while(text.measureText(value).width>width-48&&size>13){size--;text.font='500 '+size+'px '+family;}
@@ -212,20 +242,54 @@
       phrases=[];next=0;measure();restart();
     }
     let resizing=0;
-    function scheduleResize(){clearTimeout(resizing);resizing=setTimeout(resize,120);}
+    function clearAmbient(){phrases=[];ctx.clearRect(0,0,width,height);}
+    function scheduleResize(){
+      clearAmbient();cancelAnimationFrame(frame);frame=0;
+      clearTimeout(resizing);resizing=setTimeout(resize,120);
+    }
+    if(window.visualViewport){
+      window.visualViewport.addEventListener('resize',scheduleResize,{passive:true});
+      window.visualViewport.addEventListener('scroll',scheduleResize,{passive:true});
+    }
     window.addEventListener('resize',scheduleResize,{passive:true});
     window.addEventListener('orientationchange',scheduleResize,{passive:true});
     document.addEventListener('visibilitychange',restart);
     window.addEventListener('pagehide',()=>{cancelAnimationFrame(frame);frame=0;clearTimeout(resizing);clearTimeout(scrolling);});
-    window.addEventListener('pageshow',restart);
+    window.addEventListener('pageshow',scheduleResize);
     if(motion.addEventListener)motion.addEventListener('change',restart);else motion.addListener(restart);
     // Static reduced-motion text only needs repainting after a scroll settles.
     let scrolling=0;
     window.addEventListener('scroll',()=>{
+      clearAmbient();
       if(!motion.matches)return;
-      clearTimeout(scrolling);scrolling=setTimeout(()=>{if(!document.hidden){measure();draw(performance.now(),0);}},120);
+      clearTimeout(scrolling);scrolling=setTimeout(()=>{if(!document.hidden)draw(performance.now(),0);},120);
     },{passive:true});
-    document.addEventListener('repoviewchange',()=>{phrases=[];next=0;measure();restart();});
+    let contentFrame=0;
+    function contentChanged(){
+      clearAmbient();
+      if(motion.matches&&!contentFrame)contentFrame=requestAnimationFrame(()=>{contentFrame=0;restart();});
+    }
+    const contentObserver=new MutationObserver(contentChanged);
+    const layoutObserver=typeof ResizeObserver!=='undefined'?new ResizeObserver(contentChanged):null;
+    function observeContent(){
+      contentObserver.disconnect();if(layoutObserver)layoutObserver.disconnect();
+      const main=document.querySelector('main:not([hidden])');
+      if(main){
+        contentObserver.observe(main,{subtree:true,childList:true,characterData:true,attributes:true});
+        if(layoutObserver)layoutObserver.observe(main);
+      }
+      for(const element of document.querySelectorAll('#build-menu,#toast'))contentObserver.observe(element,{subtree:true,childList:true,attributes:true});
+    }
+    observeContent();
+    document.addEventListener('repoviewwillchange',clearAmbient);
+    document.addEventListener('repoviewchange',()=>{clearAmbient();next=0;observeContent();resize();});
+    // No fallback-font sprites or measurements are allowed into the first frame.
+    const fonts=document.fonts;
+    const ready=fonts?Promise.all([fonts.load('500 16px "Repo Local"',adhkar.join(' ')),fonts.ready]):Promise.resolve();
+    ready.then(()=>{fontReady=true;resize();}).catch(()=>{
+      // A failed local request still has the explicit Arabic-capable fallback.
+      fontReady=true;resize();
+    });
     resize();
   }
   const radio=document.createElement('audio');radio.id='quran-radio';radio.preload='none';

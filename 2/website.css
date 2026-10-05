@@ -1,3 +1,10 @@
+@font-face{
+  font-family:"Repo Local";
+  src:url("26.ttf") format("truetype");
+  font-style:normal;
+  font-weight:400;
+  font-display:block;
+}
 :root{
   color-scheme:dark;
   --motion-fast:120ms;--motion-duration:180ms;
@@ -5,23 +12,28 @@
   --bg:#0a0d14;--surface:#11151f;--raised:#191e2b;--border:#272e3e;
   --text:#e4e7ec;--secondary:#bcc4d3;--muted:#9aa5b9;--accent:#d4a574;
   --accent-soft:#241e1b;--accent-border:#69503a;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --repo-font:"Repo Local","Geeza Pro","Damascus","Noto Naskh Arabic",sans-serif;
+  font-family:var(--repo-font);
   -webkit-font-smoothing:antialiased;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-size:14px;line-height:1.45}
 /* Decorative canvas stays below every existing control and card. */
 body{isolation:isolate}
-#adhkar-background{--ambient-top:max(24px,env(safe-area-inset-top,0px));--ambient-right:max(12px,env(safe-area-inset-right,0px));--ambient-left:max(12px,env(safe-area-inset-left,0px));--ambient-bottom:calc(100px + env(safe-area-inset-bottom,0px));position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#adhkar-background{--ambient-top:max(24px,env(safe-area-inset-top,0px));--ambient-right:max(12px,env(safe-area-inset-right,0px));--ambient-left:max(12px,env(safe-area-inset-left,0px));--ambient-bottom:max(24px,env(safe-area-inset-bottom,0px));position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .quran-radio-button{position:fixed;z-index:40;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));color:var(--accent);box-shadow:0 8px 24px #0005}
 .quran-radio-button[aria-pressed="true"]{border-color:var(--accent-border);background:var(--accent-soft)}
-button,input{font:inherit}
+html,body,button,input,select,textarea{font-family:var(--repo-font)}
+button,input,select,textarea{font:inherit}
+input::placeholder{font-family:inherit}
 button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 a{color:var(--accent)}
 button{cursor:pointer}
 button:disabled,[aria-disabled="true"]{opacity:.45;cursor:default}
 [hidden]{display:none!important}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* Route focus announces the main region, rather than outlining its surface. */
+main[data-navigation-focus]:focus{outline:none}
 svg{display:block;flex-shrink:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip-link{position:absolute;top:max(8px,env(safe-area-inset-top,0px));left:max(16px,env(safe-area-inset-left,0px));z-index:100;padding:12px;background:var(--raised);transform:translateY(-150%);border-radius:8px}
