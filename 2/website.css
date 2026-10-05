@@ -122,7 +122,7 @@ svg{display:block;flex-shrink:0}
 .package-version+.package-developer,.package-developer+.package-meta{margin-top:-4px}
 .package-description{min-width:0;margin:0;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--secondary);font-size:12px;line-height:1.5;overflow-wrap:anywhere}
 .package-meta{min-width:0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--accent);font-size:10px;line-height:1.4}
-.package-actions{width:110px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:44px 24px;gap:6px;align-items:center;justify-items:center;align-self:start}
+.package-actions{width:110px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:44px 24px;gap:6px;align-items:center;justify-items:center;align-content:space-between;align-self:stretch}
 .package-actions .package-download{grid-column:1;grid-row:1}
 .package-actions .package-copy{grid-column:2;grid-row:1}
 .package-actions .package-added{grid-column:1;grid-row:2}
