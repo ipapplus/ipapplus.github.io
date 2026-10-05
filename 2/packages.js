@@ -295,12 +295,11 @@
     const addedTime=addedAt?time:null;
     if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
     else time.setAttribute('aria-hidden','true');
-    const controls=document.createElement('div');controls.className='package-controls';actions.appendChild(controls);
     const download=document.createElement('a');download.className='icon-button package-download';download.innerHTML=icons.download;download.setAttribute('download','');
-    download.setAttribute('aria-label','Download '+name);controls.appendChild(download);
+    download.setAttribute('aria-label','Download '+name);actions.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy.replace('<svg ', '<svg class="copy-original" ')+icons.check.replace('<svg ', '<svg class="copy-check" ');
-    copy.setAttribute('aria-label','Copy download link for '+name);controls.appendChild(copy);
-    const size=text(controls,'span','package-size','');
+    copy.setAttribute('aria-label','Copy download link for '+name);actions.appendChild(copy);
+    const size=text(actions,'span','package-size','');
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
       const ai=order.indexOf(a.pkg.Architecture),bi=order.indexOf(b.pkg.Architecture);

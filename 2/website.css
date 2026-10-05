@@ -108,7 +108,7 @@ svg{display:block;flex-shrink:0}
   #package-list.package-render-ready>.package-entry{content-visibility:auto}
   #package-list.package-render-ready>.package-entry:is(.is-expanded,.is-open,.package-render-active,:focus-within){content-visibility:visible}
 }
-.package-entry{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:12px;align-items:start;min-width:0;overflow:hidden;contain:layout paint;padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;touch-action:manipulation}
+.package-entry{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:12px;align-items:start;min-width:0;overflow:hidden;contain:layout paint;padding:14px 12px;border:1px solid var(--border);border-radius:13px;background:var(--surface);cursor:pointer;touch-action:manipulation}
 .package-entry.is-expanded{border-color:var(--accent)}
 /* Keep the card surface stable on press; retain the expanded-state border. */
 .package-entry{-webkit-tap-highlight-color:transparent}
@@ -122,9 +122,12 @@ svg{display:block;flex-shrink:0}
 .package-version+.package-developer,.package-developer+.package-meta{margin-top:-4px}
 .package-description{min-width:0;margin:0;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;color:var(--secondary);font-size:12px;line-height:1.5;overflow-wrap:anywhere}
 .package-meta{min-width:0;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--accent);font-size:10px;line-height:1.4}
-.package-actions{width:88px;min-width:0;display:flex;flex-direction:column;gap:14px;align-self:start}
-.package-controls{display:grid;grid-template-columns:44px 44px;gap:0}
-.package-size{grid-column:1 / -1;min-width:0;width:100%;max-width:100%;padding-right:4px;line-height:16px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.package-actions{width:104px;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:44px 16px;gap:2px 0;align-items:center;justify-items:center;align-self:start}
+.package-actions .package-download{grid-column:1;grid-row:1}
+.package-actions .package-copy{grid-column:2;grid-row:1}
+.package-actions .package-added{grid-column:1;grid-row:2}
+.package-actions .package-size{grid-column:2;grid-row:2}
+.package-actions :is(.package-added,.package-size){min-width:0;width:100%;max-width:100%;line-height:16px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .package-actions .icon-button{border:1px solid transparent;background:transparent;border-radius:10px;color:var(--muted)}
 .package-entry.is-open .package-title h2,.package-entry.is-open .package-expand,.package-entry.is-open .package-description,.package-entry.is-open .package-meta,.package-entry.is-open .package-version{white-space:normal;overflow-wrap:anywhere;text-overflow:clip}
 /* Constrain the reveal to the animated card's content box. The row's zero
