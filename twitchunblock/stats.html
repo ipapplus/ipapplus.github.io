@@ -1,6 +1,0 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>TwitchUnblock</title><link rel="stylesheet" href="./assets/styles.css"><link rel="stylesheet" href="./assets/localization.css"></head>
-<body><main class="content"><h1 data-i18n="usage_details"></h1><p data-i18n="stats_disabled"></p><a class="btn" href="./" data-i18n="back"></a><select data-language-select data-i18n-aria="language"><option value="en">English</option><option value="ar">العربية</option></select></main><script type="module">
-import {initLang,setLang,applyStatic,LANGUAGE_KEY} from './assets/js/i18n.js';initLang();applyStatic();document.addEventListener('change',e=>{if(e.target.matches('[data-language-select]')){setLang(e.target.value);applyStatic()}});window.addEventListener('storage',e=>{if(e.key===LANGUAGE_KEY){setLang(e.newValue,false);applyStatic()}});
-</script></body></html>
