@@ -362,3 +362,20 @@ Arabic at 320/375/390/430/1440, with no horizontal overflow. Dedicated P0 mocked
 regressions also passed both engines, including normal-motion Back restoration
 and Arabic landscape. Rate limits, malformed data and timeouts are mocked
 failure tests, not deliberately induced production Twitch failures.
+
+### Production verification
+
+P0 app commit `1962d41ff8ba2d9c19c90e1b25f32b3b29160ae1` was pushed to main;
+[Pages deployment succeeded](https://github.com/ipapplus/ipapplus.github.io/actions/runs/37567013165).
+Both public app and About URLs returned HTTP 200. App HTML, Home module, About
+HTML and unchanged Client ID configuration matched local bytes. All ten
+protected public root/APT files returned 200 and matched baseline bytes.
+
+Real production Chromium and WebKit checks passed the same OAuth/Helix, media,
+navigation, bilingual viewport, expiry and logout/revocation checks listed
+above. After screenshots in `audit/` are the final production captures.
+An initial WebKit screenshot navigation timed out waiting for full page load;
+the harness now waits for DOM/app-view readiness and explicit data readiness,
+with bounded visible-image waits, rather than treating a slow CDN load event as
+app readiness. No production app code was changed for that harness correction.
+All application scripts remain identical to the validated P0 deployment.

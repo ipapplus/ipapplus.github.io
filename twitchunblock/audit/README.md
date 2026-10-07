@@ -5,7 +5,7 @@ matrix, source attribution, before/after pairs and implementation roadmap.
 
 - `before-real-*`: the existing app, authenticated against the owner's Twitch
   application, before P0. Full-page Chromium captures.
-- `after-{chromium,webkit}-*`: P0 with real OAuth and Helix responses, in English
+- `after-{chromium,webkit}-*`: deployed P0 with real OAuth and Helix responses, in English
   and Arabic at 390 and 1440px. Viewport captures. Channel names, viewers and
   stream availability naturally vary over time. `channel-ninja` pairs with the
   baseline; `channel-live` captures a currently live channel.
