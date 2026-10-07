@@ -1,0 +1,30 @@
+/* Localization containment only: preserve upstream colors, spacing and media order. */
+.header-language { width: 76px; min-height: 38px; padding: 4px; border: 1px solid var(--line); border-radius: var(--r-control); background: var(--card); color: var(--text); font: inherit; font-size: 12px; }
+.brand, .msg-name, .msg-time, .mention, .pill.uptime, .p-time, .p-latency, .p-speeds, .p-chap-row b, .whats-new small { direction: ltr; unicode-bidi: isolate; }
+.player, .watch-mini, .chat-list { direction: ltr; }
+.player .p-menu-title, .player .p-unmute { direction: inherit; }
+.msg-body, .pin-message { unicode-bidi: isolate; }
+.msg-reply { unicode-bidi: plaintext; }
+.chat-input { text-align: start; }
+.suggest-row, .login-card.compact, .setting, .sheet, .user-card { text-align: start; }
+.follow-local { margin-left: 0; margin-inline-start: auto; }
+html[dir="rtl"] .directional { transform: scaleX(-1); }
+html[dir="rtl"] .player .directional { transform: none; }
+html[dir="rtl"] .watch-chat { border-left: 0; border-right: 1px solid var(--line); }
+html[dir="rtl"] .whats-new ul { padding-left: 0; padding-right: 20px; }
+html[dir="rtl"] .chat-title-text, html[dir="rtl"] .setting-text, html[dir="rtl"] .hero-title { letter-spacing: normal; }
+.hero-id h2, .card-text, .setting-text, .wi-text, .pin-body { min-width: 0; overflow-wrap: anywhere; }
+.segmented button, .btn, .setting small { white-space: normal; }
+@media (max-width: 1000px) {
+ .topbar { gap: 8px; }
+ .topbar-actions { gap: 4px; margin-inline-start: auto; }
+ .topbar .account-btn:not(.logged) { width: 38px; padding: 0; justify-content: center; }
+ .topbar .account-btn:not(.logged) span { display: none; }
+}
+@media (max-width: 380px) { .header-language { width: 62px; } .topbar .brand { gap: 6px; font-size: 16px; } }
+@media (max-width: 430px) { .header-language { width: 62px; } }
+@media (max-width: 360px) { .topbar .header-language { display: none; } }
+html[dir="rtl"] .player .p-menu { direction: rtl; }
+.credits a, .hero-login, #channel-uptime, #watch-uptime { direction: ltr; unicode-bidi: isolate; }
+.pin-body { direction: ltr; }
+html[dir="rtl"] .p-menu-title { text-align: start; }

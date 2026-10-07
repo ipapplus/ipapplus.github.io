@@ -2,7 +2,7 @@
   "id": "./",
   "name": "TwitchUnblock",
   "short_name": "TwitchUnblock",
-  "description": "Lives et VODs Twitch avec le vrai chat.",
+  "description": "TwitchUnblock",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

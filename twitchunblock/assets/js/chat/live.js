@@ -1,3 +1,4 @@
+import { t } from '../i18n.js'
 // ═══════════════════════════════════════════════════════════════════════════
 //  Chat d'un live, en direct sur l'IRC de Twitch.
 //
@@ -189,7 +190,7 @@ export class LiveChat {
           this.ws?.close()
           return
         }
-        if (text) this.emit('add', systemMessage(text))
+        if (text) this.emit('add', systemMessage(t('chat_notice'), {i18nKey:'chat_notice'}))
         break
       }
       case '353': {

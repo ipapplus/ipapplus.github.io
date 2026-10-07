@@ -5,7 +5,7 @@
 import * as api from './api.js'
 import { appUrl, APP_BASE } from './deployment.js'
 import { store } from './store.js'
-import { LANGS, applyStatic, deviceLang, initLang, setLang, t, lang } from './i18n.js'
+import { LANGS, applyStatic, deviceLang, initLang, setLang, t, lang, locale, LANGUAGE_KEY, savedLanguage } from './i18n.js'
 import { Player, loadHls, qualityLabel } from './player.js'
 import { ChatView } from './chat/view.js'
 import { Hermes } from './chat/hermes.js'
@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', boot)
 
 async function boot() {
   initLang(store.prefs.lang)
+  store.prefs.lang = savedLanguage()
+  document.addEventListener('change', e => { if (e.target.matches('[data-language-select]')) setTourLang(e.target.value) })
+  window.addEventListener('storage', e => { if (e.key === LANGUAGE_KEY && ['en','ar'].includes(e.newValue)) setTourLang(e.newValue) })
+  try { const error = sessionStorage.getItem('tu_oauth_error'); sessionStorage.removeItem('tu_oauth_error'); if (error) setTimeout(() => toast(t(error), 'error'), 100) } catch {}
   loadHls()   // prêt avant le premier clic
   applyStatic()
   renderTopLocal()
@@ -403,14 +407,14 @@ function streamCard(s) {
       <div class="thumb">
         <img src="${esc(thumb(s.thumb, 440, 248))}" alt="" loading="lazy" decoding="async">
         <span class="pill live">${esc(t('live_now'))}</span>
-        <span class="pill viewers">${icon('eye', 12)}${esc(formatViewers(s.viewers))}</span>
+        <span class="pill viewers" data-viewers="${s.viewers}" aria-label="${esc(t('viewers_count', {n:s.viewers}))}">${icon('eye', 12)}${esc(formatViewers(s.viewers))}</span>
         ${s.startedAt ? `<span class="pill uptime" data-started="${esc(s.startedAt)}">${esc(uptimeSince(s.startedAt))}</span>` : ''}
       </div>
       <div class="card-body">
         ${s.avatar ? `<img class="avatar sm" src="${esc(s.avatar)}" alt="" loading="lazy">` : `<span class="avatar sm placeholder">${esc((s.name || '?')[0])}</span>`}
         <div class="card-text">
-          <h3 title="${esc(s.title)}">${esc(s.title)}</h3>
-          <p class="name">${esc(s.name)}</p>
+          <h3 dir="auto" title="${esc(s.title)}">${esc(s.title)}</h3>
+          <p class="name" dir="ltr">${esc(s.name)}</p>
           ${s.game ? `<p class="meta">${esc(s.game)}</p>` : ''}
         </div>
       </div>
@@ -423,7 +427,7 @@ function vodCard(v, streamer) {
   const ratio = v.lengthSeconds ? Math.min(1, progress / v.lengthSeconds) : 0
   const date = new Date(v.publishedAt ?? v.createdAt)
   const dateStr = Number.isFinite(date.getTime())
-    ? date.toLocaleDateString(lang(), { day: 'numeric', month: 'short', year: 'numeric' })
+    ? date.toLocaleDateString(locale(), { day: 'numeric', month: 'short', year: 'numeric' })
     : ''
   return `
     <article class="card vod-card" data-vod="${esc(v.id)}" tabindex="0">
@@ -471,7 +475,7 @@ function renderContinue() {
         </div>
         <div class="card-body"><div class="card-text">
           <h3 title="${esc(h.display)}">${esc(h.display)}</h3>
-          <p class="name">${esc(h.streamer || 'VOD')}</p>
+          <p class="name" dir="ltr">${esc(h.streamer || 'VOD')}</p>
         </div></div>
       </article>`
   }).join('')
@@ -777,7 +781,7 @@ function welcomeOrWhatsNew() {
 function showWhatsNew(entries, titleKey = 'whats_new') {
   const l = lang()
   openSheet(`
-    <div class="sheet-head"><h2>${icon('sparkles', 20)} ${esc(t(titleKey))}</h2><button class="icon-btn" type="button" data-sheet-close>${icon('x', 20)}</button></div>
+    <div class="sheet-head"><h2>${icon('sparkles', 20)} ${esc(t(titleKey))}</h2><button class="icon-btn" type="button" data-sheet-close data-i18n-title="close">${icon('x', 20)}</button></div>
     ${entries.map((e) => `<div class="sheet-section whats-new">
       <h3>${esc(versionDate(e.version))}<small>${esc(e.version)}</small></h3>
       <ul>${(e.items[l] ?? e.items.en).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
@@ -791,7 +795,7 @@ function versionDate(version) {
   const m = /^(\d{4})\.(\d{2})\.(\d{2})/.exec(version)
   if (!m) return version
   return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]))
-    .toLocaleDateString(lang(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    .toLocaleDateString(locale(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 }
 
 // ── Visite guidée ────────────────────────────────────────────────────────
@@ -845,7 +849,7 @@ function goTour(i) {
   if (i >= TOUR.length) return endTour()
   tour.step = i
   if (state.tab !== TOUR[i].tab) setTab(TOUR[i].tab)
-  renderTour()
+  if (tour) renderTour()
 }
 
 /** Suivant : aux étapes « appuie dessus », c'est le vrai bouton qui agit. */
@@ -971,7 +975,7 @@ function setTourLang(l) {
   applyStatic()
   renderAccount()
   refreshTexts()
-  renderTour()
+  if (tour) renderTour()
 }
 
 function creditsHtml() {
@@ -1145,9 +1149,9 @@ async function loadChannelRecover() {
 }
 
 function recoverRow(s) {
-  const date = new Date(s.epoch * 1000).toLocaleString(lang(), { dateStyle: 'medium', timeStyle: 'short' })
+  const date = new Date(s.epoch * 1000).toLocaleString(locale(), { dateStyle: 'medium', timeStyle: 'short' })
   const meta = [esc(date), s.game ? esc(s.game) : '',
-    s.maxViews ? `${s.maxViews.toLocaleString(lang())} ${esc(t('recover_views'))}` : '']
+    s.maxViews ? `${s.maxViews.toLocaleString(locale())} ${esc(t('recover_views'))}` : '']
     .filter(Boolean).join(' · ')
   return `<div class="recover-row">
     <div class="recover-info">
@@ -1199,10 +1203,10 @@ function renderChannel(keyword = '') {
       <div class="hero-live">
         <div class="hero-badges">
           <span class="pill live">${esc(t('live_now'))}</span>
-          <span class="muted">${icon('eye', 14)} <span id="channel-viewers">${esc(formatViewers(live.viewersCount))}</span></span>
+          <span class="muted">${icon('eye', 14)} <span data-viewers="${live.viewersCount}" aria-label="${esc(t('viewers_count',{n:live.viewersCount}))}" id="channel-viewers">${esc(formatViewers(live.viewersCount))}</span></span>
           <span class="muted">${icon('clock', 14)} <span id="channel-uptime">${esc(uptimeSince(live.createdAt))}</span></span>
         </div>
-        <p class="hero-title">${esc(live.title)}</p>
+        <p dir="auto" class="hero-title">${esc(live.title)}</p>
         ${live.game ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(live.game.displayName)}</p>` : ''}
         <button class="btn primary" type="button" data-live="${esc(login)}">${icon('play', 16)}<span>${esc(t('watch_live'))}</span></button>
       </div>
@@ -1216,12 +1220,12 @@ function renderChannel(keyword = '') {
       <div class="hero-live">
         <div class="hero-badges"><span class="pill off">${esc(t('offline'))}</span>
         ${since ? `<span class="muted">${esc(t('offline_since', { t: since }))} · ${esc(sinceDate)}</span>` : ''}</div>
-        ${info?.broadcastSettings?.title ? `<p class="hero-title muted">${esc(info.broadcastSettings.title)}</p>` : ''}
+        ${info?.broadcastSettings?.title ? `<p dir="auto" class="hero-title muted">${esc(info.broadcastSettings.title)}</p>` : ''}
       </div>`
   }
 
   const filtered = keyword ? videos.filter((v) => {
-    const d = new Date(v.publishedAt).toLocaleDateString(lang())
+    const d = new Date(v.publishedAt).toLocaleDateString(locale())
     return v.title.toLowerCase().includes(keyword) || d.includes(keyword)
   }) : videos
 
@@ -1229,7 +1233,7 @@ function renderChannel(keyword = '') {
     <section class="channel-hero${live ? ' is-live' : ''}">
       <div class="hero-id">
         ${avatar ? `<img class="avatar lg${live ? ' ring' : ''}" src="${esc(avatar)}" alt="">` : ''}
-        <div><h2>${esc(name)}</h2><p class="muted">@${esc(login)}</p></div>
+        <div><h2 dir="auto">${esc(name)}</h2><p class="muted" dir="ltr">@${esc(login)}</p></div>
         <button class="btn ghost sm follow-local${isLocallyFollowed(login) ? ' on' : ''}" type="button" data-action="follow-local" data-follow="${esc(login)}" title="${esc(t('follow_local_sub'))}">${followLocalInner(isLocallyFollowed(login))}</button>
       </div>
       ${status}
@@ -1319,7 +1323,7 @@ function offlineFor(publishedAt, lengthSeconds, lastStart) {
   const m = Math.floor(diff / 60_000)
   const [n, unit] = d > 0 ? [d, 'day'] : h > 0 ? [h, 'hour'] : [m, 'minute']
   try {
-    return new Intl.NumberFormat(lang(), { style: 'unit', unit, unitDisplay: 'narrow' }).format(n)
+    return new Intl.NumberFormat(locale(), { style: 'unit', unit, unitDisplay: 'narrow' }).format(n)
   } catch {
     return `${n} ${unit[0]}`
   }
@@ -1330,7 +1334,7 @@ function offlineDate(publishedAt, lengthSeconds, lastStart) {
   const end = new Date(lastLiveEnd(publishedAt, lengthSeconds, lastStart))
   if (!Number.isFinite(end.getTime())) return ''
   const sameYear = end.getFullYear() === new Date().getFullYear()
-  return end.toLocaleDateString(lang(), { day: 'numeric', month: 'short', ...(sameYear ? {} : { year: 'numeric' }) })
+  return end.toLocaleDateString(locale(), { day: 'numeric', month: 'short', ...(sameYear ? {} : { year: 'numeric' }) })
 }
 
 // ── Lecteur ────────────────────────────────────────────────────────────────
@@ -1552,7 +1556,7 @@ function liveEnded(token) {
     <p class="ended-title">${esc(t('live_ended'))}</p>
     <div class="ended-actions">
       ${raid ? `<button class="btn primary" type="button" data-ended-raid>${icon('play', 16)}<span>${esc(t('watch_target', { u: raid.name }))}</span></button>` : ''}
-      <button class="btn" type="button" data-action="see-vods">${icon('film', 16)}<span>${esc(t('see_vods'))}</span></button>
+      <button class="btn" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>
     </div>`
   const btn = $('[data-ended-raid]', box)
   if (btn) btn.onclick = () => openLive(raid.login)
@@ -1574,15 +1578,15 @@ function renderLiveInfo(info, links) {
   setAvatar(avatar)
   $('#watch-sub').innerHTML = `
     <span class="pill live sm">${esc(t('live_now'))}</span>
-    ${s ? `<span>${icon('eye', 13)} ${esc(formatViewers(s.viewersCount))}</span><span>${icon('clock', 13)} <span id="watch-uptime">${esc(uptimeSince(s.createdAt))}</span></span>` : ''}`
+    ${s ? `<span data-viewers="${s.viewersCount}" aria-label="${esc(t('viewers_count',{n:s.viewersCount}))}">${icon('eye', 13)} ${esc(formatViewers(s.viewersCount))}</span><span>${icon('clock', 13)} <span id="watch-uptime">${esc(uptimeSince(s.createdAt))}</span></span>` : ''}`
   $('#watch-info').innerHTML = `
     <div class="wi-text">
-      <h1 title="${esc(title)}">${esc(title)}</h1>
+      <h1 dir="auto" title="${esc(title)}">${esc(title)}</h1>
       ${game ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(game)}</p>` : ''}
     </div>
     <div class="wi-actions">
-      <button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span>${esc(t('see_vods'))}</span></button>
-      <button class="btn ghost sm" type="button" data-action="open-in">${icon('external', 16)}<span>${esc(t('open_in'))}</span></button>
+      <button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>
+      <button class="btn ghost sm" type="button" data-action="open-in">${icon('external', 16)}<span data-i18n="open_in">${esc(t('open_in'))}</span></button>
     </div>`
 }
 
@@ -1611,21 +1615,21 @@ async function openClip(slug) {
   setWatchChannel(clip.broadcaster?.login || token.login)
   $('#mini-title').textContent = clip.title || t('clip')
   setAvatar(clip.broadcaster?.profileImageURL)
-  $('#watch-sub').innerHTML = `<span class="pill vod sm">${esc(t('clip'))}</span><span>${icon('eye', 13)} ${esc(formatViewers(clip.viewCount ?? 0))}</span><span>${icon('clock', 13)} ${esc(formatClock(clip.durationSeconds ?? 0))}</span>`
+  $('#watch-sub').innerHTML = `<span class="pill vod sm" data-i18n="clip">${esc(t('clip'))}</span><span>${icon('eye', 13)} ${esc(formatViewers(clip.viewCount ?? 0))}</span><span>${icon('clock', 13)} ${esc(formatClock(clip.durationSeconds ?? 0))}</span>`
   $('#watch-info').innerHTML = `
     <div class="wi-text">
-      <h1 title="${esc(clip.title ?? '')}">${esc(clip.title ?? '')}</h1>
+      <h1 dir="auto" title="${esc(clip.title ?? '')}">${esc(clip.title ?? '')}</h1>
       ${clip.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(clip.game.displayName)}</p>` : ''}
     </div>
     <div class="wi-actions">
-      ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span>${esc(t('see_vods'))}</span></button>` : ''}
-      ${clip.video?.id ? `<button class="btn ghost sm" type="button" data-vod="${esc(clip.video.id)}">${icon('play', 16)}<span>${esc(t('full_vod'))}</span></button>` : ''}
+      ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>` : ''}
+      ${clip.video?.id ? `<button class="btn ghost sm" type="button" data-vod="${esc(clip.video.id)}">${icon('play', 16)}<span data-i18n="full_vod">${esc(t('full_vod'))}</span></button>` : ''}
     </div>`
 }
 
 function clipCard(c) {
   const date = new Date(c.createdAt)
-  const dateStr = Number.isFinite(date.getTime()) ? date.toLocaleDateString(lang(), { day: 'numeric', month: 'short' }) : ''
+  const dateStr = Number.isFinite(date.getTime()) ? date.toLocaleDateString(locale(), { day: 'numeric', month: 'short' }) : ''
   return `
     <article class="card vod-card" data-clip="${esc(c.slug)}" tabindex="0">
       <div class="thumb">
@@ -1751,16 +1755,16 @@ async function openVod(id, preset, { keepPlaylist = false } = {}) {
   setWatchChannel(meta?.owner?.login)
   $('#mini-title').textContent = title
   setAvatar(meta?.owner?.profileImageURL)
-  const date = meta?.createdAt ? new Date(meta.createdAt).toLocaleDateString(lang(), { day: 'numeric', month: 'long', year: 'numeric' }) : ''
+  const date = meta?.createdAt ? new Date(meta.createdAt).toLocaleDateString(locale(), { day: 'numeric', month: 'long', year: 'numeric' }) : ''
   $('#watch-sub').innerHTML = `<span class="pill vod sm">VOD</span>${date ? `<span>${esc(date)}</span>` : ''}${length ? `<span>${icon('clock', 13)} ${esc(formatDuration(length))}</span>` : ''}`
   $('#watch-info').innerHTML = `
     <div class="wi-text">
-      <h1 title="${esc(title)}">${esc(title)}</h1>
+      <h1 dir="auto" title="${esc(title)}">${esc(title)}</h1>
       ${meta?.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(meta.game.displayName)}</p>` : ''}
     </div>
     <div class="wi-actions">
-      ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span>${esc(t('see_vods'))}</span></button>` : ''}
-      <button class="btn ghost sm" type="button" data-action="open-in">${icon('external', 16)}<span>${esc(t('open_in'))}</span></button>
+      ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>` : ''}
+      <button class="btn ghost sm" type="button" data-action="open-in">${icon('external', 16)}<span data-i18n="open_in">${esc(t('open_in'))}</span></button>
     </div>`
 }
 
@@ -1844,6 +1848,8 @@ function openSheet(html) {
   const sheet = $('#sheet')
   sheet.innerHTML = html
   renderIcons(sheet)
+  applyStatic(sheet)
+  sheet.setAttribute('aria-label', sheet.querySelector('h2')?.textContent || t('settings'))
   $('#sheet-backdrop').hidden = false
   sheet.hidden = false
   requestAnimationFrame(() => { sheet.classList.add('open'); $('#sheet-backdrop').classList.add('open') })
@@ -1873,7 +1879,7 @@ function openInSheet() {
     <a class="sheet-row" href="outplayer://${esc(url)}"><span class="app-dot outplayer"></span><span>Outplayer</span>${icon('chevronRight', 16)}</a>
     <a class="sheet-row" href="infuse://x-callback-url/play?url=${esc(encodeURIComponent(url.replace('/api/proxy', `/api/proxy/${name}.m3u8`)))}"><span class="app-dot infuse"></span><span>Infuse</span>${icon('chevronRight', 16)}</a>` : ''
   openSheet(`
-    <div class="sheet-head"><h2>${esc(t('open_in'))}</h2><button class="icon-btn" type="button" data-sheet-close>${icon('x', 20)}</button></div>
+    <div class="sheet-head"><h2>${esc(t('open_in'))}</h2><button class="icon-btn" type="button" data-sheet-close data-i18n-title="close">${icon('x', 20)}</button></div>
     <p class="muted sheet-sub">${esc(t('quality'))} : ${esc(qualityLabel(player.quality ?? ''))}</p>
     <div class="sheet-group">
       ${apps}
@@ -1908,15 +1914,15 @@ function openSettings() {
       <input type="checkbox" class="switch" id="${id}" ${checked ? 'checked' : ''}>
     </label>`
   openSheet(`
-    <div class="sheet-head"><h2>${esc(t('settings'))}</h2><button class="icon-btn" type="button" data-sheet-close>${icon('x', 20)}</button></div>
+    <div class="sheet-head"><h2>${esc(t('settings'))}</h2><button class="icon-btn" type="button" data-sheet-close data-i18n-title="close">${icon('x', 20)}</button></div>
     <div class="sheet-section" id="settings-account"></div>
     <div class="sheet-section">
       <h3>${esc(t('language'))}</h3>
       <div class="segmented full" id="set-lang">
-        <button type="button" data-l="auto" class="${p.lang ? '' : 'active'}">${esc(t('lang_auto'))}</button>
-        ${LANGS.map((l) => `<button type="button" data-l="${l.id}" class="${p.lang === l.id ? 'active' : ''}">${esc(l.label)}</button>`).join('')}
+
+        ${LANGS.map((l) => `<button type="button" data-l="${l.id}" class="${lang() === l.id ? 'active' : ''}">${esc(l.label)}</button>`).join('')}
       </div>
-      <p class="muted small lang-hint">${esc(t('lang_auto_sub', { l: LANGS.find((x) => x.id === deviceLang())?.label ?? 'English' }))}</p>
+      <p class="muted small lang-hint">${esc(t('lang_saved'))}</p>
       <label class="setting setting-col">
         <span class="setting-text"><span>${esc(t('top_lang'))}</span><small>${esc(t('top_lang_sub', { l: topLangName(deviceTopLang()) }))}</small></span>
         <select class="text-input" id="set-toplang">
@@ -2276,4 +2282,13 @@ function refreshTexts() {
   if (state.tab === 'discover') { loadFollowed(); loadTop(state.topLang) }
   if (state.channel) renderChannel($('#vod-filter')?.value?.trim().toLowerCase() ?? '')
   chat.applyPrefs()
+  chat.refreshTexts()
+  player?.refreshTexts()
+  applyStatic()
+  if (state.watch?.kind === 'live' && state.watch.info) renderLiveInfo(state.watch.info, {links:state.watch.links})
+  if (state.watch?.kind === 'vod' && state.watch.info) {
+    const meta=state.watch.info
+    const date=meta.createdAt ? new Date(meta.createdAt).toLocaleDateString(locale(), {day:'numeric',month:'long',year:'numeric'}) : ''
+    $('#watch-sub').innerHTML = `<span class="pill vod sm" dir="ltr">VOD</span><span>${esc(date)}</span>${meta.lengthSeconds ? `<span>${esc(formatDuration(meta.lengthSeconds))}</span>` : ''}`
+  }
 }

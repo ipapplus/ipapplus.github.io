@@ -4,7 +4,7 @@
 // que de secours. Rien d'autre que nos propres fichiers n'est mis en cache.
 const PREFIX = 'twitchunblock-ipapplus-shell-'
 const BASE = new URL(self.registration.scope)
-const CACHE = PREFIX + encodeURIComponent(BASE.pathname) + '-v2'
+const CACHE = PREFIX + encodeURIComponent(BASE.pathname) + '-v3'
 
 self.addEventListener('install', () => self.skipWaiting())
 self.addEventListener('activate', (e) => {

@@ -1,3 +1,4 @@
+import { t } from '../i18n.js'
 // ═══════════════════════════════════════════════════════════════════════════
 //  Du message brut (IRC en direct, ou commentaire de VOD) au message affiché.
 //  Port de handlePrivmsg / tokenizeChatSegment (Sources/Chat/).
@@ -203,7 +204,7 @@ export function noticeMessages(irc, historical = false) {
     return out
   }
   if (sys && kind !== 'announcement') {
-    out.push(systemMessage(sys, { notice: /sub|gift/.test(kind) ? 'sub' : 'other', timestamp, isHistorical: historical }))
+    out.push(systemMessage(t(/sub|gift/.test(kind) ? 'chat_subscribed' : 'chat_event', {u:unescapeTag(irc.tags['display-name'] || irc.tags.login || '')}), { i18nKey:/sub|gift/.test(kind) ? 'chat_subscribed' : 'chat_event', i18nParams:{u:unescapeTag(irc.tags['display-name'] || irc.tags.login || '')}, notice: /sub|gift/.test(kind) ? 'sub' : 'other', timestamp, isHistorical: historical }))
   }
   if (ircText(irc)) {
     const msg = fromIRC(irc, historical)

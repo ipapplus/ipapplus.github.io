@@ -1,3 +1,4 @@
+import { lang, t, countText } from './i18n.js'
 // ═══════════════════════════════════════════════════════════════════════════
 //  Petits outils partagés : échappement, formats, icônes, notifications.
 // ═══════════════════════════════════════════════════════════════════════════
@@ -45,7 +46,7 @@ export function formatDuration(seconds) {
   const s = Math.max(0, Math.floor(Number(seconds) || 0))
   const h = Math.floor(s / 3600)
   const m = Math.floor((s % 3600) / 60)
-  return h > 0 ? `${h} h ${String(m).padStart(2, '0')}` : `${m} min`
+  return h > 0 ? (lang() === 'ar' ? `${countText(h, 'hour')} و${countText(m, 'minute')}` : t('duration_hours', { h, m })) : t('duration_minutes', { n: m })
 }
 
 export function uptimeSince(iso) {
@@ -120,7 +121,7 @@ const PATHS = {
 }
 
 export function icon(name, size = 20) {
-  return `<svg class="ic" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name] ?? ''}</svg>`
+  return `<svg class="ic${['chevronLeft', 'chevronRight'].includes(name) ? ' directional' : ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name] ?? ''}</svg>`
 }
 
 // ── Notifications ──────────────────────────────────────────────────────────

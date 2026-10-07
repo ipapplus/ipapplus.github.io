@@ -8,7 +8,7 @@
 //  ET le chat, et la logique reprend celle du lecteur immersif de l'app.
 // ═══════════════════════════════════════════════════════════════════════════
 
-import { t } from './i18n.js'
+import { t, applyStatic } from './i18n.js'
 import { API_URL, WORKER_BASES, fixProxiedUrl, workerBaseOf } from './api.js'
 import { $, esc, formatClock, icon, isIOS } from './util.js'
 
@@ -83,8 +83,10 @@ export function sortQualities(keys) {
 
 export function qualityLabel(k) {
   const s = String(k)
-  if (s.toLowerCase() === 'chunked') return 'Source'
-  if (s.toLowerCase() === 'audio_only') return 'Audio'
+  if (s.toLowerCase() === 'auto') return t('auto')
+  if (s.toLowerCase() === 'source') return t('source')
+  if (s.toLowerCase() === 'chunked') return t('source')
+  if (s.toLowerCase() === 'audio_only') return t('audio')
   return s.replace(/^(\d+p)30$/, '$1')
 }
 
@@ -123,7 +125,7 @@ export class Player {
       <button class="p-unmute" type="button" hidden>${icon('mute', 16)}<span></span></button>
       <div class="p-ui">
         <div class="p-shade"></div>
-        <button class="p-big" type="button" aria-label="play">${icon('play', 30)}</button>
+        <button class="p-big" type="button" data-i18n-aria="play">${icon('play', 30)}</button>
         <div class="p-bottom">
           <div class="p-progress" hidden>
             <div class="p-track"><div class="p-buffer"></div><div class="p-played"></div></div>
@@ -136,7 +138,7 @@ export class Player {
             <button class="p-btn p-fwd vod-only" type="button" data-i18n-title="fwd10">${icon('fwd10', 20)}<b>10</b></button>
             <div class="p-volume">
               <button class="p-btn p-mute" type="button">${icon('volume', 21)}</button>
-              <input class="p-vol" type="range" min="0" max="1" step="0.05" aria-label="volume">
+              <input class="p-vol" type="range" min="0" max="1" step="0.05" data-i18n-aria="volume">
             </div>
             <span class="p-time vod-only"></span>
             <button class="p-live live-only" type="button"><span class="dot"></span><span class="p-live-text"></span></button>
@@ -506,12 +508,25 @@ export class Player {
   }
 
   // ── Synchronisation de l'affichage ─────────────────────────────────────
+  refreshTexts() {
+    applyStatic(this.root)
+    this.syncPlay()
+    this.syncVolume()
+    this.syncFullscreen()
+    this.el.qLabel.textContent = this.quality ? qualityLabel(this.quality) : ''
+    this.el.liveText.textContent = t('live_now')
+    if (!this.el.menu.hidden) { const chapters = this.el.menu.dataset.kind === 'chapters'; this.closeMenu(); chapters ? this.toggleChapters() : this.toggleMenu() }
+  }
+
   syncPlay() {
     const paused = this.video.paused
     this.root.classList.toggle('paused', paused)
     const ic = icon(paused ? 'play' : 'pause', 22)
     this.el.play.innerHTML = ic
     this.el.play.title = t(paused ? 'play' : 'pause')
+    this.el.play.setAttribute('aria-label', this.el.play.title)
+    this.el.big.setAttribute('aria-label', this.el.play.title)
+    const mini = document.querySelector('[data-action=watch-toggle-play]'); if (mini) {mini.title=this.el.play.title;mini.setAttribute('aria-label',this.el.play.title)}
     this.el.big.innerHTML = icon(paused ? 'play' : 'pause', 30)
   }
 
@@ -520,6 +535,7 @@ export class Player {
     const muted = v.muted || v.volume === 0
     this.el.mute.innerHTML = icon(muted ? 'mute' : 'volume', 21)
     this.el.mute.title = t(muted ? 'unmute' : 'mute')
+    this.el.mute.setAttribute('aria-label', this.el.mute.title)
     if (document.activeElement !== this.el.vol) this.el.vol.value = String(muted ? 0 : v.volume)
     this.el.vol.style.setProperty('--fill', `${(muted ? 0 : v.volume) * 100}%`)
     this.o.prefs.volume = v.volume
@@ -551,7 +567,7 @@ export class Player {
       this.el.liveText.textContent = atEdge ? t('live_now') : `${t('live_now')} −${formatClock(behind)}`
       this.el.live.title = atEdge ? '' : t('go_live')
       const lat = this.liveDelay()
-      this.el.latency.textContent = lat > 0 ? `${lat.toFixed(1)} s` : ''
+      this.el.latency.textContent = lat > 0 ? t('seconds', {n:Number(lat.toFixed(1))}) : ''
     }
     this.o.onTime?.(cur, v.duration)
   }
@@ -794,6 +810,7 @@ export class Player {
     const fs = this.isFullscreen
     this.el.fs.innerHTML = icon(fs ? 'minimize' : 'maximize', 20)
     this.el.fs.title = t(fs ? 'exit_fullscreen' : 'fullscreen')
+    this.el.fs.setAttribute('aria-label', this.el.fs.title)
     if (!fs) screen.orientation?.unlock?.()
   }
 

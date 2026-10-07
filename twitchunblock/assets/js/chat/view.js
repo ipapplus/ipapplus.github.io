@@ -14,7 +14,7 @@ import { parseBadgeTag } from './badges.js'
 import { emoteCatalog, suggestEmotes } from './emotes.js'
 import { plainText, systemMessage } from './message.js'
 import { clipSlugFrom, gql } from '../api.js'
-import { t } from '../i18n.js'
+import { t, applyStatic, locale } from '../i18n.js'
 import { $, debounce, esc, formatClock, icon, toast } from '../util.js'
 
 const MAX_NODES = 300
@@ -65,11 +65,11 @@ export class ChatView {
         <button class="icon-btn sm chat-cmds-btn" type="button" data-i18n-title="bot_commands" title="${esc(t('bot_commands'))}">${icon('terminal', 17)}</button>
         <button class="icon-btn sm chat-hide" type="button" data-i18n-title="close">${icon('x', 18)}</button>
       </header>
-      <div class="bot-cmds" hidden role="dialog"></div>
-      <div class="chat-pinned" hidden role="region"></div>
+      <div class="bot-cmds" data-i18n-aria="bot_commands" hidden role="dialog"></div>
+      <div class="chat-pinned" data-i18n-aria="pinned" hidden role="region"></div>
       <div class="chat-events"></div>
       <button class="pin-chip" type="button" hidden>${icon('pin', 13)}<span data-i18n="pinned_short">${esc(t('pinned_short'))}</span></button>
-      <div class="chat-list" role="log" aria-live="off" tabindex="0"></div>
+      <div class="chat-list" data-i18n-aria="chat" role="log" aria-live="off" tabindex="0"></div>
       <button class="chat-resume" type="button" hidden>${icon('arrowDown', 14)}<span></span></button>
       <div class="chat-empty" hidden></div>
       <footer class="chat-composer" hidden>
@@ -80,11 +80,11 @@ export class ChatView {
           </div>
           <div class="emote-grid"></div>
         </div>
-        <div class="chat-replying" hidden><span></span><button class="icon-btn xs" type="button">${icon('x', 14)}</button></div>
+        <div class="chat-replying" hidden><span></span><button class="icon-btn xs" type="button" data-i18n-title="cancel">${icon('x', 14)}</button></div>
         <div class="chat-input-row">
-          <input class="chat-input" type="text" maxlength="500" autocomplete="off" enterkeyhint="send" spellcheck="true">
+          <input class="chat-input" dir="auto" data-i18n-aria="chat_send_ph" type="text" maxlength="500" autocomplete="off" enterkeyhint="send" spellcheck="true">
           <button class="icon-btn sm chat-emote-btn" type="button" data-i18n-title="emotes">${icon('smile', 20)}</button>
-          <button class="icon-btn sm chat-send" type="button" aria-label="send">${icon('send', 18)}</button>
+          <button class="icon-btn sm chat-send" type="button" data-i18n-title="send">${icon('send', 18)}</button>
         </div>
         <button class="chat-login" type="button" hidden></button>
       </footer>
@@ -176,6 +176,19 @@ export class ChatView {
     this.applyPrefs()
   }
 
+  refreshTexts() {
+    applyStatic(this.root)
+    this.el.title.textContent = t(this.mode === 'vod' ? 'chat_vod' : 'chat')
+    this.setStatus(this.el.status.dataset.state || 'connecting')
+    this.refreshComposer()
+    this.updatePinMeta()
+    if (this.replyTo) $('span', this.el.replying).textContent = t('reply_to', {u:this.replyTo.displayName})
+    const at = this.el.list.scrollTop
+    this.el.list.replaceChildren(...this.messages.slice(-MAX_NODES).map(m => this.renderMessage(m)))
+    this.el.list.scrollTop = at
+    if (!this.el.picker.hidden) this.renderPicker?.()
+  }
+
   applyPrefs() {
     const p = this.o.prefs
     this.root.style.setProperty('--chat-size', `${p.chatSize}px`)
@@ -244,11 +257,11 @@ export class ChatView {
 
     box.classList.remove('open', 'can-open')
     box.style.height = ''
-    const badges = pin.badges.map((b) => `<img class="badge" src="${esc(b.url)}" alt="" title="${esc(b.set)}">`).join('')
+    const badges = pin.badges.map((b) => `<img class="badge" src="${esc(b.url)}" alt="" title="${esc(t('badge_'+b.set) === 'badge_'+b.set ? b.set : t('badge_'+b.set))}">`).join('')
     box.innerHTML = `<div class="pin-panel">
       <div class="pin-row">
         <span class="pin-ic">${icon('pin', 14)}</span>
-        <div class="pin-body">${badges}<span class="pin-sender" style="color:${esc(pin.color)}">${esc(pin.sender)}</span><span class="pin-colon">:</span> ${this.renderTokens(pin.tokens, this.o.session().login)}</div>
+        <div class="pin-body">${badges}<span dir="ltr" class="pin-sender" style="color:${esc(pin.color)}">${esc(pin.sender)}</span><span class="pin-colon">:</span> ${this.renderTokens(pin.tokens, this.o.session().login)}</div>
         <button class="icon-btn xs pin-toggle" type="button" data-pin-toggle aria-expanded="false" aria-label="${esc(t('pinned'))}" hidden>${icon('chevronDown', 16)}</button>
         <button class="icon-btn xs" type="button" data-pin-close aria-label="${esc(t('close'))}">${icon('x', 14)}</button>
       </div>
@@ -501,6 +514,7 @@ export class ChatView {
   setStatus(state) {
     const s = this.el.status
     s.dataset.state = state
+    s.setAttribute('aria-label',t(state === 'connected' ? 'chat_connected' : state === 'auth-failed' ? 'chat_rescope' : state === 'disconnected' ? 'chat_disconnected' : 'chat_connecting'))
     s.textContent = state === 'connecting' ? t('chat_connecting')
       : state === 'disconnected' ? t('chat_disconnected') : ''
   }
@@ -580,13 +594,13 @@ export class ChatView {
     if (m.notice === 'raid') {
       // Raid entrant : carte avec un lien vers la chaîne qui arrive.
       div.className = 'msg sys notice-raid'
-      div.innerHTML = `${icon('users', 15)}<span>${esc(m.systemMsg || t('raid_incoming', { u: m.raiderName, n: m.viewers }))}</span>`
+      div.innerHTML = `${icon('users', 15)}<span>${esc(t('raid_incoming', { u: m.raiderName, n: m.viewers }))}</span>`
         + (m.raider ? `<button class="btn ghost xs" type="button" data-open-channel="${esc(m.raider)}">${esc(t('see_channel'))}</button>` : '')
       return div
     }
     if (m.systemMsg) {
       div.className = 'msg sys' + (m.notice === 'sub' ? ' notice-sub' : '')
-      div.textContent = m.systemMsg
+      div.textContent = m.i18nKey ? t(m.i18nKey, m.i18nParams) : m.systemMsg
       return div
     }
 
@@ -615,14 +629,14 @@ export class ChatView {
     }
     const time = this.mode === 'vod' && m.offset !== null
       ? formatClock(m.offset)
-      : new Date(m.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    html += `<span class="msg-time">${esc(time)}</span>`
+      : new Date(m.timestamp).toLocaleTimeString(locale(), { hour: '2-digit', minute: '2-digit' })
+    html += `<span class="msg-time" dir="ltr">${esc(time)}</span>`
     m.badgeList ??= parseBadgeTag(m.badgeTag)
     // Une image en échec garderait sa place, vide, et décalerait le pseudo.
-    for (const b of m.badgeList) html += `<img class="badge" src="${esc(b.url)}" alt="" title="${esc(b.set)}" onerror="this.remove()">`
-    html += `<button class="msg-name" type="button" style="color:${esc(m.color)}">${esc(m.displayName)}</button>`
+    for (const b of m.badgeList) html += `<img class="badge" src="${esc(b.url)}" alt="" title="${esc(t('badge_'+b.set) === 'badge_'+b.set ? b.set : t('badge_'+b.set))}" onerror="this.remove()">`
+    html += `<button class="msg-name" dir="ltr" type="button" style="color:${esc(m.color)}">${esc(m.displayName)}</button>`
     html += m.isAction ? ' ' : '<span class="msg-colon">: </span>'
-    html += `<span class="msg-body"${m.isAction ? ` style="color:${esc(m.color)}"` : ''}>${this.renderTokens(m.tokens, me)}</span>`
+    html += `<span class="msg-body" dir="auto"${m.isAction ? ` style="color:${esc(m.color)}"` : ''}>${this.renderTokens(m.tokens, me)}</span>`
     div.innerHTML = html
     return div
   }
@@ -634,13 +648,13 @@ export class ChatView {
           return `<img class="emote" src="${esc(tk.emote.url)}" alt="${esc(tk.emote.name)}" title="${esc(tk.emote.name)}" loading="lazy" decoding="async" onerror="this.replaceWith(this.alt)">`
         case 'mention': {
           const self = me && tk.value.toLowerCase() === me ? ' self' : ''
-          return `<span class="mention${self}" data-user="${esc(tk.value.toLowerCase())}">@${esc(tk.value)}</span>`
+          return `<span dir="ltr" class="mention${self}" data-user="${esc(tk.value.toLowerCase())}">@${esc(tk.value)}</span>`
         }
         case 'link': {
           const href = /^https?:\/\//i.test(tk.value) ? tk.value : `https://${tk.value}`
           // Lien de clip : lu ici plutôt que sur Twitch.
           const clip = clipSlugFrom(tk.value)
-          return `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow"${clip ? ` data-clip-link="${esc(clip)}"` : ''}>${esc(tk.value)}</a>`
+          return `<a dir="ltr" href="${esc(href)}" target="_blank" rel="noopener noreferrer nofollow"${clip ? ` data-clip-link="${esc(clip)}"` : ''}>${esc(tk.value)}</a>`
         }
         default:
           return esc(tk.value)
@@ -706,6 +720,7 @@ export class ChatView {
     if (writable) {
       const ready = Boolean(this.client?.canSend)
       this.el.input.placeholder = ready ? t('chat_send_ph') : t('chat_connecting')
+      this.el.input.setAttribute('aria-label', this.el.input.placeholder)
       this.el.input.disabled = !ready
       this.el.send.disabled = !ready
     } else {
@@ -956,7 +971,7 @@ export class ChatView {
       </div>
       <div class="user-card-label">${esc(t('user_messages'))}</div>
       <div class="user-card-msgs">${theirs.length
-        ? theirs.map((m) => `<div class="uc-msg${m.isDeleted ? ' deleted' : ''}"><span class="msg-time">${esc(this.mode === 'vod' && m.offset !== null ? formatClock(m.offset) : new Date(m.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))}</span> ${this.renderTokens(m.tokens, null)}</div>`).join('')
+        ? theirs.map((m) => `<div class="uc-msg${m.isDeleted ? ' deleted' : ''}"><span class="msg-time" dir="ltr">${esc(this.mode === 'vod' && m.offset !== null ? formatClock(m.offset) : new Date(m.timestamp).toLocaleTimeString(locale(), { hour: '2-digit', minute: '2-digit' }))}</span> ${this.renderTokens(m.tokens, null)}</div>`).join('')
         : '<div class="muted">—</div>'}</div>`
     card.hidden = false
     const list = $('.user-card-msgs', card)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -14,7 +14,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="TwitchUnblock">
-  <meta name="description" content="Regarder les lives et VODs Twitch sans abonnement, avec le chat.">
+  <meta name="description" data-i18n-content="tagline" content="Twitch lives and VODs, no subscription needed.">
   <title>TwitchUnblock</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%239146ff'/%3E%3Cpath d='M9 7h16v10l-4 4h-4l-3 3v-3h-5z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M15 11v4m5-4v4' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/fork.css">
+  <link rel="stylesheet" href="assets/localization.css">
 
   <script>
     // Retour de la connexion Twitch. Doit tourner avant tout le reste : dans
@@ -33,6 +34,7 @@
       var params = new URLSearchParams(hash.slice(1))
       var token = params.get('access_token')
       history.replaceState(null, '', location.pathname + location.search)
+      if (params.has('error')) { try { sessionStorage.setItem('tu_oauth_error', 'oauth_error') } catch(e) {} }
       if (!token) return
       // `state` : jeton remis seulement s'il répond à NOTRE demande de
       // connexion. Sans ce contrôle, n'importe quel site pouvait envoyer
@@ -40,7 +42,7 @@
       // autre compte (où partaient ensuite son historique et ses messages).
       var expected = null
       try { expected = localStorage.getItem('tu_oauth_state') } catch (e) {}
-      if (!expected || params.get('state') !== expected) return
+      if (!expected || params.get('state') !== expected) { try { sessionStorage.setItem('tu_oauth_error', 'oauth_state_error') } catch(e) {} return }
       if (window.opener && window.opener !== window) {
         try { window.opener.postMessage(hash, location.origin) } catch (e) {}
         window.close()
@@ -56,17 +58,18 @@
   <div class="app">
     <!-- ── Barre du haut ─────────────────────────────────────────────── -->
     <header class="topbar">
-      <a class="brand" href="./" aria-label="TwitchUnblock">
+      <a class="brand" href="./" dir="ltr" aria-label="TwitchUnblock">
         <span class="brand-mark" data-icon="twitch" data-size="20"></span>
         <span class="brand-name">Twitch<b>Unblock</b></span>
       </a>
-      <nav class="nav" aria-label="Navigation">
+      <nav class="nav" data-i18n-aria="navigation">
         <button type="button" data-tab="discover" class="active"><span data-icon="compass" data-size="18"></span><span data-i18n="nav_discover"></span></button>
         <button type="button" data-tab="categories"><span data-icon="layers" data-size="18"></span><span data-i18n="nav_categories"></span></button>
         <button type="button" data-tab="channel"><span data-icon="user" data-size="18"></span><span data-i18n="nav_channel"></span></button>
         <button type="button" data-tab="link"><span data-icon="link" data-size="18"></span><span data-i18n="nav_link"></span></button>
       </nav>
       <div class="topbar-actions">
+        <select class="header-language" data-language-select data-i18n-aria="language"><option value="en" lang="en" dir="ltr">English</option><option value="ar" lang="ar" dir="rtl">العربية</option></select>
         <button class="icon-btn" type="button" data-action="settings" data-i18n-title="settings" data-icon="settings"></button>
         <button class="account-btn" id="account-btn" type="button" data-action="login"></button>
       </div>
@@ -142,7 +145,7 @@
       <section class="view" id="view-channel" hidden>
         <form class="search" id="channel-form" autocomplete="off" role="search">
           <span class="search-icon" data-icon="search" data-size="18"></span>
-          <input id="channel-input" type="search" enterkeyhint="search" data-i18n-ph="search_channel_ph" autocapitalize="off" spellcheck="false">
+          <input id="channel-input" dir="auto" type="search" enterkeyhint="search" data-i18n-ph="search_channel_ph" autocapitalize="off" spellcheck="false">
           <button class="btn primary" type="submit"><span data-i18n="search"></span></button>
           <div class="suggest" id="channel-suggest" hidden></div>
         </form>
@@ -164,7 +167,7 @@
           <p class="muted" data-i18n="link_desc"></p>
           <form class="search" id="link-form" autocomplete="off">
             <span class="search-icon" data-icon="link" data-size="18"></span>
-            <input id="link-input" type="text" inputmode="url" enterkeyhint="go" data-i18n-ph="link_ph" autocapitalize="off" spellcheck="false">
+            <input id="link-input" dir="ltr" type="text" inputmode="url" enterkeyhint="go" data-i18n-ph="link_ph" autocapitalize="off" spellcheck="false">
             <button class="btn primary" type="submit"><span data-i18n="link_open"></span></button>
           </form>
         </div>
@@ -173,15 +176,15 @@
       <footer class="site-footer">
         <span>TwitchUnblock · <span data-i18n="made_by"></span> <a href="https://github.com/MXFia19" target="_blank" rel="noopener">MXFia19</a></span>
         <a href="https://github.com/ipapplus/TwitchUnblock-Web" target="_blank" rel="noopener"><span data-icon="github" data-size="15"></span>GitHub</a>
-        <a href="https://github.com/MXFia19/TwitchUnblock-Web" target="_blank" rel="noopener">Upstream</a>
-        <a href="https://github.com/ipapplus" target="_blank" rel="noopener">Maintained by ipapplus</a>
+        <a href="https://github.com/MXFia19/TwitchUnblock-Web" target="_blank" rel="noopener" data-i18n="upstream">Original project</a>
+        <a href="https://github.com/ipapplus" target="_blank" rel="noopener" data-i18n="maintained_by">Maintained by ipapplus</a>
         <a href="https://x.com/ipapplus" target="_blank" rel="noopener">X</a>
         <span data-i18n="not_affiliated"></span>
       </footer>
     </main>
 
     <!-- ── Barre d'onglets (mobile) ──────────────────────────────────── -->
-    <nav class="tabbar" aria-label="Navigation">
+    <nav class="tabbar" data-i18n-aria="navigation">
       <button type="button" data-tab="discover" class="active"><span data-icon="compass" data-size="22"></span><span data-i18n="nav_discover"></span></button>
       <button type="button" data-tab="categories"><span data-icon="layers" data-size="22"></span><span data-i18n="nav_categories"></span></button>
       <button type="button" data-tab="channel"><span data-icon="user" data-size="22"></span><span data-i18n="nav_channel"></span></button>
@@ -195,7 +198,7 @@
       <button class="icon-btn" type="button" data-action="watch-minimize" data-i18n-title="minimize" data-icon="chevronDown" data-size="22"></button>
       <img class="avatar sm" id="watch-avatar" alt="" hidden>
       <div class="watch-id">
-        <strong id="watch-title"></strong>
+        <strong id="watch-title" dir="auto"></strong>
         <div class="watch-sub" id="watch-sub"></div>
       </div>
       <button class="icon-btn" type="button" data-action="watch-close" data-i18n-title="close" data-icon="x" data-size="22"></button>
@@ -203,7 +206,7 @@
     <div class="watch-body" id="watch-body">
       <div class="watch-video">
         <div id="player"></div>
-        <div class="watch-loading" id="watch-loading"><span class="spinner"></span></div>
+        <div class="watch-loading" id="watch-loading" role="status" data-i18n-aria="loading"><span class="spinner"></span></div>
         <div class="watch-ended" id="watch-ended"></div>
         <div class="watch-error">
           <span data-icon="radio" data-size="30"></span>
@@ -214,9 +217,9 @@
       <div class="watch-info" id="watch-info"></div>
       <aside class="watch-chat" id="chat"></aside>
     </div>
-    <div class="watch-mini">
+    <div class="watch-mini" dir="ltr">
       <div class="mini-text"><strong id="mini-title"></strong></div>
-      <button class="icon-btn sm mini-play" type="button" data-action="watch-toggle-play">
+      <button class="icon-btn sm mini-play" type="button" data-action="watch-toggle-play" data-i18n-title="play">
         <span class="when-paused" data-icon="play" data-size="20"></span>
         <span class="when-playing" data-icon="pause" data-size="20"></span>
       </button>
