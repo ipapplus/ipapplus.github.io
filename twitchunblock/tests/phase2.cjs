@@ -14,13 +14,18 @@ const token = 'testtokenonly0000000000';
 const user = { id: '1', login: 'viewer', display_name: 'Viewer', profile_image_url: '', description: 'Viewer account' };
 const liveUser = { id: '2', login: 'livechannel', display_name: 'Live Channel', profile_image_url: '', description: 'Hello <img src=x onerror=alert(1)> مرحبًا' };
 const offlineUser = { id: '3', login: 'offlinechannel', display_name: 'Offline Channel', profile_image_url: '', description: 'An offline channel' };
-const stream = { user_id: '2', user_login: 'livechannel', user_name: 'Live Channel', title: 'Live <script>bad</script> مرحبًا', game_name: 'Just Chatting', viewer_count: 1234, started_at: new Date(Date.now() - 7200000).toISOString() };
+const stream = { user_id: '2', user_login: 'livechannel', user_name: 'Live Channel', title: 'Live <script>bad</script> مرحبًا', game_name: 'Just Chatting', viewer_count: 1234, thumbnail_url:'https://static-cdn.jtvnw.net/previews-ttv/live_user_livechannel-{width}x{height}.jpg', game_id:'10', started_at: new Date(Date.now() - 7200000).toISOString() };
 const searchRow = u => ({ id: u.id, broadcaster_login: u.login, display_name: u.display_name, thumbnail_url: '', title: u.id === '2' ? stream.title : 'Last stream', game_name: 'Just Chatting', is_live: u.id === '2' });
 async function setup(browser, options = {}) {
-  const context = await browser.newContext({ viewport: { width: options.width || 390, height: 900 }, locale: options.language || 'en', reducedMotion: 'reduce' });
+  // Isolate native WebKit fixture processes: repeated context churn in this
+  // Linux WPE runtime can close the browser. Real tests use one continuous session.
+  const isolated = browser.browserType().name() === 'webkit' ? await webkit.launch() : null;
+  const context = await (isolated || browser).newContext({ viewport: { width: options.width || 390, height: 900 }, locale: options.language || 'en', reducedMotion: 'reduce' });
+  if (isolated) { const close=context.close.bind(context);context.close=async()=>{try{await close();}finally{await isolated.close();}}; }
   if (options.signedIn !== false) await context.addInitScript(({ token }) => { if (!sessionStorage.getItem('test.seeded')) { sessionStorage.setItem('twitchunblock.session', JSON.stringify({ token })); sessionStorage.setItem('test.seeded','1'); } }, { token });
   const page = await context.newPage(); const errors = []; page.on('pageerror', e => errors.push(e.message));
   const calls = [];
+  await page.route('https://static-cdn.jtvnw.net/**', r=>r.fulfill({contentType:'image/png',body:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jhLkAAAAASUVORK5CYII=','base64')}));
   await page.route('**/twitchunblock/assets/js/config.js', r => r.fulfill({ contentType: 'application/javascript', body: `window.TwitchConfig=Object.freeze({clientId:'${options.unconfigured ? '' : clientId}',redirectUri:'https://ipapplus.github.io/twitchunblock/',timeoutMs:250});` }));
   await page.route('https://id.twitch.tv/oauth2/validate', r => r.fulfill({ status: options.invalidToken ? 401 : 200, contentType: 'application/json', body: JSON.stringify({ client_id: clientId, user_id: '1', login: 'viewer', expires_in: 3600 }) }));
   await page.route('https://id.twitch.tv/oauth2/revoke', r => r.fulfill({ status: 200, body: '{}' }));
@@ -47,9 +52,10 @@ async function setup(browser, options = {}) {
         data = query === 'none' || (options.exactOffline && query === 'offlinechannel') ? [] : query === 'offlinechannel' ? [searchRow(offlineUser)] : query === 'livechannel' ? [searchRow(liveUser)] : [searchRow(liveUser), searchRow(offlineUser)];
         if (url.searchParams.get('live_only') === 'true') data = data.filter(r => r.is_live); break;
       }
+      case 'games/top': data=[{id:'10',name:'Just Chatting',box_art_url:'https://static-cdn.jtvnw.net/boxart/10-{width}x{height}.jpg'}];break;
       case 'channels': { const id = url.searchParams.get('broadcaster_id'); data = [{ broadcaster_id: id, title: id === '2' ? stream.title : 'Last stream', game_name: 'Just Chatting' }]; break; }
-      case 'videos': data = url.searchParams.get('user_id') === '3' ? [] : [{ id: '99', title: 'Recent VOD <b>text</b>', created_at: '2026-10-01T12:00:00Z', duration: '2h3m', view_count: 100 }]; break;
-      case 'clips': data = url.searchParams.get('broadcaster_id') === '3' ? [] : [{ id: 'SafeClip-123', title: 'Recent clip', created_at: '2026-10-01T12:00:00Z', view_count: 10 }]; break;
+      case 'videos': data = url.searchParams.get('user_id') === '3' ? [] : [{ id: '99', title: 'Recent VOD <b>text</b>', created_at: '2026-10-01T12:00:00Z', duration: '2h3m', view_count: 100, thumbnail_url:'https://static-cdn.jtvnw.net/vod-%{width}x%{height}.jpg' }]; break;
+      case 'clips': data = url.searchParams.get('broadcaster_id') === '3' ? [] : [{ id: 'SafeClip-123', title: 'Recent clip', created_at: '2026-10-01T12:00:00Z', view_count: 10, thumbnail_url:'https://static-cdn.jtvnw.net/clip.jpg' }]; break;
       default: throw new Error('Unexpected endpoint: ' + endpoint);
     }
     await r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({data}) });
@@ -61,6 +67,7 @@ async function setup(browser, options = {}) {
 async function search(page, query) { await page.locator('[data-section="search"]').click(); await page.locator('#channel').fill(query); await page.locator('#search-form [type="submit"]').click(); await page.waitForFunction(() => document.querySelector('#search-results').getAttribute('aria-busy') === 'false'); }
 async function matrix(browser, engine) {
  for (const width of [320,375,390,430,1440]) for (const language of ['en','ar']) {
+  console.log('CASE',engine,width,language);
   const { context, page, errors, calls } = await setup(browser,{width,language});
   await page.locator('#home-results .channel-card').waitFor();
   assert.equal(await page.locator('html').getAttribute('lang'),language);
@@ -87,11 +94,19 @@ async function matrix(browser, engine) {
   await page.locator('#channel-videos .media-link').waitFor();
   assert.equal(await page.locator('#channel-profile .pill').textContent(),language==='ar'?'مباشر':'Live');
   assert.equal(await page.locator('#channel-videos .media-link').getAttribute('href'),'https://www.twitch.tv/videos/99');
+  await page.locator('#tab-clips').click();await page.locator('#channel-clips .media-link').waitFor();
   assert.equal(await page.locator('#channel-clips .media-link').getAttribute('href'),'https://clips.twitch.tv/SafeClip-123');
   assert.equal(await page.locator('#channel-profile script,#channel-profile img[src="x"]').count(),0);
   assert((await page.locator('#channel-profile').textContent()).includes('<script>bad</script>'));
   assert.equal(await page.locator('#channel-profile .project-heading bdi').getAttribute('dir'),'ltr');
   if(process.env.SCREENSHOT_DIR && width===390) {fs.mkdirSync(process.env.SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.SCREENSHOT_DIR,`${engine}-channel-${language}.png`),fullPage:true});}
+  await page.locator('#save-channel').click();assert.equal(await page.locator('#save-channel').getAttribute('aria-pressed'),'true');
+  await page.locator('#tab-highlights').click();await page.locator('#channel-highlights .media-link').waitFor();assert(page.url().includes('tab=highlights'));
+  await page.locator('#media-filter').fill('nomatch');assert.equal(await page.locator('#channel-highlights .media-card').count(),0);await page.locator('#media-filter').fill('');
+  await page.locator('[data-section="home"]').click();await page.locator('[data-home-view="saved"]').click();await page.waitForFunction(()=>document.querySelector('[data-home-view="saved"]').hasAttribute('aria-current'));await page.locator('#home-results .channel-card').waitFor();assert((await page.locator('#home-intro').textContent()).includes(language==='ar'?'الجهاز':'device'));
+  await page.locator('[data-home-view="categories"]').click();await page.locator('.category-card').waitFor();await page.locator('.category-card').click();await page.locator('#home-results .channel-card').waitFor();assert(page.url().includes('#category/10'));
+  await page.locator('[data-section="search"]').click();await page.locator('#channel').fill('live');await page.waitForFunction(()=>document.querySelector('#channel').getAttribute('aria-expanded')==='true');await page.locator('#channel').press('ArrowDown');assert(await page.locator('#channel').getAttribute('aria-activedescendant'));await page.locator('#channel').press('Escape');assert.equal(await page.locator('#channel').getAttribute('aria-expanded'),'false');
+  await page.locator('#channel').fill('livechannel');await page.waitForFunction(()=>document.querySelector('#channel').getAttribute('aria-expanded')==='true');await page.locator('#channel').press('ArrowDown');await page.locator('#channel').press('Enter');await page.locator('#channel-profile .pill').waitFor();
   await page.locator('[data-section="history"]').click(); assert.equal(await page.locator('#history-results .channel-card').count(),2);
   await page.reload(); await page.locator('#history-results .channel-card').first().waitFor(); assert.equal(await page.locator('#history-results .channel-card').count(),2);
   await page.locator('header [data-language="'+(language==='en'?'ar':'en')+'"]').click(); await page.reload();
@@ -101,7 +116,7 @@ async function matrix(browser, engine) {
    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth>innerWidth),false,engine+' '+width+' '+section);
   }
   assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior),'auto');
-  assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('a,button,input')].filter(e=>e.getBoundingClientRect().width && (e.type==='checkbox'?e.closest('label').getBoundingClientRect().height:e.getBoundingClientRect().height)<43.9).map(e=>e.id||e.textContent)),[]);
+  assert.deepEqual(await page.evaluate(()=>[...document.querySelectorAll('a,button,input,select')].filter(e=>e.getBoundingClientRect().width && (e.type==='checkbox'?e.closest('label').getBoundingClientRect().height:e.getBoundingClientRect().height)<43.9).map(e=>e.id||e.textContent)),[]);
   await page.locator('#clear-history').click(); assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('twitchunblock.history') || '[]').length),0);
   assert(await page.locator('#clear-history').isDisabled());
   await page.locator('#settings-logout').click(); await page.locator('#sign-in').waitFor();
@@ -112,7 +127,7 @@ async function matrix(browser, engine) {
   if (process.env.SCREENSHOT_DIR) { fs.mkdirSync(process.env.SCREENSHOT_DIR,{recursive:true}); await page.screenshot({path:path.join(process.env.SCREENSHOT_DIR,`${engine}-phase2-${width}-${language}.png`),fullPage:true}); }
   await context.close();
  }
- console.log('PASS',engine,'MOCKED 10 widths/languages: Home/live/offline/search/filter/channel/VODs/clips/history/settings/logout/RTL/font/overflow');
+ console.log('PASS',engine,'MOCKED P0 10 widths/languages: Home/categories/saved/suggestions/channel/tabs/highlights/clips/history/logout/RTL/font/overflow');
 }
 async function failures(browser,engine) {
  for (const failure of ['rate','timeout','malformed','invalid','failed']) for (const language of ['en','ar']) {
@@ -126,7 +141,7 @@ async function failures(browser,engine) {
  const missing=await setup(browser,{unconfigured:true,signedIn:false}); assert(await missing.page.locator('#sign-in').isDisabled()); assert((await missing.page.locator('#auth-state').textContent()).includes('site owner')); await missing.context.close();
  const notFound=await setup(browser); await notFound.page.goto(prefix+'#channel/missing'); await notFound.page.waitForFunction(()=>document.querySelector('#channel-state').textContent.includes('could not be found')); await notFound.context.close();
  const exact=await setup(browser,{exactOffline:true}); await search(exact.page,'offlinechannel'); assert.equal(await exact.page.locator('#search-results .channel-card').count(),1); await exact.context.close();
- const media=await setup(browser,{mediaFailure:true}); await media.page.goto(prefix+'#channel/livechannel'); await media.page.locator('#channel-clips .media-link').waitFor(); assert((await media.page.locator('#channel-videos').textContent()).includes('could not be loaded')); assert.equal(await media.page.locator('#channel-profile .pill').textContent(),'Live'); await media.context.close();
+ const media=await setup(browser,{mediaFailure:true}); await media.page.goto(prefix+'#channel/livechannel'); await media.page.locator('#media-retry').waitFor();await media.page.locator('#tab-clips').click();await media.page.locator('#channel-clips .media-link').waitFor(); assert((await media.page.locator('#channel-videos').textContent()).includes('could not be loaded')); assert.equal(await media.page.locator('#channel-profile .pill').textContent(),'Live'); await media.context.close();
  const expired=await setup(browser); await expired.page.evaluate(()=>TwitchAuth.session.expiresAt=Date.now()-1); await search(expired.page,'livechannel'); assert((await expired.page.locator('#auth-state').textContent()).includes('expired')); await expired.context.close();
  const quota=await setup(browser); await quota.page.evaluate(()=>{Storage.prototype.setItem=function(){throw new DOMException('Quota','QuotaExceededError')}}); await quota.page.goto(prefix+'#channel/livechannel'); await quota.page.locator('#channel-profile .pill').waitFor(); await quota.page.locator('[data-section="history"]').click(); assert.equal(await quota.page.locator('#history-results .channel-card').count(),1); assert((await quota.page.locator('#history-state').textContent()).includes('could not save')); await quota.context.close();
  console.log('PASS',engine,'MOCKED localized API errors, timeout, rate limit, malformed response, invalid token, missing configuration, direct missing channel');
@@ -146,7 +161,8 @@ async function oauth(browser,engine) {
 
  await context.close(); console.log('PASS',engine,'MOCKED public-client device authorization, polling, cancellation, legacy callback rejection, session-only storage');
 }
-(async()=>{
+module.exports={setup,search,stream,liveUser};
+if(require.main===module)(async()=>{
  for(const [name,engine] of Object.entries({chromium,webkit})) {
   if(process.env.ENGINE && process.env.ENGINE!==name)continue;
   const browser=await engine.launch(); try {await matrix(browser,name);await failures(browser,name);await oauth(browser,name);}finally{await browser.close();}

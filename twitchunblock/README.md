@@ -165,3 +165,31 @@ exact search, live/offline channel profiles, archive VODs (6), clips (6), and
 English/Arabic layouts at 320, 375, 390, 430 and 1440px with no overflow.
 `tests/live.cjs` provides real consent/Helix coverage independently of mocks.
 Root/APT resources and About HTML/release code remain unchanged.
+
+### P0 reference audit and discovery improvements
+
+See [REFERENCE_GAP_ANALYSIS.md](REFERENCE_GAP_ANALYSIS.md) for the 108-criterion
+baseline comparison, evidence levels, limitations and staged roadmap. Only P0
+is implemented: visual live cards, top categories/category streams, device-saved
+channels/recent visits, accessible debounced suggestions, routed search/media
+state, richer channel hero, archive/highlight/clip tabs, media filtering and
+archive pagination. Player, chat, Recovery, collections and cloud sync remain
+outside this phase. Account follows require optional additional consent; device
+saves are explicitly separate from Twitch follows.
+
+`home.js` controls discovery. `discovery.js` owns a bounded in-memory TTL cache,
+noncredential `twitchunblock.savedChannels` device saves (50 maximum), and
+`twitchunblock.streamLanguage` discovery filter preference. UI language still
+uses the **single** existing `twitchunblock.language` key shared with About.
+Search suggestions debounce 300ms, cancel obsolete requests and retain keyboard
+selection when remote matches arrive. Channel caches retain tab/filter state;
+media loads only for the selected tab, 12 items/page, capped at 120 loaded video
+items. No framework or new service worker. OAuth/config files are unchanged.
+
+Validation commands: existing `tests/validate.cjs` (About/root),
+`tests/phase2.cjs` (mocked bilingual viewport/API/auth coverage), `tests/p0.cjs`
+(mocked cache/refresh/route/pagination/focus regressions), and `tests/live.cjs`
+(real owned Twitch OAuth/Helix; see OAUTH.md). CDN images in mock tests are also
+intercepted; screenshots under `audit/` distinguish real-data before/after shots
+from the reference and logged-out first-visit views. For live screenshots set
+`SCREENSHOT_DIR` to an existing directory; no OAuth token is recorded.
