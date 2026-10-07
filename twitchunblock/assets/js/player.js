@@ -122,7 +122,7 @@ export class Player {
       <video playsinline webkit-playsinline preload="auto"></video>
       <div class="p-spinner" hidden><span></span></div>
       <div class="p-flash" aria-hidden="true"></div>
-      <button class="p-unmute" type="button" hidden>${icon('mute', 16)}<span></span></button>
+      <button class="p-unmute" type="button" hidden>${icon('mute', 16)}<span data-i18n="unmute"></span></button>
       <div class="p-ui">
         <div class="p-shade"></div>
         <button class="p-big" type="button" data-i18n-aria="play">${icon('play', 30)}</button>
@@ -141,7 +141,7 @@ export class Player {
               <input class="p-vol" type="range" min="0" max="1" step="0.05" data-i18n-aria="volume">
             </div>
             <span class="p-time vod-only"></span>
-            <button class="p-live live-only" type="button"><span class="dot"></span><span class="p-live-text"></span></button>
+            <button class="p-live live-only" type="button" data-i18n-aria="go_live"><span class="dot"></span><span class="p-live-text"></span></button>
             <span class="p-latency live-only"></span>
             <button class="p-btn p-chapters vod-only" type="button" hidden data-i18n-title="chapters">${icon('list', 18)}<span class="p-chap-label"></span>${icon('chevronUp', 14)}</button>
             <span class="p-spacer"></span>
@@ -525,8 +525,9 @@ export class Player {
     this.el.play.innerHTML = ic
     this.el.play.title = t(paused ? 'play' : 'pause')
     this.el.play.setAttribute('aria-label', this.el.play.title)
+    this.el.big.dataset.i18nAria = paused ? 'play' : 'pause'
     this.el.big.setAttribute('aria-label', this.el.play.title)
-    const mini = document.querySelector('[data-action=watch-toggle-play]'); if (mini) {mini.title=this.el.play.title;mini.setAttribute('aria-label',this.el.play.title)}
+    const mini = document.querySelector('[data-action=watch-toggle-play]'); if (mini) {mini.dataset.i18nTitle=paused?'play':'pause';mini.title=this.el.play.title;mini.setAttribute('aria-label',this.el.play.title)}
     this.el.big.innerHTML = icon(paused ? 'play' : 'pause', 30)
   }
 
@@ -810,6 +811,7 @@ export class Player {
     const fs = this.isFullscreen
     this.el.fs.innerHTML = icon(fs ? 'minimize' : 'maximize', 20)
     this.el.fs.title = t(fs ? 'exit_fullscreen' : 'fullscreen')
+    this.el.fs.dataset.i18nTitle = fs ? 'exit_fullscreen' : 'fullscreen'
     this.el.fs.setAttribute('aria-label', this.el.fs.title)
     if (!fs) screen.orientation?.unlock?.()
   }

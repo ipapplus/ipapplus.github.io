@@ -187,6 +187,8 @@ export class ChatView {
     this.el.list.replaceChildren(...this.messages.slice(-MAX_NODES).map(m => this.renderMessage(m)))
     this.el.list.scrollTop = at
     if (!this.el.picker.hidden) this.renderPicker?.()
+    if (!this.el.card.hidden) this.showCard(this.el.card.dataset.login, this.messages.find(m=>m.id===this.el.card.dataset.msg))
+    if (!this.el.empty.hidden) this.el.empty.textContent = t('chat_vod_empty')
   }
 
   applyPrefs() {
@@ -262,8 +264,8 @@ export class ChatView {
       <div class="pin-row">
         <span class="pin-ic">${icon('pin', 14)}</span>
         <div class="pin-body">${badges}<span dir="ltr" class="pin-sender" style="color:${esc(pin.color)}">${esc(pin.sender)}</span><span class="pin-colon">:</span> ${this.renderTokens(pin.tokens, this.o.session().login)}</div>
-        <button class="icon-btn xs pin-toggle" type="button" data-pin-toggle aria-expanded="false" aria-label="${esc(t('pinned'))}" hidden>${icon('chevronDown', 16)}</button>
-        <button class="icon-btn xs" type="button" data-pin-close aria-label="${esc(t('close'))}">${icon('x', 14)}</button>
+        <button class="icon-btn xs pin-toggle" type="button" data-pin-toggle data-i18n-aria="pinned" aria-expanded="false" aria-label="${esc(t('pinned'))}" hidden>${icon('chevronDown', 16)}</button>
+        <button class="icon-btn xs" type="button" data-pin-close data-i18n-aria="close" aria-label="${esc(t('close'))}">${icon('x', 14)}</button>
       </div>
       <div class="pin-meta"></div>
       ${pin.endsAt && pin.startsAt ? '<div class="pin-progress"><i></i></div>' : ''}</div>`
@@ -829,7 +831,7 @@ export class ChatView {
     box.hidden = false
     box.innerHTML = `<div class="bot-cmds-head">${icon('terminal', 16)}<b>${esc(t('bot_commands'))}</b>
         <button class="icon-btn xs" type="button" data-close>${icon('x', 16)}</button></div>
-      <input class="bot-cmds-filter" type="search" autocomplete="off" placeholder="${esc(t('bot_commands_filter'))}">
+      <input class="bot-cmds-filter" data-i18n-ph="bot_commands_filter" type="search" autocomplete="off" placeholder="${esc(t('bot_commands_filter'))}">
       <div class="bot-cmds-list"><p class="muted small">${esc(t('loading'))}</p></div>`
     box.querySelector('[data-close]').onclick = () => { box.hidden = true }
     const sets = await fetchBotCommands(channel)
@@ -958,11 +960,11 @@ export class ChatView {
     card.innerHTML = `
       <div class="user-card-head">
         <img class="avatar" alt="" hidden>
-        <div class="user-card-id">
+        <div class="user-card-id" dir="ltr">
           <strong style="color:${esc(color)}">${esc(name)}</strong>
           <span class="muted">@${esc(login)}</span>
         </div>
-        <button class="icon-btn sm" type="button" data-act="close">${icon('x', 18)}</button>
+        <button class="icon-btn sm" type="button" data-act="close" data-i18n-title="close">${icon('x', 18)}</button>
       </div>
       <div class="user-card-actions">
         ${canReply ? `<button class="btn sm" type="button" data-act="mention">@ ${esc(t('mention'))}</button>
@@ -971,7 +973,7 @@ export class ChatView {
       </div>
       <div class="user-card-label">${esc(t('user_messages'))}</div>
       <div class="user-card-msgs">${theirs.length
-        ? theirs.map((m) => `<div class="uc-msg${m.isDeleted ? ' deleted' : ''}"><span class="msg-time" dir="ltr">${esc(this.mode === 'vod' && m.offset !== null ? formatClock(m.offset) : new Date(m.timestamp).toLocaleTimeString(locale(), { hour: '2-digit', minute: '2-digit' }))}</span> ${this.renderTokens(m.tokens, null)}</div>`).join('')
+        ? theirs.map((m) => `<div class="uc-msg${m.isDeleted ? ' deleted' : ''}" dir="auto"><span class="msg-time" dir="ltr">${esc(this.mode === 'vod' && m.offset !== null ? formatClock(m.offset) : new Date(m.timestamp).toLocaleTimeString(locale(), { hour: '2-digit', minute: '2-digit' }))}</span> ${this.renderTokens(m.tokens, null)}</div>`).join('')
         : '<div class="muted">—</div>'}</div>`
     card.hidden = false
     const list = $('.user-card-msgs', card)
