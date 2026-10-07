@@ -120,8 +120,9 @@ const PATHS = {
   twitch: '<path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"/>',
 }
 
+// Only horizontal navigation chevrons mirror. Media transport and symbol glyphs do not.
 export function icon(name, size = 20) {
-  return `<svg class="ic${['chevronLeft', 'chevronRight'].includes(name) ? ' directional' : ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name] ?? ''}</svg>`
+  return `<svg class="ic${['chevronLeft', 'chevronRight'].includes(name) ? ' nav-directional' : ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATHS[name] ?? ''}</svg>`
 }
 
 // ── Notifications ──────────────────────────────────────────────────────────

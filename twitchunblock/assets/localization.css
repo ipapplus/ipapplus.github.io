@@ -1,17 +1,14 @@
 /* Localization containment only: preserve upstream colors, spacing and media order. */
 .header-language { width: 76px; min-height: 38px; padding: 4px; border: 1px solid var(--line); border-radius: var(--r-control); background: var(--card); color: var(--text); font: inherit; font-size: 12px; }
-.brand, .msg-name, .msg-time, .mention, .pill.uptime, .p-time, .p-latency, .p-speeds, .p-chap-row b, .whats-new small { direction: ltr; unicode-bidi: isolate; }
+.brand, .msg-name, .msg-time, .mention, .p-time, .p-latency, .p-speeds, .p-chap-row b, .whats-new small { direction: ltr; unicode-bidi: isolate; }
 .player, .watch-mini, .chat-list { direction: ltr; }
 .player .p-menu-title, .player .p-unmute { direction: inherit; }
 .msg-body, .pin-message { unicode-bidi: isolate; }
 .msg-reply { unicode-bidi: plaintext; }
 .chat-input { text-align: start; }
 .suggest-row, .login-card.compact, .setting, .sheet, .user-card { text-align: start; }
-.follow-local { margin-left: 0; margin-inline-start: auto; }
-html[dir="rtl"] .directional { transform: scaleX(-1); }
-html[dir="rtl"] .player .directional { transform: none; }
-html[dir="rtl"] .watch-chat { border-left: 0; border-right: 1px solid var(--line); }
-html[dir="rtl"] .whats-new ul { padding-left: 0; padding-right: 20px; }
+html[dir="rtl"] .nav-directional { transform: scaleX(-1); }
+
 html[dir="rtl"] .chat-title-text, html[dir="rtl"] .setting-text, html[dir="rtl"] .hero-title { letter-spacing: normal; }
 .hero-id h2, .card-text, .setting-text, .wi-text, .pin-body { min-width: 0; overflow-wrap: anywhere; }
 .segmented button, .btn, .setting small { white-space: normal; }
@@ -24,7 +21,46 @@ html[dir="rtl"] .chat-title-text, html[dir="rtl"] .setting-text, html[dir="rtl"]
 @media (max-width: 380px) { .header-language { width: 62px; } .topbar .brand { gap: 6px; font-size: 16px; } }
 @media (max-width: 430px) { .header-language { width: 62px; } }
 @media (max-width: 360px) { .topbar .header-language { display: none; } }
-html[dir="rtl"] .player .p-menu { direction: rtl; }
 .credits a, .hero-login, #channel-uptime, #watch-uptime { direction: ltr; unicode-bidi: isolate; }
 .pin-body { direction: ltr; }
-html[dir="rtl"] .p-menu-title { text-align: start; }
+
+/* Semantic row rules: navigation reads from logical start; glyphs keep their shape.
+   DOM order remains Home, Categories, Search, Link for keyboard/screen readers. */
+.nav, .tabbar, .home-tabs, .block-head, .block-tools, .sheet-head,
+.account-row, .setting, .sheet-row, .offline-row, .suggest-row, .card-body,
+.tour-head, .tour-actions, .tour-tips li { direction: inherit; }
+.card-text, .offline-text, .suggest-name, .hero-id, .wi-text, .account-id {
+  text-align: start;
+}
+bdi, [dir="ltr"], [dir="auto"] { unicode-bidi: isolate; }
+html[dir="rtl"] .hero-id > div > p[dir="ltr"] { text-align: right; }
+.home-divider { border: 0; border-block-start: 1px solid var(--line); margin-block: 0 30px; }
+.home-divider[hidden] { display: none; }
+.tour-tips { text-align: start; }
+.tour-tips li > span { flex: 1; min-width: 0; }
+.tour-tips .ic { flex: none; }
+.shortcut { white-space: nowrap; }
+.setting .switch, .setting .size-ctl { flex-shrink: 0; }
+/* Toggle position follows the settings row; the familiar switch motion stays LTR. */
+.switch, .size-ctl { direction: ltr; }
+.account-id { min-width: min(150px, 100%); }
+html[dir="rtl"] .player .p-menu,
+html[dir="rtl"] .player .p-unmute { direction: rtl; text-align: start; }
+.p-chap-row { text-align: start; }
+/* Watch grid follows Arabic reading order. The timeline and controls remain LTR. */
+html[dir="rtl"] .watch-chat { border-left: 0; border-inline-start: 1px solid var(--line); }
+@media (max-width: 900px) {
+  html[dir="rtl"] .watch-chat { border-inline-start: 0; }
+}
+@media (orientation: landscape) and (max-height: 540px) {
+  html[dir="rtl"] .watch-chat { border-inline-start: 1px solid var(--line); }
+  html[dir="rtl"] .watch:not(.chat-hidden) .watch-head { right: 0; left: 40%; }
+}
+
+html[dir="rtl"] #watch-title { text-align: right; }
+#channel-viewers { direction: ltr; unicode-bidi: isolate; }
+
+/* Keep the complete English language option visible beside the native arrow. */
+@media (min-width: 361px) and (max-width: 430px) {
+  html[lang="en"] .header-language { width: 76px; }
+}

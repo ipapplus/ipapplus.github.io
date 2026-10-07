@@ -79,14 +79,9 @@
       <!-- ── Découvrir ─────────────────────────────────────────────── -->
       <section class="view" id="view-discover">
         <div id="announcement" hidden></div>
-        <section class="block" id="continue-block" hidden>
-          <div class="block-head"><h2><span data-icon="history" data-size="18"></span><span data-i18n="continue_watching"></span></h2></div>
-          <div class="rail" id="continue-rail"></div>
-        </section>
 
         <div class="segmented home-tabs" id="home-seg">
           <button type="button" data-home="followed" data-i18n="home_followed"></button>
-          <button type="button" data-home="top" data-i18n="top"></button>
           <button type="button" data-home="offline" data-i18n="offline_channels"></button>
         </div>
 
@@ -113,6 +108,7 @@
           <div id="followed-offline"></div>
         </section>
 
+        <hr class="home-divider" id="home-divider">
         <section class="block" id="top-block">
           <div class="block-head">
             <h2><span data-icon="flame" data-size="18"></span><span data-i18n="top"></span></h2>
@@ -122,6 +118,10 @@
             </div>
           </div>
           <div class="grid" id="top-grid"></div>
+        </section>
+        <section class="block" id="continue-block" hidden>
+          <div class="block-head"><h2><span data-icon="history" data-size="18"></span><span data-i18n="continue_watching"></span></h2></div>
+          <div class="rail" id="continue-rail"></div>
         </section>
       </section>
 

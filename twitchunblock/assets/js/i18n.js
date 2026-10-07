@@ -69,7 +69,8 @@ export function t(key, params = {}) {
   }
   let text = translations[current][key] ?? en[key] ?? key
   for (const [k, v] of Object.entries(params)) text = text.replaceAll(`{${k}}`, () => ['u','t','k','l'].includes(k) ? `\u2068${v}\u2069` : String(v))
-  return text
+  // Isolate fixed Latin product names and keyboard symbols in localized prose.
+  return text.replace(/\b(?:Twitch|GitHub|iPhone|OAuth|Space|VOD|MXFia19|ipapplus|[KFMTC])\b|←\/→|↑\/↓/g, token => `\u2066${token}\u2069`)
 }
 export function applyStatic(root = document) {
   for (const el of root.querySelectorAll('[data-i18n-content]')) el.setAttribute('content', t(el.dataset.i18nContent))

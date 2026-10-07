@@ -25,6 +25,7 @@ const session = {
 
 const state = {
   tab: 'discover',
+  homeTab: 'followed',    // Each page load starts with Following; selection lasts this session.
   topLang: 'local',       // 'local' (langue choisie) ou 'all'
   loaded: { followed: 0, top: 0 },
   channel: null,          // { login, info, videos }
@@ -407,15 +408,15 @@ function streamCard(s) {
       <div class="thumb">
         <img src="${esc(thumb(s.thumb, 440, 248))}" alt="" loading="lazy" decoding="async">
         <span class="pill live">${esc(t('live_now'))}</span>
-        <span class="pill viewers" data-viewers="${s.viewers}" aria-label="${esc(t('viewers_count', {n:s.viewers}))}">${icon('eye', 12)}${esc(formatViewers(s.viewers))}</span>
-        ${s.startedAt ? `<span class="pill uptime" data-started="${esc(s.startedAt)}">${esc(uptimeSince(s.startedAt))}</span>` : ''}
+        <span class="pill viewers" data-viewers="${s.viewers}" aria-label="${esc(t('viewers_count', {n:s.viewers}))}">${icon('eye', 12)}<bdi dir="ltr">${esc(formatViewers(s.viewers))}</bdi></span>
+        ${s.startedAt ? `<span class="pill uptime"><bdi dir="ltr" data-started="${esc(s.startedAt)}">${esc(uptimeSince(s.startedAt))}</bdi></span>` : ''}
       </div>
       <div class="card-body">
         ${s.avatar ? `<img class="avatar sm" src="${esc(s.avatar)}" alt="" loading="lazy">` : `<span class="avatar sm placeholder">${esc((s.name || '?')[0])}</span>`}
         <div class="card-text">
           <h3 dir="auto" title="${esc(s.title)}">${esc(s.title)}</h3>
-          <p class="name" dir="ltr">${esc(s.name)}</p>
-          ${s.game ? `<p class="meta">${esc(s.game)}</p>` : ''}
+          <p class="name"><bdi dir="ltr">${esc(s.name)}</bdi></p>
+          ${s.game ? `<p class="meta"><bdi dir="auto">${esc(s.game)}</bdi></p>` : ''}
         </div>
       </div>
     </article>`
@@ -434,13 +435,13 @@ function vodCard(v, streamer) {
       <div class="thumb">
         <img src="${esc(thumb(v.previewThumbnailURL, 320, 180))}" alt="" loading="lazy" decoding="async"
              onerror="this.src='https://vod-secure.twitch.tv/_404/404_processing_320x180.png'">
-        <span class="pill duration">${esc(formatDuration(v.lengthSeconds))}</span>
+        <span class="pill duration"><bdi dir="auto">${esc(formatDuration(v.lengthSeconds))}</bdi></span>
         ${ratio > 0.01 ? `<span class="progress"><span style="width:${(ratio * 100).toFixed(1)}%"></span></span>` : ''}
       </div>
       <div class="card-body">
         <div class="card-text">
-          <h3 title="${esc(v.title)}">${esc(v.title)}</h3>
-          <p class="meta">${esc(dateStr)}</p>
+          <h3 dir="auto" title="${esc(v.title)}">${esc(v.title)}</h3>
+          <p class="meta"><bdi dir="auto">${esc(dateStr)}</bdi></p>
         </div>
       </div>
     </article>`
@@ -469,13 +470,13 @@ function renderContinue() {
       <article class="card rail-card" data-vod="${esc(h.term)}" tabindex="0">
         <div class="thumb">
           <img src="${esc(h.thumb || 'https://vod-secure.twitch.tv/_404/404_processing_320x180.png')}" alt="" loading="lazy">
-          ${p > 5 ? `<span class="pill duration">${esc(formatClock(p))}</span>` : ''}
+          ${p > 5 ? `<span class="pill duration"><bdi dir="ltr">${esc(formatClock(p))}</bdi></span>` : ''}
           ${ratio > 0.01 ? `<span class="progress"><span style="width:${(ratio * 100).toFixed(1)}%"></span></span>` : ''}
           <button class="del" type="button" data-del="${esc(h.term)}" aria-label="${esc(t('close'))}">${icon('x', 14)}</button>
         </div>
         <div class="card-body"><div class="card-text">
-          <h3 title="${esc(h.display)}">${esc(h.display)}</h3>
-          <p class="name" dir="ltr">${esc(h.streamer || 'VOD')}</p>
+          <h3 dir="auto" title="${esc(h.display)}">${esc(h.display)}</h3>
+          <p class="name"><bdi dir="ltr">${esc(h.streamer || 'VOD')}</bdi></p>
         </div></div>
       </article>`
   }).join('')
@@ -596,24 +597,25 @@ function renderOffline(list, anyLive = false) {
     <div class="offline-list">${list.map((c) => `
       <button type="button" class="offline-row" data-channel="${esc(c.login)}">
         ${c.avatar ? `<img class="avatar sm" src="${esc(c.avatar)}" alt="" loading="lazy">` : `<span class="avatar sm placeholder">${esc((c.name || '?')[0])}</span>`}
-        <span class="offline-text"><span>${esc(c.name)}</span>${c.lastEnd ? `<small class="muted">${esc(offlineFor(null, 0, c.lastEnd))} · ${esc(offlineDate(null, 0, c.lastEnd))}</small>` : ''}</span>
+        <span class="offline-text"><span><bdi dir="ltr">${esc(c.name)}</bdi></span>${c.lastEnd ? `<small class="muted">${esc(offlineFor(null, 0, c.lastEnd))} · ${esc(offlineDate(null, 0, c.lastEnd))}</small>` : ''}</span>
       </button>`).join('')}</div>`
     : emptyState(t(anyLive ? 'offline_all_live' : 'offline_none'), anyLive ? 'radio' : 'heart')
 }
 
-// ── Sous-onglets de l'accueil : Suivies | Top | Hors ligne ───────────────
-const HOME_TABS = ['followed', 'top', 'offline']
+// ── Sous-onglets de l'accueil : Suivies (avec Top) | Hors ligne ───────────────
+const HOME_TABS = ['followed', 'offline']
 function applyHomeTab() {
-  const tab = HOME_TABS.includes(store.prefs.homeTab) ? store.prefs.homeTab : 'followed'
+  const tab = HOME_TABS.includes(state.homeTab) ? state.homeTab : 'followed'
   for (const b of $$('#home-seg [data-home]')) b.classList.toggle('active', b.dataset.home === tab)
   $('#followed-block').hidden = tab !== 'followed'
-  $('#top-block').hidden = tab !== 'top'
+  $('#top-block').hidden = tab !== 'followed'
+  $('#home-divider').hidden = tab !== 'followed'
   $('#offline-block').hidden = tab !== 'offline'
 }
 
 function setHomeTab(tab) {
-  store.prefs.homeTab = tab
-  store.savePrefs()
+  if (!HOME_TABS.includes(tab)) return
+  state.homeTab = tab
   applyHomeTab()
 }
 
@@ -813,6 +815,11 @@ const TOUR = [
   { sel: '.topbar-actions', tab: 'categories', icon: 'settings', title: 'tour_settings_title', text: 'tour_settings_text' },
   { card: 'player', tab: 'discover' },
 ]
+// Escape first, then isolate shortcut/platform tokens without changing their characters.
+function helpText(text) {
+  return esc(text).replace(/Space|iPhone|←\/→|↑\/↓|\b[KFMTC]\b/g, token => `<bdi dir="ltr" class="shortcut">${token}</bdi>`)
+}
+
 const TOUR_TIPS = [['play', 'tour_tip_keys'], ['clock', 'tour_tip_seek'], ['chevronDown', 'tour_tip_mini'], ['sparkles', 'tour_tip_app']]
 const tour = { step: -1, el: null }
 
@@ -876,7 +883,7 @@ function renderTour() {
       <p>${esc(t('tour_welcome_text'))}</p>
       <div class="segmented full tour-langs">
         <button type="button" data-tour-lang="auto" class="${store.prefs.lang ? '' : 'active'}">${esc(t('lang_auto'))}</button>
-        ${LANGS.map((l) => `<button type="button" data-tour-lang="${l.id}" class="${store.prefs.lang === l.id ? 'active' : ''}">${esc(l.label)}</button>`).join('')}
+        ${LANGS.map((l) => `<button type="button" data-tour-lang="${l.id}" class="${store.prefs.lang === l.id ? 'active' : ''}"><bdi dir="${l.id === 'ar' ? 'rtl' : 'ltr'}" lang="${l.id}">${esc(l.label)}</bdi></button>`).join('')}
       </div>
       <button class="btn primary full" type="button" data-tour="next">${esc(t('tour_start'))}</button>
       <button class="link-btn" type="button" data-tour="skip">${esc(t('tour_skip'))}</button>`
@@ -884,7 +891,7 @@ function renderTour() {
     pop.innerHTML = `
       <div class="tour-badge">${icon('play', 34)}</div>
       <h2>${esc(t('tour_player_title'))}</h2>
-      <ul class="tour-tips">${TOUR_TIPS.map(([ic, k]) => `<li>${icon(ic, 18)}<span>${esc(t(k))}</span></li>`).join('')}</ul>
+      <ul class="tour-tips">${TOUR_TIPS.map(([ic, k]) => `<li>${icon(ic, 18)}<span>${helpText(t(k))}</span></li>`).join('')}</ul>
       <button class="btn primary full" type="button" data-tour="next">${esc(t('tour_done'))}</button>`
   } else {
     pop.innerHTML = `
@@ -1004,7 +1011,7 @@ function renderRecentChannels() {
   $('#recent-list').innerHTML = chans.map((h) => `
     <span class="chip" data-channel="${esc(h.term)}" tabindex="0">
       ${h.avatar ? `<img src="${esc(h.avatar)}" alt="">` : icon('user', 14)}
-      <span>${esc(h.display)}</span>
+      <span><bdi dir="ltr">${esc(h.display)}</bdi></span>
       <button type="button" data-del="${esc(h.term)}" aria-label="${esc(t('close'))}">${icon('x', 12)}</button>
     </span>`).join('')
 }
@@ -1039,7 +1046,7 @@ function renderSuggest() {
   box.innerHTML = suggestions.map((s, i) => `
     <button type="button" class="suggest-row${i === suggestIndex ? ' active' : ''}" data-pick="${esc(s.login)}">
       ${s.profileImageURL ? `<img class="avatar xs" src="${esc(s.profileImageURL)}" alt="">` : `<span class="avatar xs placeholder">${icon('user', 14)}</span>`}
-      <span class="suggest-name">${esc(s.displayName || s.login)}</span>
+      <span class="suggest-name"><bdi dir="ltr">${esc(s.displayName || s.login)}</bdi></span>
       ${s.stream ? `<span class="pill live sm">${esc(formatViewers(s.stream.viewersCount))}</span>` : ''}
     </button>`).join('')
   box.hidden = false
@@ -1207,7 +1214,7 @@ function renderChannel(keyword = '') {
           <span class="muted">${icon('clock', 14)} <span id="channel-uptime">${esc(uptimeSince(live.createdAt))}</span></span>
         </div>
         <p dir="auto" class="hero-title">${esc(live.title)}</p>
-        ${live.game ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(live.game.displayName)}</p>` : ''}
+        ${live.game ? `<p class="hero-game">${icon('gamepad', 14)} <bdi dir="auto">${esc(live.game.displayName)}</bdi></p>` : ''}
         <button class="btn primary" type="button" data-live="${esc(login)}">${icon('play', 16)}<span>${esc(t('watch_live'))}</span></button>
       </div>
       <img class="hero-thumb" src="${esc(live.previewImageURL)}" alt="" data-live="${esc(login)}">`
@@ -1233,7 +1240,7 @@ function renderChannel(keyword = '') {
     <section class="channel-hero${live ? ' is-live' : ''}">
       <div class="hero-id">
         ${avatar ? `<img class="avatar lg${live ? ' ring' : ''}" src="${esc(avatar)}" alt="">` : ''}
-        <div><h2 dir="auto">${esc(name)}</h2><p class="muted" dir="ltr">@${esc(login)}</p></div>
+        <div><h2><bdi dir="ltr">${esc(name)}</bdi></h2><p class="muted" dir="ltr">@${esc(login)}</p></div>
         <button class="btn ghost sm follow-local${isLocallyFollowed(login) ? ' on' : ''}" type="button" data-action="follow-local" data-follow="${esc(login)}" title="${esc(t('follow_local_sub'))}">${followLocalInner(isLocallyFollowed(login))}</button>
       </div>
       ${status}
@@ -1572,17 +1579,17 @@ function renderLiveInfo(info, links) {
   const title = s?.title || links?.title || ''
   const game = s?.game?.displayName || links?.game || ''
   if (state.watch && s?.createdAt) state.watch.startedAt = s.createdAt
-  $('#watch-title').textContent = name
+  $('#watch-title').innerHTML = `<bdi dir="ltr">${esc(name)}</bdi>`
   setWatchChannel(state.watch?.login)
-  $('#mini-title').textContent = `${name}${title ? ` · ${title}` : ''}`
+  $('#mini-title').innerHTML = `<bdi dir="ltr">${esc(name)}</bdi>${title ? ` · <bdi dir="auto">${esc(title)}</bdi>` : ''}`
   setAvatar(avatar)
   $('#watch-sub').innerHTML = `
     <span class="pill live sm">${esc(t('live_now'))}</span>
-    ${s ? `<span data-viewers="${s.viewersCount}" aria-label="${esc(t('viewers_count',{n:s.viewersCount}))}">${icon('eye', 13)} ${esc(formatViewers(s.viewersCount))}</span><span>${icon('clock', 13)} <span id="watch-uptime">${esc(uptimeSince(s.createdAt))}</span></span>` : ''}`
+    ${s ? `<span data-viewers="${s.viewersCount}" aria-label="${esc(t('viewers_count',{n:s.viewersCount}))}">${icon('eye', 13)} <bdi dir="ltr">${esc(formatViewers(s.viewersCount))}</bdi></span><span>${icon('clock', 13)} <span id="watch-uptime">${esc(uptimeSince(s.createdAt))}</span></span>` : ''}`
   $('#watch-info').innerHTML = `
     <div class="wi-text">
       <h1 dir="auto" title="${esc(title)}">${esc(title)}</h1>
-      ${game ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(game)}</p>` : ''}
+      ${game ? `<p class="hero-game">${icon('gamepad', 14)} <bdi dir="auto">${esc(game)}</bdi></p>` : ''}
     </div>
     <div class="wi-actions">
       <button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>
@@ -1611,7 +1618,7 @@ async function openClip(slug) {
     chat.openVod({ videoId: clip.video.id, channelId: clip.broadcaster?.id ?? null, channelLogin: token.login, startAt: token.offset })
   }
   const name = clip.broadcaster?.displayName || token.login || ''
-  $('#watch-title').textContent = name
+  $('#watch-title').innerHTML = `<bdi dir="ltr">${esc(name)}</bdi>`
   setWatchChannel(clip.broadcaster?.login || token.login)
   $('#mini-title').textContent = clip.title || t('clip')
   setAvatar(clip.broadcaster?.profileImageURL)
@@ -1619,7 +1626,7 @@ async function openClip(slug) {
   $('#watch-info').innerHTML = `
     <div class="wi-text">
       <h1 dir="auto" title="${esc(clip.title ?? '')}">${esc(clip.title ?? '')}</h1>
-      ${clip.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(clip.game.displayName)}</p>` : ''}
+      ${clip.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} <bdi dir="auto">${esc(clip.game.displayName)}</bdi></p>` : ''}
     </div>
     <div class="wi-actions">
       ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>` : ''}
@@ -1634,8 +1641,8 @@ function clipCard(c) {
     <article class="card vod-card" data-clip="${esc(c.slug)}" tabindex="0">
       <div class="thumb">
         <img src="${esc(c.thumbnailURL)}" alt="" loading="lazy" decoding="async">
-        <span class="pill duration">${esc(formatClock(c.durationSeconds ?? 0))}</span>
-        <span class="pill views">${icon('eye', 12)} ${esc(formatViewers(c.viewCount ?? 0))}</span>
+        <span class="pill duration"><bdi dir="ltr">${esc(formatClock(c.durationSeconds ?? 0))}</bdi></span>
+        <span class="pill views">${icon('eye', 12)} <bdi dir="ltr">${esc(formatViewers(c.viewCount ?? 0))}</bdi></span>
       </div>
       <div class="card-body">
         <div class="card-text">
@@ -1751,7 +1758,7 @@ async function openVod(id, preset, { keepPlaylist = false } = {}) {
   store.addHistory(vodId, 'vod', title, { thumb: thumbUrl, streamer })
   pushSync()
 
-  $('#watch-title').textContent = streamer || title
+  $('#watch-title').innerHTML = `<bdi dir="${streamer ? 'ltr' : 'auto'}">${esc(streamer || title)}</bdi>`
   setWatchChannel(meta?.owner?.login)
   $('#mini-title').textContent = title
   setAvatar(meta?.owner?.profileImageURL)
@@ -1760,7 +1767,7 @@ async function openVod(id, preset, { keepPlaylist = false } = {}) {
   $('#watch-info').innerHTML = `
     <div class="wi-text">
       <h1 dir="auto" title="${esc(title)}">${esc(title)}</h1>
-      ${meta?.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} ${esc(meta.game.displayName)}</p>` : ''}
+      ${meta?.game?.displayName ? `<p class="hero-game">${icon('gamepad', 14)} <bdi dir="auto">${esc(meta.game.displayName)}</bdi></p>` : ''}
     </div>
     <div class="wi-actions">
       ${token.login ? `<button class="btn ghost sm" type="button" data-action="see-vods">${icon('film', 16)}<span data-i18n="see_vods">${esc(t('see_vods'))}</span></button>` : ''}
@@ -1875,9 +1882,9 @@ function openInSheet() {
   if (!url) return
   const name = (state.watch?.login || state.watch?.id || 'Twitch').replace(/[^a-zA-Z0-9]/g, '_')
   const apps = isMobile ? `
-    <a class="sheet-row" href="vlc://${esc(url)}"><span class="app-dot vlc"></span><span>VLC</span>${icon('chevronRight', 16)}</a>
-    <a class="sheet-row" href="outplayer://${esc(url)}"><span class="app-dot outplayer"></span><span>Outplayer</span>${icon('chevronRight', 16)}</a>
-    <a class="sheet-row" href="infuse://x-callback-url/play?url=${esc(encodeURIComponent(url.replace('/api/proxy', `/api/proxy/${name}.m3u8`)))}"><span class="app-dot infuse"></span><span>Infuse</span>${icon('chevronRight', 16)}</a>` : ''
+    <a class="sheet-row" href="vlc://${esc(url)}"><span class="app-dot vlc"></span><span><bdi dir="ltr">VLC</bdi></span>${icon('chevronRight', 16)}</a>
+    <a class="sheet-row" href="outplayer://${esc(url)}"><span class="app-dot outplayer"></span><span><bdi dir="ltr">Outplayer</bdi></span>${icon('chevronRight', 16)}</a>
+    <a class="sheet-row" href="infuse://x-callback-url/play?url=${esc(encodeURIComponent(url.replace('/api/proxy', `/api/proxy/${name}.m3u8`)))}"><span class="app-dot infuse"></span><span><bdi dir="ltr">Infuse</bdi></span>${icon('chevronRight', 16)}</a>` : ''
   openSheet(`
     <div class="sheet-head"><h2>${esc(t('open_in'))}</h2><button class="icon-btn" type="button" data-sheet-close data-i18n-title="close">${icon('x', 20)}</button></div>
     <p class="muted sheet-sub">${esc(t('quality'))} : ${esc(qualityLabel(player.quality ?? ''))}</p>
@@ -1920,14 +1927,14 @@ function openSettings() {
       <h3>${esc(t('language'))}</h3>
       <div class="segmented full" id="set-lang">
 
-        ${LANGS.map((l) => `<button type="button" data-l="${l.id}" class="${lang() === l.id ? 'active' : ''}">${esc(l.label)}</button>`).join('')}
+        ${LANGS.map((l) => `<button type="button" data-l="${l.id}" class="${lang() === l.id ? 'active' : ''}"><bdi dir="${l.id === 'ar' ? 'rtl' : 'ltr'}" lang="${l.id}">${esc(l.label)}</bdi></button>`).join('')}
       </div>
       <p class="muted small lang-hint">${esc(t('lang_saved'))}</p>
       <label class="setting setting-col">
         <span class="setting-text"><span>${esc(t('top_lang'))}</span><small>${esc(t('top_lang_sub', { l: topLangName(deviceTopLang()) }))}</small></span>
         <select class="text-input" id="set-toplang">
           <option value="auto" ${p.topLang ? '' : 'selected'}>${esc(t('lang_auto'))} · ${esc(topLangName(deviceTopLang()))}</option>
-          ${TOP_LANGS.map((c) => [c, topLangName(c)]).sort((a, b) => a[1].localeCompare(b[1], lang())).map(([c, n]) => `<option value="${c}" ${p.topLang === c ? 'selected' : ''}>${esc(n)}</option>`).join('')}
+          ${TOP_LANGS.map((c) => [c, topLangName(c)]).sort((a, b) => a[1].localeCompare(b[1], lang())).map(([c, n]) => `<option dir="auto" value="${c}" ${p.topLang === c ? 'selected' : ''}>${esc(n)}</option>`).join('')}
         </select>
       </label>
       ${toggle('set-homelist', t('home_list'), p.homeList, t('home_list_sub'))}
@@ -2256,7 +2263,7 @@ function renderSettingsAccount() {
     <h3>${esc(t('account'))}</h3>
     <div class="account-row">
       ${session.avatar ? `<img class="avatar" src="${esc(session.avatar)}" alt="">` : `<span class="avatar placeholder">${esc(session.login[0].toUpperCase())}</span>`}
-      <div class="account-id"><strong>${esc(session.login)}</strong>
+      <div class="account-id"><strong><bdi dir="ltr">${esc(session.login)}</bdi></strong>
         <small class="muted">${esc(session.canChat ? t('connected_as', { u: session.login }) : t('chat_rescope'))}</small></div>
       ${session.canChat ? '' : `<button class="btn sm primary" type="button" data-action="login-again">${esc(t('login'))}</button>`}
       <button class="btn sm danger" type="button" data-action="logout">${icon('logout', 16)}<span>${esc(t('logout'))}</span></button>

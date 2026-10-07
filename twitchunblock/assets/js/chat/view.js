@@ -263,7 +263,7 @@ export class ChatView {
     box.innerHTML = `<div class="pin-panel">
       <div class="pin-row">
         <span class="pin-ic">${icon('pin', 14)}</span>
-        <div class="pin-body">${badges}<span dir="ltr" class="pin-sender" style="color:${esc(pin.color)}">${esc(pin.sender)}</span><span class="pin-colon">:</span> ${this.renderTokens(pin.tokens, this.o.session().login)}</div>
+        <div class="pin-body">${badges}<span dir="ltr" class="pin-sender" style="color:${esc(pin.color)}">${esc(pin.sender)}</span><span class="pin-colon">:</span> <bdi dir="auto" class="pin-message">${this.renderTokens(pin.tokens, this.o.session().login)}</bdi></div>
         <button class="icon-btn xs pin-toggle" type="button" data-pin-toggle data-i18n-aria="pinned" aria-expanded="false" aria-label="${esc(t('pinned'))}" hidden>${icon('chevronDown', 16)}</button>
         <button class="icon-btn xs" type="button" data-pin-close data-i18n-aria="close" aria-label="${esc(t('close'))}">${icon('x', 14)}</button>
       </div>
@@ -627,7 +627,7 @@ export class ChatView {
 
     let html = ''
     if (m.replyTo) {
-      html += `<div class="msg-reply">${icon('reply', 12)}<span>${esc(t('reply_to', { u: m.replyTo }))}${m.replyBody ? ` : ${esc(m.replyBody)}` : ''}</span></div>`
+      html += `<div class="msg-reply">${icon('reply', 12)}<span dir="auto">${esc(t('reply_to', { u: m.replyTo }))}${m.replyBody ? ` : <bdi dir="auto">${esc(m.replyBody)}</bdi>` : ''}</span></div>`
     }
     const time = this.mode === 'vod' && m.offset !== null
       ? formatClock(m.offset)
