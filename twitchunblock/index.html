@@ -3,11 +3,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title data-i18n="webTitle">TwitchUnblock — Web App</title>
-  <meta data-i18n-content="webDescription" name="description" content="TwitchUnblock Web App: a bilingual foundation for future browsing.">
+  <meta data-i18n-content="webDescription" name="description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
   <link rel="canonical" href="https://ipapplus.github.io/twitchunblock/">
   <meta property="og:type" content="website">
   <meta data-i18n-content="webTitle" property="og:title" content="TwitchUnblock — Web App">
-  <meta data-i18n-content="webDescription" property="og:description" content="TwitchUnblock Web App: a bilingual foundation for future browsing.">
+  <meta data-i18n-content="webDescription" property="og:description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
   <meta property="og:url" content="https://ipapplus.github.io/twitchunblock/">
   <meta property="og:image" content="https://ipapplus.github.io/twitchunblock/assets/social-preview.png">
   <meta property="og:image:width" content="1200">
@@ -15,7 +15,7 @@
   <meta data-i18n-content="webImage" property="og:image:alt" content="TwitchUnblock, maintained fork by Ahmed AlGhrbi. Past Streams, Recovery, Arabic and RTL.">
   <meta name="twitter:card" content="summary_large_image">
   <meta data-i18n-content="webTitle" name="twitter:title" content="TwitchUnblock — Web App">
-  <meta data-i18n-content="webDescription" name="twitter:description" content="TwitchUnblock Web App: a bilingual foundation for future browsing.">
+  <meta data-i18n-content="webDescription" name="twitter:description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
   <meta name="twitter:image" content="https://ipapplus.github.io/twitchunblock/assets/social-preview.png">
   <meta data-i18n-content="webImage" name="twitter:image:alt" content="TwitchUnblock project page by ipapplus">
   <meta name="theme-color" content="#0a0d14">
@@ -25,13 +25,22 @@
   <link rel="preload" href="/26.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/auth.js" defer></script>
+  <script src="assets/js/twitch-api.js" defer></script>
+  <script src="assets/js/history.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/search.js" defer></script>
+  <script src="assets/js/channel.js" defer></script>
   <script src="assets/js/shell.js" defer></script>
+
 </head><body><a class="skip-link" href="#main" data-i18n="skip">Skip to content</a><div class="page">
-<header class="site-header"><a class="product-link" href="/twitchunblock/" dir="ltr">TwitchUnblock</a><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div></header>
+<header class="site-header"><a class="product-link" href="/twitchunblock/" dir="ltr">TwitchUnblock</a><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div><div class="auth-controls"><button class="button primary" id="sign-in" type="button" data-i18n="auth.login" aria-describedby="auth-state" disabled>Sign in with Twitch</button><div id="user-session" class="user-session"></div></div><p id="auth-state" class="auth-state" role="status"></p></header>
 <nav class="app-nav" data-i18n-aria-label="navigation" aria-label="Main navigation"><a href="#home" data-section="home" data-i18n="home">Home</a><a href="#search" data-section="search" data-i18n="search">Search</a><a href="#history" data-section="history" data-i18n="history">History</a><a href="#settings" data-section="settings" data-i18n="settings">Settings</a><a href="/twitchunblock/about/" data-i18n="about">About</a></nav>
-<main id="main" tabindex="-1"><section class="hero card"><div class="project-heading"><img class="app-icon" src="assets/app-icon.png" alt="" width="64" height="64"><div><p class="eyebrow" data-i18n="phase">Web app foundation</p><h1 dir="ltr">TwitchUnblock</h1><p class="maintainer" data-i18n="webSubtitle">Your TwitchUnblock web app</p></div></div><p class="intro" data-i18n="foundation">A familiar home for what comes next.</p></section>
-<section class="card app-panel" data-panel="home"><h2 tabindex="-1" data-i18n="home">Home</h2><p data-i18n="homeIntro"></p><div class="empty-state"><h3 data-i18n="emptyHome"></h3><p data-i18n="emptyHomeText"></p></div></section>
-<section class="card app-panel" data-panel="search" hidden><h2 tabindex="-1" data-i18n="search">Search</h2><p data-i18n="searchInfo"></p><label for="channel" data-i18n="searchLabel"></label><input id="channel" type="search" dir="ltr" autocomplete="off" spellcheck="false" data-i18n-placeholder="searchPlaceholder" placeholder="Enter a username" aria-describedby="search-state"><div class="empty-state" id="search-state"><h3 data-i18n="emptySearch"></h3></div></section>
-<section class="card app-panel" data-panel="history" hidden><h2 tabindex="-1" data-i18n="history">History</h2><div class="empty-state"><h3 data-i18n="emptyHistory"></h3><p data-i18n="historyInfo"></p></div></section>
-<section class="card app-panel" data-panel="settings" hidden><h2 tabindex="-1" data-i18n="settings">Settings</h2><p data-i18n="settingsInfo"></p><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div></section></main>
+<main id="main" tabindex="-1"><section class="hero card"><div class="project-heading"><img class="app-icon" src="assets/app-icon.png" alt="" width="64" height="64"><div><p class="eyebrow" data-i18n="phase">Twitch discovery</p><h1 dir="ltr">TwitchUnblock</h1><p class="maintainer" data-i18n="webSubtitle">Your TwitchUnblock web app</p></div></div><p class="intro" data-i18n="foundation">Discover live channels, recent broadcasts, and clips.</p></section>
+<section class="card app-panel" data-panel="home"><div class="section-heading"><h2 tabindex="-1" data-i18n="home">Home</h2><button class="button" id="refresh-home" type="button" data-i18n="data.refresh">Refresh</button></div><p data-i18n="home.liveIntro">Live channels on Twitch</p><p id="home-state" class="empty-state" role="status"></p><div id="home-results" class="channel-grid" aria-busy="false"></div></section>
+<section class="card app-panel" data-panel="search" hidden><h2 tabindex="-1" data-i18n="search">Search</h2><form id="search-form"><label for="channel" data-i18n="searchLabel">Channel or username</label><div class="search-controls"><input id="channel" type="search" dir="ltr" autocomplete="off" spellcheck="false" maxlength="100" data-i18n-placeholder="searchPlaceholder" placeholder="Enter a username" aria-describedby="search-state"><button class="button primary" type="submit" data-i18n="search">Search</button></div><label class="checkbox-label"><input type="checkbox" id="live-only"><span data-i18n="search.liveOnly">Live channels only</span></label></form><p class="empty-state" id="search-state" role="status"></p><div id="search-results" class="channel-grid" aria-busy="false"></div></section>
+<section class="card app-panel" data-panel="channel" hidden><div class="section-heading"><h2 tabindex="-1" id="channel-heading">Channel</h2><button class="button" id="retry-channel" type="button" data-i18n="data.refresh">Refresh</button></div><a class="text-link" href="#search" data-i18n="channel.back">Back to search</a><p id="channel-state" class="empty-state" role="status"></p><div id="channel-profile" aria-busy="false"></div><section class="channel-media" hidden><h3 data-i18n="media.videos">Recent VODs</h3><div id="channel-videos" class="media-grid"></div></section><section class="channel-media" hidden><h3 data-i18n="media.clips">Clips</h3><div id="channel-clips" class="media-grid"></div></section></section>
+<section class="card app-panel" data-panel="history" hidden><h2 tabindex="-1" data-i18n="history">History</h2><p data-i18n="history.intro">Recently opened channels, saved on this device.</p><p class="empty-state" id="history-state" role="status"></p><div id="history-results" class="channel-grid"></div></section>
+<section class="card app-panel" data-panel="settings" hidden><h2 tabindex="-1" data-i18n="settings">Settings</h2><p data-i18n="settingsInfo"></p><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div><div class="actions"><button class="button" type="button" id="clear-history" data-i18n="history.clear">Clear history</button><button class="button" type="button" id="settings-logout" data-i18n="auth.logout" hidden>Log out</button></div><p id="settings-state" class="small-note" role="status"></p></section></main>
 <footer class="site-footer"><span dir="ltr">TwitchUnblock · ipapplus</span><a href="/twitchunblock/about/" data-i18n="about">About</a></footer></div></body></html>

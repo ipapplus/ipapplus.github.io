@@ -106,3 +106,23 @@ p a,#release-tag{display:inline-flex;align-items:center;min-height:44px}
 html[dir="rtl"] .back .icon{transform:scaleX(-1)}
 html[dir="rtl"] .eyebrow{letter-spacing:normal}
 html[dir="rtl"] h1,html[dir="rtl"] h2{letter-spacing:normal}
+/* Twitch discovery, channel metadata and session controls. */
+.auth-controls,.user-session{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0}
+.auth-state{flex-basis:100%;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.channel-avatar{width:48px;height:48px;object-fit:cover;border:1px solid var(--border);border-radius:12px;flex-shrink:0}
+.user-session .channel-avatar{width:32px;height:32px}.user-session bdi{overflow-wrap:anywhere}
+.channel-grid,.media-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:18px}
+.channel-card,.media-card{min-width:0;border:1px solid var(--border);border-radius:12px;background:var(--bg);padding:14px;overflow-wrap:anywhere}
+.channel-link{display:flex;align-items:center;gap:12px;min-height:48px;text-decoration:none;color:var(--text);margin-bottom:12px}
+.channel-link>div{min-width:0}.channel-link bdi{font-size:12px;color:var(--secondary)}.channel-link h3 bdi{font-size:15px;color:var(--text)}
+.channel-card .small-note{margin-top:8px}.stream-title{margin-top:10px;overflow-wrap:anywhere}
+.live-pill{color:var(--accent);border-color:var(--accent-border);background:var(--accent-soft)}
+.search-controls{display:flex;gap:8px;align-items:center}.search-controls input{min-width:0;flex:1}
+.app-panel .checkbox-label{display:flex;gap:8px;align-items:center;min-height:44px;margin:12px 0;cursor:pointer}
+.app-panel .checkbox-label input{width:20px;min-height:20px;height:20px;flex-shrink:0;accent-color:var(--accent)}
+.channel-description{margin-top:16px;overflow-wrap:anywhere}#channel-profile .button{margin-top:16px}#channel-profile .pill{margin-top:16px}
+.channel-media{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.media-link{display:flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+button:disabled{opacity:.6;cursor:default}button.button{font-family:var(--repo-font)}
+@media(min-width:600px){.channel-grid,.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:850px){.channel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

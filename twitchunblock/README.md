@@ -1,13 +1,49 @@
-# TwitchUnblock — Phase 1
+# TwitchUnblock — Twitch discovery
 
-- https://ipapplus.github.io/twitchunblock/ is the Web App foundation.
+- https://ipapplus.github.io/twitchunblock/ is the Twitch discovery Web App.
 - https://ipapplus.github.io/twitchunblock/about/ preserves the native project landing page.
 
 Plain HTML/CSS/JavaScript; no build step or framework. Home, Search, History and
-Settings use URL fragments and support direct opening and browser back/forward.
-About is a normal document navigation. Search is an input placeholder only;
-there is no Twitch API, player, chat, OAuth, or Recovery backend in the web app.
+Settings and channel pages use URL fragments and support direct opening and browser back/forward.
+About is a normal document navigation. Phase 2 adds Helix discovery, browser OAuth,
+local history and functional settings. There is no player, chat, or Recovery backend.
 The About feature descriptions refer to the existing native application.
+
+## Phase 2 modules and setup
+
+Read [OAUTH.md](OAUTH.md) for the exact Client ID location and redirect URI.
+No Client ID was found, so the public configuration remains blank and sign-in
+stays disabled. Successful live data loading requires configuring the owner's
+app and signing in. No borrowed app, bundled access token, or anonymous API
+workaround is used.
+
+- `config.js`: public Client ID, production callback, ten-second timeout.
+- `auth.js`: OAuth state/callback, sessionStorage token, validation and logout.
+- `twitch-api.js`: documented Helix requests, response validation, safe public
+  user/stream/channel metadata, search, archive videos and clips.
+- `search.js`: submit/filter/loading/results/error states and request cancellation.
+- `channel.js`: channel profiles, live/offline metadata, VOD/clip link collections.
+- `history.js`: the latest 50 unique opened channels with avatar/name/timestamp
+  in localStorage (`twitchunblock.history`); clear action and cross-tab updates.
+- `ui.js`: DOM/text rendering, validated image/link output, localized numbers/dates.
+- `shell.js`: navigation, live Home, session header, history and settings controls.
+
+Search combines documented Search Channels with an exact-login lookup to find
+older offline accounts excluded from Twitch's six-month search index. Stream
+queries enrich results with current title/category/viewers/uptime. Home shows
+12 top live channels. Channel routes (`#channel/login`) fetch users, streams and
+channel details; independent archive-video/clip queries preserve profile content
+if one collection fails. VODs/clips open on Twitch; no playback code is added.
+
+Run mocked Phase 2 integration tests:
+
+```sh
+PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node twitchunblock/tests/phase2.cjs
+```
+
+`ENGINE=chromium` / `ENGINE=webkit`, `SITE_URL`, and `SCREENSHOT_DIR` are optional.
+These tests explicitly intercept Twitch endpoints; successful real Twitch API and
+OAuth consent testing remains dependent on the owner's application configuration.
 
 ## Shared design and localization
 
@@ -95,3 +131,23 @@ RTL overflow checks and reduced motion. Screenshots were reviewed at 390px.
 Local root resource byte comparisons and root-worker isolation checks passed.
 The live GitHub API returned `nightly-18`; its IPA asset and View Releases URL
 both returned HTTP 200. Production deployment is verified after pushing.
+
+### Phase 2 validation record — 2026-10-07
+
+Chromium and WebKit mocked integration tests passed at 320, 375, 390, 430 and
+1440px in English and Arabic. Coverage includes live Home, channel search and
+live-only filtering, empty/no-result searches, exact offline lookup, channel
+profiles, metadata, VOD/clip links, partial collection failures, history/reload/
+clear/storage failure, language persistence, keyboard focus, touch targets, RTL,
+font loading, overflow, reduced motion, login/logout, OAuth URL and single-use
+state/callback checks, expiry, API timeout/rate-limit/malformed response and 401.
+Malicious-looking API text remained literal text. 390px screenshots were reviewed.
+
+The original About/release/IPA/fallback tests and root resource/worker regression
+suite passed in both browsers. About documents/assets and protected root files
+remain unchanged. The real public homepage returned HTTP 200 before deployment;
+a real unauthenticated Helix search returned HTTP 401 (“OAuth token is missing”).
+Successful real Twitch search and OAuth consent were **not** tested: the owner's
+Client ID is still missing. Mocked results are never used by the deployed app.
+Production page/configuration and mocked browser behavior are verified after push.
+Physical iPhone Safari and spoken VoiceOver testing remain device QA.

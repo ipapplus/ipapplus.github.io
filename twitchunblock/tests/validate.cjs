@@ -164,7 +164,7 @@ async function bilingual(browser, engine) {
   assert.equal(await page.locator('html').getAttribute('dir'), language === 'ar' ? 'rtl' : 'ltr');
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert(await page.evaluate(() => [...document.fonts].some(f => f.family.replace(/"/g,'') === 'Repo Local' && f.status === 'loaded')));
-  assert.deepEqual(await page.evaluate(() => [...document.querySelectorAll('a,button,input')].filter(e => e.getBoundingClientRect().width && e.getBoundingClientRect().height < 43.9).map(e=>e.textContent)), []);
+  assert.deepEqual(await page.evaluate(() => [...document.querySelectorAll('a,button,input')].filter(e => e.getBoundingClientRect().width && (e.type === 'checkbox' ? e.closest('label').getBoundingClientRect().height : e.getBoundingClientRect().height) < 43.9).map(e=>e.textContent)), []);
   await page.keyboard.press('Tab');
   assert.equal(await page.evaluate(() => document.activeElement.className), 'skip-link');
   assert.equal(await page.evaluate(() => getComputedStyle(document.activeElement).outlineWidth), '2px');
