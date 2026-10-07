@@ -2,6 +2,10 @@
 'use strict';
 const translations = {
   "en": {
+    "auth.activate": "Open Twitch to authorize",
+    "auth.waiting": "Authorize TwitchUnblock in Twitch. Keep this page open while signing in.",
+    "auth.cancel": "Cancel sign-in",
+    "auth.loginExpired": "Sign-in timed out. Please try again.",
     "about.skip.to.content": "Skip to content",
     "about.an.ipapplus.project": "An ipapplus project",
     "about.native.ios.open.source": "Native iOS · Open source",
@@ -107,6 +111,10 @@ const translations = {
     "justNow": "Just now"
   },
   "ar": {
+    "auth.activate": "فتح Twitch للموافقة",
+    "auth.waiting": "وافق على TwitchUnblock في Twitch، واترك هذه الصفحة مفتوحة حتى يكتمل تسجيل الدخول.",
+    "auth.cancel": "إلغاء تسجيل الدخول",
+    "auth.loginExpired": "انتهت مهلة تسجيل الدخول. حاول مرة أخرى.",
     "about.skip.to.content": "انتقل إلى المحتوى",
     "about.an.ipapplus.project": "أحد مشاريع ipapplus",
     "about.native.ios.open.source": "تطبيق iOS أصلي · مفتوح المصدر",

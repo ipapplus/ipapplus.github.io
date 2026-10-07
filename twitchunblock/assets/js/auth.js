@@ -18,15 +18,45 @@
     try { return await fetch(url, { ...options, signal: controller.signal, credentials: 'omit', cache: 'no-store' }); }
     finally { clearTimeout(timeout); }
   }
-  function authorizationURL() {
-    if (!/^[a-zA-Z0-9]+$/.test(config.clientId)) throw new Error('auth.unconfigured');
-    const bytes = crypto.getRandomValues(new Uint8Array(32));
-    const state = Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
-    // Fail closed if the pending state cannot survive the redirect.
-    write(pendingKey, { state, created: Date.now(), clientId: config.clientId });
-    const url = new URL('https://id.twitch.tv/oauth2/authorize');
-    url.search = new URLSearchParams({ client_id: config.clientId, redirect_uri: config.redirectUri, response_type: 'token', scope: '', state });
-    return url.href;
+  let attempt = 0;
+  let challenge = null;
+  function cancelLogin() { attempt++; challenge = null; message = null; notify(); }
+  async function login() {
+    cancelLogin(); const active = attempt;
+    if (!/^[a-zA-Z0-9]+$/.test(config.clientId)) { message = 'auth.unconfigured'; notify(); return; }
+    message = 'data.loading'; notify();
+    try {
+      const response = await request('https://id.twitch.tv/oauth2/device', { method: 'POST', body: new URLSearchParams({ client_id: config.clientId, scopes: '' }) });
+      const data = await response.json();
+      const uri = new URL(data.verification_uri);
+      if (!response.ok || uri.origin !== 'https://www.twitch.tv' || uri.pathname !== '/activate' ||
+          typeof data.device_code !== 'string' || !/^[a-zA-Z0-9_-]{4,2048}$/.test(data.device_code) || typeof data.user_code !== 'string' || !/^[a-zA-Z0-9-]{4,32}$/.test(data.user_code) ||
+          !Number.isFinite(data.expires_in) || data.expires_in <= 0 || !Number.isFinite(data.interval) || data.interval < 1) throw new Error();
+      if (active !== attempt) return;
+      challenge = { url: uri.href, code: data.user_code }; message = 'auth.waiting'; notify();
+      const deadline = Date.now() + data.expires_in * 1000;
+      let delay = Math.max(5, data.interval) * 1000;
+      while (active === attempt && Date.now() < deadline) {
+        await new Promise(resolve => setTimeout(resolve, delay));
+        if (active !== attempt) return;
+        const result = await request('https://id.twitch.tv/oauth2/token', { method: 'POST', body: new URLSearchParams({ client_id: config.clientId, scopes: '', device_code: data.device_code, grant_type: 'urn:ietf:params:oauth:grant-type:device_code' }) });
+        const body = await result.json();
+        if (active !== attempt) return;
+        if (result.ok) {
+          if (typeof body.access_token !== 'string' || !/^[a-zA-Z0-9]{10,2048}$/.test(body.access_token) || body.token_type?.toLowerCase() !== 'bearer') throw new Error();
+          challenge = null; session = { token: body.access_token }; await validate(); notify(); return;
+        }
+        const reason = body.message || body.error;
+        if (reason === 'authorization_pending') continue;
+        if (reason === 'slow_down') { delay += 5000; continue; }
+        if (reason === 'access_denied') throw new Error('auth.denied');
+        throw new Error('auth.failed');
+      }
+      if (active === attempt) throw new Error('auth.loginExpired');
+    } catch (error) {
+      if (active !== attempt) return;
+      challenge = null; message = ['auth.denied', 'auth.loginExpired'].includes(error.message) ? error.message : 'auth.retry'; notify();
+    }
   }
   async function validate() {
     if (!session) return null;
@@ -60,33 +90,24 @@
     return session.token;
   }
   async function initialize() {
+    // Reject legacy OAuth callbacks; this public client uses device authorization.
     const fragment = new URLSearchParams(location.hash.slice(1));
-    const query = new URLSearchParams(location.search);
-    const callback = fragment.has('access_token') || fragment.has('error') || query.has('error') || query.has('code');
-    if (callback) {
-      // Remove returned credentials/errors from the address bar before any API or image request.
-      history.replaceState(null, '', location.pathname + '#home');
-      const pending = read(pendingKey); remove(pendingKey);
-      const params = fragment.has('access_token') || fragment.has('error') ? fragment : query;
-      if (!pending || !pending.state || params.get('state') !== pending.state || pending.clientId !== config.clientId ||
-          Date.now() - pending.created > 600000 || pending.created > Date.now()) { clear('auth.failed'); return; }
-      if (params.has('error')) { clear('auth.denied'); return; }
-      const received = params.get('access_token');
-      if (!received || !/^[a-zA-Z0-9]{10,2048}$/.test(received) || params.get('token_type')?.toLowerCase() !== 'bearer') { clear('auth.failed'); return; }
-      session = { token: received }; await validate();
-    } else {
-      const stored = read(key);
-      if (config.clientId && stored && typeof stored.token === 'string' && /^[a-zA-Z0-9]{10,2048}$/.test(stored.token)) { session = stored; await validate(); }
-      else { remove(key); notify(); }
+    if (fragment.has('access_token') || fragment.has('error') || new URLSearchParams(location.search).has('code') || new URLSearchParams(location.search).has('error')) {
+      history.replaceState(null, '', location.pathname + '#home'); clear('auth.failed'); return;
     }
+    remove(pendingKey);
+    const stored = read(key);
+    if (config.clientId && stored && typeof stored.token === 'string' && /^[a-zA-Z0-9]{10,2048}$/.test(stored.token)) { session = stored; await validate(); }
+    else { remove(key); notify(); }
   }
+
   function logout() {
     const oldToken = session?.token;
-    clear(); remove(pendingKey);
+    cancelLogin(); clear(); remove(pendingKey);
     // Local session ends immediately even if revocation is offline.
     if (oldToken) request('https://id.twitch.tv/oauth2/revoke', { method: 'POST', body: new URLSearchParams({ client_id: config.clientId, token: oldToken }) }).catch(() => {});
   }
-  window.TwitchAuth = { initialize, authorizationURL, token, validate, logout, invalidate: () => clear('auth.expired'), get session() { return session; }, get message() { return message; } };
+  window.TwitchAuth = { initialize, login, cancelLogin, get challenge() { return challenge; }, token, validate, logout, invalidate: () => clear('auth.expired'), get session() { return session; }, get message() { return message; } };
   setInterval(() => { if (session) { if (session.expiresAt <= Date.now()) clear('auth.expired'); else if (Date.now() - session.validatedAt >= 3600000) validate(); } }, 60000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden && session) token().catch(() => {}); });
 })();

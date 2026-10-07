@@ -12,13 +12,12 @@ The About feature descriptions refer to the existing native application.
 ## Phase 2 modules and setup
 
 Read [OAUTH.md](OAUTH.md) for the exact Client ID location and redirect URI.
-No Client ID was found, so the public configuration remains blank and sign-in
-stays disabled. Successful live data loading requires configuring the owner's
-app and signing in. No borrowed app, bundled access token, or anonymous API
+The owner's public Client ID is configured. Sign in through Twitch's public-client
+device authorization to load live data. No borrowed app, bundled access token, or anonymous API
 workaround is used.
 
 - `config.js`: public Client ID, production callback, ten-second timeout.
-- `auth.js`: OAuth state/callback, sessionStorage token, validation and logout.
+- `auth.js`: public-client device authorization, sessionStorage token, validation and logout.
 - `twitch-api.js`: documented Helix requests, response validation, safe public
   user/stream/channel metadata, search, archive videos and clips.
 - `search.js`: submit/filter/loading/results/error states and request cancellation.
@@ -151,3 +150,18 @@ Successful real Twitch search and OAuth consent were **not** tested: the owner's
 Client ID is still missing. Mocked results are never used by the deployed app.
 Production page/configuration and mocked browser behavior are verified after push.
 Physical iPhone Safari and spoken VoiceOver testing remain device QA.
+
+### Public-client authentication validation — 2026-10-07
+
+The owner supplied the public Client ID in `assets/js/config.js`. Authentication
+uses Twitch's supported public-client Device Code Grant Flow, with no secret or
+additional scopes. A real consent, token validation, Home (12 live channels),
+Search (20 results), and logout passed before deployment. Updated mocked tests
+and About/root regressions passed in Chromium and WebKit. Expiry tests advance
+local session expiry; they do not wait hours for a real token to expire.
+
+Real Chromium and WebKit checks passed for token validation, Home (12 streams),
+exact search, live/offline channel profiles, archive VODs (6), clips (6), and
+English/Arabic layouts at 320, 375, 390, 430 and 1440px with no overflow.
+`tests/live.cjs` provides real consent/Helix coverage independently of mocks.
+Root/APT resources and About HTML/release code remain unchanged.

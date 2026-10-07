@@ -21,7 +21,7 @@ async function setup(browser, options = {}) {
   if (options.signedIn !== false) await context.addInitScript(({ token }) => { if (!sessionStorage.getItem('test.seeded')) { sessionStorage.setItem('twitchunblock.session', JSON.stringify({ token })); sessionStorage.setItem('test.seeded','1'); } }, { token });
   const page = await context.newPage(); const errors = []; page.on('pageerror', e => errors.push(e.message));
   const calls = [];
-  if (!options.unconfigured) await page.route('**/twitchunblock/assets/js/config.js', r => r.fulfill({ contentType: 'application/javascript', body: `window.TwitchConfig=Object.freeze({clientId:'${clientId}',redirectUri:'https://ipapplus.github.io/twitchunblock/',timeoutMs:250});` }));
+  await page.route('**/twitchunblock/assets/js/config.js', r => r.fulfill({ contentType: 'application/javascript', body: `window.TwitchConfig=Object.freeze({clientId:'${options.unconfigured ? '' : clientId}',redirectUri:'https://ipapplus.github.io/twitchunblock/',timeoutMs:250});` }));
   await page.route('https://id.twitch.tv/oauth2/validate', r => r.fulfill({ status: options.invalidToken ? 401 : 200, contentType: 'application/json', body: JSON.stringify({ client_id: clientId, user_id: '1', login: 'viewer', expires_in: 3600 }) }));
   await page.route('https://id.twitch.tv/oauth2/revoke', r => r.fulfill({ status: 200, body: '{}' }));
   await page.route('https://api.twitch.tv/helix/**', async r => {
@@ -133,21 +133,18 @@ async function failures(browser,engine) {
 }
 async function oauth(browser,engine) {
  const {context,page}=await setup(browser,{signedIn:false});
- const first=await page.evaluate(()=>TwitchAuth.authorizationURL()); const second=await page.evaluate(()=>TwitchAuth.authorizationURL());
- const url=new URL(second);
- assert.equal(url.origin,'https://id.twitch.tv'); assert.equal(url.searchParams.get('client_id'),clientId); assert.equal(url.searchParams.get('redirect_uri'),'https://ipapplus.github.io/twitchunblock/'); assert.equal(url.searchParams.get('response_type'),'token'); assert.equal(url.searchParams.get('scope'),''); assert.notEqual(new URL(first).searchParams.get('state'),url.searchParams.get('state')); assert.equal(url.searchParams.get('state').length,64);
- await page.route('https://id.twitch.tv/oauth2/authorize**', r=>r.fulfill({contentType:'text/html',body:'<p>Mock Twitch authorization page</p>'}));
- const [authorization] = await Promise.all([page.waitForRequest('https://id.twitch.tv/oauth2/authorize**'),page.locator('#sign-in').click()]);
- const actualURL = new URL(authorization.url());
- await page.goto(prefix+'#access_token='+token+'&token_type=bearer&state='+actualURL.searchParams.get('state')); await page.locator('#user-session').getByRole('button').waitFor();
- assert(!page.url().includes('access_token')); assert.equal(await page.evaluate(()=>sessionStorage.getItem('twitchunblock.oauth')),null);
+ await page.route('https://id.twitch.tv/oauth2/device', r=>r.fulfill({contentType:'application/json',body:JSON.stringify({device_code:'testdevice',user_code:'TESTCODE',verification_uri:'https://www.twitch.tv/activate?public=true&device-code=TESTCODE',expires_in:600,interval:1})}));
+ let polls=0;
+ await page.route('https://id.twitch.tv/oauth2/token', r=>{const body=new URLSearchParams(r.request().postData());assert.equal(body.get('client_id'),clientId);assert.equal(body.get('device_code'),'testdevice');assert.equal(body.get('grant_type'),'urn:ietf:params:oauth:grant-type:device_code');assert(!body.has('client_secret'));polls++;return r.fulfill({status:polls===1?400:200,contentType:'application/json',body:JSON.stringify(polls===1?{message:'authorization_pending'}:{access_token:token,token_type:'bearer',refresh_token:'neverstore'})});});
+ await page.locator('#sign-in').click();await page.waitForFunction(()=>TwitchAuth.challenge);
+ assert.equal(await page.locator('#user-session a').getAttribute('target'),'_blank');
+ await page.waitForFunction(()=>TwitchAuth.session?.userId,null,{timeout:20000});
+ assert(!(await page.evaluate(()=>sessionStorage.getItem('twitchunblock.session'))).includes('neverstore'));
  await page.evaluate(()=>TwitchAuth.logout());
- await page.goto('about:blank'); await page.goto(prefix+'#access_token='+token+'&token_type=bearer&state=wrong'); await page.waitForFunction(()=>document.querySelector('#auth-state').textContent.includes('could not be verified')); assert.equal(await page.evaluate(()=>sessionStorage.getItem('twitchunblock.session')),null);
- await page.evaluate(()=>TwitchAuth.authorizationURL()); const pending=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('twitchunblock.oauth')));
- await page.goto(prefix+'?error=access_denied&error_description=private&state='+pending.state); await page.waitForFunction(()=>document.querySelector('#auth-state').textContent.includes('cancelled')); assert(!page.url().includes('error'));
- await page.evaluate(()=>{TwitchAuth.authorizationURL();const p=JSON.parse(sessionStorage.getItem('twitchunblock.oauth'));p.created-=700000;sessionStorage.setItem('twitchunblock.oauth',JSON.stringify(p))});
- const stale=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('twitchunblock.oauth')).state); await page.goto('about:blank'); await page.goto(prefix+'#access_token='+token+'&token_type=bearer&state='+stale); await page.waitForFunction(()=>document.querySelector('#auth-state').textContent.includes('could not be verified')); assert.equal(await page.evaluate(()=>sessionStorage.getItem('twitchunblock.session')),null);
- await context.close(); console.log('PASS',engine,'MOCKED OAuth URL, random single-use state, valid callback, URL cleanup, invalid/expired state, denial, session-only storage');
+ await page.locator('#sign-in').click();await page.waitForFunction(()=>TwitchAuth.challenge);await page.evaluate(()=>TwitchAuth.cancelLogin());assert.equal(await page.evaluate(()=>TwitchAuth.challenge),null);
+ await page.goto('about:blank');await page.goto(prefix+'#access_token='+token+'&token_type=bearer&state=wrong');await page.waitForFunction(()=>document.querySelector('#auth-state').textContent.includes('could not be verified'));assert(!page.url().includes('access_token'));
+
+ await context.close(); console.log('PASS',engine,'MOCKED public-client device authorization, polling, cancellation, legacy callback rejection, session-only storage');
 }
 (async()=>{
  for(const [name,engine] of Object.entries({chromium,webkit})) {

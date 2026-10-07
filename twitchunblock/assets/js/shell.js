@@ -33,7 +33,13 @@
   function renderAuth() {
     const signedIn = Boolean(auth.session);
     const container = document.getElementById('user-session'); container.replaceChildren();
-    const signIn = document.getElementById('sign-in'); signIn.hidden = signedIn; signIn.disabled = !window.TwitchConfig.clientId;
+    const signIn = document.getElementById('sign-in'); signIn.hidden = signedIn; signIn.disabled = !window.TwitchConfig.clientId || Boolean(auth.challenge);
+    if (auth.challenge) {
+      const link = ui.el('a', 'button', ui.t('auth.activate')); link.href = auth.challenge.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+      const code = ui.el('bdi', '', auth.challenge.code); code.dir = 'ltr';
+      const cancel = ui.el('button', 'button', ui.t('auth.cancel')); cancel.type = 'button'; cancel.addEventListener('click', () => auth.cancelLogin());
+      container.append(link, code, cancel);
+    }
     if (signedIn) {
       if (profile) container.append(ui.avatar(profile.avatar));
       container.append(ui.name(profile?.name || auth.session.login));
@@ -63,7 +69,7 @@
     else if (route.panel === 'history') renderHistory();
     if (focus) document.querySelector('[data-panel]:not([hidden]) h2')?.focus();
   }
-  document.getElementById('sign-in').addEventListener('click', () => { try { location.assign(auth.authorizationURL()); } catch (_) { authError = 'auth.storage'; renderAuth(); } });
+  document.getElementById('sign-in').addEventListener('click', () => auth.login());
   document.getElementById('settings-logout').addEventListener('click', () => auth.logout());
   document.getElementById('clear-history').addEventListener('click', () => { window.TwitchHistory.clear(); ui.status(document.getElementById('settings-state'), 'history.cleared'); });
   document.getElementById('refresh-home').addEventListener('click', home);
