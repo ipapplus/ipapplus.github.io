@@ -2386,5 +2386,11 @@
       "name" : "orionblur-NFB-BHTwitter",
       "package" : "com.bandarhl.bhtwitter",
       "version" : "7.1.0-1+debug"
+   },
+   {
+      "addedAt" : "2026-10-07T16:29:34Z",
+      "name" : "InfoBar",
+      "package" : "com.mathelord.infobar",
+      "version" : "1.2.0"
    }
 ]

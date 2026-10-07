@@ -5232,6 +5232,24 @@ Description: A tweak to Manage Delete
 Name: ManageDelete
 Author: Sniper @DNS_Sys
 
+Package: com.mathelord.infobar
+Architecture: iphoneos-arm64e
+Version: 1.2.0
+Section: Tweaks
+Maintainer: mathelord
+Installed-Size: 480
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 15.0)
+Filename: ./debs/com.mathelord.infobar_1.2.0_iphoneos-arm64e.deb
+Size: 71520
+MD5sum: 89add33a8295201a7bbb121e61f26520
+SHA1: 9e2213bf92cdf3abdb03db0957cff3a8db0f9d41
+SHA256: 96339488926c42f1b8da38ac60b4259df4bcc92b4189ef6f39a6a9260f7983f1
+SHA512: 7374935436761052ecdc35ae9381286eb101aa6d8e544547ad2f57181dd51f067aa829aa39b3afb68dabaa81dcf5f4da5c1bde057ffd1707912f9b8482f57f4f
+Description: Movable overlay showing CPU, RAM, battery, network and system info. Pin it in place, collapse it, and configure everything in Settings.
+Name: InfoBar
+Author: mathelord
+
 Package: com.megadev.sentinel
 Architecture: iphoneos-arm
 Version: 1.3.2
