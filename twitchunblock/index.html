@@ -1,55 +1,232 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
+<html lang="fr">
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title data-i18n="webTitle">TwitchUnblock — Web App</title>
-  <meta data-i18n-content="webDescription" name="description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
   <link rel="canonical" href="https://ipapplus.github.io/twitchunblock/">
-  <meta property="og:type" content="website">
-  <meta data-i18n-content="webTitle" property="og:title" content="TwitchUnblock — Web App">
-  <meta data-i18n-content="webDescription" property="og:description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
-  <meta property="og:url" content="https://ipapplus.github.io/twitchunblock/">
-  <meta property="og:image" content="https://ipapplus.github.io/twitchunblock/assets/social-preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta data-i18n-content="webImage" property="og:image:alt" content="TwitchUnblock, maintained fork by Ahmed AlGhrbi. Past Streams, Recovery, Arabic and RTL.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta data-i18n-content="webTitle" name="twitter:title" content="TwitchUnblock — Web App">
-  <meta data-i18n-content="webDescription" name="twitter:description" content="Browse Twitch channels, live streams, recent broadcasts, and clips in English or Arabic.">
-  <meta name="twitter:image" content="https://ipapplus.github.io/twitchunblock/assets/social-preview.png">
-  <meta data-i18n-content="webImage" name="twitter:image:alt" content="TwitchUnblock project page by ipapplus">
-  <meta name="theme-color" content="#0a0d14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" type="image/png" href="assets/app-icon.png">
-  <link rel="apple-touch-icon" href="assets/app-icon.png">
-  <link rel="preload" href="/26.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <script src="assets/js/i18n.js"></script>
-  <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/auth.js" defer></script>
-  <script src="assets/js/twitch-api.js" defer></script>
-  <script src="assets/js/history.js" defer></script>
-  <script src="assets/js/ui.js" defer></script>
-  <script src="assets/js/discovery.js" defer></script>
-  <script src="assets/js/home.js" defer></script>
-  <script src="assets/js/search.js" defer></script>
-  <script src="assets/js/channel.js" defer></script>
-  <script src="assets/js/shell.js" defer></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="TwitchUnblock">
+  <meta name="description" content="Regarder les lives et VODs Twitch sans abonnement, avec le chat.">
+  <title>TwitchUnblock</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%239146ff'/%3E%3Cpath d='M9 7h16v10l-4 4h-4l-3 3v-3h-5z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M15 11v4m5-4v4' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/fork.css">
 
-</head><body class="web-app"><a class="skip-link" href="#main" data-i18n="skip">Skip to content</a><div class="page">
-<header class="site-header"><a class="product-link" href="/twitchunblock/" dir="ltr">TwitchUnblock</a><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div><div class="auth-controls"><button class="button primary" id="sign-in" type="button" data-i18n="auth.login" aria-describedby="auth-state" disabled>Sign in with Twitch</button><div id="user-session" class="user-session"></div></div><p id="auth-state" class="auth-state" role="status"></p></header>
-<nav class="app-nav" data-i18n-aria-label="navigation" aria-label="Main navigation"><a href="#home" data-section="home"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7v11H3Z M9 21v-7h6v7"/></svg><span data-i18n="home">Home</span></a><a href="#search" data-section="search"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg><span data-i18n="search">Search</span></a><a href="#history" data-section="history"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-7 M3 3v6h6 M12 7v5l3 2"/></svg><span data-i18n="history">History</span></a><a href="#settings" data-section="settings"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8 M12 2v3 M12 19v3 M2 12h3 M19 12h3 M5 5l2 2 M17 17l2 2 M5 19l2-2 M17 7l2-2"/></svg><span data-i18n="settings">Settings</span></a><a href="/twitchunblock/about/"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11v7 M12 7v1 M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"/></svg><span data-i18n="about">About</span></a></nav>
-<main id="main" tabindex="-1"><section class="card app-panel" data-panel="home"><div class="section-heading"><div><p class="eyebrow" data-i18n="p0.discover">Discover</p><h2 tabindex="-1" id="home-heading" data-i18n="p0.top">Live on Twitch</h2></div><button class="button" id="refresh-home" type="button" data-i18n="data.refresh">Refresh</button></div>
-<div class="discovery-tabs" aria-label="Discovery" data-i18n-aria-label="p0.discover"><a href="#home" data-home-view="live" data-i18n="p0.live">Live</a><a href="#home?view=saved" data-home-view="saved" data-i18n="p0.saved">Saved channels</a><a href="#home?view=categories" data-home-view="categories" data-i18n="p0.categories">Categories</a></div>
-<div id="home-recent-block" hidden><h3 data-i18n="p0.recent">Recently opened</h3><div id="home-recent" class="recent-rail"></div></div>
-<div class="discovery-tools"><p id="home-intro" class="small-note"></p><label class="inline-label" for="stream-language"><span data-i18n="p0.streamLanguage">Stream language</span><select id="stream-language"><option value="" data-i18n="p0.world">Worldwide</option><option value="en">English</option><option value="ar">العربية</option></select></label></div>
-<p id="home-state" class="empty-state" role="status"></p><div id="home-results" class="channel-grid" aria-busy="false"></div><div id="home-categories" class="category-grid" hidden aria-busy="false"></div></section>
-<section class="card app-panel" data-panel="search" hidden><h2 tabindex="-1" data-i18n="search">Search</h2><p class="small-note" data-i18n="p0.searchIntro">Find a creator or explore who is live.</p><form id="search-form" role="search"><label for="channel" data-i18n="searchLabel">Channel or username</label><div class="search-box"><div class="search-controls"><input id="channel" type="search" dir="auto" autocomplete="off" autocapitalize="none" enterkeyhint="search" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" maxlength="100" data-i18n-placeholder="searchPlaceholder" placeholder="Enter a username" aria-describedby="search-state"><button class="button primary" type="submit" data-i18n="search">Search</button></div><div id="search-suggestions" class="suggestions" role="listbox" data-i18n-aria-label="p0.suggestions" aria-label="Suggested channels" hidden></div></div><label class="checkbox-label"><input type="checkbox" id="live-only"><span data-i18n="search.liveOnly">Live channels only</span></label></form><div id="search-recent-block" hidden><h3 data-i18n="p0.recent">Recently opened</h3><div id="search-recent" class="recent-rail"></div></div><p id="search-count" class="small-note" role="status"></p><p class="empty-state" id="search-state" role="status"></p><div id="search-results" class="channel-grid" aria-busy="false"></div></section>
-<section class="card app-panel" data-panel="channel" hidden><div class="section-heading"><h2 tabindex="-1" id="channel-heading">Channel</h2><button class="button" id="retry-channel" type="button" data-i18n="data.refresh">Refresh</button></div><a class="text-link" id="channel-back" href="#home" data-i18n="p0.back">Back</a><p id="channel-state" class="empty-state" role="status"></p><div id="channel-profile" aria-busy="false"></div><div id="channel-library" hidden><div class="media-tabs" role="tablist" data-i18n-aria-label="p0.channelMedia" aria-label="Channel media"><button type="button" role="tab" id="tab-videos" aria-controls="panel-videos" data-media-tab="videos" data-i18n="media.videos">Recent VODs</button><button type="button" role="tab" id="tab-highlights" aria-controls="panel-highlights" data-media-tab="highlights" data-i18n="p0.highlights">Highlights</button><button type="button" role="tab" id="tab-clips" aria-controls="panel-clips" data-media-tab="clips" data-i18n="media.clips">Clips</button></div>
-<div class="library-tools"><label for="media-filter"><span data-i18n="p0.filter">Filter by title or date</span><input type="search" id="media-filter" dir="auto" data-i18n-placeholder="p0.filterPlaceholder" placeholder="Filter loaded videos" autocomplete="off" enterkeyhint="search"></label><label for="clip-period" id="clip-period-label" hidden><span data-i18n="p0.period">Clip period</span><select id="clip-period"><option value="all" data-i18n="p0.allTime">All time</option><option value="1" data-i18n="p0.day">24 hours</option><option value="7" data-i18n="p0.week">7 days</option><option value="30" data-i18n="p0.month">30 days</option></select></label></div>
-<p id="media-count" class="small-note" role="status"></p>
-<section class="channel-media" id="panel-videos" role="tabpanel" aria-labelledby="tab-videos"><div id="channel-videos" class="media-grid"></div></section><section class="channel-media" id="panel-highlights" role="tabpanel" aria-labelledby="tab-highlights" hidden><div id="channel-highlights" class="media-grid"></div></section><section class="channel-media" id="panel-clips" role="tabpanel" aria-labelledby="tab-clips" hidden><div id="channel-clips" class="media-grid"></div></section>
-<div class="actions"><button type="button" class="button" id="media-more" data-i18n="p0.more" hidden>Load more</button><button type="button" class="button" id="media-retry" data-i18n="p0.retry" hidden>Try again</button></div></div></section>
-<section class="card app-panel" data-panel="history" hidden><h2 tabindex="-1" data-i18n="history">History</h2><p data-i18n="history.intro">Recently opened channels, saved on this device.</p><p class="empty-state" id="history-state" role="status"></p><div id="history-results" class="channel-grid"></div></section>
-<section class="card app-panel" data-panel="settings" hidden><h2 tabindex="-1" data-i18n="settings">Settings</h2><p data-i18n="settingsInfo"></p><div class="language-switch" role="group" data-i18n-aria-label="language" aria-label="Language"><button type="button" data-language="en" lang="en" dir="ltr">English</button><button type="button" data-language="ar" lang="ar" dir="rtl">العربية</button></div><div class="actions"><button class="button" type="button" id="clear-history" data-i18n="history.clear">Clear history</button><button class="button" type="button" id="clear-saved" data-i18n="p0.clearSaved">Clear saved channels</button><button class="button" type="button" id="settings-logout" data-i18n="auth.logout" hidden>Log out</button></div><p id="settings-state" class="small-note" role="status"></p></section></main>
-<footer class="site-footer"><span dir="ltr">TwitchUnblock · ipapplus</span><a href="/twitchunblock/about/" data-i18n="about">About</a></footer></div></body></html>
+  <script>
+    // Retour de la connexion Twitch. Doit tourner avant tout le reste : dans
+    // la popup, on transmet le jeton à la fenêtre d'origine puis on se ferme.
+    // Sans popup (mobile, popup bloquée), on le range et on nettoie l'adresse.
+    (function () {
+      var hash = location.hash
+      if (hash.indexOf('access_token=') === -1) return
+      var params = new URLSearchParams(hash.slice(1))
+      var token = params.get('access_token')
+      history.replaceState(null, '', location.pathname + location.search)
+      if (!token) return
+      // `state` : jeton remis seulement s'il répond à NOTRE demande de
+      // connexion. Sans ce contrôle, n'importe quel site pouvait envoyer
+      // vers « …/#access_token=<son jeton> » et connecter le visiteur à un
+      // autre compte (où partaient ensuite son historique et ses messages).
+      var expected = null
+      try { expected = localStorage.getItem('tu_oauth_state') } catch (e) {}
+      if (!expected || params.get('state') !== expected) return
+      if (window.opener && window.opener !== window) {
+        try { window.opener.postMessage(hash, location.origin) } catch (e) {}
+        window.close()
+        return
+      }
+      try { localStorage.removeItem('tu_oauth_state'); localStorage.setItem('twitch_token', token) } catch (e) {}
+    })()
+  </script>
+  <script src="config.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- ── Barre du haut ─────────────────────────────────────────────── -->
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="TwitchUnblock">
+        <span class="brand-mark" data-icon="twitch" data-size="20"></span>
+        <span class="brand-name">Twitch<b>Unblock</b></span>
+      </a>
+      <nav class="nav" aria-label="Navigation">
+        <button type="button" data-tab="discover" class="active"><span data-icon="compass" data-size="18"></span><span data-i18n="nav_discover"></span></button>
+        <button type="button" data-tab="categories"><span data-icon="layers" data-size="18"></span><span data-i18n="nav_categories"></span></button>
+        <button type="button" data-tab="channel"><span data-icon="user" data-size="18"></span><span data-i18n="nav_channel"></span></button>
+        <button type="button" data-tab="link"><span data-icon="link" data-size="18"></span><span data-i18n="nav_link"></span></button>
+      </nav>
+      <div class="topbar-actions">
+        <button class="icon-btn" type="button" data-action="settings" data-i18n-title="settings" data-icon="settings"></button>
+        <button class="account-btn" id="account-btn" type="button" data-action="login"></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- ── Découvrir ─────────────────────────────────────────────── -->
+      <section class="view" id="view-discover">
+        <div id="announcement" hidden></div>
+        <section class="block" id="continue-block" hidden>
+          <div class="block-head"><h2><span data-icon="history" data-size="18"></span><span data-i18n="continue_watching"></span></h2></div>
+          <div class="rail" id="continue-rail"></div>
+        </section>
+
+        <div class="segmented home-tabs" id="home-seg">
+          <button type="button" data-home="followed" data-i18n="home_followed"></button>
+          <button type="button" data-home="top" data-i18n="top"></button>
+          <button type="button" data-home="offline" data-i18n="offline_channels"></button>
+        </div>
+
+        <section class="block" id="followed-block">
+          <div class="block-head">
+            <h2><span data-icon="heart" data-size="18"></span><span data-i18n="followed"></span></h2>
+            <span class="block-tools">
+              <button class="icon-btn sm" type="button" data-action="toggle-layout" id="layout-toggle"></button>
+              <button class="icon-btn sm" type="button" data-action="refresh-discover" data-i18n-title="refresh" data-icon="refresh" data-size="18"></button>
+            </span>
+          </div>
+          <div class="grid" id="followed-grid"></div>
+        </section>
+
+        <!-- Chaînes suivies hors ligne : leur propre onglet, pour que
+             « Suivies » ne montre que ce qui est en direct. -->
+        <section class="block" id="offline-block" hidden>
+          <div class="block-head">
+            <h2><span data-icon="clock" data-size="18"></span><span data-i18n="offline_channels"></span><small class="muted" id="offline-count"></small></h2>
+            <span class="block-tools">
+              <button class="icon-btn sm" type="button" data-action="refresh-discover" data-i18n-title="refresh" data-icon="refresh" data-size="18"></button>
+            </span>
+          </div>
+          <div id="followed-offline"></div>
+        </section>
+
+        <section class="block" id="top-block">
+          <div class="block-head">
+            <h2><span data-icon="flame" data-size="18"></span><span data-i18n="top"></span></h2>
+            <div class="segmented" id="top-seg">
+              <button type="button" data-lang="local" class="active" id="top-local"></button>
+              <button type="button" data-lang="all" data-i18n="top_world"></button>
+            </div>
+          </div>
+          <div class="grid" id="top-grid"></div>
+        </section>
+      </section>
+
+      <!-- ── Catégories ────────────────────────────────────────────── -->
+      <section class="view" id="view-categories" hidden>
+        <div id="cat-browser">
+          <div class="block-head">
+            <div class="segmented" id="cat-seg">
+              <button type="button" data-cat-tab="followed" data-i18n="cat_followed"></button>
+              <button type="button" data-cat-tab="all" class="active" data-i18n="cat_all"></button>
+            </div>
+            <label class="filter" id="cat-search-wrap"><span data-icon="search" data-size="16"></span><input id="cat-search" type="search" autocomplete="off" data-i18n-ph="cat_search_ph"></label>
+          </div>
+          <div class="cat-grid" id="cat-grid"></div>
+          <div class="load-more" id="cat-more"></div>
+        </div>
+        <div id="cat-detail" hidden></div>
+      </section>
+
+      <!-- ── Streamer ──────────────────────────────────────────────── -->
+      <section class="view" id="view-channel" hidden>
+        <form class="search" id="channel-form" autocomplete="off" role="search">
+          <span class="search-icon" data-icon="search" data-size="18"></span>
+          <input id="channel-input" type="search" enterkeyhint="search" data-i18n-ph="search_channel_ph" autocapitalize="off" spellcheck="false">
+          <button class="btn primary" type="submit"><span data-i18n="search"></span></button>
+          <div class="suggest" id="channel-suggest" hidden></div>
+        </form>
+        <div class="recent" id="recent-channels" hidden>
+          <div class="recent-head">
+            <span class="muted" data-i18n="recent_channels"></span>
+            <button class="link-btn" type="button" data-action="clear-channels" data-i18n="clear_all"></button>
+          </div>
+          <div class="chips" id="recent-list"></div>
+        </div>
+        <div id="channel-result"></div>
+      </section>
+
+      <!-- ── Lien / ID ─────────────────────────────────────────────── -->
+      <section class="view" id="view-link" hidden>
+        <div class="link-card">
+          <div class="link-card-icon" data-icon="film" data-size="28"></div>
+          <h2 data-i18n="link_title"></h2>
+          <p class="muted" data-i18n="link_desc"></p>
+          <form class="search" id="link-form" autocomplete="off">
+            <span class="search-icon" data-icon="link" data-size="18"></span>
+            <input id="link-input" type="text" inputmode="url" enterkeyhint="go" data-i18n-ph="link_ph" autocapitalize="off" spellcheck="false">
+            <button class="btn primary" type="submit"><span data-i18n="link_open"></span></button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>TwitchUnblock · <span data-i18n="made_by"></span> <a href="https://github.com/MXFia19" target="_blank" rel="noopener">MXFia19</a></span>
+        <a href="https://github.com/ipapplus/TwitchUnblock-Web" target="_blank" rel="noopener"><span data-icon="github" data-size="15"></span>GitHub</a>
+        <a href="https://github.com/MXFia19/TwitchUnblock-Web" target="_blank" rel="noopener">Upstream</a>
+        <a href="https://github.com/ipapplus" target="_blank" rel="noopener">Maintained by ipapplus</a>
+        <a href="https://x.com/ipapplus" target="_blank" rel="noopener">X</a>
+        <span data-i18n="not_affiliated"></span>
+      </footer>
+    </main>
+
+    <!-- ── Barre d'onglets (mobile) ──────────────────────────────────── -->
+    <nav class="tabbar" aria-label="Navigation">
+      <button type="button" data-tab="discover" class="active"><span data-icon="compass" data-size="22"></span><span data-i18n="nav_discover"></span></button>
+      <button type="button" data-tab="categories"><span data-icon="layers" data-size="22"></span><span data-i18n="nav_categories"></span></button>
+      <button type="button" data-tab="channel"><span data-icon="user" data-size="22"></span><span data-i18n="nav_channel"></span></button>
+      <button type="button" data-tab="link"><span data-icon="link" data-size="22"></span><span data-i18n="nav_link"></span></button>
+    </nav>
+  </div>
+
+  <!-- ── Lecteur (surimpression plein écran, réductible) ─────────────── -->
+  <div class="watch" id="watch" hidden>
+    <header class="watch-head">
+      <button class="icon-btn" type="button" data-action="watch-minimize" data-i18n-title="minimize" data-icon="chevronDown" data-size="22"></button>
+      <img class="avatar sm" id="watch-avatar" alt="" hidden>
+      <div class="watch-id">
+        <strong id="watch-title"></strong>
+        <div class="watch-sub" id="watch-sub"></div>
+      </div>
+      <button class="icon-btn" type="button" data-action="watch-close" data-i18n-title="close" data-icon="x" data-size="22"></button>
+    </header>
+    <div class="watch-body" id="watch-body">
+      <div class="watch-video">
+        <div id="player"></div>
+        <div class="watch-loading" id="watch-loading"><span class="spinner"></span></div>
+        <div class="watch-ended" id="watch-ended"></div>
+        <div class="watch-error">
+          <span data-icon="radio" data-size="30"></span>
+          <p id="watch-error-text"></p>
+          <button class="btn" type="button" data-action="watch-retry" data-icon="refresh" data-size="16"><span data-i18n="refresh"></span></button>
+        </div>
+      </div>
+      <div class="watch-info" id="watch-info"></div>
+      <aside class="watch-chat" id="chat"></aside>
+    </div>
+    <div class="watch-mini">
+      <div class="mini-text"><strong id="mini-title"></strong></div>
+      <button class="icon-btn sm mini-play" type="button" data-action="watch-toggle-play">
+        <span class="when-paused" data-icon="play" data-size="20"></span>
+        <span class="when-playing" data-icon="pause" data-size="20"></span>
+      </button>
+      <button class="icon-btn sm" type="button" data-action="watch-expand" data-i18n-title="fullscreen" data-icon="chevronUp" data-size="20"></button>
+      <button class="icon-btn sm" type="button" data-action="watch-close" data-i18n-title="close" data-icon="x" data-size="20"></button>
+    </div>
+  </div>
+
+  <!-- ── Feuille (réglages, ouvrir dans…) ────────────────────────────── -->
+  <div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" hidden></div>
+</body>
+</html>

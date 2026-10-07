@@ -1,0 +1,12 @@
+/* Narrow-screen containment only; upstream theme/components remain authoritative. */
+.hero-id { flex-wrap: wrap; min-width: 0; }
+.hero-id > div { min-width: 0; }
+.hero-live { min-width: 0; max-width: 100%; }
+.channel-hero { grid-template-columns: minmax(0, 1fr) auto; }
+.hero-title, .hero-game, .hero-id h2 { overflow-wrap: anywhere; }
+@media (max-width: 760px) { .channel-hero { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .topbar .nav button { padding-inline: 8px; }
+  .topbar .account-btn:not(.logged) { width: 38px; padding: 0; justify-content: center; }
+  .topbar .account-btn:not(.logged) span { display: none; }
+}
