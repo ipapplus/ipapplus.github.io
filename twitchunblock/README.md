@@ -1,69 +1,97 @@
-# TwitchUnblock project page
+# TwitchUnblock — Phase 1
 
-Public URL: https://ipapplus.github.io/twitchunblock/
+- https://ipapplus.github.io/twitchunblock/ is the Web App foundation.
+- https://ipapplus.github.io/twitchunblock/about/ preserves the native project landing page.
 
-Static HTML, CSS and JavaScript, served by the existing GitHub Pages deployment
-from `main` at the repository root. No build step, backend, credentials, analytics,
-manifest or service-worker registration is added. The homepage stays unchanged.
+Plain HTML/CSS/JavaScript; no build step or framework. Home, Search, History and
+Settings use URL fragments and support direct opening and browser back/forward.
+About is a normal document navigation. Search is an input placeholder only;
+there is no Twitch API, player, chat, OAuth, or Recovery backend in the web app.
+The About feature descriptions refer to the existing native application.
 
-The visual tokens, font stack and motion timings follow the root `website.css`.
-`/26.ttf` is the original root font, loaded without changing or duplicating it.
-The app icon comes from `ipapplus/TwitchUnblock/assets/icon.png`. The project-specific
-1200×630 social preview uses the same font and site palette.
+## Shared design and localization
 
-Release metadata comes from the unauthenticated GitHub API:
-`https://api.github.com/repos/ipapplus/TwitchUnblock/releases/latest`.
-Download links use `browser_download_url` from uploaded release assets. Prefer
-`TwitchUnblock.ipa`; accept a single versioned TwitchUnblock IPA, otherwise link
-to the release instead of choosing an ambiguous asset. Errors and the 10-second
-timeout fall back to GitHub Releases. No version or IPA URL is pinned.
+Both documents share `style.css`, the original theme tokens and font stack,
+`assets/app-icon.png`, `assets/social-preview.png`, and the unchanged root
+`/26.ttf`. No font or image is duplicated. Safe-area padding, fluid compact
+cards, logical RTL spacing, visible focus, 44px targets and reduced motion are
+retained. Only the directional back icon is mirrored in RTL.
 
-Release ages use completed elapsed minutes, hours, days, weeks, approximate
-30-day months and 365-day years; under 60 seconds says “Just now”. The exact date
-uses the browser timezone. One minute timer refreshes age while the page is
-visible; it stops on hiding or leaving. It does not refetch the API periodically.
+`assets/js/i18n.js` contains English and Arabic dictionaries, stable translation
+keys, attribute/metadata translations and shared language controls. The one
+localStorage key is `twitchunblock.language`. A saved manual preference wins;
+otherwise an Arabic browser language selects Arabic, and other languages select
+English. Controls apply changes immediately without reload. Storage events keep
+open tabs synchronized; pageshow reconciles preferences on restored pages.
+Storage-denied browsers still support switching within the current page.
 
-## Root-site isolation
+The module sets `html.lang` and `html.dir` before body rendering and updates both
+on switching. Technical terms use LTR bidi isolation; release versions/tags and
+username input remain LTR. Arabic content otherwise follows natural RTL order.
+Static rich-copy translations preserve upstream links; untrusted release API
+values are always inserted as text. About includes translated descriptions,
+features, credits, labels, loading/fallback states and accessibility metadata.
 
-The existing root worker has scope `/` and can control this subpath when already
-installed. Its fetch handler passes HTML navigation, scripts, project images,
-release requests and APT resources through to the network. Only its existing
-branding/font allowlist is cached; using the cached root font is intentional.
-This page imports none of the root PWA/navigation scripts and installs no worker.
-It does not claim a new scope or modify root caches. Back to ipapplus is a normal
-navigation. `Packages`, `Release`, and the root site's files remain unchanged.
+Relative time uses completed elapsed units, explicit Arabic singular and dual
+forms and `Intl.RelativeTimeFormat` for Arabic few/many/plural forms. Under a
+minute is “Just now” / “الآن”. Exact dates use localized formatting and the
+browser timezone. A visibility-aware minute timer updates age without refetching.
+
+## Release behavior
+
+`app.js` remains the About release controller. It queries
+`https://api.github.com/repos/ipapplus/TwitchUnblock/releases/latest` without
+credentials. It validates release URLs, dates and asset names, preferring one
+uploaded `TwitchUnblock.ipa`, otherwise one unambiguous versioned IPA. Missing or
+ambiguous assets link to the release. API errors and the ten-second timeout link
+to GitHub Releases. All three download buttons stay synchronized and update
+language immediately without changing their destination.
+
+## Root site and future service-worker scope
+
+No root files or APT resources are modified. Neither document loads root PWA
+scripts, adds a manifest, or registers a service worker. The existing root worker
+continues passing TwitchUnblock documents/scripts/images and APT resources through
+to the network; its existing cached `/26.ttf` behavior remains intentional.
+
+If an app worker is introduced later, place it at `/twitchunblock/sw.js` and
+register with explicit scope `/twitchunblock/`. Never register a root-scoped
+worker or widen scope with a Service-Worker-Allowed header. Use app-specific
+cache names and only clean those caches. Root `/`, `/packages.html`, `Packages`
+and `Release` must stay outside any app worker control.
 
 ## Validation
 
-Serve the repository root:
-
-```sh
-python3 -m http.server 8765 --bind 127.0.0.1
-```
-
-With Node 20+ and Playwright/Chromium/WebKit installed in a separate directory:
+Serve the repository root with `python3 -m http.server 8765 --bind 127.0.0.1`.
+Run with Playwright and browsers installed outside this repository:
 
 ```sh
 PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node twitchunblock/tests/validate.cjs
 ```
 
-Tests use fixed reference dates and intercepted GitHub responses. They cover
-phone and desktop layouts, overflow, the local font, RTL sample, touch targets,
-keyboard focus, exact/relative dates, minute refresh, IPA selection, API failures,
-malformed and ambiguous assets, timeout, safe text rendering, reduced motion,
-and root-worker pass-through. `SITE_URL` and `SCREENSHOT_DIR` are optional.
-
-WebKit automation is a compatibility check, not a physical iPhone Safari test.
-Check actual notch safe areas and VoiceOver on an iPhone after deployment.
+`SITE_URL` selects a different host; `SCREENSHOT_DIR` saves browser screenshots.
+Tests cover Chromium/WebKit at 320, 375, 390, 430 and 1440px in both languages
+on both pages, direct opening, switching/persistence/cross-tab synchronization,
+font loading, overflow, touch targets, focus, navigation, Arabic relative time,
+release/IPA selection and failure cases, reduced motion, root resource byte
+parity and root-worker pass-through. WebKit automation is not a physical iPhone
+Safari/VoiceOver test; actual device safe areas and spoken labels need device QA.
 
 ## Attribution
 
 Original native project: https://github.com/MXFia19/TwitchUnblock
 Fork: https://github.com/ipapplus/TwitchUnblock
-Maintained by Ahmed AlGhrbi / ipapplus. The native project's MIT license and
-upstream credits remain with that project.
+Maintained by Ahmed AlGhrbi / ipapplus. Existing upstream credits, links, and
+native-project MIT license are preserved. The separate upstream browser project
+is linked from About. No separate domain is created.
 
-The upstream browser project (`MXFia19/TwitchUnblock-Web`) informed the simple
-static structure, feature grouping and distinction between native app and browser
-product. Its styling, typography, wording, player, authentication, analytics and
-backend were not copied. Visual design follows the ipapplus site.
+### Phase 1 validation record — 2026-10-07
+
+Chromium and WebKit passed all five requested viewport widths on both documents
+in English and Arabic (20 combinations per engine), release refresh/selection,
+error/timeout/ambiguous-asset fallbacks, immediate switching, shared persistence,
+cross-tab synchronization, touch targets, visible keyboard focus, font loading,
+RTL overflow checks and reduced motion. Screenshots were reviewed at 390px.
+Local root resource byte comparisons and root-worker isolation checks passed.
+The live GitHub API returned `nightly-18`; its IPA asset and View Releases URL
+both returned HTTP 200. Production deployment is verified after pushing.

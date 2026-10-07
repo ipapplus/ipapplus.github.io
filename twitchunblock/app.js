@@ -28,17 +28,25 @@
     return exact.length === 1 ? exact[0] : candidates.length === 1 ? candidates[0] : null;
   }
 
-  function relativeTime(date, now) {
-    const seconds = Math.max(0, Math.floor((now - date.getTime()) / 1000));
-    if (seconds < 60) return 'Just now';
-    const units = [[31536000, 'year'], [2592000, 'month'], [604800, 'week'], [86400, 'day'], [3600, 'hour'], [60, 'minute']];
-    const unit = units.find(entry => seconds >= entry[0]);
-    const count = Math.floor(seconds / unit[0]);
-    if (typeof Intl.RelativeTimeFormat === 'function') {
-      return new Intl.RelativeTimeFormat('en', { numeric: 'always' }).format(-count, unit[1]);
+  const i18n = window.TwitchI18n;
+  const t = (key, values) => i18n.t(key, values);
+  let currentDownload = { url: releases + '/latest', asset: null };
+  let state = 'loading';
+  function relativeTime(date, now) { return i18n.relativeTime(date, now); }
+  function renderLanguage() {
+    downloads(currentDownload.url, currentDownload.asset);
+    if (!publishedAt) document.getElementById('release-version').textContent = t('about.latest.fork.ipa');
+    const keys = { loading: 'releaseLoading', fallback: 'releaseFallback', published: 'releasePublished', missing: 'releaseNoIPA' };
+    document.getElementById('release-status').textContent = t(keys[state]);
+    const note = state === 'fallback' ? t('noteFallback') : state === 'published' ? t('assetNote', { name: currentDownload.asset.name }) : state === 'missing' ? t('noteNoIPA') : t('about.the.download.follows.the.latest.published.github.release');
+    document.getElementById('download-note').textContent = note;
+    if (publishedAt) {
+      document.getElementById('release-date').textContent = new Intl.DateTimeFormat(i18n.language, { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(publishedAt);
+      updateAge();
     }
-    return count + ' ' + unit[1] + (count === 1 ? '' : 's') + ' ago';
+    i18n.isolateTechnical();
   }
+  document.addEventListener('languagechange', renderLanguage);
 
   function updateAge() {
     if (publishedAt) document.getElementById('release-age').textContent = relativeTime(publishedAt, Date.now());
@@ -52,17 +60,18 @@
     }
   }
   function downloads(url, asset) {
+    currentDownload = { url, asset };
     document.querySelectorAll('[data-ipa-link]').forEach(link => {
       link.href = url;
-      link.querySelector('[data-download-label]').textContent = asset ? 'Download IPA' : 'View Releases';
-      if (asset) link.setAttribute('aria-label', 'Download ' + asset.name);
+      link.querySelector('[data-download-label]').textContent = t(asset ? 'downloadIPA' : 'viewReleases');
+      if (asset) link.setAttribute('aria-label', t('downloadLabel', { name: asset.name }));
       else link.removeAttribute('aria-label');
     });
   }
   function fallback() {
     downloads(releases + '/latest', null);
-    document.getElementById('release-status').textContent = 'Release details couldn’t be loaded. GitHub Releases has the latest IPA.';
-    document.getElementById('download-note').textContent = 'Open GitHub Releases to choose the latest IPA.';
+    state = 'fallback';
+    renderLanguage();
   }
 
   async function loadRelease() {
@@ -87,14 +96,14 @@
       tag.href = releaseLink;
       const time = document.getElementById('release-date');
       time.dateTime = date.toISOString();
-      time.textContent = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(date);
+      time.textContent = new Intl.DateTimeFormat(i18n.language, { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(date);
       publishedAt = date;
       document.getElementById('release-details').hidden = false;
       scheduleAge();
       const asset = selectIPA(release.assets);
       downloads(asset ? asset.browser_download_url : releaseLink, asset);
-      document.getElementById('release-status').textContent = asset ? 'Published by ipapplus/TwitchUnblock.' : 'No single app IPA could be selected. View the release to choose an asset.';
-      document.getElementById('download-note').textContent = asset ? 'Direct GitHub release asset: ' + asset.name : 'Choose an available IPA from the release page.';
+      state = asset ? 'published' : 'missing';
+      renderLanguage();
     } catch (_) { fallback(); }
     finally {
       clearTimeout(timeout);

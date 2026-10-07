@@ -50,7 +50,7 @@ async function setup(browser, viewport, payload = release, status = 200, reduced
   page.on('pageerror', error => errors.push(error.message));
   await page.route(endpoint, route => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(payload) }));
   await page.clock.install({ time: new Date('2026-10-07T12:00:00Z') });
-  await page.goto(base + '/twitchunblock/');
+  await page.goto(base + '/twitchunblock/about/');
   await page.waitForFunction(() => !document.getElementById('release-status').textContent.startsWith('Checking'));
   await page.evaluate(() => document.fonts.ready);
   return { context, page, errors };
@@ -83,7 +83,7 @@ async function layout(browser, engine, viewport) {
   assert.equal(await page.evaluate(() => getComputedStyle(document.activeElement).outlineWidth), '2px');
   await page.keyboard.press('Enter');
   assert.equal(await page.evaluate(() => document.activeElement.id), 'main');
-  await page.clock.runFor(86400000);
+  await page.clock.fastForward(86400000);
   assert.equal(await page.locator('#release-age').textContent(), '3 days ago');
   assert.deepEqual(errors, []);
   if (process.env.SCREENSHOT_DIR) {
@@ -125,7 +125,7 @@ async function failures(browser, engine) {
   let calls = 0;
   await stalledPage.route(endpoint, () => { calls++; });
   await stalledPage.clock.install({ time: new Date('2026-10-07T12:00:00Z') });
-  await stalledPage.goto(base + '/twitchunblock/');
+  await stalledPage.goto(base + '/twitchunblock/about/');
   await stalledPage.clock.runFor(11000);
   await stalledPage.waitForFunction(() => document.getElementById('release-status').textContent.includes('couldn’t'));
   assert.equal(calls, 1);
@@ -147,17 +147,86 @@ async function rootRegression(browser) {
   await page.getByRole('link', { name: 'Browse Tweaks' }).click();
   await page.locator('#package-list').waitFor({ state: 'visible' });
   assert(page.url().endsWith('/packages.html'));
-  await page.goto(base + '/twitchunblock/');
+  await page.goto(base + '/twitchunblock/about/');
   await page.locator('.site-header .back').click({ trial: true });
   await context.close();
   console.log('PASS root resource byte parity, Sileo source, home/package navigation');
 }
+async function bilingual(browser, engine) {
+ for (const width of [320,375,390,430,1440]) for (const language of ['en','ar']) for (const route of ['', 'about/']) {
+  const context = await browser.newContext({ viewport: { width, height: 900 }, locale: language, reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  const errors = []; page.on('pageerror', error => errors.push(error.message));
+  await page.route(endpoint, r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(release) }));
+  await page.goto(base + '/twitchunblock/' + route);
+  await page.evaluate(() => document.fonts.ready);
+  assert.equal(await page.locator('html').getAttribute('lang'), language);
+  assert.equal(await page.locator('html').getAttribute('dir'), language === 'ar' ? 'rtl' : 'ltr');
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+  assert(await page.evaluate(() => [...document.fonts].some(f => f.family.replace(/"/g,'') === 'Repo Local' && f.status === 'loaded')));
+  assert.deepEqual(await page.evaluate(() => [...document.querySelectorAll('a,button,input')].filter(e => e.getBoundingClientRect().width && e.getBoundingClientRect().height < 43.9).map(e=>e.textContent)), []);
+  await page.keyboard.press('Tab');
+  assert.equal(await page.evaluate(() => document.activeElement.className), 'skip-link');
+  assert.equal(await page.evaluate(() => getComputedStyle(document.activeElement).outlineWidth), '2px');
+  await page.keyboard.press('Enter');
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'main');
+  assert.equal(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
+  if (route) {
+   await page.waitForFunction(() => document.querySelector('#release-version').textContent === 'TwitchUnblock 9.9.9');
+   assert.equal(await page.locator('[data-ipa-link]').first().getAttribute('href'), assetURL);
+   assert.equal(await page.locator('[data-download-label]').first().textContent(), language === 'ar' ? 'تحميل IPA' : 'Download IPA');
+   assert.equal(await page.locator('.section-nav').getAttribute('aria-label'), language === 'ar' ? 'أقسام هذه الصفحة' : 'On this page');
+  } else {
+   for (const section of ['search','history','settings','home']) {
+    await page.locator('[data-section="'+section+'"]').click();
+    await page.locator('[data-panel="'+section+'"]').waitFor({state:'visible'});
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+   }
+  }
+  const other = language === 'ar' ? 'en' : 'ar';
+  await page.locator('header [data-language="'+other+'"]').click();
+  assert.equal(await page.locator('html').getAttribute('lang'), other);
+  assert.equal(await page.evaluate(() => localStorage.getItem('twitchunblock.language')), other);
+  if (route) assert.equal(await page.locator('#release-version').textContent(), release.name);
+  await page.locator(route ? '.open-app' : '.app-nav a[href="/twitchunblock/about/"]').click();
+  await page.waitForLoadState('domcontentloaded');
+  await page.waitForFunction(value => document.documentElement.lang === value, other);
+  assert.equal(await page.locator('html').getAttribute('lang'), other);
+  await page.reload();
+  assert.equal(await page.locator('html').getAttribute('lang'), other);
+  await page.locator('header [data-language="'+language+'"]').click();
+  assert.equal(await page.locator('html').getAttribute('lang'), language);
+  const ages = await page.evaluate(() => {
+   window.TwitchI18n.setLanguage('ar');
+   return [0,60,120,180,3600,7200,10800,86400,172800,259200].map(seconds => window.TwitchI18n.relativeTime(new Date(Date.now()-seconds*1000)));
+  });
+  assert.deepEqual(ages.map(text => text.replace(/[٠-٩]/g, digit => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit)))), ['الآن','قبل دقيقة','قبل دقيقتين','قبل 3 دقائق','قبل ساعة','قبل ساعتين','قبل 3 ساعات','قبل يوم','قبل يومين','قبل 3 أيام']);
+  assert.deepEqual(errors, []);
+  if (process.env.SCREENSHOT_DIR && width === 390) { await page.screenshot({ path: path.join(process.env.SCREENSHOT_DIR,engine+'-'+route.replace('/','')+'-'+language+'.png'), fullPage:true }); }
+  await context.close();
+ }
+ console.log('PASS',engine,'20 bilingual page/viewport cases, navigation, persistence, font, targets, focus, RTL, Arabic plurals');
+ const context = await browser.newContext({locale:'ar'});
+ const page = await context.newPage();
+ await page.route(endpoint, r => r.fulfill({status:403,body:'{}'}));
+ await page.goto(base+'/twitchunblock/about/');
+ await page.waitForFunction(()=>document.querySelector('#release-status').textContent.includes('تعذّر'));
+ await page.getByRole('button',{name:'English',exact:true}).click();
+ assert((await page.locator('#release-status').textContent()).includes('couldn’t'));
+ const second = await context.newPage(); await second.goto(base+'/twitchunblock/');
+ await page.getByRole('button',{name:'العربية',exact:true}).click();
+ await second.waitForFunction(()=>document.documentElement.lang==='ar');
+ await context.close();
+ console.log('PASS',engine,'localized API fallback and cross-tab language synchronization');
+}
 (async () => {
   workerIsolation();
   for (const [name, engine] of Object.entries({ chromium, webkit })) {
+    if (process.env.ENGINE && process.env.ENGINE !== name) continue;
     const browser = await engine.launch();
     try {
-      for (const viewport of [{ width: 320, height: 812 }, { width: 390, height: 844 }, { width: 1440, height: 1000 }]) await layout(browser, name, viewport);
+      for (const viewport of [{ width: 320, height: 812 }, { width: 375, height: 812 }, { width: 390, height: 844 }, { width: 430, height: 932 }, { width: 1440, height: 1000 }]) await layout(browser, name, viewport);
+      await bilingual(browser, name);
       await failures(browser, name);
       if (name === 'chromium') await rootRegression(browser);
     } finally { await browser.close(); }

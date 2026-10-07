@@ -89,3 +89,20 @@ p a,#release-tag{display:inline-flex;align-items:center;min-height:44px}
 @media(min-width:600px){.page{padding-inline:24px}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.arabic-section{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.card{padding:24px}.hero{padding:28px}h1{font-size:32px}}
 @media(min-width:850px){.feature-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.flow{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.flow li,.flow li:last-child{margin:0;border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--bg)}.flow li::before{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.button:active{transform:none}}
+/* Shared bilingual controls and app foundation. */
+.language-switch{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.language-switch button{min-height:44px;padding:8px 12px;background:var(--bg);color:var(--secondary);border:1px solid var(--border);border-radius:10px;font-size:12px;cursor:pointer}
+.language-switch button[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft);border-color:var(--accent-border)}
+.open-app{margin-bottom:16px}
+.product-link{display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none;font-size:18px}
+.app-nav{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px;padding:6px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+.app-nav a{display:flex;align-items:center;justify-content:center;flex:1 0 auto;min-height:44px;padding:8px 12px;color:var(--secondary);text-decoration:none;border:1px solid transparent;border-radius:10px;font-size:12px}
+.app-nav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent-border)}
+.empty-state{margin-top:20px;padding:22px 16px;background:var(--bg);border:1px dashed var(--border);border-radius:12px}
+.app-panel{min-height:260px}.app-panel label{display:block;margin-top:20px;margin-bottom:8px;color:var(--secondary)}
+.app-panel input{width:100%;min-height:46px;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:16px}
+.app-panel .language-switch{margin-top:20px}
+[dir="ltr"]{unicode-bidi:isolate}
+html[dir="rtl"] .back .icon{transform:scaleX(-1)}
+html[dir="rtl"] .eyebrow{letter-spacing:normal}
+html[dir="rtl"] h1,html[dir="rtl"] h2{letter-spacing:normal}
