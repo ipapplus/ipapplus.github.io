@@ -1015,6 +1015,24 @@ Description: Awesome tweak for Twitter
 Name: NeoFreeBird
 Author: NeoFreeBird
 
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm64
+Version: 7.1.1-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13736
+Depends: mobilesubstrate
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/com.bandarhl.bhtwitter_7.1.1-1+debug_iphoneos-arm64.deb
+Size: 4762686
+MD5sum: 4fd39da8800600510bf868e8195b19d7
+SHA1: 6f1ccf4534bb47fc08281a8ab18003052301946a
+SHA256: 540f3539d9f1870375cae926431fc8e137377b151f924138b5151435233c9edc
+SHA512: ffc99d6936fea1e10ec3d9df7f0e819a84bbe95c8c75e81ebaa895bdae2be942e7febf91bea467c0317cbe2e35d938b8ac20c9f0d9b88d647cf4f5a9d8999476
+Description: Awesome tweak for Twitter
+Name: NeoFreeBird
+Author: NeoFreeBird
+
 Package: com.barabadev.fluxion
 Architecture: iphoneos-arm64e
 Version: 1.0.0
