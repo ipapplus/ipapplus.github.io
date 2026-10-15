@@ -2392,5 +2392,11 @@
       "name" : "InfoBar",
       "package" : "com.mathelord.infobar",
       "version" : "1.2.0"
+   },
+   {
+      "addedAt" : "2026-10-15T10:57:42Z",
+      "name" : "NeoFreeBird",
+      "package" : "com.bandarhl.bhtwitter",
+      "version" : "7.1.1-1+debug"
    }
 ]

@@ -997,6 +997,24 @@ Description: Awesome tweak for Twitter
 Name: orionblur-NFB-BHTwitter
 Author: NeoFreeBird
 
+Package: com.bandarhl.bhtwitter
+Architecture: iphoneos-arm
+Version: 7.1.1-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 13736
+Depends: mobilesubstrate
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/com.bandarhl.bhtwitter_7.1.1-1+debug_iphoneos-arm.deb
+Size: 4762538
+MD5sum: ebfa16e760b3c635dd831aa7a38bf62d
+SHA1: 869241c96d59d504d7c6f74fc193a50469f818c0
+SHA256: b5e2d9496e6bb7f6330fe5cabbe2381fedb7b63e7582b1ea0eaa00340c5780b5
+SHA512: a772b149756bbf4acb534c44065c32219307556e17d8356fc661e3f19421d70a91d31d0dde596fe44398cd3a4fc26f6cf2d50352d183ec1524ee4f3f75295c8c
+Description: Awesome tweak for Twitter
+Name: NeoFreeBird
+Author: NeoFreeBird
+
 Package: com.barabadev.fluxion
 Architecture: iphoneos-arm64e
 Version: 1.0.0
