@@ -643,6 +643,66 @@ Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
 
+Package: com.a7m.abdownloadmanager.ios
+Architecture: iphoneos-arm
+Version: 0.1.0-53
+Priority: optional
+Section: Utilities
+Maintainer: Ahmed AlGhrbi
+Installed-Size: 3602
+Depends: firmware (>= 15.0), uikittools
+Filename: ./debs/com.a7m.abdownloadmanager.ios_0.1.0-53_iphoneos-arm.deb
+Size: 695788
+MD5sum: 70b668e11d43fd00c97c15a0950e7ede
+SHA1: f9989bdea6480fc339ac91e5a85959df63d69b74
+SHA256: 8bf78da79f37fe9a070691bcdb89fa0dbd5a599ea2bb645cf1ad926e0d12cc4c
+SHA512: 8f1bc7d8f0a254be8450f81b3f4722c66a0df82c6dded5ec29d1775ff948518bf7ab2b4bf1c8e23a2b7f8cc2edfb489bc65bd0d8eb90998a852a66ab98f792c0
+Homepage: https://github.com/ipapplus
+Description: Native iOS download manager.
+Name: AB Manager
+Author: Ahmed AlGhrbi (@ipapplus)
+Icon: https://i.imgur.com/furdNYl.jpeg
+
+Package: com.a7m.abdownloadmanager.ios
+Architecture: iphoneos-arm64
+Version: 0.1.0-53
+Priority: optional
+Section: Utilities
+Maintainer: Ahmed AlGhrbi
+Installed-Size: 3602
+Depends: firmware (>= 15.0), uikittools
+Filename: ./debs/com.a7m.abdownloadmanager.ios_0.1.0-53_iphoneos-arm64.deb
+Size: 696012
+MD5sum: 6ec8877d864032e1389d4f157e3003d2
+SHA1: 3105934f2a9a6cc9b56d37b9e2ee6e6bbadd0429
+SHA256: 0864c73944cf5175888c2f00e47017f59f5abd79e3576b1525e30ad6e896dc95
+SHA512: 0b33fcc7f849e3143e072fc079f8a1727966901819d71617bdda3efaa93ca1e3b23bca7b36f1076f3e9a691bbd9adea14d8024cbf220ef5a99f3dceaaf843005
+Homepage: https://github.com/ipapplus
+Description: Native iOS download manager.
+Name: AB Manager
+Author: Ahmed AlGhrbi (@ipapplus)
+Icon: https://i.imgur.com/furdNYl.jpeg
+
+Package: com.a7m.abdownloadmanager.ios
+Architecture: iphoneos-arm64e
+Version: 0.1.0-53
+Priority: optional
+Section: Utilities
+Maintainer: Ahmed AlGhrbi
+Installed-Size: 3602
+Depends: firmware (>= 15.0), uikittools
+Filename: ./debs/com.a7m.abdownloadmanager.ios_0.1.0-53_iphoneos-arm64e.deb
+Size: 696536
+MD5sum: f5ebf5e5af5cfe3a14f5afa1bbbdb22d
+SHA1: 5a9d14e88eb44dcb3fc17ed77f2a54ac96d07c57
+SHA256: 8e8d51b5cb40c185c7743f5c167b322c80f33a2250c0b27fd1499ca2a049893f
+SHA512: 3f8636446c8bcd1b062b31a0667b87d87c4a38a116f39e6807319958b8c222be3a4174dcd4abe6627947b9de7b0ca77291a972c5080a70859ff037e216360ef4
+Homepage: https://github.com/ipapplus
+Description: Native iOS download manager.
+Name: AB Manager
+Author: Ahmed AlGhrbi (@ipapplus)
+Icon: https://i.imgur.com/furdNYl.jpeg
+
 Package: com.alphastream.linearforsb
 Architecture: iphoneos-arm64e
 Version: 1.4.2-1
