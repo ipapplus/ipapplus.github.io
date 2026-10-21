@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="حمّل Instarab، نسخة إنستقرام عربية بواجهة معرّبة وتجربة مريحة ودعم مباشر للتثبيت على الآيفون.">
+  <title>Instarab - تثبيت مباشر</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #000000;
+      --card: #111318;
+      --card-2: #171a21;
+      --text: #f5f7fb;
+      --muted: #a8b0c0;
+      --line: rgba(255,255,255,.08);
+      --blue: #0a84ff;
+      --blue-2: #409cff;
+      --green: #30d158;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 26px;
+      --radius-sm: 18px;
+      --instagram-1: #feda75;
+      --instagram-2: #fa7e1e;
+      --instagram-3: #d62976;
+      --instagram-4: #962fbf;
+      --instagram-5: #4f5bd5;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background:
+        radial-gradient(circle at top right, rgba(150,47,191,.24), transparent 28%),
+        radial-gradient(circle at top left, rgba(79,91,213,.2), transparent 28%),
+        linear-gradient(180deg, #090b10 0%, #000 100%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .page {
+      width: min(1100px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 22px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .back-link,
+    .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: #dfe7f5;
+      font-size: 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(79,91,213,.22), rgba(214,41,118,.18) 30%, rgba(250,126,30,.18) 62%, rgba(255,255,255,.06) 100%),
+        #111318;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,255,255,.10), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(290px, .9fr);
+      gap: 26px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #f7f9ff;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .app-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .app-icon {
+      width: 114px;
+      height: 114px;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      background: #111;
+      flex: 0 0 auto;
+    }
+
+    .title-wrap h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 4.5vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    .subtitle {
+      margin: 0 0 10px;
+      color: #d8deea;
+      font-size: 19px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #e9eef9;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #e8edf8;
+      max-width: 760px;
+    }
+
+    .lead strong { color: #fff; }
+
+    .install-card {
+      background: rgba(8,10,14,.44);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      padding: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .install-card h2 {
+      margin: 0 0 6px;
+      font-size: 23px;
+    }
+
+    .install-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .cta,
+    .secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: transform .2s ease, opacity .2s ease, background .2s ease;
+      text-align: center;
+    }
+
+    .cta {
+      background: linear-gradient(180deg, var(--blue-2), var(--blue));
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(10,132,255,.24);
+      margin-bottom: 10px;
+    }
+
+    .secondary {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      color: #f2f6ff;
+      margin-bottom: 14px;
+    }
+
+    .cta:hover, .secondary:hover { transform: translateY(-1px); }
+    .cta:active, .secondary:active { transform: translateY(0); }
+
+    .helper-note {
+      font-size: 12px;
+      color: #97a4ba;
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px 14px;
+      min-height: 102px;
+    }
+
+    .stat .label {
+      font-size: 13px;
+      color: #98a4b7;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 6px;
+      letter-spacing: -.03em;
+    }
+
+    .stat small {
+      display: block;
+      font-size: 13px;
+      color: #d6deec;
+      line-height: 1.5;
+    }
+
+    .section {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -.03em;
+    }
+
+    .section .sub {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .whats-new {
+      display: grid;
+      gap: 14px;
+    }
+
+    .update-box {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .update-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .update-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #dce4f4;
+      flex-wrap: wrap;
+    }
+
+    .update-chip {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(48,209,88,.12);
+      color: #8ff0ab;
+      border: 1px solid rgba(48,209,88,.16);
+      font-size: 12px;
+    }
+
+    .update-text {
+      color: #edf2fb;
+      line-height: 1.95;
+      font-size: 15px;
+    }
+
+    .shots-wrap {
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,.2) transparent;
+    }
+
+    .shots {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: clamp(220px, 26vw, 280px);
+      gap: 14px;
+    }
+
+    .shot {
+      background: #0a0c10;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 34px rgba(0,0,0,.25);
+      scroll-snap-align: start;
+    }
+
+    .shot img {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+      object-position: top center;
+      background: #07090c;
+    }
+
+    .shot figcaption {
+      padding: 12px 14px 14px;
+      color: #d6deed;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+    }
+
+    .feature .emoji {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.06);
+      margin-bottom: 14px;
+      font-size: 23px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #8d9aaf;
+      font-size: 13px;
+      line-height: 1.9;
+      padding: 4px 8px 20px;
+    }
+
+    :focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 3px;
+      border-radius: 18px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .features { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(100% - 16px, 1000px); padding-top: 14px; }
+      .hero, .section { padding: 18px; border-radius: 24px; }
+      .app-head { align-items: flex-start; }
+      .app-icon { width: 92px; height: 92px; border-radius: 22px; }
+      .subtitle { font-size: 16px; }
+      .lead { font-size: 15px; line-height: 1.9; }
+      .section h2 { font-size: 24px; }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+      .stat strong { font-size: 24px; }
+      .features { grid-template-columns: 1fr; }
+      .shots { grid-auto-columns: 76vw; }
+      .topbar { margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="back-link" href="https://ipapplus.github.io/">← العودة للموقع</a>
+      <span class="mini-pill">تثبيت مباشر عبر Safari</span>
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">نسخة عربية محسّنة • تصميم عربي أوضح • تثبيت مباشر</div>
+
+          <div class="app-head">
+            <div class="app-icon">
+              <img src="file/5.PNG" alt="أيقونة Instarab" loading="eager">
+            </div>
+            <div class="title-wrap">
+              <h1>Instarab</h1>
+              <p class="subtitle">إنستقرام عربي بواجهة أوضح وتجربة أقرب لك</p>
+              <div class="badge-row">
+                <span class="badge">الإصدار 452.0.1</span>
+                <span class="badge">التصنيف: صور وفيديو</span>
+                <span class="badge">العمر +12</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="lead">
+            استمتع بتجربة <strong>Instagram</strong> بلمسة عربية أجمل، مع واجهة معرّبة، تنظيم أوضح، وصفحة تثبيت مباشرة وسهلة.
+            الصفحة هذه مصممة لتعرض التطبيق بأسلوب قريب من متجر التطبيقات مع <strong>معاينة للصور</strong> و<strong>تفاصيل الإصدار</strong> و<strong>زر تثبيت مباشر</strong>.
+          </p>
+        </div>
+
+        <aside class="install-card">
+          <h2>ثبّت التطبيق الآن</h2>
+          <p>افتح الصفحة من سفاري على الآيفون ثم اضغط على زر التثبيت. إذا احتجت الملف مباشرة ستجده أيضًا في الزر الثاني.</p>
+          <a class="cta" href="itms-services://?action=download-manifest&amp;url=https://ipapplus.github.io/manifest.plist">اضغط هنا للتثبيت</a>
+          <a class="secondary" href="https://github.com/ipapplus/ipapplus.github.io/releases/download/ipa/Instarab_RyukGram.ipa">تنزيل ملف IPA مباشرة</a>
+          <div class="helper-note">
+            يعمل التثبيت المباشر عبر ملف <code>manifest.plist</code>. تأكد من وجود شهادة توقيع صالحة وموثوقة على جهازك حتى يكتمل التثبيت بنجاح.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="معلومات التطبيق">
+      <div class="stat">
+        <span class="label">الإصدار الحالي</span>
+        <strong>452.0.1</strong>
+        <small>نسخة مبنية على إصدار حديث مع واجهة عربية.</small>
+      </div>
+      <div class="stat">
+        <span class="label">اللغة</span>
+        <strong>عربي</strong>
+        <small>تجربة أنسب للمستخدم العربي مع مظهر واضح ومنظم.</small>
+      </div>
+      <div class="stat">
+        <span class="label">نوع التطبيق</span>
+        <strong>صور</strong>
+        <small>ومقاطع فيديو ومتابعة المحتوى والتفاعل والرسائل.</small>
+      </div>
+      <div class="stat">
+        <span class="label">التثبيت</span>
+        <strong>مباشر</strong>
+        <small>عبر سفاري باستخدام رابط OTA وملف manifest.</small>
+      </div>
+    </section>
+
+    <section class="section whats-new">
+      <div class="section-head">
+        <div>
+          <h2>ما الجديد</h2>
+          <p class="sub">ملخص سريع عن الصفحة والتجربة التي سيحصل عليها الزائر قبل التثبيت.</p>
+        </div>
+      </div>
+
+      <div class="update-box">
+        <div class="update-top">
+          <div class="update-meta">
+            <strong>Instarab 452.0.1</strong>
+            <span class="update-chip">جاهز للتثبيت</span>
+          </div>
+          <span class="mini-pill">محدّث حديثًا</span>
+        </div>
+        <div class="update-text">
+          نسخة عربية من إنستقرام مع عرض أنيق شبيه بمتجر التطبيقات، تتضمن لقطات شاشة بارزة، هوية بصرية أجمل، وصول أسرع لرابط التثبيت، ووصفًا يوضح أن التطبيق موجّه لتجربة عربية أوضح وأسهل في الاستخدام.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>معاينة التطبيق</h2>
+          <p class="sub">أربع لقطات شاشة من التطبيق تظهر الواجهة العربية داخل الصفحة بأسلوب عرض قريب من App Store.</p>
+        </div>
+        <span class="mini-pill">اسحب أفقيًا للمزيد</span>
+      </div>
+
+      <div class="shots-wrap">
+        <div class="shots">
+          <figure class="shot">
+            <img src="file/1.PNG" alt="لقطة شاشة من Instarab 1" loading="lazy">
+            <figcaption>واجهة النشاط وإدارة المحتوى والتفاعل في مكان واحد.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="file/2.PNG" alt="لقطة شاشة من Instarab 2" loading="lazy">
+            <figcaption>خيارات تفضيلات المحتوى والتحكم فيما يظهر لك داخل الخلاصة.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="file/3.PNG" alt="لقطة شاشة من Instarab 3" loading="lazy">
+            <figcaption>قسم المساعدة والدعم بواجهة عربية واضحة وسهلة التصفح.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="file/4.PNG" alt="لقطة شاشة من Instarab 4" loading="lazy">
+            <figcaption>القائمة السريعة للملف الشخصي مع خيارات الحساب الأساسية.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>ليش تختاره</h2>
+          <p class="sub">ثلاث نقاط سريعة تبرز قيمة النسخة داخل الصفحة بشكل مختصر ومقنع.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <article class="feature">
+          <div class="emoji">🌍</div>
+          <h3>واجهة عربية أوضح</h3>
+          <p>تنظيم أنسب للقوائم والمحتوى المعروض مع إحساس بصري مريح للمستخدم العربي.</p>
+        </article>
+        <article class="feature">
+          <div class="emoji">⚡️</div>
+          <h3>تثبيت أسرع</h3>
+          <p>زر واضح للتثبيت المباشر عبر Safari بالإضافة إلى رابط تحميل IPA عند الحاجة.</p>
+        </article>
+        <article class="feature">
+          <div class="emoji">🖼️</div>
+          <h3>عرض احترافي</h3>
+          <p>صفحة مرتبة بأسلوب قريب من متجر التطبيقات مع لقطات شاشة وأقسام وصفية جذابة.</p>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      إذا غيّرت مكان الصور أو أسماءها عدّل المسارات داخل الصفحة. الإعداد الحالي يفترض وجود الصور داخل المجلد <strong>file</strong> بهذه الأسماء:<br>
+      <strong>1.PNG</strong> و <strong>2.PNG</strong> و <strong>3.PNG</strong> و <strong>4.PNG</strong> و <strong>5.PNG</strong>.
+    </p>
+  </div>
+</body>
+</html>
