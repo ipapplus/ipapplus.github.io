@@ -4574,6 +4574,60 @@ Author: ipapplus
 Icon: https://i.postimg.cc/SQ5KCNF0/IMG-7607.jpg
 Header: https://i.postimg.cc/PJNPhPgy/IMG-7790.jpg
 
+Package: com.ipapplus.instarab
+Architecture: iphoneos-arm
+Version: 4.1.2
+Section: Localizations
+Maintainer: @ipapplus
+Depends: mobilesubstrate
+Filename: ./debs/com.ipapplus.instarab_4.1.2_iphoneos-arm.deb
+Size: 4915064
+MD5sum: 081c5e0ab8c59611974461b72f464aa8
+SHA1: d35b834c9bac0f92e0613983935b5d1ac321c52d
+SHA256: eeec8fcc178189c2ee403f07a8526d437eff36be41c563d67b487a80823e386c
+SHA512: 0fcc217a7701ae6ff274075dba4f8f1f89fc88a8ee713c7efab5bd6d7f3e657b22a83ef7ad134071d4c5248ce21aa0ea58aff56b1aaec9a093b5dfde1e80c3eb
+Description: Arabic language for Instagram, translated with contribution from @r22i0.
+Name: Instagram (Arabic Localized)
+Author: @ipapplus
+Icon: https://i.imgur.com/4VA02fe.jpeg
+Header: https://i.imgur.com/XXNZHv4.jpeg
+
+Package: com.ipapplus.instarab
+Architecture: iphoneos-arm64
+Version: 4.1.2
+Section: Localizations
+Maintainer: @ipapplus
+Depends: mobilesubstrate
+Filename: ./debs/com.ipapplus.instarab_4.1.2_iphoneos-arm64.deb
+Size: 4915012
+MD5sum: 4b57a6cf053c7a7e0b58d4b5504fae4a
+SHA1: dd03cafb928d74c9968059c803d9cb4c3bb8eb81
+SHA256: 9c4d2683a05d199307698820e27e6c34f1781dcfd3d64d82c0919ee5e12e54fc
+SHA512: 98b8fbf2d3f15050e11952b7be99f89e0dd4d7cb06e290e04d9a4108dc3c7125a03d6dc3c56ee715b6c18e25753a66592f16770f5610d88b5c79894580a0629a
+Description: Arabic language for Instagram, translated with contribution from @r22i0.
+Name: Instagram (Arabic Localized)
+Author: @ipapplus
+Icon: https://i.imgur.com/4VA02fe.jpeg
+Header: https://i.imgur.com/XXNZHv4.jpeg
+
+Package: com.ipapplus.instarab
+Architecture: iphoneos-arm64e
+Version: 4.1.2
+Section: Localizations
+Maintainer: @ipapplus
+Depends: mobilesubstrate
+Filename: ./debs/com.ipapplus.instarab_4.1.2_iphoneos-arm64e.deb
+Size: 4914656
+MD5sum: 4c4980a11865f94a01a5006299275876
+SHA1: edc127e611dfdee84d483261a1d0448057b95fa7
+SHA256: 869049d5f5716f1a90b61fc481211d39442382de77f1fa1d02281dc0dc7b07ac
+SHA512: 033d91016029740f253bd02c93ab7adc498c15854d428e20ce6f2f45536b41209b19df0244764e128cd05f55ed4878cd9f3006ca01085a1ae6fc9ba079120ba2
+Description: Arabic language for Instagram, translated with contribution from @r22i0.
+Name: Instagram (Arabic Localized)
+Author: @ipapplus
+Icon: https://i.imgur.com/4VA02fe.jpeg
+Header: https://i.imgur.com/XXNZHv4.jpeg
+
 Package: com.jailbreak365.safeccmodules
 Architecture: iphoneos-arm64
 Version: 1.5-1

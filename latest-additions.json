@@ -2404,5 +2404,11 @@
       "name" : "AB Manager",
       "package" : "com.a7m.abdownloadmanager.ios",
       "version" : "0.1.0-53"
+   },
+   {
+      "addedAt" : "2026-10-22T21:17:31Z",
+      "name" : "Instagram (Arabic Localized)",
+      "package" : "com.ipapplus.instarab",
+      "version" : "4.1.2"
    }
 ]
