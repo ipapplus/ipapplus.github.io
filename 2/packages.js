@@ -48,12 +48,13 @@
     return `${(n / 1048576).toFixed(1)} MB`;
   }
 
+  const packageBaseURL = new URL('/', document.baseURI);
+
   function resolveDownloadURL(filename) {
     if (!filename) return '#';
     try {
-      // Filenames in Packages file belong to root directory
-      const base = new URL('/', document.baseURI);
-      return new URL(filename.replace(/^\/+/, ''), base).href;
+      const url = new URL(filename.replace(/^\/+/, ''), packageBaseURL);
+      return ['http:', 'https:'].includes(url.protocol) ? url.href : filename;
     } catch (e) {
       return filename;
     }
@@ -230,14 +231,14 @@
       const primaryUrl = resolveDownloadURL(pkg.builds[0].Filename);
 
       card.innerHTML = `
-        <div class="pkg-top-row">
-          <div class="pkg-name-group">
-            <h2 class="pkg-title-text">${pkg.name}</h2>
-            <p class="pkg-author-text">${pkg.author}</p>
-          </div>
-          <div class="pkg-badge-cluster">
-            <span class="pkg-ver-pill">${pkg.version}</span>
-            ${archPillsHtml}
+        <div class="pkg-header">
+          <h2 class="pkg-title-text">${pkg.name}</h2>
+          <div class="pkg-meta-row">
+            ${pkg.author ? `<p class="pkg-author-text">${pkg.author}</p>` : ''}
+            <div class="pkg-badge-cluster">
+              <span class="pkg-ver-pill">${pkg.version}</span>
+              ${archPillsHtml}
+            </div>
           </div>
         </div>
         <p class="pkg-desc-text">${pkg.description}</p>

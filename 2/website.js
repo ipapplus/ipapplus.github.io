@@ -1,10 +1,19 @@
 /**
  * IPAPPLUS REPOSITORY — CORE CLIENT RUNTIME
- * Apple-inspired theme engine, clipboard manager, and touch interactions.
+ * Apple-inspired theme engine, clipboard manager, floating radio player, and PWA integration.
  */
 
 (function () {
   'use strict';
+
+  // --- Display & Standalone Detection ---
+  const standaloneDisplay = typeof window.matchMedia === 'function'
+    ? window.matchMedia('(display-mode: standalone)')
+    : null;
+
+  function isStandalone() {
+    return window.navigator.standalone === true || Boolean(standaloneDisplay && standaloneDisplay.matches);
+  }
 
   // --- Theme Controller ---
   const THEME_KEY = 'ipapplus-theme';
@@ -65,7 +74,7 @@
         showToast(successMessage);
         return true;
       } catch (err) {
-        // Fallback to selection if writeText is blocked
+        // Fallback to textarea selection if writeText is blocked
       }
     }
     try {
@@ -132,6 +141,22 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+
+    // Page Refresh Control
+    const refreshControl = event.target.closest('[data-page-refresh]');
+    if (refreshControl && !refreshControl.disabled) {
+      refreshControl.classList.add('is-refreshing');
+      refreshControl.setAttribute('aria-busy', 'true');
+      window.location.reload();
+      return;
+    }
+  });
+
+  window.addEventListener('pageshow', () => {
+    document.querySelectorAll('[data-page-refresh]').forEach(control => {
+      control.classList.remove('is-refreshing');
+      control.removeAttribute('aria-busy');
+    });
   });
 
   // Scroll listener for back-to-top button
@@ -164,10 +189,106 @@
       .catch(() => {});
   }
 
-  // Expose API for packages.js
+  // --- Floating Radio Player (Restored from /1) ---
+  function initRadio() {
+    if (document.getElementById('quran-radio-button')) return;
+    const radio = document.createElement('audio');
+    radio.id = 'quran-radio';
+    radio.preload = 'none';
+
+    const button = document.createElement('button');
+    button.id = 'quran-radio-button';
+    button.type = 'button';
+    button.className = 'floating-radio-btn';
+    button.setAttribute('aria-pressed', 'false');
+    button.setAttribute('aria-label', 'Play Quran radio');
+    button.title = 'Play Quran radio';
+
+    const playIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+    const pauseIcon = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>';
+    button.innerHTML = playIcon;
+
+    let wanted = false;
+    let request = 0;
+    let failureShown = false;
+
+    function radioUI(active) {
+      button.setAttribute('aria-pressed', String(active));
+      button.setAttribute('aria-label', active ? 'Pause Quran radio' : 'Play Quran radio');
+      button.title = active ? 'Pause Quran radio' : 'Play Quran radio';
+      button.innerHTML = active ? pauseIcon : playIcon;
+    }
+
+    function fail() {
+      wanted = false;
+      request++;
+      radio.pause();
+      radioUI(false);
+      button.removeAttribute('aria-busy');
+      if (!failureShown) {
+        failureShown = true;
+        showToast('Radio stream unavailable. Tap to retry.');
+      }
+      radio.removeAttribute('src');
+      radio.load();
+    }
+
+    button.addEventListener('click', () => {
+      const token = ++request;
+      if (wanted) {
+        wanted = false;
+        radio.pause();
+        radioUI(false);
+        button.removeAttribute('aria-busy');
+        return;
+      }
+      wanted = true;
+      failureShown = false;
+      radioUI(!radio.paused);
+      button.setAttribute('aria-busy', 'true');
+      if (!radio.getAttribute('src')) {
+        radio.src = 'https://stream.radiojar.com/0tpy1h0kxtzuv';
+      }
+      // Direct tap handler activation for iOS Safari audio playback
+      try {
+        Promise.resolve(radio.play()).then(() => {
+          if (token !== request) return;
+          button.removeAttribute('aria-busy');
+          radioUI(wanted && !radio.paused);
+        }).catch(() => {
+          if (token === request && wanted) fail();
+        });
+      } catch (err) {
+        fail();
+      }
+    });
+
+    radio.addEventListener('play', () => radioUI(!radio.paused));
+    radio.addEventListener('waiting', () => { if (wanted) button.setAttribute('aria-busy', 'true'); });
+    radio.addEventListener('playing', () => {
+      if (!wanted) { radio.pause(); return; }
+      button.removeAttribute('aria-busy');
+      radioUI(true);
+    });
+    radio.addEventListener('pause', () => { if (radio.paused) { wanted = false; radioUI(false); button.removeAttribute('aria-busy'); } });
+    radio.addEventListener('ended', () => { wanted = false; radioUI(false); button.removeAttribute('aria-busy'); });
+    radio.addEventListener('error', () => { if (wanted) fail(); });
+
+    document.body.append(button, radio);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRadio);
+  } else {
+    initRadio();
+  }
+
+  // Expose API for packages.js and pwa.js
   window.RepoUI = {
     toast: showToast,
     copyText: copyToClipboard,
-    formatRelativeTime: formatRelativeTime
+    formatRelativeTime: formatRelativeTime,
+    isStandalone: isStandalone,
+    standaloneDisplay: standaloneDisplay
   };
 })();
