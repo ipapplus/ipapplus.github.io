@@ -1,6 +1,6 @@
 /**
- * IPAPPLUS ARCHIVE — Package Catalog Engine
- * Deb RFC 822 Parser, Filter, and Architecture Build Manager
+ * IPAPPLUS — Package Catalog Engine
+ * Deb RFC 822 Stream Parser, Filter, and Architecture Build Manager
  */
 
 (() => {
@@ -8,18 +8,18 @@
 
   let rawPackages = [];
   let unifiedPackages = [];
-  let activeFilter = 'all';
-  let searchQuery = '';
+  let currentArchFilter = 'all';
+  let currentSearchQuery = '';
 
-  const packagesContainer = document.getElementById('packages-stream');
-  const searchInput = document.getElementById('catalog-search');
-  const statusElement = document.getElementById('catalog-count-label');
-  const dialogBackdrop = document.getElementById('build-dialog-backdrop');
-  const dialogTitle = document.getElementById('build-dialog-title');
-  const dialogList = document.getElementById('build-dialog-list');
-  const dialogCloseBtn = document.getElementById('build-dialog-close');
+  const packagesGrid = document.getElementById('packages-grid');
+  const searchField = document.getElementById('catalog-search-field');
+  const countIndicator = document.getElementById('catalog-count-indicator');
+  const modalScrim = document.getElementById('build-modal-scrim');
+  const modalTitle = document.getElementById('modal-pkg-title');
+  const modalBuildsList = document.getElementById('modal-builds-list');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
 
-  function getArchLabel(arch) {
+  function getArchitectureLabel(arch) {
     if (!arch) return 'Universal';
     const a = arch.toLowerCase();
     if (a.includes('arm64e')) return 'RootHide';
@@ -28,18 +28,17 @@
     return arch;
   }
 
-  function formatBytes(bytes) {
+  function formatFileSize(bytes) {
     if (!bytes || isNaN(bytes)) return '';
-    const num = parseInt(bytes, 10);
-    if (num < 1024) return num + ' B';
-    if (num < 1048576) return (num / 1024).toFixed(1) + ' KB';
-    return (num / 1048576).toFixed(1) + ' MB';
+    const n = parseInt(bytes, 10);
+    if (n < 1024) return n + ' B';
+    if (n < 1048576) return (n / 1024).toFixed(1) + ' KB';
+    return (n / 1048576).toFixed(1) + ' MB';
   }
 
-  function sanitizeText(str) {
-    if (!str) return '';
-    // Strip emojis to maintain strict typographical standards
-    return str
+  function sanitizeCopy(text) {
+    if (!text) return '';
+    return text
       .replace(/[\u{1F300}-\u{1FAFF}\u{2700}-\u{27BF}\u{2600}-\u{26FF}]/gu, '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
@@ -48,26 +47,26 @@
       .replace(/'/g, '&#39;');
   }
 
-  function parseDebianPackages(text) {
-    const records = text.split(/\n\n+/);
+  function parseRFC822Packages(content) {
+    const records = content.split(/\n\n+/);
     const parsed = [];
 
     for (const record of records) {
       if (!record.trim()) continue;
       const lines = record.split(/\n/);
       const entry = {};
-      let currentKey = null;
+      let activeKey = null;
 
       for (const line of lines) {
         if (/^\s+/.test(line)) {
-          if (currentKey && entry[currentKey]) {
-            entry[currentKey] += ' ' + line.trim();
+          if (activeKey && entry[activeKey]) {
+            entry[activeKey] += ' ' + line.trim();
           }
         } else {
-          const colonIdx = line.indexOf(':');
-          if (colonIdx > 0) {
-            currentKey = line.slice(0, colonIdx).trim().toLowerCase();
-            entry[currentKey] = line.slice(colonIdx + 1).trim();
+          const colon = line.indexOf(':');
+          if (colon > 0) {
+            activeKey = line.slice(0, colon).trim().toLowerCase();
+            entry[activeKey] = line.slice(colon + 1).trim();
           }
         }
       }
@@ -79,32 +78,32 @@
     return parsed;
   }
 
-  function aggregatePackages(raw) {
+  function consolidatePackages(rawList) {
     const map = new Map();
 
-    for (const item of raw) {
+    for (const item of rawList) {
       const pkgId = item.package;
       if (!map.has(pkgId)) {
         map.set(pkgId, {
           id: pkgId,
           name: item.name || pkgId,
           author: item.author || item.maintainer || 'Independent Contributor',
-          description: item.description || 'System tweak package for iOS environments.',
+          description: item.description || 'Verified tweak package for iOS environments.',
           section: item.section || 'Tweaks',
           builds: []
         });
       }
 
-      const record = map.get(pkgId);
-      const arch = item.architecture || 'iphoneos-arm';
-      const cleanArch = getArchLabel(arch);
-      const debFilename = item.filename || '';
-      const downloadUrl = debFilename.startsWith('http')
-        ? debFilename
-        : 'https://ipapplus.github.io/' + debFilename.replace(/^\.?\//, '');
+      const entry = map.get(pkgId);
+      const rawArch = item.architecture || 'iphoneos-arm';
+      const cleanArch = getArchitectureLabel(rawArch);
+      const filename = item.filename || '';
+      const downloadUrl = filename.startsWith('http')
+        ? filename
+        : 'https://ipapplus.github.io/' + filename.replace(/^\.?\//, '');
 
-      record.builds.push({
-        architecture: arch,
+      entry.builds.push({
+        architecture: rawArch,
         archLabel: cleanArch,
         version: item.version || '1.0',
         size: item.size || 0,
@@ -115,193 +114,190 @@
     return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  function openBuildModal(pkg) {
-    if (!dialogBackdrop || !dialogTitle || !dialogList) return;
-    dialogTitle.textContent = pkg.name;
-    dialogList.innerHTML = '';
+  function openBuildPicker(pkg) {
+    if (!modalScrim || !modalTitle || !modalBuildsList) return;
+    modalTitle.textContent = pkg.name;
+    modalBuildsList.innerHTML = '';
 
     pkg.builds.forEach(build => {
-      const item = document.createElement('div');
-      item.className = 'dialog-build-item';
-      item.innerHTML = `
+      const row = document.createElement('div');
+      row.className = 'build-variant-row';
+      const archClass = build.archLabel === 'Rootless' ? 'tech-tag-teal' : (build.archLabel === 'RootHide' ? 'tech-tag-blue' : '');
+      row.innerHTML = `
         <div>
-          <strong>${sanitizeText(build.archLabel)}</strong>
-          <span style="color: var(--text-secondary); margin-left: 8px;">v${sanitizeText(build.version)}</span>
-          <span style="color: var(--text-muted); margin-left: 6px;">(${formatBytes(build.size)})</span>
+          <span class="tech-tag-chip ${archClass}">${sanitizeCopy(build.archLabel)}</span>
+          <span style="font-weight: 700; margin-left: 8px;">v${sanitizeCopy(build.version)}</span>
+          <span style="color: var(--text-muted); font-size: var(--step-small); margin-left: 6px;">(${formatFileSize(build.size)})</span>
         </div>
-        <a href="${build.url}" class="btn-primary" style="min-height: 40px; padding: 6px 14px; font-size: var(--step-small);" download>
+        <a href="${build.url}" class="cta-shimmer-btn" style="min-height: 40px; padding: 6px 14px; font-size: var(--step-small);" download>
           Download .deb
         </a>
       `;
-      dialogList.appendChild(item);
+      modalBuildsList.appendChild(row);
     });
 
-    dialogBackdrop.classList.add('is-visible');
-    dialogBackdrop.setAttribute('aria-hidden', 'false');
+    modalScrim.classList.add('is-open');
+    modalScrim.setAttribute('aria-hidden', 'false');
   }
 
-  function closeBuildModal() {
-    if (!dialogBackdrop) return;
-    dialogBackdrop.classList.remove('is-visible');
-    dialogBackdrop.setAttribute('aria-hidden', 'true');
+  function closeBuildPicker() {
+    if (!modalScrim) return;
+    modalScrim.classList.remove('is-open');
+    modalScrim.setAttribute('aria-hidden', 'true');
   }
 
-  if (dialogCloseBtn) {
-    dialogCloseBtn.addEventListener('click', closeBuildModal);
-  }
-
-  if (dialogBackdrop) {
-    dialogBackdrop.addEventListener('click', (e) => {
-      if (e.target === dialogBackdrop) closeBuildModal();
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeBuildPicker);
+  if (modalScrim) {
+    modalScrim.addEventListener('click', (e) => {
+      if (e.target === modalScrim) closeBuildPicker();
     });
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeBuildModal();
+    if (e.key === 'Escape') closeBuildPicker();
   });
 
-  function renderPackages() {
-    if (!packagesContainer) return;
+  function renderCatalogFeed() {
+    if (!packagesGrid) return;
 
     const filtered = unifiedPackages.filter(pkg => {
-      // 1. Architecture Filter
-      if (activeFilter !== 'all') {
-        const matchesArch = pkg.builds.some(b => b.archLabel.toLowerCase() === activeFilter.toLowerCase());
-        if (!matchesArch) return false;
+      if (currentArchFilter !== 'all') {
+        const hasArch = pkg.builds.some(b => b.archLabel.toLowerCase() === currentArchFilter.toLowerCase());
+        if (!hasArch) return false;
       }
 
-      // 2. Search Query Filter
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const inName = pkg.name.toLowerCase().includes(q);
-        const inId = pkg.id.toLowerCase().includes(q);
-        const inDesc = pkg.description.toLowerCase().includes(q);
-        const inAuthor = pkg.author.toLowerCase().includes(q);
-        if (!inName && !inId && !inDesc && !inAuthor) return false;
+      if (currentSearchQuery) {
+        const q = currentSearchQuery.toLowerCase();
+        const matchName = pkg.name.toLowerCase().includes(q);
+        const matchId = pkg.id.toLowerCase().includes(q);
+        const matchDesc = pkg.description.toLowerCase().includes(q);
+        const matchAuthor = pkg.author.toLowerCase().includes(q);
+        if (!matchName && !matchId && !matchDesc && !matchAuthor) return false;
       }
 
       return true;
     });
 
-    if (statusElement) {
-      statusElement.textContent = `Showing ${filtered.length} of ${unifiedPackages.length} archived packages`;
+    if (countIndicator) {
+      countIndicator.textContent = `Showing ${filtered.length} of ${unifiedPackages.length} verified packages`;
     }
 
     if (filtered.length === 0) {
-      packagesContainer.innerHTML = `
-        <div style="background: var(--bg-surface); padding: var(--space-6); text-align: center; border-radius: var(--radius-subtle);">
-          <p style="font-size: var(--step-subhead); font-weight: 700; margin-bottom: 8px;">No archived packages found</p>
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">No entries matched your search query or architecture filter.</p>
-          <button id="reset-catalog-btn" class="btn-secondary">Reset Search Filters</button>
+      packagesGrid.innerHTML = `
+        <div style="background: var(--bg-card); padding: 40px 24px; text-align: center; border-radius: var(--radius-lg);">
+          <p style="font-size: var(--step-subhead); font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">No packages found</p>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">No packages match your search query or architecture criteria.</p>
+          <button id="btn-clear-search" class="btn-tech-secondary">Clear Search &amp; Filters</button>
         </div>
       `;
-      const resetBtn = document.getElementById('reset-catalog-btn');
-      if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-          if (searchInput) searchInput.value = '';
-          searchQuery = '';
-          activeFilter = 'all';
-          document.querySelectorAll('.filter-pill').forEach(p => {
-            p.classList.toggle('is-active', p.getAttribute('data-arch') === 'all');
+      const clearBtn = document.getElementById('btn-clear-search');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          if (searchField) searchField.value = '';
+          currentSearchQuery = '';
+          currentArchFilter = 'all';
+          document.querySelectorAll('.arch-filter-btn').forEach(btn => {
+            btn.classList.toggle('is-selected', btn.getAttribute('data-arch') === 'all');
           });
-          renderPackages();
+          renderCatalogFeed();
         });
       }
       return;
     }
 
-    // Render package docket entries
-    const htmlFragments = filtered.map(pkg => {
-      const archTags = Array.from(new Set(pkg.builds.map(b => b.archLabel)))
-        .map(arch => `<span class="tag-badge ${arch === 'Rootless' ? 'tag-badge-vermilion' : ''}">${sanitizeText(arch)}</span>`)
+    const cardsHtml = filtered.map(pkg => {
+      const archPills = Array.from(new Set(pkg.builds.map(b => b.archLabel)))
+        .map(arch => {
+          const archClass = arch === 'Rootless' ? 'tech-tag-teal' : (arch === 'RootHide' ? 'tech-tag-blue' : '');
+          return `<span class="tech-tag-chip ${archClass}">${sanitizeCopy(arch)}</span>`;
+        })
         .join(' ');
 
-      const latestBuild = pkg.builds[0];
-      const hasMultipleBuilds = pkg.builds.length > 1;
+      const mainBuild = pkg.builds[0];
+      const hasVariants = pkg.builds.length > 1;
 
-      let actionHtml = '';
-      if (hasMultipleBuilds) {
-        actionHtml = `
-          <button class="btn-secondary" data-action="open-builds" data-pkg-id="${pkg.id}">
+      let actionMarkup = '';
+      if (hasVariants) {
+        actionMarkup = `
+          <button type="button" class="btn-tech-secondary" data-trigger="open-variants" data-pkg-id="${pkg.id}">
             Select Build (${pkg.builds.length})
           </button>
         `;
       } else {
-        actionHtml = `
-          <a href="${latestBuild.url}" class="btn-primary" style="padding: 8px 16px; min-height: 44px; font-size: var(--step-small);" download>
-            Download .deb (${formatBytes(latestBuild.size)})
+        actionMarkup = `
+          <a href="${mainBuild.url}" class="cta-shimmer-btn" style="min-height: 42px; padding: 8px 16px; font-size: var(--step-small);" download>
+            Download .deb (${formatFileSize(mainBuild.size)})
           </a>
         `;
       }
 
       return `
-        <article class="package-docket-entry">
-          <div class="docket-topline">
-            <h2 class="package-title">${sanitizeText(pkg.name)}</h2>
-            <span class="package-version-label">v${sanitizeText(latestBuild.version)}</span>
+        <article class="package-item-card">
+          <div class="card-topline">
+            <h2 class="pkg-title">${sanitizeCopy(pkg.name)}</h2>
+            <span class="pkg-version-pill">v${sanitizeCopy(mainBuild.version)}</span>
           </div>
-          <div class="docket-meta-row">
-            <code class="docket-package-id">${sanitizeText(pkg.id)}</code>
-            <span class="tag-badge">${sanitizeText(pkg.section)}</span>
-            ${archTags}
+          <div class="card-meta-chips">
+            <code class="pkg-id-code">${sanitizeCopy(pkg.id)}</code>
+            <span class="tech-tag-chip">${sanitizeCopy(pkg.section)}</span>
+            ${archPills}
           </div>
-          <p class="package-description-text">${sanitizeText(pkg.description)}</p>
-          <div class="docket-footer-bar">
-            <span class="package-author-note">Maintainer: ${sanitizeText(pkg.author.replace(/<[^>]*>/g, '').trim())}</span>
-            <div class="package-actions-cluster">
-              ${actionHtml}
+          <p class="pkg-description">${sanitizeCopy(pkg.description)}</p>
+          <div class="card-action-bar">
+            <span class="pkg-author-label">Maintainer: ${sanitizeCopy(pkg.author.replace(/<[^>]*>/g, '').trim())}</span>
+            <div>
+              ${actionMarkup}
             </div>
           </div>
         </article>
       `;
     });
 
-    packagesContainer.innerHTML = htmlFragments.join('');
+    packagesGrid.innerHTML = cardsHtml.join('');
 
-    // Attach event listeners for multi-build buttons
-    packagesContainer.querySelectorAll('[data-action="open-builds"]').forEach(btn => {
+    packagesGrid.querySelectorAll('[data-trigger="open-variants"]').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-pkg-id');
-        const pkg = unifiedPackages.find(p => p.id === id);
-        if (pkg) openBuildModal(pkg);
+        const found = unifiedPackages.find(p => p.id === id);
+        if (found) openBuildPicker(found);
       });
     });
   }
 
-  // Filter Pills Event Listeners
-  const filterPills = document.querySelectorAll('.filter-pill');
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => p.classList.remove('is-active'));
-      pill.classList.add('is-active');
-      activeFilter = pill.getAttribute('data-arch') || 'all';
-      renderPackages();
+  // Filter Event Listeners
+  const filterButtons = document.querySelectorAll('.arch-filter-btn');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('is-selected'));
+      btn.classList.add('is-selected');
+      currentArchFilter = btn.getAttribute('data-arch') || 'all';
+      renderCatalogFeed();
     });
   });
 
-  // Search Input Event Listener
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim();
-      renderPackages();
+  // Search Field Input
+  if (searchField) {
+    searchField.addEventListener('input', (e) => {
+      currentSearchQuery = e.target.value.trim();
+      renderCatalogFeed();
     });
   }
 
-  // Load Packages data
-  async function initPackages() {
+  // Fetch and Initialize Packages
+  async function loadRepositoryCatalog() {
     try {
-      const response = await fetch('./Packages');
-      if (!response.ok) throw new Error('Failed to load Packages file');
-      const text = await response.text();
-      rawPackages = parseDebianPackages(text);
-      unifiedPackages = aggregatePackages(rawPackages);
-      renderPackages();
+      const resp = await fetch('./Packages');
+      if (!resp.ok) throw new Error('HTTP error ' + resp.status);
+      const text = await resp.text();
+      rawPackages = parseRFC822Packages(text);
+      unifiedPackages = consolidatePackages(rawPackages);
+      renderCatalogFeed();
     } catch (err) {
-      if (packagesContainer) {
-        packagesContainer.innerHTML = `
-          <div style="background: var(--bg-surface); padding: var(--space-6); border-radius: var(--radius-subtle);">
-            <p style="font-weight: 700; color: var(--accent-vermilion); margin-bottom: 8px;">Catalog Index Loading Note</p>
-            <p style="color: var(--text-secondary);">Unable to fetch Packages file directly. Please access using local HTTP server or verified APT mirror.</p>
+      if (packagesGrid) {
+        packagesGrid.innerHTML = `
+          <div style="background: var(--bg-card); padding: 32px 20px; border-radius: var(--radius-lg);">
+            <p style="font-weight: 700; color: var(--accent-blue); margin-bottom: 8px;">Repository Manifest Offline</p>
+            <p style="color: var(--text-secondary);">Unable to stream live Packages manifest file. Verify HTTP server or deployment endpoint.</p>
           </div>
         `;
       }
@@ -309,8 +305,8 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPackages);
+    document.addEventListener('DOMContentLoaded', loadRepositoryCatalog);
   } else {
-    initPackages();
+    loadRepositoryCatalog();
   }
 })();

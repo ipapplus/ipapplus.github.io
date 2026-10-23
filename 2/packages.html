@@ -1,159 +1,171 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="system">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Package Catalog — IPAPPLUS ARCHIVE</title>
-  <meta name="description" content="Browse and download 395 verified iOS tweaks and Debian packages across Rootless, Rootful, and RootHide architectures.">
-  <meta name="theme-color" content="#f6f4ee">
+  <title>Package Catalog — IPAPPLUS</title>
+  <meta name="description" content="Browse and download 353 verified iOS tweaks and Debian packages across Rootless, Rootful, and RootHide architectures.">
+  <meta name="theme-color" content="#050a12">
 
   <!-- Icons & Web App Manifest -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
 
-  <!-- STIX Two Text Editorial Typography -->
+  <!-- Jost Geometric Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="website.css">
 
-  <!-- Theme pre-hydration to prevent flash -->
+  <!-- Theme pre-hydration script -->
   <script>
     (function() {
       try {
-        var saved = localStorage.getItem('archive-theme');
+        var saved = localStorage.getItem('ipapplus-theme');
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved === 'dark' || (saved !== 'light' && prefersDark) ? 'dark' : 'light';
+        var theme = saved === 'light' ? 'light' : (saved === 'dark' ? 'dark' : (prefersDark ? 'dark' : 'light'));
         document.documentElement.dataset.theme = theme;
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#141210' : '#f6f4ee');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#050a12' : '#f8fafc');
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
-  <a href="#main-catalog-content" class="skip-link">Skip to catalog stream</a>
+  <a href="#main-catalog-content" class="skip-link">Skip to catalog feed</a>
 
-  <!-- Archive Masthead -->
-  <header class="archive-masthead">
-    <div class="archive-shell masthead-row">
-      <div class="masthead-brand">
-        <a href="index.html" class="brand-mark">IPAPPLUS ARCHIVE</a>
-        <span class="brand-tagline">Curated iOS Software Repository</span>
+  <!-- Sticky Header Navbar -->
+  <header class="app-header">
+    <div class="app-container nav-layout">
+      <div class="nav-brand-group">
+        <a href="index.html" class="brand-link" aria-label="IPAPPLUS Repository Home">
+          <span class="brand-symbol">I</span>
+          <span>IPAPPLUS</span>
+        </a>
+        <div class="nav-status-badge">
+          <span class="status-dot-pulse"></span>
+          <span>353 Packages Live</span>
+        </div>
       </div>
 
-      <div class="masthead-actions">
+      <div class="nav-controls">
         <nav aria-label="Main Navigation">
-          <a href="index.html" class="nav-action-link">Archive Index</a>
-          <a href="packages.html" class="nav-action-link is-active-page" aria-current="page">Package Catalog</a>
+          <a href="index.html" class="nav-link-item">Repository</a>
         </nav>
 
-        <div class="theme-switch-control" role="group" aria-label="Appearance Mode">
-          <button type="button" class="theme-button" data-theme-choice="system" aria-label="System Appearance">Auto</button>
-          <button type="button" class="theme-button" data-theme-choice="light" aria-label="Light Appearance">Light</button>
-          <button type="button" class="theme-button" data-theme-choice="dark" aria-label="Dark Appearance">Dark</button>
+        <div class="appearance-switch" role="group" aria-label="Theme Selector">
+          <button type="button" class="appearance-btn" data-theme-choice="system" aria-label="System Mode">Auto</button>
+          <button type="button" class="appearance-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
+          <button type="button" class="appearance-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Main Catalog Content -->
-  <main id="main-catalog-content" class="archive-shell" style="padding-top: var(--space-6); padding-bottom: var(--space-8);">
+  <main id="main-catalog-content" class="app-container" style="padding-top: var(--space-8); padding-bottom: var(--space-10);">
+    <!-- Catalog Header -->
     <div style="margin-bottom: var(--space-6);">
-      <h1 class="archive-headline">Package Catalog</h1>
-      <p class="hero-summary" style="margin-top: 8px;">
-        Complete directory of 353 iOS packages. Filter by jailbreak architecture or query by name, identifier, or maintainer.
+      <h1 class="hero-headline">
+        iOS Package Catalog
+      </h1>
+      <p class="hero-lead-text" style="margin-bottom: 0;">
+        Browse and install 353 verified Debian packages across Rootless, Rootful, and RootHide jailbreak architectures.
       </p>
     </div>
 
-    <!-- Archival Plates Strip -->
-    <div class="archive-plate-strip" aria-label="Archival Collections Imagery">
-      <div class="archive-plate-item">
-        <img src="assets/cyrllic-teletype-typebars.jpg" width="1920" height="1440" alt="Mechanical teletype typebar assembly in computing archive">
+    <!-- Archival Technical Media Strip -->
+    <div class="tech-imagery-strip" aria-label="Repository Technical Imagery">
+      <div class="tech-image-frame">
+        <img src="assets/cyrllic-teletype-typebars.jpg" width="1920" height="1440" alt="Mechanical teletype typebar array in computing installation">
       </div>
-      <div class="archive-plate-item">
-        <img src="assets/slugs-typesetting.jpg" width="1280" height="731" alt="Lead typesetting slugs in Basel historical paper mill">
+      <div class="tech-image-frame">
+        <img src="assets/slugs-typesetting.jpg" width="1280" height="731" alt="Typesetting slugs preserved in paper museum">
       </div>
-      <div class="archive-plate-item">
-        <img src="assets/children-s-typesetting-set-used-for-valmy.jpg" width="1920" height="1920" alt="Typesetting characters in the Valmy collection">
+      <div class="tech-image-frame">
+        <img src="assets/children-s-typesetting-set-used-for-valmy.jpg" width="1920" height="1920" alt="Typesetting characters in historical collection">
       </div>
-      <div class="archive-plate-item">
+      <div class="tech-image-frame">
         <img src="assets/cyrillic-teletype-keyboard.jpg" width="1920" height="1440" alt="Teletype keyboard controller and input key levers">
       </div>
     </div>
 
-    <!-- Catalog Query & Filtering Toolbar -->
-    <section class="catalog-toolbar-panel" aria-label="Search and Filter Controls">
-      <div class="search-field-wrapper">
+    <!-- Search & Filter Command Suite -->
+    <section class="catalog-search-suite" aria-label="Search and Filter Controls">
+      <div class="search-input-shell">
         <input
           type="search"
-          id="catalog-search"
-          class="catalog-search-input"
-          placeholder="Search catalog by name, identifier, or author…"
+          id="catalog-search-field"
+          class="catalog-search-field"
+          placeholder="Search 353 packages by name, identifier, or author…"
           aria-label="Search packages in catalog"
           autocomplete="off"
         >
       </div>
 
-      <div class="arch-filter-group" role="group" aria-label="Filter by Architecture">
-        <button type="button" class="filter-pill is-active" data-arch="all">All Architectures</button>
-        <button type="button" class="filter-pill" data-arch="rootless">Rootless (arm64)</button>
-        <button type="button" class="filter-pill" data-arch="rootful">Rootful (arm)</button>
-        <button type="button" class="filter-pill" data-arch="roothide">RootHide (arm64e)</button>
+      <div class="architecture-filter-bar" role="group" aria-label="Filter by Architecture">
+        <button type="button" class="arch-filter-btn is-selected" data-arch="all">All Architectures (353)</button>
+        <button type="button" class="arch-filter-btn" data-arch="rootless">Rootless (arm64)</button>
+        <button type="button" class="arch-filter-btn" data-arch="rootful">Rootful (arm)</button>
+        <button type="button" class="arch-filter-btn" data-arch="roothide">RootHide (arm64e)</button>
       </div>
     </section>
 
-    <!-- Catalog Status Docket -->
-    <div class="catalog-status-docket">
-      <span id="catalog-count-label">Loading package records…</span>
-      <button type="button" class="btn-secondary" data-action="copy-repo" style="min-height: 38px; padding: 6px 14px; font-size: var(--step-small);">
+    <!-- Catalog Status & Quick Copy Strip -->
+    <div class="catalog-counter-strip">
+      <span id="catalog-count-indicator">Loading verified package records…</span>
+      <button type="button" class="btn-copy-chip" data-action="copy-repo">
         Copy Repository URL
       </button>
     </div>
 
-    <!-- Dynamic Packages Stream -->
-    <div id="packages-stream" class="packages-ledger-stream" role="feed" aria-busy="true">
-      <!-- Populated dynamically via packages.js -->
-      <div style="background: var(--bg-surface); padding: var(--space-6); border-radius: var(--radius-subtle); text-align: center;">
-        <p style="color: var(--text-secondary);">Loading Debian catalog records…</p>
+    <!-- Dynamic Packages Feed Grid -->
+    <div id="packages-grid" class="catalog-feed-grid" role="feed" aria-busy="true">
+      <div style="background: var(--bg-card); padding: 32px 20px; border-radius: var(--radius-lg); text-align: center;">
+        <p style="color: var(--text-secondary);">Streaming Debian repository packages…</p>
       </div>
     </div>
   </main>
 
-  <!-- Multi-Architecture Build Selection Dialog Modal -->
-  <div id="build-dialog-backdrop" class="editorial-dialog-backdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="build-dialog-title">
-    <div class="editorial-dialog-card">
-      <div class="dialog-header">
+  <!-- Multi-Architecture Build Selection Modal Dialog -->
+  <div id="build-modal-scrim" class="dialog-modal-scrim" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-pkg-title">
+    <div class="dialog-modal-box">
+      <div class="modal-header-row">
         <div>
-          <h2 id="build-dialog-title" class="dialog-title">Select Architecture Build</h2>
-          <p style="font-size: var(--step-small); color: var(--text-secondary); margin-top: 4px;">Choose the appropriate Debian build for your jailbreak environment.</p>
+          <h2 id="modal-pkg-title" class="modal-main-title">Select Architecture Build</h2>
+          <p style="font-size: var(--step-small); color: var(--text-secondary); margin-top: 4px;">Choose the compatible binary for your device.</p>
         </div>
-        <button type="button" id="build-dialog-close" class="btn-dialog-close" aria-label="Close dialog">
+        <button type="button" id="modal-close-btn" class="btn-modal-close" aria-label="Close dialog">
           &times;
         </button>
       </div>
 
-      <div id="build-dialog-list" class="dialog-build-list">
+      <div id="modal-builds-list" class="modal-builds-list">
         <!-- Injected dynamically via packages.js -->
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Docket -->
-  <div id="archive-toast" class="toast-docket" role="status" aria-live="polite"></div>
+  <!-- Toast Notification Alert -->
+  <div id="app-toast" class="app-toast-alert" role="status" aria-live="polite"></div>
 
-  <!-- Colophon Footer -->
-  <footer class="archive-footer">
-    <div class="archive-shell footer-docket">
-      <p class="footer-meta-text">
-        &copy; 2026 IPAPPLUS ARCHIVE. Independent iOS Software Repository.
-      </p>
+  <!-- Modern Application Footer -->
+  <footer class="app-footer">
+    <div class="app-container footer-inner-layout">
+      <div>
+        <p class="footer-copy-text">
+          &copy; 2026 IPAPPLUS Repository. Independent iOS Software Archive.
+        </p>
+        <p class="footer-copy-text" style="margin-top: 6px;">
+          Historical typography &amp; computing imagery courtesy of Wikimedia Commons under CC BY-SA &amp; CC0.
+        </p>
+      </div>
 
-      <ul class="footer-nav-list">
-        <li><a href="index.html">Archive Dispatch</a></li>
-        <li><a href="packages.html">Complete Catalog</a></li>
+      <ul class="footer-links-list">
+        <li><a href="index.html">Repository Home</a></li>
+        <li><a href="packages.html">Complete Catalog (353)</a></li>
         <li><a href="#main-catalog-content">Back to Top</a></li>
       </ul>
     </div>
