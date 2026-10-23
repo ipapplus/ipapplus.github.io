@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1014">
+  <meta name="description" content="نسخة معدّلة من إنستقرام بواجهة عربية للقوائم والإعدادات. ثبّت Instarab مباشرة أو حمّل ملف IPA.">
+  <title>Instarab | إنستقرام بواجهة عربية</title>
+  <link rel="icon" type="image/png" href="file/5.PNG">
+  <link rel="canonical" href="https://ipapplus.github.io/install.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instarab">
+  <meta property="og:title" content="Instarab | إنستقرام بواجهة عربية">
+  <meta property="og:description" content="نسخة معدّلة من إنستقرام بواجهة عربية للقوائم والإعدادات. ثبّت Instarab مباشرة أو حمّل ملف IPA.">
+  <meta property="og:url" content="https://ipapplus.github.io/install.html">
+  <meta property="og:image" content="https://ipapplus.github.io/instarab-share-ar-20261021-v1.jpg">
+  <meta property="og:image:secure_url" content="https://ipapplus.github.io/instarab-share-ar-20261021-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Instarab مع أيقونة التطبيق على خلفية داكنة وعبارة إنستقرام بواجهة عربية.">
+  <meta property="og:locale" content="ar_SA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instarab | إنستقرام بواجهة عربية">
+  <meta name="twitter:description" content="نسخة معدّلة من إنستقرام بواجهة عربية للقوائم والإعدادات. ثبّت Instarab مباشرة أو حمّل ملف IPA.">
+  <meta name="twitter:image" content="https://ipapplus.github.io/instarab-share-ar-20261021-v1.jpg">
+  <meta name="twitter:image:alt" content="Instarab مع أيقونة التطبيق على خلفية داكنة وعبارة إنستقرام بواجهة عربية.">
+  <meta name="twitter:creator" content="@ipapplus">
+  <style>
+
+    :root {
+      color-scheme: dark;
+      --paper: #0c1014;
+      --surface: #151920;
+      --ink: #f2f3f5;
+      --muted: #a5abb5;
+      --accent: #f28bb8;
+      --violet: #c6a8f5;
+      --white: #ffffff;
+      --control: #25212f;
+      --control-hover: #342a41;
+      --brand-gradient: linear-gradient(115deg, #7437ac, #ae246b 48%, #bf3154 78%, #b74c30);
+      --gutter: clamp(20px, 3vw, 32px);
+      --radius: 14px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.7; text-align: start; -webkit-font-smoothing: antialiased; }
+    body.viewer-open { overflow: hidden; }
+    button, a, summary { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    button { border: 0; font: inherit; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    h1, h2, h3, p, figure, dl, dd { margin: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    bdi { unicode-bidi: isolate; }
+    bdi[dir="ltr"] { font-variant-numeric: tabular-nums; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 2px solid var(--violet); outline-offset: 4px; }
+    ::selection { background: #963b68; color: var(--white); }
+    .frame { max-width: 960px; margin-inline: auto; padding-inline: var(--gutter); }
+    .skip { position: fixed; z-index: 10; top: 12px; inset-inline-start: 20px; padding: 10px 16px; border-radius: var(--radius); background: var(--control-hover); color: var(--ink); transform: translateY(-180%); }
+    .skip:focus { transform: none; }
+    .text-link { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; border-radius: var(--radius); transition: color 160ms ease, background-color 160ms ease, transform 160ms var(--ease); }
+    .text-link:hover { color: var(--accent); }
+    .hero { padding-block: max(28px, env(safe-area-inset-top)) 24px; }
+    .intro { min-width: 0; }
+    .identity { display: flex; align-items: flex-start; gap: 24px; }
+    .app-icon { flex: 0 0 112px; width: 112px; height: 112px; margin-top: 4px; border-radius: 22%; }
+    .app-facts { display: grid; flex: 1; min-width: 0; gap: 5px; }
+    .app-facts > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); align-items: baseline; gap: 12px; }
+    .app-facts dt { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .app-facts dd { min-width: 0; font-size: 15px; line-height: 1.7; }
+    .app-facts h1 { font-size: 28px; line-height: 1.35; font-weight: 700; letter-spacing: -.5px; }
+    .app-facts .localization { align-items: center; }
+    .profile-link { direction: rtl; unicode-bidi: isolate; flex-direction: row; width: fit-content; gap: 7px; padding-inline: 5px; margin-inline-start: -5px; color: var(--violet); font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .profile-link:hover { background: var(--control); }
+    .x-icon { display: block; width: 14px; height: 14px; flex: 0 0 14px; fill: currentColor; transform: none; }
+    .description { margin-top: 14px; color: #c2c6cf; font-size: 15px; }
+    .methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 14px; margin-top: 18px; }
+    .install-method { min-width: 0; padding: 16px; background: var(--surface); border-radius: 18px; }
+    .button, .download { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 50px; gap: 8px; padding: 11px 16px; border-radius: var(--radius); font-size: 15px; line-height: 1.5; font-weight: 600; transition: transform 160ms var(--ease), filter 160ms ease, background-color 160ms ease; }
+    .button { background: #b32968; background-image: var(--brand-gradient); color: var(--white); }
+    .button:hover { filter: brightness(1.1); }
+    .button:active, .download:active, .text-link:active { transform: scale(.97); }
+    .button svg, .download svg { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .download { color: #e3d5f6; background: var(--control); }
+    .download:hover { color: var(--white); background: var(--control-hover); }
+    .method-copy { margin-top: 10px; color: #c2c6cf; font-size: 15px; line-height: 1.75; }
+    .install-note { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .trust-guide { min-width: 0; margin-top: 4px; }
+    .trust-guide summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding-block: 8px; border-radius: 6px; list-style: none; cursor: pointer; font-size: 14px; font-weight: 500; }
+    .trust-guide summary::-webkit-details-marker { display: none; }
+    .trust-guide summary::after { content: '+'; flex-shrink: 0; color: var(--violet); font-size: 20px; font-weight: 400; }
+    .trust-guide[open] summary::after { content: '−'; }
+    .trust-guide summary:hover { color: var(--accent); }
+    .trust-steps { margin-block: 6px 10px; padding-inline-start: 22px; font-size: 14px; line-height: 1.8; }
+    .trust-steps li { padding-inline-start: 3px; }
+    .trust-steps li + li { margin-top: 6px; }
+    .trust-steps li::marker { color: var(--violet); font-weight: 600; }
+    .trust-note { margin-top: 8px; font-size: 13px; line-height: 1.8; color: var(--muted); }
+    .trust-steps .provider { overflow-wrap: anywhere; }
+    h2 { font-size: 22px; line-height: 1.45; font-weight: 600; }
+    .gallery { min-width: 0; margin-top: 28px; }
+    .gallery-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; margin-bottom: 10px; }
+    .gallery-controls { display: flex; gap: 4px; }
+    .round-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; border-radius: var(--radius); color: var(--violet); background: transparent; transition: transform 160ms var(--ease), background-color 160ms ease; }
+    .round-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .gallery-controls svg, .viewer-bottom svg { transform: scaleX(-1); }
+    .round-button:hover:not(:disabled) { background: var(--control); }
+    .round-button:active:not(:disabled) { transform: scale(.94); }
+    .round-button:disabled { opacity: .3; cursor: default; }
+    .shots { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0 8px; scroll-snap-type: x mandatory; scroll-padding-inline: 0; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #494052 var(--paper); }
+    .shot { flex: 0 0 180px; min-width: 0; scroll-snap-align: start; }
+    .shot a { display: block; border-radius: 16px; transition: transform 200ms var(--ease); }
+    .shot a:active { transform: scale(.985); }
+    .shot img { width: 100%; aspect-ratio: 1170 / 2532; border-radius: 16px; background: var(--surface); }
+    .shot figcaption { margin-top: 8px; font-size: 13px; line-height: 1.5; color: #c2c6cf; }
+    .gallery-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; color: var(--muted); font-size: 13px; }
+    .gallery-count { white-space: nowrap; }
+    .footer { display: grid; justify-items: center; gap: 6px; padding-block: 18px calc(18px + env(safe-area-inset-bottom)); color: var(--muted); font-size: 13px; }
+    .footer-credit { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 8px; text-align: center; }
+    .footer-credit .creator { color: var(--ink); }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 14px; }
+    .footer-links a { padding-inline: 8px; }
+    .footer-links a:hover { background: var(--control); }
+    .footer-icon { display: block; width: 16px; height: 16px; flex: 0 0 16px; }
+    .footer-icon.stroke { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .footer-icon.fill { fill: currentColor; }
+    .viewer { position: fixed; inset: 0; width: 100%; max-width: none; height: 100%; max-height: none; height: 100dvh; margin: 0; padding: 16px; padding-top: max(16px, env(safe-area-inset-top)); padding-bottom: max(16px, env(safe-area-inset-bottom)); border: 0; background: var(--paper); color: var(--ink); }
+    .viewer[open] { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .viewer::backdrop { background: var(--paper); }
+    .viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; max-width: 1000px; flex-shrink: 0; }
+    .viewer h2 { font-size: 16px; }
+    .viewer .round-button { background: var(--control); }
+    .viewer .round-button:hover:not(:disabled) { background: var(--control-hover); }
+    .viewer-image { flex: 1; min-height: 0; width: 100%; object-fit: contain; }
+    .viewer-bottom { display: flex; align-items: center; justify-content: center; gap: 16px; flex-shrink: 0; }
+    .viewer-bottom p { min-width: 100px; text-align: center; font-size: 13px; }
+    @media (max-width: 600px) {
+      .identity { gap: 16px; }
+      .app-icon { flex-basis: 88px; width: 88px; height: 88px; }
+      .app-facts > div { grid-template-columns: 76px minmax(0, 1fr); gap: 8px; }
+      .app-facts dt { font-size: 13px; }
+      .app-facts dd { font-size: 14px; }
+      .app-facts h1 { font-size: 25px; }
+      .methods { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+      .install-method { padding: 14px; }
+      .shots { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+      .shot { flex-basis: clamp(148px, 44vw, 190px); }
+      .footer-links { gap: 4px 8px; }
+    }
+    @media (max-width: 380px) {
+      .identity { gap: 12px; }
+      .app-icon { flex-basis: 68px; width: 68px; height: 68px; }
+      .app-facts > div { grid-template-columns: 68px minmax(0, 1fr); gap: 6px; }
+      .app-facts .bundle-value { font-size: 13px; overflow-wrap: anywhere; }
+      .profile-link { font-size: 13px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .intro { animation: settle 550ms var(--ease) both; }
+      .gallery { animation: settle 700ms var(--ease) both; }
+      .arrive { animation: settle 550ms var(--ease) both; }
+      .viewer[open] .viewer-image { animation: settle 240ms var(--ease) both; }
+      @keyframes settle { from { transform: translateY(10px); } to { transform: translateY(0); } }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">انتقل إلى المحتوى</a>
+  <main id="main" class="hero frame">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="identity">
+        <img class="app-icon" src="file/5.PNG" width="1254" height="1254" alt="أيقونة Instarab" fetchpriority="high">
+        <dl class="app-facts">
+          <div><dt>اسم التطبيق</dt><dd><h1 id="page-title"><bdi dir="ltr">Instarab</bdi></h1></dd></div>
+          <div><dt>معرّف الحزمة</dt><dd class="bundle-value"><bdi dir="ltr">com.burbn.instarab</bdi></dd></div>
+          <div><dt>الحجم</dt><dd><bdi dir="ltr">291.1 MB</bdi></dd></div>
+          <div><dt>الإصدار</dt><dd><bdi dir="ltr">452.0.1</bdi></dd></div>
+          <div class="localization"><dt>تعريب</dt><dd><a class="text-link profile-link" href="https://x.com/ipapplus" aria-label="حساب ipapplus على إكس"><svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.4-8.5L.8 2h6.5l4.5 6.7L18.9 2ZM17.8 20h1.7L6.3 3.9H4.5L17.8 20Z"/></svg><bdi dir="ltr">@ipapplus</bdi></a></dd></div>
+        </dl>
+      </div>
+      <p class="description">نسخة معدّلة من إنستقرام بواجهة عربية.</p>
+      <div class="methods" id="installation">
+        <div class="install-method">
+          <a class="button" href="itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fipapplus.github.io%2Fmanifest.plist" aria-describedby="direct-method install-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></svg>
+            <span>ثبّت التطبيق</span>
+          </a>
+          <p class="method-copy" id="direct-method">افتح الصفحة في سفاري على آيفون، ثم أكّد رسالة التثبيت.</p>
+          <details class="trust-guide">
+            <summary>الوثوق بالمطوّر بعد التثبيت</summary>
+            <ol class="trust-steps">
+              <li>ثبّت <bdi dir="ltr">Instarab</bdi> وانتظر ظهوره على الشاشة الرئيسية.</li>
+              <li>إذا ظهر تنبيه «مطوّر غير موثوق به»، أغلقه.</li>
+              <li>افتح «الإعدادات»، ثم «عام»، ثم «<bdi dir="ltr">VPN</bdi> وإدارة الجهاز».</li>
+              <li>ضمن «تطبيق المؤسسة»، اختر المطوّر الظاهر لديك، مثل <bdi class="provider" dir="ltr">RAKUTEN SECURITIES,INC.</bdi>. قد يختلف الاسم حسب الشهادة.</li>
+              <li>اختر «الوثوق» بالمطوّر، وأكّد عند الطلب.</li>
+              <li>على <bdi dir="ltr">iOS 18</bdi> أو أحدث، اختر «السماح وإعادة التشغيل» إذا ظهر، ثم أكمل التأكيد بعد إعادة التشغيل.</li>
+              <li>ارجع إلى الشاشة الرئيسية وافتح <bdi dir="ltr">Instarab</bdi>.</li>
+            </ol>
+            <p class="trust-note">قد يلزم الاتصال بالإنترنت للتحقق من الشهادة. إذا ظهر «غير متحقق منه»، اتصل بالإنترنت واختر «التحقق من التطبيق».</p>
+            <p class="trust-note">الوثوق بالمطوّر لا يعيد صلاحية شهادة ملغاة أو منتهية.</p>
+          </details>
+        </div>
+        <div class="install-method">
+          <a class="download" href="https://github.com/ipapplus/ipapplus.github.io/releases/download/ipa/Instarab_RyukGram.ipa" aria-describedby="ipa-method">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7l-4-4Zm0 0v5h4M9 13h6m-6 4h4"/></svg>
+            <span>حمّل ملف <bdi dir="ltr">IPA</bdi></span>
+          </a>
+          <p class="method-copy" id="ipa-method">نزّل الملف، ثم وقّعه وثبّته باستخدام أداة توقيع متوافقة.</p>
+        </div>
+      </div>
+      <p class="install-note" id="install-note">التثبيت المباشر بشهادة مؤسسية مجانية قد تتوقف في أي وقت. ملف <bdi dir="ltr">IPA</bdi> مستقل عنها ويمكن توقيعه بشهادة أخرى سارية.</p>
+    </section>
+      <section class="gallery" id="screenshots" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <h2 id="gallery-title">صور التطبيق</h2>
+          <div class="gallery-controls" id="gallery-controls" hidden>
+            <button class="round-button" id="gallery-prev" type="button" aria-label="الصورة السابقة" aria-controls="shots" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+            <button class="round-button" id="gallery-next" type="button" aria-label="الصورة التالية" aria-controls="shots"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="shots" id="shots" tabindex="0" role="region" aria-label="صور التطبيق، اسحب لاستعراض الصور">
+          <figure class="shot">
+            <a href="file/1.PNG" aria-label="كبّر صورة خيارات الحساب"><img src="file/1.PNG" width="1170" height="2532" alt="قائمة خيارات الحساب في Instarab باللغة العربية" decoding="async" fetchpriority="high"></a>
+            <figcaption>خيارات الحساب</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="file/2.PNG" aria-label="كبّر صورة المساعدة والدعم"><img src="file/2.PNG" width="1170" height="2532" alt="شاشة المساعدة والدعم باللغة العربية" decoding="async"></a>
+            <figcaption>المساعدة والدعم</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="file/3.PNG" aria-label="كبّر صورة نشاطك"><img src="file/3.PNG" width="1170" height="2532" alt="شاشة نشاطك لعرض التفاعلات والمحتوى والأرشيف" loading="lazy" decoding="async"></a>
+            <figcaption>نشاطك</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="file/4.PNG" aria-label="كبّر صورة تفضيلات المحتوى"><img src="file/4.PNG" width="1170" height="2532" alt="شاشة تفضيلات المحتوى وخيارات المنشورات المقترحة" loading="lazy" decoding="async"></a>
+            <figcaption>تفضيلات المحتوى</figcaption>
+          </figure>
+        </div>
+        <div class="gallery-foot"><p>اسحب للتصفّح، واضغط للتكبير.</p><p class="gallery-count" id="gallery-count" aria-live="polite" aria-atomic="true" hidden>الصورة الأولى</p></div>
+      </section>
+  </main>
+  <footer class="footer frame">
+    <p>حقوق الموقع <bdi dir="ltr">2016 - 2026</bdi></p>
+    <p class="footer-credit"><span>تطوير</span><span class="creator">أحمد الغربي <span aria-hidden="true">|</span> <bdi dir="ltr">Ahmed AlGhrbi</bdi></span></p>
+    <nav class="footer-links" aria-label="روابط المطوّر">
+      <a class="text-link" href="https://ipapplus.github.io/">
+        <svg class="footer-icon stroke" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+        <span>موقعي</span>
+      </a>
+      <a class="text-link" href="https://x.com/ipapplus" aria-label="حساب ipapplus على إكس"><svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.4-8.5L.8 2h6.5l4.5 6.7L18.9 2ZM17.8 20h1.7L6.3 3.9H4.5L17.8 20Z"/></svg><span>إكس</span></a>
+      <a class="text-link" href="https://github.com/ipapplus">
+        <svg class="footer-icon fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.12c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.99 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.56.23 2.71.12 2.99.72.79 1.15 1.8 1.15 3.03 0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.03.76 2.08v3.12c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+        <bdi dir="ltr">GitHub</bdi>
+      </a>
+    </nav>
+  </footer>
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <h2 id="viewer-title">صور التطبيق</h2>
+      <button class="round-button" id="viewer-close" type="button" aria-label="أغلق الصورة" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
+    <img class="viewer-image" id="viewer-image" width="1170" height="2532" alt="">
+    <div class="viewer-bottom">
+      <button class="round-button" id="viewer-prev" type="button" aria-label="الصورة السابقة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+      <p id="viewer-count" aria-live="polite" aria-atomic="true"></p>
+      <button class="round-button" id="viewer-next" type="button" aria-label="الصورة التالية"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+    </div>
+  </dialog>
+  <script>
+    (() => {
+      'use strict';
+      const track = document.getElementById('shots');
+      const shots = Array.from(track.querySelectorAll('.shot'));
+      const previous = document.getElementById('gallery-prev');
+      const next = document.getElementById('gallery-next');
+      const count = document.getElementById('gallery-count');
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const imageLabels = ['الصورة الأولى', 'الصورة الثانية', 'الصورة الثالثة', 'الصورة الرابعة'];
+      let current = 0;
+      let frame = 0;
+      const inlineStart = () => track.getBoundingClientRect().right - parseFloat(getComputedStyle(track).paddingRight);
+      const distanceFromStart = shot => shot.getBoundingClientRect().right - inlineStart();
+      const syncGallery = () => {
+        frame = 0;
+        current = shots.reduce((closest, shot, index) => Math.abs(distanceFromStart(shot)) < Math.abs(distanceFromStart(shots[closest])) ? index : closest, 0);
+        const bounds = track.getBoundingClientRect();
+        const inlineEnd = bounds.left + parseFloat(getComputedStyle(track).paddingLeft);
+        previous.disabled = distanceFromStart(shots[0]) <= 2;
+        next.disabled = shots[shots.length - 1].getBoundingClientRect().left >= inlineEnd - 2;
+        const label = imageLabels[next.disabled && !previous.disabled ? shots.length - 1 : current];
+        if (count.textContent !== label) count.textContent = label;
+      };
+      const scheduleSync = () => { if (!frame) frame = requestAnimationFrame(syncGallery); };
+      const goToImage = index => {
+        const target = Math.max(0, Math.min(shots.length - 1, index));
+        track.scrollBy({ left: distanceFromStart(shots[target]), behavior: motion.matches ? 'auto' : 'smooth' });
+      };
+      const moveGallery = step => goToImage(current + step);
+      previous.addEventListener('click', () => moveGallery(-1));
+      next.addEventListener('click', () => moveGallery(1));
+      track.addEventListener('scroll', scheduleSync, { passive: true });
+      window.addEventListener('resize', scheduleSync);
+      track.addEventListener('keydown', event => {
+        if (event.target !== track || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        if (event.key === 'Home' || event.key === 'End') {
+          goToImage(event.key === 'Home' ? 0 : shots.length - 1);
+        } else moveGallery(event.key === 'ArrowLeft' ? 1 : -1);
+      });
+      document.getElementById('gallery-controls').hidden = false;
+      count.hidden = false;
+      syncGallery();
+
+      const viewer = document.getElementById('viewer');
+      const viewerImage = document.getElementById('viewer-image');
+      const viewerPrevious = document.getElementById('viewer-prev');
+      const viewerNext = document.getElementById('viewer-next');
+      let selected = 0;
+      let opener = null;
+      const showImage = index => {
+        selected = Math.max(0, Math.min(shots.length - 1, index));
+        const source = shots[selected].querySelector('img');
+        viewerImage.src = source.getAttribute('src');
+        viewerImage.alt = source.alt;
+        document.getElementById('viewer-title').textContent = shots[selected].querySelector('figcaption').textContent;
+        document.getElementById('viewer-count').textContent = imageLabels[selected];
+        viewerPrevious.disabled = selected === 0;
+        viewerNext.disabled = selected === shots.length - 1;
+      };
+      if (typeof viewer.showModal === 'function') {
+        shots.forEach((shot, index) => {
+          const link = shot.querySelector('a');
+          link.addEventListener('click', event => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            opener = link;
+            showImage(index);
+            viewer.showModal();
+            document.body.classList.add('viewer-open');
+          });
+        });
+        document.getElementById('viewer-close').addEventListener('click', () => viewer.close());
+        viewerPrevious.addEventListener('click', () => showImage(selected - 1));
+        viewerNext.addEventListener('click', () => showImage(selected + 1));
+        viewer.addEventListener('keydown', event => {
+          if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          showImage(selected + (event.key === 'ArrowLeft' ? 1 : -1));
+        });
+        viewer.addEventListener('close', () => {
+          document.body.classList.remove('viewer-open');
+          if (opener) opener.focus({ preventScroll: true });
+        });
+        let touch = null;
+        viewerImage.addEventListener('touchstart', event => {
+          touch = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+        }, { passive: true });
+        viewerImage.addEventListener('touchend', event => {
+          if (!touch || event.changedTouches.length !== 1) return;
+          const dx = event.changedTouches[0].clientX - touch.x;
+          const dy = event.changedTouches[0].clientY - touch.y;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) showImage(selected + (dx > 0 ? 1 : -1));
+          touch = null;
+        }, { passive: true });
+        viewerImage.addEventListener('touchcancel', () => { touch = null; }, { passive: true });
+      }
+      if ('IntersectionObserver' in window && !motion.matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('arrive');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: .12 });
+        document.querySelectorAll('.install-method').forEach(element => observer.observe(element));
+      }
+    })();
+  </script>
+</body>
+</html>

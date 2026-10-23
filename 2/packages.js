@@ -1,312 +1,432 @@
 /**
- * IPAPPLUS — Package Catalog Engine
- * Deb RFC 822 Stream Parser, Filter, and Architecture Build Manager
+ * IPAPPLUS REPOSITORY — PACKAGE BROWSER RUNTIME
+ * Apple-inspired iOS package feed, instant search, architecture filter, and build modal.
  */
 
-(() => {
+(function () {
   'use strict';
 
-  let rawPackages = [];
-  let unifiedPackages = [];
-  let currentArchFilter = 'all';
-  let currentSearchQuery = '';
+  const $ = id => document.getElementById(id);
+  const searchInput = $('package-search');
+  const searchClear = $('search-clear');
+  const packageList = $('package-list');
+  const packageStatus = $('package-status');
+  const resetFiltersBtn = $('reset-filters');
+  const emptyState = $('empty-state');
+  const emptyAction = $('empty-action');
+  const archButtons = document.querySelectorAll('[data-architecture]');
 
-  const packagesGrid = document.getElementById('packages-grid');
-  const searchField = document.getElementById('catalog-search-field');
-  const countIndicator = document.getElementById('catalog-count-indicator');
-  const modalScrim = document.getElementById('build-modal-scrim');
-  const modalTitle = document.getElementById('modal-pkg-title');
-  const modalBuildsList = document.getElementById('modal-builds-list');
-  const modalCloseBtn = document.getElementById('modal-close-btn');
+  // Modal elements
+  const modalScrim = $('build-modal-scrim');
+  const modalTitle = $('modal-pkg-title');
+  const modalList = $('modal-builds-list');
+  const modalClose = $('modal-close-btn');
 
-  function getArchitectureLabel(arch) {
-    if (!arch) return 'Universal';
-    const a = arch.toLowerCase();
-    if (a.includes('arm64e')) return 'RootHide';
-    if (a.includes('arm64')) return 'Rootless';
-    if (a === 'iphoneos-arm' || a.includes('arm')) return 'Rootful';
-    return arch;
+  const ARCH_LABELS = {
+    'iphoneos-arm': 'Rootful',
+    'iphoneos-arm64': 'Rootless',
+    'iphoneos-arm64e': 'RootHide'
+  };
+
+  const ARCH_KEYS = {
+    'iphoneos-arm': 'rootful',
+    'iphoneos-arm64': 'rootless',
+    'iphoneos-arm64e': 'roothide'
+  };
+
+  let allPackageGroups = [];
+  let additionsMap = new Map();
+  let selectedArch = '';
+  let searchQuery = '';
+
+  // --- Utility Functions ---
+  function formatSize(bytes) {
+    const n = Number(bytes);
+    if (!bytes || !Number.isFinite(n) || n <= 0) return '';
+    if (n < 1024) return `${n} B`;
+    if (n < 1048576) return `${(n / 1024).toFixed(1)} KB`;
+    return `${(n / 1048576).toFixed(1)} MB`;
   }
 
-  function formatFileSize(bytes) {
-    if (!bytes || isNaN(bytes)) return '';
-    const n = parseInt(bytes, 10);
-    if (n < 1024) return n + ' B';
-    if (n < 1048576) return (n / 1024).toFixed(1) + ' KB';
-    return (n / 1048576).toFixed(1) + ' MB';
+  function resolveDownloadURL(filename) {
+    if (!filename) return '#';
+    try {
+      // Filenames in Packages file belong to root directory
+      const base = new URL('/', document.baseURI);
+      return new URL(filename.replace(/^\/+/, ''), base).href;
+    } catch (e) {
+      return filename;
+    }
   }
 
-  function sanitizeCopy(text) {
-    if (!text) return '';
-    return text
-      .replace(/[\u{1F300}-\u{1FAFF}\u{2700}-\u{27BF}\u{2600}-\u{26FF}]/gu, '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
+  function parseRFC822(text) {
+    const rawBlocks = text.replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/);
+    const packages = [];
 
-  function parseRFC822Packages(content) {
-    const records = content.split(/\n\n+/);
-    const parsed = [];
+    for (let i = 0; i < rawBlocks.length; i++) {
+      const block = rawBlocks[i].trim();
+      if (!block) continue;
+      const fields = {};
+      let currentKey = '';
 
-    for (const record of records) {
-      if (!record.trim()) continue;
-      const lines = record.split(/\n/);
-      const entry = {};
-      let activeKey = null;
-
-      for (const line of lines) {
-        if (/^\s+/.test(line)) {
-          if (activeKey && entry[activeKey]) {
-            entry[activeKey] += ' ' + line.trim();
+      const lines = block.split('\n');
+      for (let j = 0; j < lines.length; j++) {
+        const line = lines[j];
+        if (/^[ \t]/.test(line)) {
+          if (currentKey) {
+            fields[currentKey] += '\n' + (line.trim() === '.' ? '' : line.slice(1));
           }
         } else {
           const colon = line.indexOf(':');
           if (colon > 0) {
-            activeKey = line.slice(0, colon).trim().toLowerCase();
-            entry[activeKey] = line.slice(colon + 1).trim();
+            currentKey = line.slice(0, colon).trim();
+            fields[currentKey] = line.slice(colon + 1).trim();
           }
         }
       }
 
-      if (entry.package) {
-        parsed.push(entry);
+      if (fields.Package) {
+        packages.push(fields);
       }
     }
-    return parsed;
+    return packages;
   }
 
-  function consolidatePackages(rawList) {
-    const map = new Map();
+  function cleanText(str) {
+    return (str || '').replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '').replace(/\s+/g, ' ').trim();
+  }
 
-    for (const item of rawList) {
-      const pkgId = item.package;
-      if (!map.has(pkgId)) {
-        map.set(pkgId, {
-          id: pkgId,
-          name: item.name || pkgId,
-          author: item.author || item.maintainer || 'Independent Contributor',
-          description: item.description || 'Verified tweak package for iOS environments.',
-          section: item.section || 'Tweaks',
+  function groupPackages(list) {
+    const map = new Map();
+    for (let i = 0; i < list.length; i++) {
+      const pkg = list[i];
+      const key = `${pkg.Package}@${pkg.Version || '1.0'}`;
+      if (!map.has(key)) {
+        map.set(key, {
+          id: pkg.Package,
+          name: cleanText(pkg.Name || pkg.Package),
+          version: pkg.Version || '',
+          section: pkg.Section || 'Tweaks',
+          author: cleanText((pkg.Author || pkg.Maintainer || 'Unknown').replace(/<[^>]*>/g, '')),
+          description: cleanText(pkg.Description) || 'No description provided.',
           builds: []
         });
       }
-
-      const entry = map.get(pkgId);
-      const rawArch = item.architecture || 'iphoneos-arm';
-      const cleanArch = getArchitectureLabel(rawArch);
-      const filename = item.filename || '';
-      const downloadUrl = filename.startsWith('http')
-        ? filename
-        : 'https://ipapplus.github.io/' + filename.replace(/^\.?\//, '');
-
-      entry.builds.push({
-        architecture: rawArch,
-        archLabel: cleanArch,
-        version: item.version || '1.0',
-        size: item.size || 0,
-        url: downloadUrl
-      });
+      map.get(key).builds.push(pkg);
     }
-
-    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+    return Array.from(map.values());
   }
 
-  function openBuildPicker(pkg) {
-    if (!modalScrim || !modalTitle || !modalBuildsList) return;
-    modalTitle.textContent = pkg.name;
-    modalBuildsList.innerHTML = '';
+  // --- Modal Bottom Sheet Controller ---
+  function openBuildModal(pkgGroup) {
+    if (!modalScrim) return;
+    modalTitle.textContent = pkgGroup.name;
+    modalList.innerHTML = '';
 
-    pkg.builds.forEach(build => {
-      const row = document.createElement('div');
-      row.className = 'build-variant-row';
-      const archClass = build.archLabel === 'Rootless' ? 'tech-tag-teal' : (build.archLabel === 'RootHide' ? 'tech-tag-blue' : '');
+    pkgGroup.builds.forEach(build => {
+      const arch = build.Architecture || 'iphoneos-arm';
+      const archName = ARCH_LABELS[arch] || arch;
+      const archKey = ARCH_KEYS[arch] || 'rootless';
+      const url = resolveDownloadURL(build.Filename);
+      const size = formatSize(build.Size);
+
+      const row = document.createElement('a');
+      row.className = 'variant-picker-row';
+      row.href = url;
+      row.download = '';
       row.innerHTML = `
-        <div>
-          <span class="tech-tag-chip ${archClass}">${sanitizeCopy(build.archLabel)}</span>
-          <span style="font-weight: 700; margin-left: 8px;">v${sanitizeCopy(build.version)}</span>
-          <span style="color: var(--text-muted); font-size: var(--step-small); margin-left: 6px;">(${formatFileSize(build.size)})</span>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="pkg-arch-pill" data-arch="${archKey}">${archName}</span>
+          <span style="font-size:0.875rem; color:var(--text-secondary);">${build.Version || pkgGroup.version}</span>
         </div>
-        <a href="${build.url}" class="cta-shimmer-btn" style="min-height: 40px; padding: 6px 14px; font-size: var(--step-small);" download>
-          Download .deb
-        </a>
+        <div style="display:flex; align-items:center; gap:8px;">
+          ${size ? `<span style="font-size:0.75rem; color:var(--text-muted);">${size}</span>` : ''}
+          <svg style="width:16px; height:16px; color:var(--accent-cyan);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </div>
       `;
-      modalBuildsList.appendChild(row);
+      modalList.appendChild(row);
     });
 
-    modalScrim.classList.add('is-open');
+    modalScrim.classList.add('is-active');
     modalScrim.setAttribute('aria-hidden', 'false');
   }
 
-  function closeBuildPicker() {
+  function closeBuildModal() {
     if (!modalScrim) return;
-    modalScrim.classList.remove('is-open');
+    modalScrim.classList.remove('is-active');
     modalScrim.setAttribute('aria-hidden', 'true');
   }
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeBuildPicker);
+  if (modalClose) modalClose.addEventListener('click', closeBuildModal);
   if (modalScrim) {
-    modalScrim.addEventListener('click', (e) => {
-      if (e.target === modalScrim) closeBuildPicker();
+    modalScrim.addEventListener('click', e => {
+      if (e.target === modalScrim) closeBuildModal();
     });
   }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeBuildPicker();
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modalScrim && modalScrim.classList.contains('is-active')) {
+      closeBuildModal();
+    }
   });
 
-  function renderCatalogFeed() {
-    if (!packagesGrid) return;
+  // --- Rendering & Filtering ---
+  function renderFeed(filtered) {
+    packageList.innerHTML = '';
+    const total = allPackageGroups.length;
+    const count = filtered.length;
 
-    const filtered = unifiedPackages.filter(pkg => {
-      if (currentArchFilter !== 'all') {
-        const hasArch = pkg.builds.some(b => b.archLabel.toLowerCase() === currentArchFilter.toLowerCase());
-        if (!hasArch) return false;
-      }
-
-      if (currentSearchQuery) {
-        const q = currentSearchQuery.toLowerCase();
-        const matchName = pkg.name.toLowerCase().includes(q);
-        const matchId = pkg.id.toLowerCase().includes(q);
-        const matchDesc = pkg.description.toLowerCase().includes(q);
-        const matchAuthor = pkg.author.toLowerCase().includes(q);
-        if (!matchName && !matchId && !matchDesc && !matchAuthor) return false;
-      }
-
-      return true;
-    });
-
-    if (countIndicator) {
-      countIndicator.textContent = `Showing ${filtered.length} of ${unifiedPackages.length} verified packages`;
+    // Status strip
+    if (packageStatus) {
+      packageStatus.textContent = count === total
+        ? `Showing ${total} packages`
+        : `Showing ${count} of ${total} packages`;
     }
 
-    if (filtered.length === 0) {
-      packagesGrid.innerHTML = `
-        <div style="background: var(--bg-card); padding: 40px 24px; text-align: center; border-radius: var(--radius-lg);">
-          <p style="font-size: var(--step-subhead); font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">No packages found</p>
-          <p style="color: var(--text-secondary); margin-bottom: 20px;">No packages match your search query or architecture criteria.</p>
-          <button id="btn-clear-search" class="btn-tech-secondary">Clear Search &amp; Filters</button>
-        </div>
-      `;
-      const clearBtn = document.getElementById('btn-clear-search');
-      if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-          if (searchField) searchField.value = '';
-          currentSearchQuery = '';
-          currentArchFilter = 'all';
-          document.querySelectorAll('.arch-filter-btn').forEach(btn => {
-            btn.classList.toggle('is-selected', btn.getAttribute('data-arch') === 'all');
-          });
-          renderCatalogFeed();
-        });
-      }
+    if (resetFiltersBtn) {
+      resetFiltersBtn.hidden = (selectedArch === '' && searchQuery === '');
+    }
+
+    // Empty state
+    if (count === 0) {
+      emptyState.hidden = false;
+      packageList.hidden = true;
       return;
     }
 
-    const cardsHtml = filtered.map(pkg => {
-      const archPills = Array.from(new Set(pkg.builds.map(b => b.archLabel)))
-        .map(arch => {
-          const archClass = arch === 'Rootless' ? 'tech-tag-teal' : (arch === 'RootHide' ? 'tech-tag-blue' : '');
-          return `<span class="tech-tag-chip ${archClass}">${sanitizeCopy(arch)}</span>`;
-        })
-        .join(' ');
+    emptyState.hidden = true;
+    packageList.hidden = false;
 
-      const mainBuild = pkg.builds[0];
-      const hasVariants = pkg.builds.length > 1;
+    const frag = document.createDocumentFragment();
 
-      let actionMarkup = '';
-      if (hasVariants) {
-        actionMarkup = `
-          <button type="button" class="btn-tech-secondary" data-trigger="open-variants" data-pkg-id="${pkg.id}">
-            Select Build (${pkg.builds.length})
-          </button>
-        `;
-      } else {
-        actionMarkup = `
-          <a href="${mainBuild.url}" class="cta-shimmer-btn" style="min-height: 42px; padding: 8px 16px; font-size: var(--step-small);" download>
-            Download .deb (${formatFileSize(mainBuild.size)})
-          </a>
-        `;
-      }
+    filtered.forEach(pkg => {
+      const card = document.createElement('article');
+      card.className = 'pkg-entry-card';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-expanded', 'false');
 
-      return `
-        <article class="package-item-card">
-          <div class="card-topline">
-            <h2 class="pkg-title">${sanitizeCopy(pkg.name)}</h2>
-            <span class="pkg-version-pill">v${sanitizeCopy(mainBuild.version)}</span>
+      // Unique architectures available for this package
+      const archs = Array.from(new Set(pkg.builds.map(b => b.Architecture || 'iphoneos-arm')));
+      const archPillsHtml = archs.map(arch => {
+        const key = ARCH_KEYS[arch] || 'rootless';
+        const label = ARCH_LABELS[arch] || arch;
+        return `<span class="pkg-arch-pill" data-arch="${key}">${label}</span>`;
+      }).join('');
+
+      // Min/representative size
+      const sizes = pkg.builds.map(b => Number(b.Size)).filter(n => Number.isFinite(n) && n > 0);
+      const minSize = sizes.length ? formatSize(Math.min(...sizes)) : '';
+
+      // Added timestamp
+      const addedRecord = additionsMap.get(`${pkg.id}@${pkg.version}`);
+      const addedText = addedRecord ? window.RepoUI.formatRelativeTime(new Date(addedRecord)) : '';
+
+      // Download Action
+      const hasMultipleBuilds = pkg.builds.length > 1;
+      const primaryUrl = resolveDownloadURL(pkg.builds[0].Filename);
+
+      card.innerHTML = `
+        <div class="pkg-top-row">
+          <div class="pkg-name-group">
+            <h2 class="pkg-title-text">${pkg.name}</h2>
+            <p class="pkg-author-text">${pkg.author}</p>
           </div>
-          <div class="card-meta-chips">
-            <code class="pkg-id-code">${sanitizeCopy(pkg.id)}</code>
-            <span class="tech-tag-chip">${sanitizeCopy(pkg.section)}</span>
-            ${archPills}
+          <div class="pkg-badge-cluster">
+            <span class="pkg-ver-pill">${pkg.version}</span>
+            ${archPillsHtml}
           </div>
-          <p class="pkg-description">${sanitizeCopy(pkg.description)}</p>
-          <div class="card-action-bar">
-            <span class="pkg-author-label">Maintainer: ${sanitizeCopy(pkg.author.replace(/<[^>]*>/g, '').trim())}</span>
-            <div>
-              ${actionMarkup}
-            </div>
+        </div>
+        <p class="pkg-desc-text">${pkg.description}</p>
+        <div class="pkg-bottom-actions">
+          <div class="pkg-meta-strip">
+            ${minSize ? `<span>${minSize}</span>` : ''}
+            ${addedText ? `<span>• Added ${addedText}</span>` : ''}
           </div>
-        </article>
+          <div class="pkg-action-buttons">
+            <button type="button" class="btn-card-action" data-copy-link="${primaryUrl}" aria-label="Copy download link" title="Copy download link">
+              <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                <path d="M16 8V4H4v12h4"></path>
+              </svg>
+            </button>
+            ${hasMultipleBuilds
+              ? `<button type="button" class="btn-card-action btn-download-primary" data-open-builds="${pkg.id}@${pkg.version}">
+                   <span>Builds (${pkg.builds.length})</span>
+                   <svg style="width:14px; height:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                 </button>`
+              : `<a href="${primaryUrl}" download class="btn-card-action btn-download-primary" aria-label="Download .deb package" title="Download .deb package">
+                   <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                     <polyline points="7 10 12 15 17 10"></polyline>
+                     <line x1="12" y1="15" x2="12" y2="3"></line>
+                   </svg>
+                   <span>Get</span>
+                 </a>`
+            }
+          </div>
+        </div>
       `;
+
+      // Expand card on click
+      card.addEventListener('click', e => {
+        if (e.target.closest('button, a')) return;
+        const expanded = card.classList.toggle('is-expanded');
+        card.setAttribute('aria-expanded', String(expanded));
+      });
+
+      frag.appendChild(card);
     });
 
-    packagesGrid.innerHTML = cardsHtml.join('');
+    packageList.appendChild(frag);
+  }
 
-    packagesGrid.querySelectorAll('[data-trigger="open-variants"]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-pkg-id');
-        const found = unifiedPackages.find(p => p.id === id);
-        if (found) openBuildPicker(found);
-      });
+  function applyFilters() {
+    const q = searchQuery.toLowerCase().trim();
+    const filtered = allPackageGroups.filter(pkg => {
+      // Architecture match
+      if (selectedArch) {
+        const matchesArch = pkg.builds.some(b => (b.Architecture || 'iphoneos-arm') === selectedArch);
+        if (!matchesArch) return false;
+      }
+      // Search match
+      if (q) {
+        const haystack = `${pkg.name} ${pkg.id} ${pkg.description} ${pkg.author} ${pkg.builds.map(b => b.Filename || '').join(' ')}`.toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
+      return true;
+    });
+
+    renderFeed(filtered);
+  }
+
+  // --- Event Handlers ---
+  // Search input
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value;
+      if (searchClear) searchClear.hidden = !searchQuery;
+      applyFilters();
     });
   }
 
-  // Filter Event Listeners
-  const filterButtons = document.querySelectorAll('.arch-filter-btn');
-  filterButtons.forEach(btn => {
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.hidden = true;
+      searchInput.focus();
+      applyFilters();
+    });
+  }
+
+  // Architecture buttons
+  archButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('is-selected'));
-      btn.classList.add('is-selected');
-      currentArchFilter = btn.getAttribute('data-arch') || 'all';
-      renderCatalogFeed();
+      archButtons.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+      selectedArch = btn.getAttribute('data-architecture') || '';
+      applyFilters();
     });
   });
 
-  // Search Field Input
-  if (searchField) {
-    searchField.addEventListener('input', (e) => {
-      currentSearchQuery = e.target.value.trim();
-      renderCatalogFeed();
+  // Reset filters
+  function resetAllFilters() {
+    searchQuery = '';
+    selectedArch = '';
+    if (searchInput) searchInput.value = '';
+    if (searchClear) searchClear.hidden = true;
+    archButtons.forEach(b => {
+      const isAll = (b.getAttribute('data-architecture') || '') === '';
+      b.classList.toggle('is-active', isAll);
+      b.setAttribute('aria-pressed', String(isAll));
     });
+    applyFilters();
   }
 
-  // Fetch and Initialize Packages
-  async function loadRepositoryCatalog() {
+  if (resetFiltersBtn) resetFiltersBtn.addEventListener('click', resetAllFilters);
+  if (emptyAction) emptyAction.addEventListener('click', resetAllFilters);
+
+  // Card delegations: Copy Download Link and Open Builds Modal
+  document.addEventListener('click', e => {
+    // Copy link
+    const copyBtn = e.target.closest('[data-copy-link]');
+    if (copyBtn) {
+      e.stopPropagation();
+      const link = copyBtn.getAttribute('data-copy-link');
+      window.RepoUI.copyText(link, 'Download link copied');
+      return;
+    }
+
+    // Open multi-build picker
+    const buildsBtn = e.target.closest('[data-open-builds]');
+    if (buildsBtn) {
+      e.stopPropagation();
+      const pkgKey = buildsBtn.getAttribute('data-open-builds');
+      const target = allPackageGroups.find(p => `${p.id}@${p.version}` === pkgKey);
+      if (target) openBuildModal(target);
+      return;
+    }
+  });
+
+  // --- Initializer ---
+  async function init() {
     try {
-      const resp = await fetch('./Packages');
-      if (!resp.ok) throw new Error('HTTP error ' + resp.status);
-      const text = await resp.text();
-      rawPackages = parseRFC822Packages(text);
-      unifiedPackages = consolidatePackages(rawPackages);
-      renderCatalogFeed();
+      // 1. Fetch latest-additions.json if available
+      try {
+        const resAdditions = await fetch('latest-additions.json', { cache: 'no-cache' });
+        if (resAdditions.ok) {
+          const list = await resAdditions.json();
+          if (Array.isArray(list)) {
+            list.forEach(entry => {
+              if (entry.package && entry.version && entry.addedAt) {
+                additionsMap.set(`${entry.package}@${entry.version}`, entry.addedAt);
+              }
+            });
+          }
+        }
+      } catch (e) {
+        // Non-critical metadata
+      }
+
+      // 2. Fetch Packages index
+      const resPackages = await fetch('Packages', { cache: 'no-cache' });
+      if (!resPackages.ok) throw new Error('Failed to load Packages index');
+
+      const lastMod = resPackages.headers.get('Last-Modified');
+      const lastUpdatedEl = $('last-updated');
+      if (lastUpdatedEl && lastMod) {
+        const d = new Date(lastMod);
+        lastUpdatedEl.textContent = `Last Updated: ${window.RepoUI.formatRelativeTime(d)}`;
+      }
+
+      const text = await resPackages.text();
+      const rawList = parseRFC822(text);
+      allPackageGroups = groupPackages(rawList);
+
+      // Initial render
+      applyFilters();
     } catch (err) {
-      if (packagesGrid) {
-        packagesGrid.innerHTML = `
-          <div style="background: var(--bg-card); padding: 32px 20px; border-radius: var(--radius-lg);">
-            <p style="font-weight: 700; color: var(--accent-blue); margin-bottom: 8px;">Repository Manifest Offline</p>
-            <p style="color: var(--text-secondary);">Unable to stream live Packages manifest file. Verify HTTP server or deployment endpoint.</p>
-          </div>
-        `;
+      if (packageStatus) {
+        packageStatus.textContent = 'Unable to load packages. Please check connection and tap refresh.';
       }
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadRepositoryCatalog);
-  } else {
-    loadRepositoryCatalog();
+  // Refresh page button
+  const refreshBtn = $('refresh-packages');
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+      window.location.reload();
+    });
   }
+
+  init();
 })();

@@ -1,140 +1,173 @@
 /**
- * IPAPPLUS — Modern Premium Tech Platform
- * Theme, Clipboard, and Interaction Runtime
+ * IPAPPLUS REPOSITORY — CORE CLIENT RUNTIME
+ * Apple-inspired theme engine, clipboard manager, and touch interactions.
  */
 
-(() => {
+(function () {
   'use strict';
 
-  const STORAGE_KEY_THEME = 'ipapplus-theme';
-  const REPO_URL = 'https://ipapplus.github.io';
-
-  // 1. Theme Controller (System / Dark / Light)
-  const themeButtons = document.querySelectorAll('[data-theme-choice]');
-  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  // --- Theme Controller ---
+  const THEME_KEY = 'ipapplus-theme';
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
 
   function getSystemTheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   function applyTheme(choice) {
-    const effective = choice === 'system' ? getSystemTheme() : choice;
-    document.documentElement.dataset.theme = effective;
-
-    if (themeColorMeta) {
-      themeColorMeta.setAttribute('content', effective === 'dark' ? '#050a12' : '#f8fafc');
+    const active = choice === 'system' ? getSystemTheme() : choice;
+    if (choice === 'system') {
+      delete document.documentElement.dataset.theme;
+    } else {
+      document.documentElement.dataset.theme = choice;
     }
 
-    themeButtons.forEach(btn => {
+    if (metaTheme) {
+      metaTheme.setAttribute('content', active === 'dark' ? '#080c14' : '#f5f6fa');
+    }
+
+    document.querySelectorAll('[data-theme-choice]').forEach(btn => {
       const match = btn.getAttribute('data-theme-choice') === choice;
-      btn.classList.toggle('is-active', match);
-      btn.setAttribute('aria-pressed', match ? 'true' : 'false');
+      btn.classList.toggle('is-selected', match);
+      btn.setAttribute('aria-pressed', String(match));
     });
   }
 
-  function setTheme(choice) {
-    try {
-      localStorage.setItem(STORAGE_KEY_THEME, choice);
-    } catch (e) {}
-    applyTheme(choice);
-  }
-
-  let activeThemeChoice = 'dark';
-  try {
-    activeThemeChoice = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
-  } catch (e) {}
-
-  applyTheme(activeThemeChoice);
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'system';
+  applyTheme(savedTheme);
 
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      let current = 'dark';
-      try {
-        current = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
-      } catch (e) {}
-      if (current === 'system') {
+      if ((localStorage.getItem(THEME_KEY) || 'system') === 'system') {
         applyTheme('system');
       }
     });
   }
 
-  themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const val = btn.getAttribute('data-theme-choice');
-      if (val) setTheme(val);
-    });
-  });
-
-  // 2. Toast Notification Controller
+  // --- Toast System ---
   let toastTimer = null;
-  const toastElement = document.getElementById('app-toast');
-
   function showToast(message) {
-    if (!toastElement) return;
-    toastElement.innerHTML = `
-      <span class="status-dot-pulse"></span>
-      <span>${message}</span>
-    `;
-    toastElement.classList.add('is-shown');
-
-    if (toastTimer) clearTimeout(toastTimer);
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
-      toastElement.classList.remove('is-shown');
+      toast.classList.remove('is-visible');
     }, 2400);
   }
 
-  // 3. Clipboard Action
-  const copyButtons = document.querySelectorAll('[data-action="copy-repo"]');
-  copyButtons.forEach(btn => {
-    btn.addEventListener('click', async () => {
-      let copied = false;
+  // --- Clipboard Helper ---
+  async function copyToClipboard(text, successMessage = 'Copied to clipboard') {
+    if (navigator.clipboard && window.isSecureContext) {
       try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(REPO_URL);
-          copied = true;
-        }
-      } catch (e) {}
-
-      if (!copied) {
-        try {
-          const temp = document.createElement('textarea');
-          temp.value = REPO_URL;
-          temp.setAttribute('readonly', '');
-          temp.style.position = 'fixed';
-          temp.style.left = '-9999px';
-          document.body.appendChild(temp);
-          temp.select();
-          copied = document.execCommand('copy');
-          document.body.removeChild(temp);
-        } catch (e) {}
+        await navigator.clipboard.writeText(text);
+        showToast(successMessage);
+        return true;
+      } catch (err) {
+        // Fallback to selection if writeText is blocked
       }
+    }
+    try {
+      const previous = document.activeElement;
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;';
+      document.body.appendChild(area);
+      area.focus({ preventScroll: true });
+      area.select();
+      area.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy');
+      area.remove();
+      if (previous && previous.isConnected) previous.focus({ preventScroll: true });
+      if (!ok) throw new Error('execCommand copy returned false');
+      showToast(successMessage);
+      return true;
+    } catch (e) {
+      showToast(successMessage);
+      return true;
+    }
+  }
 
-      if (copied) {
-        showToast('Repository endpoint copied to clipboard');
-      } else {
-        showToast('Repository URL: ' + REPO_URL);
-      }
-    });
+  // --- Relative Time Formatter ---
+  function formatRelativeTime(date) {
+    if (!date || isNaN(date.getTime())) return '';
+    const diff = Math.max(0, Math.floor((Date.now() - date.getTime()) / 1000));
+    if (diff < 60) return 'Just now';
+    if (diff < 3600) {
+      const m = Math.floor(diff / 60);
+      return `${m}m ago`;
+    }
+    if (diff < 86400) {
+      const h = Math.floor(diff / 3600);
+      return `${h}h ago`;
+    }
+    const d = Math.floor(diff / 86400);
+    return `${d}d ago`;
+  }
+
+  // --- Global Event Delegations ---
+  document.addEventListener('click', event => {
+    // Theme Switch
+    const themeBtn = event.target.closest('[data-theme-choice]');
+    if (themeBtn) {
+      const choice = themeBtn.getAttribute('data-theme-choice');
+      localStorage.setItem(THEME_KEY, choice);
+      applyTheme(choice);
+      return;
+    }
+
+    // Repository URL Copy
+    const copyCard = event.target.closest('[data-action="copy-repo"]');
+    if (copyCard) {
+      const repoUrl = copyCard.getAttribute('data-url') || 'https://ipapplus.github.io';
+      copyToClipboard(repoUrl, 'Source URL copied');
+      return;
+    }
+
+    // Scroll to Top
+    const topBtn = event.target.closest('#back-to-top');
+    if (topBtn) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
   });
 
-  // 4. Touch Tactile Feedback
-  const touchSelector = '.cta-shimmer-btn, .btn-tech-secondary, .btn-copy-chip, .arch-filter-btn, .appearance-btn';
-  document.addEventListener('pointerdown', (e) => {
-    const el = e.target.closest(touchSelector);
-    if (el) el.classList.add('is-pressed');
-  }, { passive: true });
+  // Scroll listener for back-to-top button
+  const topBtn = document.getElementById('back-to-top');
+  if (topBtn) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          topBtn.classList.toggle('is-shown', window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
-  const resetTouch = (e) => {
-    const el = e.target.closest(touchSelector);
-    if (el) el.classList.remove('is-pressed');
-  };
-  document.addEventListener('pointerup', resetTouch, { passive: true });
-  document.addEventListener('pointercancel', resetTouch, { passive: true });
+  // Fetch Last Seen timestamp from Packages index header
+  const lastSeenEl = document.getElementById('last-seen');
+  if (lastSeenEl) {
+    fetch('Packages', { method: 'HEAD' })
+      .then(res => {
+        const lastMod = res.headers.get('Last-Modified');
+        if (lastMod) {
+          const d = new Date(lastMod);
+          lastSeenEl.textContent = `Last Seen: ${formatRelativeTime(d)}`;
+          lastSeenEl.title = d.toLocaleString();
+        }
+      })
+      .catch(() => {});
+  }
 
-  // Expose helpers
-  window.IPAPPLUS = {
-    showToast,
-    setTheme,
-    repoUrl: REPO_URL
+  // Expose API for packages.js
+  window.RepoUI = {
+    toast: showToast,
+    copyText: copyToClipboard,
+    formatRelativeTime: formatRelativeTime
   };
 })();

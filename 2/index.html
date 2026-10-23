@@ -1,357 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>IPAPPLUS — Modern iOS Software Repository</title>
-  <meta name="description" content="High-performance iOS software repository and Debian package distribution for Rootless, Rootful, and RootHide jailbreak environments.">
-  <meta name="theme-color" content="#050a12">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ahmed AlGhrbi · ipapplus</title>
+  <meta name="description" content="Ahmed AlGhrbi — Systems & Apps. Official ipapplus iOS repository.">
+  <link rel="canonical" href="https://ipapplus.github.io/">
 
   <!-- Open Graph & Social -->
-  <meta property="og:title" content="IPAPPLUS — Modern iOS Software Repository">
-  <meta property="og:description" content="High-performance iOS software repository and Debian package distribution for Rootless, Rootful, and RootHide jailbreak environments.">
+  <meta property="og:title" content="Ahmed AlGhrbi · ipapplus">
+  <meta property="og:description" content="Official ipapplus iOS software repository.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ipapplus.github.io/">
-  <meta property="og:image" content="social-preview.png">
+  <meta property="og:image" content="https://ipapplus.github.io/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ahmed AlGhrbi · ipapplus">
+  <meta name="twitter:description" content="Official ipapplus iOS software repository.">
+  <meta name="twitter:image" content="https://ipapplus.github.io/social-preview.png">
 
-  <!-- Icons & Web App Manifest -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Apple & PWA Capabilities -->
+  <meta name="theme-color" content="#080c14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ipapplus">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
 
-  <!-- Jost Geometric Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <!-- Core Stylesheet -->
   <link rel="stylesheet" href="website.css">
 
-  <!-- Theme pre-hydration script -->
+  <!-- Instant Theme Boot Script (Prevents Flash of Wrong Theme) -->
   <script>
-    (function() {
+    (function () {
       try {
         var saved = localStorage.getItem('ipapplus-theme');
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         var theme = saved === 'light' ? 'light' : (saved === 'dark' ? 'dark' : (prefersDark ? 'dark' : 'light'));
-        document.documentElement.dataset.theme = theme;
+        if (saved && saved !== 'system') {
+          document.documentElement.dataset.theme = saved;
+        }
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#050a12' : '#f8fafc');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#080c14' : '#f5f6fa');
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to repository content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Sticky Header Navbar -->
-  <header class="app-header">
-    <div class="app-container nav-layout">
-      <div class="nav-brand-group">
-        <a href="index.html" class="brand-link" aria-label="IPAPPLUS Repository Home">
-          <span class="brand-symbol">I</span>
-          <span>IPAPPLUS</span>
-        </a>
-        <div class="nav-status-badge">
-          <span class="status-dot-pulse"></span>
-          <span>353 Packages Live</span>
-        </div>
+  <!-- Minimalist Sticky Header -->
+  <header class="site-header">
+    <div class="app-shell container-narrow header-row">
+      <div class="brand-badge">
+        <span class="brand-glyph" aria-hidden="true">I</span>
+        <span>ipapplus</span>
       </div>
 
-      <div class="nav-controls">
-        <nav aria-label="Main Navigation">
-          <a href="index.html" class="nav-link-item is-current" aria-current="page">Repository</a>
-          <a href="packages.html" class="nav-link-item">Packages (353)</a>
-        </nav>
-
-        <div class="appearance-switch" role="group" aria-label="Theme Selector">
-          <button type="button" class="appearance-btn" data-theme-choice="system" aria-label="System Mode">Auto</button>
-          <button type="button" class="appearance-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
-          <button type="button" class="appearance-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
+      <div class="header-nav">
+        <div class="theme-switch-deck" role="group" aria-label="Appearance Mode">
+          <button type="button" class="theme-pill-btn" data-theme-choice="system" aria-label="System Appearance">Auto</button>
+          <button type="button" class="theme-pill-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
+          <button type="button" class="theme-pill-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Repository Content -->
-  <main id="main-content">
-    <!-- Hero Stage -->
-    <section class="app-container hero-stage">
-      <h1 class="hero-headline">
-        Software Repository
-      </h1>
+  <!-- Main Profile & Action Hub -->
+  <main id="main-content" class="app-shell container-narrow profile-card-stage">
+    
+    <!-- Profile Card -->
+    <article class="profile-header-card">
+      <div class="avatar-container">
+        <img class="avatar-image" src="https://i.imgur.com/oMBfPA9.jpeg" alt="Ahmed AlGhrbi avatar" width="72" height="72" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='grid';">
+        <div id="avatar-fallback" class="avatar-fallback" style="display:none;" aria-hidden="true">AG</div>
+        <span class="online-pulse-dot" title="Online" aria-label="System status online"></span>
+      </div>
 
-      <p class="hero-lead-text">
-        Direct iOS APT repository for iOS 12 through iOS 18+. High-performance Debian package distribution for Rootless, Rootful, and RootHide jailbreak environments with direct endpoints for Sileo, Zebra, and Cydia.
+      <h1 class="profile-name">Ahmed AlGhrbi</h1>
+      <p class="profile-role">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>Systems &amp; Apps</span>
       </p>
 
-      <!-- Action Command Suite -->
-      <div class="hero-action-deck">
-        <div class="action-buttons-group">
-          <a href="sileo://source/https://ipapplus.github.io" class="cta-primary-btn">
-            Add Repository to Sileo
-          </a>
-          <div class="action-secondary-row">
-            <a href="zbra://sources/add/https://ipapplus.github.io" class="btn-tech-secondary">
-              Add to Zebra
-            </a>
-            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://ipapplus.github.io" class="btn-tech-secondary">
-              Add to Cydia
-            </a>
-          </div>
-        </div>
+      <div class="repo-summary-pill">
+        <strong>395 Packages</strong>
+        <span class="summary-sep">•</span>
+        <span>iOS 11–16+</span>
+        <span class="summary-sep">•</span>
+        <span style="color:var(--accent-green); font-weight:600;">Active</span>
+      </div>
+    </article>
 
-        <!-- Endpoint Terminal Card -->
-        <div class="endpoint-terminal-card" data-ui>
-          <div class="terminal-header">
-            <span class="terminal-title-text">Official Endpoint</span>
-            <span class="tech-tag-chip tech-tag-teal">APT RFC 822</span>
-          </div>
-          <div class="terminal-code-row">
-            <code class="terminal-url-code">https://ipapplus.github.io</code>
-            <button type="button" class="btn-copy-chip" data-action="copy-repo">
-              Copy URL
-            </button>
-          </div>
-          <a href="packages.html" class="btn-tech-secondary" style="margin-top: 4px;">
-            Explore 353 Packages
-          </a>
+    <!-- Action Links Deck -->
+    <section class="actions-deck" aria-label="Repository Actions">
+
+      <!-- Primary Action: Add to Sileo -->
+      <a class="action-card-primary" href="sileo://source/https://ipapplus.github.io" id="sileo-action" aria-label="Add ipapplus to Sileo Package Manager">
+        <div class="action-icon-wrap" aria-hidden="true">
+          <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <div class="action-text-group">
+          <span class="action-main-title">Add to Sileo</span>
+          <span class="action-sub-desc">1-Tap Quick Repository Install</span>
+        </div>
+        <svg class="action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+
+      <!-- Browse Tweaks Navigation Card -->
+      <a class="action-card browse-card" href="packages.html" aria-label="Browse Repository Tweaks and Packages">
+        <div class="action-icon-wrap" aria-hidden="true">
+          <svg style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="5" rx="1"></rect>
+            <path d="M5 8v13h14V8M10 12h4"></path>
+          </svg>
+        </div>
+        <div class="action-text-group">
+          <span class="action-main-title">Browse Tweaks</span>
+        </div>
+        <span class="action-card-badge">395</span>
+        <svg class="action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </a>
+
+      <!-- Copy Source URL Card -->
+      <div class="copy-url-card" role="button" tabindex="0" data-action="copy-repo" data-url="https://ipapplus.github.io" aria-label="Copy repository URL to clipboard">
+        <div class="copy-url-label">
+          <span class="copy-url-hint">Repository Source URL (Tap to copy)</span>
+          <code class="copy-url-text">https://ipapplus.github.io</code>
+        </div>
+        <div class="copy-action-icon" aria-hidden="true">
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+            <path d="M16 8V4H4v12h4"></path>
+          </svg>
         </div>
       </div>
 
-      <!-- Bento Metrics Grid (4 Cards) -->
-      <div class="metrics-bento-grid">
-        <div class="metric-bento-card">
-          <span class="metric-number-display">353</span>
-          <span class="metric-label-text">Verified Packages</span>
-          <span class="metric-subtext">593 total Debian binary builds</span>
+      <!-- Twitter / X Link Card -->
+      <a class="action-card" href="https://x.com/ipapplus" target="_blank" rel="noopener noreferrer" aria-label="Follow Ahmed AlGhrbi on Twitter / X">
+        <div class="action-icon-wrap" aria-hidden="true">
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
         </div>
+        <div class="action-text-group">
+          <span class="action-main-title">Twitter / X</span>
+        </div>
+        <svg class="action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
 
-        <div class="metric-bento-card">
-          <span class="metric-number-display">3</span>
-          <span class="metric-label-text">Architectures Matrix</span>
-          <span class="metric-subtext">Rootless, Rootful, and RootHide</span>
+      <!-- GitHub Link Card -->
+      <a class="action-card" href="https://github.com/ipapplus" target="_blank" rel="noopener noreferrer" aria-label="Visit ipapplus on GitHub">
+        <div class="action-icon-wrap" aria-hidden="true">
+          <svg style="width:17px; height:17px;" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
         </div>
+        <div class="action-text-group">
+          <span class="action-main-title">GitHub</span>
+        </div>
+        <svg class="action-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
 
-        <div class="metric-bento-card">
-          <span class="metric-number-display">100%</span>
-          <span class="metric-label-text">Distribution Protocol</span>
-          <span class="metric-subtext">Debian APT specification compliant</span>
-        </div>
-
-        <div class="metric-bento-card">
-          <span class="metric-number-display">Active</span>
-          <span class="metric-label-text">Endpoint Availability</span>
-          <span class="metric-subtext">High-speed global CDN mirror</span>
-        </div>
-      </div>
-
-      <!-- Archival Technical Media Strip -->
-      <div class="tech-imagery-strip" aria-label="Repository Technical Imagery">
-        <div class="tech-image-frame">
-          <img src="assets/cyrllic-teletype-typebars.jpg" width="1920" height="1440" alt="Mechanical teletype typebar array in computing installation">
-        </div>
-        <div class="tech-image-frame">
-          <img src="assets/slugs-typesetting.jpg" width="1280" height="731" alt="Typesetting slugs preserved in paper museum">
-        </div>
-        <div class="tech-image-frame">
-          <img src="assets/children-s-typesetting-set-used-for-valmy.jpg" width="1920" height="1920" alt="Typesetting characters in historical collection">
-        </div>
-        <div class="tech-image-frame">
-          <img src="assets/cyrillic-teletype-keyboard.jpg" width="1920" height="1440" alt="Teletype keyboard controller and input key levers">
-        </div>
-      </div>
     </section>
 
-    <!-- Architecture Compatibility Matrix Section -->
-    <section class="content-section" style="background: var(--bg-subtle);">
-      <div class="app-container">
-        <div class="section-intro-block">
-          <h2 class="section-main-title">Architecture Deployment Matrix</h2>
-          <p class="section-lead-paragraph">
-            Comprehensive reference across modern and legacy iOS jailbreak runtime environments.
-          </p>
-        </div>
+    <!-- Profile Footer -->
+    <footer class="profile-footer-panel">
+      <p id="last-seen">Last Seen: Online</p>
+      <p>© 2016–2026 ipapplus</p>
+    </footer>
 
-        <div class="tech-table-container" data-ui>
-          <div class="tech-table-scroll">
-            <table class="tech-data-table">
-              <thead>
-                <tr>
-                  <th>Environment</th>
-                  <th>Debian Architecture</th>
-                  <th>Filesystem Root</th>
-                  <th>Compatible Jailbreaks</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <strong>Rootless</strong>
-                    <span class="tech-tag-chip tech-tag-teal" style="margin-left: 8px;">Recommended</span>
-                  </td>
-                  <td><code>iphoneos-arm64</code></td>
-                  <td><code>/var/jb</code></td>
-                  <td>Dopamine, palera1n, XinaA15 v2</td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>RootHide</strong>
-                    <span class="tech-tag-chip tech-tag-blue" style="margin-left: 8px;">Stealth</span>
-                  </td>
-                  <td><code>iphoneos-arm64e</code></td>
-                  <td><code>/var/jb</code> (Sandboxed)</td>
-                  <td>Dopamine-RootHide, Serotonin</td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Rootful</strong>
-                    <span class="tech-tag-chip" style="margin-left: 8px;">Legacy</span>
-                  </td>
-                  <td><code>iphoneos-arm</code></td>
-                  <td><code>/</code> (Root filesystem)</td>
-                  <td>checkra1n, unc0ver, Taurine, Chimera</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Tweak Showcase Section -->
-    <section class="content-section">
-      <div class="app-container">
-        <div class="section-intro-block">
-          <h2 class="section-main-title">Core Runtime &amp; Utility Highlights</h2>
-          <p class="section-lead-paragraph">
-            Essential foundation libraries, terminal tools, and system file managers available in this repository.
-          </p>
-        </div>
-
-        <div class="features-card-grid">
-          <div class="feature-tweak-card">
-            <div class="tweak-card-top">
-              <h3 class="tweak-card-title">AppSync Unified</h3>
-              <span class="tech-tag-chip tech-tag-teal">Core Runtime</span>
-            </div>
-            <code>ai.akemi.appsyncunified</code>
-            <p class="tweak-card-desc">
-              Essential tweak enabling the installation of unsigned and self-signed iOS application packages.
-            </p>
-            <div style="margin-top: auto; padding-top: 10px;">
-              <a href="packages.html" class="btn-tech-secondary" style="width: 100%;">Inspect in Catalog</a>
-            </div>
-          </div>
-
-          <div class="feature-tweak-card">
-            <div class="tweak-card-top">
-              <h3 class="tweak-card-title">Filza File Manager</h3>
-              <span class="tech-tag-chip tech-tag-blue">File Manager</span>
-            </div>
-            <code>com.tigisoftware.filza</code>
-            <p class="tweak-card-desc">
-              Comprehensive iOS filesystem browser with root permissions, file editor, archive manager, and deb installer.
-            </p>
-            <div style="margin-top: auto; padding-top: 10px;">
-              <a href="packages.html" class="btn-tech-secondary" style="width: 100%;">Inspect in Catalog</a>
-            </div>
-          </div>
-
-          <div class="feature-tweak-card">
-            <div class="tweak-card-top">
-              <h3 class="tweak-card-title">PreferenceLoader</h3>
-              <span class="tech-tag-chip tech-tag-teal">Settings Injector</span>
-            </div>
-            <code>preferenceloader</code>
-            <p class="tweak-card-desc">
-              Universal preference bundle injector that integrates tweak configuration panels directly into the iOS Settings app.
-            </p>
-            <div style="margin-top: auto; padding-top: 10px;">
-              <a href="packages.html" class="btn-tech-secondary" style="width: 100%;">Inspect in Catalog</a>
-            </div>
-          </div>
-
-          <div class="feature-tweak-card">
-            <div class="tweak-card-top">
-              <h3 class="tweak-card-title">NewTerm 3</h3>
-              <span class="tech-tag-chip tech-tag-blue">Terminal CLI</span>
-            </div>
-            <code>ws.hbang.newterm3</code>
-            <p class="tweak-card-desc">
-              Mobile terminal emulator supporting bash, zsh, tabs, colors, and full command-line system administration.
-            </p>
-            <div style="margin-top: auto; padding-top: 10px;">
-              <a href="packages.html" class="btn-tech-secondary" style="width: 100%;">Inspect in Catalog</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Maintainer Colophon Section -->
-    <section class="content-section" style="background: var(--bg-subtle);">
-      <div class="app-container">
-        <div class="section-intro-block">
-          <h2 class="section-main-title">Maintainer &amp; Repository Mirror</h2>
-          <p class="section-lead-paragraph">
-            IPAPPLUS is maintained as an independent software repository for jailbroken iOS devices, serving verified packages via GitHub Pages and native APT package managers.
-          </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: start;">
-          <div>
-            <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
-              Official releases are signed and checksummed against Debian APT standards. Community contributions, tweak submissions, and mirror synchronization are tracked on GitHub.
-            </p>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="https://x.com/ipapplus" target="_blank" rel="noopener noreferrer" class="btn-tech-secondary">
-                Maintainer on X (@ipapplus)
-              </a>
-              <a href="https://github.com/ipapplus" target="_blank" rel="noopener noreferrer" class="btn-tech-secondary">
-                GitHub Repository
-              </a>
-              <a href="https://t.me/ipapplus" target="_blank" rel="noopener noreferrer" class="btn-tech-secondary">
-                Telegram Channel
-              </a>
-            </div>
-          </div>
-
-          <div class="endpoint-terminal-card" data-ui>
-            <span class="terminal-title-text">Mirror Verification</span>
-            <div class="terminal-code-row">
-              <code class="terminal-url-code">Origin: ipapplus | Repo</code>
-            </div>
-            <span style="font-size: var(--step-small); color: var(--text-secondary);">Architectures: arm, arm64, arm64e (353 Packages)</span>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- Modern Application Footer -->
-  <footer class="app-footer">
-    <div class="app-container footer-inner-layout">
-      <div>
-        <p class="footer-copy-text">
-          &copy; 2026 IPAPPLUS Repository. Independent iOS Software Archive.
-        </p>
-        <p class="footer-copy-text" style="margin-top: 6px;">
-          Historical typography &amp; computing imagery courtesy of Wikimedia Commons under CC BY-SA &amp; CC0.
-        </p>
-      </div>
+  <!-- Interactive Feedback Toast -->
+  <div class="toast-bubble" id="toast" role="status" aria-live="polite"></div>
 
-      <ul class="footer-links-list">
-        <li><a href="index.html">Repository Home</a></li>
-        <li><a href="packages.html">Complete Catalog (353)</a></li>
-        <li><a href="#main-content">Back to Top</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <!-- Toast Notification Alert -->
-  <div id="app-toast" class="app-toast-alert" role="status" aria-live="polite"></div>
-
-  <!-- Runtime Controller Script -->
+  <!-- Runtime Script -->
   <script src="website.js"></script>
 </body>
 </html>

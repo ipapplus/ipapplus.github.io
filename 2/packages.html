@@ -1,177 +1,167 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Package Catalog — IPAPPLUS</title>
-  <meta name="description" content="Browse and download 353 verified iOS tweaks and Debian packages across Rootless, Rootful, and RootHide architectures.">
-  <meta name="theme-color" content="#050a12">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tweaks · ipapplus Repo</title>
+  <meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
+  <link rel="canonical" href="https://ipapplus.github.io/packages.html">
 
-  <!-- Icons & Web App Manifest -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Open Graph & Social -->
+  <meta property="og:title" content="Tweaks · ipapplus Repo">
+  <meta property="og:description" content="Browse, search, and download tweaks from the ipapplus repository.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ipapplus.github.io/packages.html">
+  <meta property="og:image" content="https://ipapplus.github.io/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tweaks · ipapplus Repo">
+  <meta name="twitter:description" content="Browse, search, and download tweaks from the ipapplus repository.">
+  <meta name="twitter:image" content="https://ipapplus.github.io/social-preview.png">
+
+  <!-- Apple & PWA Capabilities -->
+  <meta name="theme-color" content="#080c14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ipapplus">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
 
-  <!-- Jost Geometric Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <!-- Core Stylesheet -->
   <link rel="stylesheet" href="website.css">
 
-  <!-- Theme pre-hydration script -->
+  <!-- Instant Theme Boot Script -->
   <script>
-    (function() {
+    (function () {
       try {
         var saved = localStorage.getItem('ipapplus-theme');
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         var theme = saved === 'light' ? 'light' : (saved === 'dark' ? 'dark' : (prefersDark ? 'dark' : 'light'));
-        document.documentElement.dataset.theme = theme;
+        if (saved && saved !== 'system') {
+          document.documentElement.dataset.theme = saved;
+        }
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#050a12' : '#f8fafc');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#080c14' : '#f5f6fa');
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
-  <a href="#main-catalog-content" class="skip-link">Skip to catalog feed</a>
+  <a href="#main-catalog" class="skip-link">Skip to packages feed</a>
 
-  <!-- Sticky Header Navbar -->
-  <header class="app-header">
-    <div class="app-container nav-layout">
-      <div class="nav-brand-group">
-        <a href="index.html" class="brand-link" aria-label="IPAPPLUS Repository Home">
-          <span class="brand-symbol">I</span>
-          <span>IPAPPLUS</span>
-        </a>
-        <div class="nav-status-badge">
-          <span class="status-dot-pulse"></span>
-          <span>353 Packages Live</span>
-        </div>
-      </div>
+  <!-- Header Navbar -->
+  <header class="site-header">
+    <div class="app-shell container-wide header-row">
+      <a href="index.html" class="nav-pill-btn" aria-label="Return to Repository Home">
+        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+        <span>ipapplus</span>
+      </a>
 
-      <div class="nav-controls">
-        <nav aria-label="Main Navigation">
-          <a href="index.html" class="nav-link-item">Repository</a>
-        </nav>
+      <div class="header-nav">
+        <button class="nav-pill-btn" id="refresh-packages" type="button" aria-label="Refresh Packages" title="Refresh Packages">
+          <svg style="width:15px; height:15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+            <path d="M16 21h5v-5"></path>
+          </svg>
+          <span class="refresh-label">Refresh</span>
+        </button>
 
-        <div class="appearance-switch" role="group" aria-label="Theme Selector">
-          <button type="button" class="appearance-btn" data-theme-choice="system" aria-label="System Mode">Auto</button>
-          <button type="button" class="appearance-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
-          <button type="button" class="appearance-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
+        <div class="theme-switch-deck" role="group" aria-label="Appearance Mode">
+          <button type="button" class="theme-pill-btn" data-theme-choice="system" aria-label="System Appearance">Auto</button>
+          <button type="button" class="theme-pill-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
+          <button type="button" class="theme-pill-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Catalog Content -->
-  <main id="main-catalog-content" class="app-container" style="padding-top: var(--space-8); padding-bottom: var(--space-10);">
-    <!-- Catalog Header -->
-    <div style="margin-bottom: var(--space-6);">
-      <h1 class="hero-headline">
-        iOS Package Catalog
-      </h1>
-      <p class="hero-lead-text" style="margin-bottom: 0;">
-        Browse and install 353 verified Debian packages across Rootless, Rootful, and RootHide jailbreak architectures.
-      </p>
+  <!-- Main Packages Catalog -->
+  <main id="main-catalog" class="app-shell container-wide browser-stage">
+    
+    <!-- Title & Subtitle Block -->
+    <div class="browser-header-block">
+      <h1 class="browser-title">Tweaks</h1>
+      <p class="browser-subtitle" id="last-updated">Browse, search, and download verified iOS packages.</p>
     </div>
 
-    <!-- Archival Technical Media Strip -->
-    <div class="tech-imagery-strip" aria-label="Repository Technical Imagery">
-      <div class="tech-image-frame">
-        <img src="assets/cyrllic-teletype-typebars.jpg" width="1920" height="1440" alt="Mechanical teletype typebar array in computing installation">
-      </div>
-      <div class="tech-image-frame">
-        <img src="assets/slugs-typesetting.jpg" width="1280" height="731" alt="Typesetting slugs preserved in paper museum">
-      </div>
-      <div class="tech-image-frame">
-        <img src="assets/children-s-typesetting-set-used-for-valmy.jpg" width="1920" height="1920" alt="Typesetting characters in historical collection">
-      </div>
-      <div class="tech-image-frame">
-        <img src="assets/cyrillic-teletype-keyboard.jpg" width="1920" height="1440" alt="Teletype keyboard controller and input key levers">
-      </div>
-    </div>
-
-    <!-- Search & Filter Command Suite -->
-    <section class="catalog-search-suite" aria-label="Search and Filter Controls">
-      <div class="search-input-shell">
-        <input
-          type="search"
-          id="catalog-search-field"
-          class="catalog-search-field"
-          placeholder="Search 353 packages by name, identifier, or author…"
-          aria-label="Search packages in catalog"
-          autocomplete="off"
-        >
-      </div>
-
-      <div class="architecture-filter-bar" role="group" aria-label="Filter by Architecture">
-        <button type="button" class="arch-filter-btn is-selected" data-arch="all">All Architectures (353)</button>
-        <button type="button" class="arch-filter-btn" data-arch="rootless">Rootless (arm64)</button>
-        <button type="button" class="arch-filter-btn" data-arch="rootful">Rootful (arm)</button>
-        <button type="button" class="arch-filter-btn" data-arch="roothide">RootHide (arm64e)</button>
-      </div>
-    </section>
-
-    <!-- Catalog Status & Quick Copy Strip -->
-    <div class="catalog-counter-strip">
-      <span id="catalog-count-indicator">Loading verified package records…</span>
-      <button type="button" class="btn-copy-chip" data-action="copy-repo">
-        Copy Repository URL
-      </button>
-    </div>
-
-    <!-- Dynamic Packages Feed Grid -->
-    <div id="packages-grid" class="catalog-feed-grid" role="feed" aria-busy="true">
-      <div style="background: var(--bg-card); padding: 32px 20px; border-radius: var(--radius-lg); text-align: center;">
-        <p style="color: var(--text-secondary);">Streaming Debian repository packages…</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- Multi-Architecture Build Selection Modal Dialog -->
-  <div id="build-modal-scrim" class="dialog-modal-scrim" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-pkg-title">
-    <div class="dialog-modal-box">
-      <div class="modal-header-row">
-        <div>
-          <h2 id="modal-pkg-title" class="modal-main-title">Select Architecture Build</h2>
-          <p style="font-size: var(--step-small); color: var(--text-secondary); margin-top: 4px;">Choose the compatible binary for your device.</p>
-        </div>
-        <button type="button" id="modal-close-btn" class="btn-modal-close" aria-label="Close dialog">
-          &times;
+    <!-- Search & Filter Controls -->
+    <section class="search-control-panel" aria-label="Search and Filter Packages">
+      <div class="search-field-wrapper">
+        <svg class="search-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input id="package-search" class="search-field-input" type="search" placeholder="Search packages by name, ID, or description" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
+        <button id="search-clear" class="search-clear-btn" type="button" aria-label="Clear search input" title="Clear search" hidden>
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
       </div>
 
-      <div id="modal-builds-list" class="modal-builds-list">
-        <!-- Injected dynamically via packages.js -->
+      <!-- Architecture Segmented Control -->
+      <div class="segmented-filters" role="group" aria-label="Filter packages by architecture">
+        <button type="button" class="filter-segment-btn is-active" data-architecture="" aria-pressed="true">All</button>
+        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm64" aria-pressed="false">Rootless</button>
+        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm" aria-pressed="false">Rootful</button>
+        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm64e" aria-pressed="false">RootHide</button>
       </div>
+    </section>
+
+    <!-- Results Status Bar -->
+    <div class="results-status-bar">
+      <p id="package-status" role="status" aria-live="polite">Loading packages…</p>
+      <button id="reset-filters" class="reset-filter-btn" type="button" hidden>Reset filters</button>
+    </div>
+
+    <!-- Feed Container -->
+    <div id="package-list" class="packages-feed" aria-label="Available packages list"></div>
+
+    <!-- Empty State -->
+    <section id="empty-state" class="empty-state-card" hidden aria-live="polite">
+      <h2 class="empty-state-title" id="empty-heading">No packages found</h2>
+      <p class="empty-state-subtitle" id="empty-message">Try another search keyword or select a different architecture.</p>
+      <button id="empty-action" class="nav-pill-btn" style="background:var(--accent-blue-subtle); color:var(--accent-blue);" type="button">Reset filters</button>
+    </section>
+
+  </main>
+
+  <!-- Multi-Build Bottom Sheet Modal -->
+  <div id="build-modal-scrim" class="modal-scrim" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-pkg-title">
+    <div class="modal-sheet-dialog">
+      <div class="modal-sheet-handle" aria-hidden="true"></div>
+      <div class="modal-header-row">
+        <div>
+          <h2 id="modal-pkg-title" class="modal-title-text">Package Builds</h2>
+          <p style="font-size:0.75rem; color:var(--text-muted);">Select compatible architecture build to download</p>
+        </div>
+        <button id="modal-close-btn" class="modal-close-icon" type="button" aria-label="Close dialog">
+          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="modal-builds-list" class="modal-variants-list"></div>
     </div>
   </div>
 
-  <!-- Toast Notification Alert -->
-  <div id="app-toast" class="app-toast-alert" role="status" aria-live="polite"></div>
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="floating-scroll-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
+  </button>
 
-  <!-- Modern Application Footer -->
-  <footer class="app-footer">
-    <div class="app-container footer-inner-layout">
-      <div>
-        <p class="footer-copy-text">
-          &copy; 2026 IPAPPLUS Repository. Independent iOS Software Archive.
-        </p>
-        <p class="footer-copy-text" style="margin-top: 6px;">
-          Historical typography &amp; computing imagery courtesy of Wikimedia Commons under CC BY-SA &amp; CC0.
-        </p>
-      </div>
+  <!-- Toast Notification Bubble -->
+  <div class="toast-bubble" id="toast" role="status" aria-live="polite"></div>
 
-      <ul class="footer-links-list">
-        <li><a href="index.html">Repository Home</a></li>
-        <li><a href="packages.html">Complete Catalog (353)</a></li>
-        <li><a href="#main-catalog-content">Back to Top</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <!-- Core Scripts -->
+  <!-- Runtime Scripts -->
   <script src="website.js"></script>
   <script src="packages.js"></script>
 </body>
