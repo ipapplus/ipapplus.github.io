@@ -1,623 +1,316 @@
-(function() {
+/**
+ * IPAPPLUS ARCHIVE — Package Catalog Engine
+ * Deb RFC 822 Parser, Filter, and Architecture Build Manager
+ */
+
+(() => {
   'use strict';
 
-  const $ = id => document.getElementById(id);
-  const searchInput = $('package-search');
-  const searchClear = $('search-clear');
-  const packageList = $('package-list');
-  const packageStatus = $('package-status');
-  const resetFiltersBtn = $('reset-filters');
-  const emptyState = $('empty-state');
-  const emptyHeading = $('empty-heading');
-  const emptyMessage = $('empty-message');
-  const emptyAction = $('empty-action');
-  const backToTopBtn = $('back-to-top');
-  const filterBtns = [...document.querySelectorAll('[data-architecture]')];
+  let rawPackages = [];
+  let unifiedPackages = [];
+  let activeFilter = 'all';
+  let searchQuery = '';
 
-  const archKeyMap = {
-    'iphoneos-arm': 'archRootful',
-    'iphoneos-arm64': 'archRootless',
-    'iphoneos-arm64e': 'archRootHide'
-  };
+  const packagesContainer = document.getElementById('packages-stream');
+  const searchInput = document.getElementById('catalog-search');
+  const statusElement = document.getElementById('catalog-count-label');
+  const dialogBackdrop = document.getElementById('build-dialog-backdrop');
+  const dialogTitle = document.getElementById('build-dialog-title');
+  const dialogList = document.getElementById('build-dialog-list');
+  const dialogCloseBtn = document.getElementById('build-dialog-close');
 
-  const archOrder = ['iphoneos-arm', 'iphoneos-arm64', 'iphoneos-arm64e'];
-
-  function archDisplayName(arch) {
-    const key = archKeyMap[arch];
-    if (key && window.RepoUI) {
-      return RepoUI.t(key);
-    }
-    return arch || 'Other';
+  function getArchLabel(arch) {
+    if (!arch) return 'Universal';
+    const a = arch.toLowerCase();
+    if (a.includes('arm64e')) return 'RootHide';
+    if (a.includes('arm64')) return 'Rootless';
+    if (a === 'iphoneos-arm' || a.includes('arm')) return 'Rootful';
+    return arch;
   }
 
-  const downloadIconSvg = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>';
-  const copyIconOrigSvg = '<svg aria-hidden="true" class="copy-orig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>';
-  const copyIconCheckSvg = '<svg aria-hidden="true" class="copy-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-  const closeIconSvg = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-
-  const indexURL = new URL('Packages', document.baseURI);
-  const packageBaseURL = new URL('/', indexURL);
-
-  let entries = [];
-  let selectedArch = '';
-  let activeEntryForSheet = null;
-  let expandedEntry = null;
-  let loadState = 'loading';
-  let addedDates = new Map();
-
-  // Create build choices sheet modal dynamically
-  let buildModalBackdrop = document.querySelector('.build-modal-backdrop');
-  if (!buildModalBackdrop) {
-    buildModalBackdrop = document.createElement('div');
-    buildModalBackdrop.className = 'build-modal-backdrop';
-    document.body.appendChild(buildModalBackdrop);
+  function formatBytes(bytes) {
+    if (!bytes || isNaN(bytes)) return '';
+    const num = parseInt(bytes, 10);
+    if (num < 1024) return num + ' B';
+    if (num < 1048576) return (num / 1024).toFixed(1) + ' KB';
+    return (num / 1048576).toFixed(1) + ' MB';
   }
 
-  let buildSheet = document.getElementById('build-menu');
-  if (!buildSheet) {
-    buildSheet = document.createElement('div');
-    buildSheet.id = 'build-menu';
-    buildSheet.className = 'package-choices-sheet';
-    buildSheet.setAttribute('role', 'dialog');
-    buildSheet.setAttribute('aria-modal', 'true');
-    buildSheet.setAttribute('aria-label', 'Choose architecture build');
-    document.body.appendChild(buildSheet);
+  function sanitizeText(str) {
+    if (!str) return '';
+    // Strip emojis to maintain strict typographical standards
+    return str
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2700}-\u{27BF}\u{2600}-\u{26FF}]/gu, '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
-  function resolveDownloadURL(filename) {
-    if (!filename) return null;
-    try {
-      const url = new URL(filename, packageBaseURL);
-      return ['http:', 'https:'].includes(url.protocol) ? url.href : null;
-    } catch (e) {
-      return null;
-    }
-  }
+  function parseDebianPackages(text) {
+    const records = text.split(/\n\n+/);
+    const parsed = [];
 
-  function formatSize(val) {
-    const size = Number(val);
-    if (!val || !Number.isFinite(size) || size <= 0) return '';
-    if (size < 1024) return size + ' B';
-    if (size < 1048576) return (size / 1024).toFixed(1) + ' KB';
-    return (size / 1048576).toFixed(1) + ' MB';
-  }
+    for (const record of records) {
+      if (!record.trim()) continue;
+      const lines = record.split(/\n/);
+      const entry = {};
+      let currentKey = null;
 
-  function stripEmoji(text) {
-    if (!text) return '';
-    return text.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '').trim();
-  }
-
-  function parsePackagesText(rawText) {
-    return rawText.replace(/\r\n?/g, '\n').split(/\n[ \t]*\n/).filter(b => b.trim()).map(block => {
-      const fields = Object.create(null);
-      let curKey = '';
-      for (const line of block.split('\n')) {
-        if (/^[ \t]/.test(line)) {
-          if (curKey) fields[curKey] += '\n' + (line.trim() === '.' ? '' : line.slice(1));
+      for (const line of lines) {
+        if (/^\s+/.test(line)) {
+          if (currentKey && entry[currentKey]) {
+            entry[currentKey] += ' ' + line.trim();
+          }
         } else {
-          const colon = line.indexOf(':');
-          curKey = colon > 0 ? line.slice(0, colon) : '';
-          if (curKey) fields[curKey] = line.slice(colon + 1).trim();
+          const colonIdx = line.indexOf(':');
+          if (colonIdx > 0) {
+            currentKey = line.slice(0, colonIdx).trim().toLowerCase();
+            entry[currentKey] = line.slice(colonIdx + 1).trim();
+          }
         }
       }
-      return fields;
+
+      if (entry.package) {
+        parsed.push(entry);
+      }
+    }
+    return parsed;
+  }
+
+  function aggregatePackages(raw) {
+    const map = new Map();
+
+    for (const item of raw) {
+      const pkgId = item.package;
+      if (!map.has(pkgId)) {
+        map.set(pkgId, {
+          id: pkgId,
+          name: item.name || pkgId,
+          author: item.author || item.maintainer || 'Independent Contributor',
+          description: item.description || 'System tweak package for iOS environments.',
+          section: item.section || 'Tweaks',
+          builds: []
+        });
+      }
+
+      const record = map.get(pkgId);
+      const arch = item.architecture || 'iphoneos-arm';
+      const cleanArch = getArchLabel(arch);
+      const debFilename = item.filename || '';
+      const downloadUrl = debFilename.startsWith('http')
+        ? debFilename
+        : 'https://ipapplus.github.io/' + debFilename.replace(/^\.?\//, '');
+
+      record.builds.push({
+        architecture: arch,
+        archLabel: cleanArch,
+        version: item.version || '1.0',
+        size: item.size || 0,
+        url: downloadUrl
+      });
+    }
+
+    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  function openBuildModal(pkg) {
+    if (!dialogBackdrop || !dialogTitle || !dialogList) return;
+    dialogTitle.textContent = pkg.name;
+    dialogList.innerHTML = '';
+
+    pkg.builds.forEach(build => {
+      const item = document.createElement('div');
+      item.className = 'dialog-build-item';
+      item.innerHTML = `
+        <div>
+          <strong>${sanitizeText(build.archLabel)}</strong>
+          <span style="color: var(--text-secondary); margin-left: 8px;">v${sanitizeText(build.version)}</span>
+          <span style="color: var(--text-muted); margin-left: 6px;">(${formatBytes(build.size)})</span>
+        </div>
+        <a href="${build.url}" class="btn-primary" style="min-height: 40px; padding: 6px 14px; font-size: var(--step-small);" download>
+          Download .deb
+        </a>
+      `;
+      dialogList.appendChild(item);
+    });
+
+    dialogBackdrop.classList.add('is-visible');
+    dialogBackdrop.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeBuildModal() {
+    if (!dialogBackdrop) return;
+    dialogBackdrop.classList.remove('is-visible');
+    dialogBackdrop.setAttribute('aria-hidden', 'true');
+  }
+
+  if (dialogCloseBtn) {
+    dialogCloseBtn.addEventListener('click', closeBuildModal);
+  }
+
+  if (dialogBackdrop) {
+    dialogBackdrop.addEventListener('click', (e) => {
+      if (e.target === dialogBackdrop) closeBuildModal();
     });
   }
 
-  function groupPackageBuilds(pkgList) {
-    const groups = new Map();
-    for (const pkg of pkgList) {
-      if (!pkg.Package) continue;
-      const key = pkg.Package + '::' + (pkg.Version || '0');
-      if (!groups.has(key)) groups.set(key, []);
-      groups.get(key).push(pkg);
-    }
-    return [...groups.values()];
-  }
-
-  function getDeveloperName(group) {
-    for (const field of ['Author', 'Maintainer']) {
-      for (const pkg of group) {
-        const name = (pkg[field] || '').replace(/<[^>]*>/g, '').trim();
-        if (name) return name;
-      }
-    }
-    return '';
-  }
-
-  function closeBuildSheet() {
-    buildSheet.classList.remove('is-open');
-    buildModalBackdrop.classList.remove('is-open');
-    activeEntryForSheet = null;
-  }
-
-  buildModalBackdrop.addEventListener('click', closeBuildSheet);
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && buildSheet.classList.contains('is-open')) {
-      closeBuildSheet();
-    }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeBuildModal();
   });
 
-  function openBuildSheet(entry) {
-    activeEntryForSheet = entry;
-    const fragment = document.createDocumentFragment();
+  function renderPackages() {
+    if (!packagesContainer) return;
 
-    const header = document.createElement('div');
-    header.className = 'sheet-header';
-
-    const title = document.createElement('h3');
-    title.className = 'sheet-title';
-    title.textContent = RepoUI.t('chooseBuildTitle');
-    header.appendChild(title);
-
-    const closeBtn = document.createElement('button');
-    closeBtn.type = 'button';
-    closeBtn.className = 'icon-btn';
-    closeBtn.setAttribute('aria-label', RepoUI.t('closeMenu'));
-    closeBtn.innerHTML = closeIconSvg;
-    closeBtn.addEventListener('click', closeBuildSheet);
-    header.appendChild(closeBtn);
-
-    fragment.appendChild(header);
-
-    const listContainer = document.createElement('div');
-    listContainer.className = 'sheet-builds-list';
-
-    for (const variant of entry.available) {
-      const row = document.createElement('div');
-      row.className = 'build-option-row';
-
-      const info = document.createElement('div');
-      info.className = 'build-option-info';
-
-      const archName = document.createElement('span');
-      archName.className = 'build-arch-name';
-      archName.textContent = archDisplayName(variant.pkg.Architecture);
-      info.appendChild(archName);
-
-      const sizeStr = formatSize(variant.pkg.Size);
-      if (sizeStr) {
-        const sizeSpan = document.createElement('span');
-        sizeSpan.className = 'build-file-size';
-        sizeSpan.innerHTML = '<bdi>' + sizeStr + '</bdi>';
-        info.appendChild(sizeSpan);
+    const filtered = unifiedPackages.filter(pkg => {
+      // 1. Architecture Filter
+      if (activeFilter !== 'all') {
+        const matchesArch = pkg.builds.some(b => b.archLabel.toLowerCase() === activeFilter.toLowerCase());
+        if (!matchesArch) return false;
       }
-      row.appendChild(info);
 
-      const actions = document.createElement('div');
-      actions.className = 'build-option-actions';
+      // 2. Search Query Filter
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const inName = pkg.name.toLowerCase().includes(q);
+        const inId = pkg.id.toLowerCase().includes(q);
+        const inDesc = pkg.description.toLowerCase().includes(q);
+        const inAuthor = pkg.author.toLowerCase().includes(q);
+        if (!inName && !inId && !inDesc && !inAuthor) return false;
+      }
 
-      const dlLink = document.createElement('a');
-      dlLink.className = 'btn-build-download';
-      dlLink.href = variant.url;
-      dlLink.setAttribute('download', '');
-      dlLink.innerHTML = downloadIconSvg + '<span>' + RepoUI.t('download') + '</span>';
-      dlLink.addEventListener('click', () => closeBuildSheet());
-      actions.appendChild(dlLink);
+      return true;
+    });
 
-      const copyBtn = document.createElement('button');
-      copyBtn.type = 'button';
-      copyBtn.className = 'btn-build-copy';
-      copyBtn.setAttribute('aria-label', RepoUI.t('copyDownloadLink') + ' · ' + archDisplayName(variant.pkg.Architecture));
-      copyBtn.innerHTML = copyIconOrigSvg + '<span>' + RepoUI.t('copyRepoUrl') + '</span>';
-      copyBtn.addEventListener('click', async () => {
-        closeBuildSheet();
-        await handleCopyLink(entry, variant.url, null);
-      });
-      actions.appendChild(copyBtn);
-
-      row.appendChild(actions);
-      listContainer.appendChild(row);
+    if (statusElement) {
+      statusElement.textContent = `Showing ${filtered.length} of ${unifiedPackages.length} archived packages`;
     }
 
-    fragment.appendChild(listContainer);
-    buildSheet.replaceChildren(fragment);
+    if (filtered.length === 0) {
+      packagesContainer.innerHTML = `
+        <div style="background: var(--bg-surface); padding: var(--space-6); text-align: center; border-radius: var(--radius-subtle);">
+          <p style="font-size: var(--step-subhead); font-weight: 700; margin-bottom: 8px;">No archived packages found</p>
+          <p style="color: var(--text-secondary); margin-bottom: 16px;">No entries matched your search query or architecture filter.</p>
+          <button id="reset-catalog-btn" class="btn-secondary">Reset Search Filters</button>
+        </div>
+      `;
+      const resetBtn = document.getElementById('reset-catalog-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          searchQuery = '';
+          activeFilter = 'all';
+          document.querySelectorAll('.filter-pill').forEach(p => {
+            p.classList.toggle('is-active', p.getAttribute('data-arch') === 'all');
+          });
+          renderPackages();
+        });
+      }
+      return;
+    }
 
-    buildModalBackdrop.classList.add('is-open');
-    buildSheet.classList.add('is-open');
+    // Render package docket entries
+    const htmlFragments = filtered.map(pkg => {
+      const archTags = Array.from(new Set(pkg.builds.map(b => b.archLabel)))
+        .map(arch => `<span class="tag-badge ${arch === 'Rootless' ? 'tag-badge-vermilion' : ''}">${sanitizeText(arch)}</span>`)
+        .join(' ');
+
+      const latestBuild = pkg.builds[0];
+      const hasMultipleBuilds = pkg.builds.length > 1;
+
+      let actionHtml = '';
+      if (hasMultipleBuilds) {
+        actionHtml = `
+          <button class="btn-secondary" data-action="open-builds" data-pkg-id="${pkg.id}">
+            Select Build (${pkg.builds.length})
+          </button>
+        `;
+      } else {
+        actionHtml = `
+          <a href="${latestBuild.url}" class="btn-primary" style="padding: 8px 16px; min-height: 44px; font-size: var(--step-small);" download>
+            Download .deb (${formatBytes(latestBuild.size)})
+          </a>
+        `;
+      }
+
+      return `
+        <article class="package-docket-entry">
+          <div class="docket-topline">
+            <h2 class="package-title">${sanitizeText(pkg.name)}</h2>
+            <span class="package-version-label">v${sanitizeText(latestBuild.version)}</span>
+          </div>
+          <div class="docket-meta-row">
+            <code class="docket-package-id">${sanitizeText(pkg.id)}</code>
+            <span class="tag-badge">${sanitizeText(pkg.section)}</span>
+            ${archTags}
+          </div>
+          <p class="package-description-text">${sanitizeText(pkg.description)}</p>
+          <div class="docket-footer-bar">
+            <span class="package-author-note">Maintainer: ${sanitizeText(pkg.author.replace(/<[^>]*>/g, '').trim())}</span>
+            <div class="package-actions-cluster">
+              ${actionHtml}
+            </div>
+          </div>
+        </article>
+      `;
+    });
+
+    packagesContainer.innerHTML = htmlFragments.join('');
+
+    // Attach event listeners for multi-build buttons
+    packagesContainer.querySelectorAll('[data-action="open-builds"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-pkg-id');
+        const pkg = unifiedPackages.find(p => p.id === id);
+        if (pkg) openBuildModal(pkg);
+      });
+    });
   }
 
-  async function handleCopyLink(entry, url, copyBtnElement) {
+  // Filter Pills Event Listeners
+  const filterPills = document.querySelectorAll('.filter-pill');
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      activeFilter = pill.getAttribute('data-arch') || 'all';
+      renderPackages();
+    });
+  });
+
+  // Search Input Event Listener
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderPackages();
+    });
+  }
+
+  // Load Packages data
+  async function initPackages() {
     try {
-      await RepoUI.copyText(url);
-      RepoUI.toast(RepoUI.t('linkCopied'));
-      if (copyBtnElement) {
-        copyBtnElement.classList.add('is-copied');
-        const textSpan = copyBtnElement.querySelector('.btn-copy-label');
-        if (textSpan) textSpan.textContent = RepoUI.t('linkCopied');
-        clearTimeout(copyBtnElement._copyTimer);
-        copyBtnElement._copyTimer = setTimeout(() => {
-          copyBtnElement.classList.remove('is-copied');
-          if (textSpan) textSpan.textContent = RepoUI.t('copyDownloadLink');
-        }, 2200);
-      }
-    } catch (e) {
-      RepoUI.toast(RepoUI.t('unableToCopy'));
-    }
-  }
-
-  function toggleCardExpansion(entry) {
-    const isExpanding = expandedEntry !== entry;
-    if (expandedEntry) {
-      expandedEntry.card.classList.remove('is-expanded');
-      expandedEntry.expandBtn.setAttribute('aria-expanded', 'false');
-      expandedEntry = null;
-    }
-    if (isExpanding) {
-      expandedEntry = entry;
-      entry.card.classList.add('is-expanded');
-      entry.expandBtn.setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  function createPackageCard(group, index) {
-    const primary = group[0];
-    const name = primary.Name || primary.Package || 'Unnamed Package';
-    const version = primary.Version ? 'v' + primary.Version.replace(/^v+/i, '') : '';
-    const developer = getDeveloperName(group);
-
-    const card = document.createElement('article');
-    card.className = 'package-entry';
-    card.id = 'tweak-card-' + index;
-
-    // Header row
-    const headerRow = document.createElement('div');
-    headerRow.className = 'card-header-row';
-
-    const titleGroup = document.createElement('div');
-    titleGroup.className = 'card-title-group';
-
-    const h2 = document.createElement('h2');
-    const expandBtn = document.createElement('button');
-    expandBtn.type = 'button';
-    expandBtn.className = 'package-expand-btn';
-    expandBtn.textContent = name;
-    expandBtn.setAttribute('aria-expanded', 'false');
-    expandBtn.setAttribute('aria-controls', 'tweak-desc-' + index);
-    h2.appendChild(expandBtn);
-    titleGroup.appendChild(h2);
-
-    // Badges row
-    const badgesRow = document.createElement('div');
-    badgesRow.className = 'card-badges-row';
-
-    if (version) {
-      const vBadge = document.createElement('span');
-      vBadge.className = 'badge-version';
-      vBadge.innerHTML = '<bdi class="tweak-version">' + version + '</bdi>';
-      badgesRow.appendChild(vBadge);
-    }
-
-    const archBadge = document.createElement('span');
-    archBadge.className = 'badge-arch';
-    badgesRow.appendChild(archBadge);
-
-    if (developer) {
-      const devSpan = document.createElement('span');
-      devSpan.className = 'card-developer';
-      devSpan.textContent = developer.startsWith('@') ? developer : '@' + developer;
-      badgesRow.appendChild(devSpan);
-    }
-    titleGroup.appendChild(badgesRow);
-    headerRow.appendChild(titleGroup);
-
-    // Actions in top corner
-    const actionsGroup = document.createElement('div');
-    actionsGroup.className = 'card-actions-group';
-
-    const dlAction = document.createElement('a');
-    dlAction.className = 'btn-action-download';
-    dlAction.innerHTML = downloadIconSvg + '<span class="btn-dl-label">' + RepoUI.t('download') + '</span>';
-    dlAction.setAttribute('download', '');
-    actionsGroup.appendChild(dlAction);
-
-    const copyAction = document.createElement('button');
-    copyAction.type = 'button';
-    copyAction.className = 'btn-action-copy';
-    copyAction.innerHTML = copyIconOrigSvg + copyIconCheckSvg + '<span class="btn-copy-label">' + RepoUI.t('copyDownloadLink') + '</span>';
-    actionsGroup.appendChild(copyAction);
-
-    headerRow.appendChild(actionsGroup);
-    card.appendChild(headerRow);
-
-    // Description snippet (sanitized of emoji)
-    const descP = document.createElement('p');
-    descP.id = 'tweak-desc-' + index;
-    descP.className = 'card-description';
-    descP.textContent = stripEmoji(primary.Description) || RepoUI.t('noDescription');
-    card.appendChild(descP);
-
-    // Meta footer
-    const metaFooter = document.createElement('div');
-    metaFooter.className = 'card-meta-footer';
-
-    const sizeTimeGroup = document.createElement('div');
-    sizeTimeGroup.className = 'meta-size-time';
-
-    const sizeSpan = document.createElement('span');
-    sizeSpan.className = 'card-size';
-    sizeTimeGroup.appendChild(sizeSpan);
-
-    const addedAtTime = addedDates.get(RepoUI.versionKey(primary.Package, primary.Version));
-    if (addedAtTime) {
-      const timeEl = document.createElement('time');
-      timeEl.className = 'card-added-time';
-      timeEl.dateTime = addedAtTime;
-      timeEl.textContent = '· ' + RepoUI.additionTime(new Date(addedAtTime));
-      sizeTimeGroup.appendChild(timeEl);
-    }
-    metaFooter.appendChild(sizeTimeGroup);
-
-    const detailsIndicator = document.createElement('span');
-    detailsIndicator.className = 'meta-expand-indicator';
-    detailsIndicator.textContent = RepoUI.t('detailsLabel');
-    metaFooter.appendChild(detailsIndicator);
-
-    card.appendChild(metaFooter);
-
-    // Expanded technical drawer
-    const drawer = document.createElement('div');
-    drawer.className = 'card-expanded-drawer';
-
-    function addDetail(keyText, valHtml) {
-      const row = document.createElement('div');
-      row.className = 'detail-row';
-      const k = document.createElement('span');
-      k.className = 'detail-key';
-      k.textContent = keyText;
-      const v = document.createElement('span');
-      v.className = 'detail-val';
-      v.innerHTML = valHtml;
-      row.append(k, v);
-      drawer.appendChild(row);
-    }
-
-    addDetail(RepoUI.t('packageIdLabel'), '<bdi class="tweak-id">' + (primary.Package || '') + '</bdi>');
-    if (primary.Section) addDetail(RepoUI.t('sectionLabel'), primary.Section);
-    if (primary.Depends) addDetail(RepoUI.t('dependsLabel'), '<bdi>' + primary.Depends + '</bdi>');
-    if (primary.Homepage) addDetail('Homepage', '<a href="' + primary.Homepage + '" target="_blank" rel="noopener noreferrer">' + primary.Homepage + '</a>');
-    if (primary.Depiction) addDetail('Depiction', '<a href="' + primary.Depiction + '" target="_blank" rel="noopener noreferrer">' + primary.Depiction + '</a>');
-
-    card.appendChild(drawer);
-
-    // Prepare variants
-    const variants = group.map(item => ({
-      pkg: item,
-      url: resolveDownloadURL(item.Filename),
-      searchText: [item.Name, item.Package, stripEmoji(item.Description), item.Filename, item.Author, item.Maintainer].filter(Boolean).join('\n').toLowerCase()
-    }));
-
-    variants.sort((a, b) => {
-      const ai = archOrder.indexOf(a.pkg.Architecture);
-      const bi = archOrder.indexOf(b.pkg.Architecture);
-      return (ai < 0 ? archOrder.length : ai) - (bi < 0 ? archOrder.length : bi);
-    });
-
-    const entry = {
-      card,
-      expandBtn,
-      name,
-      archBadge,
-      sizeSpan,
-      dlAction,
-      copyAction,
-      variants,
-      available: [],
-      primary
-    };
-
-    // Card tap toggles expansion
-    card.addEventListener('click', event => {
-      if (event.target.closest('.card-actions-group, a, .btn-build-download, .btn-build-copy')) return;
-      toggleCardExpansion(entry);
-    });
-
-    dlAction.addEventListener('click', event => {
-      event.stopPropagation();
-      if (entry.available.length > 1) {
-        event.preventDefault();
-        openBuildSheet(entry);
-      } else if (entry.available.length === 1 && !entry.available[0].url) {
-        event.preventDefault();
-      }
-    });
-
-    copyAction.addEventListener('click', async event => {
-      event.stopPropagation();
-      if (entry.available.length > 1) {
-        openBuildSheet(entry);
-      } else if (entry.available.length === 1 && entry.available[0].url) {
-        await handleCopyLink(entry, entry.available[0].url, copyAction);
-      }
-    });
-
-    return entry;
-  }
-
-  function configureCardActions(entry) {
-    const available = entry.available;
-    const sizes = available.map(v => v.pkg.Size).filter(s => /^\d+$/.test(s)).map(Number);
-    const minSize = sizes.length ? Math.min(...sizes) : 0;
-    entry.sizeSpan.innerHTML = minSize ? '<bdi>' + formatSize(minSize) + '</bdi>' : '';
-
-    const archNames = [...new Set(available.map(v => archDisplayName(v.pkg.Architecture)))];
-    entry.archBadge.textContent = archNames.join(' · ') || archDisplayName(entry.primary.Architecture);
-
-    const dlLabel = entry.dlAction.querySelector('.btn-dl-label');
-    const copyLabel = entry.copyAction.querySelector('.btn-copy-label');
-
-    if (available.length > 1) {
-      entry.dlAction.removeAttribute('href');
-      entry.dlAction.setAttribute('role', 'button');
-      if (dlLabel) dlLabel.textContent = RepoUI.t('chooseBuild');
-      if (copyLabel) copyLabel.textContent = RepoUI.t('copyDownloadLink');
-      entry.dlAction.title = RepoUI.t('chooseBuild') + ' · ' + entry.name;
-      entry.dlAction.setAttribute('aria-label', RepoUI.t('chooseBuild') + ' · ' + entry.name);
-      entry.copyAction.title = RepoUI.t('copyDownloadLink') + ' · ' + entry.name;
-      entry.copyAction.setAttribute('aria-label', RepoUI.t('copyDownloadLink') + ' · ' + entry.name);
-      entry.copyAction.disabled = false;
-    } else if (available.length === 1 && available[0].url) {
-      entry.dlAction.href = available[0].url;
-      entry.dlAction.removeAttribute('role');
-      if (dlLabel) dlLabel.textContent = RepoUI.t('download');
-      if (copyLabel) copyLabel.textContent = RepoUI.t('copyDownloadLink');
-      entry.dlAction.title = RepoUI.t('download') + ' · ' + entry.name;
-      entry.dlAction.setAttribute('aria-label', RepoUI.t('download') + ' · ' + entry.name);
-      entry.copyAction.title = RepoUI.t('copyDownloadLink') + ' · ' + entry.name;
-      entry.copyAction.setAttribute('aria-label', RepoUI.t('copyDownloadLink') + ' · ' + entry.name);
-      entry.copyAction.disabled = false;
-    } else {
-      entry.dlAction.removeAttribute('href');
-      entry.dlAction.setAttribute('aria-disabled', 'true');
-      entry.copyAction.disabled = true;
-    }
-  }
-
-  function filterPackages() {
-    searchClear.hidden = searchInput.value.length === 0;
-    if (loadState !== 'ready') return;
-
-    const query = searchInput.value.trim().toLowerCase();
-    let count = 0;
-
-    for (const entry of entries) {
-      const matched = entry.variants.filter(v => {
-        const matchesQuery = !query || v.searchText.includes(query);
-        const matchesArch = !selectedArch || v.pkg.Architecture === selectedArch;
-        return matchesQuery && matchesArch;
-      });
-
-      entry.card.hidden = matched.length === 0;
-      if (entry.card.hidden) {
-        if (expandedEntry === entry) {
-          entry.card.classList.remove('is-expanded');
-          entry.expandBtn.setAttribute('aria-expanded', 'false');
-          expandedEntry = null;
-        }
-        continue;
-      }
-
-      count++;
-      entry.available = matched.filter(v => v.url);
-      configureCardActions(entry);
-    }
-
-    // Status text
-    if (count === 0) {
-      packageStatus.textContent = RepoUI.t('packageCountNone');
-    } else if (count === 1 && entries.length === 1) {
-      packageStatus.textContent = RepoUI.t('packageCountSingle');
-    } else {
-      packageStatus.textContent = RepoUI.t('packageCount', { count, total: entries.length });
-    }
-
-    resetFiltersBtn.hidden = !query && !selectedArch;
-    emptyState.hidden = count !== 0;
-    emptyHeading.textContent = entries.length ? RepoUI.t('noPackagesFound') : RepoUI.t('packageCountNone');
-    emptyMessage.textContent = entries.length ? RepoUI.t('noPackagesFoundDesc') : '';
-    emptyAction.textContent = RepoUI.t('resetFilters');
-    emptyAction.hidden = !entries.length;
-  }
-
-  function resetFilters() {
-    searchInput.value = '';
-    selectedArch = '';
-    filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.architecture === '')));
-    filterPackages();
-  }
-
-  searchInput.addEventListener('input', filterPackages);
-  searchClear.addEventListener('click', () => {
-    searchInput.value = '';
-    filterPackages();
-    searchInput.focus();
-  });
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      selectedArch = btn.dataset.architecture;
-      filterBtns.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-      filterPackages();
-    });
-  });
-
-  resetFiltersBtn.addEventListener('click', resetFilters);
-  emptyAction.addEventListener('click', () => {
-    if (loadState === 'error') loadPackageIndex();
-    else resetFilters();
-  });
-
-  // Back to top observer
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(([entry]) => {
-      backToTopBtn.classList.toggle('is-visible', !entry.isIntersecting);
-      backToTopBtn.disabled = entry.isIntersecting;
-    });
-    const sentinel = $('top-sentinel');
-    if (sentinel) observer.observe(sentinel);
-  }
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Re-run filter on language change to translate badges, counts, titles
-  document.addEventListener('repolangchange', () => {
-    if (loadState === 'ready') {
-      filterPackages();
-    }
-  });
-
-  async function loadPackageIndex() {
-    loadState = 'loading';
-    packageStatus.textContent = RepoUI.t('loadingPackages');
-    packageList.setAttribute('aria-busy', 'true');
-    emptyState.hidden = true;
-
-    try {
-      const [packagesRes, additionsList] = await Promise.all([
-        fetch('Packages', { cache: 'no-cache' }),
-        RepoUI.loadAdditions().catch(() => [])
-      ]);
-
-      if (!packagesRes.ok) throw new Error('Package index HTTP error ' + packagesRes.status);
-      RepoUI.trackModified($('last-updated'), packagesRes.headers.get('Last-Modified'), 'lastUpdated');
-
-      const packagesText = await packagesRes.text();
-      const rawPackages = parsePackagesText(packagesText);
-      const groups = groupPackageBuilds(rawPackages);
-
-      addedDates = new Map(additionsList.map(item => [
-        RepoUI.versionKey(item.package, item.version),
-        item.addedAt
-      ]));
-
-      // Sort packages by latest additions date first
-      groups.sort((a, b) => {
-        const da = Date.parse(addedDates.get(RepoUI.versionKey(a[0].Package, a[0].Version))) || 0;
-        const db = Date.parse(addedDates.get(RepoUI.versionKey(b[0].Package, b[0].Version))) || 0;
-        return db - da;
-      });
-
-      entries = groups.map(createPackageCard);
-      const fragment = document.createDocumentFragment();
-      entries.forEach(e => fragment.appendChild(e.card));
-      packageList.replaceChildren(fragment);
-
-      loadState = 'ready';
-      filterPackages();
+      const response = await fetch('./Packages');
+      if (!response.ok) throw new Error('Failed to load Packages file');
+      const text = await response.text();
+      rawPackages = parseDebianPackages(text);
+      unifiedPackages = aggregatePackages(rawPackages);
+      renderPackages();
     } catch (err) {
-      loadState = 'error';
-      packageStatus.textContent = RepoUI.t('loadErrorTitle');
-      emptyState.hidden = false;
-      emptyHeading.textContent = RepoUI.t('loadErrorTitle');
-      emptyMessage.textContent = RepoUI.t('loadErrorDesc');
-      emptyAction.hidden = false;
-      emptyAction.textContent = RepoUI.t('tryAgain');
-    } finally {
-      packageList.setAttribute('aria-busy', 'false');
+      if (packagesContainer) {
+        packagesContainer.innerHTML = `
+          <div style="background: var(--bg-surface); padding: var(--space-6); border-radius: var(--radius-subtle);">
+            <p style="font-weight: 700; color: var(--accent-vermilion); margin-bottom: 8px;">Catalog Index Loading Note</p>
+            <p style="color: var(--text-secondary);">Unable to fetch Packages file directly. Please access using local HTTP server or verified APT mirror.</p>
+          </div>
+        `;
+      }
     }
   }
 
-  loadPackageIndex();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPackages);
+  } else {
+    initPackages();
+  }
 })();
