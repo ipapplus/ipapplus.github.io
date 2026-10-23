@@ -1,168 +1,64 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Tweaks · ipapplus Repo</title>
-  <meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
-  <link rel="canonical" href="https://ipapplus.github.io/packages.html">
-
-  <!-- Open Graph & Social -->
-  <meta property="og:title" content="Tweaks · ipapplus Repo">
-  <meta property="og:description" content="Browse, search, and download tweaks from the ipapplus repository.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ipapplus.github.io/packages.html">
-  <meta property="og:image" content="https://ipapplus.github.io/social-preview.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tweaks · ipapplus Repo">
-  <meta name="twitter:description" content="Browse, search, and download tweaks from the ipapplus repository.">
-  <meta name="twitter:image" content="https://ipapplus.github.io/social-preview.png">
-
-  <!-- Apple & PWA Capabilities -->
-  <meta name="theme-color" content="#080c14">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="ipapplus">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-
-  <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="website.css">
-
-  <!-- Instant Theme Boot Script -->
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem('ipapplus-theme');
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved === 'light' ? 'light' : (saved === 'dark' ? 'dark' : (prefersDark ? 'dark' : 'light'));
-        if (saved && saved !== 'system') {
-          document.documentElement.dataset.theme = saved;
-        }
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#080c14' : '#f5f6fa');
-      } catch (e) {}
-    })();
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0d14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ipapplus">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="description" content="Browse, search, and download tweaks from the ipapplus repository.">
+<title>Tweaks · ipapplus Repo</title>
+<link rel="preload" href="26.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="website.css?v=pwa-1">
 </head>
 <body>
-  <a href="#main-catalog" class="skip-link">Skip to packages feed</a>
-
-  <!-- Header Navbar -->
-  <header class="site-header">
-    <div class="app-shell container-wide header-row">
-      <a href="index.html" class="nav-pill-btn" aria-label="Return to Repository Home">
-        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m15 18-6-6 6-6"></path>
-        </svg>
-        <span>ipapplus</span>
-      </a>
-
-      <div class="header-nav">
-        <button class="nav-pill-btn" id="refresh-packages" data-page-refresh type="button" aria-label="Refresh Packages" title="Refresh Packages">
-          <svg style="width:15px; height:15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
-            <path d="M3 3v5h5"></path>
-            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
-            <path d="M16 21h5v-5"></path>
-          </svg>
-          <span class="refresh-label">Refresh</span>
-        </button>
-
-        <div class="theme-switch-deck" role="group" aria-label="Appearance Mode">
-          <button type="button" class="theme-pill-btn" data-theme-choice="system" aria-label="System Appearance">Auto</button>
-          <button type="button" class="theme-pill-btn" data-theme-choice="dark" aria-label="Dark Mode">Dark</button>
-          <button type="button" class="theme-pill-btn" data-theme-choice="light" aria-label="Light Mode">Light</button>
-        </div>
-      </div>
+<main data-navigation-focus tabindex="-1" class="browser">
+  <div id="top-sentinel" aria-hidden="true"></div>
+  <a class="back" href="index.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>ipapplus Repo</a>
+  <header class="browser-header">
+    <div class="heading">
+      <h1>Tweaks</h1>
+      <button class="icon-button page-refresh" id="refresh-packages" data-page-refresh type="button" aria-label="Refresh page" title="Refresh page"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></svg></button>
     </div>
+    <p class="updated" id="last-updated">Last Updated: Unknown</p>
   </header>
-
-  <!-- Main Packages Catalog -->
-  <main id="main-catalog" class="app-shell container-wide browser-stage">
-    
-    <!-- Title & Subtitle Block -->
-    <div class="browser-header-block">
-      <h1 class="browser-title">Tweaks</h1>
-      <p class="browser-subtitle" id="last-updated">Browse, search, and download verified iOS packages.</p>
+  <section class="search-panel" aria-label="Search and filter packages">
+    <label class="sr-only" for="package-search">Search by name, identifier, description, or filename</label>
+    <div class="search-field">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+      <input id="package-search" type="search" placeholder="Search packages" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
+      <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m7 7 10 10M7 17 17 7"/></svg></button>
     </div>
-
-    <!-- Search & Filter Controls -->
-    <section class="search-control-panel" aria-label="Search and Filter Packages">
-      <div class="search-field-wrapper">
-        <svg class="search-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input id="package-search" class="search-field-input" type="search" placeholder="Search packages" autocomplete="off" autocapitalize="none" spellcheck="false" aria-controls="package-list">
-        <button id="search-clear" class="search-clear-btn" type="button" aria-label="Clear search input" title="Clear search" hidden>
-          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Architecture Segmented Control -->
-      <div class="segmented-filters" role="group" aria-label="Filter packages by architecture">
-        <button type="button" class="filter-segment-btn is-active" data-architecture="" aria-pressed="true">All</button>
-        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm64" aria-pressed="false">Rootless</button>
-        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm" aria-pressed="false">Rootful</button>
-        <button type="button" class="filter-segment-btn" data-architecture="iphoneos-arm64e" aria-pressed="false">RootHide</button>
-      </div>
-    </section>
-
-    <!-- Results Status Bar -->
-    <div class="results-status-bar">
-      <p id="package-status" role="status" aria-live="polite">Loading packages…</p>
-      <button id="reset-filters" class="reset-filter-btn" type="button" hidden>Reset filters</button>
+    <div class="architecture-filters" role="group" aria-label="Filter by architecture">
+      <button type="button" data-architecture="" aria-pressed="true">All</button>
+      <button type="button" data-architecture="iphoneos-arm" aria-pressed="false">Rootful</button>
+      <button type="button" data-architecture="iphoneos-arm64" aria-pressed="false">Rootless</button>
+      <button type="button" data-architecture="iphoneos-arm64e" aria-pressed="false">RootHide</button>
     </div>
-
-    <!-- Feed Container -->
-    <div id="package-list" class="packages-feed" aria-label="Available packages list"></div>
-
-    <!-- Empty State -->
-    <section id="empty-state" class="empty-state-card" hidden aria-live="polite">
-      <h2 class="empty-state-title" id="empty-heading">No packages found</h2>
-      <p class="empty-state-subtitle" id="empty-message">Try another search keyword or select a different architecture.</p>
-      <button id="empty-action" class="nav-pill-btn" style="background:var(--accent-blue-subtle); color:var(--accent-blue);" type="button">Reset filters</button>
-    </section>
-
-  </main>
-
-  <!-- Multi-Build Bottom Sheet Modal -->
-  <div id="build-modal-scrim" class="modal-scrim" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-pkg-title">
-    <div class="modal-sheet-dialog">
-      <div class="modal-sheet-handle" aria-hidden="true"></div>
-      <div class="modal-header-row">
-        <div>
-          <h2 id="modal-pkg-title" class="modal-title-text">Package Builds</h2>
-          <p style="font-size:0.75rem; color:var(--text-muted);">Select compatible architecture build to download</p>
-        </div>
-        <button id="modal-close-btn" class="modal-close-icon" type="button" aria-label="Close dialog">
-          <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div id="modal-builds-list" class="modal-variants-list"></div>
-    </div>
+  </section>
+  <div class="results-bar">
+    <p id="package-status" role="status" aria-live="polite" aria-atomic="true">Loading packages…</p>
+    <button class="reset-filters" id="reset-filters" type="button" hidden>Reset filters</button>
   </div>
-
-  <!-- Floating Back to Top Button -->
-  <button id="back-to-top" class="floating-scroll-top" type="button" aria-label="Back to top" title="Back to top">
-    <svg style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="m18 15-6-6-6 6"></path>
-    </svg>
-  </button>
-
-  <!-- Toast Notification Bubble -->
-  <div class="toast-bubble" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Runtime Scripts -->
-  <script src="website.js"></script>
-  <script src="packages.js"></script>
+  <div id="package-list" tabindex="-1" aria-label="Available packages" aria-busy="true"></div>
+  <section class="empty-state" id="empty-state" hidden>
+    <h2 id="empty-heading">No packages found</h2>
+    <p id="empty-message">Try another search or architecture.</p>
+    <button id="empty-action" type="button">Reset filters</button>
+  </section>
+  <noscript>Enable JavaScript to browse packages.</noscript>
+</main>
+<a class="icon-button home-back" id="back-home" href="index.html" aria-label="Home" title="Home"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg></a>
+<button class="icon-button back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" disabled><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4m-7 7 7-7 7 7"/></svg></button>
+<div class="package-choices" id="build-menu" role="menu" aria-label="Choose a build" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<script src="website.js?v=pwa-1"></script>
+<script src="packages.js?v=pwa-1"></script>
+<script src="pwa.js?v=1"></script>
+<script src="navigation.js?v=page-refresh-back-1"></script>
 </body>
 </html>
