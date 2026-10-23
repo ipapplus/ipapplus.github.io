@@ -1,10 +1,3 @@
-/* ==========================================================================
-   IPAPPLUS REPOSITORY — MODERN SYSTEM RESKIN
-   Visual design system: Dark navy / near-black surfaces, blue-to-green accents,
-   pill toggles, rounded corners, modern typography, seamless Light & Dark themes.
-   Compatible 100% with the DOM hierarchy and JavaScript logic of /1.
-   ========================================================================== */
-
 @font-face {
   font-family: "Repo Local";
   src: url("26.ttf") format("truetype");
@@ -15,14 +8,11 @@
 
 :root {
   color-scheme: dark light;
-
-  /* --- Motion --- */
   --motion-fast: 120ms;
   --motion-duration: 200ms;
   --motion-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
-  --press-scale: 0.98;
+  --press-scale: 0.95;
 
-  /* --- Dark Navy & Near-Black Palette (Default) --- */
   --bg-base: #080c14;
   --bg-surface: #0f1523;
   --bg-surface-hover: #161e31;
@@ -30,7 +20,6 @@
   --bg-subtle: rgba(255, 255, 255, 0.05);
   --bg-active: rgba(255, 255, 255, 0.09);
 
-  /* --- Blue-to-Green Accent System --- */
   --accent-blue: #0071e3;
   --accent-cyan: #06c8d9;
   --accent-teal: #05d6a4;
@@ -41,17 +30,14 @@
   --accent-teal-subtle: rgba(5, 214, 164, 0.16);
   --accent-green-subtle: rgba(48, 209, 88, 0.16);
 
-  /* --- Typography Colors --- */
   --text-primary: #f5f6fa;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  /* --- Borders --- */
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-medium: rgba(255, 255, 255, 0.15);
   --border-strong: rgba(255, 255, 255, 0.24);
 
-  /* --- Radii --- */
   --radius-xs: 6px;
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -59,7 +45,6 @@
   --radius-xl: 22px;
   --radius-full: 9999px;
 
-  /* --- Compatibility Mapping with /1 Selectors --- */
   --bg: var(--bg-base);
   --surface: var(--bg-surface);
   --raised: var(--bg-elevated);
@@ -71,14 +56,12 @@
   --accent-soft: var(--accent-blue-subtle);
   --accent-border: var(--accent-blue);
 
-  /* --- Font Stack --- */
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --repo-font: var(--font-system), "Repo Local", "Geeza Pro", "Damascus", "Noto Naskh Arabic", sans-serif;
   font-family: var(--repo-font);
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- Seamless Light Theme --- */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     --bg-base: #f5f7fb;
@@ -197,7 +180,6 @@
   --accent-border: var(--accent-blue);
 }
 
-/* --- Base & Reset --- */
 * {
   box-sizing: border-box;
 }
@@ -209,8 +191,53 @@ body {
   font-size: 14px;
   line-height: 1.45;
   isolation: isolate;
-  background-image: radial-gradient(900px circle at 50% 0%, rgba(0, 113, 227, 0.07), transparent 70%);
-  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -2;
+  pointer-events: none;
+  background: radial-gradient(circle at 25% 25%, rgba(18, 38, 92, 0.45) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(92, 18, 38, 0.35) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(10, 25, 60, 0.3) 0%, transparent 60%);
+  animation: ambient-drift 24s ease-in-out infinite alternate;
+  opacity: 0.7;
+}
+
+@media (prefers-color-scheme: light) {
+  body::before {
+    background: radial-gradient(circle at 25% 25%, rgba(0, 113, 227, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+    opacity: 0.55;
+  }
+}
+
+[data-theme="light"] body::before {
+  background: radial-gradient(circle at 25% 25%, rgba(0, 113, 227, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+  opacity: 0.55;
+}
+
+@keyframes ambient-drift {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(5%, -4%) scale(1.08) rotate(3deg);
+  }
+  66% {
+    transform: translate(-4%, 6%) scale(0.96) rotate(-2deg);
+  }
+  100% {
+    transform: translate(3%, 4%) scale(1.04) rotate(1deg);
+  }
 }
 
 html, body, button, input, select, textarea {
@@ -292,7 +319,6 @@ svg {
   transform: none;
 }
 
-/* --- Shared Icon Buttons --- */
 .icon-button {
   display: inline-flex;
   align-items: center;
@@ -325,8 +351,15 @@ svg {
   background: var(--accent-blue-subtle);
 }
 
-.icon-button:active, .link-btn:active, .package-target:active {
-  transform: scale(var(--press-scale));
+:where(button, a, .package-entry, .package-target):hover {
+  filter: brightness(1.06);
+}
+
+:where(button, a, .package-entry, .package-target):active,
+:where(button, a, .package-entry, .package-target).is-pressed {
+  transform: scale(0.95) !important;
+  filter: brightness(0.92) !important;
+  transition: transform 70ms ease, filter 70ms ease !important;
 }
 
 .updated {
@@ -335,7 +368,6 @@ svg {
   font-size: 12px;
 }
 
-/* --- Ambient Arabic Background Canvas --- */
 #adhkar-background {
   --ambient-top: max(24px, env(safe-area-inset-top, 0px));
   --ambient-right: max(12px, env(safe-area-inset-right, 0px));
@@ -350,7 +382,6 @@ svg {
   opacity: 0.55;
 }
 
-/* --- Floating Radio Player Button --- */
 .quran-radio-button {
   position: fixed;
   z-index: 90;
@@ -406,7 +437,6 @@ svg {
   50% { transform: scale(1.08); opacity: 1; }
 }
 
-/* --- Floating Back To Top Button --- */
 .back-to-top {
   position: fixed;
   z-index: 90;
@@ -444,7 +474,6 @@ svg {
   border-color: var(--border-medium);
 }
 
-/* --- Floating Home Back Button (packages.html) --- */
 .home-back {
   position: fixed;
   z-index: 90;
@@ -471,7 +500,6 @@ svg {
   border-color: var(--accent-cyan);
 }
 
-/* --- Toast Feedback Bubble --- */
 .toast {
   position: fixed;
   z-index: 1000;
@@ -501,7 +529,6 @@ svg {
   transform: translate(-50%, 0);
 }
 
-/* Refresh spin animation */
 [data-page-refresh].is-refreshing svg {
   animation: refresh-turn 0.7s linear infinite;
 }
@@ -509,10 +536,6 @@ svg {
 @keyframes refresh-turn {
   to { transform: rotate(360deg); }
 }
-
-/* ==========================================================================
-   PAGE 1: Landing Profile (index.html)
-   ========================================================================== */
 
 .landing {
   min-height: 100vh;
@@ -695,7 +718,6 @@ svg {
   box-shadow: 0 4px 18px rgba(6, 200, 217, 0.22);
 }
 
-/* Add to Home Screen section */
 .home-install {
   margin-top: 14px;
   display: flex;
@@ -754,10 +776,6 @@ svg {
   color: var(--text-muted);
   font-size: 12px;
 }
-
-/* ==========================================================================
-   PAGE 2: Tweaks Package Browser (packages.html)
-   ========================================================================== */
 
 .browser {
   width: 100%;
@@ -867,7 +885,7 @@ svg {
   outline: none;
   background: transparent;
   color: var(--text-primary);
-  font-size: 16px; /* 16px prevents iOS Safari auto-zoom */
+  font-size: 16px;
   -webkit-appearance: none;
 }
 
@@ -909,7 +927,6 @@ svg {
   height: 16px;
 }
 
-/* Segmented Architecture Filters */
 .architecture-filters {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -945,6 +962,39 @@ svg {
   color: var(--accent-cyan);
   border-color: rgba(6, 200, 217, 0.35);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm"] {
+  color: #f87171;
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm"][aria-pressed="true"] {
+  background: rgba(248, 113, 113, 0.22);
+  border-color: #f87171;
+  box-shadow: 0 0 12px rgba(248, 113, 113, 0.35);
+  color: #fca5a5;
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm64"] {
+  color: #38bdf8;
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm64"][aria-pressed="true"] {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm64e"] {
+  color: #c084fc;
+}
+
+.architecture-filters button[data-architecture="iphoneos-arm64e"][aria-pressed="true"] {
+  background: rgba(192, 132, 252, 0.22);
+  border-color: #c084fc;
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.35);
+  color: #e9d5ff;
 }
 
 .results-bar {
@@ -983,10 +1033,6 @@ svg {
   border-color: var(--accent-cyan);
 }
 
-/* ==========================================================================
-   Package Feed & Entry Cards (Natural Text Wrap — No Forced Truncation)
-   ========================================================================== */
-
 #package-list {
   display: flow-root;
 }
@@ -1022,9 +1068,46 @@ svg {
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
   transition: background-color var(--motion-duration) var(--motion-ease),
               border-color var(--motion-duration) var(--motion-ease),
               transform var(--motion-fast) var(--motion-ease);
+}
+
+.package-entry::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  border: 1.5px solid transparent;
+  box-shadow: 0 0 0 0 rgba(6, 200, 217, 0), 0 0 15px 0 rgba(0, 113, 227, 0);
+  transition: opacity 0.3s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.package-entry.card-glow-active::after,
+.package-entry:has(.package-actions button:active)::after,
+.package-entry:has(.package-actions a:active)::after {
+  opacity: 1;
+  border-color: rgba(6, 200, 217, 0.85);
+  box-shadow: 0 0 0 1px rgba(6, 200, 217, 0.5), 0 0 20px rgba(0, 113, 227, 0.4);
+  animation: card-edge-pulse 1.4s ease-out;
+}
+
+@keyframes card-edge-pulse {
+  0% {
+    opacity: 0.3;
+    box-shadow: 0 0 0 1px rgba(6, 200, 217, 0.8), 0 0 8px rgba(0, 113, 227, 0.6);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 1.5px rgba(6, 200, 217, 0.95), 0 0 24px rgba(6, 200, 217, 0.5);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 1px rgba(6, 200, 217, 0), 0 0 30px rgba(0, 113, 227, 0);
+  }
 }
 
 .package-entry:hover {
@@ -1038,7 +1121,7 @@ svg {
 }
 
 .package-entry.is-pressed {
-  transform: scale(0.995);
+  transform: scale(0.95) !important;
 }
 
 .package-info {
@@ -1052,7 +1135,6 @@ svg {
   flex-shrink: 0;
 }
 
-/* Package Title & Expand Button: Natural Multiline Wrapping */
 .package-title {
   min-width: 0;
   width: 100%;
@@ -1089,7 +1171,6 @@ svg {
   transform-origin: left center;
 }
 
-/* Package Version: Accent Badge */
 .package-version {
   display: inline-flex;
   align-items: center;
@@ -1097,8 +1178,9 @@ svg {
   margin: 0;
   padding: 2px 8px;
   border-radius: var(--radius-full);
-  background: var(--accent-blue-subtle);
-  color: var(--accent-cyan);
+  background: rgba(96, 165, 250, 0.14);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.28);
   font-size: 11.5px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -1107,7 +1189,6 @@ svg {
   word-break: break-word;
 }
 
-/* Package Developer: Full Wrap Space */
 .package-developer {
   min-width: 0;
   margin: 0;
@@ -1120,26 +1201,45 @@ svg {
   overflow-wrap: break-word;
 }
 
-/* Package Architecture Metadata: Teal Accent */
 .package-meta {
   min-width: 0;
   margin: 0;
-  color: var(--accent-teal);
-  font-size: 11.5px;
-  font-weight: 600;
-  line-height: 1.4;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
 }
 
-/* Spacing between metadata tags */
-.package-version + .package-developer,
-.package-developer + .package-meta {
-  margin-top: 0;
+.arch-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
-/* Package Description: 2-Line Clamped by Default, Smooth Expand on Tap */
+.arch-rootful {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.15);
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.arch-rootless {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.arch-roothide {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+  border-color: rgba(192, 132, 252, 0.35);
+}
+
 .package-description {
   min-width: 0;
   margin: 4px 0 0;
@@ -1171,7 +1271,6 @@ svg {
   display: block;
 }
 
-/* Action Controls Column (Download, Copy, Time, Size) */
 .package-actions {
   width: 110px;
   min-width: 110px;
@@ -1188,12 +1287,38 @@ svg {
 .package-actions .package-download {
   grid-column: 1;
   grid-row: 1;
-  color: var(--accent-cyan);
+  color: #06c8d9;
+  background: rgba(6, 200, 217, 0.12);
+  border: 1px solid rgba(6, 200, 217, 0.32);
+}
+
+.package-actions .package-download:hover {
+  color: #38bdf8;
+  background: rgba(6, 200, 217, 0.24);
+  border-color: #06c8d9;
+  box-shadow: 0 0 14px rgba(6, 200, 217, 0.35);
 }
 
 .package-actions .package-copy {
   grid-column: 2;
   grid-row: 1;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.32);
+}
+
+.package-actions .package-copy:hover {
+  color: #c084fc;
+  background: rgba(167, 139, 250, 0.24);
+  border-color: #a78bfa;
+  box-shadow: 0 0 14px rgba(167, 139, 250, 0.35);
+}
+
+.package-actions .package-copy[data-feedback] {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.22);
+  border-color: #34d399;
+  box-shadow: 0 0 14px rgba(52, 211, 153, 0.4);
 }
 
 .package-actions.copy-only .package-copy {
@@ -1203,32 +1328,26 @@ svg {
 .package-actions .package-added {
   grid-column: 1;
   grid-row: 2;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  font-weight: 500;
 }
 
 .package-actions .package-size {
   grid-column: 2;
   grid-row: 2;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  font-weight: 600;
 }
 
 .package-actions .icon-button {
   width: 100%;
   height: 44px;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-subtle);
   border-radius: var(--radius-sm);
-  color: var(--text-secondary);
   transition: all var(--motion-fast) var(--motion-ease);
-}
-
-.package-actions .icon-button:hover {
-  background: var(--bg-surface-hover);
-  border-color: var(--border-medium);
-  color: var(--text-primary);
-}
-
-.package-actions .package-download:hover {
-  color: var(--accent-teal);
-  border-color: var(--accent-cyan);
 }
 
 .package-actions .icon-button svg {
@@ -1260,7 +1379,6 @@ svg {
 .package-copy[data-feedback] .copy-check {
   opacity: 1;
   transform: none;
-  color: var(--accent-green);
 }
 
 .package-actions :is(.package-added, .package-size) {
@@ -1269,22 +1387,17 @@ svg {
   width: 100%;
   max-width: 100%;
   height: 24px;
-  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xs);
-  background: var(--bg-subtle);
   line-height: 22px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: default;
-  color: var(--text-muted);
   font-size: 11px;
-  font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 
-/* Empty State */
 .empty-state {
   padding: 36px 16px;
   text-align: center;
@@ -1323,7 +1436,6 @@ svg {
   background: var(--bg-surface-hover);
 }
 
-/* Build Choices Floating Sheet / Menu */
 .package-choices {
   position: fixed;
   z-index: 50;
@@ -1388,7 +1500,63 @@ svg {
   pointer-events: none;
 }
 
-/* --- Responsive Breakpoints --- */
+[dir="rtl"],
+html[dir="rtl"],
+body[dir="rtl"],
+:root[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .profile-header .page-refresh {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .status {
+  right: auto;
+  left: -2px;
+}
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: calc(72px + env(safe-area-inset-left, 0px));
+}
+
+[dir="rtl"] .quran-radio-button {
+  right: auto;
+  left: max(16px, env(safe-area-inset-left, 0px));
+}
+
+[dir="rtl"] .home-back {
+  left: auto;
+  right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+[dir="rtl"] .package-expand {
+  text-align: right;
+  transform-origin: right center;
+}
+
+[dir="rtl"] .search-field {
+  padding-left: 6px;
+  padding-right: 14px;
+}
+
+[dir="rtl"] .back svg,
+[dir="rtl"] .home-back svg,
+[dir="rtl"] .links .arrow {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .link-btn:hover .arrow {
+  transform: scaleX(-1) translateX(-2px);
+}
+
+[dir="rtl"] .package-target {
+  text-align: right;
+}
+
 @media (min-width: 600px) {
   .browser {
     padding-top: 32px;
@@ -1424,12 +1592,19 @@ svg {
   }
 }
 
-/* --- Reduced Motion Support --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
+  }
+
+  body::before {
+    animation: none !important;
+  }
+
+  .package-entry::after {
+    animation: none !important;
   }
 
   :where(button, a, .package-entry):is(:active, .is-pressed),

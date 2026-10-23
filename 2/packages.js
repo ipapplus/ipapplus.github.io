@@ -7,9 +7,9 @@
   const labels={'iphoneos-arm':'Rootful','iphoneos-arm64':'Rootless','iphoneos-arm64e':'RootHide'};
   const order=Object.keys(labels);
   const icons={
-    download:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>',
-    copy:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
-    check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg>'
+    download:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+    copy:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
+    check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
   };
   const indexURL=new URL('Packages',document.baseURI);
   // Package filenames belong to the repository root, including when this UI
@@ -253,7 +253,8 @@
     for(const variant of entry.available){
       const item=document.createElement(mode==='copy'?'button':'a');
       item.className='package-target';item.setAttribute('role','menuitem');item.tabIndex=-1;
-      text(item,'span','',labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other');
+      const archKey=variant.pkg.Architecture==='iphoneos-arm'?'arch-rootful':(variant.pkg.Architecture==='iphoneos-arm64'?'arch-rootless':(variant.pkg.Architecture==='iphoneos-arm64e'?'arch-roothide':''));
+      text(item,'span','arch-pill '+archKey,labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other');
       if(sizeLabel(variant.pkg.Size))text(item,'span','build-size',sizeLabel(variant.pkg.Size));
       if(mode==='copy'){
         item.type='button';
@@ -356,8 +357,15 @@
         continue;
       }
       count++;
-      entry.meta.textContent=[...new Set(matching.map(variant=>labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other'))].join(' · ');
-      entry.meta.title=entry.meta.textContent;
+      const uniqueArchs=[...new Set(matching.map(variant=>variant.pkg.Architecture))];
+      entry.meta.replaceChildren(...uniqueArchs.map(arch=>{
+        const span=document.createElement('span');
+        const key=arch==='iphoneos-arm'?'arch-rootful':(arch==='iphoneos-arm64'?'arch-rootless':(arch==='iphoneos-arm64e'?'arch-roothide':''));
+        span.className='arch-pill '+key;
+        span.textContent=labels[arch]||arch||'Other';
+        return span;
+      }));
+      entry.meta.title=uniqueArchs.map(arch=>labels[arch]||arch||'Other').join(' · ');
       entry.available=matching.filter(variant=>variant.url);
       configureActions(entry);
     }
@@ -472,4 +480,16 @@
     }
   }
   loadPackages();
+  document.addEventListener('click',event=>{
+    const target=event.target instanceof Element?event.target:event.target&&event.target.parentElement;
+    const btn=target&&target.closest('.package-entry button, .package-entry a');
+    if(!btn)return;
+    const card=btn.closest('.package-entry');
+    if(card){
+      card.classList.remove('card-glow-active');
+      void card.offsetWidth;
+      card.classList.add('card-glow-active');
+      setTimeout(()=>{card.classList.remove('card-glow-active');},1400);
+    }
+  },{capture:true,passive:true});
 })();

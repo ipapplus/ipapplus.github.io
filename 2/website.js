@@ -1,5 +1,9 @@
 (function(){
   'use strict';
+  if((navigator.languages&&navigator.languages.some(l=>l.startsWith('ar')))||(navigator.language&&navigator.language.startsWith('ar'))){
+    document.documentElement.dir='rtl';
+    document.documentElement.lang='ar';
+  }
   if(window.RepoUI)return;
   function relativeTime(date,now=Date.now()){
     if(!Number.isFinite(date.getTime())||!Number.isFinite(now))return '';
@@ -312,7 +316,7 @@
   const radio=document.createElement('audio');radio.id='quran-radio';radio.preload='none';
   const button=document.createElement('button');button.id='quran-radio-button';
   button.type='button';button.className='icon-button quran-radio-button';
-  const play='<path d="M8 5v14l11-7z"/>',pause='<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>';
+  const play='<polygon points="6 3 20 12 6 21 6 3"/>',pause='<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
   let wanted=false,request=0,failureShown=false;
   function radioUI(active){
     button.setAttribute('aria-pressed',String(active));
