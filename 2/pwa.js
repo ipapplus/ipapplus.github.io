@@ -32,7 +32,7 @@
     if(!button||button.hidden||isStandalone())return;
     if(safari){
       const help=document.getElementById('home-install-help');
-      help.textContent='In Safari, tap Share → Add to Home Screen.';
+      help.textContent='في Safari، اضغط على مشاركة ← إضافة إلى الشاشة الرئيسية.';
       help.hidden=!help.hidden;
       button.setAttribute('aria-expanded',String(!help.hidden));
       return;
@@ -43,12 +43,12 @@
       await prompt.prompt();
       const choice=await prompt.userChoice;
       if(choice.outcome==='accepted')installed=true;
-    }catch(error){/* Installation failure must not affect the site. */}
+    }catch(error){}
     update();
   });
   update();
   if('serviceWorker' in navigator&&window.isSecureContext){
     navigator.serviceWorker.register(new URL('sw.js',document.baseURI),{updateViaCache:'none'})
-      .catch(()=>{/* PWA support is optional; all existing features remain available. */});
+      .catch(()=>{});
   }
 })();

@@ -1,7 +1,6 @@
 'use strict';
 const CACHE_PREFIX='ipapplus-static-';
 const CACHE_VERSION=CACHE_PREFIX+'v1';
-// Only immutable branding/font resources; never HTML, scripts, repository data or audio.
 const STATIC_ASSETS=['26.ttf','icon-192.png','icon-512.png','apple-touch-icon.png','favicon.png']
   .map(path=>new URL(path,self.registration.scope).href);
 self.addEventListener('install',event=>{
@@ -14,7 +13,6 @@ self.addEventListener('activate',event=>{
 });
 self.addEventListener('fetch',event=>{
   const request=event.request,url=new URL(request.url);
-  // Bypass without respondWith: the browser handles direct downloads and live data.
   if(/(?:\.|%2e)deb$/i.test(url.pathname)||request.method!=='GET'||
     url.origin!==self.location.origin||request.mode==='navigate'||
     !STATIC_ASSETS.includes(url.href))return;

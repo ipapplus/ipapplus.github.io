@@ -1,7 +1,5 @@
 (function(){
   'use strict';
-  // Cache each view's actual nodes: package state, handlers and observers survive.
-  // The canvas, toast, radio button and audio always remain body-level siblings.
   const views=new Map(),pending=new Map();
   let current=document.body.classList.contains('landing')?'home':'packages',generation=0;
   const base=new URL('.',location.href);
@@ -14,12 +12,20 @@
   views.set(current,{nodes:nodes(document),title:document.title,description:document.querySelector('meta[name="description"]').content,scroll:0});
   function initHome(){
     const sileo=document.getElementById('sileo');
-    sileo.addEventListener('click',()=>{
-      RepoUI.copyText('https://ipapplus.github.io').then(()=>RepoUI.toast('Source URL copied')).catch(()=>{});
-    });
+    if(sileo){
+      sileo.addEventListener('click',()=>{
+        RepoUI.copyText('https://ipapplus.github.io').then(()=>RepoUI.toast('تم نسخ رابط المصدر')).catch(()=>{});
+      });
+    }
+    const copyRepo=document.getElementById('copy-repo');
+    if(copyRepo){
+      copyRepo.addEventListener('click',()=>{
+        RepoUI.copyText('https://ipapplus.github.io').then(()=>RepoUI.toast('تم نسخ رابط المصدر')).catch(()=>{});
+      });
+    }
     fetch('Packages').then(response=>{
       if(!response.ok)throw new Error('Package index request failed');
-      RepoUI.trackModified(document.getElementById('last-seen'),response.headers.get('Last-Modified'),'Last Seen');
+      RepoUI.trackModified(document.getElementById('last-seen'),response.headers.get('Last-Modified'),'آخر ظهور');
     }).catch(()=>{});
   }
   if(current==='home')initHome();
@@ -53,7 +59,6 @@
       if(document.fonts)await document.fonts.ready;
       if(token!==generation)return;
       const previous=views.get(current);previous.scroll=window.scrollY;
-      // Close any open architecture menu before hiding its view.
       if(current==='packages')document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape'}));
       const active=document.activeElement;
       if(previous.nodes.some(element=>element.contains(active))&&active instanceof HTMLElement)active.blur();
@@ -67,7 +72,7 @@
       document.dispatchEvent(new Event('repoviewchange'));
       const main=next.nodes[0];main.focus({preventScroll:true});
     }catch(error){
-      if(token===generation)RepoUI.toast('Unable to open page. Check your connection and try again.');
+      if(token===generation)RepoUI.toast('تعذر فتح الصفحة. تحقق من اتصالك بالإنترنت وحاول مرة أخرى.');
     }
   }
   if('scrollRestoration' in history)history.scrollRestoration='manual';

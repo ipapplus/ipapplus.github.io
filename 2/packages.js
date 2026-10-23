@@ -12,15 +12,11 @@
     check:'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
   };
   const indexURL=new URL('Packages',document.baseURI);
-  // Package filenames belong to the repository root, including when this UI
-  // is served from /2/. A /2/debs/ URL returns HTML rather than the package.
   const packageBaseURL=new URL('/',indexURL);
   let entries=[],selectedArchitecture='',activeTrigger=null,loadState='loading';
   let addedDates=new Map();
   let expandedEntry=null,loading=false;
   const cardEntries=new WeakMap();
-  // Snapshot natural card sizes on load/filter/width changes before allowing
-  // offscreen rendering to be skipped. This never runs on animation frames.
   const canSkipCards=typeof CSS!=='undefined'&&CSS.supports('content-visibility','auto')&&CSS.supports('contain-intrinsic-block-size','auto 0px');
   let renderGeneration=0;
   function refreshCardRendering(){
@@ -32,8 +28,6 @@
     }));
   }
   if(canSkipCards){
-    // Pin both accordion participants before production's height measurements.
-    // A closing offscreen card must snapshot its collapsed size before skipping.
     const releaseCard=card=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
       if(!card.classList.contains('is-open')&&!card.classList.contains('is-expanded'))card.classList.remove('package-render-active');
     }));
@@ -52,7 +46,6 @@
       }
     }).observe(list,{subtree:true,attributes:true,attributeFilter:['class'],attributeOldValue:true});
   }
-  // Observe width only: animated card heights must not restart the snapshot.
   if(canSkipCards&&typeof ResizeObserver!=='undefined'){
     let listWidth;
     new ResizeObserver(([entry])=>{
@@ -74,20 +67,14 @@
     entry.card.classList.toggle('is-open',expanded);
   }
   function expandCards(changes){
-    // CSS layout heights exclude the press transform; capture interrupted motion too.
     const before=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded])=>{
       if(entry.expansion){entry.expansion.cancel();entry.expansion=null;}
       commitExpansion(entry,expanded);
     });
-    // Measure the actual border-box targets, including padding and the action column.
-    // Reads and writes are batched, never repeated on animation frames.
     const after=changes.map(([entry])=>parseFloat(getComputedStyle(entry.card).height));
     changes.forEach(([entry,expanded],index)=>{
       if(!entry.card.animate||reducedMotion.matches||entry.card.hidden||!Number.isFinite(before[index])||!Number.isFinite(after[index])||before[index]===after[index])return;
-      // Wrap full content once, then reveal/clip it as the card's bottom edge moves.
-      // WAAPI installs both explicit pixel endpoints in this task, without an
-      // intermediate intrinsic-height paint or a CSS transition startup reflow.
       entry.card.classList.add('is-open');
       const animation=entry.card.animate([
         {height:before[index]+'px'},
@@ -98,8 +85,7 @@
         if(entry.expansion!==animation)return;
         entry.card.classList.toggle('is-open',expanded);
         entry.expansion=null;animation.cancel();
-        // Removing the effect restores intrinsic height for responsive reflow.
-      }).catch(()=>{/* Canceled by a newer interaction or refresh. */});
+      }).catch(()=>{});
     });
   }
   function setExpanded(entry,expanded){
@@ -111,7 +97,6 @@
     const card=target.closest('.package-entry'),entry=card&&cardEntries.get(card);
     if(!entry||target.closest('.package-actions'))return;
     const control=target.closest(interactive);
-    // Only interactive descendants count; never the list's tabindex ancestor.
     if(control&&card.contains(control)&&control!==entry.expand)return;
     toggleEntry(entry);
   });
@@ -175,7 +160,6 @@
   function groupPackages(packages){
     const groups=new Map();
     for(const pkg of packages){
-      // Only the identifier and version define a group; display metadata can vary by build.
       const key=pkg.Package&&pkg.Version?JSON.stringify([pkg.Package,pkg.Version]):Symbol();
       if(!groups.has(key))groups.set(key,[]);
       groups.get(key).push(pkg);
@@ -195,7 +179,7 @@
     animation.finished.then(()=>{
       if(menuAnimation!==animation)return;
       menu.hidden=!opening;menuAnimation=null;animation.cancel();
-    }).catch(()=>{/* Replaced by a newer open/close. */});
+    }).catch(()=>{});
   }
   function closeMenu(restoreFocus=false){
     const previous=activeTrigger;
@@ -220,14 +204,14 @@
     const button=entry.copy;
     try{
       await RepoUI.copyText(url);
-      button.dataset.feedback='Copied!';
-      button.setAttribute('aria-label','Copied download link for '+entry.name);
-      RepoUI.toast('Copied!');
-    }catch(error){RepoUI.toast('Unable to copy. Try again.');}
+      button.dataset.feedback='تم النسخ!';
+      button.setAttribute('aria-label','تم نسخ رابط التنزيل لـ '+entry.name);
+      RepoUI.toast('تم النسخ!');
+    }catch(error){RepoUI.toast('تعذر النسخ. حاول مرة أخرى.');}
     clearTimeout(button.copyTimer);
     button.copyTimer=setTimeout(()=>{
       delete button.dataset.feedback;
-      button.setAttribute('aria-label','Copy download link for '+entry.name);
+      button.setAttribute('aria-label','نسخ رابط التنزيل لـ '+entry.name);
     },2000);
   }
   const {standaloneDisplay,isStandalone}=RepoUI;
@@ -248,13 +232,13 @@
     const opening=activeTrigger!==trigger;
     closeMenu();if(!opening)return;
     const fragment=document.createDocumentFragment();
-    const heading=text(fragment,'p','menu-heading',mode==='copy'?'Copy link · choose a build':'Download · choose a build');
+    const heading=text(fragment,'p','menu-heading',mode==='copy'?'نسخ الرابط · اختر من الإصدارات':'تنزيل · اختر من الإصدارات');
     heading.setAttribute('role','presentation');
     for(const variant of entry.available){
       const item=document.createElement(mode==='copy'?'button':'a');
       item.className='package-target';item.setAttribute('role','menuitem');item.tabIndex=-1;
       const archKey=variant.pkg.Architecture==='iphoneos-arm'?'arch-rootful':(variant.pkg.Architecture==='iphoneos-arm64'?'arch-rootless':(variant.pkg.Architecture==='iphoneos-arm64e'?'arch-roothide':''));
-      text(item,'span','arch-pill '+archKey,labels[variant.pkg.Architecture]||variant.pkg.Architecture||'Other');
+      text(item,'span','arch-pill '+archKey,labels[variant.pkg.Architecture]||variant.pkg.Architecture||'أخرى');
       if(sizeLabel(variant.pkg.Size))text(item,'span','build-size',sizeLabel(variant.pkg.Size));
       if(mode==='copy'){
         item.type='button';
@@ -266,7 +250,7 @@
       fragment.appendChild(item);
     }
     menu.replaceChildren(fragment);
-    menu.setAttribute('aria-label',(mode==='copy'?'Copy download link for ':'Download ')+entry.name);
+    menu.setAttribute('aria-label',(mode==='copy'?'نسخ رابط التنزيل لـ ':'تنزيل ')+entry.name);
     activeTrigger=trigger;trigger.setAttribute('aria-expanded','true');menu.hidden=false;
     positionMenu(trigger);
     animateMenu(true);
@@ -289,11 +273,11 @@
     }else{
       entry.download.removeAttribute('href');entry.download.setAttribute('aria-disabled','true');entry.download.tabIndex=-1;
     }
-    entry.download.title=available.length>1?'Download · choose a build':'Download'+(available.length?' · '+(labels[available[0].pkg.Architecture]||available[0].pkg.Architecture||'Other'):' unavailable');
-    entry.copy.title=available.length>1?'Copy link · choose a build':'Copy download link';
+    entry.download.title=available.length>1?'تنزيل · اختر من الإصدارات':'تنزيل'+(available.length?' · '+(labels[available[0].pkg.Architecture]||available[0].pkg.Architecture||'أخرى'):' غير متاح');
+    entry.copy.title=available.length>1?'نسخ الرابط · اختر من الإصدارات':'نسخ رابط التنزيل';
   }
   function createEntry(group,index){
-    const pkg=group[0],name=pkg.Name||pkg.Package||'Unnamed package';
+    const pkg=group[0],name=pkg.Name||pkg.Package||'حزمة بدون اسم';
     const card=document.createElement('article');card.className='package-entry';
     const info=document.createElement('div');info.className='package-info';card.appendChild(info);
     const title=document.createElement('div');title.className='package-title';info.appendChild(title);
@@ -301,24 +285,23 @@
     const expand=text(heading,'button','package-expand',name);expand.type='button';
     expand.setAttribute('aria-expanded','false');
     card.setAttribute('aria-labelledby',heading.id);
-    if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','Version '+pkg.Version);}
+    if(pkg.Version){const version=text(info,'p','package-version','v'+pkg.Version.replace(/^v+/i,''));version.title=pkg.Version;version.setAttribute('aria-label','الإصدار '+pkg.Version);}
     const developer=developerName(group);
     if(developer){const displayName=developer.startsWith('@')?developer:'@'+developer;const author=text(info,'p','package-developer',displayName);author.title=displayName;}
     const meta=text(info,'p','package-meta','');
-    const description=text(info,'p','package-description',pkg.Description||'No description provided.');description.title=pkg.Description||'';
+    const description=text(info,'p','package-description',pkg.Description||'لا يوجد وصف.');description.title=pkg.Description||'';
     description.id='package-description-'+index;expand.setAttribute('aria-controls',description.id);
     const actions=document.createElement('div');actions.className='package-actions';card.appendChild(actions);
-    // Informational boxes do not trigger the parent card's press feedback.
     actions.addEventListener('pointerdown',event=>{if(!event.target.closest('a,button'))event.stopPropagation();});
     const addedAt=addedDates.get(RepoUI.versionKey(pkg.Package,pkg.Version));
     const time=text(actions,'time','package-added',addedAt?RepoUI.additionTime(new Date(addedAt)):'');
     const addedTime=addedAt?time:null;
-    if(addedTime){addedTime.dateTime=addedAt;addedTime.title='Added '+new Date(addedAt).toLocaleString();}
+    if(addedTime){addedTime.dateTime=addedAt;addedTime.title='أضيف في '+new Date(addedAt).toLocaleString('ar-SA');}
     else time.setAttribute('aria-hidden','true');
     const download=document.createElement('a');download.className='icon-button package-download';download.innerHTML=icons.download;download.setAttribute('download','');
-    download.setAttribute('aria-label','Download '+name);actions.appendChild(download);
+    download.setAttribute('aria-label','تنزيل '+name);actions.appendChild(download);
     const copy=document.createElement('button');copy.type='button';copy.className='icon-button package-copy';copy.innerHTML=icons.copy.replace('<svg ', '<svg class="copy-original" ')+icons.check.replace('<svg ', '<svg class="copy-check" ');
-    copy.setAttribute('aria-label','Copy download link for '+name);actions.appendChild(copy);
+    copy.setAttribute('aria-label','نسخ رابط التنزيل لـ '+name);actions.appendChild(copy);
     const size=text(actions,'span','package-size','');
     const variants=group.map(item=>({pkg:item,url:downloadURL(item.Filename),searchText:[item.Name,item.Package,item.Description,item.Filename].filter(Boolean).join('\n').toLowerCase()}));
     variants.sort((a,b)=>{
@@ -369,12 +352,12 @@
       entry.available=matching.filter(variant=>variant.url);
       configureActions(entry);
     }
-    status.textContent=count+' of '+entries.length+' packages';
+    status.textContent=count+' من أصل '+entries.length+' حزمة';
     $('reset-filters').hidden=!query&&!selectedArchitecture;
     $('empty-state').hidden=count!==0;
-    $('empty-heading').textContent=entries.length?'No packages found':'No packages available';
-    $('empty-message').textContent=entries.length?'Try another search or architecture.':'The package index is currently empty.';
-    $('empty-action').textContent='Reset filters';$('empty-action').hidden=!entries.length;
+    $('empty-heading').textContent=entries.length?'لم يتم العثور على حزم':'لا توجد حزم متاحة';
+    $('empty-message').textContent=entries.length?'جرّب بحثاً آخر أو معمارية أخرى.':'فهرس الحزم فارغ حالياً.';
+    $('empty-action').textContent='إعادة ضبط الفلاتر';$('empty-action').hidden=!entries.length;
   }
   function resetFilters(){
     search.value='';selectedArchitecture='';
@@ -392,7 +375,6 @@
   $('empty-action').addEventListener('click',()=>{if(loadState==='error')loadPackages();else resetFilters();});
   document.addEventListener('pointerdown',event=>{
     if(activeTrigger&&!menu.contains(event.target)&&!activeTrigger.contains(event.target)){
-      // Restore keyboard focus only if the outside tap has no focusable destination.
       const restore=!event.target.closest('a,button,input,textarea,select,[tabindex]');
       closeMenu(restore);
     }
@@ -402,7 +384,6 @@
     if(event.key==='Escape'){
       if(activeTrigger){event.preventDefault();closeMenu(true);}
     }else if(activeTrigger&&event.key==='Tab'){
-      // Return to the trigger before the browser advances to the adjacent control.
       closeMenu(true);
     }
   });
@@ -419,7 +400,6 @@
   document.addEventListener('scroll',event=>{if(activeTrigger&&!menu.contains(event.target))closeMenu(true);},{capture:true,passive:true});
   window.addEventListener('resize',()=>{
     closeMenu(true);
-    // Let natural text reflow immediately if the viewport changes mid-animation.
     entries.forEach(entry=>{if(entry.expansion)setExpanded(entry,entry===expandedEntry);});
   });
   if(window.visualViewport){
@@ -427,7 +407,6 @@
     window.visualViewport.addEventListener('scroll',()=>{if(activeTrigger)positionMenu(activeTrigger);});
   }
   const backToTop=$('back-to-top');
-  // A sentinel avoids doing work on every scroll event.
   if('IntersectionObserver' in window){
     const observer=new IntersectionObserver(([entry])=>{
       backToTop.classList.toggle('is-visible',!entry.isIntersecting);
@@ -453,15 +432,14 @@
     loading=true;
     const hadEntries=entries.length>0;
     closeMenu();
-    loadState='loading';list.setAttribute('aria-busy','true');status.textContent='Loading packages…';$('empty-state').hidden=true;
+    loadState='loading';list.setAttribute('aria-busy','true');status.textContent='جاري تحميل الحزم…';$('empty-state').hidden=true;
     try{
-      // The same response provides both the package data and its update timestamp.
       const [response,history]=await Promise.all([
         fetch('Packages',{cache:'no-cache'}),
         RepoUI.loadAdditions().catch(()=>[...addedDates].map(([key,addedAt])=>{const [packageId,version]=JSON.parse(key);return {package:packageId,version,addedAt};}))
       ]);
       if(!response.ok)throw new Error('Package index request failed');
-      RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'Last Updated');
+      RepoUI.trackModified($('last-updated'),response.headers.get('Last-Modified'),'آخر تحديث');
       const groups=groupPackages(parsePackages(await response.text()));
       addedDates=new Map(history.map(entry=>[RepoUI.versionKey(entry.package,entry.version),entry.addedAt]));
       groups.sort((a,b)=>(Date.parse(addedDates.get(RepoUI.versionKey(b[0].Package,b[0].Version)))||0)-(Date.parse(addedDates.get(RepoUI.versionKey(a[0].Package,a[0].Version)))||0));
@@ -470,11 +448,11 @@
       const fragment=document.createDocumentFragment();entries.forEach(entry=>fragment.appendChild(entry.card));list.replaceChildren(fragment);
       loadState='ready';filterPackages();
     }catch(error){
-      if(hadEntries){loadState='ready';filterPackages();RepoUI.toast('Unable to refresh. Try again.');return;}
-      loadState='error';status.textContent='Unable to load packages';$('empty-state').hidden=false;
-      $('empty-heading').textContent='The package index could not be loaded';
-      $('empty-message').textContent='Check your connection and try again.';
-      $('empty-action').hidden=false;$('empty-action').textContent='Try again';
+      if(hadEntries){loadState='ready';filterPackages();RepoUI.toast('تعذر التحديث. حاول مرة أخرى.');return;}
+      loadState='error';status.textContent='تعذر تحميل الحزم';$('empty-state').hidden=false;
+      $('empty-heading').textContent='تعذر تحميل فهرس الحزم';
+      $('empty-message').textContent='تحقق من اتصالك بالإنترنت وحاول مرة أخرى.';
+      $('empty-action').hidden=false;$('empty-action').textContent='إعادة المحاولة';
     }finally{
       loading=false;list.setAttribute('aria-busy','false');
     }

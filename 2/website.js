@@ -1,22 +1,20 @@
 (function(){
   'use strict';
-  if((navigator.languages&&navigator.languages.some(l=>l.startsWith('ar')))||(navigator.language&&navigator.language.startsWith('ar'))){
-    document.documentElement.dir='rtl';
-    document.documentElement.lang='ar';
-  }
+  document.documentElement.dir='rtl';
+  document.documentElement.lang='ar';
   if(window.RepoUI)return;
   function relativeTime(date,now=Date.now()){
     if(!Number.isFinite(date.getTime())||!Number.isFinite(now))return '';
     const seconds=Math.max(0,Math.floor((now-date.getTime())/1000));
-    if(seconds<60)return 'Just now';
-    const unit=seconds>=86400?'day':seconds>=3600?'hour':'minute';
-    const count=Math.floor(seconds/(unit==='day'?86400:unit==='hour'?3600:60));
-    return count+' '+unit+(count===1?'':'s')+' ago';
+    if(seconds<60)return 'الآن';
+    if(seconds>=86400)return 'منذ '+Math.floor(seconds/86400)+' يوم';
+    if(seconds>=3600)return 'منذ '+Math.floor(seconds/3600)+' س';
+    return 'منذ '+Math.floor(seconds/60)+' د';
   }
   function additionTime(date,now=Date.now()){
     if(!Number.isFinite(date.getTime())||!Number.isFinite(now))return '';
     const minutes=Math.max(1,Math.floor((now-date.getTime())/60000));
-    return minutes>=1440?Math.floor(minutes/1440)+'d ago':minutes>=60?Math.floor(minutes/60)+'h ago':minutes+'m ago';
+    return minutes>=1440?Math.floor(minutes/1440)+' يوم':minutes>=60?Math.floor(minutes/60)+' س':minutes+' د';
   }
   let additions;
   function loadAdditions(force=false){
@@ -33,7 +31,7 @@
   function trackModified(element,header,label){
     const date=header?new Date(header):null;
     if(!date||Number.isNaN(date.getTime()))return;
-    element.title=date.toLocaleString('en-US');
+    element.title=date.toLocaleString('ar-SA');
     function refresh(){element.textContent=label+': '+relativeTime(date);}
     refresh();
     clearInterval(element.modifiedTimer);
@@ -52,7 +50,7 @@
   }
   async function copyText(value){
     if(navigator.clipboard&&window.isSecureContext){
-      try{await navigator.clipboard.writeText(value);return;}catch(error){/* Use the selection fallback if clipboard access is denied. */}
+      try{await navigator.clipboard.writeText(value);return;}catch(error){}
     }
     const previous=document.activeElement;
     const area=document.createElement('textarea');
@@ -63,7 +61,6 @@
     try{if(!document.execCommand('copy'))throw new Error('Copy failed');}
     finally{area.remove();if(previous&&previous.isConnected)previous.focus({preventScroll:true});}
   }
-  // Delegation covers dynamically inserted cards and menu items on iOS Safari.
   let pressed=null,pressPointer=null,pressX=0,pressY=0;
   function releasePress(){
     if(pressed)pressed.classList.remove('is-pressed');
@@ -90,7 +87,6 @@
     return window.navigator.standalone===true||Boolean(standaloneDisplay&&standaloneDisplay.matches);
   }
   window.RepoUI={isStandalone,standaloneDisplay,versionKey,relativeTime,additionTime,loadAdditions,trackModified,toast,copyText};
-  // Delegation also covers the other view's lazily inserted Refresh button.
   document.addEventListener('click',event=>{
     const control=event.target.closest('[data-page-refresh]');
     if(!control||control.disabled)return;
@@ -102,7 +98,6 @@
       control.classList.remove('is-refreshing');control.removeAttribute('aria-busy');
     });
   });
-  // Shared features initialize once, including if this script is loaded twice.
   if(document.getElementById('adhkar-background'))return;
   const canvas=document.createElement('canvas');
   canvas.id='adhkar-background';canvas.setAttribute('aria-hidden','true');
@@ -149,8 +144,6 @@
     function measure(){
       const main=document.querySelector('main:not([hidden])');
       if(!main){exclusions=[];return;}
-      // The complete list is a conservative exclusion: no text in card gaps
-      // can be overtaken by loading, filtering or accordion expansion.
       const elements=main.matches('.profile')?[main]:[...main.children].filter(el=>el.id!=='top-sentinel');
       elements.push(...document.querySelectorAll('#quran-radio-button,#back-to-top,#back-home,#build-menu,.toast.show,.skip-link:focus'));
       const home=main.matches('.profile');
@@ -167,8 +160,6 @@
         !others.some(p=>r.left<p.x+p.sprite.width+margin&&r.right>p.x-margin&&r.top<p.y+p.sprite.height+margin&&r.bottom>p.y-margin);
     }
     function place(sprite){
-      // Partition the current viewport at obstacle edges. Every candidate is
-      // tested with the entire padded sprite; insufficient space skips spawn.
       const xs=[insets.left,...exclusions.map(r=>r.right)];
       const ys=[insets.top,...exclusions.map(r=>r.bottom)];
       const candidates=[];
@@ -183,8 +174,6 @@
       ctx.clearRect(0,0,width,height);
       if(!fontReady)return;
       measure();
-      // Revalidate complete bounds before drawing, including after scrolling
-      // or a moving toolbar. Never mask only part of an existing phrase.
       phrases=phrases.filter(p=>fits(p.sprite,p.x,p.y));
       if(now>=next&&phrases.length<4){
         if(!bag.length)refill();
@@ -197,7 +186,6 @@
       for(let i=phrases.length-1;i>=0;i--){
         const p=phrases[i];p.age+=dt;
         const y=p.y+(motion.matches?0:8*dt);
-        // Stop drift at an exclusion boundary rather than clipping the text.
         if(fits(p.sprite,p.x,y,phrases.filter(other=>other!==p)))p.y=y;
         if(p.age>16){phrases.splice(i,1);continue;}
         ctx.globalAlpha=motion.matches?.72:.72*Math.min(1,p.age/1.2,(16-p.age)/2);
@@ -224,7 +212,6 @@
       canvas.style.width=width+'px';canvas.style.height=height+'px';
       canvas.style.left=viewportX+'px';canvas.style.top=viewportY+'px';
       const style=getComputedStyle(canvas);
-      // Resolve safe-area lengths through computed padding on a lightweight probe.
       const probe=document.createElement('div');
       probe.style.cssText='position:fixed;visibility:hidden;pointer-events:none;padding-top:'+style.getPropertyValue('--ambient-top')+';padding-right:'+style.getPropertyValue('--ambient-right')+';padding-bottom:'+style.getPropertyValue('--ambient-bottom')+';padding-left:'+style.getPropertyValue('--ambient-left');
       document.body.appendChild(probe);
@@ -241,7 +228,6 @@
         let size=16;
         text.font='500 '+size+'px '+family;text.direction='rtl';text.textAlign='center';
         while(text.measureText(value).width>width-48&&size>13){size--;text.font='500 '+size+'px '+family;}
-        // Wrap long phrases instead of horizontally compressing Arabic glyphs.
         const lines=[];let line='';
         for(const word of value.split(' ')){
           const candidate=line?line+' '+word:word;
@@ -278,7 +264,6 @@
     window.addEventListener('pagehide',()=>{cancelAnimationFrame(frame);frame=0;clearTimeout(resizing);clearTimeout(scrolling);});
     window.addEventListener('pageshow',scheduleResize);
     if(motion.addEventListener)motion.addEventListener('change',restart);else motion.addListener(restart);
-    // Static reduced-motion text only needs repainting after a scroll settles.
     let scrolling=0;
     window.addEventListener('scroll',()=>{
       clearAmbient();
@@ -304,11 +289,9 @@
     observeContent();
     document.addEventListener('repoviewwillchange',clearAmbient);
     document.addEventListener('repoviewchange',()=>{clearAmbient();next=0;observeContent();resize();});
-    // No fallback-font sprites or measurements are allowed into the first frame.
     const fonts=document.fonts;
     const ready=fonts?Promise.all([fonts.load('500 16px "Repo Local"',adhkar.join(' ')),fonts.ready]):Promise.resolve();
     ready.then(()=>{fontReady=true;resize();}).catch(()=>{
-      // A failed local request still has the explicit Arabic-capable fallback.
       fontReady=true;resize();
     });
     resize();
@@ -320,13 +303,13 @@
   let wanted=false,request=0,failureShown=false;
   function radioUI(active){
     button.setAttribute('aria-pressed',String(active));
-    button.setAttribute('aria-label',active?'Pause Quran radio':'Play Quran radio');
-    button.title=active?'Pause Quran radio':'Play Quran radio';
+    button.setAttribute('aria-label',active?'إيقاف إذاعة القرآن مؤقتاً':'تشغيل إذاعة القرآن');
+    button.title=active?'إيقاف إذاعة القرآن مؤقتاً':'تشغيل إذاعة القرآن';
     button.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">'+(active?pause:play)+'</svg>';
   }
   function fail(){
     wanted=false;request++;radio.pause();radioUI(false);button.removeAttribute('aria-busy');
-    if(!failureShown){failureShown=true;toast('Radio stream unavailable. Tap to retry.');}
+    if(!failureShown){failureShown=true;toast('بث الإذاعة غير متوفر حالياً. اضغط لإعادة المحاولة.');}
     radio.removeAttribute('src');radio.load();
   }
   button.addEventListener('click',()=>{
@@ -334,7 +317,6 @@
     if(wanted){wanted=false;radio.pause();radioUI(false);button.removeAttribute('aria-busy');return;}
     wanted=true;failureShown=false;radioUI(!radio.paused);button.setAttribute('aria-busy','true');
     if(!radio.getAttribute('src'))radio.src='https://stream.radiojar.com/0tpy1h0kxtzuv';
-    // Keep play() in the direct tap handler for iPhone Safari user activation.
     try{Promise.resolve(radio.play()).then(()=>{
       if(token!==request)return;
       button.removeAttribute('aria-busy');radioUI(wanted&&!radio.paused);
