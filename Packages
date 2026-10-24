@@ -3732,6 +3732,28 @@ Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
 SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
 Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
 
+Package: com.fouadraheb.regram
+Architecture: iphoneos-arm64e
+Version: 6.5
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 56792
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000)
+Conflicts: com.b4db1r3.cleancopy
+Filename: ./debs/com.fouadraheb.regram_6.5_iphoneos-arm64e.deb
+Size: 19428864
+MD5sum: 00e3654b77cc3156a35db8ab8298027b
+SHA1: 24b5bd21a148c1d0000786a9b8dba31faaf86ab4
+SHA256: 82fd563c0514234b8ffcc3abe6346b94e4b069718922970576c641f4a06bb9cb
+SHA512: 5418463bf52045714989eb28d838d7d9375015d9c2152f9ac228fc06d53ae5052ace58d51b1e6da8f4eb34510e367903af9250a5094d89fb16bf5271ddf7351e
+Description: The all-in-one tweak for Instagram
+Name: Regram for Instagram
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.regram
+Icon: file:///Library/Application Support/Regram/Resources.bundle/logo_filled@3x.png
+
 Package: com.fouadraheb.watusi3
 Architecture: iphoneos-arm64
 Version: 1.2.90

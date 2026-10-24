@@ -2422,5 +2422,11 @@
       "name" : "ReplayKit Max",
       "package" : "com.ps.replaykitmax",
       "version" : "2.0.1"
+   },
+   {
+      "addedAt" : "2026-10-24T21:23:41Z",
+      "name" : "Regram for Instagram",
+      "package" : "com.fouadraheb.regram",
+      "version" : "6.5"
    }
 ]
