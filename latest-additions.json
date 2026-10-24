@@ -2458,5 +2458,11 @@
       "name" : "LumenBoard",
       "package" : "com.xsxs18.lumenboard",
       "version" : "1.0.3"
+   },
+   {
+      "addedAt" : "2026-10-24T22:09:56Z",
+      "name" : "VidGrab",
+      "package" : "com.t4mag0.vidgrab",
+      "version" : "1.3.6c"
    }
 ]

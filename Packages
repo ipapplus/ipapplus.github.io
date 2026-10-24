@@ -8784,6 +8784,24 @@ Description: A CarPlay inspired notifications look!
 Name: ReverseNotifications
 Author: SynnyG_R <synnyg.devjb@gmail.com>
 
+Package: com.t4mag0.vidgrab
+Architecture: iphoneos-arm64e
+Version: 1.3.6c
+Section: Applications
+Maintainer: T4MAG0
+Installed-Size: 95029
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: ./debs/com.t4mag0.vidgrab_1.3.6c_iphoneos-arm64e.deb
+Size: 19071356
+MD5sum: 54e51ead8f3e5db700066096b5843ec7
+SHA1: ee68c74352c80f0d55c6b022d624fdaebb86159f
+SHA256: 44798ea70f7d6dac5f8134699fbb98882ba7b8bf3966e76791f4c7a68b28a64c
+SHA512: a21dc9ff26478aa09d4aaa92dbd66d5f4ab15cf94d3c2fff8b285bf94e06f2459bdc9a21c18d7ba45c13cf57ccf9542be4c27c11f6763c1d7354c93f63fa18c1
+Homepage: https://github.com/iamjhe08/VidGrab
+Description: Download videos from YouTube and other sites. Paste a link or use the built-in browser.
+Name: VidGrab
+Author: T4MAG0
+
 Package: com.teslaman3092.popoutbuttons
 Architecture: iphoneos-arm64e
 Version: 1.0.2
