@@ -2434,5 +2434,11 @@
       "name" : "WatusiTools",
       "package" : "com.f0u4d.watusitools",
       "version" : "2.8.5"
+   },
+   {
+      "addedAt" : "2026-10-24T21:28:06Z",
+      "name" : "Watusi 3 for WhatsApp",
+      "package" : "com.fouadraheb.watusi3",
+      "version" : "1.3.28"
    }
 ]
