@@ -2410,5 +2410,17 @@
       "name" : "Instagram (Arabic Localized)",
       "package" : "com.ipapplus.instarab",
       "version" : "4.1.2"
+   },
+   {
+      "addedAt" : "2026-10-24T21:21:58Z",
+      "name" : "MediaColor",
+      "package" : "com.nathan.mediacolor",
+      "version" : "1.0.8"
+   },
+   {
+      "addedAt" : "2026-10-24T21:21:58Z",
+      "name" : "ReplayKit Max",
+      "package" : "com.ps.replaykitmax",
+      "version" : "2.0.1"
    }
 ]

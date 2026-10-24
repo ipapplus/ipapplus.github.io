@@ -6623,6 +6623,24 @@ Description: Tweak that changes the background color of Now Playing widget of th
 Name: MediaColor
 Author: Nathan Senter
 
+Package: com.nathan.mediacolor
+Architecture: iphoneos-arm64e
+Version: 1.0.8
+Section: Tweaks
+Maintainer: Nathan Senter
+Installed-Size: 172
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/com.nathan.mediacolor_1.0.8_iphoneos-arm64e.deb
+Size: 12272
+MD5sum: 9a0228e53d097770235ee34d293aa0ca
+SHA1: a11e6f9438b13ef80e34ea4226772446b0f3aa48
+SHA256: cb71765dbd5aa4875d18bd0862b180749894cb858537d355fd14cc2dfae2b45b
+SHA512: c65539aed708ac417cd7b9e4bc174c88a4fa1ea4fa66e42f669be60d7d2f4fbc5cbfc408f2eed160022fa5e484539aaa0baacf1ca3d731f4dd444bc8732c95cc
+Description: Tweak that changes the background color of Now Playing widget of the lock screen to match the album art! (iPhone only for now, iPadOS 17+ works)
+Name: MediaColor
+Author: Nathan Senter
+
 Package: com.nathan.miniisland
 Architecture: iphoneos-arm64e
 Version: 1.0.3
@@ -7618,6 +7636,26 @@ SHA1: 35d872bd8ad777408e6ba6808615bcba1f92f3b8
 SHA256: aa8e8efcb0cb961006c9036804d08a9ee04fb72fbd08e313283074541b8f17a7
 SHA512: 1be9a971718db50a3d9dd11f0d7eb68c9c7bb052a20f77ea24dd6b42929fed2bb8c97d75cab220493640bfe59c2d04fe8b763b3a35549da362597b9735382c3f
 Description: Record screen without resolution cap.
+Name: ReplayKit Max
+Author: PoomSmart
+Depiction: https://poomsmart.github.io/repo/depictions/replaykitmax.html
+SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/replaykitmax.json
+
+Package: com.ps.replaykitmax
+Architecture: iphoneos-arm64e
+Version: 2.0.1
+Section: Tweaks
+Maintainer: PoomSmart
+Installed-Size: 372
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 9.0), preferenceloader
+Filename: ./debs/com.ps.replaykitmax_2.0.1_iphoneos-arm64e.deb
+Size: 37594
+MD5sum: abe0fad3f6290f16c121ab057a386b23
+SHA1: 0d93be9e0e23dc7c4120372e0752fcd247729f50
+SHA256: e6ed5ce4af24fbe7ea779995286e16020d800fd1b7deafa71968efb4c31c9a21
+SHA512: 80f0e84dd20b595b2515f815c7a456c07fb5518e88b6d6c8dd5745a8b23ae775e5a3d9aadf14ed4997f2ffacc34ec57877758c86772cebedcf667d13920156bb
+Description: Records screen without resolution cap.
 Name: ReplayKit Max
 Author: PoomSmart
 Depiction: https://poomsmart.github.io/repo/depictions/replaykitmax.html
