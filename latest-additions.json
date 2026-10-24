@@ -2428,5 +2428,11 @@
       "name" : "Regram for Instagram",
       "package" : "com.fouadraheb.regram",
       "version" : "6.5"
+   },
+   {
+      "addedAt" : "2026-10-24T21:25:59Z",
+      "name" : "WatusiTools",
+      "package" : "com.f0u4d.watusitools",
+      "version" : "2.8.5"
    }
 ]
