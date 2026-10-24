@@ -2464,5 +2464,11 @@
       "name" : "VidGrab",
       "package" : "com.t4mag0.vidgrab",
       "version" : "1.3.6c"
+   },
+   {
+      "addedAt" : "2026-10-24T22:17:16Z",
+      "name" : "Notification Logger",
+      "package" : "cfd.frcoal.notification-test",
+      "version" : "0.0.1-52+debug"
    }
 ]

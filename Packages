@@ -209,6 +209,24 @@ Description: Arabic & English
 Name: Ubuntu Arabic Bold
 Author: Apple
 
+Package: cfd.frcoal.notification-test
+Architecture: iphoneos-arm64e
+Version: 0.0.1-52+debug
+Section: Tweaks
+Maintainer: frcoal
+Installed-Size: 168
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/cfd.frcoal.notification-test_0.0.1-52+debug_iphoneos-arm64e.deb
+Size: 5770
+MD5sum: c0348c5f714d3a8c3d3d888aef5a401e
+SHA1: 438f0582a3bacdfbbf8de3723c56a99b50eefd49
+SHA256: 149e6d615d05bf0cd9ecbf2ad2d1ecabb3eb26eb67418259fd4731fa7c7a81fd
+SHA512: d9b37186f719d2401ff8412be36af1dfdd1ee7905088ce45c3a3145b6b7ee514b233314f2e42e111bb232324fd47676e4dff88485f8575b5a90e1ed647428d7e
+Description: super basic notification logger. writes files to /var/jb/var/mobile/Documents/notifications/
+Name: Notification Logger
+Author: frcoal
+
 Package: chaoge.jbdev
 Architecture: iphoneos-arm
 Version: 1.0-277+debug
