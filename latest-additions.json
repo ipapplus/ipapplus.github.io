@@ -2440,5 +2440,23 @@
       "name" : "Watusi 3 for WhatsApp",
       "package" : "com.fouadraheb.watusi3",
       "version" : "1.3.28"
+   },
+   {
+      "addedAt" : "2026-10-24T21:59:02Z",
+      "name" : "BottomControlX",
+      "package" : "com.ichitaso.bottomcontrolx",
+      "version" : "1.0.2"
+   },
+   {
+      "addedAt" : "2026-10-24T21:59:02Z",
+      "name" : "PowerSelector",
+      "package" : "com.ichitaso.powerselector11",
+      "version" : "1.5.1"
+   },
+   {
+      "addedAt" : "2026-10-24T21:59:02Z",
+      "name" : "LumenBoard",
+      "package" : "com.xsxs18.lumenboard",
+      "version" : "1.0.3"
    }
 ]
