@@ -1,0 +1,10 @@
+{
+  "id": "./", "name": "ديوان العرب", "short_name": "ديوان العرب", "lang": "ar", "dir": "rtl",
+  "description": "روائع الشعر العربي وكنوز الأدب المسموع.",
+  "start_url": "./", "scope": "./", "display": "standalone",
+  "background_color": "#f5f5f7", "theme_color": "#f5f5f7",
+  "icons": [
+    { "src": "./_player/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./_player/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
