@@ -661,6 +661,23 @@ Description: Combine VPN state and wireless state into one icon.
 Name: Single VPN
 Author: 82Flex <82flex@gmail.com>
 
+Package: com.82flex.touchvis
+Architecture: iphoneos-arm64e
+Version: 4.2
+Section: Tweaks
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 3644
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/com.82flex.touchvis_4.2_iphoneos-arm64e.deb
+Size: 729794
+MD5sum: 61a99aed4ac50889348a90f5344973cf
+SHA1: 94eaf2fac2c57846354202bc9152eebd2f1bc78d
+SHA256: 1eafc4f1393d624ea7cd685fc749c7b7fd95dc81292433ac523f695e0ea78b44
+SHA512: 65c6ba794b20d0f25b96e0af4acf7f2a4aa631184df463ce3a2d3d9c5c81804b9e8641c19b35fca071ea133f3d1a65697167a7945427fac668a2e215e0355391
+Description: Display your touch interactions!
+Name: Touch-Viz
+Author: Lessica <82flex@gmail.com>
+
 Package: com.a7m.abdownloadmanager.ios
 Architecture: iphoneos-arm
 Version: 0.1.0-53
