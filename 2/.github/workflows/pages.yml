@@ -1,0 +1,66 @@
+name: Deploy Media to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: media-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate tracked source dependencies
+        run: npm run validate:assets
+      - run: npm test
+      - run: npm run build
+      - name: Validate complete deployment artifact
+        run: npm run validate:deployment
+      - name: Install browser test engines
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Configure deterministic CI audio output
+        run: |
+          sudo apt-get install -y pulseaudio pulseaudio-utils
+          pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=diwan-test rate=48000 channels=2 norewinds=1
+          pactl set-default-sink diwan-test
+          pactl list short sinks
+      - name: Validate player and offline behavior
+        env:
+          PULSE_SINK: diwan-test
+        run: npm run test:browser -- --workers=2
+      - name: Preserve browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
