@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "fonts": [
+    {
+      "id": "thmanyah-sans-medium",
+      "name": "خط ثمانية",
+      "fileName": "thmanyah-sans-Medium.otf",
+      "format": "otf",
+      "version": "1.0",
+      "downloadURL": "https://github.com/ipapplus/ipapplus.github.io/releases/download/ipa/thmanyah-sans-Medium.otf"
+    },
+    {
+      "id": "al-mohanad-long-kaf",
+      "name": "خط المهند",
+      "fileName": "Almohanad-Long-KAF.ttf",
+      "format": "ttf",
+      "version": "1.0",
+      "downloadURL": "https://github.com/ipapplus/ipapplus.github.io/releases/download/ipa/Almohanad-Long-KAF.ttf"
+    }
+  ]
+}
