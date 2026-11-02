@@ -7104,6 +7104,25 @@ Description: A tweak which brings back the old Twitter experience, with the feat
 Name: NeoFreeBird
 Author: NeoFreeBird
 
+Package: com.nfb.tweak
+Architecture: iphoneos-arm64e
+Version: 7.3.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 14016
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/com.nfb.tweak_7.3.0-1+debug_iphoneos-arm64e.deb
+Size: 4361036
+MD5sum: 065dde93b0863179244ce2617b3eee90
+SHA1: b10aa40a37a8545650ab029685f7e3060364e92d
+SHA256: afd53f93494a92564d90ed9b6d8a7adfe7b9a84c94aae53afecd01c030cf66ec
+SHA512: b7166f8fddcc0e984601a33a7544f1c6cf421cec03d27ae62049401fee6748669e42f48b414a685a0ab207e1ec10cb6b9d4459c3d4fcaf7a0793145a35f31d0b
+Description: A tweak which brings back the old Twitter experience, with the features of X.
+Name: NeoFreeBird
+Author: NeoFreeBird
+
 Package: com.nguyenasang.snmessenger
 Architecture: iphoneos-arm
 Version: 2.0.0
@@ -8131,6 +8150,29 @@ Description: Rootless AltDaemon with modern anisette v3 support.
  without a computer. This fork targets standard Dopamine rootless jailbreaks.
 Name: AltDaemon Modern
 Author: Riley Testut and AltDaemonModern contributors
+
+Package: com.rileytestut.altdaemon
+Architecture: iphoneos-arm64e
+Version: 1.2.2
+Section: Tweaks
+Maintainer: AltDaemonModern contributors
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: ellekit (>= 1.2)
+Filename: ./debs/com.rileytestut.altdaemon_1.2.2_iphoneos-arm64e.deb
+Size: 2453214
+MD5sum: cf89d99e25a84c72dea2820259d4e5bb
+SHA1: 9791d0fa27240160630a2e80462bd6d2698999d0
+SHA256: 4ecc0d1b03ae6a17b393df883d099877c1acbd5dd00f32cabbd6793263fac280
+SHA512: 875679d673e21af2643ab4f98ffafb586f227b18e430c6ec0c6a3e9b85665c25bd544285e35bfa3e10c53fce35685fdc1092c894a3e4c328d4314e0d7e50d566
+Homepage: https://github.com/altstoreio/AltStore
+Description: Reliable rootless AltDaemon with current Apple login compatibility.
+ AltDaemon allows compatible AltStore builds to install and refresh apps
+ without a computer. This fork targets standard Dopamine rootless jailbreaks.
+Name: AltDaemon Modern
+Author: Riley Testut and AltDaemonModern contributors
+Depiction: https://cydia.ichitaso.com/depiction/altdaemon.html
+SileoDepiction: https://cydia.ichitaso.com/depiction/altdaemon.json
+Icon: https://raw.githubusercontent.com/ichitaso/AltDaemonModern/refs/heads/main/Repo/Icon-60%403x.png
 
 Package: com.roothide.manager
 Architecture: iphoneos-arm64e

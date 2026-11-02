@@ -2506,5 +2506,11 @@
       "name" : "NeoFreeBird",
       "package" : "com.nfb.tweak",
       "version" : "7.3.0-1+debug"
+   },
+   {
+      "addedAt" : "2026-11-02T03:20:42Z",
+      "name" : "AltDaemon Modern",
+      "package" : "com.rileytestut.altdaemon",
+      "version" : "1.2.2"
    }
 ]
