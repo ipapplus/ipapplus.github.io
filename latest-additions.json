@@ -2500,5 +2500,11 @@
       "name" : "YouTube X",
       "package" : "com.ps.ytx",
       "version" : "1.7.24"
+   },
+   {
+      "addedAt" : "2026-11-02T03:19:53Z",
+      "name" : "NeoFreeBird",
+      "package" : "com.nfb.tweak",
+      "version" : "7.3.0-1+debug"
    }
 ]

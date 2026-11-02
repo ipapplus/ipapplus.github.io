@@ -7086,6 +7086,24 @@ Description: Syncs icon badge values when notifications are dismissed from the n
 Name: BadgeSync
 Author: newwares
 
+Package: com.nfb.tweak
+Architecture: iphoneos-arm64
+Version: 7.3.0-1+debug
+Section: Tweaks
+Maintainer: NeoFreeBird
+Installed-Size: 14016
+Depends: mobilesubstrate
+Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
+Filename: ./debs/com.nfb.tweak_7.3.0-1+debug_iphoneos-arm64.deb
+Size: 4827776
+MD5sum: 7014706016a2670edda72da5ee4e086b
+SHA1: a40346e04fb8985728e0b611b58178fe0d445980
+SHA256: 19bde39f5c70f2abe4dd507f1030505e418de82cc2cd2420a14ebd7a1dd632f3
+SHA512: e1dbb46c9f3f730efd24699b00b94f6772c8dc4a80cf69ccec493af45336e2d5cd505234854de1d7b40a06cfef804a9b963413eaf79bc68d6d9b8d396697fae1
+Description: A tweak which brings back the old Twitter experience, with the features of X.
+Name: NeoFreeBird
+Author: NeoFreeBird
+
 Package: com.nguyenasang.snmessenger
 Architecture: iphoneos-arm
 Version: 2.0.0
