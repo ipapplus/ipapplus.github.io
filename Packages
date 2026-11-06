@@ -10077,6 +10077,24 @@ Description: iPixel-TT by iPixelDev: TikTok features in one dylib: no ads, downl
 Name: iPixel-TT
 Author: iPixelDev
 
+Package: dev.iamr.ipixeldev.tt
+Architecture: iphoneos-arm64e
+Version: 1.2.14
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 1640
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.tt_1.2.14_iphoneos-arm64e.deb
+Size: 454000
+MD5sum: d372d1caedd970138a5d4fbe0423823d
+SHA1: 86b51d730093c00690535d8e0eecdb6a7baad2c6
+SHA256: b201a136d28d40f1494864a8897b764bd08ffae89ef6a3b32fc9033cdb90c56d
+SHA512: 60fb58cdfc4bbdd0e924c594de5681397e794cc0bbce2522e69d6c742e839c2a1a4dcb287874c800c7e9d4b7568e0157e3898c82ab5c215312b7f8cbc67c7628
+Description: iPixel-TT by iPixelDev: TikTok features in one dylib: no ads, downloads without watermark, auto scroll, hide UI, confirmations, content country, HD upload, progress bar, default speed, privacy and chat tools. No Substrate needed.
+Name: iPixel-TT
+Author: iPixelDev
+
 Package: dev.iamr.ipixeldev.wa
 Architecture: iphoneos-arm
 Version: 1.0.1
@@ -10107,6 +10125,24 @@ MD5sum: 60c52ab49cd043af559e1b22d2e555f7
 SHA1: 47c15aac858bac5ea4c038e2965fe6ecf552f3d3
 SHA256: eb7ed1863a66076fc10e9e3a8da899b038f0046244e0d613eca37af963a8578a
 SHA512: 0f25b08b612c40ef5fa8a886122d00adc22e027f986346902b202ece3756de14555d06b63e31cf7312e5fa88754176289b4760b619faae4c50a47d2d3ec04cb5
+Description: iPixel-WA by iPixelDev, WhatsApp tweaks in one dylib: hide blue ticks, typing, online and status seen; keep messages and statuses deleted for everyone with a log; save statuses, view-once media and profile pictures; confirm calls; custom tick colours; iPad support. No Substrate needed. GPL-3.0.
+Name: iPixel-WA
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.wa
+Architecture: iphoneos-arm64e
+Version: 1.0.1
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 396
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.wa_1.0.1_iphoneos-arm64e.deb
+Size: 105740
+MD5sum: 29a74c4b75d62d400d4059952b61aabc
+SHA1: 3c4627b26dcce8adbed8bbb7e72bac3bead6a03e
+SHA256: bf7bef19ea1e754b260c82ffd6806d75f88ae41aa37dcee0b33715ce5e018c9b
+SHA512: a5ee4201bcb893481e49fccee46050a58af21c58ac78611a20631bc8eac84f5fef84d51a7ed07f97c5b1ba35afdffceec5e4a5f58f76a253b8af4ff7d9b51441
 Description: iPixel-WA by iPixelDev, WhatsApp tweaks in one dylib: hide blue ticks, typing, online and status seen; keep messages and statuses deleted for everyone with a log; save statuses, view-once media and profile pictures; confirm calls; custom tick colours; iPad support. No Substrate needed. GPL-3.0.
 Name: iPixel-WA
 Author: iPixelDev
@@ -10145,6 +10181,24 @@ Description: iPixel-X by iPixelDev: one dylib for X (Twitter). No Substrate need
 Name: iPixel-X
 Author: iPixelDev
 
+Package: dev.iamr.ipixeldev.x
+Architecture: iphoneos-arm64e
+Version: 1.0.10
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 9972
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev.x_1.0.10_iphoneos-arm64e.deb
+Size: 3685772
+MD5sum: 66f3a69c880a11affa18ec104a5b0d5f
+SHA1: 203308f91690a745ad56ffe4f58d0e49ff32d9aa
+SHA256: c51d0b61ef22cbf201e0ea248d09ef1c38d0f0d57ce7d83d95285929a0f0b08f
+SHA512: cd4f204b2bba521bd4bd8209100047044ae07ea644a33a67000ee75babe07add30fb128db4e05a538e4c58c94ec7ba6f7740408c9553bf6696e15676f212fa40
+Description: iPixel-X by iPixelDev: one dylib for X (Twitter). No Substrate needed.
+Name: iPixel-X
+Author: iPixelDev
+
 Package: dev.iamr.ipixeldev
 Architecture: iphoneos-arm
 Version: 1.5.17
@@ -10175,6 +10229,24 @@ MD5sum: 9244a8971d85681fbf69cedc215900a8
 SHA1: ca82a76f810bf5e1ce4a0634c247b51cd96d84e3
 SHA256: 4c919533ef51e181bfabec06928d4b1820924492832bdd7729623a862367d4c4
 SHA512: 881c0f8fb2f29ea59012b4b303ea7c4517f3daeb56899826b6c99a6b3dfc0b5917be813ebdc8e58659e24f5e431cff3df0211ee6193e0483b2b552e5a1e6dbfe
+Description: iPixel-YT: ad blocking, downloads, player and feed options for YouTube, with one settings page in 6 languages.
+Name: iPixel-YT
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev
+Architecture: iphoneos-arm64e
+Version: 1.5.17
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 3852
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev_1.5.17_iphoneos-arm64e.deb
+Size: 1068264
+MD5sum: b7da6d52de8e083bae73d21aed8474c7
+SHA1: 3e8fb956c31635a25bee270a40792f15d04a1223
+SHA256: 5dee5bca07ff72e1e662e31b502689e25e51c777e5ac9dbccb150e28e7c17004
+SHA512: 7fd9fb36711c9fea87de5b31495a2172502e6400547872717aae0f88431cd6c89338615d965ccc61263c8b3a3976c51674d6791909135fc24dab7016e0666260
 Description: iPixel-YT: ad blocking, downloads, player and feed options for YouTube, with one settings page in 6 languages.
 Name: iPixel-YT
 Author: iPixelDev
