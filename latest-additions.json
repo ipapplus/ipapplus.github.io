@@ -2530,5 +2530,11 @@
       "name" : "iPixel-YT",
       "package" : "dev.iamr.ipixeldev",
       "version" : "1.5.17"
+   },
+   {
+      "addedAt" : "2026-11-06T11:55:38Z",
+      "name" : "iPixel-X",
+      "package" : "dev.iamr.ipixeldev.x",
+      "version" : "1.0.10"
    }
 ]

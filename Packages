@@ -9849,6 +9849,40 @@ Description: iPixel-WA by iPixelDev, WhatsApp tweaks in one dylib: hide blue tic
 Name: iPixel-WA
 Author: iPixelDev
 
+Package: dev.iamr.ipixeldev.wa
+Architecture: iphoneos-arm64
+Version: 1.0.1
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 396
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.wa_1.0.1_iphoneos-arm64.deb
+Size: 105412
+MD5sum: 60c52ab49cd043af559e1b22d2e555f7
+SHA1: 47c15aac858bac5ea4c038e2965fe6ecf552f3d3
+SHA256: eb7ed1863a66076fc10e9e3a8da899b038f0046244e0d613eca37af963a8578a
+SHA512: 0f25b08b612c40ef5fa8a886122d00adc22e027f986346902b202ece3756de14555d06b63e31cf7312e5fa88754176289b4760b619faae4c50a47d2d3ec04cb5
+Description: iPixel-WA by iPixelDev, WhatsApp tweaks in one dylib: hide blue ticks, typing, online and status seen; keep messages and statuses deleted for everyone with a log; save statuses, view-once media and profile pictures; confirm calls; custom tick colours; iPad support. No Substrate needed. GPL-3.0.
+Name: iPixel-WA
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.x
+Architecture: iphoneos-arm
+Version: 1.0.10
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 9972
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev.x_1.0.10_iphoneos-arm.deb
+Size: 3692222
+MD5sum: 7424a460c530111c598cacd29acecff1
+SHA1: 51be542ac9bfc01058c3a164e7f2dedf8b936cbe
+SHA256: c40db02fae98413ac86955127906c249e96b2f98276e6f3bd1b48b2dc15c6171
+SHA512: e4b32999400f5c390f3ab538dd62257580758ee060ae5ccbede38345834ad7a0abe17edef2643faebaf2eab535b2f000ca77f3d59bfc60107c19bb557528cc73
+Description: iPixel-X by iPixelDev: one dylib for X (Twitter). No Substrate needed.
+Name: iPixel-X
+Author: iPixelDev
+
 Package: dev.iamr.ipixeldev
 Architecture: iphoneos-arm
 Version: 1.5.17
