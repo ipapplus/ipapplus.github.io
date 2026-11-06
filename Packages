@@ -9832,6 +9832,40 @@ Description: Allow installing unsigned profiles with the ability to write global
 Name: TrustEvaluator
 Author: daniel
 
+Package: dev.iamr.ipixeldev.tt
+Architecture: iphoneos-arm
+Version: 1.2.14
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 1640
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.tt_1.2.14_iphoneos-arm.deb
+Size: 453904
+MD5sum: 1c5ae8982e1a64ac80e32f3ebb38e566
+SHA1: 65e1d7406a558f6052bfe88f3eb78559ea48b376
+SHA256: 3b6aabcb14fd6a18229a03d45a4023f5bdd7c0d1f550f9ab0a090b44ed2edfdd
+SHA512: 3103dceb0a951549dcec4cfcd516779b07904e493f56da62608a410d04436f23d3787deb37febb1f43eed522cd65feb3ae442db5feff0069370730825efc1e8d
+Description: iPixel-TT by iPixelDev: TikTok features in one dylib: no ads, downloads without watermark, auto scroll, hide UI, confirmations, content country, HD upload, progress bar, default speed, privacy and chat tools. No Substrate needed.
+Name: iPixel-TT
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.tt
+Architecture: iphoneos-arm64
+Version: 1.2.14
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 1640
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.tt_1.2.14_iphoneos-arm64.deb
+Size: 453824
+MD5sum: 96413a052877c223649a7a87fc9f3861
+SHA1: 03f7038405a8202b3cc670255e4e6dd18b8af8c9
+SHA256: 2c5c7cfb3612b916acbe73557dd40231948b1f09bb62485b06ac5551e6fb6ef9
+SHA512: 6033551ec7a6a5ec548449df613d892d482182a7f98e32ad7e7d47cc9e9ee70aaacf8f3d1f9fb6a500c807d3cc107233a1aed29e9cf8ad983c5e51fde05bebc4
+Description: iPixel-TT by iPixelDev: TikTok features in one dylib: no ads, downloads without watermark, auto scroll, hide UI, confirmations, content country, HD upload, progress bar, default speed, privacy and chat tools. No Substrate needed.
+Name: iPixel-TT
+Author: iPixelDev
+
 Package: dev.iamr.ipixeldev.wa
 Architecture: iphoneos-arm
 Version: 1.0.1
@@ -9879,6 +9913,23 @@ MD5sum: 7424a460c530111c598cacd29acecff1
 SHA1: 51be542ac9bfc01058c3a164e7f2dedf8b936cbe
 SHA256: c40db02fae98413ac86955127906c249e96b2f98276e6f3bd1b48b2dc15c6171
 SHA512: e4b32999400f5c390f3ab538dd62257580758ee060ae5ccbede38345834ad7a0abe17edef2643faebaf2eab535b2f000ca77f3d59bfc60107c19bb557528cc73
+Description: iPixel-X by iPixelDev: one dylib for X (Twitter). No Substrate needed.
+Name: iPixel-X
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.x
+Architecture: iphoneos-arm64
+Version: 1.0.10
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 9972
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev.x_1.0.10_iphoneos-arm64.deb
+Size: 3691824
+MD5sum: 9395d3ceac7b3f005f4ccf5a2b5f6d47
+SHA1: 14e459c3ff3ef16d20b3d658ccf1e9c448b516ff
+SHA256: 7d48943cfa6699e20416aae8af3a18604b6421e9ab498b1838801d0c09182559
+SHA512: e780cb53f9478b4d19352b123436b2d0bf477055a3d4aa410316cc55098bca1b16f615cbafd8653fe19cc979d32b701eb3dd948babbf50a6918f96e907bfd127
 Description: iPixel-X by iPixelDev: one dylib for X (Twitter). No Substrate needed.
 Name: iPixel-X
 Author: iPixelDev

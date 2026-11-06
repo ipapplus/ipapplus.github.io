@@ -2536,5 +2536,11 @@
       "name" : "iPixel-X",
       "package" : "dev.iamr.ipixeldev.x",
       "version" : "1.0.10"
+   },
+   {
+      "addedAt" : "2026-11-06T11:56:57Z",
+      "name" : "iPixel-TT",
+      "package" : "dev.iamr.ipixeldev.tt",
+      "version" : "1.2.14"
    }
 ]
