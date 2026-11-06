@@ -9832,6 +9832,57 @@ Description: Allow installing unsigned profiles with the ability to write global
 Name: TrustEvaluator
 Author: daniel
 
+Package: dev.iamr.ipixeldev.wa
+Architecture: iphoneos-arm
+Version: 1.0.1
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 396
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.wa_1.0.1_iphoneos-arm.deb
+Size: 105310
+MD5sum: c1c571a94a6152c6460670123a2effe1
+SHA1: cd8a823bacf0d1da9f05b7aaa178e9b906c34ffa
+SHA256: 9422c7d3749e23213d8a466e7be03b6c2721b7e59b9c83cfb865c64c5360db1d
+SHA512: 585299a568e6a8414ca6ab233d5ecdaa7ab36cc48ba864dd160c5db08a60671fb1586d52535ead9930365ce77c06f717f12326630a380f78937be1b036d1e506
+Description: iPixel-WA by iPixelDev, WhatsApp tweaks in one dylib: hide blue ticks, typing, online and status seen; keep messages and statuses deleted for everyone with a log; save statuses, view-once media and profile pictures; confirm calls; custom tick colours; iPad support. No Substrate needed. GPL-3.0.
+Name: iPixel-WA
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev
+Architecture: iphoneos-arm
+Version: 1.5.17
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 3852
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev_1.5.17_iphoneos-arm.deb
+Size: 1067612
+MD5sum: a8f636f11356d2fb983cdd2a101e6657
+SHA1: fe92b0ed5abb9e1d266d0dea597c96d540e8109b
+SHA256: cf930b71c715caa5932bb65a9a1e22203904eea5d3de64ebd2a12a18263d336c
+SHA512: 9746bd7f16741ef3dbe8fb6fc5904928033f5fcfe3f8dd2f5156ebadffa980b07d2e484d42d42fe7966ff086d963866d2dfa857fcc3485b356b980f3ce7fd87c
+Description: iPixel-YT: ad blocking, downloads, player and feed options for YouTube, with one settings page in 6 languages.
+Name: iPixel-YT
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev
+Architecture: iphoneos-arm64
+Version: 1.5.17
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 3852
+Depends: mobilesubstrate, firmware (>= 14.0)
+Filename: ./debs/dev.iamr.ipixeldev_1.5.17_iphoneos-arm64.deb
+Size: 1067248
+MD5sum: 9244a8971d85681fbf69cedc215900a8
+SHA1: ca82a76f810bf5e1ce4a0634c247b51cd96d84e3
+SHA256: 4c919533ef51e181bfabec06928d4b1820924492832bdd7729623a862367d4c4
+SHA512: 881c0f8fb2f29ea59012b4b303ea7c4517f3daeb56899826b6c99a6b3dfc0b5917be813ebdc8e58659e24f5e431cff3df0211ee6193e0483b2b552e5a1e6dbfe
+Description: iPixel-YT: ad blocking, downloads, player and feed options for YouTube, with one settings page in 6 languages.
+Name: iPixel-YT
+Author: iPixelDev
+
 Package: dev.mineek.appstoretroller
 Architecture: iphoneos-arm64e
 Version: 0.1.1
