@@ -9832,6 +9832,144 @@ Description: Allow installing unsigned profiles with the ability to write global
 Name: TrustEvaluator
 Author: daniel
 
+Package: dev.iamr.ipixeldev.fb
+Architecture: iphoneos-arm
+Version: 1.0.11
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 1788
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.fb_1.0.11_iphoneos-arm.deb
+Size: 524504
+MD5sum: 5313deb2c1933e2c0b18f96b89a53562
+SHA1: c78598df655e0401d97fc8e496ae4065f5d9ab13
+SHA256: e9f403da833a738314204015e297751e44066a4a796298442c04d75458ae57cd
+SHA512: 2a946a54931d5a5e7efe5a657c28b0cbd1c63466fd13022e1aa187d3684f62a1731a7acaf9877e9260432804e97f3a15e6b6fc3f1cbd97e400ad6b9f50baf90f
+Description: iPixel-FB by iPixelDev, Facebook tweaks in one dylib: no ads or suggested posts, Reels and story downloads, anonymous stories, hide Reels/PYMK, OLED, copy text, Marketplace ad blocking. No Substrate needed. GPL-3.0.
+Name: iPixel-FB
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.fb
+Architecture: iphoneos-arm64
+Version: 1.0.11
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 1788
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.fb_1.0.11_iphoneos-arm64.deb
+Size: 524668
+MD5sum: eb1d77929f81da6b91df48107221ebe0
+SHA1: ec475325911fd36131be312d9be0aeff7e21cea3
+SHA256: 454d8e2971f635a705baf22bedc6f20b272fbaf2511f1316c61f95ecf8fabbed
+SHA512: ec2c7dd6e8e4eac0dc25c701df43424dfc1cdac8bdf9921d752dd09a245b4dbac9723ed68450c13345aa9c493ad92086f4c576f1dc2d95b9e5621528e9740521
+Description: iPixel-FB by iPixelDev, Facebook tweaks in one dylib: no ads or suggested posts, Reels and story downloads, anonymous stories, hide Reels/PYMK, OLED, copy text, Marketplace ad blocking. No Substrate needed. GPL-3.0.
+Name: iPixel-FB
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.ig
+Architecture: iphoneos-arm
+Version: 1.0.19
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 8916
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.ig_1.0.19_iphoneos-arm.deb
+Size: 2983498
+MD5sum: fbfbcc579778cf13b969e33b927b2c04
+SHA1: a57098945e1aca6db823cef331df500184ea8198
+SHA256: bf19a892eaae943904b1eb1fe7c9416b19d915d73a8532d607dcc9d45c8f37f2
+SHA512: b475bf8c0bad9ebf9e25d38e7964514156238fdf8c125a0ebab9c3c22c4548c4ca89221fa24ebb51bc78432980bfcd6f74bcd6480f45c8aa78aeade7deddfa86
+Homepage: https://github.com/ipixeldev
+Description: iPixel-IG by iPixelDev: Instagram tweak with no Cydia Substrate dependency.
+Name: iPixel-IG
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.ig
+Architecture: iphoneos-arm64
+Version: 1.0.19
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 8916
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.ig_1.0.19_iphoneos-arm64.deb
+Size: 2982446
+MD5sum: 3953bf483a78f4348b67924c1d8cc1b6
+SHA1: 4dbbef73e9c681e942eb83dbba1aaa16e2a05e15
+SHA256: 37381bf4ddb417dcf068bb082357648aa4f3352d0f38037a80a22fb068beeb0f
+SHA512: c4222a09989df94ac2e12a8480b6362ba697370dedbf559473f4f0a4f83373b5e2afe191df8aeab548280a7d5f3b506f2e71c37de34a604be6ae0293b04b41df
+Homepage: https://github.com/ipixeldev
+Description: iPixel-IG by iPixelDev: Instagram tweak with no Cydia Substrate dependency.
+Name: iPixel-IG
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.sc
+Architecture: iphoneos-arm
+Version: 1.0.1
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 416
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.sc_1.0.1_iphoneos-arm.deb
+Size: 109798
+MD5sum: c3b9d832da31c05d053c2898f5e457a9
+SHA1: a3b7ccf12bdd69f62c2722025b11fe6f6f28028c
+SHA256: 953628baa6e8e4d703907eba3381eca3ed48a82c679a2afe5201b1317481b6c8
+SHA512: e0a1cd5a75e2147cb859acc6b995cdcdb07c0a25c479d294e72b968622c4d243f2284128006c4496a4a90420f8b8128bfa35e6f8cfcd637e396ed4ea064ab4c3
+Description: iPixel-SC by iPixelDev: Snapchat features in one dylib: no screenshot or screen-record alerts, hidden typing and read receipts, unopened snaps, hidden story views, save button, send from Photos, keep chats and deleted messages, fake location. No Substrate needed.
+Name: iPixel-SC
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.sc
+Architecture: iphoneos-arm64
+Version: 1.0.1
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 416
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.sc_1.0.1_iphoneos-arm64.deb
+Size: 109922
+MD5sum: b5d90463009273348278da5aacf9d179
+SHA1: c6342ebb7c66d0fec19fd04ea4738164a549b5b5
+SHA256: 3fce9a5160051b889529314331544ff7c260d7a7a8861b506384b18015f41aef
+SHA512: b920e83d7d8382c2bfe28781254ea45f4f71efc0b75dd558e1ea40f1bc81650d3cadecbb47f98550dbff2ad2b452d2d792a613e1964dfcd971643034a7a474d1
+Description: iPixel-SC by iPixelDev: Snapchat features in one dylib: no screenshot or screen-record alerts, hidden typing and read receipts, unopened snaps, hidden story views, save button, send from Photos, keep chats and deleted messages, fake location. No Substrate needed.
+Name: iPixel-SC
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.sp
+Architecture: iphoneos-arm
+Version: 1.0.0
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 400
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.sp_1.0.0_iphoneos-arm.deb
+Size: 111400
+MD5sum: c22fc5d614b5f98bdc1045ff50f64305
+SHA1: 3bc587aed773983b9bd2556b6ad4e3096840e471
+SHA256: 9467f4949ac6a134157ea2f8fead197640dce7d7d3ca6584dbd9d351d5af590e
+SHA512: 2bfde060f880c3b0a9c10e338c47c22b53c7ef19e3f9befc36f31a3aaf2e62449c53f0ef21020932ba8b4a736452b05160bc4141c2c51bdc11dae65c1c4c60ad
+Description: iPixel-SP by iPixelDev: Spotify Premium features (EeveeSpotify's patch, ported to Objective-C), ad and sign-out blocking, LRCLIB lyrics and no monthly lyrics limit, sideload fixes. No Substrate or Orion needed. GPL-3.0.
+Name: iPixel-SP
+Author: iPixelDev
+
+Package: dev.iamr.ipixeldev.sp
+Architecture: iphoneos-arm64
+Version: 1.0.0
+Section: Tweaks
+Maintainer: iPixelDev
+Installed-Size: 400
+Depends: firmware (>= 15.0)
+Filename: ./debs/dev.iamr.ipixeldev.sp_1.0.0_iphoneos-arm64.deb
+Size: 111556
+MD5sum: fb82e45d13dcbd5131e6822ba9cbbf71
+SHA1: a3aceaa2d7e4ae61edb098304da1b266658000db
+SHA256: 8c41b29ae8574326240b3d8da4ef15289fdef3e5bcde9bbd28fef935aa8a5557
+SHA512: 871847da8e1b1ed2568cffcf080384b9d7f6ef1a457221671064700a69b3b3eacd9a56b9e59e7c43f1b0b9ce217da86c73beb1420df5e0add25395013e5d9590
+Description: iPixel-SP by iPixelDev: Spotify Premium features (EeveeSpotify's patch, ported to Objective-C), ad and sign-out blocking, LRCLIB lyrics and no monthly lyrics limit, sideload fixes. No Substrate or Orion needed. GPL-3.0.
+Name: iPixel-SP
+Author: iPixelDev
+
 Package: dev.iamr.ipixeldev.tt
 Architecture: iphoneos-arm
 Version: 1.2.14

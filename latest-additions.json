@@ -2542,5 +2542,29 @@
       "name" : "iPixel-TT",
       "package" : "dev.iamr.ipixeldev.tt",
       "version" : "1.2.14"
+   },
+   {
+      "addedAt" : "2026-11-06T11:58:53Z",
+      "name" : "iPixel-FB",
+      "package" : "dev.iamr.ipixeldev.fb",
+      "version" : "1.0.11"
+   },
+   {
+      "addedAt" : "2026-11-06T11:58:53Z",
+      "name" : "iPixel-IG",
+      "package" : "dev.iamr.ipixeldev.ig",
+      "version" : "1.0.19"
+   },
+   {
+      "addedAt" : "2026-11-06T11:58:53Z",
+      "name" : "iPixel-SC",
+      "package" : "dev.iamr.ipixeldev.sc",
+      "version" : "1.0.1"
+   },
+   {
+      "addedAt" : "2026-11-06T11:58:53Z",
+      "name" : "iPixel-SP",
+      "package" : "dev.iamr.ipixeldev.sp",
+      "version" : "1.0.0"
    }
 ]
