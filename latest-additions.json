@@ -2632,5 +2632,11 @@
       "name" : "YouTube Legacy",
       "package" : "com.ps.ytlegacy",
       "version" : "1.13.0"
+   },
+   {
+      "addedAt" : "2026-11-24T05:48:14Z",
+      "name" : "OnlineNotify",
+      "package" : "com.f0u4d.onlinenotify",
+      "version" : "3.5.5"
    }
 ]
