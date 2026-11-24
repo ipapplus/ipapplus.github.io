@@ -3824,6 +3824,28 @@ Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
 SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
 Icon: file:///Library/Application Support/ContactSync/Resources.bundle/Logo@3x.png
 
+Package: com.fouadraheb.contactsync
+Architecture: iphoneos-arm64e
+Version: 1.1.16
+Section: Tweaks
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 600
+Pre-Depends: rootless-compat(>= 0.9)
+Depends: firmware (>= 12.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.7.1)
+Conflicts: xyz.cypwn.watusi3, xyz.cypwn.stalky, xyz.cypwn.contactsync, xyz.cypwn.onlinenotify, xyz.cypwn.watusitools
+Filename: ./debs/com.fouadraheb.contactsync_1.1.16_iphoneos-arm64e.deb
+Size: 117444
+MD5sum: 1c40313e8378d5503bfe4016e1532626
+SHA1: 9e9855af4725637bcd4804ce61ee80e052147a48
+SHA256: c8bdf7e0a98ac9ae9c55a0eaa9ca250ac27db4e0cd59223552b1e4e0d62a6001
+SHA512: a55dde75b49e16f483dff8afba527c26a900bc01220c4ca4281dbd3a1b96ba358bab441842e8c849be86fa5b96977771b159b0a84acafcf044dca5dfeaa2b8a1
+Description: Sync WhatsApp Profile Pictures to your Contacts
+Name: ContactSync
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
+SileoDepiction: https://apt.fouadraheb.com/package/com.fouadraheb.contactsync
+Icon: file:///Library/Application Support/ContactSync/Resources.bundle/Logo@3x.png
+
 Package: com.fouadraheb.regram
 Architecture: iphoneos-arm64e
 Version: 6.5
