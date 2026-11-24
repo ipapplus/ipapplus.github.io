@@ -2626,5 +2626,11 @@
       "name" : "Watusi for WhatsApp",
       "package" : "com.fouadraheb.watusi",
       "version" : "1.0.2"
+   },
+   {
+      "addedAt" : "2026-11-24T05:43:28Z",
+      "name" : "YouTube Legacy",
+      "package" : "com.ps.ytlegacy",
+      "version" : "1.13.0"
    }
 ]
