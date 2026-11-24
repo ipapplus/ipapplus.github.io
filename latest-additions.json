@@ -2638,5 +2638,11 @@
       "name" : "OnlineNotify",
       "package" : "com.f0u4d.onlinenotify",
       "version" : "3.5.5"
+   },
+   {
+      "addedAt" : "2026-11-24T05:53:48Z",
+      "name" : "Regram for Instagram",
+      "package" : "com.fouadraheb.regram",
+      "version" : "7.1"
    }
 ]
