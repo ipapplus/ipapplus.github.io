@@ -2614,5 +2614,11 @@
       "name" : "ContactSync",
       "package" : "com.fouadraheb.contactsync",
       "version" : "1.1.16"
+   },
+   {
+      "addedAt" : "2026-11-24T05:38:07Z",
+      "name" : "Watusi 3 for WhatsApp",
+      "package" : "com.fouadraheb.watusi3",
+      "version" : "1.3.32"
    }
 ]
