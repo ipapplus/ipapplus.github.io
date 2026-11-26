@@ -2656,5 +2656,11 @@
       "name" : "ReProvision Reborn… Again",
       "package" : "com.yourepo.b4db1r3r3p0.reprovisionrebornagain",
       "version" : "0.8.4-roothide.6"
+   },
+   {
+      "addedAt" : "2026-11-26T20:51:58Z",
+      "name" : "ReProvision Reborn… Again",
+      "package" : "com.yourepo.b4db1r3r3p0.reprovisionrebornagain",
+      "version" : "0.8.4-rootless.31"
    }
 ]
